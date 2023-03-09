@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "5e7e2ad0-ec88-483d-907c-bf02d02afb7c",
+		"name": "Checkout-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20123315"
+	},
+	"item": [
+		{
+			"name": "Payment Transaction",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Profiling-Key",
+								"value": "uajwstdpijzvfwiomuwasrpvgsvpheuwnbqwhkvwzegdvdpjrjundslqbfdj",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"payment_request\",\n    \"pg_codes\": [\"ottu_pg_kwd_tkn\"],\n    \"amount\": \"19\",\n    \"currency_code\": \"KWD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/checkout/v1/pymt-txn/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"checkout",
+								"v1",
+								"pymt-txn",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": \"90.00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/checkout/v1/pymt-txn/48fb0a20b78b531254770165563e0226b0b476d2/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"checkout",
+								"v1",
+								"pymt-txn",
+								"48fb0a20b78b531254770165563e0226b0b476d2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/checkout/v1/pymt-txn/3e09e4f612516a5c01de02c7b93f8e5a98a7b8da",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"checkout",
+								"v1",
+								"pymt-txn",
+								"3e09e4f612516a5c01de02c7b93f8e5a98a7b8da"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Api-Key {{api_key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 100" width="168" height="100">
+  <!-- svg-source:excalidraw -->
+  <!-- payload-type:application/vnd.excalidraw+json --><!-- payload-version:2 --><!-- payload-start -->eyJ2ZXJzaW9uIjoiMSIsImVuY29kaW5nIjoiYnN0cmluZyIsImNvbXByZXNzZWQiOnRydWUsImVuY29kZWQiOiJ4nM1UTY/TMFx1MDAxML33V0TZK+rm20lvsFC2Qlx1MDAwMq2KhFx1MDAwMHHwJm5i1bWD7WxbVv3vO3a7cdKCxFx1MDAxZZDwwZLfzPjNx7NcdTAwMWYnnufrfUv8meeTXYlcdTAwMTmtJN76r1xm/kCkooKDKbJnJTpZWs9G61bNrq9x205rqu+FWE9LsTmGXHUwMDExRjaEa1x1MDAwNY7f4ex5j3ZcdTAwMWZcdTAwMTBJUmrMa0ZsgDU5rvhcdTAwMWP7KLhlTdKiSLIwLnpcdTAwMDeq3lx1MDAwMpkmXHUwMDE1WFeYKeIsXHUwMDA28iu0U2FcdTAwMWPyXHUwMDBmt5/mKLtbvad3aeU4V5Sxpd6zY0m4bDo5yEhpKdbkXHUwMDBirXRcdTAwMDP28Fxm7+OUgJa5KCm6uuFEqVGMaHFJ9d5gQdCjx1x1MDAxNsw8h+xM/ZmLs1x1MDAxMVl6xn0jmJCG+yqwy7Hf43JdQ1xuvOp9tMRcXLVYwkSc3/a5qiTvsYbQutFcdTAwMDDmLlx1MDAxZkVsb8NcdTAwMThFeZJcdTAwMDRcdTAwMTHqLYalXVR2yD+G1fPqVP3z1N3c41x1MDAxM3Jw+Vx1MDAxYf93XHUwMDAzvbirurbCx8mGXHUwMDE5QkGaxUmAcjd7RvlcdTAwMWGMvGPMYaJcXDsxTFx1MDAwNlxcXHUwMDE3XHUwMDEy1GSnf6e+5E/qXHUwMDBioyCEPPJcdTAwMTj9tfzin2l4M4/54ls2n3/dxkXSXHUwMDEx+d/Lr8jH8iuS6T9cdTAwMTQgutRflJ7rXHUwMDBmnj3KwiAsXiC/kTBeorMkQqC0XHUwMDE36MxcclRwvaS/TE+jYITO8Yay/WgmVoDQnls67J5cIsBn5ZaPPF8zWlx1MDAxYnn6jKzGutVcdTAwMTQ+7d6sReusJTBjuE4uqvNcboSkNeWYfXZZXHUwMDFjn1x1MDAwYuy2Nz587Utccp3pXzL0nFan8txd/lx1MDAwMyXbN5dTv1rZZW61T9Condhv4TA5PFx1MDAwMUU9pYUifQ==<!-- payload-end -->
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://unpkg.com/@excalidraw/excalidraw@0.14.2/dist/excalidraw-assets/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://unpkg.com/@excalidraw/excalidraw@0.14.2/dist/excalidraw-assets/Cascadia.woff2");
+      }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="168" height="100" fill="#ffffff"/><g stroke-linecap="round" transform="translate(10 10) rotate(0 74 40)"><path d="M20 0 M20 0 C56.49 -1.37, 94.33 -0.06, 128 0 M20 0 C48.23 0.93, 77.14 -0.81, 128 0 M128 0 C141.4 -0.31, 149.4 7.81, 148 20 M128 0 C142.23 1.46, 146.48 4.77, 148 20 M148 20 C146.9 32.09, 147.99 42.43, 148 60 M148 20 C148.67 31.41, 146.87 44.54, 148 60 M148 60 C147.52 73.3, 139.84 79.68, 128 80 M148 60 C147.51 73.5, 141.46 80.85, 128 80 M128 80 C89.71 77.86, 53.21 77.73, 20 80 M128 80 C85.68 79.22, 41.65 80.58, 20 80 M20 80 C8.59 80.1, -0.25 74.88, 0 60 M20 80 C6.01 78.58, 0.46 71.06, 0 60 M0 60 C-1.81 48.91, 1.26 40.28, 0 20 M0 60 C-0.19 44.88, 0.01 30.71, 0 20 M0 20 C0.61 7.85, 5.31 -0.12, 20 0 M0 20 C1.23 6.97, 7.33 -0.81, 20 0" stroke="#000000" stroke-width="1" fill="none"/></g><g transform="translate(47 39.5) rotate(0 8.5 12.5)"><text x="0" y="18" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr">Hi</text></g></svg>

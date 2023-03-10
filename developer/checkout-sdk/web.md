@@ -1,7 +1,7 @@
 # Web
 
 {% hint style="warning" %}
-implement [Checkout API](../rest-api/checkout-api.md) before using Web SDK for complete functionality
+the Checkout SDK requires the implementation of the [Checkout API](../rest-api/checkout-api.md) in order to function properly.
 {% endhint %}
 
 ## ****[Checkout JS](web.md#checkout-js)

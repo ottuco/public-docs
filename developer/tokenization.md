@@ -8,7 +8,7 @@ By using tokenization, Ottu safeguards customer's sensitive card data from poten
 
 ## Ottu Tokenization
 
-* Ottu tokenization could be used with [Web](checkout-sdk/web.md),[ iOS](checkout-sdk/ios.md), [Android](checkout-sdk/android.md), and [Flutter](checkout-sdk/flutter.md) SDKs.
+* Ottu tokenization could be used with [Web](broken-reference),[ iOS](checkout-sdk/ios.md), [Android](checkout-sdk/android.md), and [Flutter](checkout-sdk/flutter.md) SDKs.
 
 **In order to generate token:**
 

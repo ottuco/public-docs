@@ -32,7 +32,6 @@
     * [Session](developer/rest-api/legacy/session.md)
 * [Tokenization](developer/tokenization.md)
 * [Checkout SDK](developer/checkout-sdk/README.md)
-  * [sdk](developer/checkout-sdk/sdk.md)
   * [Web](developer/checkout-sdk/web.md)
   * [iOS](developer/checkout-sdk/ios.md)
   * [Android](developer/checkout-sdk/android.md)

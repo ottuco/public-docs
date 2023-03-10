@@ -1,4 +1,4 @@
-# SDK
+# Checkout SDK
 
 ## [Overview](./#overview)
 
@@ -10,8 +10,8 @@ It is important to keep in mind that the Checkout SDK cannot work without a back
 
 By following this process, you can ensure that your application is able to properly leverage the features and functionality provided by the Checkout SDK, while also maintaining a secure and reliable payment processing system for your users.
 
-{% content-ref url="web.md" %}
-[web.md](web.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="ios.md" %}

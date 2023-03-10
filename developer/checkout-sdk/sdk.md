@@ -39,7 +39,7 @@ You're all set! You can now use the Checkout SDK to create a checkout form on yo
 
 Is the function that initializes the checkout process and sets up the necessary configuration options for the Checkout SDK. It needs to be called once on your web page to initialize the checkout process, and it must be called with a configuration object that includes all the necessary options for the checkout process.
 
-When you call `Checkout.init`, the SDK will take care of setting up the necessary components for the checkout process, such as creating a form for the user to enter their payment details, and handling communication with Ottu's servers to process the payment.
+When you call `Checkout.init`, the SDK will take care of setting up the necessary components for the checkout process, such as creating a form for the customer to enter their payment details, and handling communication with Ottu's servers to process the payment.
 
 #### ****[**Checkout.reload**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#checkout.reload)****
 
@@ -110,10 +110,10 @@ When `lang` is set to `"en"`, the checkout form will be displayed in English, an
 
 The available options for `formsOfPayment` are:
 
-* `"applePay"`: The Apple Pay payment method that allows users to make purchases using their Apple Pay-enabled devices.
-* `"cardForm"`: A form that allows users to enter their credit or debit card details to make a payment.
+* `"applePay"`: The Apple Pay payment method that allows customers to make purchases using their Apple Pay-enabled devices.
+* `"cardForm"`: A form that allows customers to enter their credit or debit card details to make a payment.
 * `"tokenPay"`: A payment method that uses tokenization to securely store and process customers' payment information.
-* `"redirect"`: A method where users are redirected to a payment gateway or a third-party payment processor to complete their payment.
+* `"redirect"`: A method where customers are redirected to a payment gateway or a third-party payment processor to complete their payment.
 
 This property can be particularly useful when you want to customize the checkout process and display only specific forms of payment, such as only displaying the Apple Pay button and hiding the other payment options.
 
@@ -214,7 +214,7 @@ Here's an example of how `errorCallback` might be defined:
 </head>
 ```
 
-In this example, the `errorCallback` function is defined and passed as the value of the `data-error` attribute on the Checkout script tag. If an error occurs during a payment, the function will be invoked with an `error` object. The function will then handle the error as needed and redirect the user to `https://payment.example.com`.
+In this example, the `errorCallback` function is defined and passed as the value of the `data-error` attribute on the Checkout script tag. If an error occurs during a payment, the function will be invoked with an `error` object. The function will then handle the error as needed and redirect the customer to `https://payment.example.com`.
 
 Note that the `errorCallback` function is not required to perform a redirection. It can handle errors in any way that is appropriate for your application.
 
@@ -252,7 +252,7 @@ window.successCallback = function (data) {
 
 `successCallback` receives a `data` object see data object where the `data.status` is "success".
 
-In this example, the `successCallback` function is defined and passed as the value of the `data-success` attribute on the Checkout script tag. If the payment process completes successfully, the function will be invoked with a `data` object containing information about the completed transaction. The function will then redirect the user to the specified `redirect_url` using `window.location.href`.
+In this example, the `successCallback` function is defined and passed as the value of the `data-success` attribute on the Checkout script tag. If the payment process completes successfully, the function will be invoked with a `data` object containing information about the completed transaction. The function will then redirect the customer to the specified `redirect_url` using `window.location.href`.
 
 #### ****[**Example**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#example-1)****
 
@@ -274,7 +274,7 @@ window.successCallback = function (data) {
 
 #### ****[**window.beforeRedirect**](sdk.md#window.beforeredirect)****
 
-For `redirect` checkout processes, you may want to freeze the user's basket before the customer is redirected to the payment page. The Checkout SDK provides a `beforeRedirect` callback that you can use to perform any necessary actions before the redirection occurs.
+For `redirect` checkout processes, you may want to freeze the customer's basket before the customer is redirected to the payment page. The Checkout SDK provides a `beforeRedirect` callback that you can use to perform any necessary actions before the redirection occurs.
 
 To define the `beforeRedirect` callback, you can use the `data-beforeredirect` attribute on the Checkout script tag to specify a global function that will handle the callback. This function should return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) that resolves when the necessary actions are complete.
 
@@ -285,9 +285,9 @@ Here's an example of how to define the `beforeRedirect` callback:
     <script src="https://assets.ottu.net/checkout/v2/checkout.min.js" data-beforeredirect="beforeRedirect"></script>
     <script>
         window.beforeRedirect = function() {
-            // Freeze the user's basket while waiting for an API response
+            // Freeze the customer's basket while waiting for an API response
             return new Promise(function(resolve, reject) {
-                // Send a request to your API to freeze the user's basket
+                // Send a request to your API to freeze the customer's basket
                 fetch('https://api.yourdomain.com/basket/freeze', {
                         method: 'POST'
                     })
@@ -310,7 +310,7 @@ Here's an example of how to define the `beforeRedirect` callback:
 </head>
 ```
 
-In this example, the beforeRedirect callback sends a request to an API endpoint to freeze the user's basket while waiting for the redirection to occur. If the API response is successful, the Promise is resolved and the redirection proceeds. If the API request fails or the response is unsuccessful, the Promise is rejected and the redirection is cancelled.
+In this example, the beforeRedirect callback sends a request to an API endpoint to freeze the customer's basket while waiting for the redirection to occur. If the API response is successful, the Promise is resolved and the redirection proceeds. If the API request fails or the response is unsuccessful, the Promise is rejected and the redirection is cancelled.
 
 #### ****[**data Object**](sdk.md#data-object)****
 
@@ -318,7 +318,7 @@ The data object received by the cancelCallback and successCallback contains info
 
 #### ****[**message**](sdk.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
 
-Is a string message that can be displayed to the customer. It provides a user-friendly message regarding the status of the payment transaction.
+Is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
 
 #### ****[**session\_id**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#session\_id-1)****
 

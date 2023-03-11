@@ -1,22 +1,20 @@
 # Web
 
-## [Web](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#web)
+The [Checkout SDK](./) is a JavaScript library provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your web application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
 
-The Checkout SDK is a JavaScript library provided by Ottu that allows you to easily integrate an Ottu-powered checkout process into your web application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
-
-To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu merchant ID, session ID, and API key. You can also specify additional options such as, which forms of payment to accept, the CSS styling for the checkout interface, and more.
+To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu merchant ID, [session ID](../rest-api/checkout-api.md#session\_id-string-read-only), and [API key](../rest-api/authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the CSS styling for the checkout interface, and more.
 
 {% hint style="warning" %}
-Please note that the Checkout SDK requires the implementation of the Checkout API in order to function properly.
+Please note that the Checkout SDK requires the implementation of the [Checkout API](../rest-api/checkout-api.md) in order to function properly.
 {% endhint %}
 
 ## [Checkout SDK](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#checkout-sdk)
 
-### [Demo](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#demo)
+## [Demo](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#demo)
 
 Below is a demo of the Checkout SDK in action. This demo shows how the Checkout SDK can be used to create a streamlined checkout experience for customers, with support for multiple forms of payment and a customizable interface.
 
-### [Installation](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#installation)
+#### [Installation](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#installation)
 
 To install the Checkout SDK, you'll need to include the library in your web application by adding a script tag to your HTML section. You can do this by using the following code snippet:
 
@@ -29,21 +27,21 @@ To install the Checkout SDK, you'll need to include the library in your web appl
  </head>
 ```
 
-Replace `errorCallback`, `cancelCallback`, `successCallback`, and `beforeRedirect` with the names of your error handling, cancel handling, success handling, and before-redirect handling functions, respectively.
+Replace [errorCallback](web.md#window.errorcallback), [cancelCallback](web.md#window.cancelcallback), [successCallback](web.md#window.successcallback), and [beforeRedirect](web.md#window.beforeredirect) with the names of your error handling, cancel handling, success handling, and before-redirect handling functions, respectively.
 
-You're all set! You can now use the Checkout SDK to create a checkout form on your web page and process payments through Ottu.
+You're all set! You can now use the [Checkout SDK ](./)to create a checkout form on your web page and process payments through Ottu.
 
 ### [Functions](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#functions)
 
 #### ****[**Checkout.init**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#checkout.init)****
 
-Is the function that initializes the checkout process and sets up the necessary configuration options for the Checkout SDK. It needs to be called once on your web page to initialize the checkout process, and it must be called with a configuration object that includes all the necessary options for the checkout process.
+Is the function that initializes the [checkout process](./#ottu-checkout-sdk-flow) and sets up the necessary configuration options for the [Checkout SDK](./). It needs to be called once on your web page to initialize the checkout process, and it must be called with a configuration object that includes all the necessary options for the checkout process.
 
 When you call `Checkout.init`, the SDK will take care of setting up the necessary components for the checkout process, such as creating a form for the customer to enter their payment details, and handling communication with Ottu's servers to process the payment.
 
 #### ****[**Checkout.reload**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#checkout.reload)****
 
-The `Checkout.reload` function in the Checkout SDK is used to refresh the SDK. It's useful when you want to reload the content of the SDK after an error has occurred or when the content needs to be refreshed.
+The `Checkout.reload` function in the Checkout SDK is used to refresh the SDK. It's useful when you want to reload the **content** of the SDK after an **error** has occurred or when the content needs to be **refreshed**.
 
 Here's an example of how `Checkout.reload` might be called:
 
@@ -53,7 +51,7 @@ Checkout.reload();
 
 In this example, the `Checkout.reload` function is called to refresh the content of the SDK. This can be useful when an error has occurred and the content needs to be reloaded or refreshed.
 
-### ****[**Properties description**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#properties-description)****
+#### ****[**Properties** ](web.md#properties)****
 
 #### ****[**selector**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#selector-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
 
@@ -88,21 +86,22 @@ For example, if your Ottu URL is `https://example.ottu.com`, then your `merchant
 
 #### ****[**apiKey**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#apikey)****
 
-The `apiKey` is your Ottu API public key. This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
+The `apiKey` is your Ottu [API public key](../rest-api/authentication.md#public-key). This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
 
-According to the REST API documentation, the `apiKey` property should be set to your Ottu API public key.
+According to the REST API [documentation](../rest-api/), the `apiKey` property should be set to your Ottu  [API public key](../rest-api/authentication.md#public-key).
 
-#### ****[**session\_id**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#session\_id)****
+#### **session\_id **_<mark style="color:blue;">**`string`**</mark>_
 
 The `session_id` the unique identifier for the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. You can find more information on how to use the `session_id` parameter in the Checkout API.
+This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only).
 
-#### ****[**lang**](web.md#lang)****
+#### **lang **_<mark style="color:blue;">**`string`**</mark>_
 
 The `lang` property is used to specify the language in which the checkout elements should be displayed. This property can be set to either `"en"` (for English) or `"ar"` (for Arabic).
 
-When `lang` is set to `"en"`, the checkout form will be displayed in English, and when it's set to `"ar"`, the checkout elements will be displayed in Arabic. Additionally, when the `lang` parameter is set to `"ar"`, the layout will switch to right-to-left (RTL) to accommodate Arabic script.
+When `lang` is set to `"en"`, the checkout form will be displayed in English, and when it's set to `"ar"`, the checkout elements will be displayed in Arabic. Additionally, when the `lang` parameter is set to `"ar"`, the layout will switch to right-to-left (RTL) to accommodate Arabic script. \
+Ror more information on how to use lang parameter in the Checkout API, see [lang](../rest-api/checkout-api.md#language-string-optional).
 
 #### ****[**formsOfPayment**](web.md#formsofpayment-array) ** **_<mark style="color:blue;">**`array`**</mark>_
 
@@ -124,10 +123,10 @@ This property can be particularly useful when you want to customize the checkout
 There are several CSS classes that can be overridden using the `css` property, including:
 
 * `.ottu__sdk-main`: the class of the div which wraps all the elements of the container. It's useful to override this when you want to modify the size of the rendered content by the SDK.
-* `.ottu__sdk-apple-pay-button-type`: specifies the button type of the Apple Pay button. This class defaults to `pay` and if there is no card in the wallet, it will automatically change to `setUp`. More information can be found on the [ApplePay official documentation for ApplePay Button Type](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).
+* `.ottu__sdk-apple-pay-button-type`: specifies the button type of the Apple Pay button. This class defaults to `pay` and if there is no card in the wallet, it will automatically change to `setUp`. More information can be found on the ApplePay official documentation for [ApplePay Button Type](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).
 * `.apple-pay-button`: the class of the Apple Pay button, which is a div. It can be customized for width, padding, margin, and more. Useful to customize when `formsOfPayment` is configured to display only the Apple Pay button.
 
-Here's an example of how `Checkout.init` might be called with a `css` property to customize the `.ottu__sdk-main` class, `.ottu__sdk-apple-pay-button-type` class, and `.apple-pay-button` class:
+Here's an example of how [Checkout.init](web.md#checkout.init) might be called with a [css](web.md#css-object) property to customize the `.ottu__sdk-main` class, `.ottu__sdk-apple-pay-button-type` class, and `.apple-pay-button` class:
 
 ```javascript
 Checkout.init({

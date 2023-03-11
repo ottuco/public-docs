@@ -463,12 +463,12 @@ By default, the type of the Apple Pay button is [pay](https://developer.apple.co
 #### [Customize Apple Pay button](web.md#customize-apple-pay-button)
 
 {% hint style="warning" %}
-Note that if you're using only the Apple Pay button from the Checkout SDK and want to customize its appearance, it's important to follow the [Apple Pay guidelines](https://developer.apple.com/design/human-interface-guidelines/technologies/apple-pay/buttons-and-marks) to ensure that your design is consistent with Apple's requirements. Failure to follow the guidelines could result in your app being rejected or your developer account being banned by Apple.
+If you're using only the Apple Pay button from the Checkout SDK and want to customize its appearance, it's important to follow the [Apple Pay guidelines](https://developer.apple.com/design/human-interface-guidelines/technologies/apple-pay/buttons-and-marks) to ensure that your design is consistent with Apple's requirements. Failure to follow the guidelines could result in your app being rejected or your developer account being banned by Apple.
 {% endhint %}
 
 It's the responsibility of the merchant to ensure that their use of the Apple Pay button follows Apple's guidelines, and Ottu cannot be held responsible for any issues that arise from non-compliance. If you have any questions or concerns about using the Apple Pay button, please consult the [Apple Pay guidelines](https://developer.apple.com/design/human-interface-guidelines/technologies/apple-pay/buttons-and-marks) or contact Apple directly for assistance.
 
-If you only want to use Apple Pay with the Ottu Checkout SDK and control the other payment methods yourself, you can customize the Apple Pay button using the Checkout SDK's formsOfPayment and css properties.
+If you only want to use Apple Pay with the Ottu Checkout SDK and control the other payment methods yourself, you can customize the Apple Pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array) and [css](web.md#css-object) properties.
 
 To display only the Apple Pay button with default CSS, use the following code:
 
@@ -479,9 +479,9 @@ Checkout.init({
 });
 ```
 
-The formsOfPayment property tells the Checkout SDK to render only the Apple Pay button. If you don't include this property, the SDK will render all available payment options.
+The [formsOfPayment](web.md#formsofpayment-array) property tells the Checkout SDK to render only the Apple Pay button. If you don't include this property, the SDK will render all available payment options.
 
-To customize the Apple Pay button's appearance, you can use the css property. The example below adjusts the size of the button and centers it within the Checkout SDK container:
+To customize the Apple Pay button's appearance, you can use the [css](web.md#css-object) property. The example below adjusts the size of the button and centers it within the Checkout SDK container:
 
 ```javascript
 Checkout.init({

@@ -90,13 +90,13 @@ The `apiKey` is your Ottu [API public key](../rest-api/authentication.md#public-
 
 According to the REST API [documentation](../rest-api/), the `apiKey` property should be set to your Ottu  [API public key](../rest-api/authentication.md#public-key).
 
-#### **session\_id **_<mark style="color:blue;">**`string`**</mark>_
+#### ****[**session\_id**](web.md#session\_id-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
 The `session_id` the unique identifier for the payment transaction associated with the checkout process.
 
 This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only).
 
-#### **lang **_<mark style="color:blue;">**`string`**</mark>_
+#### ****[**lang**](web.md#lang-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
 The `lang` property is used to specify the language in which the checkout elements should be displayed. This property can be set to either `"en"` (for English) or `"ar"` (for Arabic).
 
@@ -215,15 +215,17 @@ Here's an example of how `errorCallback` might be defined:
 
 In this example, the `errorCallback` function is defined and passed as the value of the `data-error` attribute on the Checkout script tag. If an error occurs during a payment, the function will be invoked with an `error` object. The function will then handle the error as needed and redirect the customer to `https://payment.example.com`.
 
-Note that the `errorCallback` function is not required to perform a redirection. It can handle errors in any way that is appropriate for your application.
+{% hint style="info" %}
+`errorCallback` function is not required to perform a redirection. It can handle errors in any way that is appropriate for your application.
+{% endhint %}
 
 #### ****[**window.cancelCallback**](web.md#window.cancelcallback)****
 
 The cancelCallback in the Checkout SDK is a callback function that is invoked when a payment is canceled.
 
-To define the `cancelCallback` function, you can use the `data-cancel` attribute on the Checkout script tag to specify a global function that will handle cancellations. If a customer cancels a payment, the `cancelCallback` function will be invoked with a `data` object.
+To define the `cancelCallback` function, you can use the `data-cancel` attribute on the Checkout script tag to specify a global function that will handle cancellations. If a customer cancels a payment, the `cancelCallback` function will be invoked with a [data object](web.md#data-object).
 
-`cancelCallback` receives a `data` object see data object where the `data.status` is "canceled".
+`cancelCallback` receives a [data object](web.md#data-object),  where the data.status is "canceled".
 
 Here's an example of how `cancelCallback` might be defined:
 
@@ -235,7 +237,7 @@ window.cancelCallback = function (data) {
 };
 ```
 
-In this example, the `cancelCallback` function is defined and passed as the value of the `data-cancel` attribute on the Checkout script tag. If a customer cancels a payment, the function will be invoked with a `data` object containing information about the cancelled transaction. The function will then handle the cancellation as needed and refresh the Checkout SDK with `Checkout.reload()`.
+In this example, the `cancelCallback` function is defined and passed as the value of the `data-cancel` attribute on the Checkout script tag. If a customer cancels a payment, the function will be invoked with a [data object](web.md#data-object) containing information about the cancelled transaction. The function will then handle the cancellation as needed and refresh the Checkout SDK with [Checkout.reload()](web.md#checkout.reload).
 
 #### ****[**window.successCallback**](web.md#window.successcallback)****
 
@@ -249,9 +251,9 @@ window.successCallback = function (data) {
 };
 ```
 
-`successCallback` receives a `data` object see data object where the `data.status` is "success".
+`successCallback` receives a [data object](web.md#data-object), where the `data.status` is "success".
 
-In this example, the `successCallback` function is defined and passed as the value of the `data-success` attribute on the Checkout script tag. If the payment process completes successfully, the function will be invoked with a `data` object containing information about the completed transaction. The function will then redirect the customer to the specified `redirect_url` using `window.location.href`.
+In this example, the `successCallback` function is defined and passed as the value of the `data-success` attribute on the Checkout script tag. If the payment process completes successfully, the function will be invoked with a [data object](web.md#data-object) containing information about the completed transaction. The function will then redirect the customer to the specified `redirect_url` using `window.location.href`.
 
 #### ****[**Example**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#example-1)****
 
@@ -313,7 +315,8 @@ In this example, the beforeRedirect callback sends a request to an API endpoint 
 
 #### ****[**data Object**](web.md#data-object)****
 
-The data object received by the cancelCallback and successCallback contains information related to the payment transaction, such as the status of the payment process, the session ID generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
+The data object received by the cancelCallback and successCallback contains information related to the payment transaction, such as the status of the payment process, the session ID generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.\
+Data object child parameters:
 
 #### ****[**message**](web.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
 

@@ -437,7 +437,7 @@ A unique identifier associated with the payment process. It is sent to the payme
 
 ### [Apple Pay](web.md#apple-pay)
 
-If you have completed the Apple Pay integration between Ottu and Apple, the Checkout SDK will automatically make the necessary checks to display the Apple Pay button.
+If you have completed the [Apple Pay integration](web.md#apple-pay) between Ottu and Apple, the Checkout SDK will automatically make the necessary checks to display the Apple Pay button.
 
 When you initialize the Checkout SDK with your session ID and payment gateway codes, the SDK will automatically verify the following conditions:
 

@@ -315,16 +315,19 @@ In this example, the beforeRedirect callback sends a request to an API endpoint 
 
 #### ****[**data Object**](web.md#data-object)****
 
-The data object received by the cancelCallback and successCallback contains information related to the payment transaction, such as the status of the payment process, the session ID generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.\
-Data object child parameters:
+The data object received by the cancelCallback and successCallback contains information related to the payment transaction, such as the status of the payment process, the session ID generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
+
+<details>
+
+<summary><a href="web.md#data-object-child-parameters">Data object child parameters</a></summary>
 
 #### ****[**message**](web.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
 
 Is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
 
-#### ****[**session\_id**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#session\_id-1)****
+#### ****[**session\_id**](web.md#session\_id-string-1) ** **_<mark style="color:blue;">**`string`**</mark>_
 
-`session_id` is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's Session ID endpoint. This parameter is required to initialize the Checkout SDK.
+`session_id` is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [Session ID](../rest-api/checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
 
 #### &#x20;**** [**status**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#status-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
@@ -334,26 +337,30 @@ The status of the checkout process. Possible values are:
 * `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same session\_id can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
 * `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
 
-#### ****[**redirect\_url**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#redirect\_url)****
+#### ****[**redirect\_url** ](web.md#redirect\_url-url)_<mark style="color:blue;">**`URL`**</mark>_
 
-`redirect_url`, is the url which is provided in Checkout API for redirect\_url. See check out API redirect\_url.
+`redirect_url`, is the URL which is provided in Checkout API for redirect\_url. See check out API [redirect\_url](../rest-api/checkout-api.md#redirect\_url-url-optional).
 
-#### ****[**order\_no**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#order\_no)****
+#### ****[**order\_no**](web.md#order\_no-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
-The order number provided in the Checkout API. See checkout API order\_no.
+The order number provided in the [Checkout API](../rest-api/checkout-api.md). See checkout API [order\_no](../rest-api/checkout-api.md#order\_no-string-optional).
 
 #### ****[**operation**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#operation-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
 This property indicates whether the payment was a direct charge (`pay`) or an authorization (`authorized`) of the payment amount.
 
 * `pay`: the payment is immediately charged to the customer's account and the funds are transferred to the merchant.
-* `authorized`: the payment amount is only reserved on the customer's account and not immediately charged. The payment can then be captured at a later time using the `capture` API.
+* `authorized`: the payment amount is only reserved on the customer's account and not immediately charged. The payment can then be captured at a later time using the [capture API](../rest-api/operations/version-2.md#capture).
 
 Note that authorization typically lasts for a limited time, after which it will expire and the reserved funds will be released back to the customer's account.
 
 #### ****[**reference\_number**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#reference\_numberstring)_<mark style="color:blue;">**`string`**</mark>_
 
 A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
+
+</details>
+
+#### ****
 
 #### [Extended example](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#extended-example)
 
@@ -507,4 +514,4 @@ The Apple Pay button inside the Checkout SDK container can be customized using t
 
 By default, the width of the Apple Pay button is 90% of the Checkout SDK container width, with top and bottom margins of 12px. The Checkout SDK creates a containerized `div` with the CSS class `ottu__sdk-main` and places the Apple Pay button inside it. This container has no margin or padding added.
 
-To learn more about the `css` property, see the CSS section. The diagram below shows how the Apple Pay button and its container are structured:
+To learn more about the `css` property, see the [CSS](web.md#css-object).

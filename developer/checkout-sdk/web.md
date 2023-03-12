@@ -8,9 +8,9 @@ To use the Checkout SDK, you'll need to include the library in your web applicat
 Please note that the Checkout SDK requires the implementation of the [Checkout API](../rest-api/checkout-api.md) in order to function properly.
 {% endhint %}
 
-## [Checkout SDK](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#checkout-sdk)
+## [Checkout SDK](web.md#checkout-sdk)
 
-## [Demo](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#demo)
+## [Demo](web.md#demo)
 
 Below is a demo of the Checkout SDK in action. This demo shows how the Checkout SDK can be used to create a streamlined checkout experience for customers, with support for multiple forms of payment and a customizable interface.
 

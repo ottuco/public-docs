@@ -2,7 +2,7 @@
 
 The [Checkout SDK](./) is a JavaScript library provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your web application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
 
-To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu merchant ID, [session ID](../rest-api/checkout-api.md#session\_id-string-read-only), and [API key](../rest-api/authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the CSS styling for the checkout interface, and more.
+To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API key](../rest-api/authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [css](web.md#css-object) styling for the checkout interface, and more.
 
 {% hint style="warning" %}
 Please note that the Checkout SDK requires the implementation of the [Checkout API](../rest-api/checkout-api.md) in order to function properly.
@@ -55,7 +55,7 @@ In this example, the `Checkout.reload` function is called to refresh the content
 
 #### ****[**selector**](web.md#selector-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
 
-The `selector` property in the Checkout SDK is used to specify the [CSS ](web.md#css-object)selector for the HTML element that will contain the checkout form. This is typically a `<div>` element on your web page.
+The `selector` property in the Checkout SDK is used to specify the css selector for the HTML element that will contain the checkout form. This is typically a `<div>` element on your web page.
 
 To specify the selector, you can add a `<div>` element to your web page with a unique `id` attribute, like this:
 
@@ -120,13 +120,13 @@ This property can be particularly useful when you want to customize the checkout
 
 `css` can be used to override some of the elements rendered by the SDK to better integrate with your website.
 
-There are several CSS classes that can be overridden using the [CSS](web.md#css-object) property, including:
+There are several css classes that can be overridden using the [css](web.md#css-object) property, including:
 
 * `.ottu__sdk-main`: the class of the div which wraps all the elements of the container. It's useful to override this when you want to modify the size of the rendered content by the SDK.
 * `.ottu__sdk-apple-pay-button-type`: specifies the button type of the Apple Pay button. This class defaults to `pay` and if there is no card in the wallet, it will automatically change to `setUp`. More information can be found on the ApplePay official documentation for [ApplePay Button Type](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).
 * `.apple-pay-button`: the class of the Apple Pay button, which is a div. It can be customized for width, padding, margin, and more. Useful to customize when `formsOfPayment` is configured to display only the Apple Pay button.
 
-Here's an example of how [Checkout.init](web.md#checkout.init) might be called with a [CSS](web.md#css-object) property to customize the `.ottu__sdk-main` class, `.ottu__sdk-apple-pay-button-type` class, and `.apple-pay-button` class:
+Here's an example of how [Checkout.init](web.md#checkout.init) might be called with a  [css](web.md#css-object) property to customize the `.ottu__sdk-main` class, `.ottu__sdk-apple-pay-button-type` class, and `.apple-pay-button` class:
 
 ```javascript
 Checkout.init({
@@ -155,7 +155,7 @@ Checkout.init({
 });
 ```
 
-In this example, the  [CSS](web.md#css-object) property is set to override the `.ottu__sdk-main`, `.ottu__sdk-apple-pay-button-type`, and `.apple-pay-button` classes with new styles. The updated styles for these classes will be applied to the checkout container when it's rendered by the SDK.
+In this example, the [css](web.md#css-object) property is set to override the `.ottu__sdk-main`, `.ottu__sdk-apple-pay-button-type`, and `.apple-pay-button` classes with new styles. The updated styles for these classes will be applied to the checkout container when it's rendered by the SDK.
 
 #### [Example](web.md#example)
 
@@ -315,7 +315,7 @@ In this example, the beforeRedirect callback sends a request to an API endpoint 
 
 #### ****[**data Object**](web.md#data-object)****
 
-The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session ID](web.md#session\_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
+The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](web.md#session\_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
 
 <details>
 
@@ -451,7 +451,7 @@ If you have completed the [Apple Pay integration](web.md#apple-pay) between Ottu
 
 When you initialize the Checkout SDK with your [session\_id](web.md#session\_id-string) and payment gateway [codes](../rest-api/checkout-api.md#pg\_codes-list-required), the SDK will automatically verify the following conditions:
 
-* When initializing the Checkout SDK, a session ID with a \[pg\_code]\[pg\_code.checkout API] that was associated with the Apple Pay Payment Service was supplied.
+* When initializing the Checkout SDK, a [session\_id](web.md#session\_id-string) with a [pg\_codes](../rest-api/checkout-api.md#pg\_codes-list-required) that was associated with the Apple Pay Payment Service was supplied.
 * The customer has an Apple device that supports Apple Pay payments.
 * The browser being used supports Apple Pay.
 * The customer has a wallet configured on their Apple Pay device.

@@ -14,7 +14,7 @@ Please note that the Checkout SDK requires the implementation of the [Checkout A
 
 Below is a demo of the Checkout SDK in action. This demo shows how the Checkout SDK can be used to create a streamlined checkout experience for customers, with support for multiple forms of payment and a customizable interface.
 
-#### [Installation](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#installation)
+#### [Installation](web.md#installation)
 
 To install the Checkout SDK, you'll need to include the library in your web application by adding a script tag to your HTML section. You can do this by using the following code snippet:
 
@@ -33,13 +33,13 @@ You're all set! You can now use the [Checkout SDK ](./)to create a checkout form
 
 ### [Functions](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#functions)
 
-#### ****[**Checkout.init**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#checkout.init)****
+#### ****[**Checkout.init**](web.md#checkout.init)****
 
 Is the function that initializes the [checkout process](./#ottu-checkout-sdk-flow) and sets up the necessary configuration options for the [Checkout SDK](./). It needs to be called once on your web page to initialize the checkout process, and it must be called with a configuration object that includes all the necessary options for the checkout process.
 
 When you call `Checkout.init`, the SDK will take care of setting up the necessary components for the checkout process, such as creating a form for the customer to enter their payment details, and handling communication with Ottu's servers to process the payment.
 
-#### ****[**Checkout.reload**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#checkout.reload)****
+#### ****[**Checkout.reload**](web.md#checkout.reload)****
 
 The `Checkout.reload` function in the Checkout SDK is used to refresh the SDK. It's useful when you want to reload the **content** of the SDK after an **error** has occurred or when the content needs to be **refreshed**.
 
@@ -53,9 +53,9 @@ In this example, the `Checkout.reload` function is called to refresh the content
 
 #### ****[**Properties** ](web.md#properties)****
 
-#### ****[**selector**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#selector-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
+#### ****[**selector**](web.md#selector-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
 
-The `selector` property in the Checkout SDK is used to specify the CSS selector for the HTML element that will contain the checkout form. This is typically a `<div>` element on your web page.
+The `selector` property in the Checkout SDK is used to specify the [CSS ](web.md#css-object)selector for the HTML element that will contain the checkout form. This is typically a `<div>` element on your web page.
 
 To specify the selector, you can add a `<div>` element to your web page with a unique `id` attribute, like this:
 
@@ -78,17 +78,17 @@ Checkout.init({
 
 In this example, the `selector` property is set to `"checkout"`, which means that the checkout form will be contained in the `<div>` element with `id="checkout"`.
 
-#### ****[**merchant\_id**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#merchant\_id-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
+#### ****[**merchant\_id**](web.md#merchant\_id-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
 
 The `merchant_id` specifies your Ottu merchant domain. This should be the root domain of your Ottu account, without the "https://" or "http://" prefix.
 
 For example, if your Ottu URL is `https://example.ottu.com`, then your `merchant_id` should be **example.ottu.com**. This property is used to identify which Ottu merchant account the checkout process should be linked to.
 
-#### ****[**apiKey**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#apikey)****
+#### ****[**apiKey**](web.md#apikey)****
 
 The `apiKey` is your Ottu [API public key](../rest-api/authentication.md#public-key). This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
 
-According to the REST API [documentation](../rest-api/), the `apiKey` property should be set to your Ottu  [API public key](../rest-api/authentication.md#public-key).
+According to the REST [API documentation](../rest-api/), the `apiKey` property should be set to your Ottu  [API public key](../rest-api/authentication.md#public-key).
 
 #### ****[**session\_id**](web.md#session\_id-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
@@ -101,7 +101,7 @@ This unique identifier is automatically generated when the payment transaction i
 The `lang` property is used to specify the language in which the checkout elements should be displayed. This property can be set to either `"en"` (for English) or `"ar"` (for Arabic).
 
 When `lang` is set to `"en"`, the checkout form will be displayed in English, and when it's set to `"ar"`, the checkout elements will be displayed in Arabic. Additionally, when the `lang` parameter is set to `"ar"`, the layout will switch to right-to-left (RTL) to accommodate Arabic script. \
-Ror more information on how to use lang parameter in the Checkout API, see [lang](../rest-api/checkout-api.md#language-string-optional).
+For more information on how to use lang parameter in the Checkout API, see [lang](../rest-api/checkout-api.md#language-string-optional).
 
 #### ****[**formsOfPayment**](web.md#formsofpayment-array) ** **_<mark style="color:blue;">**`array`**</mark>_
 
@@ -120,13 +120,13 @@ This property can be particularly useful when you want to customize the checkout
 
 `css` can be used to override some of the elements rendered by the SDK to better integrate with your website.
 
-There are several CSS classes that can be overridden using the `css` property, including:
+There are several CSS classes that can be overridden using the [CSS](web.md#css-object) property, including:
 
 * `.ottu__sdk-main`: the class of the div which wraps all the elements of the container. It's useful to override this when you want to modify the size of the rendered content by the SDK.
 * `.ottu__sdk-apple-pay-button-type`: specifies the button type of the Apple Pay button. This class defaults to `pay` and if there is no card in the wallet, it will automatically change to `setUp`. More information can be found on the ApplePay official documentation for [ApplePay Button Type](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).
 * `.apple-pay-button`: the class of the Apple Pay button, which is a div. It can be customized for width, padding, margin, and more. Useful to customize when `formsOfPayment` is configured to display only the Apple Pay button.
 
-Here's an example of how [Checkout.init](web.md#checkout.init) might be called with a [css](web.md#css-object) property to customize the `.ottu__sdk-main` class, `.ottu__sdk-apple-pay-button-type` class, and `.apple-pay-button` class:
+Here's an example of how [Checkout.init](web.md#checkout.init) might be called with a [CSS](web.md#css-object) property to customize the `.ottu__sdk-main` class, `.ottu__sdk-apple-pay-button-type` class, and `.apple-pay-button` class:
 
 ```javascript
 Checkout.init({
@@ -155,7 +155,7 @@ Checkout.init({
 });
 ```
 
-In this example, the `css` property is set to override the `.ottu__sdk-main`, `.ottu__sdk-apple-pay-button-type`, and `.apple-pay-button` classes with new styles. The updated styles for these classes will be applied to the checkout container when it's rendered by the SDK.
+In this example, the  [CSS](web.md#css-object) property is set to override the `.ottu__sdk-main`, `.ottu__sdk-apple-pay-button-type`, and `.apple-pay-button` classes with new styles. The updated styles for these classes will be applied to the checkout container when it's rendered by the SDK.
 
 #### [Example](web.md#example)
 
@@ -315,7 +315,7 @@ In this example, the beforeRedirect callback sends a request to an API endpoint 
 
 #### ****[**data Object**](web.md#data-object)****
 
-The data object received by the cancelCallback and successCallback contains information related to the payment transaction, such as the status of the payment process, the session ID generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
+The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session ID](web.md#session\_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
 
 <details>
 
@@ -327,25 +327,25 @@ Is a string message that can be displayed to the customer. It provides a custome
 
 #### ****[**session\_id**](web.md#session\_id-string-1) ** **_<mark style="color:blue;">**`string`**</mark>_
 
-`session_id` is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [Session ID](../rest-api/checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
+`session_id` is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
 
-#### &#x20;**** [**status**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#status-string) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### &#x20;**** [**status**](web.md#status-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
 The status of the checkout process. Possible values are:
 
 * `success`: The customer was charged successfully, and they can be redirected to a success page or display a success message.
-* `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same session\_id can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
+* `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session\_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
 * `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
 
 #### ****[**redirect\_url** ](web.md#redirect\_url-url)_<mark style="color:blue;">**`URL`**</mark>_
 
-`redirect_url`, is the URL which is provided in Checkout API for redirect\_url. See check out API [redirect\_url](../rest-api/checkout-api.md#redirect\_url-url-optional).
+`redirect_url`, is the URL which is provided in [Checkout API](../rest-api/checkout-api.md) for redirect\_url. See check out API [redirect\_url](../rest-api/checkout-api.md#redirect\_url-url-optional).
 
 #### ****[**order\_no**](web.md#order\_no-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
 The order number provided in the [Checkout API](../rest-api/checkout-api.md). See checkout API [order\_no](../rest-api/checkout-api.md#order\_no-string-optional).
 
-#### ****[**operation**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#operation-string) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### ****[**operation**](web.md#operation-string) ** **_<mark style="color:blue;">**`string`**</mark>_
 
 This property indicates whether the payment was a direct charge (`pay`) or an authorization (`authorized`) of the payment amount.
 
@@ -354,7 +354,7 @@ This property indicates whether the payment was a direct charge (`pay`) or an au
 
 Note that authorization typically lasts for a limited time, after which it will expire and the reserved funds will be released back to the customer's account.
 
-#### ****[**reference\_number**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#reference\_numberstring)_<mark style="color:blue;">**`string`**</mark>_
+#### ****[**reference\_number**](web.md#reference\_numberstring)_<mark style="color:blue;">**`string`**</mark>_
 
 A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
 
@@ -449,7 +449,7 @@ A unique identifier associated with the payment process. It is sent to the payme
 
 If you have completed the [Apple Pay integration](web.md#apple-pay) between Ottu and Apple, the Checkout SDK will automatically make the necessary checks to display the Apple Pay button.
 
-When you initialize the Checkout SDK with your session ID and payment gateway codes, the SDK will automatically verify the following conditions:
+When you initialize the Checkout SDK with your [session\_id](web.md#session\_id-string) and payment gateway [codes](../rest-api/checkout-api.md#pg\_codes-list-required), the SDK will automatically verify the following conditions:
 
 * When initializing the Checkout SDK, a session ID with a \[pg\_code]\[pg\_code.checkout API] that was associated with the Apple Pay Payment Service was supplied.
 * The customer has an Apple device that supports Apple Pay payments.
@@ -470,7 +470,7 @@ It's the responsibility of the merchant to ensure that their use of the Apple Pa
 
 If you only want to use Apple Pay with the Ottu Checkout SDK and control the other payment methods yourself, you can customize the Apple Pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array) and [css](web.md#css-object) properties.
 
-To display only the Apple Pay button with default CSS, use the following code:
+To display only the Apple Pay button with default css, use the following code:
 
 ```javascript
 Checkout.init({
@@ -507,11 +507,11 @@ Checkout.init({
 });
 ```
 
-The Apple Pay button inside the Checkout SDK container can be customized using the css property by defining the following CSS classes:
+The Apple Pay button inside the Checkout SDK container can be customized using the [css](web.md#css-object) property by defining the following css classes:
 
 * `.ottu__sdk-apple-pay-button-type`: This class determines the type of the Apple Pay button. For example, setting `-apple-pay-button-type: plain` will render a plain Apple Pay button, while setting it to `buy` or `donate` will render buttons with the corresponding labels.
 * `.apple-pay-button`: This class sets the width, margin, and padding of the button.
 
-By default, the width of the Apple Pay button is 90% of the Checkout SDK container width, with top and bottom margins of 12px. The Checkout SDK creates a containerized `div` with the CSS class `ottu__sdk-main` and places the Apple Pay button inside it. This container has no margin or padding added.
+By default, the width of the Apple Pay button is 90% of the Checkout SDK container width, with top and bottom margins of 12px. The Checkout SDK creates a containerized `div` with the css class `ottu__sdk-main` and places the Apple Pay button inside it. This container has no margin or padding added.
 
-To learn more about the `css` property, see the [CSS](web.md#css-object).
+To learn more about the `css` property, see the [css](web.md#css-object).

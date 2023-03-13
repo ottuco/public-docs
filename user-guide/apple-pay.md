@@ -141,28 +141,28 @@ After saving, “PEM Certificate” & “Key File” would be generated automati
 
 #### :digit\_two:****:digit\_two:****[**Click on Add new certificate**](apple-pay.md#click-on-add-new-certificate)****
 
-#### ****:digit\_two:****:digit\_three:**Download the file- “Apple Pay Certificate Signing Request” file**
+#### ****:digit\_two:****:digit\_three:****[**Download the file- “Apple Pay Certificate Signing Request” file**](apple-pay.md#download-the-file-apple-pay-certificate-signing-request-file)****
 
 ![](../.gitbook/assets/24-cert-signingreq-file.png)
 
-&#x20;:digit\_two:****:digit\_four:**Create a certificate**
+#### &#x20;:digit\_two:****:digit\_four:****[**Create a certificate**](apple-pay.md#create-a-certificate)****
 
 **Login to Apple Pay developer account, go to Merchant ID that was created and create a certificate under Apple Pay Payment processing certificate.**
 
 ![](../.gitbook/assets/25-configure-merchantid.png)
 
-&#x20;**26. Click No on this page and continue.**
+#### &#x20;:digit\_two:****:digit\_five:****[**Click No on this page and continue**](apple-pay.md#click-no-on-this-page-and-continue)****
 
 ![](../.gitbook/assets/26-click-no.png)
 
-&#x20;**27. Upload the CSR file obtained from MPGS portal.**
+#### ****:digit\_two:****:digit\_six:****[**Upload the CSR file obtained from MPGS portal**](apple-pay.md#upload-the-csr-file-obtained-from-mpgs-portal)****
 
 ![](../.gitbook/assets/27-uplpoad-csrfile.png)
 
-**28. Download the file**, **which is the Apple Pay Payment processing certificate file.** &#x20;
+#### ****:digit\_two:****:digit\_seven:****[**Download the file**, **which is the Apple Pay Payment processing certificate file**](apple-pay.md#download-the-file-which-is-the-apple-pay-payment-processing-certificate-file) &#x20;
 
 ![](../.gitbook/assets/28-download-processingfile.png)
 
-**29. Upload the file in MPGS portal.**
+#### ****:digit\_two:****:digit\_eight:**Upload the file in MPGS portal**
 
 ![](../.gitbook/assets/29-upload-mpgsfile.png)

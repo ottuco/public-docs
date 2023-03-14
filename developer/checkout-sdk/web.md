@@ -512,8 +512,8 @@ The Apple Pay button inside the Checkout SDK container can be customized using t
 * `.ottu__sdk-apple-pay-button-type`: This class determines the type of the Apple Pay button. For example, setting `-apple-pay-button-type: plain` will render a plain Apple Pay button, while setting it to `buy` or `donate` will render buttons with the corresponding labels.
 * `.apple-pay-button`: This class sets the width, margin, and padding of the button.
 
-By default, the width of the Apple Pay button is 90% of the Checkout SDK container width, with top and bottom margins of 12px. The Checkout SDK creates a containerized `div` with the css class `ottu__sdk-main` and places the Apple Pay button inside it. This container has no margin or padding added.
-
-To learn more about the `css` property, see the [css](web.md#css-object).
+By default, the width of the Apple Pay button is 90% of the Checkout SDK container width, with top and bottom margins of 12px. The Checkout SDK creates a containerized `div` with the css class `ottu__sdk-main` and places the Apple Pay button inside it. This container has no margin or padding added, as shown in below figure.
 
 <figure><img src="../../.gitbook/assets/Button_ (2).png" alt=""><figcaption></figcaption></figure>
+
+To learn more about the `css` property, see the [css](web.md#css-object).

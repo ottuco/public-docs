@@ -515,3 +515,5 @@ The Apple Pay button inside the Checkout SDK container can be customized using t
 By default, the width of the Apple Pay button is 90% of the Checkout SDK container width, with top and bottom margins of 12px. The Checkout SDK creates a containerized `div` with the css class `ottu__sdk-main` and places the Apple Pay button inside it. This container has no margin or padding added.
 
 To learn more about the `css` property, see the [css](web.md#css-object).
+
+<figure><img src="../../.gitbook/assets/Button_ (2).png" alt=""><figcaption></figcaption></figure>

@@ -115,8 +115,8 @@ This will be a checkbox for the customer to choose whether to save the card.\
 Max length: 64.
 
 {% hint style="info" %}
-If the merchant wants to enable KFAST on KNET, cusotmer\_phone will be ** **_<mark style="color:red;">**`required`**</mark>_\
-**KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with customer\_phone.
+If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md#customer\_phone-string-optional) will be ** **_<mark style="color:red;">**`required`**</mark>_\
+**KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
 {% endhint %}
 
 #### <mark style="color:blue;"></mark>[<mark style="color:blue;">customer\_last\_name</mark>](checkout-api.md#customer\_last\_name-string-optional) <mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_

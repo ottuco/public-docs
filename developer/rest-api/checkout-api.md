@@ -47,16 +47,7 @@ Min value: 0.01
 The attachment file will be stored along with the payment transaction, and the payment transaction supports only one attachment\
 It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type\
 Attachment could not be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/JSON) encoding type\
-Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"\
-Max length: 100
-
-
-
-#### ****[**type**](checkout-api.md#type-string-required) ** **_<mark style="color:blue;">**`string`**</mark>_<mark style="color:blue;">** **</mark><mark style="color:blue;">****</mark>** **_<mark style="color:red;">**`required`**</mark>_
-
-Defines under which plugin the transaction will be created.\
-Available choices: payment\_request, e\_commerce.\
-Max length: 24.
+Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"
 
 #### ****[**billing\_address**](checkout-api.md#billing\_address-object-optional) **** _<mark style="color:blue;">`object`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
 
@@ -309,37 +300,15 @@ It should be provided by merchant.\
 Max length: 200.\
 See [Webhook](../webhook/).
 
-####
-
-#### ****
-
 ### [Response parameters](checkout-api.md#response-parameters)
 
 These parameters will be returned for all the response status.
 
-#### ****[**session\_id** ](checkout-api.md#session\_id-string-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+#### ****[**amount** ](checkout-api.md#amount-string)_<mark style="color:blue;">`string`</mark>_
 
-Ottu unique identifier which gets generated when the transaction is created.\
-It can be used to perform subsequent operations, like retrieve, acknowledge, refund, capture, and cancelation.\
-Max lengthlength: 128.
+The merchant should always check if the amount he receives from Ottu is the same amount of the order, to avoid user changing the cart amount in between.
 
-#### ****[**operation** ](checkout-api.md#operation-string-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
-
-Choice from ("purchase","authorize"). Depnding on how the PG is being selected.\
-Max length: 16.
-
-#### [initiator\_id](checkout-api.md#initiator\_idstring-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
-
-it’s the ID of the user who did the api call.\
-_`It is pressent only when Basic Authentication is used, because API Key Authentication is not associated with any user`_.\
-Max length: 11.
-
-#### ****[**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-url-read-only) **** _<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
-
-Short checkout url.\
-[shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) request parameter should be "true" in order to generate it.
-
-#### ****[**attachment** ](checkout-api.md#attachment-url)_<mark style="color:blue;">`URL`</mark>_
+#### ****[**attachment**](checkout-api.md#undefined) **** _<mark style="color:blue;">`URL`</mark>_
 
 Attachment retrieval URL, the attachment should be uploaded using [attachment](checkout-api.md#attachment-file-optional) request parameter.
 
@@ -349,9 +318,21 @@ A short attachment retrieval URL.\
 [shortify\_attachment\_url](checkout-api.md#shortify\_attachment\_url-bool-optional) request parameter should be "true" in order to generate it.\
 Max length: 200.
 
-#### ****[**amount** ](checkout-api.md#amount-string)_<mark style="color:blue;">`string`</mark>_
+#### ****[**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-url) **** _<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
 
-The merchant should always check if the amount he receives from Ottu is the same amount of the order, to avoid user changing the cart amount in between.
+Short checkout url.\
+[shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) request parameter should be "true" in order to generate it.
+
+#### [initiator\_id](checkout-api.md#initiator\_idstring-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+
+it’s the ID of the user who did the api call.\
+_`It is pressent only when Basic Authentication is used, because API Key Authentication is not associated with any user`_.\
+Max length: 1
+
+#### ****[**operation** ](checkout-api.md#operation-string)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+
+Choice from ("purchase","authorize"). Depnding on how the PG is being selected.\
+Max length: 16.
 
 #### ****[**payment\_methods** ](checkout-api.md#payment\_methods-list)_<mark style="color:blue;">`list`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
 
@@ -359,7 +340,11 @@ List of dicts.
 
 #### ****[**dict**](checkout-api.md#dict)****
 
-Dict generated according to specific [pg\_code](checkout-api.md#pg\_codes-list-required) from pg\_codes list from request.
+Object generated according to specific [pg\_code](checkout-api.md#pg\_codes-list-required) from pg\_codes list from request.
+
+<details>
+
+<summary><em>dict details</em></summary>
 
 #### :digit\_one: **** [**code** ](checkout-api.md#code-string)_<mark style="color:blue;">**`string`**</mark>_
 
@@ -389,7 +374,13 @@ Choice from (“redirect”, ...).
 
 This URL redirects to the payment page.
 
+</details>
 
+#### ****[**session\_id** ](checkout-api.md#session\_id-string-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+
+Ottu unique identifier which gets generated when the transaction is created.\
+It can be used to perform subsequent operations, like retrieve, acknowledge, refund, capture, and cancelation.\
+Max lengthlength: 128.
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
 

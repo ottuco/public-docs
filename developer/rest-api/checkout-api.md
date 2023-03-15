@@ -35,32 +35,33 @@ https://<ottu-url>/b/checkout/v1/pymt-txn/
 
 ### [Request parameters](checkout-api.md#request-parameters)
 
+#### ****[**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`required`</mark>_
+
+The amount of the transaction\
+The number of decimals must correlate with the [currency\_code](checkout-api.md#currency\_code-string-required).\
+Max length: 24\
+Min value: 0.01
+
+#### [attachment](checkout-api.md#attachment-fileoptional) <mark style="color:blue;">**`file`**</mark>_<mark style="color:blue;">**`optional`**</mark>_
+
+The attachment file will be stored along with the payment transaction, and the payment transaction supports only one attachment\
+It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type\
+Attachment could not be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/JSON) encoding type\
+Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"\
+Max length: 100
+
 #### ****[**type**](checkout-api.md#type-string-required) ** **_<mark style="color:blue;">**`string`**</mark>_<mark style="color:blue;">** **</mark><mark style="color:blue;">****</mark>** **_<mark style="color:red;">**`required`**</mark>_
 
 Defines under which plugin the transaction will be created.\
 Available choices: payment\_request, e\_commerce.\
 Max length: 24.
 
-#### ****[**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`required`</mark>_
-
-The amount of the transaction. \
-The number of decimals must correlate with the [currency\_code](checkout-api.md#currency\_code-string-required).\
-Must be positive.\
-Max length: 24. \
-Min value: 0.01.
+#### ****
 
 #### [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) <mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short checkout URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
 If an external URL shortening service, such as Bitly, is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be shorter than checkout url response parameter. If not configured, the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be in the format of "https://\<ottu-url>>/b/abc123".
-
-#### [attachment](checkout-api.md#attachment-fileoptional) <mark style="color:blue;">**`file`**</mark>_<mark style="color:blue;">**`optional`**</mark>_
-
-The attachment file will be stored along with the payment transaction, and the payment transaction supports only one attachment.\
-It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type.\
-Attachment could not be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/JSON) encoding type.\
-Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"\
-Max length: 100.
 
 #### [s**hortify\_attachment\_url** ](checkout-api.md#shortify\_attachment\_url-bool-optional)<mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 

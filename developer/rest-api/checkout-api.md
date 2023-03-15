@@ -1,5 +1,11 @@
 # Checkout API
 
+##
+
+##
+
+##
+
 ## [Getting started](checkout-api.md#getting-started)
 
 Ottu provides a collection of APIs, which is a quick way to test the payment and enables you to process and manage payments.
@@ -47,7 +53,8 @@ Min value: 0.01
 The attachment file will be stored along with the payment transaction, and the payment transaction supports only one attachment\
 It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type\
 Attachment could not be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/JSON) encoding type\
-Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"
+Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"\
+The name of the attached file should be no more than 100.
 
 #### ****[**billing\_address**](checkout-api.md#billing\_address-object-optional) **** _<mark style="color:blue;">`object`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
 
@@ -320,8 +327,7 @@ The merchant should always check if the amount he receives from Ottu is the same
 
 #### ****[**attachment**](checkout-api.md#undefined) **** _<mark style="color:blue;">`URL`</mark>_
 
-Attachment retrieval URL, the attachment should be uploaded using [attachment](checkout-api.md#attachment-file-optional) request parameter.\
-Max length: 100
+Attachment retrieval URL, the attachment should be uploaded using [attachment](checkout-api.md#attachment-file-optional) request parameter.
 
 #### ****[**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-url) **** _<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
 

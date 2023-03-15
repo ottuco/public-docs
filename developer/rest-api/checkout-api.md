@@ -119,6 +119,16 @@ If the merchant wants to enable KFAST on KNET, cusotmer\_phone will be ** **_<ma
 **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with customer\_phone.
 {% endhint %}
 
+#### <mark style="color:blue;"></mark>[<mark style="color:blue;">customer\_last\_name</mark>](checkout-api.md#customer\_last\_name-string-optional) <mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+
+For the customer's last name.\
+Max length 64.
+
+#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string optional`</mark>_
+
+For the customer's phone number.\
+Max length 16.
+
 #### [due\_datetime](checkout-api.md#due\_datetime-string-optional) **** _<mark style="color:blue;">`date time`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
 
 It is the due date of the invoice against the requested payment amount.\
@@ -310,7 +320,8 @@ The merchant should always check if the amount he receives from Ottu is the same
 
 #### ****[**attachment**](checkout-api.md#undefined) **** _<mark style="color:blue;">`URL`</mark>_
 
-Attachment retrieval URL, the attachment should be uploaded using [attachment](checkout-api.md#attachment-file-optional) request parameter.
+Attachment retrieval URL, the attachment should be uploaded using [attachment](checkout-api.md#attachment-file-optional) request parameter.\
+Max length: 200
 
 #### ****[**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-url) **** _<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
 

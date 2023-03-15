@@ -326,8 +326,8 @@ Short checkout url.\
 #### [initiator\_id](checkout-api.md#initiator\_idstring-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
 
 it’s the ID of the user who did the api call.\
-_`It is pressent only when Basic Authentication is used, because API Key Authentication is not associated with any user`_.\
-Max length: 1
+_`It is pressent only when`_ [_`Basic Authentication`_](authentication.md#basic-authentication) _`is used, because`_ [_`API Key Authentication`_](authentication.md#api-keys) _`is not associated with any user`_.\
+Max length: 11.
 
 #### ****[**operation** ](checkout-api.md#operation-string)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
 

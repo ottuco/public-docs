@@ -1,11 +1,5 @@
 # Checkout API
 
-##
-
-##
-
-##
-
 ## [Getting started](checkout-api.md#getting-started)
 
 Ottu provides a collection of APIs, which is a quick way to test the payment and enables you to process and manage payments.

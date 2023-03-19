@@ -137,11 +137,11 @@ It works with one of the two parameters, **** [**order\_no**](../checkout-api.md
 
 “[order\_no](../checkout-api.md#order\_no-string-optional)” **Or** “[session\_id](../checkout-api.md#session\_id-string-read-only)”
 
-#### [disclose\_to\_merchant](version-2.md#disclose\_to\_merchant-bool-optional) _<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`optional`</mark>_
+#### [disclose\_to\_merchant](version-2.md#disclose\_to\_merchant-bool-optional) _<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
 
 If True, the merchant will receive a disclosure request.
 
-#### [disclosure\_url  ](version-2.md#disclosure\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`optional`</mark>_
+#### [disclosure\_url  ](version-2.md#disclosure\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
 
 Where the request would be sent to.
 

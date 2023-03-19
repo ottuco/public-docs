@@ -94,11 +94,11 @@ https://<ottu-url>/b/pbl/v1/inquiry/{{order_no}}
 
 No request parameters needed.
 
-#### [disclose\_to\_merchant](version-1.md#disclose\_to\_merchant-bool-optional) _<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`optional`</mark>_
+#### [disclose\_to\_merchant](version-1.md#disclose\_to\_merchant-bool-optional) _<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
 
 If True, the merchant will receive a disclosure request.
 
-#### [disclosure\_url  ](version-1.md#disclosure\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`optional`</mark>_
+#### [disclosure\_url  ](version-1.md#disclosure\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
 
 Where the request would be sent to.
 

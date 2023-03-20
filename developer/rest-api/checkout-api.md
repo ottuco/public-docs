@@ -17,16 +17,14 @@ Specifically, Basic Authentication is used to grant permissions for creating, up
 
 It is important to ensure that the appropriate level of permissions is assigned to each user or application using the APIs. This can help to prevent unauthorized access or modification of sensitive data. Additionally, it is recommended to rotate API-Keys on a regular basis and to use secure password storage practices when using Basic Authentication.
 
-_**Here are the permissions that are applied when using Checkout API:**_
+Here are the permissions that are applied when using Checkout API:
 
 * [Create](checkout-api.md#create-payment-transaction): Allows users to create new payment transactions using the relevant API methods.
 * [Update](checkout-api.md#update): Allows users to update existing payment transactions using the - relevant API methods.
 * [Read](checkout-api.md#retrieve): Allows users to read payment transactions using the relevant API methods.
 * Use allowed [PG codes](checkout-api.md#pg\_codes-list-required) when creating/updating payment transaction: Allows users to create or update payment transactions using the allowed PG codes.
 
-{% hint style="info" %}
 The specific permissions granted may vary depending on the use case and the specific API being used.
-{% endhint %}
 
 {% hint style="warning" %}
 REST APIs should be called only from server-side applications and not from mobile apps or browser-based applications. Exposing your API credentials in a client-side environment like a mobile app or browser app could put your data at risk of being accessed and manipulated by unauthorized third parties.

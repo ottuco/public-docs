@@ -80,11 +80,6 @@ Currency used. See
 {% endswagger-parameter %}
 {% endswagger %}
 
-{% hint style="info" %}
-* The applied permissions are only those which are related to PG codes the user is allowed to use.
-* The payment transaction should be created automatically, when the merchant knows the due amount.
-{% endhint %}
-
 ### [Request Parameters](checkout-api.md#request-parameters)
 
 #### ****[**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`required`</mark>_

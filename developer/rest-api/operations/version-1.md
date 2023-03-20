@@ -63,7 +63,7 @@ Refund amount
 
 {% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To cancel the payment transaction " %}
 {% swagger-description %}
-The process to stop a transaction from being completed before it is fully processed. This allows the customer or merchant to prevent the transaction from being charged or refunded, or to make changes to the transaction details.
+To halt a transaction before it is fully processed.
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
@@ -81,34 +81,32 @@ cancel
 
 ## ****[**Inquiry**](version-1.md#inquiry)
 
-#### [Endpoint](version-1.md#endpoint-3)
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/inquiry/{{order_no}}" summary="To retrieve payment transaction details " %}
+{% swagger-description %}
+The process of checking the status of a payment transaction
+{% endswagger-description %}
 
-<mark style="color:green;">**POST:**</mark>
+{% swagger-parameter in="header" name="Authorization" required="true" %}
 
-```url
-https://<ottu-url>/b/pbl/v1/inquiry/{{order_no}}
-```
 
-#### ****[**Request parameters**](version-1.md#request-parameters-3)****
+[Basic authentication](../authentication.md#basic-authentication)
 
-No request parameters needed.
 
-#### [disclose\_to\_merchant](version-1.md#disclose\_to\_merchant-bool-optional) _<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+{% endswagger-parameter %}
 
-If True, the merchant will receive a disclosure request.
+{% swagger-parameter in="body" name="disclose_to_merchant" required="false" type="bool" %}
+If True, the merchant will receive a disclosure request
+{% endswagger-parameter %}
 
-#### [disclosure\_url  ](version-1.md#disclosure\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+{% swagger-parameter in="body" name="disclosure_url" type="URL" %}
+Where the request would be sent to
+{% endswagger-parameter %}
+{% endswagger %}
 
-Where the request would be sent to.
-
-#### ****[**Body**](version-1.md#body-3)****
-
-This request does not have a required body.
-
-{% hint style="info" %}
 Inquiry enabled when payment transaction state is either pending, attempted ,failed or expired. See [payment transaction state](../../../user-guide/payment-tracking.md#states-of-parent-payment-transaction).\
 **Error message:**
 
+{% hint style="info" %}
 1. If there is no transaction with provided order number:\
    "**Order number does not exist**"
 2. If there is no transaction with provided order number but txn have no attempts: "**payment attempts for order {your order number}**"

@@ -1,6 +1,6 @@
 # Checkout API
 
-## [Getting started](checkout-api.md#getting-started)
+## [Getting Started](checkout-api.md#getting-started)
 
 Ottu provides a collection of APIs, which is a quick way to test the payment and enables you to process and manage payments.
 
@@ -16,7 +16,7 @@ Ottu APIs accept and return JSON in the HTTP body, and return standard HTTP resp
 [API Private key](authentication.md#private-key)
 {% endhint %}
 
-## [Create payment transaction](checkout-api.md#create-payment-transaction)
+## [Create Payment Transaction](checkout-api.md#create-payment-transaction)
 
 {% swagger method="post" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn" summary="To initiate payment transaction" %}
 {% swagger-description %}
@@ -65,7 +65,7 @@ Currency used. See
 * The payment transaction should be created automatically, when the merchant knows the due amount.
 {% endhint %}
 
-### [Request parameters](checkout-api.md#request-parameters)
+### [Request Parameters](checkout-api.md#request-parameters)
 
 #### ****[**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`required`</mark>_
 
@@ -343,7 +343,7 @@ It should be provided by merchant.\
 Max length: 200.\
 See [Webhook](../webhook/).
 
-### [Response parameters](checkout-api.md#response-parameters)
+### [Response Parameters](checkout-api.md#response-parameters)
 
 These parameters will be returned for all the response status.
 
@@ -517,32 +517,28 @@ When we add [notification](../../user-guide/payment-tracking.md#notifications) w
 
 ## <mark style="color:blue;">****</mark>[**Update**](checkout-api.md#update)
 
+{% swagger method="patch" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="To update transaction details" %}
+{% swagger-description %}
 Using a patch function is a good method of increasing trustability whenever any change gets made to the payment transaction, such as updating the amount on the card or removing items from the cart.
+{% endswagger-description %}
 
-#### [Endpoint](checkout-api.md#endpoint-1)
-
-<mark style="color:purple;">**PATCH:**</mark>
-
-```url
-https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}
-```
+{% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
+Api-Key {{api_key}}
+{% endswagger-parameter %}
+{% endswagger %}
 
 ### <mark style="color:blue;"></mark>[Parameters](checkout-api.md#parameters)
 
-All the same fields from create request can be used. The type of update is partial. But some fields can be cross-validated and require other fields to be provided.
+All the same fields from [create request](checkout-api.md#create-payment-transaction) can be used. The type of update is partial. But some fields can be cross-validated and require other fields to be provided.
 
 ## <mark style="color:blue;">****</mark>[**Retrieve**](checkout-api.md#retrieve)
-
-To get information of payment transaction.
 
 {% hint style="success" %}
 **Authentication:** This endpoint is public
 {% endhint %}
 
-#### [Endpoint](checkout-api.md#endpoint-2)
+{% swagger method="get" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="To get the information of the payment transaction" %}
+{% swagger-description %}
 
-<mark style="color:blue;">**GET:**</mark>
-
-```url
-https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}
-```
+{% endswagger-description %}
+{% endswagger %}

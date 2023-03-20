@@ -40,7 +40,11 @@ REST APIs should be called only from server-side applications and not from mobil
 {% endswagger-description %}
 
 {% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
-Api-Key {{api_key}}
+Api-Key {{api_key}}. See 
+
+[API Key](authentication.md#api-keys)
+
+
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="type" required="true" type="String" %}

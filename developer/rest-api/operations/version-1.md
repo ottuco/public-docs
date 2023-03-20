@@ -8,22 +8,31 @@ There are conditions should be applied to perform operations, in addition, not a
 
 ## <mark style="color:blue;">****</mark>[**Authentication**](version-1.md#authentication)
 
-[Basic authentication](../authentication.md#basic-authentication)
+
 
 ## <mark style="color:blue;">****</mark>[**Capture**](version-1.md#capture)
 
-#### [Endpoint](version-1.md#endpoint)
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To convert an authorized payment transaction into an actual payment" %}
+{% swagger-description %}
+The process of obtaining a complete or partial authorized payment and depositing the captured amount into the merchant's bank account.
+{% endswagger-description %}
 
-<mark style="color:green;">**POST:**</mark>
+{% swagger-parameter in="header" name="Authorization" required="true" %}
 
-```url
-https://<ottu-url>/b/pbl/v1/operation/{{order_no}}
-```
 
-#### ****[**Request parameters**](version-1.md#request-parameters)
+[Basic authentication](../authentication.md#basic-authentication)
 
-“operation”\
-“[amount](../checkout-api.md#amount-string-required)”
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="operation" required="true" %}
+capture
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="amount" required="true" %}
+Capture amount
+{% endswagger-parameter %}
+{% endswagger %}
 
 #### ****[**Body**](version-1.md#body)
 

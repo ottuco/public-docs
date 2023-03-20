@@ -2,18 +2,34 @@
 
 ## [Getting Started](checkout-api.md#getting-started)
 
-Ottu provides a collection of APIs, which is a quick way to test the payment and enables you to process and manage payments.
+Ottu provides a comprehensive collection of APIs that offer a seamless and efficient way to test payments and enable merchants to accept and process transactions instantly. The Checkout API is the cornerstone of any payment initiation, whether it's [API-based](checkout-api.md) or [SDK-based](../checkout-sdk/).
 
-Ottu APIs accept and return JSON in the HTTP body, and return standard HTTP response codes. You can create/update/get operations.
+## [Best Practices and Guidelines](checkout-api.md#best-practices-and-guidelines)
 
-{% hint style="warning" %}
-**REST APIs should be called only from server not from clients, like mobile apps or browser apps.**
+In order to ensure optimal transaction success tracking and minimize the number of required payment transactions, merchants should [create](checkout-api.md#create-payment-transaction) a Payment Transaction as soon as the amount is known. This typically occurs when a customer adds their first item to their cart. Following this, any changes to the total amount should be updated using the [Checkout API PATCH](checkout-api.md#update) method.
+
+By updating the same payment transaction, rather than creating a new one for each payment attempt, merchants can more effectively trace customer interactions with their cart. This is particularly useful for events such as insufficient funds, where a customer may remove an item from their cart and successfully complete a transaction on their next attempt. Tracking and analyzing such events can help merchants make data-driven decisions for future improvements.
+
+### [Permissions](checkout-api.md#permissions)
+
+&#x20;Permissions are managed using [Basic Authentication](authentication.md#basic-authentication) and [API-Keys](authentication.md#api-keys). \
+Specifically, Basic Authentication is used to grant permissions for creating, updating, and reading data, as well as using allowed [PG codes](checkout-api.md#pg\_codes-list-required) when [creating ](checkout-api.md#create-payment-transaction)or [updating](checkout-api.md#update) payment transactions.
+
+It is important to ensure that the appropriate level of permissions is assigned to each user or application using the APIs. This can help to prevent unauthorized access or modification of sensitive data. Additionally, it is recommended to rotate API-Keys on a regular basis and to use secure password storage practices when using Basic Authentication.
+
+_**Here are the permissions that are applied when using Checkout API:**_
+
+* [Create](checkout-api.md#create-payment-transaction): Allows users to create new payment transactions using the relevant API methods.
+* [Update](checkout-api.md#update): Allows users to update existing payment transactions using the - relevant API methods.
+* [Read](checkout-api.md#retrieve): Allows users to read payment transactions using the relevant API methods.
+* Use allowed [PG codes](checkout-api.md#pg\_codes-list-required) when creating/updating payment transaction: Allows users to create or update payment transactions using the allowed PG codes.
+
+{% hint style="info" %}
+The specific permissions granted may vary depending on the use case and the specific API being used.
 {% endhint %}
 
-{% hint style="success" %}
-#### <mark style="color:blue;">****</mark>[**Authentication**](checkout-api.md#authentication)  **** &#x20;
-
-[API Private key](authentication.md#private-key)
+{% hint style="warning" %}
+REST APIs should be called only from server-side applications and not from mobile apps or browser-based applications. Exposing your API credentials in a client-side environment like a mobile app or browser app could put your data at risk of being accessed and manipulated by unauthorized third parties.
 {% endhint %}
 
 ## [Create Payment Transaction](checkout-api.md#create-payment-transaction)

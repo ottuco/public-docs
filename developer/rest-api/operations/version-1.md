@@ -8,7 +8,7 @@ There are conditions should be applied to perform operations, in addition, not a
 
 ## <mark style="color:blue;">****</mark>[**Capture**](version-1.md#capture)
 
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To convert an authorized payment transaction into an actual payment" %}
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To collect a full or partial authorized amount and credited on the merchant's bank account" %}
 {% swagger-description %}
 The process of obtaining a complete or partial authorized payment and depositing the captured amount into the merchant's bank account.
 

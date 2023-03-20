@@ -10,7 +10,7 @@ In order to ensure optimal transaction success tracking and minimize the number 
 
 By updating the same payment transaction, rather than creating a new one for each payment attempt, merchants can more effectively trace customer interactions with their cart. This is particularly useful for events such as insufficient funds, where a customer may remove an item from their cart and successfully complete a transaction on their next attempt. Tracking and analyzing such events can help merchants make data-driven decisions for future improvements.
 
-### [Permissions](checkout-api.md#permissions)
+## [Permissions](checkout-api.md#permissions)
 
 &#x20;Permissions are managed using [Basic Authentication](authentication.md#basic-authentication) and [API-Keys](authentication.md#api-keys). \
 Specifically, Basic Authentication is used to grant permissions for creating, updating, and reading data, as well as using allowed [PG codes](checkout-api.md#pg\_codes-list-required) when [creating ](checkout-api.md#create-payment-transaction)or [updating](checkout-api.md#update) payment transactions.

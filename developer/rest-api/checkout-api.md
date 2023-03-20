@@ -18,15 +18,47 @@ Ottu APIs accept and return JSON in the HTTP body, and return standard HTTP resp
 
 ## [Create payment transaction](checkout-api.md#create-payment-transaction)
 
-To initiate payment transaction.
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn" summary="To initiate payment transaction" %}
+{% swagger-description %}
 
-#### ****[**Endpoint**](checkout-api.md#endpoint-2)****
+{% endswagger-description %}
 
-<mark style="color:green;">**POST:**</mark>
+{% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
+Api-Key {{api_key}}
+{% endswagger-parameter %}
 
-```url
-https://<ottu-url>/b/checkout/v1/pymt-txn/
-```
+{% swagger-parameter in="body" name="type" required="true" type="String" %}
+The type of the payment transaction. See 
+
+[type](checkout-api.md#type-string-required)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="pg_codes" type="list" required="true" %}
+List of  the payment gateway involved. See 
+
+[pg_codes](checkout-api.md#pg_codes-list-required)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="amount" required="true" type="String" %}
+Payment transaction amount. See 
+
+[amount](checkout-api.md#amount-string-required)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="currency_code" required="true" type="String" %}
+Currency used. See 
+
+[currency_code](checkout-api.md#currency_code-string-required)
+
+
+{% endswagger-parameter %}
+{% endswagger %}
 
 {% hint style="info" %}
 * The applied permissions are only those which are related to PG codes the user is allowed to use.

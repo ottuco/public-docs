@@ -6,15 +6,16 @@ Through Ottu, merchants can perform operations such as capture, refund, and void
 
 There are conditions should be applied to perform operations, in addition, not all the payment gateways support all the operations. See [operation definitions and conditions](../../../user-guide/payment-gateway.md#operation-definitions-and-conditions).
 
-## <mark style="color:blue;">****</mark>[**Authentication**](version-1.md#authentication)
-
-
-
 ## <mark style="color:blue;">****</mark>[**Capture**](version-1.md#capture)
 
 {% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To convert an authorized payment transaction into an actual payment" %}
 {% swagger-description %}
 The process of obtaining a complete or partial authorized payment and depositing the captured amount into the merchant's bank account.
+
+\
+
+
+The payment transaction should be authorized.
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
@@ -34,60 +35,49 @@ Capture amount
 {% endswagger-parameter %}
 {% endswagger %}
 
-#### ****[**Body**](version-1.md#body)
-
-```json
-{
-   "operation":"capture",
-   "amount":""
-}
-```
-
 ## <mark style="color:blue;">****</mark>[**Refund**](version-1.md#refund)
 
-#### [Endpoint](version-1.md#endpoint-1)
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To returne money to a customer" %}
+{% swagger-description %}
+The process of refunding involves deducting either the full or partial amount that was paid or captured and then transferring it back to the customer's bank account.
+{% endswagger-description %}
 
-<mark style="color:green;">**POST:**</mark>
+{% swagger-parameter in="header" name="Authorization" required="true" %}
 
-```url
-https://<ottu-url>/b/pbl/v1/operation/{{order_no}}
-```
 
-#### ****[**Request parameters**](version-1.md#request-parameters-1)
+[Basic authentication](../authentication.md#basic-authentication)
 
-“operation”\
-****“[amount](../checkout-api.md#amount-string-required)”
 
-#### ****[**Body**](version-1.md#body-1)****
+{% endswagger-parameter %}
 
-```json
-{
-   "operation":"refund",
-   "amount":""
-}
-```
+{% swagger-parameter in="body" name="operation" required="true" %}
+refund
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="amount" required="true" %}
+Refund amount
+{% endswagger-parameter %}
+{% endswagger %}
 
 ## <mark style="color:blue;">****</mark>[**Cancel**](version-1.md#cancel)
 
-#### [Endpoint](version-1.md#endpoint-2)
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To cancel the payment transaction " %}
+{% swagger-description %}
+The process to stop a transaction from being completed before it is fully processed. This allows the customer or merchant to prevent the transaction from being charged or refunded, or to make changes to the transaction details.
+{% endswagger-description %}
 
-<mark style="color:green;">**POST:**</mark>
+{% swagger-parameter in="header" name="Authorization" required="true" %}
 
-```url
-https://<ottu-url>/b/pbl/v1/operation/{{order_no}}
-```
 
-#### ****[**Request parameters**](version-1.md#request-parameters-3)****
+[Basic authentication](../authentication.md#basic-authentication)
 
-"operation"
 
-#### ****[**Body**](version-1.md#body-2)****
+{% endswagger-parameter %}
 
-```json
-{
-   "operation":"cancel"
-}
-```
+{% swagger-parameter in="body" name="operation" required="true" %}
+cancel
+{% endswagger-parameter %}
+{% endswagger %}
 
 ## ****[**Inquiry**](version-1.md#inquiry)
 

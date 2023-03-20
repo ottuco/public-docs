@@ -37,7 +37,7 @@ Capture amount
 
 ## <mark style="color:blue;">****</mark>[**Refund**](version-1.md#refund)
 
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To returne money to a customer" %}
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v1/operation/{{order_no}}" summary="To return money to a customer" %}
 {% swagger-description %}
 The process of refunding involves deducting either the full or partial amount that was paid or captured and then transferring it back to the customer's bank account.
 {% endswagger-description %}
@@ -109,7 +109,7 @@ Inquiry enabled when payment transaction state is either pending, attempted ,fai
 {% hint style="info" %}
 1. If there is no transaction with provided order number:\
    "**Order number does not exist**"
-2. If there is no transaction with provided order number but txn have no attempts: "**payment attempts for order {your order number}**"
+2. If there is a transaction with provided order number but the transaction has no attempts: "**No** **payment attempts for order {your order number}**"
 3. If disclose\_to\_merchant is True and disclosure\_url isn't defined: \
    "**No disclosure url found for order {txn order number}**"
 4. If operation isn't allowed: \

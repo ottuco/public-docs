@@ -12,29 +12,33 @@ By updating the same payment transaction, rather than creating a new one for eac
 
 ## [Permissions](checkout-api.md#permissions)
 
-&#x20;Permissions are managed using [Basic Authentication](authentication.md#basic-authentication) and [API-Keys](authentication.md#api-keys). \
+Permissions are managed using [Basic Authentication](authentication.md#basic-authentication) and [API-Keys](authentication.md#api-keys). \
 Specifically, Basic Authentication is used to grant permissions for creating, updating, and reading data, as well as using allowed [PG codes](checkout-api.md#pg\_codes-list-required) when [creating ](checkout-api.md#create-payment-transaction)or [updating](checkout-api.md#update) payment transactions.
 
 It is important to ensure that the appropriate level of permissions is assigned to each user or application using the APIs. This can help to prevent unauthorized access or modification of sensitive data. Additionally, it is recommended to rotate API-Keys on a regular basis and to use secure password storage practices when using Basic Authentication.
 
-Here are the permissions that are applied when using Checkout API:
+Ottu Checkout API supports different levels of permissions for the Payment Request and E-Commerce plugins. The permissions depend on the [authentication ](authentication.md)method being used.
 
-* [Create](checkout-api.md#create-payment-transaction): Allows users to create new payment transactions using the relevant API methods.
-* [Update](checkout-api.md#update): Allows users to update existing payment transactions using the - relevant API methods.
-* [Read](checkout-api.md#retrieve): Allows users to read payment transactions using the relevant API methods.
-* Use allowed [PG codes](checkout-api.md#pg\_codes-list-required) when creating/updating payment transaction: Allows users to create or update payment transactions using the allowed PG codes.
+### [API Key](checkout-api.md#api-key)
 
-The specific permissions granted may vary depending on the use case and the specific API being used.
+When using the [API-Key](authentication.md#api-keys), all permissions are granted by default, as the API-Key is considered to have admin permissions.
 
-{% hint style="warning" %}
-REST APIs should be called only from server-side applications and not from mobile apps or browser-based applications. Exposing your API credentials in a client-side environment like a mobile app or browser app could put your data at risk of being accessed and manipulated by unauthorized third parties.
-{% endhint %}
+### [Basic Authentication](checkout-api.md#basic-authentication)
+
+For [Basic Authentication](authentication.md#basic-authentication), permissions are granted as follows:
+
+#### [Create](checkout-api.md#create)
+
+* To create a transaction, the user needs specific permission depending on the [plugin](../../user-guide/plugins/) being used:
+  * "Can add payment requests" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
+  * "Can add e-commerce payments" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
+* Permission to use use the payment gateway code is also required: "Can use `pg_code`"
 
 ## [Create Payment Transaction](checkout-api.md#create-payment-transaction)
 
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn" summary="To initiate payment transaction" %}
+{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn" summary="Create Payment" %}
 {% swagger-description %}
-
+To initiate payment transaction
 {% endswagger-description %}
 
 {% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
@@ -530,7 +534,7 @@ When we add [notification](../../user-guide/payment-tracking.md#notifications) w
 
 ## <mark style="color:blue;">****</mark>[**Update**](checkout-api.md#update)
 
-{% swagger method="patch" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="To update transaction details" %}
+{% swagger method="patch" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="Update Payment" %}
 {% swagger-description %}
 Using a patch function is a good method of increasing trustability whenever any change gets made to the payment transaction, such as updating the amount on the card or removing items from the cart.
 {% endswagger-description %}
@@ -550,8 +554,8 @@ All the same fields from [create request](checkout-api.md#create-payment-transac
 **Authentication:** This endpoint is public
 {% endhint %}
 
-{% swagger method="get" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="To get the information of the payment transaction" %}
+{% swagger method="get" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="Retrieve Payment" %}
 {% swagger-description %}
-
+To get the information of the payment transaction
 {% endswagger-description %}
 {% endswagger %}

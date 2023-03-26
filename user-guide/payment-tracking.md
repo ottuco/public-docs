@@ -1,7 +1,5 @@
 # Payment Tracking
 
-## <mark style="color:blue;"></mark>
-
 ## <mark style="color:blue;"></mark>[Overview](payment-tracking.md#overview)
 
 Ottu dashboard is an intuitive workspace composed of a set of tools, to empower all Ottu clients\

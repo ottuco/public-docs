@@ -32,7 +32,25 @@ For [Basic Authentication](authentication.md#basic-authentication), permissions 
 * To create a transaction, the user needs specific permission depending on the [plugin](../../user-guide/plugins/) being used:
   * "Can add payment requests" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
   * "Can add e-commerce payments" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
-* Permission to use use the payment gateway code is also required: "Can use `pg_code`"
+* Permission to use use the [payment gateway code](checkout-api.md#pg\_codes-list-required) is also required: "Can use `pg_code`"
+
+#### Update
+
+* To update a transaction, the user needs specific permission depending on the plugin being used:
+  * "Can change payment requests" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
+  * "Can change e-commerce payments" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
+* Permission to use the [payment gateway code](checkout-api.md#pg\_codes-list-required) is also required: "Can use `pg_code`"
+
+{% hint style="info" %}
+The PUT operation cannot be used if the user does not have permission to use the previously defined [payment gateway code](checkout-api.md#pg\_codes-list-required) on the transaction. For [PATCH](checkout-api.md#update-1), updates can be performed as long as the payment gateway codes are not updated.
+{% endhint %}
+
+#### [View](checkout-api.md#view)
+
+* By default, if a user has either the "Can add" or "Can change" permission, they can [fetch](checkout-api.md#retrieve) transactions from the API.
+* For more granular control, the following view permissions can be used:
+  * "Can view e-commerce payments" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
+  * "Can view payment requests" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
 
 ## [Create Payment Transaction](checkout-api.md#create-payment-transaction)
 

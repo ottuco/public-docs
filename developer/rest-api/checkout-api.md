@@ -52,11 +52,9 @@ The PUT operation cannot be used if the user does not have permission to use the
   * "**Can view e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
   * "**Can view payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
 
-## [Create Payment Transaction](checkout-api.md#create-payment-transaction)
-
 {% swagger method="post" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn" summary="Create Payment" %}
 {% swagger-description %}
-To initiate payment transaction
+
 {% endswagger-description %}
 
 {% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
@@ -99,6 +97,10 @@ Currency used. See
 
 {% endswagger-parameter %}
 {% endswagger %}
+
+#### [Create Payment Transaction](checkout-api.md#create-payment-transaction)
+
+The objective of the  POST request is to facilitate the creation of payment transactions and the subsequent generation of payment links, each of which is associated with a unique session ID. These links can be effortlessly shared with customers through a range of communication channels, including email, WhatsApp, and SMS. Additionally, it is possible to incorporate the customer's billing and shipping information into the transaction. Moreover, users of this API have the ability to include diverse forms of data and information within the body request.
 
 ### [Request Parameters](checkout-api.md#request-parameters)
 
@@ -550,11 +552,9 @@ When we add [notification](../../user-guide/payment-tracking.md#notifications) w
 
 ```
 
-## <mark style="color:blue;">****</mark>[**Update**](checkout-api.md#update)
-
 {% swagger method="patch" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="Update Payment" %}
 {% swagger-description %}
-Using a patch function is a good method of increasing trustability whenever any change gets made to the payment transaction, such as updating the amount on the card or removing items from the cart.
+
 {% endswagger-description %}
 
 {% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
@@ -562,18 +562,24 @@ Api-Key {{api_key}}
 {% endswagger-parameter %}
 {% endswagger %}
 
+#### [Update Payment Transaction ](checkout-api.md#update-payment-transaction)
+
+Using a patch function is a good method of increasing trustability whenever any change gets made to the payment transaction, such as updating the amount on the card or removing items from the cart.
+
 ### <mark style="color:blue;"></mark>[Parameters](checkout-api.md#parameters)
 
 All the same fields from [create request](checkout-api.md#create-payment-transaction) can be used. The type of update is partial. But some fields can be cross-validated and require other fields to be provided.
 
-## <mark style="color:blue;">****</mark>[**Retrieve**](checkout-api.md#retrieve)
+{% swagger method="get" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="Retrieve Payment" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+{% endswagger %}
+
+#### [Retrieve Payment Transaction](checkout-api.md#retrieve-payment-transaction)
+
+To get the information of the payment transaction.
 
 {% hint style="success" %}
 **Authentication:** This endpoint is public
 {% endhint %}
-
-{% swagger method="get" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="Retrieve Payment" %}
-{% swagger-description %}
-To get the information of the payment transaction
-{% endswagger-description %}
-{% endswagger %}

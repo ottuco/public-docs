@@ -241,7 +241,7 @@ Max length 50\
 #### [session\_id](payment-notification.md#session\_id-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 Ottu unique identifier which gets generated when the transaction is created.\
-It can be used to perform subsequent operations, like [retrieve, acknowledge, refund, capture, and cancelation](../rest-api/operations/)\
+It can be used to perform subsequent operations, like [retrieve, acknowledge, refund, capture, and cancelation](../rest-api/operations.md)\
 Max length 128
 
 #### [settled\_amount](payment-notification.md#settled\_amount-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_

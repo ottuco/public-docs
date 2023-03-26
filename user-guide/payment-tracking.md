@@ -10,7 +10,7 @@ to have a proper payment pipeline, create, monitor, and track payments, the dash
 ## [Transaction table ](payment-tracking.md#transaction-table)
 
 All transaction history and details are easily accessible for merchants using Ottu's transaction table, which is provided with each [plugin](plugins/) installed. \
-Through the transaction table, users can proceed with payment [operations](../developer/rest-api/operations/) such as void, refund, and capture.
+Through the transaction table, users can proceed with payment [operations](../developer/rest-api/operations.md) such as void, refund, and capture.
 
 {% hint style="info" %}
 The transaction table is located in the transaction tab under each installed [plugin](plugins/).

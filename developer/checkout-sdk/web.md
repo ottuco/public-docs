@@ -350,7 +350,7 @@ The order number provided in the [Checkout API](../rest-api/checkout-api.md). Se
 This property indicates whether the payment was a direct charge (`pay`) or an authorization (`authorized`) of the payment amount.
 
 * `pay`: the payment is immediately charged to the customer's account and the funds are transferred to the merchant.
-* `authorized`: the payment amount is only reserved on the customer's account and not immediately charged. The payment can then be captured at a later time using the [capture API](../rest-api/operations/version-2.md#capture).
+* `authorized`: the payment amount is only reserved on the customer's account and not immediately charged. The payment can then be captured at a later time using the [capture API](broken-reference).
 
 Note that authorization typically lasts for a limited time, after which it will expire and the reserved funds will be released back to the customer's account.
 

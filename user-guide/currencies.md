@@ -99,5 +99,5 @@ Enter the required information and click on “save”
 
 
 {% hint style="warning" %}
-[Operations](../developer/rest-api/operations/) are not working for foreign currencies.
+[Operations](../developer/rest-api/operations.md) are not working for foreign currencies.
 {% endhint %}

@@ -34,7 +34,7 @@ For [Basic Authentication](authentication.md#basic-authentication), permissions 
   * "**Can add e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
 * Permission to use use the [payment gateway code](checkout-api.md#pg\_codes-list-required) is also required: "**Can use `pg_code`**"
 
-#### Update
+#### [Update](checkout-api.md#update)
 
 * To update a transaction, the user needs specific permission depending on the plugin being used:
   * "**Can change payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin

@@ -32,7 +32,7 @@ For [Basic Authentication](authentication.md#basic-authentication), permissions 
 * To create a transaction, the user needs specific permission depending on the [plugin](../../user-guide/plugins/) being used:
   * "**Can add payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
   * "**Can add e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
-* Permission to use use the [payment gateway code](checkout-api.md#pg\_codes-list-required) is also required: "**Can use `pg_code`**"
+* Permission to use the [payment gateway code](checkout-api.md#pg\_codes-list-required) is also required: "**Can use `pg_code`**"
 
 #### [Update](checkout-api.md#update)
 

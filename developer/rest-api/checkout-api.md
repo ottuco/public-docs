@@ -398,6 +398,10 @@ A short attachment retrieval URL.\
 [shortify\_attachment\_url](checkout-api.md#shortify\_attachment\_url-bool-optional) request parameter should be "true" in order to generate it.\
 Max length: 200.
 
+#### [checkout\_url](checkout-api.md#checkout\_url-string) _<mark style="color:blue;background-color:blue;">`string`</mark>_
+
+The generated payment link.
+
 #### ****[**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-url) **** _<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
 
 Short checkout url.\
@@ -414,17 +418,13 @@ Max length: 11.
 Choice from ("purchase","authorize"). Depnding on how the PG is being selected.\
 Max length: 16.
 
-#### ****[**payment\_methods** ](checkout-api.md#payment\_methods-list)_<mark style="color:blue;">`list`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### ****[**payment\_methods**](checkout-api.md#payment\_methods-array-object) **** _<mark style="color:blue;">`array [object]`</mark>_
 
-List of dicts.
-
-#### ****[**dict**](checkout-api.md#dict)****
-
-Object generated according to specific [pg\_code](checkout-api.md#pg\_codes-list-required) from pg\_codes list from request.
+Object generated according to specific [payment gateway](../../user-guide/payment-gateway.md) from [pg\_codes](checkout-api.md#pg\_codes-list-required) list from request.
 
 <details>
 
-<summary><em>dict details</em></summary>
+<summary><em>object details</em></summary>
 
 #### :digit\_one: **** [**code** ](checkout-api.md#code-string)_<mark style="color:blue;">**`string`**</mark>_
 

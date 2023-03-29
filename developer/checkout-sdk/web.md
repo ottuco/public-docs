@@ -14,6 +14,8 @@ Please note that the Checkout SDK requires the implementation of the [Checkout A
 
 Below is a demo of the Checkout SDK in action. This demo shows how the Checkout SDK can be used to create a streamlined checkout experience for customers, with support for multiple forms of payment and a customizable interface.
 
+{% embed url="https://codepen.io/Ottu/details/MWqQeea" %}
+
 #### [Installation](web.md#installation)
 
 To install the Checkout SDK, you'll need to include the library in your web application by adding a script tag to your HTML section. You can do this by using the following code snippet:

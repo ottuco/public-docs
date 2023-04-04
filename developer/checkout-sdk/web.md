@@ -368,7 +368,7 @@ A unique identifier associated with the payment process. It is sent to the payme
 
 #### ****
 
-#### [Extended example](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#extended-example)
+#### [Extended example](web.md#extended-example)
 
 ```javascript
 // HTML

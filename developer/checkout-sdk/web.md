@@ -33,7 +33,7 @@ Replace [errorCallback](web.md#window.errorcallback), [cancelCallback](web.md#wi
 
 You're all set! You can now use the [Checkout SDK ](./)to create a checkout form on your web page and process payments through Ottu.
 
-### [Functions](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#functions)
+### [Functions](web.md#functions)
 
 #### ****[**Checkout.init**](web.md#checkout.init)****
 
@@ -261,7 +261,7 @@ window.successCallback = function (data) {
 
 In this example, the `successCallback` function is defined and passed as the value of the `data-success` attribute on the Checkout script tag. If the payment process completes successfully, the function will be invoked with a [data object](web.md#data-object) containing information about the completed transaction. The function will then redirect the customer to the specified `redirect_url` using `window.location.href`.
 
-#### ****[**Example**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/141/developer/checkout-sdk/sdk#example-1)****
+#### **Example**
 
 ```javascript
 window.successCallback = function (data) {

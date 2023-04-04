@@ -195,7 +195,7 @@ Please note that due to technical constraints associated with off-site redirecti
 
 #### ****[**window.errorCallback**](web.md#window.errorcallback)****
 
-The `errorCallback` is a callback function that is invoked when problems occur during a payment.
+The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new session ID using the Checkout API.
 
 To define the `errorCallback` function, you can use the `data-error` attribute on the Checkout script tag to specify a global function that will handle errors. If an error occurs during a payment, the `errorCallback` function will be invoked with an `error` object.
 
@@ -227,7 +227,7 @@ In this example, the `errorCallback` function is defined and passed as the value
 
 #### ****[**window.cancelCallback**](web.md#window.cancelcallback)****
 
-The cancelCallback in the Checkout SDK is a callback function that is invoked when a payment is canceled.
+The `cancelCallback` in the Checkout SDK is a callback function that is invoked when a payment is canceled.
 
 To define the `cancelCallback` function, you can use the `data-cancel` attribute on the Checkout script tag to specify a global function that will handle cancellations. If a customer cancels a payment, the `cancelCallback` function will be invoked with a [data object](web.md#data-object).
 

@@ -189,6 +189,10 @@ Checkout.init({
 
 ### [Callbacks](web.md#callbacks)
 
+In the Checkout SDK, callback functions play a vital role in providing real-time updates on the status of payment transactions. Callbacks enhance the user experience by enabling seamless and efficient handling of various payment scenarios, such as errors, successful payments, and cancellations.
+
+Please note that callbacks are only available for on-site checkouts. Due to technical constraints associated with off-site redirection during the payment process, callbacks cannot be implemented for redirected transactions. On-site checkouts include options such as Apple Pay, Google Pay, payments with saved cards and on-site card form transactions, which support callback functionality for a seamless user experience.
+
 #### ****[**window.errorCallback**](web.md#window.errorcallback)****
 
 The `errorCallback` is a callback function that is invoked when problems occur during a payment.

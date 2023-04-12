@@ -13,7 +13,7 @@ By using tokenization, Ottu safeguards customer's sensitive card data from poten
 **In order to generate token:**
 
 1. At the merchant side:
-   * [cusotmer\_id](rest-api/checkout-api.md#customer\_id-string-optional) parameter should be sent by payment checkout request payload.
+   * [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) parameter should be sent by payment checkout request payload.
    * &#x20;Save card option should be enabled in the payment gateway configuration **(contact Ottu technical team).**
 2. At the customer side on the checkout page:
    * &#x20;**Save Your Card** option should be checked.

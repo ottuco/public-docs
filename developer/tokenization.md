@@ -6,6 +6,10 @@ By using tokenization, Ottu safeguards customer's sensitive card data from poten
 
 **In comparison** with other methods such as encryption, tokenization offers a higher level of security due to no way to reverse the process of generating tokens.
 
+{% hint style="info" %}
+To get in touch with the Ottu team, KSA merchants can send an email to [support@ottu.com](mailto:support@ottu.com).
+{% endhint %}
+
 ## Ottu Tokenization
 
 * Ottu tokenization could be used with [Web](broken-reference),[ iOS](checkout-sdk/ios.md), [Android](checkout-sdk/android.md), and [Flutter](checkout-sdk/flutter.md) SDKs.

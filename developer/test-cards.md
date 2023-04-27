@@ -1,5 +1,7 @@
 # Test Cards
 
+###
+
 ### [Apple Pay](test-cards.md#apple-pay)
 
 <details>
@@ -366,7 +368,21 @@ International
 
 **CVV**                   &#x20;
 
-100&#x20;
+100
+
+**Test Card number to receive token data**
+
+```
+5120350100064537	
+```
+
+**Expiry**               &#x20;
+
+Any future date
+
+**CVV**                   &#x20;
+
+Any 3 digits
 
 </details>
 

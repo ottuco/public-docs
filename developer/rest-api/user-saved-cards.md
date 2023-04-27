@@ -24,7 +24,3 @@ With these endpoints, you can enhance the user experience, foster customer trust
 #### [Fetch Cards](user-saved-cards.md#fetch-cards)
 
 #### [Delete Cards](user-saved-cards.md#delete-cards)
-
-{% swagger src="broken-reference" path="https://<ottu-url>/b/pbl/v2/card/{{token}}" method="delete" %}
-[Broken file](broken-reference)
-{% endswagger %}

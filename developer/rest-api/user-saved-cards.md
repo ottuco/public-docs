@@ -20,3 +20,15 @@ With these endpoints, you can enhance the user experience, foster customer trust
 ## [**Authentication**](user-saved-cards.md#authentication)
 
 [Fetch ](user-saved-cards.md#fetch-cards)and [delete ](user-saved-cards.md#delete-cards)cards APIs use API private key authentication, where a unique secret code is generated and assigned to authorized users or applications. This key is included in request headers and verified by our system to control access to API resources. This method provides a secure and scalable way to authenticate API requests and ensure only authorized access to our services. For more details, check [API Private Key](authentication.md#private-key)
+
+#### [Fetch Cards](user-saved-cards.md#fetch-cards)
+
+{% swagger src="../../.gitbook/assets/Ottu API last (1).yaml" path="https://<ottu-url>/b/pbl/v2/card/" method="get" %}
+[Ottu API last (1).yaml](<../../.gitbook/assets/Ottu API last (1).yaml>)
+{% endswagger %}
+
+#### [Delete Cards](user-saved-cards.md#delete-cards)
+
+{% swagger src="../../.gitbook/assets/Ottu API last (1).yaml" path="https://<ottu-url>/b/pbl/v2/card/{{token}}" method="delete" %}
+[Ottu API last (1).yaml](<../../.gitbook/assets/Ottu API last (1).yaml>)
+{% endswagger %}

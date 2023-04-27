@@ -18,7 +18,7 @@
 
 ## developer
 
-* [Development Toolkit](developer/development-toolkit.md)
+* [Tokenization](developer/tokenization.md)
 * [Rest API](developer/rest-api/README.md)
   * [Authentication](developer/rest-api/authentication.md)
   * [Checkout API](developer/rest-api/checkout-api.md)
@@ -28,7 +28,6 @@
     * [Ecommerce](developer/rest-api/legacy/ecommerce.md)
     * [Payment Request](developer/rest-api/legacy/payment-request.md)
     * [Session](developer/rest-api/legacy/session.md)
-* [Tokenization](developer/tokenization.md)
 * [Checkout SDK](developer/checkout-sdk/README.md)
   * [Web](developer/checkout-sdk/web.md)
   * [iOS](developer/checkout-sdk/ios.md)

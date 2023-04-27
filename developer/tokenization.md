@@ -1,11 +1,9 @@
 # Tokenization
 
-## [Getting started](https://app.gitbook.com/s/dCuAiqM42FUw8xdNSjKa/\~/changes/EL1tOkSuLXf06V6iAVra/developer/rest-api/tokenization#getting-started)
+[Getting started](https://app.gitbook.com/s/dCuAiqM42FUw8xdNSjKa/\~/changes/EL1tOkSuLXf06V6iAVra/developer/rest-api/tokenization#getting-started)
 
 With Ottu, you can significantly increase your checkout rate by activating tokenization on MIDs that support this feature. Currently, only [MPGS](test-cards.md#mpgs) is supported, but more options will be available in the future. \
 Tokenization is the process of replacing sensitive card data with a unique identifier, called a token. This helps merchants process payments securely without having to be PCI DSS compliant. Let Ottu handle that for you!
-
-
 
 {% hint style="info" %}
 To get in touch with the Ottu team, KSA merchants can send an email to support@ottu.com.&#x20;
@@ -54,8 +52,6 @@ The 3DS challenge or OTP code is handled out-of-the-box by the Checkout SDK, as 
 
 If you wish to perform offline payments or auto debit (i.e., charge the customer when they are not online), please check the Auto Debit documentation section.
 
-
-
 {% hint style="info" %}
 Ottu supports tokenization on the following platforms:
 
@@ -65,8 +61,6 @@ Ottu supports tokenization on the following platforms:
   * [Native Android](checkout-sdk/android.md)
   * [Flutter](checkout-sdk/flutter.md)
 {% endhint %}
-
-
 
 ## [Ottu Tokenization showcase](https://app.gitbook.com/s/dCuAiqM42FUw8xdNSjKa/\~/changes/EL1tOkSuLXf06V6iAVra/developer/rest-api/tokenization#ottu-tokenization-showcase)
 

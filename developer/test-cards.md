@@ -1,7 +1,5 @@
 # Test Cards
 
-###
-
 ### [Apple Pay](test-cards.md#apple-pay)
 
 <details>

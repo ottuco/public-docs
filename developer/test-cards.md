@@ -370,7 +370,9 @@ International
 
 100
 
-**Test Card number to receive token data**
+**Test card to receive token data**
+
+**Card number**
 
 ```
 5120350100064537	

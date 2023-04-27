@@ -62,12 +62,12 @@ Min value: 0.01
 Indicates whether to capture delivery address\
 _<mark style="color:blue;">It will be present only if the merchant includes it during the creation of the transaction.</mark>_
 
-#### <mark style="color:blue;"><mark style="background-color:blue;"><mark style="background-color:blue;"></mark>[capture\_delivery\_location](payment-notification.md#capture\_delivery\_location-bool-optional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### [capture\_delivery\_location](payment-notification.md#capture\_delivery\_location-bool-optional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
 
 Indicates whether to capture delivery location\
 _<mark style="color:blue;">It will be present only if the merchant includes it during the creation of the transaction.</mark>_
 
-#### <mark style="color:purple;"></mark>[currency\_code](payment-notification.md#currency\_code-string-required-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [currency\_code](payment-notification.md#currency\_code-string-required-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The currency code of the payment transaction \
 For more details, [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
@@ -115,41 +115,42 @@ Max length 40
 
 </details>
 
-#### [customer\_email](payment-notification.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [customer\_email](payment-notification.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Where to pass the customer’s email address\
 Have to be a valid email address\
 _<mark style="color:blue;">It will be present only if the customer includes it while making the payment of the transaction.</mark>_\
 Max length 128
 
-#### ****[**customer\_first\_name**](payment-notification.md#customer\_first\_name-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_first\_name**](payment-notification.md#customer\_first\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 For the customer's first name\
 _<mark style="color:blue;">It will be present only if the customer includes it while making the payment of the transaction.</mark>_\
 Max length 64
 
-#### ****[**customer\_id**](payment-notification.md#customer\_id-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### [**customer\_id**](payment-notification.md#customer\_id-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_&#x20;
 
 Customer ID is created by a merchant, and stored in the merchant database\
-_<mark style="color:blue;">It will be present only if the merchant includes it during the creation of the transaction.</mark>_\ <mark style="color:blue;"></mark>Max length 64
+_<mark style="color:blue;">It will be present only if the merchant includes it during the creation of the transaction.</mark>_\
+Max length 64
 
-#### ****[**customer\_last\_name**](payment-notification.md#customer\_last\_name-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_last\_name**](payment-notification.md#customer\_last\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 For the customer's last name\
 _<mark style="color:blue;">It will be present only if the customer includes it while making the payment of the transaction</mark>._\
 Max length 64
 
-#### ****[**customer\_phone**](payment-notification.md#customer\_phone-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_phone**](payment-notification.md#customer\_phone-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Where to pass the customer’s phone number\
 _<mark style="color:blue;">It will be present only if the customer includes it while making the payment of the transaction</mark>_\
-_<mark style="color:blue;"></mark>_Max length 32
+Max length 32
 
 #### [extra](payment-notification.md#extra-dict) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The extra information for the payment details, which the merchant has sent it in key value form.\
 _<mark style="color:blue;">The presence of the element will depend on whether the merchant includes it during transaction creation by adding each element from the plugin field configuration.</mark>_\
-__For example:
+For example:
 
 ```json
    "extra":{
@@ -181,7 +182,7 @@ Max length 64
 It will contain the raw payment gateway response sent by the payment gateway to Ottu\
 _<mark style="color:blue;">It will only be present in response to the PG's callback request for the transaction.</mark>_
 
-#### <mark style="color:blue;"></mark>[initiator](payment-notification.md#initiator-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### [initiator](payment-notification.md#initiator-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
 
 This object contains information about the user who created the transaction from Ottu side, specifically, the user who generated the payment URL\
 _<mark style="color:blue;">It will only be present if the merchant includes the initiator ID in the payload when creating the transaction</mark>_
@@ -191,7 +192,7 @@ _<mark style="color:blue;">It will only be present if the merchant includes the 
 Whether the transaction was carried out in a sandbox environment.\
 _<mark style="color:blue;">It will only be present when PG's setting configured as sandbox</mark>_
 
-#### __[message](payment-notification.md#message-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### [message](payment-notification.md#message-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
 
 A message indicating the cause of a [payment attempt](../../user-guide/payment-tracking.md#payment-attempt) failure., which is directly related to the payment attempt itself\
 _<mark style="color:blue;">It will only be present if a payment attempt records an error.</mark>_\
@@ -257,7 +258,7 @@ _<mark style="color:blue;">It will be present only if transaction is paid, autho
 
 It is  one of the [Payment transaction state.](../../user-guide/payment-tracking.md#payment-transactions-states) And could one of the  below: \
 **created, pending, attempted, authorized, paid, failed, canceled, expired, invalided, or cod.**\
-****Max length 50
+Max length 50
 
 #### [transaction\_log\_id](payment-notification.md#transaction\_log\_id-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
 

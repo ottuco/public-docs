@@ -4,7 +4,7 @@
 
 Over The Ottu Checkout which is Android SDK, helps you to make your payment process easy and quick within your Android app, in addition it provides UI screen and elements  customizable empowering you to collect payment details of your user.
 
-## ****[**Features**](android.md#features)****
+## [**Features**](android.md#features)
 
 **Simplified security:** Sensitive data will be collected easily according to PCI-compliant, by sending it directly to Ottu instead of sending it to your server.
 
@@ -14,15 +14,15 @@ Over The Ottu Checkout which is Android SDK, helps you to make your payment proc
 
 **Localized:** Both English, Arabic localizations are supported.
 
-### ****[**Privacy**](android.md#privacy)****
+### [**Privacy**](android.md#privacy)
 
 The Ottu Checkout SDK collects data to help in improving the products and services and prevent fraud. This data is never used for advertising and is not rented, sold, or given to advertisers.
 
-### ****[**Requirements**](android.md#requirements)****
+### [**Requirements**](android.md#requirements)
 
 IDE is required to develop an android app. SDK is compatible with minimum SDK 22 and above.
 
-## ****[**Getting started**](android.md#getting-started)****
+## [**Getting started**](android.md#getting-started)
 
 Firstly, a session token should be created  by Ottu public API, then SDK could be initialized. See [Rest API](../rest-api/).\
 
@@ -33,7 +33,7 @@ For "Api\_Key" API [Public key](../rest-api/authentication.md#public-key) sohuld
 
 ## [Installation](android.md#installation)
 
-### ****[**Installation with dependency**](android.md#installation-with-dependency)****
+### [**Installation with dependency**](android.md#installation-with-dependency)
 
 Put below dependency into your Gradle.
 
@@ -138,7 +138,7 @@ BroadcastReceiver paymentReceiver = new BroadcastReceiver() {
 };
 ```
 
-## [**ProGuard**](android.md#proguard)****
+## [**ProGuard**](android.md#proguard)
 
 You may need to include the following lines in your progard-rules.pro file if enable progard or minifyEnble.\
 

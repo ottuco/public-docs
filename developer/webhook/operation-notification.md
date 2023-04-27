@@ -90,7 +90,7 @@ Time and date of operation creation.
 
 A dictionary will be generated including short summary of the [child payment transaction](../../user-guide/payment-tracking.md#states-of-child-payment-transaction) which was created
 
-#### :digit\_one: **** [amount](operation-notification.md#amount-string-1) _<mark style="color:blue;">`string`</mark>_
+#### :digit\_one: [amount](operation-notification.md#amount-string-1) _<mark style="color:blue;">`string`</mark>_
 
 Requested amount of the payment operation&#x20;
 

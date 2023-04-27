@@ -6,7 +6,7 @@ Ottu has multiple APIs, which can be tested by developers using development tool
 
 ## [Testing API via Postman](development-toolkit.md#testing-api-via-postman)
 
-### ****[**Upload the API collection**](development-toolkit.md#upload-the-api-collection)****
+### [**Upload the API collection**](development-toolkit.md#upload-the-api-collection)
 
 Click on import button.
 
@@ -43,7 +43,7 @@ The below figure shows the Postman interface where the test runs.
 ![](<../.gitbook/assets/7 (6) (1).png>)
 
 :digit\_one: APIs collection. \
-****:digit\_two: Method. \
+:digit\_two: Method. \
 :digit\_three: Variable already defined in environment.\
 :digit\_four: API endpoint. \
 :digit\_five: Environment. \

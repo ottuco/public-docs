@@ -1,6 +1,6 @@
 # Payment Tracking
 
-## <mark style="color:blue;"></mark>[Overview](payment-tracking.md#overview)
+## [Overview](payment-tracking.md#overview)
 
 Ottu dashboard is an intuitive workspace composed of a set of tools, to empower all Ottu clients\
 to have a proper payment pipeline, create, monitor, and track payments, the dashboard greets clients with analytical information captured from payment workload(s), to give the client an insight about the payment pipeline and how could proceed with next-login.
@@ -44,18 +44,18 @@ The headers of each child payment transaction are inherited from the headers of 
 Many headers can be added / removed in transaction tables. See [proxy fields](payment-tracking.md#proxy-fields-1) \
 Amount headers are displayed in different titles based on where the header refers to the payment amount in the process flow.
 
-#### ****[**Amount**:](payment-tracking.md#amount)
+#### [**Amount**:](payment-tracking.md#amount)
 
 This is the initial amount at the creation of the transaction.
 
-#### ****[**Settled amount:**](payment-tracking.md#settled-amount)&#x20;
+#### [**Settled amount:**](payment-tracking.md#settled-amount)&#x20;
 
 **Is the amount with the same currency of the initiating amount,**
 
 * **For editable amount:** It is the amount that the customer enters at the checkout page, If the customer pays the full required amount,  it will have the same value as the [initiating amount](payment-tracking.md#amount).
 * **For  non-editable amount:** The settled amount is  the same value as the [initiating amount](payment-tracking.md#amount).
 
-#### ****[**Paid amount:**](payment-tracking.md#paid-amount)&#x20;
+#### [**Paid amount:**](payment-tracking.md#paid-amount)&#x20;
 
 It is the amount that is credited to the merchant's bank account.&#x20;
 
@@ -94,29 +94,29 @@ It works only for authorized payment, which is not fully or partially captured.
 * **Void,** will void the full amount, including the fee.
 {% endhint %}
 
-## <mark style="color:blue;"></mark>[Dashboard charts](payment-tracking.md#dashboard-charts)
+## [Dashboard charts](payment-tracking.md#dashboard-charts)
 
 Merchant(s) easily track and monitor overall transactions and sales progress all in one place, the following snapshots have been taken from the dashboard showing a number of usable charts.
 
-### <mark style="color:blue;"></mark>[Total transactions chart](payment-tracking.md#total-transactions-chart)
+### [Total transactions chart](payment-tracking.md#total-transactions-chart)
 
 Represents gross volume and overall success rate across various periods.
 
 ![](<../.gitbook/assets/1 (2) (1).png>)
 
-### <mark style="color:blue;"></mark>[Average transaction size chart](payment-tracking.md#average-transaction-size-chart)
+### [Average transaction size chart](payment-tracking.md#average-transaction-size-chart)
 
 <figure><img src="../.gitbook/assets/AverageTransaction (1).png" alt=""><figcaption></figcaption></figure>
 
-### <mark style="color:blue;"></mark>[Product wise sales chart](payment-tracking.md#product-wise-sales-chart)
+### [Product wise sales chart](payment-tracking.md#product-wise-sales-chart)
 
 ![](<../.gitbook/assets/3 (4).png>)
 
-### <mark style="color:blue;"></mark>[Recent orders dynamic report](payment-tracking.md#recent-orders-dynamic-report)
+### [Recent orders dynamic report](payment-tracking.md#recent-orders-dynamic-report)
 
 ![](<../.gitbook/assets/4 (4) (1).png>)
 
-## <mark style="color:blue;"></mark>[ Payment transaction ](payment-tracking.md#payment-transaction)
+## [ Payment transaction ](payment-tracking.md#payment-transaction)
 
 Payment transaction is a core transactional data which is used by the merchant(s) to create a payment, and to perform certain operations like refund void, cancel .etc. \
 **Payment transaction is divided into two types.**
@@ -129,11 +129,11 @@ Payment transaction is a core transactional data which is used by the merchant(s
 **Child payment transaction:** Is created for subsequent operations triggered by the merchant(s).
 {% endhint %}
 
-### <mark style="color:blue;"></mark>[Payment transactions states](payment-tracking.md#payment-transactions-states)
+### [Payment transactions states](payment-tracking.md#payment-transactions-states)
 
 Payment transactions state are flags, which help merchant(s) to audit-trail the transaction process.
 
-### ****[**States of parent payment transaction**](payment-tracking.md#states-of-parent-payment-transaction)
+### [**States of parent payment transaction**](payment-tracking.md#states-of-parent-payment-transaction)
 
 | <mark style="color:blue;">**state**</mark>      | <mark style="color:blue;">**state Description**</mark>                                                                                                                                                                                                                              | <mark style="color:blue;">**Actor**</mark> | <mark style="color:blue;">**Note(s)**</mark>                                                   |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------- |
@@ -148,7 +148,7 @@ Payment transactions state are flags, which help merchant(s) to audit-trail the 
 | <mark style="color:blue;">**invalided**</mark>  | <p>The payment will not be available any longer, due to:</p><ul><li>Changing in payment configuration.</li><li>Changing in currency exchange configuration.</li><li>Other unforeseen events</li></ul>                                                                               | Merchant                                   |                                                                                                |
 | <mark style="color:blue;">**cod**</mark>        | Cash-on -delivery.                                                                                                                                                                                                                                                                  | Customer                                   | It is mostly used in food ordering services.                                                   |
 
-### <mark style="color:blue;">****</mark>[**States of child payment transaction**](payment-tracking.md#states-of-child-payment-transaction)
+### [**States of child payment transaction**](payment-tracking.md#states-of-child-payment-transaction)
 
 | <mark style="color:blue;">**Child state**</mark>     | <mark style="color:blue;">**Parent state**</mark> | <mark style="color:blue;">**Child state description**</mark>         | <mark style="color:blue;">**Note**</mark>                                                                                                                                                                                 |
 | ---------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -167,11 +167,11 @@ C. Child state (**paid** and **refunded**).
 
 ![](<../.gitbook/assets/5 (2).gif>)
 
-## <mark style="color:blue;">****</mark>[**Payment-attempt**](payment-tracking.md#payment-attempt)
+## [**Payment-attempt**](payment-tracking.md#payment-attempt)
 
 Payment attempt is the trial that the customer(s) make to proceed the payment when the payment transaction fails, and it is allowed to proceed multiple times.
 
-### <mark style="color:blue;">****</mark>[**Payment-attempt states**](payment-tracking.md#payment-attempt-states)
+### [**Payment-attempt states**](payment-tracking.md#payment-attempt-states)
 
 Payment attempt state represents the payment state at the customer-end.
 
@@ -183,20 +183,20 @@ Payment attempt state represents the payment state at the customer-end.
 | <mark style="color:blue;">**canceled**</mark>              | When a customer clicks on the cancel button.                                   |                                                |   |
 | <mark style="color:green;">**success**</mark>              | Attempts to pay were successful.                                               |                                                |   |
 
-## <mark style="color:blue;">****</mark>[**Payment transaction state and payment attempt state**](payment-tracking.md#payment-transaction-state-and-payment-attempt-state)
+## [**Payment transaction state and payment attempt state**](payment-tracking.md#payment-transaction-state-and-payment-attempt-state)
 
 **Payment transaction allowed to be tried multiple times** \
-<mark style="color:blue;">**attempted**</mark> state for payment transaction :heavy\_plus\_sign:  **  **<mark style="color:blue;">**canceled**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> or <mark style="color:red;">**failed**</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> state for payment attempt :arrow\_right: <mark style="color:blue;">**attempted**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> state for payment transaction (the payment transaction is ready to be attempted another time and stay having <mark style="color:blue;">**attempted**</mark> state until it changed to <mark style="color:blue;">**expired**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> or <mark style="color:blue;">**paid**</mark>).
+<mark style="color:blue;">**attempted**</mark> state for payment transaction :heavy\_plus\_sign:  <mark style="color:blue;">**canceled**</mark> or <mark style="color:red;">**failed**</mark> state for payment attempt :arrow\_right: <mark style="color:blue;">**attempted**</mark> state for payment transaction (the payment transaction is ready to be attempted another time and stay having <mark style="color:blue;">**attempted**</mark> state until it changed to <mark style="color:blue;">**expired**</mark> or <mark style="color:blue;">**paid**</mark>).
 
-<mark style="color:blue;">**attempted**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> state for payment transaction :heavy\_plus\_sign: <mark style="color:green;">**success**</mark> <mark style="color:green;"></mark><mark style="color:green;"></mark> state for payment attempt :arrow\_right: <mark style="color:blue;">**paid**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> or <mark style="color:blue;">**authorized**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> state for payment transaction.&#x20;
+<mark style="color:blue;">**attempted**</mark> state for payment transaction :heavy\_plus\_sign: <mark style="color:green;">**success**</mark> state for payment attempt :arrow\_right: <mark style="color:blue;">**paid**</mark> or <mark style="color:blue;">**authorized**</mark> state for payment transaction.&#x20;
 
 **Payment transaction NOT allowed to be tried multiple times**
 
-It does not have an <mark style="color:blue;">**attempted**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> state, it has either <mark style="color:red;">**failed**</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> state or <mark style="color:blue;">**authorized**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> state.
+It does not have an <mark style="color:blue;">**attempted**</mark> state, it has either <mark style="color:red;">**failed**</mark> state or <mark style="color:blue;">**authorized**</mark> state.
 
 ![](<../.gitbook/assets/6 (2).png>)
 
-## <mark style="color:blue;">****</mark>[**Notifications**](payment-tracking.md#notifications)
+## [**Notifications**](payment-tracking.md#notifications)
 
 Ottu has implemented an event notification system, merchant(s) has the ability to choose the types of the notification event such as (Email, SMS, and WhatsApp).
 
@@ -212,10 +212,10 @@ Ottu has implemented an event notification system, merchant(s) has the ability t
 | refunded                                                | Payment transits to <mark style="color:blue;">**refunded**</mark> state                                                  |
 | captured                                                | Payment transits to <mark style="color:blue;">**captured**</mark> state                                                  |
 
-## <mark style="color:blue;">****</mark>[**Short-URL**](payment-tracking.md#short-url)
+## [**Short-URL**](payment-tracking.md#short-url)
 
 It is the ability to shorten the URL to be sent by SMS in order to reduce SMS consumption. See [URL shortener configuration](configuration.md#url-shortener-configurations).
 
-## <mark style="color:blue;">****</mark>[**Payment transaction expiration time**](payment-tracking.md#payment-transaction-expiration-time)
+## [**Payment transaction expiration time**](payment-tracking.md#payment-transaction-expiration-time)
 
 The expiration time is the length of time within which a failed transaction can be processed again, and the payment can no longer be processed after the stipulated period has expired. **By default,** the expiration period is one hour.

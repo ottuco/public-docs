@@ -35,13 +35,13 @@ You're all set! You can now use the [Checkout SDK ](./)to create a checkout form
 
 ### [Functions](web.md#functions)
 
-#### ****[**Checkout.init**](web.md#checkout.init)****
+#### [**Checkout.init**](web.md#checkout.init)
 
 Is the function that initializes the [checkout process](./#ottu-checkout-sdk-flow) and sets up the necessary configuration options for the [Checkout SDK](./). It needs to be called once on your web page to initialize the checkout process, and it must be called with a configuration object that includes all the necessary options for the checkout process.
 
 When you call `Checkout.init`, the SDK will take care of setting up the necessary components for the checkout process, such as creating a form for the customer to enter their payment details, and handling communication with Ottu's servers to process the payment.
 
-#### ****[**Checkout.reload**](web.md#checkout.reload)****
+#### [**Checkout.reload**](web.md#checkout.reload)
 
 The `Checkout.reload` function in the Checkout SDK is used to refresh the SDK. It's useful when you want to reload the **content** of the SDK after an **error** has occurred or when the content needs to be **refreshed**.
 
@@ -53,9 +53,9 @@ Checkout.reload();
 
 In this example, the `Checkout.reload` function is called to refresh the content of the SDK. This can be useful when an error has occurred and the content needs to be reloaded or refreshed.
 
-#### ****[**Properties** ](web.md#properties)****
+#### [**Properties** ](web.md#properties)
 
-#### ****[**selector**](web.md#selector-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
+#### [**selector**](web.md#selector-string)  _<mark style="color:blue;">**`string`**</mark>_
 
 The `selector` property in the Checkout SDK is used to specify the css selector for the HTML element that will contain the checkout form. This is typically a `<div>` element on your web page.
 
@@ -80,32 +80,32 @@ Checkout.init({
 
 In this example, the `selector` property is set to `"checkout"`, which means that the checkout form will be contained in the `<div>` element with `id="checkout"`.
 
-#### ****[**merchant\_id**](web.md#merchant\_id-string)  **  **_<mark style="color:blue;">**`string`**</mark>_
+#### [**merchant\_id**](web.md#merchant\_id-string)  _<mark style="color:blue;">**`string`**</mark>_
 
 The `merchant_id` specifies your Ottu merchant domain. This should be the root domain of your Ottu account, without the "https://" or "http://" prefix.
 
 For example, if your Ottu URL is `https://example.ottu.com`, then your `merchant_id` should be **example.ottu.com**. This property is used to identify which Ottu merchant account the checkout process should be linked to.
 
-#### ****[**apiKey**](web.md#apikey)****
+#### [**apiKey**](web.md#apikey)
 
 The `apiKey` is your Ottu [API public key](../rest-api/authentication.md#public-key). This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
 
 According to the REST [API documentation](../rest-api/), the `apiKey` property should be set to your Ottu  [API public key](../rest-api/authentication.md#public-key).
 
-#### ****[**session\_id**](web.md#session\_id-string) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### [**session\_id**](web.md#session\_id-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The `session_id` the unique identifier for the payment transaction associated with the checkout process.
 
 This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only).
 
-#### ****[**lang**](web.md#lang-string) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### [**lang**](web.md#lang-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The `lang` property is used to specify the language in which the checkout elements should be displayed. This property can be set to either `"en"` (for English) or `"ar"` (for Arabic).
 
 When `lang` is set to `"en"`, the checkout form will be displayed in English, and when it's set to `"ar"`, the checkout elements will be displayed in Arabic. Additionally, when the `lang` parameter is set to `"ar"`, the layout will switch to right-to-left (RTL) to accommodate Arabic script. \
 For more information on how to use lang parameter in the Checkout API, see [lang](../rest-api/checkout-api.md#language-string-optional).
 
-#### ****[**formsOfPayment**](web.md#formsofpayment-array) ** **_<mark style="color:blue;">**`array`**</mark>_
+#### [**formsOfPayment**](web.md#formsofpayment-array) _<mark style="color:blue;">**`array`**</mark>_
 
 `formsOfPayment` allows you to customize which forms of payment will be displayed in your checkout process. By default, all forms of payment are configured.
 
@@ -118,7 +118,7 @@ The available options for `formsOfPayment` are:
 
 This property can be particularly useful when you want to customize the checkout process and display only specific forms of payment, such as only displaying the Apple Pay button and hiding the other payment options.
 
-#### ****[**css** ](web.md#css-object) ** **_<mark style="color:blue;">**`object`**</mark>_
+#### [**css** ](web.md#css-object) _<mark style="color:blue;">**`object`**</mark>_
 
 `css` can be used to override some of the elements rendered by the SDK to better integrate with your website.
 
@@ -193,7 +193,7 @@ In the Checkout SDK, callback functions play a vital role in providing real-time
 
 Please note that due to technical constraints associated with off-site redirection during the payment process, the `successCallback` and `cancelCallback` functions are only called for on-site checkouts. However, the `errorCallback` function is called for any kind of payments. On-site checkouts include options such as Apple Pay, Google Pay, payments with saved cards, and on-site card form transactions, which support callback functionality for a seamless user experience.
 
-#### ****[**window.errorCallback**](web.md#window.errorcallback)****
+#### [**window.errorCallback**](web.md#window.errorcallback)
 
 The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new session ID using the Checkout API.
 
@@ -225,7 +225,7 @@ In this example, the `errorCallback` function is defined and passed as the value
 `errorCallback` function is not required to perform a redirection. It can handle errors in any way that is appropriate for your application.
 {% endhint %}
 
-#### ****[**window.cancelCallback**](web.md#window.cancelcallback)****
+#### [**window.cancelCallback**](web.md#window.cancelcallback)
 
 The `cancelCallback` in the Checkout SDK is a callback function that is invoked when a payment is canceled.
 
@@ -245,7 +245,7 @@ window.cancelCallback = function (data) {
 
 In this example, the `cancelCallback` function is defined and passed as the value of the `data-cancel` attribute on the Checkout script tag. If a customer cancels a payment, the function will be invoked with a [data object](web.md#data-object) containing information about the cancelled transaction. The function will then handle the cancellation as needed and refresh the Checkout SDK with [Checkout.reload()](web.md#checkout.reload).
 
-#### ****[**window.successCallback**](web.md#window.successcallback)****
+#### [**window.successCallback**](web.md#window.successcallback)
 
 The `successCallback` in the Checkout SDK is a callback function that is invoked when the payment process has been completed successfully.
 
@@ -279,7 +279,7 @@ window.successCallback = function (data) {
 };
 ```
 
-#### ****[**window.beforeRedirect**](web.md#window.beforeredirect)****
+#### [**window.beforeRedirect**](web.md#window.beforeredirect)
 
 For `redirect` checkout processes, you may want to freeze the customer's basket before the customer is redirected to the payment page. The Checkout SDK provides a `beforeRedirect` callback that you can use to perform any necessary actions before the redirection occurs.
 
@@ -319,7 +319,7 @@ Here's an example of how to define the `beforeRedirect` callback:
 
 In this example, the beforeRedirect callback sends a request to an API endpoint to freeze the customer's basket while waiting for the redirection to occur. If the API response is successful, the Promise is resolved and the redirection proceeds. If the API request fails or the response is unsuccessful, the Promise is rejected and the redirection is cancelled.
 
-#### ****[**data Object**](web.md#data-object)****
+#### [**data Object**](web.md#data-object)
 
 The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](web.md#session\_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
 
@@ -327,15 +327,15 @@ The data object received by the [cancelCallback](web.md#window.cancelcallback) a
 
 <summary><a href="web.md#data-object-child-parameters">Data object child parameters</a></summary>
 
-#### ****[**message**](web.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
+#### [**message**](web.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
 
 Is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
 
-#### ****[**session\_id**](web.md#session\_id-string-1) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### [**session\_id**](web.md#session\_id-string-1) _<mark style="color:blue;">**`string`**</mark>_
 
 `session_id` is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
 
-#### &#x20;**** [**status**](web.md#status-string) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### &#x20;[**status**](web.md#status-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The status of the checkout process. Possible values are:
 
@@ -343,15 +343,15 @@ The status of the checkout process. Possible values are:
 * `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session\_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
 * `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
 
-#### ****[**redirect\_url** ](web.md#redirect\_url-url)_<mark style="color:blue;">**`URL`**</mark>_
+#### [**redirect\_url** ](web.md#redirect\_url-url)_<mark style="color:blue;">**`URL`**</mark>_
 
 `redirect_url`, is the URL which is provided in [Checkout API](../rest-api/checkout-api.md) for redirect\_url. See check out API [redirect\_url](../rest-api/checkout-api.md#redirect\_url-url-optional).
 
-#### ****[**order\_no**](web.md#order\_no-string) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### [**order\_no**](web.md#order\_no-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The order number provided in the [Checkout API](../rest-api/checkout-api.md). See checkout API [order\_no](../rest-api/checkout-api.md#order\_no-string-optional).
 
-#### ****[**operation**](web.md#operation-string) ** **_<mark style="color:blue;">**`string`**</mark>_
+#### [**operation**](web.md#operation-string) _<mark style="color:blue;">**`string`**</mark>_
 
 This property indicates whether the payment was a direct charge (`pay`) or an authorization (`authorized`) of the payment amount.
 
@@ -360,13 +360,13 @@ This property indicates whether the payment was a direct charge (`pay`) or an au
 
 Note that authorization typically lasts for a limited time, after which it will expire and the reserved funds will be released back to the customer's account.
 
-#### ****[**reference\_number**](web.md#reference\_numberstring)_<mark style="color:blue;">**`string`**</mark>_
+#### [**reference\_number**](web.md#reference\_numberstring)_<mark style="color:blue;">**`string`**</mark>_
 
 A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
 
 </details>
 
-#### ****
+####
 
 #### [Extended example](web.md#extended-example)
 

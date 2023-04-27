@@ -1,6 +1,6 @@
 # Authentication
 
-## <mark style="color:blue;"></mark>[Authentication types](authentication.md#authentication-types)
+## [Authentication types](authentication.md#authentication-types)
 
 Ottu works with three authentication types:
 
@@ -19,7 +19,7 @@ The permission access for the user to be defined.
 
 <mark style="color:blue;">**Password:**</mark>\*\*\*\*\*\*\*
 
-### <mark style="color:blue;"></mark>[Token authentication](authentication.md#token-authentication)
+### [Token authentication](authentication.md#token-authentication)
 
 It is obsolete and only for legacy.
 
@@ -27,13 +27,13 @@ It is obsolete and only for legacy.
 
 #### **Private key**
 
-This key is used when merchant's server communicates with Ottu API, it should not be embedded in SDKs or made it public. ****&#x20;
+This key is used when merchant's server communicates with Ottu API, it should not be embedded in SDKs or made it public.&#x20;
 
 **It should be mentioned as below:**
 
 <mark style="color:blue;">**Header:**</mark> Authorization
 
-<mark style="color:blue;">**Value:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark> Api-Key \{{api\_key\}}
+<mark style="color:blue;">**Value:**</mark> Api-Key \{{api\_key\}}
 
 #### **Public key**
 
@@ -43,21 +43,21 @@ This key is used for SDKs such like Web, Android, iOS, or Flutter.
 
 ![](../../.gitbook/assets/API.png)
 
-#### ****[**Step 1**](authentication.md#step-1)
+#### [**Step 1**](authentication.md#step-1)
 
 Click on add API key.
 
 ![](<../../.gitbook/assets/Click on add API Key (1).png>)
 
-#### ****[**Step 2**](authentication.md#undefined)
+#### [**Step 2**](authentication.md#undefined)
 
 Fill the required fields and click save.
 
 Name: _<mark style="color:red;">**`required`**</mark>_ Max length 50.
 
-Revoke: _<mark style="color:blue;">**`optional`**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark>_ once checked, the API key can not be used anymore.&#x20;
+Revoke: _<mark style="color:blue;">**`optional`**</mark>_ once checked, the API key can not be used anymore.&#x20;
 
-Expires: _<mark style="color:blue;">**`optional`**</mark> <mark style="color:blue;"></mark><mark style="color:blue;"></mark>_ once the API gets expired, it can not be used anymore.
+Expires: _<mark style="color:blue;">**`optional`**</mark>_ once the API gets expired, it can not be used anymore.
 
 ![](<../../.gitbook/assets/Fill the required fields.png>)
 

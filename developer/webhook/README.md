@@ -1,13 +1,13 @@
 # Webhook
 
-## <mark style="color:blue;"></mark>[Getting started](./#getting-started)
+## [Getting started](./#getting-started)
 
 Webhooks are automated messages sent from apps when something happens. \
 They have either payload or message which are sent to a unique URL, essentially the app's phone number or address.
 
 {% hint style="info" %}
 <mark style="color:blue;">**Webhook vs API**</mark>\
-**Webhook** <mark style="color:blue;"></mark> is an event-based.\
+**Webhook**  is an event-based.\
 It will run when a specific event occurs in the source app.\
 **API**  is request-based.\
 It operates when requests come from other 3rd party apps.\
@@ -99,5 +99,5 @@ For payment event, [webhook\_url](../rest-api/checkout-api.md#webhook\_url-url-o
 **-**[ **status code**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  **200,  the customer will be redirected to redirect\_url.**\
 **-**[ **status code**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  **201,  the customer will be redirected to Ottu payment summary page.**\
 **-**[ **status code**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  **any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications?  Activated.**\
-****
+
 {% endhint %}

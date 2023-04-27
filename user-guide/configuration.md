@@ -4,7 +4,7 @@
 
 Ottu empowers the merchant to make his own configuration easily.
 
-## [Global <mark style="color:blue;"></mark> Configuration walkthrough](configuration.md#global-configuration-walkthrough)
+## [Global Configuration walkthrough](configuration.md#global-configuration-walkthrough)
 
 Ottu dashboard> administration panel > Config
 
@@ -18,70 +18,70 @@ Ottu dashboard> administration panel > Config > Configuration
 
 <figure><img src="../.gitbook/assets/Global configuration.png" alt=""><figcaption></figcaption></figure>
 
-#### ****[**Merchant Name or title**](configuration.md#merchant-name-or-title)****
+#### [**Merchant Name or title**](configuration.md#merchant-name-or-title)
 
 Merchant’s name to be displayed on the dashboard.
 
-#### ****[**Merchant subheader**](configuration.md#merchant-subheader)****
+#### [**Merchant subheader**](configuration.md#merchant-subheader)
 
 A merchant's most important information is briefly highlighted in this field.
 
-#### ****[**Logo**](configuration.md#logo)****
+#### [**Logo**](configuration.md#logo)
 
 Merchant trade market logo
 
-#### ****[**Favicon**](configuration.md#favicon)****
+#### [**Favicon**](configuration.md#favicon)
 
 An icon displayed beside URL in the browser tab or next to the site name in a user's list of bookmarks.
 
-#### ****[**Merchant Website URL**](configuration.md#merchant-website-url)****
+#### [**Merchant Website URL**](configuration.md#merchant-website-url)
 
 URL address of the merchant website.
 
-#### [**Email**](configuration.md#email)****
+#### [**Email**](configuration.md#email)
 
 This email address gets the request for authorizing the permission. Should be only one email address. Normally, it is the email of the installation owner.
 
-#### ****[**Merchant phone**](configuration.md#merchant-phone)****
+#### [**Merchant phone**](configuration.md#merchant-phone)
 
 Merchant contact phone number.
 
-#### ****[**Fixer access key**](configuration.md#fixer-access-key)****
+#### [**Fixer access key**](configuration.md#fixer-access-key)
 
 Fixer.io, is an online service to get currency exchanging rate on real time base, when the merchant creates an account on fixer.io he will get a fixer access key. To be effective, the merchant should enable the online conversion feature.\
 Ottu dashboard > Administration panel > currency > currency exchange configs \[works as should choose online].
 
-#### ****[**Is paused**](configuration.md#is-paused)****
+#### [**Is paused**](configuration.md#is-paused)
 
 Enabling it, will lead to freeze all the transaction process related to payment request link till it gets disabled.
 
-#### [**Enable 2FA on**](configuration.md#enable-2fa-on)****
+#### [**Enable 2FA on**](configuration.md#enable-2fa-on)
 
 Enabling it, will send OTP to the dedicated email address for every dashboard logging in action.
 
-#### ****[**Live update**](configuration.md#live-update)****
+#### [**Live update**](configuration.md#live-update)
 
 It is the date of the first live transaction.
 
-#### ****[**Renewal update**](configuration.md#renewal-update)****
+#### [**Renewal update**](configuration.md#renewal-update)
 
 Installation renewal date, It is determined by the signed contract between Ottu and the merchant.
 
-#### [**Expire payment transaction?**](configuration.md#expire-payment-transaction)****
+#### [**Expire payment transaction?**](configuration.md#expire-payment-transaction)
 
 It is the time of proceeding the payment by the customer through payment request URL.\
 When expiry date passed, then the payment will be transited to expired state and payment request URL will be expired.\
 By default, is 24 hours and could be changed from Ottu dashboard > Administration panel > payment request > payment request configuration\[Transaction expiration time].
 
-#### ****[**Notes**](configuration.md#notes)****
+#### [**Notes**](configuration.md#notes)
 
 Where the merchant can write a note for any additional configuration other than default configuration.
 
-#### ****[**SSL expiry date**](configuration.md#ssl-expiry-date)****
+#### [**SSL expiry date**](configuration.md#ssl-expiry-date)
 
 Security socket layer, it is used to secure a merchant’s server and should be updated according to the SSL expiry date which is populated automatically based on the date of the installation.
 
-#### ****[**Reference Prefix**](configuration.md#reference-prefix)****
+#### [**Reference Prefix**](configuration.md#reference-prefix)
 
 It is for Ottu operations team, If a merchant is having two Ottu installations and one PG then one of the installation should have the reference prefix configured to avoid duplicate track ID for the PG.
 
@@ -93,7 +93,7 @@ If ticked, a user without refund/void permissions will be logged out after passi
 
 If ticked, URL shortener will be activated for public link. See [URL shortener configuration](configuration.md#url-shortener-configurations).
 
-### ****[**URL shortener configurations**](configuration.md#url-shortener-configurations)****
+### [**URL shortener configurations**](configuration.md#url-shortener-configurations)
 
 Ottu dashboard> administration panel > Config > URL shortener configurations
 
@@ -109,7 +109,7 @@ Then click on **Add URL shortener configuration.**
 
 Determine the shortening utility.
 
-#### ****[**API URL**](configuration.md#api-url)****
+#### [**API URL**](configuration.md#api-url)
 
 API endpoint link.
 
@@ -117,11 +117,11 @@ API endpoint link.
 
 Credential.
 
-#### ****[**Is global**](configuration.md#is-global)
+#### [**Is global**](configuration.md#is-global)
 
 If ticked, this configuration will be applied for all cased.
 
-## ****[**Transaction report generation Configuration**](configuration.md#transaction-report-generation-configuration)****
+## [**Transaction report generation Configuration**](configuration.md#transaction-report-generation-configuration)
 
 Ottu dashboard> administration panel > Report > Periodic Transaction Report Config
 
@@ -131,7 +131,7 @@ Ottu dashboard> administration panel > Report > Periodic Transaction Report Conf
 
 <figure><img src="../.gitbook/assets/Periodic transaction report general configuration.png" alt=""><figcaption></figcaption></figure>
 
-#### <mark style="color:green;"></mark>[<mark style="color:green;">Fields description</mark>](configuration.md#undefined)
+#### [<mark style="color:green;">Fields description</mark>](configuration.md#undefined)
 
 #### [Period](configuration.md#period)
 
@@ -167,7 +167,7 @@ To add a new field to the required report, go to **Periodic Transaction report f
 
 <figure><img src="../.gitbook/assets/Periodic transaction report fields.png" alt=""><figcaption></figcaption></figure>
 
-#### [<mark style="color:green;">Fields description</mark>](configuration.md#undefined)<mark style="color:green;"></mark>
+#### [<mark style="color:green;">Fields description</mark>](configuration.md#undefined)
 
 {% hint style="info" %}
 The report will export each field that is added here.
@@ -235,7 +235,7 @@ Here, the keys of the required value are determined.
 
 <details>
 
-<summary><strong>Type: Common</strong> <br><strong></strong>(Required field is other than fields from PG, static, and plugin configuration. Such as payment_date).</summary>
+<summary><strong>Type: Common</strong> <br>(Required field is other than fields from PG, static, and plugin configuration. Such as payment_date).</summary>
 
 **Is active?:**If ticked, It would be used and displayed.
 
@@ -249,7 +249,7 @@ Here, the keys of the required value are determined.
 
 </details>
 
-## ****[**Webhook configuration**](configuration.md#webhook-configuration)****
+## [**Webhook configuration**](configuration.md#webhook-configuration)
 
 Ottu Dashboard > administration panel > Webhook >Webhook Config
 
@@ -259,7 +259,7 @@ Ottu Dashboard > administration panel > Webhook >Webhook Config
 
 <figure><img src="../.gitbook/assets/webhook config.png" alt=""><figcaption></figcaption></figure>
 
-#### <mark style="color:green;"></mark>[<mark style="color:green;">Fields description</mark>](configuration.md#undefined)<mark style="color:green;"></mark>
+#### [<mark style="color:green;">Fields description</mark>](configuration.md#undefined)
 
 #### [HMAC Key](configuration.md#hmac-key)
 

@@ -1,12 +1,12 @@
 # User Cards
 
-## [**Authentication**](user-cards.md#authentication)****
+## [**Authentication**](user-cards.md#authentication)
 
 [API Private Key](authentication.md#private-key)
 
-## <mark style="color:blue;">****</mark>[**Fetch cards**](user-cards.md#fetch-cards)
+## [**Fetch cards**](user-cards.md#fetch-cards)
 
-#### <mark style="color:blue;">****</mark>[**Base URL**](user-cards.md#base-url)
+#### [**Base URL**](user-cards.md#base-url)
 
 <mark style="color:blue;">**GET:**</mark>
 
@@ -22,7 +22,7 @@ https://<ottu-url>/b/pbl/v2/card
 https://<ottu-url>/b/pbl/v2/card/{{token}}
 ```
 
-#### <mark style="color:blue;">****</mark>[**Request parameters**](user-cards.md#request-parameters)
+#### [**Request parameters**](user-cards.md#request-parameters)
 
 #### [type](checkout-api.md#type-string-required) <mark style="color:red;">`required`</mark>
 
@@ -34,7 +34,7 @@ Or\
 
 #### [pg\_codes](checkout-api.md#pg\_codes-list-required) <mark style="color:blue;">`optional`</mark>
 
-#### ****[**Response body showcase**](user-cards.md#response-body-showcase)****
+#### [**Response body showcase**](user-cards.md#response-body-showcase)
 
 In case there is a card for the requested  [customer\_id](user-cards.md#customer\_id)
 
@@ -69,9 +69,9 @@ disabled for subsequent payments
 ```
 {% endhint %}
 
-## <mark style="color:blue;">****</mark>[**Delete cards**](user-cards.md#delete-cards)
+## [**Delete cards**](user-cards.md#delete-cards)
 
-#### <mark style="color:blue;">****</mark>[**Base URL**](user-cards.md#base-url-1)
+#### [**Base URL**](user-cards.md#base-url-1)
 
 <mark style="color:red;">**DEL:**</mark>
 
@@ -79,7 +79,7 @@ disabled for subsequent payments
 https://<ottu-url>/b/pbl/v2/card/{{token}}
 ```
 
-#### <mark style="background-color:blue;">****</mark>[**Request parameters**](user-cards.md#request-parameters-1)
+#### [**Request parameters**](user-cards.md#request-parameters-1)
 
 #### [type](checkout-api.md#type-string-required) <mark style="color:red;">`required`</mark>
 

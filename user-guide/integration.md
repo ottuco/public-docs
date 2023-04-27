@@ -8,19 +8,19 @@ Ottu is a fine-grained epayment solution, Ottu understands the high need for an 
 
 Ottu offers direct-integration for merchants with their own bank account.
 
-### <mark style="color:blue;"></mark>[API integration](integration.md#api-integration)
+### [API integration](integration.md#api-integration)
 
 Ottu understands the greater value direct integration could give to an e-commerce suite, well-organized API documentation should fit and support all types of direct integration.
 
-### <mark style="color:blue;"></mark>[Plug-in integration](integration.md#plug-in-integration)
+### [Plug-in integration](integration.md#plug-in-integration)
 
 Ottu merchants can easily connect with their e-commerce suites (e) the plug-ins and guidelines based on the merchant confirmed ecommerce platform. Plug-ins available for: Shopify, Wordpress-Woocommerce, PrestaShop, opencart, Magento, nopCommerce.
 
-## <mark style="color:blue;"></mark>[Shopify plugin](integration.md#shopify-plugin)
+## [Shopify plugin](integration.md#shopify-plugin)
 
 Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, Shopify is a commerce platform that offers a way to quickly launch your dream business and start selling to your customers.If you are a Shopify merchant, Ottu platform solution will be the best choice for you. Start integrating your ecommerce platform with Ottu platform via Shopify plugin and begin utilizing the useful features of Ottu platform.
 
-## ****[**Ottu payment app installation guide for Shopify merchants**](integration.md#ottu-payment-app-installation-guide-for-shopify-merchants)****
+## [**Ottu payment app installation guide for Shopify merchants**](integration.md#ottu-payment-app-installation-guide-for-shopify-merchants)
 
 #### [Step 1](integration.md#step-1)
 
@@ -62,7 +62,7 @@ Enter your Ottu installation URL that will be provided by the Ottu Onboarding te
 
 Select the payment methods that you want to display to your customers from the list and click on “Activate Ottu”.
 
-![](<../.gitbook/assets/7 (1).png>)
+![](<../.gitbook/assets/7 (1) (2).png>)
 
 #### [Step 8](integration.md#step-8)
 

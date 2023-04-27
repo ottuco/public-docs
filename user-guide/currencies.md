@@ -12,13 +12,13 @@ Payment gateway has a built-in currency configuration, e.g., KPAY(PG) default cu
 
 After logging into Ottu dashboard, you click on the three dots located at the right corner of the page which will lead you to the “Administration panel”. From the left pane in the “Administration panel”, you have “Currency” tab.
 
-![](../.gitbook/assets/Dashboard2.png)
+<figure><img src="../.gitbook/assets/Dashboard2.png" alt=""><figcaption></figcaption></figure>
 
 There are three types of currency configuration: - [Currencies](currencies.md#currencies) - [Currency exchanges](currencies.md#currency-exchanges) - [Exchanges config](currencies.md#exchange-configuration).
 
-![](../.gitbook/assets/1.gif)
+<figure><img src="../.gitbook/assets/1.gif" alt=""><figcaption></figcaption></figure>
 
-### <mark style="color:blue;"></mark>[Currencies](currencies.md#currencies)
+### [Currencies](currencies.md#currencies)
 
 There is a list of available currencies in Ottu.
 
@@ -28,15 +28,15 @@ There is a list of available currencies in Ottu.
 
 Click on “Add Currency” button to add a new currency
 
-![](<../.gitbook/assets/2 (2).png>)
+<figure><img src="../.gitbook/assets/2 (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### [Step 2](currencies.md#undefined)
 
 Tick active option, then click on “save”
 
-![](<../.gitbook/assets/3 (2).png>)
+<figure><img src="../.gitbook/assets/3 (2).png" alt=""><figcaption></figcaption></figure>
 
-### <mark style="color:blue;"></mark>[Currency exchanges](currencies.md#currency-exchanges)
+### [Currency exchanges](currencies.md#currency-exchanges)
 
 Sometimes, the merchant prefers to get their payment(s) in the local currency of their country, even if the customer is living abroad. Thus, currency exchange comes as a solution offered by Ottu to help both of the merchant and customer to achieve the process of payment easily.
 
@@ -50,21 +50,21 @@ Sometimes the bank mediated between the merchant and customer forces a markup fe
 
 Click on “Add Currency Exchange”
 
-![](<../.gitbook/assets/4 (2) (2).png>)
+<figure><img src="../.gitbook/assets/4 (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### [Step 2](currencies.md#undefined)
 
 Insert the required parameters
 
-![](../.gitbook/assets/5edited.png)
+<figure><img src="../.gitbook/assets/5edited (1).png" alt=""><figcaption></figcaption></figure>
 
 #### [Step 3](currencies.md#step-3)
 
 &#x20;Then click on “save”
 
-![](<../.gitbook/assets/6 (1).png>)
+<figure><img src="../.gitbook/assets/6 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-### <mark style="color:blue;"></mark>[Exchange configuration](currencies.md#exchange-configuration)
+### [Exchange configuration](currencies.md#exchange-configuration)
 
 Payment gateway settings are linked to exchange configuration, as it defines the currency rules that should be applied to payment(s).
 
@@ -74,13 +74,13 @@ Payment gateway settings are linked to exchange configuration, as it defines the
 
 Click on “Add Exchange Config”
 
-![](<../.gitbook/assets/7 (1) (1).png>)
+<figure><img src="../.gitbook/assets/7 (1).png" alt=""><figcaption></figcaption></figure>
 
 #### [Step 2](currencies.md#step-2)
 
 Enter the required information and click on “save”
 
-![](<../.gitbook/assets/8 (1).png>)
+<figure><img src="../.gitbook/assets/Exchange_config.png" alt=""><figcaption></figcaption></figure>
 
 #### [Required Parameters Descriptions](currencies.md#required-parameters-descriptions)
 

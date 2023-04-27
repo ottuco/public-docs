@@ -2,7 +2,7 @@
 
 Ottu enables merchant to give his permission to different users to proceed refund or void operation, then the users can perform the approved operation either from the dashboard or over the API.
 
-## ****[**Maker &  checker definition**](operation-request-flow.md#maker-and-checker-definition)****
+## [**Maker &  checker definition**](operation-request-flow.md#maker-and-checker-definition)
 
 **Maker:** Is the one who performs a transaction for refund or void and send the approval request.\
 **Checker:** Is the one who is authorized to approve or reject the received request.&#x20;
@@ -12,7 +12,7 @@ Merchant can have many makers, but only one checker.\
 Checker can proceed refund/void directly.
 {% endhint %}
 
-## ****[**Operation request flow key features**](operation-request-flow.md#operation-request-flow-key-features)****
+## [**Operation request flow key features**](operation-request-flow.md#operation-request-flow-key-features)
 
 * This feature will be activated by adding operations approval plugin\
   Ottu dashboard> administration panel > Plugins > installed plugins.
@@ -54,32 +54,32 @@ The default time will be 48 hrs, defined from backend.
 
 {% hint style="info" %}
 **In case the transaction transit to manual action required state,**\
-**** the maker should be notified. \
+&#x20;the maker should be notified. \
 **In case of refund / void operation with Done state,** \
 an email will be sent to the customer and the maker could be received it after implementing required configuration Ottu dashboard > Administration panel > unit > unit configs> select unit configs, then scroll down to Bcc initiator check box and tick it.\
 **In case of refund / void operation with rejection state,** \
 an email should be sent to the maker only.
 {% endhint %}
 
-## ****[**Operation request table**](operation-request-flow.md#operation-request-table)****
+## [**Operation request table**](operation-request-flow.md#operation-request-table)
 
 A table for operation requests has been created under the ticket tab, where the checker can approve/reject operation requests, and makers can cancel operation request there, along with the history of operation request transactions.\
 A filter will be utilized based on state, operations, date, pg, and currency to show the required request details.
 
 <figure><img src="../../../.gitbook/assets/Operations_Requests.png" alt=""><figcaption></figcaption></figure>
 
-| Header               | Description                                                                                                                                                                                                             |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **ID**               | **ID of the operation request.**                                                                                                                                                                                        |
-| **DATE**             | **The date of creating the request.**                                                                                                                                                                                   |
-| **REQUESTED BY**     |  **Request initiator.**                                                                                                                                                                                                 |
-| **FOR TRANSACTION**  | **Original transaction ID (by clicking on, popup will be shown the payment transaction details).**                                                                                                                      |
-| **OPERATION**        | **Refunded/Voided.**                                                                                                                                                                                                    |
-| **AMOUNT**           | **The amount of the payment transaction.**                                                                                                                                                                              |
-| **OPERATION AMOUNT** | **The amount of the requested operation.**                                                                                                                                                                              |
-| **STATUS**           | **Operation request status (pending, approved, rejected, manual action or expired).**                                                                                                                                   |
-| **CURRENCY**         | **Currency of the payment transaction amount.**                                                                                                                                                                         |
-| **PAYMENT GATEWAY**  | **Payment gateway involved.**                                                                                                                                                                                           |
-| **ACTION**           | <p><strong>Approve.</strong> <br><strong>Reject.</strong> <br><strong>Retry,</strong> in case of manual action required for all users. <strong></strong> <br><strong>Cancel,</strong> for all users except checker.</p> |
+| Header               | Description                                                                                                                                                                                           |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID**               | **ID of the operation request.**                                                                                                                                                                      |
+| **DATE**             | **The date of creating the request.**                                                                                                                                                                 |
+| **REQUESTED BY**     |  **Request initiator.**                                                                                                                                                                               |
+| **FOR TRANSACTION**  | **Original transaction ID (by clicking on, popup will be shown the payment transaction details).**                                                                                                    |
+| **OPERATION**        | **Refunded/Voided.**                                                                                                                                                                                  |
+| **AMOUNT**           | **The amount of the payment transaction.**                                                                                                                                                            |
+| **OPERATION AMOUNT** | **The amount of the requested operation.**                                                                                                                                                            |
+| **STATUS**           | **Operation request status (pending, approved, rejected, manual action or expired).**                                                                                                                 |
+| **CURRENCY**         | **Currency of the payment transaction amount.**                                                                                                                                                       |
+| **PAYMENT GATEWAY**  | **Payment gateway involved.**                                                                                                                                                                         |
+| **ACTION**           | <p><strong>Approve.</strong> <br><strong>Reject.</strong> <br><strong>Retry,</strong> in case of manual action required for all users. <br><strong>Cancel,</strong> for all users except checker.</p> |
 
-## ****
+##

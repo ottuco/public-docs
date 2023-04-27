@@ -332,7 +332,7 @@ International
 
 **CVV**                   &#x20;
 
-123 ****             &#x20;
+123              &#x20;
 
 </details>
 
@@ -366,7 +366,7 @@ International
 
 **CVV**                   &#x20;
 
-100 ****&#x20;
+100&#x20;
 
 </details>
 
@@ -402,7 +402,7 @@ Kuwait
 
 123
 
-**Note**        <mark style="color:blue;"></mark>                &#x20;
+**Note**                        &#x20;
 
 Pin:Any 4 digits For not captured use expiry as 08/21
 
@@ -440,7 +440,7 @@ KSA
 
 100
 
-**Note**        <mark style="color:blue;"></mark>                &#x20;
+**Note**                        &#x20;
 
 On 3D Auth page just click Submit
 
@@ -478,9 +478,10 @@ Oman
 
 766
 
-**Note**        <mark style="color:blue;"></mark>          \ <mark style="color:blue;"></mark>OTP:\
+**Note**                  \
+OTP:\
 Comes to\
-saif@ottu.com       <mark style="color:blue;"></mark>      &#x20;
+saif@ottu.com      &#x20;
 
 </details>
 
@@ -620,7 +621,7 @@ Oman
 
 **CVV**                   &#x20;
 
-070 **** &#x20;
+070  &#x20;
 
 </details>
 
@@ -868,7 +869,7 @@ Egypt
 
 **Note**
 
-OTP: **** 111111
+OTP: 111111
 
 
 

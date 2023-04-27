@@ -1,6 +1,6 @@
 # iOS
 
-## [**Ottu Checkout**](ios.md#ottu-checkout)****
+## [**Ottu Checkout**](ios.md#ottu-checkout)
 
 It's easy and quick to build a great payment experience using Ottu Checkouts which is iOS SDK. In order to collect your user's payment information, we provide powerful and customizable UI screens.
 
@@ -36,11 +36,11 @@ Ottu SDK could be used for other purposes.
 Collecting data by Ottu SDK is just for enhancement of our services and product, this data is never being sold, rented or used for advertising. \
 Of course, data confidentially is **highly appreciated**.
 
-### ****[**Requirements**](ios.md#requirements)
+### [**Requirements**](ios.md#requirements)
 
 Xcode 13.0 or later is required, which is compatible with apps targeting iOS 12 or above.
 
-## ****[**Getting started**](ios.md#getting-started)****
+## [**Getting started**](ios.md#getting-started)
 
 Initially, a session token should be created by Ottu public API, then SDK could be initialized. See [Rest API](../rest-api/)
 
@@ -48,9 +48,9 @@ Initially, a session token should be created by Ottu public API, then SDK could 
 For "apiKey" API [Public key](../rest-api/authentication.md#public-key) sohuld be used.
 {% endhint %}
 
-## ****[**Installation**](ios.md#installation)****
+## [**Installation**](ios.md#installation)
 
-### ****[**Installation with CocoaPods**](ios.md#installation-with-cocoapods)
+### [**Installation with CocoaPods**](ios.md#installation-with-cocoapods)
 
 Ottu is available through [CocoaPods](http://cocoapods.org). \
 To install it, simply add the following line to your Podfile:

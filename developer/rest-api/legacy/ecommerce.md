@@ -1,22 +1,22 @@
 # Ecommerce
 
-## <mark style="color:blue;"></mark>[Getting started](ecommerce.md#getting-started)
+## [Getting started](ecommerce.md#getting-started)
 
 Don't integrate with this API; use checkout-API instead [checkout-api.md](../checkout-api.md "mention"). Ottu offers ecommerce plugin, which empowers merchants business and facilitates the payments against the products.
 
-### <mark style="color:blue;"></mark>[Base URLs](ecommerce.md#base-urls)
+### [Base URLs](ecommerce.md#base-urls)
 
 > <mark style="background-color:purple;">POST \<ottu-url>/pos/crt/</mark>
 
 The variable URL is the installation domain. The URL must be secure, i.e.: https://...
 
-## <mark style="color:blue;"></mark>[Body parameters](ecommerce.md#body-parameters)
+## [Body parameters](ecommerce.md#body-parameters)
 
 ### [Inbound](ecommerce.md#inbound)
 
 _<mark style="color:red;">**Required**</mark>_
 
-#### **amount** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **amount** _<mark style="color:blue;">`string`</mark>_&#x20;
 
 Against currency type for the decimal places.
 
@@ -28,11 +28,11 @@ Gateway account code defined in admin panel.
 
 Letters only. ISO 4217 codes https://en.wikipedia.org/wiki/ISO\_4217. Validated against the gateway settings currencies list defined in admin. Max length: 3.
 
-#### **capture\_address**_<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`(`</mark><mark style="color:red;">**Required**</mark><mark style="color:blue;">`, if the multi step is enabled)`</mark>_
+#### **capture\_address**_<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`(`</mark><mark style="color:red;">**Required**</mark><mark style="color:blue;">`, if the multi step is enabled)`</mark>_
 
 &#x20;It will display the form fields if received True in a request payload and the child plugin of multi step is enabled.
 
-#### **capture\_delivery**_<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`(`</mark><mark style="color:red;">**Required**</mark><mark style="color:blue;">`,if multi step child plugin is enabled)`</mark>_
+#### **capture\_delivery**_<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`(`</mark><mark style="color:red;">**Required**</mark><mark style="color:blue;">`,if multi step child plugin is enabled)`</mark>_
 
 &#x20;It will display the Map to mark the location, upon accessing the payment request link by customer, when the multistep child plugin is enabled.
 
@@ -68,13 +68,13 @@ Customer email. Validated against customer\_email
 
 #### **customer\_phone**_<mark style="color:blue;">`string`</mark>_
 
-&#x20;<mark style="color:blue;"></mark> International phone number, with prefix. Max length: 16.
+&#x20;International phone number, with prefix. Max length: 16.
 
 #### **customer\_first\_name** _<mark style="color:blue;">`string`</mark>_
 
 #### **customer\_last\_name**_<mark style="color:blue;">`string`</mark>_
 
-#### **customer\_address\_line1** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **customer\_address\_line1** _<mark style="color:blue;">`string`</mark>_&#x20;
 
 no specific limit.
 
@@ -84,37 +84,37 @@ no specific limit.
 
 #### **customer\_address\_city** _<mark style="color:blue;">`string`</mark>_
 
-&#x20;<mark style="color:blue;"></mark> Add a default address from admin. Max length: 40.
+&#x20;Add a default address from admin. Max length: 40.
 
-#### **customer\_address\_state** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **customer\_address\_state** _<mark style="color:blue;">`string`</mark>_&#x20;
 
 Max length: 40.
 
-#### **customer\_address\_country** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **customer\_address\_country** _<mark style="color:blue;">`string`</mark>_&#x20;
 
 ISO 3166-1 alpha-2 – two-letter country codes https://en.wikipedia.org/wiki/ISO\_3166-1. Max length: 2.
 
-#### **customer\_address\_postal\_code** _<mark style="color:blue;">`integer`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **customer\_address\_postal\_code** _<mark style="color:blue;">`integer`</mark>_&#x20;
 
-&#x20;<mark style="color:blue;"></mark> Max length: 12.
+&#x20;Max length: 12.
 
-#### **vendor\_name** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **vendor\_name** _<mark style="color:blue;">`string`</mark>_&#x20;
 
 Vendor name is mapped to udf6 for kpay or knet. Max length: 64.
 
-#### **email\_recipients** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **email\_recipients** _<mark style="color:blue;">`string`</mark>_&#x20;
 
 Comma separated emails. Recipients to receive emails, beside customer\_email.
 
-#### **product\_type** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **product\_type** _<mark style="color:blue;">`string`</mark>_&#x20;
 
 Product information. Max length: 128.
 
-#### **redirect\_url** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`(optional, if is set in admin control)`</mark>_&#x20;
+#### **redirect\_url** _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`(optional, if is set in admin control)`</mark>_&#x20;
 
 URL where the user to be redirected after payment process has completed. Note that in includes in query string order\_no and reference\_number. Can be set in admin panel also. Max length: 200.
 
-#### **disclosure\_url**_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`(optional, if is set in admin control)`</mark>_&#x20;
+#### **disclosure\_url**_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`(optional, if is set in admin control)`</mark>_&#x20;
 
 URL where to send the payment result details. Must return a http status 200, in order to proceed with redirection to redirect\_url.\
 Can also be set in admin panel. Max length: 200.
@@ -129,37 +129,37 @@ _<mark style="color:red;">**Required**</mark>_
 
 #### **amount** _<mark style="color:blue;">`string`</mark>_
 
-#### **result** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### **result** _<mark style="color:blue;">`string`</mark>_&#x20;
 
-&#x20;<mark style="color:red;"></mark> Payment status, which can be "success", "canceled", "failed" or "error".
+&#x20;Payment status, which can be "success", "canceled", "failed" or "error".
 
 #### **reference\_number** _<mark style="color:blue;">`string`</mark>_
 
-&#x20;<mark style="color:red;"></mark> Ottu unique identifier.
+&#x20;Ottu unique identifier.
 
 #### **order\_no** _<mark style="color:blue;">`string`</mark>_
 
-#### **customer\_first\_name**  _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_first\_name**  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_last\_name**  _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_last\_name**  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_phone**  _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_phone**  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_email**  _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_email**  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_address\_line1**  _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_address\_line1**  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_address\_line2**  _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_address\_line2**  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_address\_city**  _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_address\_city**  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_address\_state** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_address\_state** _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_address\_postal\_code** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_address\_postal\_code** _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **customer\_address\_line2** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **customer\_address\_line2** _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
-#### **vendor\_name **_<mark style="color:blue;">****</mark> <mark style="color:blue;"></mark><mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
+#### **vendor\_name** _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**Required**</mark>`, if present in inbound payload`_
 
 _<mark style="color:blue;">**Optional**</mark>_
 
@@ -167,11 +167,11 @@ _<mark style="color:blue;">**Optional**</mark>_
 
 #### **message** _<mark style="color:blue;">`string`</mark>_
 
-&#x20;<mark style="color:blue;"></mark> Error message in case of a failed payment.
+&#x20;Error message in case of a failed payment.
 
 #### **bulk\_id** _<mark style="color:blue;">`string`</mark>_
 
-## <mark style="color:blue;"></mark>[Example of Knet request](ecommerce.md#example-of-knet-request)
+## [Example of Knet request](ecommerce.md#example-of-knet-request)
 
 Merchant sends a request to the API endpoint
 
@@ -179,7 +179,7 @@ Merchant sends a request to the API endpoint
 
 where Ottu is installed.
 
-### <mark style="color:blue;"></mark>[Post request](ecommerce.md#post-request)
+### [Post request](ecommerce.md#post-request)
 
 ```json
 {

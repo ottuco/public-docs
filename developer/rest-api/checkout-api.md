@@ -104,7 +104,7 @@ The objective of the  POST request is to facilitate the creation of payment tran
 
 ### [Request Parameters](checkout-api.md#request-parameters)
 
-#### ****[**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`required`</mark>_
+#### [**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
 The amount of the transaction\
 The number of decimals must correlate with the [currency\_code](checkout-api.md#currency\_code-string-required).\
@@ -119,7 +119,7 @@ Attachment could not be sent using [JSON](https://developer.mozilla.org/en-US/do
 Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"\
 The name of the attached file should be no more than 100.
 
-#### ****[**billing\_address**](checkout-api.md#billing\_address-object-optional) **** _<mark style="color:blue;">`object`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**billing\_address**](checkout-api.md#billing\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The billing address is the customer’s registered address.
 
@@ -127,57 +127,57 @@ The billing address is the customer’s registered address.
 
 <summary><em>billing_address object details</em></summary>
 
-#### ****:digit\_one:[ **line1** ](checkout-api.md#line1-string-required)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_one:[ **line1** ](checkout-api.md#line1-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 One of the billing address parameters and should be filled by street & house data.\
 Max length: 128.
 
-#### ****:digit\_two:[ **line2** ](checkout-api.md#line2-string-optional)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_two:[ **line2** ](checkout-api.md#line2-string-optional)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 For accuracy purpose, Additional address data for the [line1](checkout-api.md#line1-string-required).\
 Max length: 128.
 
-#### ****:digit\_three:[city](checkout-api.md#city-string-required) _<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_three:[city](checkout-api.md#city-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 The city where the customer is living and registered.\
 Max length: 40.
 
-#### ****:digit\_four: [**state** ](checkout-api.md#state-string-required)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_four: [**state** ](checkout-api.md#state-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 State of the customer’s city (sometimes the same as the [city](checkout-api.md#city-string-required)).\
 Max length: 40.
 
-#### ****:digit\_five:****[ **country** ](checkout-api.md#country-string-required)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_five:[ **country** ](checkout-api.md#country-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Customer’s country, ISO 3166-1 Alpha-2 code.\
 Will be validated against existing countries.\
 Max length: 2.
 
-#### ****:digit\_six:****[ **postal\_code**](checkout-api.md#postal\_code-string-required) ** **_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_<mark style="color:red;">** **</mark><mark style="color:red;">****</mark>&#x20;
+#### :digit\_six:[ **postal\_code**](checkout-api.md#postal\_code-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_&#x20;
 
 Postal code (maybe has different length for different countries).\
 Max length: 12.
 
 </details>
 
-#### ****[**currency\_code** ](checkout-api.md#currency\_code-string-required)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`required`</mark>_
+#### [**currency\_code** ](checkout-api.md#currency\_code-string-required)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
 The currency code has to be added in Currency > Currencies.\
 More details [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
 3 letters code.
 
-#### ****[**customer\_email** ](checkout-api.md#customer\_email-string-optional)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_email** ](checkout-api.md#customer\_email-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Where to pass the customer’s email address.\
 Have to be a valid email address.\
 Max length 128.
 
-#### ****[**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 For the customer's first name.\
 Max length 64.
 
-#### ****[**customer\_id**](checkout-api.md#customer\_id-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### [**customer\_id**](checkout-api.md#customer\_id-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_&#x20;
 
 Customer ID is created by a merchant.\
 If the customer ID is presented in the Ottu checkout SDK, regardless of the mobile app being used, the customer will be prompted to save the card.\
@@ -185,11 +185,11 @@ This will be a checkbox for the customer to choose whether to save the card.\
 Max length: 64.
 
 {% hint style="info" %}
-If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md#customer\_phone-string-optional) will be ** **_<mark style="color:red;">**`required`**</mark>_\
+If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md#customer\_phone-string-optional) will be _<mark style="color:red;">**`required`**</mark>_\
 **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
 {% endhint %}
 
-#### [customer\_last\_name](checkout-api.md#customer\_last\_name-string-optional) <mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [customer\_last\_name](checkout-api.md#customer\_last\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 For the customer's last name.\
 Max length 64.
@@ -199,19 +199,19 @@ Max length 64.
 For the customer's phone number.\
 Max length 16.
 
-#### [due\_datetime](checkout-api.md#due\_datetime-string-optional) **** _<mark style="color:blue;">`date time`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [due\_datetime](checkout-api.md#due\_datetime-string-optional) _<mark style="color:blue;">`date time`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 It is the due date of the invoice against the requested payment amount.\
 The default value is UTC.\
 Should be in format (DD/MM/YYYY hh:mm)\
 SMS and email reminders can be sent prior and after the due datetime.
 
-#### ****[**email\_recipients** ](checkout-api.md#email\_recipients-list-optional)_<mark style="color:blue;">`list`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**email\_recipients** ](checkout-api.md#email\_recipients-list-optional)_<mark style="color:blue;">`list`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 When the merchant wants to email more people.\
 Max length: 254.
 
-#### ****[**expiration\_time** ](checkout-api.md#expiration\_time-date-optional)_<mark style="color:blue;">`date`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**expiration\_time** ](checkout-api.md#expiration\_time-date-optional)_<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Expiration time is for the payment cycle. \
 The default value is one hour.\
@@ -224,24 +224,24 @@ In order to automatically change the state to **expired**, **Expire Payment Tran
 From Ottu dashboard > administration panel > config > configuration page, then enable field **Expire Payment Transactions**? Otherwise, the transaction will be marked as expired when the customer attempts to pay past the expiration time.
 {% endhint %}
 
-#### ****[**extra**](checkout-api.md#extra-object-optional) **** _<mark style="color:blue;">`object`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**extra**](checkout-api.md#extra-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The merchant can send anything in key value form.\
 **For example,** the merchant can define a validation field in extra parameters, then apply the validation rules.
 
-#### ****[**language**](checkout-api.md#language-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**language**](checkout-api.md#language-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 ISO 639-2 language code\
 [https://www.loc.gov/standards/iso639-2/php/code\_list.php](https://www.loc.gov/standards/iso639-2/php/code\_list.php).\
 Default language is en.\
 Max length: 2.
 
-#### ****[**mode**](checkout-api.md#mode-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**mode**](checkout-api.md#mode-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The default mode is “payment”.\
 Max length: 7.
 
-#### ****[**notifications**](checkout-api.md#notifications-object-optional) **** _<mark style="color:blue;">`object`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**notifications**](checkout-api.md#notifications-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Notification events are triggered by specific states, and it can be sent in various ways, such like SMS and email.\
 Max lenth: longtext.
@@ -250,14 +250,14 @@ Max lenth: longtext.
 
 <summary><em>notifications object details</em></summary>
 
-#### ****:digit\_one:[ **email** ](checkout-api.md#email-list-optional)_<mark style="color:blue;">**`list`**</mark>_<mark style="color:blue;">** **</mark><mark style="color:blue;">****</mark><mark style="color:blue;">** **</mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_one:[ **email** ](checkout-api.md#email-list-optional)_<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
 \[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]\
 **For failed**, in case payment transitions to **error** state and **failed** state was asked to send an email for, then the customer will get an email.\
 Max length: 50.
 
-#### ****:digit\_two:[ **SMS**](checkout-api.md#sms-list-optional) ** **_<mark style="color:blue;">**`list`**</mark>_<mark style="color:blue;">** **</mark><mark style="color:blue;">****</mark><mark style="color:blue;">** **</mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_two:[ **SMS**](checkout-api.md#sms-list-optional) _<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
 \[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]\
@@ -266,12 +266,12 @@ Max length: 50.
 
 </details>
 
-#### ****[**order\_no**](checkout-api.md#order\_no-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**order\_no**](checkout-api.md#order\_no-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Merchant unique identifier for the transaction. ABC123\_1, ABC123\_2.\
 Max length: 128.
 
-#### ****[**pg\_codes** ](checkout-api.md#pg\_codes-list-required)_<mark style="color:blue;">`list`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">`required`</mark>_
+#### [**pg\_codes** ](checkout-api.md#pg\_codes-list-required)_<mark style="color:blue;">`list`</mark>_ _<mark style="color:red;">`required`</mark>_
 
 The pg code is a list of PG setting's codes.\
 Users provide only one PG code.\
@@ -279,18 +279,18 @@ Users provide only one PG code.\
 **For**[ **API Private key**](authentication.md#private-key)**:** User can use all the PG code.\
 Max length: 255.
 
-#### ****[**product\_type**](checkout-api.md#product\_type-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**product\_type**](checkout-api.md#product\_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Product information.\
 Max length: 128.
 
-#### ****[**redirect\_url** ](checkout-api.md#redirect\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**redirect\_url** ](checkout-api.md#redirect\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Where the user is being redirected after the payment process gets completed.\
 Redirect URL can be set in the administration panel.\
 Max length: 200.
 
-#### [shipping\_address](checkout-api.md#shipping\_address-object-optional) **** _<mark style="color:blue;">`object`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [shipping\_address](checkout-api.md#shipping\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The billing address is the customer’s registered address.
 
@@ -298,54 +298,54 @@ The billing address is the customer’s registered address.
 
 <summary><em>shipping_address object details</em></summary>
 
-#### ****:digit\_one:[ **line1** ](checkout-api.md#line1-string-required)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_one:[ **line1** ](checkout-api.md#line1-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Location details where the shipment should be delivered to.\
 Should be filled by street & house data.\
 Max length 128.
 
-#### ****:digit\_two:[ **line2** ](checkout-api.md#line2-string-optional)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_two:[ **line2** ](checkout-api.md#line2-string-optional)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 For accuracy purpose, Additional address data for the [line1](checkout-api.md#line1-string-required-1).\
 Max length 128.
 
-#### ****:digit\_three:[city](checkout-api.md#city-string-required) _<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_three:[city](checkout-api.md#city-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 The city where the shipment should be delivered to.\
 Max length 40.
 
-#### ****:digit\_four: [**state** ](checkout-api.md#state-string-required)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_four: [**state** ](checkout-api.md#state-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 The city where the shipment should be delivered to. (sometimes the same as the [city](checkout-api.md#city-string-required-1)).\
 Max length 40.
 
-#### ****:digit\_five:****[ **country** ](checkout-api.md#country-string-required)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_five:[ **country** ](checkout-api.md#country-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Destination country, ISO 3166-1 Alpha-2 code.\
 Will be validated against existing countries.\
 Max length: 2.
 
-#### ****:digit\_six: **** [**postal\_code**](checkout-api.md#postal\_code-string-required-1) ** **_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_<mark style="color:red;">** **</mark><mark style="color:red;">****</mark>&#x20;
+#### :digit\_six: [**postal\_code**](checkout-api.md#postal\_code-string-required-1) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_&#x20;
 
 Postal code (maybe has different length for different countries).\
 Max length: 12.
 
-#### ****:digit\_seven: **** [first\_name](checkout-api.md#first\_name-string-required) ** **_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_<mark style="color:red;">** **</mark><mark style="color:red;">****</mark>&#x20;
+#### :digit\_seven: [first\_name](checkout-api.md#first\_name-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_&#x20;
 
 Shipment recipient first name.\
 Max length: 64.
 
-#### :digit\_eight: [last\_name](checkout-api.md#last\_name-string-required) _<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_eight: [last\_name](checkout-api.md#last\_name-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Shipment recipient last name.\
 Max length: 64.
 
-#### :digit\_nine: [email ](checkout-api.md#email-string-required)_<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_nine: [email ](checkout-api.md#email-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Shipment recipient email address.\
 Max length: 128.
 
-#### :digit\_one::digit\_zero: [phone](checkout-api.md#phone-string-required) _<mark style="color:blue;">**`string`**</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> _<mark style="color:red;">**`required`**</mark>_
+#### :digit\_one::digit\_zero: [phone](checkout-api.md#phone-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Shipment recipient phone number.\
 Max length: 16.
@@ -362,18 +362,18 @@ If an external URL shortening service, such as Bitly, is [configured](../../user
 If true, it generates short checkout URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
 If an external URL shortening service, such as Bitly, is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be shorter than checkout url response parameter. If not configured, the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be in the format of "https://\<ottu-url>>/b/abc123".
 
-#### ****[**type**](checkout-api.md#type-string-required) ** **_<mark style="color:blue;">**`string`**</mark>_<mark style="color:blue;">** **</mark><mark style="color:blue;">****</mark>** **_<mark style="color:red;">**`required`**</mark>_
+#### [**type**](checkout-api.md#type-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Defines under which plugin the transaction will be created.\
 Available choices: payment\_request, e\_commerce.\
 Max length: 24.
 
-#### [**vendor\_name**](checkout-api.md#vendor\_name-string-optional) **** _<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**vendor\_name**](checkout-api.md#vendor\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 To pass the vendor’s name.\
 Max lengthlength: 64.
 
-#### ****[**webhook\_url** ](checkout-api.md#webhook\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark> <mark style="color:blue;"></mark>_<mark style="color:blue;">`optional`</mark>_
+#### [**webhook\_url** ](checkout-api.md#webhook\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.\
 It should be provided by merchant.\
@@ -384,15 +384,15 @@ See [Webhook](../webhook/).
 
 These parameters will be returned for all the response status.
 
-#### ****[**amount** ](checkout-api.md#amount-string)_<mark style="color:blue;">`string`</mark>_
+#### [**amount** ](checkout-api.md#amount-string)_<mark style="color:blue;">`string`</mark>_
 
 The merchant should always check if the amount he receives from Ottu is the same amount of the order, to avoid user changing the cart amount in between.
 
-#### ****[**attachment**](checkout-api.md#undefined) **** _<mark style="color:blue;">`URL`</mark>_
+#### [**attachment**](checkout-api.md#undefined) _<mark style="color:blue;">`URL`</mark>_
 
 Attachment retrieval URL, the attachment should be uploaded using [attachment](checkout-api.md#attachment-file-optional) request parameter.
 
-#### ****[**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-url) **** _<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+#### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-url) _<mark style="color:blue;">`URL`</mark>_ _<mark style="color:red;">`read only`</mark>_
 
 A short attachment retrieval URL.\
 [shortify\_attachment\_url](checkout-api.md#shortify\_attachment\_url-bool-optional) request parameter should be "true" in order to generate it.\
@@ -402,23 +402,23 @@ Max length: 200.
 
 The generated payment link.
 
-#### ****[**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-url) **** _<mark style="color:blue;">`URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+#### [**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-url) _<mark style="color:blue;">`URL`</mark>_ _<mark style="color:red;">`read only`</mark>_
 
 Short checkout url.\
 [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) request parameter should be "true" in order to generate it.
 
-#### [initiator\_id](checkout-api.md#initiator\_idstring-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+#### [initiator\_id](checkout-api.md#initiator\_idstring-read-only)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`read only`</mark>_
 
 it’s the ID of the user who did the api call.\
 _`It is pressent only when`_ [_`Basic Authentication`_](authentication.md#basic-authentication) _`is used, because`_ [_`API Key Authentication`_](authentication.md#api-keys) _`is not associated with any user`_.\
 Max length: 11.
 
-#### ****[**operation** ](checkout-api.md#operation-string)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+#### [**operation** ](checkout-api.md#operation-string)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`read only`</mark>_
 
 Choice from ("purchase","authorize"). Depnding on how the PG is being selected.\
 Max length: 16.
 
-#### ****[**payment\_methods**](checkout-api.md#payment\_methods-array-object) **** _<mark style="color:blue;">`array [object]`</mark>_
+#### [**payment\_methods**](checkout-api.md#payment\_methods-array-object) _<mark style="color:blue;">`array [object]`</mark>_
 
 Object generated according to specific [payment gateway](../../user-guide/payment-gateway.md) from [pg\_codes](checkout-api.md#pg\_codes-list-required) list from request.
 
@@ -426,37 +426,37 @@ Object generated according to specific [payment gateway](../../user-guide/paymen
 
 <summary><em>object details</em></summary>
 
-#### :digit\_one: **** [**code** ](checkout-api.md#code-string)_<mark style="color:blue;">**`string`**</mark>_
+#### :digit\_one: [**code** ](checkout-api.md#code-string)_<mark style="color:blue;">**`string`**</mark>_
 
 Code of the Gateway Settings instance
 
-#### ****:digit\_two:****[ **name** ](checkout-api.md#name-string)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### :digit\_two:[ **name** ](checkout-api.md#name-string)_<mark style="color:blue;">`string`</mark>_&#x20;
 
 Name of the Gateway Settings instance.
 
-#### ****:digit\_three:****[ **pg** ](checkout-api.md#pg-string)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### :digit\_three:[ **pg** ](checkout-api.md#pg-string)_<mark style="color:blue;">`string`</mark>_&#x20;
 
 Name of the gateway, settings are applied to.
 
-#### ****:digit\_four:****[ **is\_sandbox** ](checkout-api.md#is\_sandbox-bool)_<mark style="color:blue;">`bool`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### :digit\_four:[ **is\_sandbox** ](checkout-api.md#is\_sandbox-bool)_<mark style="color:blue;">`bool`</mark>_&#x20;
 
 It is environment used for this PG settings or not.
 
-#### ****:digit\_five:[ **icon**](checkout-api.md#icon-string-url) **** _<mark style="color:blue;">`string:URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### :digit\_five:[ **icon**](checkout-api.md#icon-string-url) _<mark style="color:blue;">`string:URL`</mark>_&#x20;
 
 URL to default icon of the current gateway.
 
-#### ****:digit\_six:****[ **flow** ](checkout-api.md#flow-string)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### :digit\_six:[ **flow** ](checkout-api.md#flow-string)_<mark style="color:blue;">`string`</mark>_&#x20;
 
 Choice from (“redirect”, ...).
 
-#### ****:digit\_seven: **** [**payment\_url**](checkout-api.md#payment\_url-string-url) **** _<mark style="color:blue;">`string:URL`</mark>_ <mark style="color:blue;"></mark><mark style="color:blue;"></mark>&#x20;
+#### :digit\_seven: [**payment\_url**](checkout-api.md#payment\_url-string-url) _<mark style="color:blue;">`string:URL`</mark>_&#x20;
 
 This URL redirects to the payment page.
 
 </details>
 
-#### ****[**session\_id** ](checkout-api.md#session\_id-string-read-only)_<mark style="color:blue;">`string`</mark>_ <mark style="color:blue;"></mark><mark style="color:red;"><mark style="color:blue;"><mark style="color:blue;"></mark> <mark style="color:red;"></mark>_<mark style="color:red;">`read only`</mark>_
+#### [**session\_id** ](checkout-api.md#session\_id-string-read-only)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`read only`</mark>_
 
 Ottu unique identifier which gets generated when the transaction is created.\
 It can be used to perform subsequent operations, like retrieve, acknowledge, refund, capture, and cancelation.\
@@ -464,7 +464,7 @@ Max lengthlength: 128.
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
 
-#### ****[**API-Request (default required data)**](checkout-api.md#api-request-default-required-data)****
+#### [**API-Request (default required data)**](checkout-api.md#api-request-default-required-data)
 
 ```json
 {
@@ -489,7 +489,7 @@ When we add [notification](../../user-guide/payment-tracking.md#notifications) w
 "[customer\_phone](checkout-api.md#customer\_phone-string-optional)" for sms notification.
 {% endhint %}
 
-#### ****[**Response**](checkout-api.md#response) ****&#x20;
+#### [**Response**](checkout-api.md#response)&#x20;
 
 ```json
 {
@@ -566,7 +566,7 @@ Api-Key {{api_key}}
 
 Using a patch function is a good method of increasing trustability whenever any change gets made to the payment transaction, such as updating the amount on the card or removing items from the cart.
 
-### <mark style="color:blue;"></mark>[Parameters](checkout-api.md#parameters)
+### [Parameters](checkout-api.md#parameters)
 
 All the same fields from [create request](checkout-api.md#create-payment-transaction) can be used. The type of update is partial. But some fields can be cross-validated and require other fields to be provided.
 

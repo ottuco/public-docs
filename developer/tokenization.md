@@ -26,20 +26,24 @@ To get in touch with the Ottu team, KSA merchants can send an email to support@o
 
     #### [Create a Payment Transaction Using the Below Code](tokenization.md#create-a-payment-transaction-using-the-below-code)
 
-    ```json
-    curl --location 'https://sandbox.ottu.net/b/checkout/v1/pymt-txn/' \
-    --header 'Content-Type: application/json' \
-    --header 'Authorization: Api-Key vSUmxsXx.V81oYvOWFMcIywaOu57Utx6VSCmG11lo ' \
-    --data-raw 
-    {
-       "type": "payment_request",
-        "pg_codes": ["credit-card"],
-        "amount": "1.000",
-        "currency_code": "KWD",
-        "customer_id": "example",
-        "customer_email": "customer@ottu.com"
-    }
-    ```
+
+
+```json
+curl --location 'https://sandbox.ottu.net/b/checkout/v1/pymt-txn/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Api-Key vSUmxsXx.V81oYvOWFMcIywaOu57Utx6VSCmG11lo' \
+--data-raw '{
+    "type": "payment_request",
+    "pg_codes": ["card"],
+    "amount": "1.000",
+    "currency_code": "KWD",
+    "customer_id": "example",
+    "customer_email": "customer@ottu.com"
+}'
+```
+
+
+
 2. Use the Checkout SDK to render the payment you just created.
 
 ### [Process](tokenization.md#process)

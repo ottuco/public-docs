@@ -4,6 +4,10 @@
 
 It's easy and quick to build a great payment experience using Ottu Checkouts which is iOS SDK. In order to collect your user's payment information, we provide powerful and customizable UI screens.
 
+{% hint style="warning" %}
+For optimal security, call REST APIs from server-side implementations, not client-side applications such as mobile apps or web browsers.
+{% endhint %}
+
 ## [Features](ios.md#features)
 
 **Simplified security:** Keeping PCI compliance is as easy as collecting credit card numbers with our simplified security. Instead of passing through your server, Ottu receives the sensitive data directly.

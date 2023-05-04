@@ -1,8 +1,14 @@
 # Flutter
 
+## [Getting Started](flutter.md#getting-started)
+
 Let your Flutter app has an amazing and seamless payment experience by using Ottu SDK which is Flutter.\
 Ottu offers, various and customizable UI screen in addition to elements which can be used out of the box to get your user’s payment information.\
 Ottu supports your user interface by low level APIs, empowering you to build a custom experience.
+
+{% hint style="warning" %}
+For optimal security, call REST APIs from server-side implementations, not client-side applications such as mobile apps or web browsers.
+{% endhint %}
 
 ## [Features](flutter.md#features)
 
@@ -32,11 +38,11 @@ Ottu SDK could be used for other purposes.
 Collecting data by Ottu SDK is just for enhancement of our services and product, this data is never being sold, rented or used for advertising. \
 Of course, data confidentially is **highly appreciated**.
 
-## ****[**Requirements**](flutter.md#requirements)****
+## [**Requirements**](flutter.md#requirements)
 
 The Ottu requires Flutter >=2.0 or above is compatible with android and iOS.
 
-## ****[**Getting started**](flutter.md#getting-started)****
+## [**Getting started**](flutter.md#getting-started)
 
 You have to get a session token by using Ottu public API to initiate the required SDK. See [Rest API](../rest-api/)
 
@@ -44,7 +50,7 @@ You have to get a session token by using Ottu public API to initiate the require
 For "api\_Key" API [Public key](../rest-api/authentication.md#public-key) sohuld be used.
 {% endhint %}
 
-### ****[**Installation**](flutter.md#installation)****
+### [**Installation**](flutter.md#installation)
 
 Ottu  is available through [pub.dev](https://pub.dev/).\
 To install, add the following line to your pupspec.yaml:

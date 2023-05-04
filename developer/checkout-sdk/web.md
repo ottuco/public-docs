@@ -1,11 +1,15 @@
 # Web
 
+## [Getting Started](web.md#getting-started)
+
 The [Checkout SDK](./) is a JavaScript library provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your web application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
 
 To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API key](../rest-api/authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [css](web.md#css-object) styling for the checkout interface, and more.
 
 {% hint style="warning" %}
 Please note that the Checkout SDK requires the implementation of the [Checkout API](../rest-api/checkout-api.md) in order to function properly.
+
+For optimal security, call REST APIs from server-side implementations, not client-side applications such as mobile apps or web browsers.
 {% endhint %}
 
 ## [Checkout SDK](web.md#checkout-sdk)

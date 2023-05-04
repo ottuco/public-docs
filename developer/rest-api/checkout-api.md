@@ -52,6 +52,10 @@ The PUT operation cannot be used if the user does not have permission to use the
   * "**Can view e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
   * "**Can view payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
 
+{% hint style="warning" %}
+For optimal security, call REST APIs from server-side implementations, not client-side applications such as mobile apps or web browsers.
+{% endhint %}
+
 {% swagger method="post" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn" summary="Create Payment" %}
 {% swagger-description %}
 

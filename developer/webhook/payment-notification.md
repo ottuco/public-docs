@@ -26,24 +26,24 @@ Payment transaction due amount details&#x20;
 
 <summary>amount_details child parameters</summary>
 
-#### :digit\_one:[currency\_code](payment-notification.md#currency\_code-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### :digit\_one:[currency\_code](payment-notification.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The code represents the used currency\
 3 letters
 
-#### :digit\_two:[amount](payment-notification.md#amount-string-required-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### :digit\_two:[amount](payment-notification.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 Payment transaction original amount. See [amount](../../user-guide/payment-tracking.md#amount)\
 Max length: 24\
 Min value: 0.01
 
-#### :digit\_three: [total](payment-notification.md#total-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### :digit\_three: [total](payment-notification.md#total-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 It represents the whole payment amount ([amount](payment-notification.md#amount-string-required-1)+[fee](payment-notification.md#fee-string-optional))\
 Max length: 24\
 Min value: 0.01
 
-#### :digit\_four: [fee](payment-notification.md#fee-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### :digit\_four: [fee](payment-notification.md#fee-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 It represents a markup amount on the original amount\
 Max length: 24\

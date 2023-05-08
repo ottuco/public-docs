@@ -8,7 +8,7 @@ By integrating with Ottu's payment webhook, merchants can streamline their payme
 
 ## [Payload structure](payment-notification.md#payload-structure)
 
-#### [amount](payment-notification.md#amount-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [amount](payment-notification.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The initial amount of the payment transaction. See [amount](../../user-guide/payment-tracking.md#amount)\
 Max length: 24\
@@ -51,7 +51,7 @@ Min value: 0.01
 
 </details>
 
-#### [capture\_delivery\_address](payment-notification.md#capture\_delivery\_address-bool-optional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+#### [capture\_delivery\_address](payment-notification.md#capture\_delivery\_address-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Indicates whether to capture delivery address.
 
@@ -67,15 +67,15 @@ Indicates whether to capture delivery location.
 
 * The merchant should include it during the creation of the transaction.
 
-#### [currency\_code](payment-notification.md#currency\_code-string-required-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [currency\_code](payment-notification.md#currency\_code-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The currency code of the payment transaction \
 For more details, [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
 3 letters code
 
-<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence condition:</strong> </p><ul><li>The customer should include the billing address data while making the payment of the transaction.</li></ul></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0031">1</span><a href="payment-notification.md#customer_address_city-string-optional-1">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0032">2</span><a href="payment-notification.md#customer_address_country-string-optional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0033">3</span><a href="payment-notification.md#customer_address_line1-string-optional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0034">4</span><a href="payment-notification.md#customer_address_line2-string-optional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-notification.md#customer_address_line1-string-optional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0035">5</span> <a href="payment-notification.md#customer_address_postal_code-string-optional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0036">6</span><a href="payment-notification.md#customer_address_state-string-optional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-notification.md#customer_address_city-string-optional">city</a> (sometimes the same as the <a href="payment-notification.md#customer_address_city-string-optional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence condition:</strong> </p><ul><li>The customer should include the billing address data while making the payment of the transaction.</li></ul></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0031">1</span><a href="payment-notification.md#customer_address_city-string-conditional">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0032">2</span><a href="payment-notification.md#customer_address_country-string-conditional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0033">3</span><a href="payment-notification.md#customer_address_line1-string-conditional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0034">4</span><a href="payment-notification.md#customer_address_line2-string-conditional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-notification.md#customer_address_line1-string-optional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0035">5</span> <a href="payment-notification.md#customer_address_postal_code-string-conditional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0036">6</span><a href="payment-notification.md#customer_address_state-string-conditional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-notification.md#customer_address_city-string-optional">city</a> (sometimes the same as the <a href="payment-notification.md#customer_address_city-string-optional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
 
-#### [customer\_email](payment-notification.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+#### [customer\_email](payment-notification.md#customer\_email-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Where to pass the customer’s email address\
 Have to be a valid email address\
@@ -148,12 +148,12 @@ Min value: 0.01
 
 * The merchant should add it in the [currency configuration](../../user-guide/currencies.md#currency-configuration) and include it during the transaction creation.
 
-#### [gateway\_account](payment-notification.md#gateway\_account-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [gateway\_account](payment-notification.md#gateway\_account-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The [code](../rest-api/checkout-api.md#pg\_codes-list-required) of the payment gateway used to proceed the payment\
 Max length 16
 
-#### [gateway\_name](payment-notification.md#gateway\_name-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [gateway\_name](payment-notification.md#gateway\_name-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The name of the [payment gateway](../../user-guide/payment-gateway.md) used to proceed the payment\
 Max length 64
@@ -204,7 +204,7 @@ Max length 128\
 
 * It will be present only if order\_no has been provided in the request payload.
 
-#### [paid\_amount](payment-notification.md#paid\_amount-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### [paid\_amount](payment-notification.md#paid\_amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 It is the amount that is credited to the merchant's bank account\
 Max length: 24\
@@ -231,7 +231,7 @@ Min value: 0.01
 
 #### [remaining\_amount](payment-notification.md#remaining\_amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_&#x20;
 
-The amount remaining to be paid in the transaction. ([amount](payment-notification.md#amount-string-required) – [settled amount](payment-notification.md#settled\_amount-string-optional))\
+The amount remaining to be paid in the transaction. ([amount](payment-notification.md#amount-string-required) – [settled amount](payment-notification.md#settled\_amount-string-conditional))\
 Max length: 24\
 Min value: 0.01
 
@@ -297,28 +297,26 @@ Must be positive\
 Max length: 24\
 Min value: 0.01
 
-#### :digit\_one:currency\_code _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### :digit\_two:[currency\_code](payment-notification.md#currency\_code-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The code represents the used currency.\
 3 letters
 
-#### :digit\_three:order\_no _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### :digit\_three:[order\_no](payment-notification.md#order\_no-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The order\_no of child transaction object represented in transactions Array
 
-#### :digit\_four: session\_id _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### :digit\_four: [session\_id](payment-notification.md#session\_id-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The unique session identifier of child transaction object represented in transactions Array
 
-#### :digit\_five:state _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### :digit\_five:[state](payment-notification.md#state-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The state of child transaction object represented in transactions Array
-
-
+The state of a child transaction object represented in transactions Array
 
 </details>
 
-#### [voided\_amount](payment-notification.md#voided\_amount-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`optional`</mark>_
+#### [voided\_amount](payment-notification.md#voided\_amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The payment amount resulted by performing [void](../../user-guide/payment-gateway.md#available-operations) operation\
 Max length: 24\

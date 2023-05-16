@@ -9,8 +9,7 @@ coverY: 0
 
 Welcome to Ottu, the ultimate online payment management system (OPMS) that focuses on ensuring secure financial transactions. Let us help you grow and thrive in today's digital economy.
 
-We understand that electronic payment is a necessity for people, and we continuously strive to provide the latest and most recent technology that meets the evolving needs of our users, including merchants, developers, IT professionals, and technicians. We also understand that in today's world, financial security is a top concern, so we are here to provide a reliable solution and help you navigate this landscape easily. Our goal is to help our clients and enable merchants to protect and enhance their businesses and achieve sustainable growth and expansion by providing them with customized tools tailored to meet their specific needs. At Ottu, clients can pay with their preferred currency and payment method. We prioritize client satisfaction, and we are always evolving to ensure that we are adapted to meet the demands of every client across multiple platforms, environments, and industries. We integrate with our users' businesses, infrastructure, and other systems without the need for restructuring or reinstalling, ensuring a seamless transition to our platform.
-
+We understand that electronic payment is a necessity for people, and we continuously strive to provide the latest and most recent technology that meets the evolving needs of our users, including merchants, developers, IT professionals, and technicians. We also understand that in today's world, financial security is a top concern, so we are here to provide a reliable solution and help you navigate this landscape easily. Our goal is to help our clients and enable merchants to protect and enhance their businesses and achieve sustainable growth and expansion by providing them with customized tools tailored to meet their specific needs. At Ottu, clients can pay with their preferred currency and payment method. We prioritize client satisfaction, and we are always evolving to ensure that we are adapted to meet the demands of every client across multiple platforms, environments, and industries. We integrate with our users' businesses, infrastructure, and other systems without the need for restructuring or reinstalling, ensuring a seamless transition to our platform.\
 \
 With Ottu, you are choosing an innovative online payment technology that puts your needs first and helps you take control of your business. You can have peace of mind knowing that your financial transactions are secure and seamless, built with fintech expertise, making us a leading player in the fintech industry.
 
@@ -20,7 +19,7 @@ With Ottu, you are choosing an innovative online payment technology that puts yo
 
 ## [Quick start](./#quick-start)
 
-Our commitment to simplicity means you can start with Ottu quickly and efficiently without any unnecessary hurdles or complications. Making your first online payment through Ottu is a breeze, taking only three simple steps.
+Our commitment to simplicity means you can start with Ottu quickly and efficiently without any unnecessary hurdles or complications. Making your first online payment through Ottu is a breeze, **taking only three simple steps.**
 
 * Firstly, subscribe to Ottu and sign the agreement.
 * Then, you can easily choose a bank payment gateway (PG).
@@ -33,8 +32,8 @@ Our user-friendly interface ensures a smooth and seamless experience, making onl
 At Ottu, we believe that keeping the subscription process simple is crucial. We aim to make the process of starting an Ottu agreement as straightforward as possible. All that is required is the following:
 
 * Ottu agreement paperwork.
-* Confirmation of the associated name of the online business domain: (www.\<ottu-url>.com).
-* You will also have the option to select your e-payment subdomain name, such as online.com or pay.com.
+* Confirmation of the associated name of the online business domain: `www.<ottu-url>.com.`
+* You will also have the option to select your e-payment subdomain name, such as `online.com` or `pay.com`.
 * Lastly, we will ask for essential information about your current business platform to ensure seamless integration with Ottu's payment services.
 
 ### [Bank Payment Gateway Subscription](./#bank-payment-gateway-subscription)
@@ -57,7 +56,7 @@ This process is done in total security to keep our clients’ confidentiality an
 
 #### Fill in the form, the following fields are required.
 
-<table data-header-hidden><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Field</strong></mark></td><td><mark style="color:blue;"><strong>Input</strong></mark></td><td></td></tr><tr><td>Amount:</td><td>10 KWD</td><td></td></tr><tr><td>Currency:</td><td>Kuwaiti Dinar (KWD)</td><td></td></tr><tr><td>Gateway:</td><td>KNET (purchase)</td><td></td></tr><tr><td>Language:</td><td>English</td><td></td></tr><tr><td>Email:</td><td><a href="mailto:developer@ottu-client.com">developer@</a>&#x3C;ottu-url><a href="mailto:developer@ottu-client.com">.com</a></td><td></td></tr><tr><td>First name:</td><td>first name</td><td></td></tr><tr><td>Last name:</td><td>family name</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Field</strong></mark></td><td><mark style="color:blue;"><strong>Input</strong></mark></td><td></td></tr><tr><td>Amount:</td><td>10 KWD</td><td></td></tr><tr><td>Currency:</td><td>Kuwaiti Dinar (KWD)</td><td></td></tr><tr><td>Gateway:</td><td>KNET (purchase)</td><td></td></tr><tr><td>Language:</td><td>English</td><td></td></tr><tr><td>Email:</td><td>developer@&#x3C;ottu-url>.com</td><td></td></tr><tr><td>First name:</td><td>first name</td><td></td></tr><tr><td>Last name:</td><td>family name</td><td></td></tr></tbody></table>
 
 #### Then, navigate to the Generated URL
 
@@ -67,8 +66,7 @@ The URL will direct you to the page below.
 
 ![](<.gitbook/assets/Checkout (2).png>)
 
-Once you click the (Pay Now) button, you will be redirected to the bank page, where you can enter your card details and submit your payment.
-
+Once you click the (Pay Now) button, you will be redirected to the bank page, where you can enter your card details and submit your payment.\
 And congratulations! You have completed your first transaction using Ottu! It is that easy!
 
 ![](<.gitbook/assets/Checkout Done (1).png>)

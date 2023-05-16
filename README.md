@@ -7,36 +7,43 @@ coverY: 0
 
 ## [Introduction](./#introduction)
 
-Nowadays, financial transference becomes a problematic issue, especially with the diverse ways of hijacking the accounts and steal the money. However, Ottu comes to resolve these problems. In the modern generation of technology when electronic payment becomes a need for people, Ottu offers the up-to-date technology that caters to the needs of the merchants. As the satisfaction of our clients is our priority, we are keen on the constant development of the set of services offered by us targeting multiple platforms, environments and industries. Despite the customized collection of tools on the platform, Ottu collection is adapted to meet the demands of every client allowing them to focus on the sustainable growth of their business, expansion of the services, and augmented upscaling.
+Welcome to Ottu, the ultimate online payment management system (OPMS) that focuses on ensuring secure financial transactions. Let us help you grow and thrive in today's digital economy.
+
+We understand that electronic payment is a necessity for people, and we continuously strive to provide the latest and most recent technology that meets the evolving needs of our users, including merchants, developers, IT professionals, and technicians. We also understand that in today's world, financial security is a top concern, so we are here to provide a reliable solution and help you navigate this landscape easily. Our goal is to help our clients and enable merchants to protect and enhance their businesses and achieve sustainable growth and expansion by providing them with customized tools tailored to meet their specific needs. At Ottu, clients can pay with their preferred currency and payment method. We prioritize client satisfaction, and we are always evolving to ensure that we are adapted to meet the demands of every client across multiple platforms, environments, and industries. We integrate with our users' businesses, infrastructure, and other systems without the need for restructuring or reinstalling, ensuring a seamless transition to our platform.
+
+\
+With Ottu, you are choosing an innovative online payment technology that puts your needs first and helps you take control of your business. You can have peace of mind knowing that your financial transactions are secure and seamless, built with fintech expertise, making us a leading player in the fintech industry.
 
 ## [Ottu Architecture](./#ottu-architecture)
 
 <figure><img src=".gitbook/assets/Architecture (1).png" alt=""><figcaption></figcaption></figure>
 
-## <mark style="color:blue;"></mark>[Quick start](./#quick-start)
+## [Quick start](./#quick-start)
 
-By taking only these three steps, you can easily make the first online payment via Ottu:
+Our commitment to simplicity means you can start with Ottu quickly and efficiently without any unnecessary hurdles or complications. Making your first online payment through Ottu is a breeze, taking only three simple steps.
 
-* Signing the agreement for Ottu subscription.
-* Choosing the targeted payment gateway.
-* Interconnecting with online business and bank account using Ottu.
+* Firstly, subscribe to Ottu and sign the agreement.
+* Then, you can easily choose a bank payment gateway (PG).
+* Lastly, you can connect your online business and bank account smoothly with the Ottu system.
+
+Our user-friendly interface ensures a smooth and seamless experience, making online payments faster and more convenient. With Ottu, you can take your business to new heights easily and efficiently.
 
 ### [Ottu Subscription](./#ottu-subscription)
 
-The main subscription process is initiated by signing Ottu agreement. As the client signs the agreement, everything else will be smoothly run. We, at Ottu, simplified the procedures and make it easily conducted from the beginning to the end. However, this process requires the following documents from our client:
+At Ottu, we believe that keeping the subscription process simple is crucial. We aim to make the process of starting an Ottu agreement as straightforward as possible. All that is required is the following:
 
 * Ottu agreement paperwork.
 * Confirmation of the associated name of the online business domain: (www.\<ottu-url>.com).
-* Opting for e-payment subdomain name (online.\<ottu-url>.com / pay.\<ottu-url>.com).
-* Providing the required information on the current business platform.
+* You will also have the option to select your e-payment subdomain name, such as online.com or pay.com.
+* Lastly, we will ask for essential information about your current business platform to ensure seamless integration with Ottu's payment services.
 
 ### [Bank Payment Gateway Subscription](./#bank-payment-gateway-subscription)
 
-Clients of Ottu should do a subscription in a payment gateway. Ottu team is always there to offer the best pieces of advice for the clients about the suitable and best payment methods and services for every business branch with consideration of the running platforms. They provide constant free consultation. The client has only to do the following:
+We understand that choosing the appropriate payment method or gateway (PG) can be a challenging task. That is why we offer our clients expert advice and free consultations to help them make informed decisions. The Ottu team is always there to provide expert guidance, helping clients choose the most suitable payment methods and services based on their business needs and the platforms they operate on. Our clients have only to do the following:
 
-* Payment gateway subscription
-* Choosing a suitable payment method and service according to the type of business and running platform(s)
-* Sharing the client’s payment gateway with Ottu
+* Subscribe to the payment gateway.
+* Choose the best payment method for your business needs and running platform(s).
+* And it is time to share your payment gateway. At this stage, you can rest assured that we follow stringent security protocols and standards to protect your information and confidentiality.
 
 {% hint style="info" %}
 This process is done in total security to keep our clients’ confidentiality and meet their expectations with awareness to the secretness of the information.
@@ -48,21 +55,21 @@ This process is done in total security to keep our clients’ confidentiality an
 
 ## [Payment Request Form Fields](./#payment-request-form-fields)
 
-#### Fill in the form, the following fields are mandatory fields.
+#### Fill in the form, the following fields are required.
 
 <table data-header-hidden><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Field</strong></mark></td><td><mark style="color:blue;"><strong>Input</strong></mark></td><td></td></tr><tr><td>Amount:</td><td>10 KWD</td><td></td></tr><tr><td>Currency:</td><td>Kuwaiti Dinar (KWD)</td><td></td></tr><tr><td>Gateway:</td><td>KNET (purchase)</td><td></td></tr><tr><td>Language:</td><td>English</td><td></td></tr><tr><td>Email:</td><td><a href="mailto:developer@ottu-client.com">developer@</a>&#x3C;ottu-url><a href="mailto:developer@ottu-client.com">.com</a></td><td></td></tr><tr><td>First name:</td><td>first name</td><td></td></tr><tr><td>Last name:</td><td>family name</td><td></td></tr></tbody></table>
 
-#### Navigate to the Generated URL
+#### Then, navigate to the Generated URL
 
 ![](<.gitbook/assets/Generated (2).gif>)
 
-#### PAY NOW: The URL will lead you to the page below.
+The URL will direct you to the page below.
 
 ![](<.gitbook/assets/Checkout (2).png>)
 
-Once you click the (PAY NOW) button, you will be directed to the bank's page to fill in your card details and submit them.
+Once you click the (Pay Now) button, you will be redirected to the bank page, where you can enter your card details and submit your payment.
 
-At this point we can say congratulations, your first transaction has been done as it will be shown as the following example:
+And congratulations! You have completed your first transaction using Ottu! It is that easy!
 
 ![](<.gitbook/assets/Checkout Done (1).png>)
 
@@ -70,25 +77,25 @@ At this point we can say congratulations, your first transaction has been done a
 
 ## [Third party Integration](./#third-party-integration)
 
-Ottu Payment is an easy payment solution. Ottu caters to the high demand of a payment middleware integration to allow full and direct integration with all famous e-commerce suites.
+Ottu is designed to revolutionize your online payment experience. We acknowledge the growing need for direct connecting and full integration with e-commerce platforms. Our cutting-edge system seamlessly integrates with all leading e-commerce platforms, offering a hassle-free and direct payment gateway that ensures a smooth transaction process. Whether you are running a small business or a large corporation, say goodbye to complex payment processes and embrace the simplicity of Ottu.
 
 ### [Plug-in Integration](./#plug-in-integration)
 
-Based on the merchant confirmed e-commerce platform, Ottu enables the merchants to be easily connected with their e-commerce suites, plugins and guidelines. Available plugins are: (Shopify, Woocommerce, PrestaShop, Opencart, Magento, nopCommerce).
+Ottu understands the importance of flexibility and convenience for merchants, so we provide an extensive range of integration options. With our online payment management system (OPMS), merchants can seamlessly connect with their preferred e-commerce platforms, plugins, and guidelines. Ottu supports a variety of plugins, including but not limited to Shopify, WooCommerce, PrestaShop, OpenCart, Magento, and nopCommerce. Join the countless satisfied businesses that trust Ottu for their payment management needs and experience the simplicity of a well-integrated e-commerce suite.
 
-### <mark style="color:blue;"></mark>[Ecommerce](./#ecommerce)
+### [Ecommerce](./#ecommerce)
 
-Ottu portal offers an e-commerce plugin which facilitates the business for the merchant, makes it easy-going and helps them to develop the business enabling them to accept the payments as well as the products. Moreover, Ottu allows you to create your own e-catalogue on the dashboard.
+With the Ottu portal, you can enhance your business by offering an e-commerce plugin that allows merchants to accept payments alongside their products. This ideal integration empowers merchants to simplify their payment processes, thereby increasing efficiency and customer satisfaction. Not only that, but Ottu also enables you to create your personalized e-catalog using our user-friendly dashboard. Whether you are just starting or looking to grow, Ottu provides the tools and solutions you need to succeed and take your business to the next level.
 
 #### Key Features of Ottu E-Commerce:
 
-* Tracing all e-commerce business transactions
-* Integrating payments with a number of well-known e-commerce platforms
-* Embodying small e-commerce suite in Ottu dashboard that enables the merchants to take action on their online business in a timely manner
-* Allowing merchants to easily add branding to customer's checkout pages or redirection links with white-labeling
-* Transferring risk compliant and settlement directly to a merchant bank account without third-party involvement
-* The Ottu operation team supports the merchants 24/7, including installation guides (plugins for targeted e-commerce platforms).
+* Ottu enables you to easily trace all your e-commerce transactions, so you can stay on top of your financials and make informed decisions.
+* With seamless integration into multiple popular e-commerce platforms, Ottu ensures that your payment process is both simple and efficient.
+* The small e-commerce suite embodied in Ottu's dashboard allows merchants to take timely action on their online business with ease.
+* With white labeling, merchants can easily add branding to customer checkout pages or redirection links, thereby enhancing their brand visibility and customer loyalty.
+* Standard-compliant and secure transfers directly to the merchant's bank account without any third-party involvement.
+* The Ottu operation team provides 24/7 support to merchants, offering installation guides and plugins for targeted e-commerce platforms.
 
 {% hint style="success" %}
-Ottu’s peerless features make it a distinctive platform for the merchants
+Ottu's peerless features make it an exceptional five-star platform for merchants.
 {% endhint %}

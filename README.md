@@ -13,6 +13,10 @@ We understand that electronic payment is a necessity for people, and we continuo
 \
 With Ottu, you are choosing an innovative online payment technology that puts your needs first and helps you take control of your business. You can have peace of mind knowing that your financial transactions are secure and seamless, built with fintech expertise, making us a leading player in the fintech industry.
 
+## [Ottu Architecture](./#ottu-architecture)
+
+<figure><img src=".gitbook/assets/Architecture1.png" alt=""><figcaption></figcaption></figure>
+
 ## [Quick start](./#quick-start)
 
 Our commitment to simplicity means you can start with Ottu quickly and efficiently without any unnecessary hurdles or complications. Making your first online payment through Ottu is a breeze, **taking only three simple steps.**

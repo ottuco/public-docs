@@ -13,10 +13,6 @@ We understand that electronic payment is a necessity for people, and we continuo
 \
 With Ottu, you are choosing an innovative online payment technology that puts your needs first and helps you take control of your business. You can have peace of mind knowing that your financial transactions are secure and seamless, built with fintech expertise, making us a leading player in the fintech industry.
 
-## [Ottu Architecture](./#ottu-architecture)
-
-<figure><img src=".gitbook/assets/Architecture (1).png" alt=""><figcaption></figcaption></figure>
-
 ## [Quick start](./#quick-start)
 
 Our commitment to simplicity means you can start with Ottu quickly and efficiently without any unnecessary hurdles or complications. Making your first online payment through Ottu is a breeze, **taking only three simple steps.**
@@ -83,7 +79,7 @@ Ottu understands the importance of flexibility and convenience for merchants, so
 
 ### [Ecommerce](./#ecommerce)
 
-With the Ottu portal, you can enhance your business by offering an e-commerce plugin that allows merchants to accept payments alongside their products. This ideal integration empowers merchants to simplify their payment processes, thereby increasing efficiency and customer satisfaction. Not only that, but Ottu also enables you to create your personalized e-catalog using our user-friendly dashboard. Whether you are just starting or looking to grow, Ottu provides the tools and solutions you need to succeed and take your business to the next level.
+With the Ottu portal, you can enhance your business by offering an e-commerce plugin that allows merchants to accept payments alongside their products. This ideal integration empowers merchants to simplify their payment processes, thereby increasing efficiency and customer satisfaction. Whether you are just starting or looking to grow, Ottu provides the tools and solutions you need to succeed and take your business to the next level.
 
 #### Key Features of Ottu E-Commerce:
 

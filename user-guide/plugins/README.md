@@ -1,10 +1,10 @@
 # Plugins
 
-## <mark style="color:blue;"></mark>[Ottu plugins](./#ottu-plugins)
+## [Ottu plugins](./#ottu-plugins)
 
 Ottu is a plugins based platform, offering a wide range of useful services to empower merchant business toward more automations, flexibility, and credibility.
 
-## <mark style="color:blue;"></mark>[Available plugins](./#available-plugins)
+## [Available plugins](./#available-plugins)
 
 [Payment request](./#payment-request)
 
@@ -14,11 +14,7 @@ Ottu is a plugins based platform, offering a wide range of useful services to em
 
 [Shopify](../integration.md#shopify-plugin)
 
-Catalog
-
 Event
-
-Food ordering
 
 Plugins can be easily added, configured or removed to adopt a merchant business case.
 
@@ -55,7 +51,7 @@ Ottu payment request is:&#x20;
 
 6-The transaction can be tracked and monitored easily.
 
-### <mark style="color:blue;"></mark>[Bulk payment request](./#bulk-payment-request)
+### [Bulk payment request](./#bulk-payment-request)
 
 Ottu bulk payment request is a plugin empowers the merchant to send a payment request for group of customers at the same time, with the possibility to resend the request periodically not only for one time.
 
@@ -101,20 +97,19 @@ In the files window, click on the three dots located up the right corner of the 
 
 ![](<../../.gitbook/assets/10 (1).png>)
 
-### <mark style="color:blue;"></mark>[E-Commerce](./#e-commerce)
+### [E-Commerce](./#e-commerce)
 
-Ottu portal offers the merchant's ecommerce plugin, which empowers merchants business and facilitates the payments against the products, in addition you can create your own ecatalogue via Ottu portal.
+Ottu portal offers the merchant's ecommerce plugin, which empowers merchants business and facilitates the payments against the products.
 
 #### [Ottu ecommerce key features:](./#ottu-ecommerce-key-features)
 
 1. Tracking all ecommerce business transactions.
 2. Create a full payment integration with a number of well known ecommerce suites.
-3. Ottu ecatalogue: small ecommerce suite embedded in Ottu dashboard, easy to configure and let the merchants engage with their online business in a timely manner.
-4. White-label: merchants will take the advantage of adding their branding to customers in checkout-page, redirection-url.
-5. Risk Compliant, settlement directly to a merchant bank account without third-party involvement.
-6. Direct Integration, Ottu operational team will fully support the merchants with the plug-ins and guidelines based on their confirmed ecommerce platform.
+3. White-label: merchants will take the advantage of adding their branding to customers in checkout-page, redirection-url.
+4. Risk Compliant, settlement directly to a merchant bank account without third-party involvement.
+5. Direct Integration, Ottu operational team will fully support the merchants with the plug-ins and guidelines based on their confirmed ecommerce platform.
 
-#### <mark style="color:blue;"></mark>[E-commerce plugin configuration](./#e-commerce-plugin-configuration)
+#### [E-commerce plugin configuration](./#e-commerce-plugin-configuration)
 
 Log into Ottu dashboard and launch administration panel by clicking on the three dots located at page right corner, then go to Ecommerce tab
 
@@ -137,7 +132,7 @@ Select the right configs “save”.
 * SMS **payment details:** merchants opt for this option in case he requires transaction(s) details via SMS.
 * **Individual proxy fields enabled:** only used when merchants have proxy setup.&#x20;
 
-#### <mark style="color:blue;"></mark>[Ottu ecommerce transactions](./#ottu-ecommerce-transactions)
+#### [Ottu ecommerce transactions](./#ottu-ecommerce-transactions)
 
 Merchant can easily track all preceding transactions:
 

@@ -42,7 +42,7 @@ For [Basic Authentication](authentication.md#basic-authentication), permissions 
 * Permission to use the [payment gateway code](checkout-api.md#pg\_codes-list-required) is also required: **"Can use `pg_code`**"
 
 {% hint style="info" %}
-The PUT operation cannot be used if the user does not have permission to use the previously defined [payment gateway code](checkout-api.md#pg\_codes-list-required) on the transaction. For [PATCH](checkout-api.md#update-1), updates can be performed as long as the payment gateway codes are not updated.
+The PUT operation cannot be used if the user does not have permission to use the previously defined [payment gateway code](checkout-api.md#pg\_codes-list-required) on the transaction. For [PATCH](checkout-api.md#update-payment-transaction), updates can be performed as long as the payment gateway codes are not updated.
 {% endhint %}
 
 #### [View](checkout-api.md#view)
@@ -153,7 +153,7 @@ If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md
 **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
 {% endhint %}
 
-#### [due\_datetime](checkout-api.md#due\_datetime-string-less-than-date-time-greater-than-optional) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The date and time by which the payment is due. This field may be used to help remind the customer to complete the payment before the due date The default value is UTC.\
 Should be in format (DD/MM/YYYY hh:mm)

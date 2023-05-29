@@ -52,54 +52,8 @@ The PUT operation cannot be used if the user does not have permission to use the
   * "**Can view e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
   * "**Can view payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
 
-{% hint style="warning" %}
-For optimal security, call REST APIs from server-side implementations, not client-side applications such as mobile apps or web browsers.
-{% endhint %}
-
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn" summary="Create Payment" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
-Api-Key {{api_key}}. See 
-
-[API Key](authentication.md#api-keys)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="type" required="true" type="String" %}
-The type of the payment transaction. See 
-
-[type](checkout-api.md#type-string-required)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="pg_codes" type="list" required="true" %}
-List of  the payment gateway involved. See 
-
-[pg_codes](checkout-api.md#pg_codes-list-required)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="amount" required="true" type="String" %}
-Payment transaction amount. See 
-
-[amount](checkout-api.md#amount-string-required)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="currency_code" required="true" type="String" %}
-Currency used. See 
-
-[currency_code](checkout-api.md#currency_code-string-required)
-
-
-{% endswagger-parameter %}
+{% swagger src="broken-reference" path="/checkout/v1/pymt-txn/" method="post" %}
+[Broken file](broken-reference)
 {% endswagger %}
 
 #### [Create Payment Transaction](checkout-api.md#create-payment-transaction)
@@ -110,14 +64,13 @@ The objective of the  POST request is to facilitate the creation of payment tran
 
 #### [**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The amount of the transaction\
-The number of decimals must correlate with the [currency\_code](checkout-api.md#currency\_code-string-required).\
+Represents the total amount of the payment transaction, which includes the cost of the purchased items or services but excludes any additional fees or charges. The number of decimals must correlate with the [currency\_code](checkout-api.md#currency\_code-string-required).\
 Max length: 24\
 Min value: 0.01
 
-#### [attachment](checkout-api.md#attachment-fileoptional) <mark style="color:blue;">**`file`**</mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### [attachment](checkout-api.md#attachment-fileoptional) <mark style="color:blue;">**`string`**</mark><mark style="color:blue;">**` `**</mark>_<mark style="color:blue;">**`optional`**</mark>_
 
-The attachment file will be stored along with the payment transaction, and the payment transaction supports only one attachment\
+An optional attachment that will be included in email notifications sent to the customer regarding their payment, and also be available for download on the checkout page. This field may be used to provide the customer with additional information or documentation related to their purchase\
 It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type\
 Attachment could not be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/JSON) encoding type\
 Allowed extensions:"pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx"\
@@ -125,7 +78,7 @@ The name of the attached file should be no more than 100.
 
 #### [**billing\_address**](checkout-api.md#billing\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The billing address is the customer’s registered address.
+An object to save customer registered address data into payment transaction.
 
 <details>
 
@@ -153,7 +106,7 @@ Max length: 40.
 
 #### :digit\_five:[ **country** ](checkout-api.md#country-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
-Customer’s country, ISO 3166-1 Alpha-2 code.\
+Customer’s country, [ISO 3166-1 Alpha-2 code](https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2).\
 Will be validated against existing countries.\
 Max length: 2.
 
@@ -166,61 +119,54 @@ Max length: 12.
 
 #### [**currency\_code** ](checkout-api.md#currency\_code-string-required)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The currency code has to be added in Currency > Currencies.\
-More details [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
+The currency in which the transaction is denominated. However, it does not guarantee that the payment must be made in this currency, as there can be currency conversions or [exchanges ](../../user-guide/currencies.md#currency-exchanges)resulting in a different currency being charged.\
+See [currencies](../../user-guide/currencies.md).\
 3 letters code.
 
-#### [**customer\_email** ](checkout-api.md#customer\_email-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_email**](checkout-api.md#customer\_email-string-less-than-email-greater-than-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Where to pass the customer’s email address.\
-Have to be a valid email address.\
+The email address of the customer that is used to send payment notifications and receipts, and can be used for fraud prevention. This field is mandatory and is always sent to the payment gateway. It may also be included in the invoice, receipt, email, and displayed on the payment page. Have to be a valid email address.\
 Max length 128.
 
 #### [**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-For the customer's first name.\
+The first name of the recipient of the payment. This field is used for various communications such as the invoice, receipt, email, SMS, or displayed on the payment page. It may also be sent to the payment gateway if necessary.\
 Max length 64.
 
 #### [**customer\_id**](checkout-api.md#customer\_id-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_&#x20;
 
-Customer ID is created by a merchant.\
-If the customer ID is presented in the Ottu checkout SDK, regardless of the mobile app being used, the customer will be prompted to save the card.\
-This will be a checkbox for the customer to choose whether to save the card.\
+The customer ID is a unique identifier for the customer within the merchant's system. It is also used as a merchant identifier for the customer and plays a critical role in tokenization. All the customer's cards will be associated with this ID.\
 Max length: 64.
+
+#### [customer\_last\_name](checkout-api.md#customer\_last\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+The last name of the recipient of the payment. This field is used for various communications such as the invoice, receipt, email, SMS, or displayed on the payment page. It may also be sent to the payment gateway if necessary.\
+Max length 64.
+
+#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string optional`</mark>_
+
+Customer phone number associated with the payment. This might be sent to the payment gateway and depending on the gateway, it may trigger a click to pay process on the payment page. The phone number will also be included in the invoice, receipt, email, and displayed on the payment page.\
+Max length 16.
 
 {% hint style="info" %}
 If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md#customer\_phone-string-optional) will be _<mark style="color:red;">**`required`**</mark>_\
 **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
 {% endhint %}
 
-#### [customer\_last\_name](checkout-api.md#customer\_last\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [due\_datetime](checkout-api.md#due\_datetime-string-less-than-date-time-greater-than-optional) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-For the customer's last name.\
-Max length 64.
+The date and time by which the payment is due. This field may be used to help remind the customer to complete the payment before the due date The default value is UTC.\
+Should be in format (DD/MM/YYYY hh:mm)
 
-#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string optional`</mark>_
+#### [**email\_recipients**](checkout-api.md#email\_recipients-array-of-string-less-than-email-greater-than-optional) _<mark style="color:blue;">**`array of strings`**</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-For the customer's phone number.\
-Max length 16.
+A comma-separated list of email addresses for internal recipients who will receive customer emails. These recipients will be included in email notifications sent to the customer regarding their payment.
 
-#### [due\_datetime](checkout-api.md#due\_datetime-string-optional) _<mark style="color:blue;">`date time`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**expiration\_time** ](checkout-api.md#expiration\_time-date-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-It is the due date of the invoice against the requested payment amount.\
-The default value is UTC.\
-Should be in format (DD/MM/YYYY hh:mm)\
-SMS and email reminders can be sent prior and after the due datetime.
-
-#### [**email\_recipients** ](checkout-api.md#email\_recipients-list-optional)_<mark style="color:blue;">`list`</mark>_ _<mark style="color:blue;">`optional`</mark>_
-
-When the merchant wants to email more people.\
-Max length: 254.
-
-#### [**expiration\_time** ](checkout-api.md#expiration\_time-date-optional)_<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
-
-Expiration time is for the payment cycle. \
+If defined, any payment transactions created more than the defined period of time ago will be invalidated or expired if the customer tries to pay them. This field may be used to help ensure that payment transactions are processed in a timely manner.\
 The default value is one hour.\
-Should be In format (HH:MM:SS).\
-Should be consistency with [order\_no](checkout-api.md#order\_no-string-optional) expiration time.
+Should be In format (HH:MM:SS).
 
 {% hint style="info" %}
 In order to automatically change the state to **expired**, **Expire Payment Transactions**? Field should be enabled.
@@ -228,27 +174,35 @@ In order to automatically change the state to **expired**, **Expire Payment Tran
 From Ottu dashboard > administration panel > config > configuration page, then enable field **Expire Payment Transactions**? Otherwise, the transaction will be marked as expired when the customer attempts to pay past the expiration time.
 {% endhint %}
 
+{% hint style="info" %}
+If the [expiration \_time](checkout-api.md#expiration\_time-sting-optional) for a payment has passed, the payment state will be changed and cannot be paid. However, if the payment [due\_datetime](checkout-api.md#due\_datetime-date-time-optional) has passed, the payment can still be paid, but the customer may incur fees or penalties. The state of the payment may not change in this case, but the customer's account may be impacted by the late payment.
+{% endhint %}
+
 #### [**extra**](checkout-api.md#extra-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The merchant can send anything in key value form.\
-**For example,** the merchant can define a validation field in extra parameters, then apply the validation rules.
+An object for extra data aka dynamic fields. Extra data can accept any value by default. However, if the merchant wants to enforce a specific type, they can use the plugins.Field class to do so. \
+All CUSTOM fields are validated inside extra field.
+
+#### [generate\_qr\_code](checkout-api.md#generate\_qr\_code-bool-optional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+If set to true, the [qr\_code\_url](checkout-api.md#qr\_code\_url-string-less-than-uri-greater-than-conditional) field will be present in the response. Upon scanning it, the customer will be redirected to the [checkout\_url](checkout-api.md#checkout\_url-string-mandatory), which is the Ottu Checkout page.\
+Default value is false.
 
 #### [**language**](checkout-api.md#language-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-ISO 639-2 language code\
-[https://www.loc.gov/standards/iso639-2/php/code\_list.php](https://www.loc.gov/standards/iso639-2/php/code\_list.php).\
+This field specifies the language to be used for communication with the customer, including the payment page, receipt, invoice, email, SMS, and any other communications related to the payment transaction.\
+Available choices: en, ar.\
 Default language is en.\
 Max length: 2.
 
 #### [**mode**](checkout-api.md#mode-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The default mode is “payment”.\
-Max length: 7.
+Default: “payment”.\
+Value: “payment”.
 
 #### [**notifications**](checkout-api.md#notifications-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Notification events are triggered by specific states, and it can be sent in various ways, such like SMS and email.\
-Max lenth: longtext.
+An object that contains the notification settings for this payment transaction, including SMS and email notifications, as well as the events for which they will be sent (e.g., 'created', 'paid', 'refund', 'canceled', etc.). This field may be used to configure and customize the notifications sent to customers and internal recipients throughout the payment process.
 
 <details>
 
@@ -257,46 +211,43 @@ Max lenth: longtext.
 #### :digit\_one:[ **email** ](checkout-api.md#email-list-optional)_<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
-\[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]\
-**For failed**, in case payment transitions to **error** state and **failed** state was asked to send an email for, then the customer will get an email.\
-Max length: 50.
+\[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]
+
+* If the payment transaction transitions to an **error** state and an email notification has been set up for the **failed** state, then the customer will receive an email.
 
 #### :digit\_two:[ **SMS**](checkout-api.md#sms-list-optional) _<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
-\[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]\
-**For failed**, in case payment transitions to **error** state and **failed** state was asked to send an email for, then the customer will get an SMS.\
-Max length: 50.
+\[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]
+
+* If the payment transaction transitions to an **error** state and an SMS notification has been set up for the **failed** state, then the customer will receive an SMS.
 
 </details>
 
 #### [**order\_no**](checkout-api.md#order\_no-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Merchant unique identifier for the transaction. ABC123\_1, ABC123\_2.\
+The unique identifier assigned to this payment transaction. It is used for tracking purposes and is set by the merchant or the system.\
 Max length: 128.
 
-#### [**pg\_codes** ](checkout-api.md#pg\_codes-list-required)_<mark style="color:blue;">`list`</mark>_ _<mark style="color:red;">`required`</mark>_
+#### [**pg\_codes**](checkout-api.md#pg\_codes-array-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The pg code is a list of PG setting's codes.\
-Users provide only one PG code.\
+The list of payment gateway codes from which a customer can select to perform the payment or authorization. Customer uses only one PG code.\
 **For**[ **Basic authentication**](authentication.md#basic-authentication)**:** User can use the PG code that has permission to access to.\
-**For**[ **API Private key**](authentication.md#private-key)**:** User can use all the PG code.\
-Max length: 255.
+**For**[ **API Private key**](authentication.md#private-key)**:** User can use all the PG code.
 
 #### [**product\_type**](checkout-api.md#product\_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Product information.\
+The type of product or service being purchased. This field may be used for tracking and reporting purposes\
 Max length: 128.
 
-#### [**redirect\_url** ](checkout-api.md#redirect\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**redirect\_url**](checkout-api.md#redirect\_url-string-less-than-uri-greater-than-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Where the user is being redirected after the payment process gets completed.\
-Redirect URL can be set in the administration panel.\
+The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-url-optional) returns a success status. Redirect URL can be set in the administration panel.\
 Max length: 200.
 
 #### [shipping\_address](checkout-api.md#shipping\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The billing address is the customer’s registered address.
+An object to save address data into payment transaction
 
 <details>
 
@@ -325,7 +276,7 @@ Max length 40.
 
 #### :digit\_five:[ **country** ](checkout-api.md#country-string-required)_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
-Destination country, ISO 3166-1 Alpha-2 code.\
+Destination country, [ISO 3166-1 Alpha-2 code](https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2).\
 Will be validated against existing countries.\
 Max length: 2.
 
@@ -359,72 +310,202 @@ Max length: 16.
 #### [s**hortify\_attachment\_url** ](checkout-api.md#shortify\_attachment\_url-bool-optional)<mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short attachment retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as Bitly, is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-url) will be shorter than  attachment response parameter. if not configured, the attachment\_short\_url will be in the same format with attachment response parameter.
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-url) will be shorter than attachment response parameter. if not configured, the [attachment\_short\_url ](checkout-api.md#attachment\_short\_url-string-less-than-uri-greater-than-conditional)will be in the same format with [attachment](checkout-api.md#attachment-string-less-than-uri-greater-than-optional) response parameter.\
+Default value is false.
 
 #### [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) <mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
-If true, it generates short checkout URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as Bitly, is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be shorter than checkout url response parameter. If not configured, the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be in the format of "https://\<ottu-url>>/b/abc123".
+If true, it generates short checkout retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be shorter than checkout url response parameter. If not configured, the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be in the format of "https://\<ottu-url>>/b/abc123".\
+Default value is false.
 
 #### [**type**](checkout-api.md#type-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
-Defines under which plugin the transaction will be created.\
-Available choices: payment\_request, e\_commerce.\
+The type of the payment transaction. This field represents the purpose of the payment and can be one of several pre-defined choices. Available choices: [payment\_request](../../user-guide/plugins/#payment-request), [e\_commerce](../../user-guide/plugins/#e-commerce).\
 Max length: 24.
 
 #### [**vendor\_name**](checkout-api.md#vendor\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-To pass the vendor’s name.\
-Max lengthlength: 64.
+The name of the vendor or merchant associated with this payment. This field may be used for accounting and reporting purposes.\
+Max length: 64.
 
-#### [**webhook\_url** ](checkout-api.md#webhook\_url-url-optional)_<mark style="color:blue;">`URL`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**webhook\_url**](checkout-api.md#webhook\_url-string-less-than-uri-greater-than-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.\
 It should be provided by merchant.\
-Max length: 200.\
 See [Webhook](../webhook/).
 
 ### [Response Parameters](checkout-api.md#response-parameters)
 
 These parameters will be returned for all the response status.
 
-#### [**amount** ](checkout-api.md#amount-string)_<mark style="color:blue;">`string`</mark>_
+#### [**amount**](checkout-api.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-The merchant should always check if the amount he receives from Ottu is the same amount of the order, to avoid user changing the cart amount in between.
+Payment transaction total amount. The merchant should always check if the amount he receives from Ottu is the same amount of the order, to avoid user changing the cart amount in between.\
+See the request parameter [amount](checkout-api.md#amount-string-required) for more information.
 
-#### [**attachment**](checkout-api.md#undefined) _<mark style="color:blue;">`URL`</mark>_
+#### [**attachment**](checkout-api.md#attachment-string-less-than-uri-greater-than-conditiona) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-Attachment retrieval URL, the attachment should be uploaded using [attachment](checkout-api.md#attachment-file-optional) request parameter.
+Attachment retrieval URL. \
+See the request parameter [attachment](checkout-api.md#attachment-string-less-than-uri-greater-than-optional) for more information.
 
-#### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-url) _<mark style="color:blue;">`URL`</mark>_ _<mark style="color:red;">`read only`</mark>_
+**Presence condition:**
+
+* The attachment should be uploaded using [attachment](checkout-api.md#attachment-string-less-than-uri-greater-than-optional) request parameter.
+
+#### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-string-less-than-uri-greater-than-conditional) <mark style="color:blue;">**`string`**</mark> <mark style="color:blue;"></mark> _<mark style="color:blue;">`conditional`</mark>_
 
 A short attachment retrieval URL.\
-[shortify\_attachment\_url](checkout-api.md#shortify\_attachment\_url-bool-optional) request parameter should be "true" in order to generate it.\
 Max length: 200.
 
-#### [checkout\_url](checkout-api.md#checkout\_url-string) _<mark style="color:blue;background-color:blue;">`string`</mark>_
+**Presence condition:**
 
-The generated payment link.
+* [shortify\_attachment\_url](checkout-api.md#shortify\_attachment\_url-bool-optional) request parameter should be "true" in order to generate it.
 
-#### [**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-url) _<mark style="color:blue;">`URL`</mark>_ _<mark style="color:red;">`read only`</mark>_
+#### [**billing\_address**](checkout-api.md#billing\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-Short checkout url.\
-[shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) request parameter should be "true" in order to generate it.
+Customer’s registered address data.\
+See the request parameter [billing\_address](checkout-api.md#billing\_address-object-optional) for more information.
 
-#### [initiator\_id](checkout-api.md#initiator\_idstring-read-only)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`read only`</mark>_
+**Presence condition:**
 
-it’s the ID of the user who did the api call.\
-_`It is pressent only when`_ [_`Basic Authentication`_](authentication.md#basic-authentication) _`is used, because`_ [_`API Key Authentication`_](authentication.md#api-keys) _`is not associated with any user`_.\
+* Any child parameter provided with the [billing\_address](checkout-api.md#billing\_address-object-optional) object in the request payload will be populated in the response as [billing\_address](checkout-api.md#billing\_address-object-conditional) child parameter.
+
+#### [**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-string-less-than-uri-greater-than-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+Short [checkout url.](checkout-api.md#checkout\_url-string-mandatory)
+
+**Presence condition:**
+
+* [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) request parameter should be set to "true" in order to generate it.
+
+#### [checkout\_url](checkout-api.md#checkout\_url-string) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+URL that directs the customer to the Ottu Checkout Page where they can see the payment details and available payment methods for the transaction. If you need to share the payment link over SMS or WhatsApp, use [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-less-than-uri-greater-than-conditional) instead.
+
+#### [currency\_code](checkout-api.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The code of the currency used in the transaction.\
+See the request parameter [currency\_code](checkout-api.md#currency\_code-string-required) for more information.
+
+#### [customer\_email](checkout-api.md#customer\_email-string-less-than-email-greater-than-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+Customer’s email address.\
+See the request parameter [customer\_email](checkout-api.md#customer\_email-email-optional) for more information.
+
+**Presence condition:**
+
+* [customer\_email](checkout-api.md#customer\_email-email-optional) request parameter should be provided.
+
+#### [customer\_first\_name](checkout-api.md#customer\_first\_name-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+Customer’s first name.\
+See the request parameter [customer\_first\_name](checkout-api.md#customer\_first\_name-string-optional) for more information.
+
+**Presence condition:**
+
+* [customer\_first\_name](checkout-api.md#customer\_first\_name-string-optional) request parameter should be provided.
+
+#### [customer\_id](checkout-api.md#customer\_id-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It is a unique identifier assigned to a customer. This identifier can be used to distinguish one customer from another and can be utilized for tracking purposes or to retrieve specific customer information from the API.\
+See the request parameter [customer\_id](checkout-api.md#customer\_id-string-optional) for more information.
+
+**Presence condition:**
+
+* [customer\_id](checkout-api.md#customer\_id-string-optional) request parameter should be provided.
+
+#### [customer\_last\_name](checkout-api.md#customer\_last\_name-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+Customer’s last name.\
+See the request parameter [customer\_last\_name](checkout-api.md#customer\_last\_name-string-optional) for more information.
+
+**Presence condition:**
+
+* [customer\_last\_name](checkout-api.md#customer\_last\_name-string-optional) request parameter should be provided.
+
+#### [custome\_phone](checkout-api.md#custome\_phone-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">**`conditional`**</mark>_
+
+Customer's phone number.\
+See the request parameter [customer\_phone](checkout-api.md#customer\_phone-string-optional) for more information.
+
+**Presence condition:**
+
+* [customer\_phone](checkout-api.md#customer\_phone-string-optional) request parameter should be provided.
+
+#### [due\_datetime](checkout-api.md#due\_datetime-string-less-than-date-time-greater-than-mandatory) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It specifies the deadline for payment. It has no effect on changing the transaction state, and the transaction can be paid even after due\_datetime.\
+See the request parameter [due\_datetime](checkout-api.md#due\_datetime-date-time-optional) for more information.
+
+#### [email\_recipients](checkout-api.md#email\_recipients-array-conditional) _<mark style="color:blue;">`array of strings`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+This is a list of internal email recipients, who will receive notifications sent to the customer about their payment.\
+See the request parameter [email\_recipients](checkout-api.md#email\_recipients-array-optional) for more information.
+
+**Presence condition:**
+
+* Email recipient should be provided in the request payload.
+
+#### [**expiration\_time**](checkout-api.md#expiration\_time-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It refers to the specific point in time after which the transaction cannot be paid anymore, and its state changes accordingly.\
+See the request parameter [expiration\_time](checkout-api.md#expiration\_time-sting-optional) for more information.
+
+#### [extra](checkout-api.md#extra-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It represents additional data fields that can be dynamically added to the response using the extra request parameter.\
+See the request parameter [extra](checkout-api.md#extra-object-optional) for more information.
+
+**Presence condition:**
+
+* Any child parameter provided with the [extra](checkout-api.md#extra-object-optional) object in the request payload will be populated in the response as [extra](checkout-api.md#extra-object-conditional) object child parameter.
+
+#### [initiator\_id](checkout-api.md#initiator\_id-string-conditional) _<mark style="color:blue;">`integer(initiator)`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+The user who initiated the creation of this payment transaction, if available. This field is optional and may be used to track who created the payment transaction\
 Max length: 11.
 
-#### [**operation** ](checkout-api.md#operation-string)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`read only`</mark>_
+**Presence condition:**
 
-Choice from ("purchase","authorize"). Depnding on how the PG is being selected.\
+* It is present only when [Basic Authentication](authentication.md#basic-authentication) is used, because [API Key Authentication](authentication.md#api-keys) is not associated with any user.
+
+#### [**language**](checkout-api.md#language-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It represents the language code that is utilized for all communication related to payment transactions with the customer, including payment page, receipt, invoice, email, and SMS\
+For more details check the request parameter [language](checkout-api.md#language-string-optional)
+
+#### [**mode**](checkout-api.md#mode-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Default: “payment”.\
+Value: “payment”.&#x20;
+
+#### [notifications](checkout-api.md#notifications-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It represents the notification settings for this payment transaction which have been received and processed.\
+See the request [notifications](checkout-api.md#notifications-object-optional) for more information.
+
+**Presence condition:**
+
+* Any child parameter provided with the [notifications](checkout-api.md#notifications-object-optional) object in the request payload will be populated in the response as [notifications](checkout-api.md#notifications-object-conditional) child parameter.
+
+#### [**operation** ](checkout-api.md#operation-string)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Specifies the type of operation to be performed by the [payment gateway](../../user-guide/payment-gateway.md). If set to 'purchase', the payment source will be directly charged. If set to 'authorize', the payment source will only be authorized and the actual charge will be made at a later time\
 Max length: 16.
 
-#### [**payment\_methods**](checkout-api.md#payment\_methods-array-object) _<mark style="color:blue;">`array [object]`</mark>_
+#### [order\_no](checkout-api.md#order\_no-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-Object generated according to specific [payment gateway](../../user-guide/payment-gateway.md) from [pg\_codes](checkout-api.md#pg\_codes-list-required) list from request.
+It is a unique identifier assigned to the payment transaction, which is primarily used for tracking purposes. The identifier can be set by the merchant or the system.\
+See the request parameter [order\_no](checkout-api.md#order\_no-string-optional) for information.
+
+**Presence condition:**
+
+* [order\_no](checkout-api.md#order\_no-string-optional) request parameter should be included in the request payload.
+
+#### [**payment\_methods**](checkout-api.md#payment\_methods-array-object) _<mark style="color:blue;">`array [object]`</mark>` `<mark style="color:red;">`mandatory`</mark>_
+
+An array containing all the payment methods derived from the [pg\_codes](checkout-api.md#pg\_codes-array-required) input. Each object in the array contains information about a single payment gateway, including its icon and the [redirect\_url](checkout-api.md#redirect\_url-string-less-than-uri-greater-than-conditional) that will redirect the customer to the payment gateway's payment page
 
 <details>
 
@@ -460,11 +541,77 @@ This URL redirects to the payment page.
 
 </details>
 
-#### [**session\_id** ](checkout-api.md#session\_id-string-read-only)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`read only`</mark>_
+#### [pg\_codes](checkout-api.md#pg\_codes-array-mandatory) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-Ottu unique identifier which gets generated when the transaction is created.\
-It can be used to perform subsequent operations, like retrieve, acknowledge, refund, capture, and cancelation.\
-Max lengthlength: 128.
+The options of the [payment gateway](../../user-guide/payment-gateway.md) codes included in the request payload to enable customers to make payments.\
+See the request parameter [pg\_codes](checkout-api.md#pg\_codes-array-required) for more information.
+
+#### [product\_type](checkout-api.md#product\_type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+The nature of the purchased product or service, which can be employed for the purpose of keeping track and generating reports.\
+See the request parameter [product\_type](checkout-api.md#product\_type-string-optional) for information.
+
+**Presence condition:**
+
+* &#x20;[product\_type](checkout-api.md#product\_type-string-optional) request parameter should be included in the request payload.
+
+#### [qr\_code\_url](checkout-api.md#qr\_code\_url-string-less-than-uri-greater-than-conditional) _<mark style="color:blue;">`string conditional`</mark>_
+
+A QR code that, when scanned, redirects to the checkout page for this payment. This QR code may be displayed on invoices, receipts, or other documents to allow customers to easily access the checkout page and make a payment.&#x20;
+
+**Presence condition:**
+
+* The request parameter [generate\_qr\_code](checkout-api.md#generate\_qr\_code-bool-optional) should be set to "true".
+
+#### [redirect\_url](checkout-api.md#redirect\_url-string-less-than-uri-greater-than-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It represents the URL where the customer will be redirected after the payment stage is complete.\
+See the request parameter [redirect\_url](checkout-api.md#redirect\_url-url-optional) more information.
+
+**Presence condition:**
+
+* The request parameter [redirect\_url](checkout-api.md#redirect\_url-url-optional) should be provided.
+
+#### [**session\_id**](checkout-api.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+A unique identifier for each payment transaction, used to maintain the session state during the payment process. It can be used to perform subsequent operations, like retrieve, acknowledge, refund, capture, and cancellation.\
+Max length: 128.
+
+#### [shipping\_address](checkout-api.md#shipping\_address-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+Shipping location data of the customer.\
+See the request parameter [shipping\_address](checkout-api.md#shipping\_address-object-optional) for more information.
+
+**Presence condition:**
+
+* The child objects of the [shipping\_address](checkout-api.md#shipping\_address-object-optional) parameter provided in the request object will be populated as child objects of the [shipping\_address](checkout-api.md#shipping\_address-object-conditional) parameter in the response object.
+
+#### [**state**](checkout-api.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The current state of the payment transaction, it helps to understand the progress of the payment.\
+Enum: "created" "pending" "attempted" "authorized" "paid" "failed" "canceled" "expired" "invalided" "refunded" "cod".\
+See [payment transaction state](../../user-guide/payment-tracking.md#payment-transaction-state-and-payment-attempt-state) for more information.
+
+#### [type](checkout-api.md#type-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The type of the payment transaction.\
+See the request parameter [type ](checkout-api.md#type-string-required)for more information.
+
+#### [vendor\_name](checkout-api.md#vendor\_name-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It represents the name of the merchant or vendor associated with a payment transaction.\
+For more information see [vendor\_name](checkout-api.md#vendor\_name-string-optional).
+
+**Presence condition:**
+
+* The request parameter [vendor\_name](checkout-api.md#vendor\_name-string-optional) should be included in the request payload.
+
+#### [**webhook\_url**](checkout-api.md#webhook\_url-uri-conditional)  _<mark style="color:blue;">**`URL`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It contains the URL where the payment result will be sent via a POST request after the customer has completed the payment session. The payment result will be included in the request body.\
+See [Webhook](../webhook/).
+
+* The request parameter [webhook\_url](checkout-api.md#webhook\_url-url-optional) should be provided.
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
 
@@ -490,7 +637,7 @@ Max lengthlength: 128.
 "[type](checkout-api.md#type-string-required)", "[pg\_codes](checkout-api.md#pg\_codes-list-required)", "[amount](checkout-api.md#amount-string-required)", and  "[currency\_code](checkout-api.md#currency\_code-string-required)" are required parameters.\
 When we add [notification](../../user-guide/payment-tracking.md#notifications) we should add:\
 "[customer\_email](checkout-api.md#customer\_email-string-optional)" for email notification.\
-"[customer\_phone](checkout-api.md#customer\_phone-string-optional)" for sms notification.
+"[customer\_phone](checkout-api.md#customer\_phone-string-optional)" for SMS notification.
 {% endhint %}
 
 #### [**Response**](checkout-api.md#response)&#x20;

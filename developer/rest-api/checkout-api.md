@@ -240,7 +240,7 @@ The list of payment gateway codes from which a customer can select to perform th
 The type of product or service being purchased. This field may be used for tracking and reporting purposes\
 Max length: 128.
 
-#### **redirect\_url** _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**redirect\_url**](checkout-api.md#redirect\_url-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-url-optional) returns a success status. Redirect URL can be set in the administration panel.\
 Max length: 200.
@@ -329,7 +329,7 @@ Max length: 24.
 The name of the vendor or merchant associated with this payment. This field may be used for accounting and reporting purposes.\
 Max length: 64.
 
-#### [**webhook\_url**](checkout-api.md#webhook\_url-string-less-than-uri-greater-than-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**webhook\_url**](checkout-api.md#webhook\_url-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.\
 It should be provided by merchant.\
@@ -344,16 +344,16 @@ These parameters will be returned for all the response status.
 Payment transaction total amount. The merchant should always check if the amount he receives from Ottu is the same amount of the order, to avoid user changing the cart amount in between.\
 See the request parameter [amount](checkout-api.md#amount-string-required) for more information.
 
-#### [**attachment**](checkout-api.md#attachment-string-less-than-uri-greater-than-conditiona) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+#### [**attachment**](checkout-api.md#attachment-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Attachment retrieval URL. \
-See the request parameter [attachment](checkout-api.md#attachment-string-less-than-uri-greater-than-optional) for more information.
+See the request parameter [attachment](checkout-api.md#attachment-string-optional) for more information.
 
 **Presence condition:**
 
-* The attachment should be uploaded using [attachment](checkout-api.md#attachment-string-less-than-uri-greater-than-optional) request parameter.
+* The attachment should be uploaded using [attachment](checkout-api.md#attachment-string-optional) request parameter.
 
-#### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-string-less-than-uri-greater-than-conditional) <mark style="color:blue;">**`string`**</mark> <mark style="color:blue;"></mark> _<mark style="color:blue;">`conditional`</mark>_
+#### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-string-conditional) <mark style="color:blue;">**`string`**</mark> <mark style="color:blue;"></mark> _<mark style="color:blue;">`conditional`</mark>_
 
 A short attachment retrieval URL.\
 Max length: 200.

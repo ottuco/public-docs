@@ -433,24 +433,24 @@ See the request parameter [customer\_phone](checkout-api.md#customer\_phone-stri
 
 * [customer\_phone](checkout-api.md#customer\_phone-string-optional) request parameter should be provided.
 
-#### [due\_datetime](checkout-api.md#due\_datetime-string-less-than-date-time-greater-than-mandatory) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-mandatory) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 It specifies the deadline for payment. It has no effect on changing the transaction state, and the transaction can be paid even after due\_datetime.\
-See the request parameter [due\_datetime](checkout-api.md#due\_datetime-date-time-optional) for more information.
+See the request parameter [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) for more information.
 
-#### [email\_recipients](checkout-api.md#email\_recipients-array-conditional) _<mark style="color:blue;">`array of strings`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+#### [email\_recipients](checkout-api.md#email\_recipients-array-of-strings-conditional) _<mark style="color:blue;">`array of strings`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 This is a list of internal email recipients, who will receive notifications sent to the customer about their payment.\
-See the request parameter [email\_recipients](checkout-api.md#email\_recipients-array-optional) for more information.
+See the request parameter email\_recipients for more information.
 
 **Presence condition:**
 
 * Email recipient should be provided in the request payload.
 
-#### [**expiration\_time**](checkout-api.md#expiration\_time-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [**expiration\_time**](checkout-api.md#expiration\_time-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 It refers to the specific point in time after which the transaction cannot be paid anymore, and its state changes accordingly.\
-See the request parameter [expiration\_time](checkout-api.md#expiration\_time-sting-optional) for more information.
+See the request parameter [expiration\_time](checkout-api.md#expiration\_time-string-optional) for more information.
 
 #### [extra](checkout-api.md#extra-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 

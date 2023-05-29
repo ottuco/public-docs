@@ -68,7 +68,7 @@ Represents the total amount of the payment transaction, which includes the cost 
 Max length: 24\
 Min value: 0.01
 
-#### [attachment](checkout-api.md#attachment-fileoptional) <mark style="color:blue;">**`string`**</mark><mark style="color:blue;">**` `**</mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### [attachment](checkout-api.md#attachment-string-optional) <mark style="color:blue;">**`string`**</mark><mark style="color:blue;">**` `**</mark>_<mark style="color:blue;">**`optional`**</mark>_
 
 An optional attachment that will be included in email notifications sent to the customer regarding their payment, and also be available for download on the checkout page. This field may be used to provide the customer with additional information or documentation related to their purchase\
 It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type\
@@ -117,13 +117,13 @@ Max length: 12.
 
 </details>
 
-#### [**currency\_code** ](checkout-api.md#currency\_code-string-required)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
+#### [**currency\_code**](checkout-api.md#currency\_code-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
 The currency in which the transaction is denominated. However, it does not guarantee that the payment must be made in this currency, as there can be currency conversions or [exchanges ](../../user-guide/currencies.md#currency-exchanges)resulting in a different currency being charged.\
 See [currencies](../../user-guide/currencies.md).\
 3 letters code.
 
-#### [**customer\_email**](checkout-api.md#customer\_email-string-less-than-email-greater-than-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_email**](checkout-api.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The email address of the customer that is used to send payment notifications and receipts, and can be used for fraud prevention. This field is mandatory and is always sent to the payment gateway. It may also be included in the invoice, receipt, email, and displayed on the payment page. Have to be a valid email address.\
 Max length 128.
@@ -158,11 +158,11 @@ If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md
 The date and time by which the payment is due. This field may be used to help remind the customer to complete the payment before the due date The default value is UTC.\
 Should be in format (DD/MM/YYYY hh:mm)
 
-#### [**email\_recipients**](checkout-api.md#email\_recipients-array-of-string-less-than-email-greater-than-optional) _<mark style="color:blue;">**`array of strings`**</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**email\_recipients**](checkout-api.md#email\_recipients-array-of-strings-optional) _<mark style="color:blue;">**`array of strings`**</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 A comma-separated list of email addresses for internal recipients who will receive customer emails. These recipients will be included in email notifications sent to the customer regarding their payment.
 
-#### [**expiration\_time** ](checkout-api.md#expiration\_time-date-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**expiration\_time**](checkout-api.md#expiration\_time-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 If defined, any payment transactions created more than the defined period of time ago will be invalidated or expired if the customer tries to pay them. This field may be used to help ensure that payment transactions are processed in a timely manner.\
 The default value is one hour.\
@@ -175,7 +175,7 @@ From Ottu dashboard > administration panel > config > configuration page, then e
 {% endhint %}
 
 {% hint style="info" %}
-If the [expiration \_time](checkout-api.md#expiration\_time-sting-optional) for a payment has passed, the payment state will be changed and cannot be paid. However, if the payment [due\_datetime](checkout-api.md#due\_datetime-date-time-optional) has passed, the payment can still be paid, but the customer may incur fees or penalties. The state of the payment may not change in this case, but the customer's account may be impacted by the late payment.
+If the [expiration \_time](checkout-api.md#expiration\_time-string-optional) for a payment has passed, the payment state will be changed and cannot be paid. However, if the payment [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) has passed, the payment can still be paid, but the customer may incur fees or penalties. The state of the payment may not change in this case, but the customer's account may be impacted by the late payment.
 {% endhint %}
 
 #### [**extra**](checkout-api.md#extra-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -185,7 +185,7 @@ All CUSTOM fields are validated inside extra field.
 
 #### [generate\_qr\_code](checkout-api.md#generate\_qr\_code-bool-optional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-If set to true, the [qr\_code\_url](checkout-api.md#qr\_code\_url-string-less-than-uri-greater-than-conditional) field will be present in the response. Upon scanning it, the customer will be redirected to the [checkout\_url](checkout-api.md#checkout\_url-string-mandatory), which is the Ottu Checkout page.\
+If set to true, the [qr\_code\_url](checkout-api.md#qr\_code\_url-string-conditional) field will be present in the response. Upon scanning it, the customer will be redirected to the [checkout\_url,](checkout-api.md#checkout\_url-string-mandatory) which is the Ottu Checkout page.\
 Default value is false.
 
 #### [**language**](checkout-api.md#language-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -240,7 +240,7 @@ The list of payment gateway codes from which a customer can select to perform th
 The type of product or service being purchased. This field may be used for tracking and reporting purposes\
 Max length: 128.
 
-#### [**redirect\_url**](checkout-api.md#redirect\_url-string-less-than-uri-greater-than-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### **redirect\_url** _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-url-optional) returns a success status. Redirect URL can be set in the administration panel.\
 Max length: 200.

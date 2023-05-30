@@ -52,11 +52,7 @@ The PUT operation cannot be used if the user does not have permission to use the
   * "**Can view e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
   * "**Can view payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
 
-{% swagger src="broken-reference" path="/checkout/v1/pymt-txn/" method="post" %}
-[Broken file](broken-reference)
-{% endswagger %}
-
-#### [Create Payment Transaction](checkout-api.md#create-payment-transaction)
+## [Create Payment Transaction](checkout-api.md#create-payment-transaction)
 
 The objective of the  POST request is to facilitate the creation of payment transactions and the subsequent generation of payment links, each of which is associated with a unique session ID. These links can be effortlessly shared with customers through a range of communication channels, including email, WhatsApp, and SMS. Additionally, it is possible to incorporate the customer's billing and shipping information into the transaction. Moreover, users of this API have the ability to include diverse forms of data and information within the body request.
 
@@ -68,7 +64,7 @@ Represents the total amount of the payment transaction, which includes the cost 
 Max length: 24\
 Min value: 0.01
 
-#### [attachment](checkout-api.md#attachment-string-optional) <mark style="color:blue;">**`string`**</mark><mark style="color:blue;">**` `**</mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### [attachment](checkout-api.md#attachment-string-optional) <mark style="color:blue;">**`string`**</mark>_<mark style="color:blue;">**`optional`**</mark>_
 
 An optional attachment that will be included in email notifications sent to the customer regarding their payment, and also be available for download on the checkout page. This field may be used to provide the customer with additional information or documentation related to their purchase\
 It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type\
@@ -143,7 +139,7 @@ Max length: 64.
 The last name of the recipient of the payment. This field is used for various communications such as the invoice, receipt, email, SMS, or displayed on the payment page. It may also be sent to the payment gateway if necessary.\
 Max length 64.
 
-#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string optional`</mark>_
+#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Customer phone number associated with the payment. This might be sent to the payment gateway and depending on the gateway, it may trigger a click to pay process on the payment page. The phone number will also be included in the invoice, receipt, email, and displayed on the payment page.\
 Max length 16.
@@ -353,7 +349,7 @@ See the request parameter [attachment](checkout-api.md#attachment-string-optiona
 
 * The attachment should be uploaded using [attachment](checkout-api.md#attachment-string-optional) request parameter.
 
-#### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-string-conditional) <mark style="color:blue;">**`string`**</mark> <mark style="color:blue;"></mark> _<mark style="color:blue;">`conditional`</mark>_
+#### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-string-conditional) <mark style="color:blue;">**`string`**</mark> _<mark style="color:blue;">`conditional`</mark>_
 
 A short attachment retrieval URL.\
 Max length: 200.
@@ -433,7 +429,7 @@ See the request parameter [customer\_phone](checkout-api.md#customer\_phone-stri
 
 * [customer\_phone](checkout-api.md#customer\_phone-string-optional) request parameter should be provided.
 
-#### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-mandatory) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`date-time`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 It specifies the deadline for payment. It has no effect on changing the transaction state, and the transaction can be paid even after due\_datetime.\
 See the request parameter [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) for more information.
@@ -503,7 +499,7 @@ See the request parameter [order\_no](checkout-api.md#order\_no-string-optional)
 
 * [order\_no](checkout-api.md#order\_no-string-optional) request parameter should be included in the request payload.
 
-#### [**payment\_methods**](checkout-api.md#payment\_methods-array-object-mandatory) _<mark style="color:blue;">`array [object]`</mark>` `<mark style="color:red;">`mandatory`</mark>_
+#### [**payment\_methods**](checkout-api.md#payment\_methods-array-object-mandatory) _<mark style="color:blue;">`array [object]`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 An array containing all the payment methods derived from the [pg\_codes](checkout-api.md#pg\_codes-array-required) input. Each object in the array contains information about a single payment gateway, including its icon and the [redirect\_url](checkout-api.md#redirect\_url-string-optional) that will redirect the customer to the payment gateway's payment page
 
@@ -555,7 +551,7 @@ See the request parameter [product\_type](checkout-api.md#product\_type-string-o
 
 * &#x20;[product\_type](checkout-api.md#product\_type-string-optional) request parameter should be included in the request payload.
 
-#### [qr\_code\_url](checkout-api.md#qr\_code\_url-string-conditional) _<mark style="color:blue;">`string conditional`</mark>_
+#### [qr\_code\_url](checkout-api.md#qr\_code\_url-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 A QR code that, when scanned, redirects to the checkout page for this payment. This QR code may be displayed on invoices, receipts, or other documents to allow customers to easily access the checkout page and make a payment.&#x20;
 

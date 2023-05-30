@@ -68,7 +68,7 @@ For demonstration purposes, let's consider the “Ottu Apple pay” ID from the 
 
 Click on “Add Domain” from “Merchant Domains” section.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 #### &#x20; :digit\_nine:[**Enter the domain you want to register**](apple-pay.md#enter-the-domain-you-want-to-register)
 
@@ -115,7 +115,7 @@ Fill the required fields and click “Save”
 Ottu Dashboard > Administration Panel > Payment Service\
 Choose the required Apple Pay service, which already added above. Named test.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Upload the “.text” file in [step 10](apple-pay.md#download-the-.text-file-and-provide-it-to-ottu) to “Domain Verification File”, then save.
 
@@ -207,9 +207,7 @@ Login to Apple Pay developer account, go to Merchant ID that was created and cre
 
 #### :digit\_two::digit\_seven:[**Download the file**, **which is the Apple Pay Payment processing certificate file**](apple-pay.md#download-the-file-which-is-the-apple-pay-payment-processing-certificate-file) &#x20;
 
-
-
-![](broken-reference)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 #### :digit\_two::digit\_eight:[**Upload the file in MPGS portal**](apple-pay.md#upload-the-file-in-mpgs-portal)
 

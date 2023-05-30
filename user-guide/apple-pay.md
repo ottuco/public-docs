@@ -82,7 +82,7 @@ To verify the domain, download the “.text” file and ensure that you have it 
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_one::digit\_one:[**Ottu will update and configure the file in the installation backend**](apple-pay.md#ottu-will-update-and-configure-the-file-in-the-installation-backend.)
+#### :digit\_one::digit\_one:[**Ottu will update and configure the file in the installation backend**](apple-pay.md#ottu-will-update-and-configure-the-file-in-the-installation-backend)
 
 The Ottu side should include the new Apple Pay service that is specifically configured for the “Merchant ID” and “Merchant Domain”.
 

@@ -49,7 +49,7 @@ Click on add API key.
 
 ![](<../../.gitbook/assets/Click on add API Key (1).png>)
 
-#### [**Step 2**](authentication.md#undefined)
+#### [**Step 2**](authentication.md#step-2)
 
 Fill the required fields and click save.
 

@@ -12,7 +12,7 @@ To get in touch with the Ottu team, KSA merchants can send an email to support@o
 ## [Implementation](tokenization.md#implementation)
 
 1.  Use the [Checkout API](rest-api/checkout-api.md) to create a [session\_id](rest-api/checkout-api.md#session\_id-string-mandatory) with a [pg\_code](rest-api/checkout-api.md#pg\_codes-array-required) associated with a MID that supports and has tokenization enabled. \
-    Make sure the [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) field is present in the request body, as it is essential for allowing customers to save cards. The `customer_id` is the primary way to associate saved cards with a given customer, regardless of whether it's for hosted or direct integration.\
+    Make sure the [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) field is present in the request body, as it is essential for allowing customers to save cards. The customer\_id is the primary way to associate saved cards with a given customer, regardless of whether it's for hosted or direct integration.\
 
 
 

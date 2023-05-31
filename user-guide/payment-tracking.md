@@ -41,7 +41,7 @@ The headers of each child payment transaction are inherited from the headers of 
 
 ### [Amount definitions and calculation mechanism](payment-tracking.md#amount-definitions-and-calculation-mechanism)&#x20;
 
-Many headers can be added / removed in transaction tables. See [proxy fields](payment-tracking.md#proxy-fields-1) \
+Many headers can be added / removed in transaction tables. See [proxy fields](payment-tracking.md#proxy-fields) \
 Amount headers are displayed in different titles based on where the header refers to the payment amount in the process flow.
 
 #### [**Amount**:](payment-tracking.md#amount)

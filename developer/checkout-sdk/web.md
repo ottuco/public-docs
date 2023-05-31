@@ -100,14 +100,14 @@ According to the REST [API documentation](../rest-api/), the `apiKey` property s
 
 The `session_id` the unique identifier for the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only).
+This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see session\_id.
 
 #### [**lang**](web.md#lang-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The `lang` property is used to specify the language in which the checkout elements should be displayed. This property can be set to either `"en"` (for English) or `"ar"` (for Arabic).
 
 When `lang` is set to `"en"`, the checkout form will be displayed in English, and when it's set to `"ar"`, the checkout elements will be displayed in Arabic. Additionally, when the `lang` parameter is set to `"ar"`, the layout will switch to right-to-left (RTL) to accommodate Arabic script. \
-For more information on how to use lang parameter in the Checkout API, see [lang](../rest-api/checkout-api.md#language-string-optional).
+For more information on how to use lang parameter in the Checkout API, see [language](../rest-api/checkout-api.md#language-string-optional).
 
 #### [**formsOfPayment**](web.md#formsofpayment-array) _<mark style="color:blue;">**`array`**</mark>_
 
@@ -325,7 +325,7 @@ In this example, the beforeRedirect callback sends a request to an API endpoint 
 
 #### [**data Object**](web.md#data-object)
 
-The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](web.md#session\_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
+The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
 
 <details>
 
@@ -459,9 +459,9 @@ A unique identifier associated with the payment process. It is sent to the payme
 
 If you have completed the [Apple Pay integration](web.md#apple-pay) between Ottu and Apple, the Checkout SDK will automatically make the necessary checks to display the Apple Pay button.
 
-When you initialize the Checkout SDK with your [session\_id](web.md#session\_id-string) and payment gateway [codes](../rest-api/checkout-api.md#pg\_codes-list-required), the SDK will automatically verify the following conditions:
+When you initialize the Checkout SDK with your [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) and payment gateway [codes](../rest-api/checkout-api.md#session\_id-string-mandatory), the SDK will automatically verify the following conditions:
 
-* When initializing the Checkout SDK, a [session\_id](web.md#session\_id-string) with a [pg\_codes](../rest-api/checkout-api.md#pg\_codes-list-required) that was associated with the Apple Pay Payment Service was supplied.
+* When initializing the Checkout SDK, a [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) with a [pg\_codes](../rest-api/checkout-api.md#pg\_codes-array-required) that was associated with the Apple Pay Payment Service was supplied.
 * The customer has an Apple device that supports Apple Pay payments.
 * The browser being used supports Apple Pay.
 * The customer has a wallet configured on their Apple Pay device.

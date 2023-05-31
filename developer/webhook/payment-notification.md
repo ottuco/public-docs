@@ -2,7 +2,7 @@
 
 ## [Overview](payment-notification.md#overview)
 
-The Ottu payment system provides a webhook designed specifically for payment events, including authorization, purchase, failed, canceled, and error. Whenever any of these payment events occur, Ottu will automatically trigger the webhook, sending a JSON payload to the specified [webhook\_url](../rest-api/checkout-api.md#webhook\_url-url-optional) provided in the [Checkout API](../rest-api/checkout-api.md). This JSON payload includes all relevant payment event results, payment details, and payment gateway responses, allowing merchants to receive and process this information in real-time, and to update their own systems accordingly.
+The Ottu payment system provides a webhook designed specifically for payment events, including authorization, purchase, failed, canceled, and error. Whenever any of these payment events occur, Ottu will automatically trigger the webhook, sending a JSON payload to the specified [webhook\_url](../rest-api/checkout-api.md#webhook\_url-string-optional) provided in the [Checkout API](../rest-api/checkout-api.md). This JSON payload includes all relevant payment event results, payment details, and payment gateway responses, allowing merchants to receive and process this information in real-time, and to update their own systems accordingly.
 
 By integrating with Ottu's payment webhook, merchants can streamline their payment processes and enhance their payment workflows. With publicly documented details and straightforward integration instructions, developers can seamlessly integrate Ottu's payment system into their own applications and online stores. Ultimately, the Ottu payment webhook provides a reliable, secure, and efficient way for merchants to manage their payment processing, enabling them to focus on growing their business and serving their customers.
 
@@ -10,7 +10,7 @@ By integrating with Ottu's payment webhook, merchants can streamline their payme
 
 #### [amount](payment-notification.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-The initial amount of the payment transaction. See [amount](../../user-guide/payment-tracking.md#amount)\
+The initial amount of the payment transaction. See [amount](../rest-api/checkout-api.md#amount-string-required)\
 Max length: 24\
 Min value: 0.01
 

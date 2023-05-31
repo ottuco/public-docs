@@ -2,7 +2,7 @@
 
 ## [Getting Started](user-saved-cards.md#getting-started)
 
-Ottu provides two API endpoints for managing user saved cards, making it easy to handle your customers' saved payment information securely. These endpoints allow you to [retrieve](user-saved-cards.md#fetch-cards) all saved cards for a customer or [delete](user-saved-cards.md#delete-cards) a specific card. This functionality is beneficial for providing your customers with a seamless and personalized payment experience, enabling them to manage their saved cards within your application.
+Ottu provides two API endpoints for managing user saved cards, making it easy to handle your customers' saved payment information securely. These endpoints allow you to [retrieve](user-saved-cards.md#fetch-cards) all saved cards for a customer or [delete](user-saved-cards.md#delete-cards) a specific card. This functionality is beneficial for providing your customers with a seamless and personalized payment experience, enabling them to manage their saved cards within your application. These two endpoints are not supported in KSA.
 
 **When using the User Saved Cards endpoints:**
 

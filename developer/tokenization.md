@@ -3,11 +3,8 @@
 ## [Getting started](tokenization.md#getting-started)
 
 With Ottu, you can significantly increase your checkout rate by activating tokenization on MIDs that support this feature. Currently, only [MPGS](test-cards.md#mpgs) is supported, but more options will be available in the future. \
-Tokenization is the process of replacing sensitive card data with a unique identifier, called a token. This helps merchants process payments securely without having to be PCI DSS compliant. Let Ottu handle that for you!
-
-{% hint style="info" %}
-To get in touch with the Ottu team, KSA merchants can send an email to support@ottu.com.&#x20;
-{% endhint %}
+Tokenization is the process of replacing sensitive card data with a unique identifier, called a token. This helps merchants process payments securely without having to be PCI DSS compliant. Let Ottu handle that for you!\
+Tokenization is not supported in KSA.
 
 ## [Implementation](tokenization.md#implementation)
 

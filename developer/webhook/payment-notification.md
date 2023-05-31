@@ -33,13 +33,13 @@ The code represents the used currency\
 
 #### :digit\_two:[amount](payment-notification.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-Payment transaction original amount. See [amount](../../user-guide/payment-tracking.md#amount)\
+Payment transaction original amount. See amount\
 Max length: 24\
 Min value: 0.01
 
 #### :digit\_three: [total](payment-notification.md#total-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It represents the whole payment amount ([amount](payment-notification.md#amount-string-required-1)+[fee](payment-notification.md#fee-string-optional))\
+It represents the whole payment amount ([amount](payment-notification.md#amount-string-mandatory)+[fee](payment-notification.md#fee-string-mandatory))\
 Max length: 24\
 Min value: 0.01
 
@@ -150,7 +150,7 @@ Min value: 0.01
 
 #### [gateway\_account](payment-notification.md#gateway\_account-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-The [code](../rest-api/checkout-api.md#pg\_codes-list-required) of the payment gateway used to proceed the payment\
+The [code](../rest-api/checkout-api.md#pg\_codes-array-required) of the payment gateway used to proceed the payment\
 Max length 16
 
 #### [gateway\_name](payment-notification.md#gateway\_name-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_

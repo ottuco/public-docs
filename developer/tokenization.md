@@ -11,7 +11,7 @@ To get in touch with the Ottu team, KSA merchants can send an email to support@o
 
 ## [Implementation](tokenization.md#implementation)
 
-1.  Use the [Checkout API](rest-api/checkout-api.md) to create a [session\_id](rest-api/checkout-api.md#session\_id-string-read-only) with a [pg\_code](rest-api/checkout-api.md#pg\_codes-list-required) associated with a MID that supports and has tokenization enabled. \
+1.  Use the [Checkout API](rest-api/checkout-api.md) to create a [session\_id](rest-api/checkout-api.md#session\_id-string-mandatory) with a [pg\_code](rest-api/checkout-api.md#pg\_codes-array-required) associated with a MID that supports and has tokenization enabled. \
     Make sure the [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) field is present in the request body, as it is essential for allowing customers to save cards. The `customer_id` is the primary way to associate saved cards with a given customer, regardless of whether it's for hosted or direct integration.\
 
 
@@ -48,7 +48,7 @@ curl --location 'https://sandbox.ottu.net/b/checkout/v1/pymt-txn/' \
 
 ### [Process](tokenization.md#process)
 
-When using the [Checkout SDK](checkout-sdk/) (either web or mobile) and the [session\_id](rest-api/checkout-api.md#session\_id-string-read-only) created via the [Checkout API ](rest-api/checkout-api.md)meets all the conditions (MID is tokenizable, [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) is present), the save card input will appear, allowing the customer to choose whether to save the card for future purchases or recurring payments. If the customer ticks the checkbox and performs a successful payment, the card will be tokenized and can be used for future payments.
+When using the [Checkout SDK](checkout-sdk/) (either web or mobile) and the [session\_id](rest-api/checkout-api.md#session\_id-string-mandatory) created via the [Checkout API ](rest-api/checkout-api.md)meets all the conditions (MID is tokenizable, [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) is present), the save card input will appear, allowing the customer to choose whether to save the card for future purchases or recurring payments. If the customer ticks the checkbox and performs a successful payment, the card will be tokenized and can be used for future payments.
 
 When creating a new session\_id for the same customer and using the same customer\_id in the Checkout SDK, the saved card will appear, displaying only the last 4 digits. The customer can use it to make the payment. The card security code may or may not be required, depending on the acquiring bank's policy.
 
@@ -59,7 +59,7 @@ If you wish to perform offline payments or auto debit (i.e., charge the customer
 {% hint style="info" %}
 Ottu supports tokenization on the following platforms:
 
-* [Web](broken-reference)
+* [Web](checkout-sdk/web.md)
 * Mobile:
   * [Native iOS](checkout-sdk/ios.md)
   * [Native Android](checkout-sdk/android.md)

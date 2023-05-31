@@ -277,7 +277,7 @@ Inquiry enabled when payment transaction state is either pending, attempted ,fai
    **"No payment attempts found for this Lookup"**
 2. If there is no transaction with provided order number but transaction have no attempts:\
    "**payment attempts for order {your order number}**"
-3. If [disclose\_to\_merchant](operations.md#disclosure\_url-url-optional) is True and [disclosure\_url](operations.md#disclosure\_url-url-optional) isn't defined: \
+3. If `disclose_to_merchant` is True and `disclosure_url` isn't defined: \
    "**No disclosure url found for order {txn order number}**"
 4. If operation isn't allowed: \
    "**Operation is not allowed**"

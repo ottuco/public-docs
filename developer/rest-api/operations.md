@@ -6,9 +6,8 @@ description: Version 2
 
 ## [Getting started](operations.md#getting-started)
 
-Ottu offers a range of operations via Rest API for merchants to carry out across multiple payment gateways, including capturing, refunding, voiding, canceling, inquiring, and expiring transactions. Ottu is dedicated to continuous development and has recently launched version 2 of its operation API. Nonetheless, documentation for version 1 of the operation API remains accessible [here](http://localhost:5000/s/HliFFcthyaYAsSykrr31/)[Ottu Operation API Version 1](http://localhost:5000/s/HliFFcthyaYAsSykrr31/ "mention").
-
-There are conditions should be applied to perform operations, in addition, not all the payment gateways support all the operations.\
+Ottu offers a range of operations via Rest API for merchants to carry out across multiple payment gateways, including capturing, refunding, voiding, canceling, inquiring, and expiring transactions. Ottu is dedicated to continuous development and has recently launched version 2 of its operation API. Nonetheless, documentation for version 1 of the operation API remains accessible [here](http://localhost:5000/s/HliFFcthyaYAsSykrr31/)[Ottu Operation API Version 1](http://localhost:5000/s/HliFFcthyaYAsSykrr31/ "mention").\
+There are conditions should be applied to perform operations, in addition, not all the payment gateways support all the operations. See [Operation Definitions & Conditions.](../../user-guide/payment-gateway.md#\_h9m0s92vp7g8)\
 \
 
 

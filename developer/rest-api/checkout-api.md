@@ -329,7 +329,7 @@ Max length: 64.
 
 In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.\
 It should be provided by merchant.\
-See [Webhook](../webhook/).
+See Webhook [Payment Notification](../webhook/payment-notification.md).
 
 ### [Response Parameters](checkout-api.md#response-parameters)
 

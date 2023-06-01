@@ -9,10 +9,10 @@ Ottu dashboard> administration panel > Plugins > installed plugin
 
 {% hint style="info" %}
 * Authorization to approve or reject **do refund/void permission** requests through the [Permissions Request table](permission-approval-process.md#permissions-requests-table) should be restricted to a single user.
-* After passing the expiration time , by defualt 48 hrs and could be defined from backend, he state of the request sohlud be turned to canceled.
+* After passing the expiration time, by default 48 hrs and could be defined from backend, the state of the request should be turned to canceled.
 {% endhint %}
 
-### ****[**Permission approval process walkthrough**](permission-approval-process.md#permission-approval-process-walkthrough)****
+### [**Permission approval process walkthrough**](permission-approval-process.md#permission-approval-process-walkthrough)
 
 Ottu dashboard> administration panel> user> users.
 

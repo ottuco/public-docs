@@ -172,7 +172,7 @@ This object contains information about the user who created the transaction from
 
 **Presence condition:**
 
-* It is pressent only when [Basic Authentication](../rest-api/authentication.md#basic-authentication) is used, because [API Key Authentication](../rest-api/authentication.md#api-keys) is not associated with any user.
+* It is present only when [Basic Authentication](../rest-api/authentication.md#basic-authentication) is used, because [API Key Authentication](../rest-api/authentication.md#api-keys) is not associated with any user.
 * Merchant includes the initiator ID in the payload when creating the transaction
 
 #### [is\_sandbox](payment-notification.md#is\_sandbox-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
@@ -248,7 +248,7 @@ Max length 50\
 #### [session\_id](payment-notification.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 Ottu unique identifier which gets generated when the transaction is created.\
-It can be used to perform subsequent operations, like [retrieve, acknowledge, refund, capture, and cancelation](../rest-api/operations.md)\
+It can be used to perform subsequent operations, like [retrieve, acknowledge, refund, capture, and cancelation](../rest-api/operations.md).\
 Max length 128
 
 #### [settled\_amount](payment-notification.md#settled\_amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
@@ -256,7 +256,7 @@ Max length 128
 **Is the amount with the same currency of the initiating amount,**
 
 * **For editable amount:** It is the amount that the customer enters at the checkout page
-* **For  non-editable amount:** The settled amount is  the same value as the original payment amount
+* **For on-editable amount:** The settled amount is the same value as the original payment amount
 
 **Presence condition:**
 
@@ -264,7 +264,7 @@ Max length 128
 
 #### [state](payment-notification.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It is  one of the [Payment transaction state.](../../user-guide/payment-tracking.md#payment-transactions-states) And could one of the  below: \
+It is one of the [Payment transaction state.](../../user-guide/payment-tracking.md#payment-transactions-states) And could one of the below: \
 **created, pending, attempted, authorized, paid, failed, canceled, expired, invalided, or cod.**\
 Max length 50
 

@@ -7,9 +7,9 @@ They have either payload or message which are sent to a unique URL, essentially 
 
 {% hint style="info" %}
 <mark style="color:blue;">**Webhook vs API**</mark>\
-**Webhook**  is an event-based.\
+**Webhook** is an event-based.\
 It will run when a specific event occurs in the source app.\
-**API**  is request-based.\
+**API** is request-based.\
 It operates when requests come from other 3rd party apps.\
 
 {% endhint %}
@@ -17,7 +17,7 @@ It operates when requests come from other 3rd party apps.\
 ## [Ottu webhook](./#ottu-webhook)
 
 Ottu has auto-trigger HTTP call to [operation webhook\_url](../../user-guide/configuration.md#operations-webhook\_url) when payment operation gets happened.\
-For payment event, [webhook\_url](../rest-api/checkout-api.md#webhook\_url-string-optional)[ ](https://docs-ottu.gitbook.io/o/developer/rest-api/checkout-api#webhook\_url-url-optional) should be included in the payload, so call to [webhook\_url](../rest-api/checkout-api.md#webhook\_url-string-optional)[ ](https://docs-ottu.gitbook.io/o/developer/rest-api/checkout-api#webhook\_url-url-optional)will be triggered when the payment has been completed and BEFORE redirecting the customer back to merchant website.
+For payment event, [webhook\_url](../rest-api/checkout-api.md#webhook\_url-string-optional)[ ](https://docs-ottu.gitbook.io/o/developer/rest-api/checkout-api#webhook\_url-url-optional)should be included in the payload, so call to [webhook\_url](../rest-api/checkout-api.md#webhook\_url-string-optional)[ ](https://docs-ottu.gitbook.io/o/developer/rest-api/checkout-api#webhook\_url-url-optional)will be triggered when the payment has been completed and BEFORE redirecting the customer back to merchant website.
 
 ## [Webhook mechanism](./#webhook-mechanism)
 
@@ -62,7 +62,7 @@ For payment event, [webhook\_url](../rest-api/checkout-api.md#webhook\_url-strin
    "initiator":{
       "email":"initiator@example.com",
       "id":83,
-      "username":"iitiator"
+      "username":"initiator"
    },
    "is_sandbox":false,
    "operation":null,

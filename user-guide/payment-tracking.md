@@ -63,8 +63,7 @@ It is the amount that is credited to the merchant's bank account.&#x20;
 * **For authorize:** Is the total amount captured by the staff.
 
 {% hint style="info" %}
-Purchase or authorized is determined in payment gateway setting or configuration.\
-&#x20;See [PG configuration](payment-gateway.md#configure-payment-gateway).
+Purchase or authorized is determined in payment gateway setting or configuration.
 {% endhint %}
 
 #### [Remaining amount:](payment-tracking.md#remaining-amount)&#x20;

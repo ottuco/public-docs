@@ -607,7 +607,7 @@ For more information see [vendor\_name](checkout-api.md#vendor\_name-string-opti
 It contains the URL where the payment result will be sent via a POST request after the customer has completed the payment session. The payment result will be included in the request body.\
 See Webhook [Payment Notification](../webhook/payment-notification.md).
 
-* The request parameter webhook\_url should be provided.
+* The request parameter [webhook\_url](checkout-api.md#webhook\_url-string-optional) should be provided.
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
 

@@ -311,7 +311,7 @@ API webhook. Version
 
 * status code 200, the customer will be redirected to redirect\_url
 * status code 201, the customer will be redirected to Ottu payment summary page
-* status code any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications? Activated..
+* status code any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications? Activated.
 {% endhint %}
 
 #### [Enable retry webhook mechanism?](configuration.md#enable-retry-webhook-mechanism)

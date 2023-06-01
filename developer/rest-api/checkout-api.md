@@ -487,7 +487,7 @@ See the request [notifications](checkout-api.md#notifications-object-optional) f
 
 #### [**operation**](checkout-api.md#operation-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-Specifies the type of operation to be performed by the [payment gateway](../../user-guide/payment-gateway.md). If set to 'purchase', the payment source will be directly charged. If set to 'authorize', the payment source will only be authorized and the actual charge will be made at a later time\
+Specifies the type of operation to be performed by the payment gateway. If set to 'purchase', the payment source will be directly charged. If set to 'authorize', the payment source will only be authorized and the actual charge will be made at a later time\
 Max length: 16.
 
 #### [order\_no](checkout-api.md#order\_no-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
@@ -539,7 +539,7 @@ This URL redirects to the payment page.
 
 #### [pg\_codes](checkout-api.md#pg\_codes-array-mandatory) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-The options of the [payment gateway](../../user-guide/payment-gateway.md) codes included in the request payload to enable customers to make payments.\
+The options of the payment gateway codes included in the request payload to enable customers to make payments.\
 See the request parameter [pg\_codes](checkout-api.md#pg\_codes-array-required) for more information.
 
 #### [product\_type](checkout-api.md#product\_type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_

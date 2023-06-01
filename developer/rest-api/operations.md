@@ -8,7 +8,7 @@ description: Version 2
 
 Ottu offers a range of operations via Rest API for merchants to carry out across multiple payment gateways, including capturing, refunding, voiding, canceling, inquiring, and expiring transactions. Ottu is dedicated to continuous development and has recently launched version 2 of its operation API. Nonetheless, documentation for version 1 of the operation API remains accessible [here](http://localhost:5000/s/HliFFcthyaYAsSykrr31/)[Ottu Operation API Version 1](http://localhost:5000/s/HliFFcthyaYAsSykrr31/ "mention").
 
-There are conditions should be applied to perform operations, in addition, not all the payment gateways support all the operations. See [operation definitions and conditions](../../user-guide/payment-gateway.md#operation-definitions-and-conditions).\
+There are conditions should be applied to perform operations, in addition, not all the payment gateways support all the operations.\
 \
 
 
@@ -63,7 +63,7 @@ Merchants can capture the authorized amount in full or partially. However, it is
 
 The capture operation creates a child payment transaction of the original payment transaction. This child payment transaction will contain the details of the capture operation. The child payment transaction is only created if the capture operation has succeeded. Child transaction can be tracked over [child transaction table](../../user-guide/payment-tracking.md#child-table-transaction).\
 \
-[Payment gateways](../../user-guide/payment-gateway.md) support capture operation: \[MPGS,Tabby].\
+Payment gateways support capture operation: \[MPGS,Tabby].\
 \
 
 
@@ -121,7 +121,7 @@ When a refund operation is performed, a child payment transaction of the origina
 
 Additionally, Ottu offers an operation approval feature that enables merchants to control the refund operation. A staff member is designated as a checker who can approve or reject any refund requests sent by other staff members. This ensures that refunds are only issued when authorized by a designated person, which helps prevent fraudulent or unauthorized refunds. See [operation request flow](../../user-guide/plugins/features/operation-request-flow.md).
 
-[ Payment gateways](../../user-guide/payment-gateway.md) support refund operation: \[Benefit, FSS, Kpay, MPGS, MyFatoorah, NGenius , payuindia, QPay,Tabby].\
+&#x20;Payment gateways support refund operation: \[Benefit, FSS, Kpay, MPGS, MyFatoorah, NGenius , payuindia, QPay,Tabby].\
 \
 
 
@@ -170,7 +170,7 @@ Each void operation creates a child payment transaction of the original payment 
 
 Ottu also provides an operation approval feature that allows merchants to manage void operations. The feature designates a staff member as a checker who can approve or reject any void requests sent by other staff members. This ensures that voids are only issued with authorization from a designated person, preventing fraudulent or unauthorized voids. See [operation request flow](../../user-guide/plugins/features/operation-request-flow.md).
 
-[ Payment gateway](../../user-guide/payment-gateway.md) supports void operation: \[MPGS].\
+&#x20;Payment gateway supports void operation: \[MPGS].\
 \
 
 
@@ -216,7 +216,7 @@ If a payment needs to be canceled, the merchant can initiate a cancel operation 
 \
 Once a payment has been canceled, it cannot be resumed or processed further, and it cannot be reversed once executed. Therefore, merchants should use this operation with caution and only cancel payments when necessary.
 
-All [payment gateways](../../user-guide/payment-gateway.md) support cancel operation.\
+All payment gateways support cancel operation.\
 \
 
 
@@ -327,7 +327,7 @@ The payment expire operation via REST API is used to cancel a payment transactio
 
 The expire operation is triggered when a payment transaction has been initiated but has not been completed within the specified time limit. Once the payment transaction enters the expired state, it cannot be resumed or completed.
 
-All [payment gateways](../../user-guide/payment-gateway.md) support cancel operation.
+All payment gateways support cancel operation.
 
 {% hint style="warning" %}
 [Operations](operations.md) are not working for foreign [currenies](../../user-guide/currencies.md).&#x20;

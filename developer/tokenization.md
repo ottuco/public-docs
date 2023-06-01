@@ -78,7 +78,7 @@ Merchant creating payment link including [customer\_id](rest-api/checkout-api.md
 }
 ```
 
-The payment link that is generated will direct the customer to the payment checkout page. On this page, the customer will be prompted to enter their card details and check **Save Your Card** checkbox to save their card information. Finally, the customer will need to click on the **Pay Now** button to complete the payment process..
+The payment link that is generated will direct the customer to the payment checkout page. On this page, the customer will be prompted to enter their card details and check **Save Your Card** checkbox to save their card information. Finally, the customer will need to click on the **Pay Now** button to complete the payment process.
 
 <figure><img src="../.gitbook/assets/Checkout page (1).png" alt=""><figcaption></figcaption></figure>
 

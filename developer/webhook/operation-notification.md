@@ -70,7 +70,7 @@ It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) r
 
 #### [reference\_number](operation-notification.md#reference\_number-string) _<mark style="color:blue;">`string`</mark>_
 
-It is an unique identifier, assigned by Ottu to any [parent payment transaction.](../../user-guide/payment-tracking.md#states-of-parent-payment-transaction)
+It is a unique identifier, assigned by Ottu to any [parent payment transaction.](../../user-guide/payment-tracking.md#states-of-parent-payment-transaction)
 
 #### [result](operation-notification.md#result-string) _<mark style="color:blue;">`string`</mark>_
 
@@ -119,7 +119,7 @@ Merchant unique identifier for the transaction. ABC123\_1, ABC123\_2, Max length
 
 #### :digit\_six: [reference\_number ](operation-notification.md#reference\_number-string-1)_<mark style="color:blue;">`string`</mark>_
 
-It is an unique identifier, assigned by Ottu to any child payment transaction , namely the [payment attempt.](../../user-guide/payment-tracking.md#payment-transaction)
+It is a unique identifier, assigned by Ottu to any child payment transaction , namely the [payment attempt.](../../user-guide/payment-tracking.md#payment-transaction)
 
 #### :digit\_seven: [state ](operation-notification.md#state-string)_<mark style="color:blue;">`string`</mark>_
 

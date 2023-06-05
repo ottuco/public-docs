@@ -648,7 +648,7 @@ When we add [notification](../../user-guide/payment-tracking.md#notifications) w
     "customer_email": "example@example.com",
     "customer_phone": "customer phone",
     "due_datetime": "15/01/2023 11:04:55",
-    "expiration_time": "02:00:00",
+    "expiration_time": "1 00:00:00",
     "language": "en",
     "mode": "payment",
     "notifications": {

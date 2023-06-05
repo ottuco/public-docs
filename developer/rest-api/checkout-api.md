@@ -161,8 +161,8 @@ A comma-separated list of email addresses for internal recipients who will recei
 #### [**expiration\_time**](checkout-api.md#expiration\_time-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 If defined, any payment transactions created more than the defined period of time ago will be invalidated or expired if the customer tries to pay them. This field may be used to help ensure that payment transactions are processed in a timely manner.\
-The default value is one hour.\
-Should be In format (HH:MM:SS).
+By default, this expiration period is set to 24 hours from the time of transaction creation.\
+Should be In format (DD HH:MM:SS).
 
 {% hint style="info" %}
 In order to automatically change the state to **expired**, **Expire Payment Transactions**? Field should be enabled.

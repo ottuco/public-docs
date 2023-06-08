@@ -64,7 +64,7 @@ Represents the total amount of the payment transaction, which includes the cost 
 Max length: 24\
 Min value: 0.01
 
-#### [attachment](checkout-api.md#attachment-string-optional) <mark style="color:blue;">**`string`**</mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### [attachment](checkout-api.md#attachment-stringoptional) <mark style="color:blue;">**`string`**</mark>_<mark style="color:blue;">**`optional`**</mark>_
 
 An optional attachment that will be included in email notifications sent to the customer regarding their payment, and also be available for download on the checkout page. This field may be used to provide the customer with additional information or documentation related to their purchase\
 It works only with [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type\
@@ -238,7 +238,7 @@ Max length: 128.
 
 #### [**redirect\_url**](checkout-api.md#redirect\_url-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-url-optional) returns a success status. Redirect URL can be set in the administration panel.\
+The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-string-optional) returns a success status. Redirect URL can be set in the administration panel.\
 Max length: 200.
 
 #### [shipping\_address](checkout-api.md#shipping\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -306,13 +306,13 @@ Max length: 16.
 #### [s**hortify\_attachment\_url** ](checkout-api.md#shortify\_attachment\_url-bool-optional)<mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short attachment retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-url) will be shorter than attachment response parameter. if not configured, the [attachment\_short\_url ](checkout-api.md#attachment\_short\_url-string-less-than-uri-greater-than-conditional)will be in the same format with [attachment](checkout-api.md#attachment-string-less-than-uri-greater-than-optional) response parameter.\
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-string-conditional) will be shorter than attachment response parameter. if not configured, the attachment\_short\_url will be in the same format with [attachment](checkout-api.md#attachment-string-conditional) response parameter.\
 Default value is false.
 
 #### [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) <mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short checkout retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be shorter than checkout url response parameter. If not configured, the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-url) will be in the format of "https://\<ottu-url>>/b/abc123".\
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-conditional) will be shorter than [checkout\_url](checkout-api.md#checkout\_url-string-mandatory) parameter. If not configured, the checkout\_short\_url will be in the format of "https://\<ottu-url>>/b/abc123".\
 Default value is false.
 
 #### [**type**](checkout-api.md#type-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
@@ -343,11 +343,11 @@ See the request parameter [amount](checkout-api.md#amount-string-required) for m
 #### [**attachment**](checkout-api.md#attachment-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Attachment retrieval URL. \
-See the request parameter [attachment](checkout-api.md#attachment-string-optional) for more information.
+See the request parameter [attachment](checkout-api.md#attachment-stringoptional) for more information.
 
 **Presence condition:**
 
-* The attachment should be uploaded using [attachment](checkout-api.md#attachment-string-optional) request parameter.
+* The attachment should be uploaded using [attachment](checkout-api.md#attachment-stringoptional) request parameter.
 
 #### [**attachment\_short\_url**](checkout-api.md#attachment\_short\_url-string-conditional) <mark style="color:blue;">**`string`**</mark> _<mark style="color:blue;">`conditional`</mark>_
 

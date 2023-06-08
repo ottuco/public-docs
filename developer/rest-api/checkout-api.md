@@ -358,7 +358,7 @@ Max length: 200.
 
 * [shortify\_attachment\_url](checkout-api.md#shortify\_attachment\_url-bool-optional) request parameter should be "true" in order to generate it.
 
-#### [**billing\_address**](checkout-api.md#billing\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+#### [**billing\_address**](checkout-api.md#billing\_address-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Customer’s registered address data.\
 See the request parameter [billing\_address](checkout-api.md#billing\_address-object-optional) for more information.
@@ -367,7 +367,7 @@ See the request parameter [billing\_address](checkout-api.md#billing\_address-ob
 
 * Any child parameter provided with the [billing\_address](checkout-api.md#billing\_address-object-optional) object in the request payload will be populated in the response as [billing\_address](checkout-api.md#billing\_address-object-conditional) child parameter.
 
-#### [**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-string-less-than-uri-greater-than-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+#### [**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Short [checkout url.](checkout-api.md#checkout\_url-string-mandatory)
 
@@ -375,23 +375,23 @@ Short [checkout url.](checkout-api.md#checkout\_url-string-mandatory)
 
 * [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) request parameter should be set to "true" in order to generate it.
 
-#### [checkout\_url](checkout-api.md#checkout\_url-string) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [checkout\_url](checkout-api.md#checkout\_url-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-URL that directs the customer to the Ottu Checkout Page where they can see the payment details and available payment methods for the transaction. If you need to share the payment link over SMS or WhatsApp, use [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-less-than-uri-greater-than-conditional) instead.
+URL that directs the customer to the Ottu Checkout Page where they can see the payment details and available payment methods for the transaction. If you need to share the payment link over SMS or WhatsApp, use [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-conditional) instead.
 
 #### [currency\_code](checkout-api.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 The code of the currency used in the transaction.\
 See the request parameter [currency\_code](checkout-api.md#currency\_code-string-required) for more information.
 
-#### [customer\_email](checkout-api.md#customer\_email-string-less-than-email-greater-than-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+#### [customer\_email](checkout-api.md#customer\_email-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Customer’s email address.\
-See the request parameter [customer\_email](checkout-api.md#customer\_email-email-optional) for more information.
+See the request parameter [customer\_email ](checkout-api.md#customer\_email-string-optional)for more information.
 
 **Presence condition:**
 
-* [customer\_email](checkout-api.md#customer\_email-email-optional) request parameter should be provided.
+* [customer\_email](checkout-api.md#customer\_email-string-optional) request parameter should be provided.
 
 #### [customer\_first\_name](checkout-api.md#customer\_first\_name-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -437,11 +437,11 @@ See the request parameter [due\_datetime](checkout-api.md#due\_datetime-string-d
 #### [email\_recipients](checkout-api.md#email\_recipients-array-of-strings-conditional) _<mark style="color:blue;">`array of strings`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 This is a list of internal email recipients, who will receive notifications sent to the customer about their payment.\
-See the request parameter email\_recipients for more information.
+See the request parameter [email\_recipients](checkout-api.md#email\_recipients-array-of-strings-optional) for more information.
 
 **Presence condition:**
 
-* Email recipient should be provided in the request payload.
+* [email\_recipients](checkout-api.md#email\_recipients-array-of-strings-optional) should be provided in the request payload.
 
 #### [**expiration\_time**](checkout-api.md#expiration\_time-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
@@ -471,7 +471,7 @@ Max length: 11.
 It represents the language code that is utilized for all communication related to payment transactions with the customer, including payment page, receipt, invoice, email, and SMS\
 For more details check the request parameter [language](checkout-api.md#language-string-optional)
 
-#### [**mode**](checkout-api.md#mode-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [**mode**](checkout-api.md#mode-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Default: “payment”.\
 Value: “payment”.&#x20;
@@ -562,11 +562,11 @@ A QR code that, when scanned, redirects to the checkout page for this payment. T
 #### [redirect\_url](checkout-api.md#redirect\_url-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 It represents the URL where the customer will be redirected after the payment stage is complete.\
-See the request parameter [redirect\_url](checkout-api.md#redirect\_url-url-optional) more information.
+See the request parameter [redirect\_url](checkout-api.md#redirect\_url-string-optional) more information.
 
 **Presence condition:**
 
-* The request parameter [redirect\_url](checkout-api.md#redirect\_url-url-optional) should be provided.
+* The request parameter [redirect\_url](checkout-api.md#redirect\_url-string-optional) should be provided.
 
 #### [**session\_id**](checkout-api.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
@@ -632,8 +632,8 @@ See Webhook [Payment Notification](../webhook/payment-notification.md).
 ```
 
 {% hint style="info" %}
-"[type](checkout-api.md#type-string-required)", "[pg\_codes](checkout-api.md#pg\_codes-list-required)", "[amount](checkout-api.md#amount-string-required)", and  "[currency\_code](checkout-api.md#currency\_code-string-required)" are required parameters.\
-When we add [notification](../../user-guide/payment-tracking.md#notifications) we should add:\
+"[type](checkout-api.md#type-string-required)", "[pg\_codes](checkout-api.md#pg\_codes-array-required)", "[amount](checkout-api.md#amount-string-required)", and  "[currency\_code](checkout-api.md#currency\_code-string-required)" are required parameters.\
+When we add [notification](checkout-api.md#notifications-object-optional) we should add:\
 "[customer\_email](checkout-api.md#customer\_email-string-optional)" for email notification.\
 "[customer\_phone](checkout-api.md#customer\_phone-string-optional)" for SMS notification.
 {% endhint %}

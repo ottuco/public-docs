@@ -94,10 +94,9 @@ For payment event, [webhook\_url](../rest-api/checkout-api.md#webhook\_url-strin
 **The main differences between the two payloads is: In payment event the result parameter is “error” since it is payload for attempted means it failed at first time of paying trial due to error and triggered another trial for paying, while in payment operation is “success”.**
 {% endhint %}
 
-{% hint style="info" %}
+#### [**Redirect behavior based on webhook\_url response**](./#redirect-behavior-based-on-webhook\_url-response)&#x20;
+
 **Redirect behavior based on webhook\_url response on payment events and payment operation:**\
 **-**[ **status code**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  **200,  the customer will be redirected to redirect\_url.**\
 **-**[ **status code**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  **201,  the customer will be redirected to Ottu payment summary page.**\
-**-**[ **status code**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  **any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications?  Activated.**\
-
-{% endhint %}
+**-**[ **status code**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  **any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications?  Activated**

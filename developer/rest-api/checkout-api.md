@@ -238,7 +238,8 @@ Max length: 128.
 
 #### [**redirect\_url**](checkout-api.md#redirect\_url-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-string-optional) returns a success status. Redirect URL can be set in the administration panel.\
+The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-string-optional) returns a success status. Check [how redirection works](../webhook/#redirect-behavior-based-on-webhook\_url-response).\
+Redirect URL can be set in the administration panel.\
 Max length: 200.
 
 #### [shipping\_address](checkout-api.md#shipping\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_

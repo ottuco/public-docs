@@ -100,3 +100,5 @@ Redirect behavior based on webhook\_url response on payment events and payment o
 \-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  200,  the customer will be redirected to [redirect\_url](../rest-api/checkout-api.md#redirect\_url-string-optional).\
 \-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  201,  the customer will be redirected to Ottu payment summary page.\
 \-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications?  Activated
+
+<figure><img src="https://documents.lucid.app/documents/c18567d9-3082-48d1-a14d-358dfcc6978c/pages/4Se6xTqhjBOc?a=1659&#x26;x=-1693&#x26;y=-1316&#x26;w=1604&#x26;h=1899&#x26;store=1&#x26;accept=image%2F*&#x26;auth=LCA%2043240574155baff2fd9e9c9d819e2ed755c2dfa99b268bf77229b2d3fea1c798-ts%3D1686552334" alt=""><figcaption></figcaption></figure>

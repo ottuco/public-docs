@@ -324,7 +324,11 @@ Min value: 0.01
 
 **Presence condition:**
 
-* It will only be present if a void action is being processed on the transaction and the voided amount is recorded
+* It will only be present if a void action is being processed on the transaction and the voided amount is recorded.
+
+#### [Webhook payment notification redirection diagram](payment-notification.md#webhook-payment-notification-redirection-diagram)
+
+<figure><img src="../../.gitbook/assets/chr2 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [Payload example (attempted)](payment-notification.md#payload-example-attempted-1)
 

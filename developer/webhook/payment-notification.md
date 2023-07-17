@@ -326,7 +326,16 @@ Min value: 0.01
 
 * It will only be present if a void action is being processed on the transaction and the voided amount is recorded.
 
+#### [**Redirect behavior based on webhook\_url response**](payment-notification.md#redirect-behavior-based-on-webhook\_url-response)&#x20;
+
+Redirect behavior based on webhook\_url response:\
+\-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  200,  the customer will be redirected to [redirect\_url](../rest-api/checkout-api.md#redirect\_url-string-optional).\
+\-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  201,  the customer will be redirected to Ottu payment summary page.\
+\-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications?  Activated
+
 #### [Webhook payment notification redirection diagram](payment-notification.md#webhook-payment-notification-redirection-diagram)
+
+
 
 <figure><img src="../../.gitbook/assets/chr2 (1).png" alt=""><figcaption></figcaption></figure>
 

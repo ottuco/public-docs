@@ -6,7 +6,7 @@ description: Version 2
 
 ## [Getting started](operations.md#getting-started)
 
-Ottu offers a range of operations via Rest API for merchants to carry out across multiple payment gateways, including capturing, refunding, voiding, canceling, inquiring, and expiring transactions. Ottu is dedicated to continuous development and has recently launched version 2 of its operation API. Nonetheless, documentation for version 1 of the operation API remains accessible [here](http://localhost:5000/s/HliFFcthyaYAsSykrr31/)[Ottu Operation API Version 1](http://localhost:5000/s/HliFFcthyaYAsSykrr31/ "mention").\
+Ottu offers a range of operations via Rest API for merchants to carry out across multiple payment gateways, including capturing, refunding, voiding, canceling, inquiring, and expiring transactions. Ottu is dedicated to continuous development and has recently launched version 2 of its operation API. Nonetheless, documentation for version 1 of the operation API remains accessible [here](http://127.0.0.1:5000/s/HliFFcthyaYAsSykrr31/)[Ottu Operation API Version 1](http://127.0.0.1:5000/s/HliFFcthyaYAsSykrr31/ "mention").\
 There are conditions should be applied to perform operations, in addition, not all the payment gateways support all the operations. See [Operation Definitions & Conditions.](../../user-guide/payment-gateway.md#\_h9m0s92vp7g8)\
 \
 
@@ -156,6 +156,127 @@ It works with one of the two parameters,
 
 
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```
+// Some code{
+    "amount": "19.00",
+    "initiator": {},
+    "is_sandbox": true,
+    "operation": "void",
+    "pg_code": "ksa-mpgs",
+    "pg_response": {
+        "authorizationResponse": {
+            "cardLevelIndicator": "88",
+            "cardSecurityCodeError": "M",
+            "commercialCard": "888",
+            "commercialCardIndicator": "3",
+            "marketSpecificData": "8",
+            "posData": "1025104006600",
+            "posEntryMode": "812",
+            "processingCode": "003000",
+            "responseCode": "00",
+            "returnAci": "8",
+            "stan": "219376",
+            "transactionIdentifier": "123456789012345",
+            "validationCode": "6789"
+        },
+        "customer": {
+            "firstName": "Example"
+        },
+        "device": {
+            "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+            "ipAddress": "161.129.70.6"
+        },
+        "gatewayEntryPoint": "WEB_SERVICES_API",
+        "merchant": "TEST121234345656",
+        "order": {
+            "amount": 19.0,
+            "certainty": "FINAL",
+            "chargeback": {
+                "amount": 0,
+                "currency": "SAR"
+            },
+            "creationTime": "2023-07-18T10:54:50.397Z",
+            "currency": "SAR",
+            "id": "hotfix445FEF",
+            "lastUpdatedTime": "2023-07-18T10:55:37.876Z",
+            "merchantAmount": 19.0,
+            "merchantCategoryCode": "1111",
+            "merchantCurrency": "SAR",
+            "reference": "hotfix445FEF",
+            "status": "CANCELLED",
+            "totalAuthorizedAmount": 0.0,
+            "totalCapturedAmount": 0.0,
+            "totalRefundedAmount": 0.0
+        },
+        "response": {
+            "acquirerCode": "00",
+            "acquirerMessage": "Approved",
+            "cardSecurityCode": {
+                "acquirerCode": "M",
+                "gatewayCode": "MATCH"
+            },
+            "gatewayCode": "APPROVED"
+        },
+        "result": "SUCCESS",
+        "sourceOfFunds": {
+            "provided": {
+                "card": {
+                    "brand": "VISA",
+                    "expiry": {
+                        "month": "1",
+                        "year": "39"
+                    },
+                    "fundingMethod": "DEBIT",
+                    "nameOnCard": "Example",
+                    "number": "450875xxxxxx1019",
+                    "scheme": "VISA",
+                    "storedOnFile": "NOT_STORED"
+                }
+            },
+            "type": "CARD"
+        },
+        "timeOfLastUpdate": "2023-07-18T10:55:37.876Z",
+        "timeOfRecord": "2023-07-18T10:55:37.838Z",
+        "transaction": {
+            "acquirer": {
+                "batch": 20230718,
+                "date": "0718",
+                "id": "BSF_S2I",
+                "merchantId": "121234345656",
+                "transactionId": "123456789012345"
+            },
+            "amount": 19.0,
+            "authorizationCode": "220466",
+            "currency": "SAR",
+            "id": "0_void",
+            "receipt": "319910219376",
+            "reference": "hotfix445FEF_0",
+            "source": "INTERNET",
+            "stan": "220466",
+            "targetTransactionId": "1",
+            "terminal": "bsf00001",
+            "type": "VOID_AUTHORIZATION"
+        },
+        "version": "57"
+    },
+    "reference_number": "hotfix46ACQY",
+    "result": "success",
+    "source": "input",
+    "success": true,
+    "timestamp_utc": "2023-07-18 10:55:37",
+    "txn": {
+        "amount": "19.00",
+        "currency_code": "SAR",
+        "customer_email": "",
+        "extra": {},
+        "order_no": "",
+        "state": "voided",
+        "session_id": "a4c59ceba9b57b61670281a4900d2a70f2090d59"
+
+```
+{% endswagger-response %}
 {% endswagger %}
 
 #### [Void](operations.md#void-1)

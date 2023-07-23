@@ -12,7 +12,7 @@ By updating the same payment transaction, rather than creating a new one for eac
 
 ## [Permissions](checkout-api.md#permissions)
 
-Permissions are managed using [Basic Authentication](authentication.md#basic-authentication) and [API-Keys](authentication.md#api-keys). \
+Permissions are managed using [Basic Authentication](authentication.md#basic-authentication) and [API-Key](authentication.md#api-key). \
 Specifically, Basic Authentication is used to grant permissions for creating, updating, and reading data, as well as using allowed [PG codes](checkout-api.md#pg\_codes-list-required) when [creating ](checkout-api.md#create-payment-transaction)or [updating](checkout-api.md#update) payment transactions.
 
 It is important to ensure that the appropriate level of permissions is assigned to each user or application using the APIs. This can help to prevent unauthorized access or modification of sensitive data. Additionally, it is recommended to rotate API-Keys on a regular basis and to use secure password storage practices when using Basic Authentication.
@@ -21,7 +21,7 @@ Ottu Checkout API supports different levels of permissions for the Payment Reque
 
 ### [API Key](checkout-api.md#api-key)
 
-When using the [API-Key](authentication.md#api-keys), all permissions are granted by default, as the API-Key is considered to have admin permissions.
+When using the [API-Key](authentication.md#api-key), all permissions are granted by default, as the API-Key is considered to have admin permissions.
 
 ### [Basic Authentication](checkout-api.md#basic-authentication)
 
@@ -465,7 +465,7 @@ Max length: 11.
 
 **Presence condition:**
 
-* It is present only when [Basic Authentication](authentication.md#basic-authentication) is used, because [API Key Authentication](authentication.md#api-keys) is not associated with any user.
+* It is present only when [Basic Authentication](authentication.md#basic-authentication) is used, because [API-Key](authentication.md#api-key) Authentication is not associated with any user.
 
 #### [**language**](checkout-api.md#language-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 

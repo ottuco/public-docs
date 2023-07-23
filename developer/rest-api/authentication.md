@@ -23,7 +23,7 @@ The permission access for the user to be defined.
 
 It is obsolete and only for legacy.
 
-### [API keys](authentication.md#api-keys)
+### [API key](authentication.md#api-key)
 
 #### **Private key**
 

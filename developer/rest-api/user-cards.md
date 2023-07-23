@@ -1,8 +1,8 @@
-# User Saved Cards
+# User Cards
 
-## [Getting Started](user-saved-cards.md#getting-started)
+## [Getting Started](user-cards.md#getting-started)
 
-Ottu provides two API endpoints for managing user saved cards, making it easy to handle your customers' saved payment information securely. These endpoints allow you to [retrieve](user-saved-cards.md#fetch-cards) all saved cards for a customer or [delete](user-saved-cards.md#delete-cards) a specific card. This functionality is beneficial for providing your customers with a seamless and personalized payment experience, enabling them to manage their saved cards within your application. These two endpoints are not supported in KSA currently.
+Ottu provides two API endpoints for managing user saved cards, making it easy to handle your customers' saved payment information securely. These endpoints allow you to [retrieve](user-cards.md#fetch-cards) all saved cards for a customer or [delete](user-cards.md#delete-cards) a specific card. This functionality is beneficial for providing your customers with a seamless and personalized payment experience, enabling them to manage their saved cards within your application. These two endpoints are not supported in KSA currently.
 
 **When using the User Saved Cards endpoints:**
 
@@ -17,17 +17,17 @@ Ottu provides two API endpoints for managing user saved cards, making it easy to
 
 With these endpoints, you can enhance the user experience, foster customer trust, and boost conversion rates in your application.
 
-## [**Authentication**](user-saved-cards.md#authentication)
+## [**Authentication**](user-cards.md#authentication)
 
-[Fetch ](user-saved-cards.md#fetch-cards)and [delete ](user-saved-cards.md#delete-cards)cards APIs use API private key authentication, where a unique secret code is generated and assigned to authorized users or applications. This key is included in request headers and verified by our system to control access to API resources. This method provides a secure and scalable way to authenticate API requests and ensure only authorized access to our services. For more details, check [API Private Key](authentication.md#private-key)
+[Fetch ](user-cards.md#fetch-cards)and [delete ](user-cards.md#delete-cards)cards APIs use API private key authentication, where a unique secret code is generated and assigned to authorized users or applications. This key is included in request headers and verified by our system to control access to API resources. This method provides a secure and scalable way to authenticate API requests and ensure only authorized access to our services. For more details, check [API Private Key](authentication.md#private-key)
 
-#### [Fetch Cards](user-saved-cards.md#fetch-cards)
+#### [Fetch Cards](user-cards.md#fetch-cards)
 
 {% swagger src="../../.gitbook/assets/Ottu API last (1).yaml" path="https://<ottu-url>/b/pbl/v2/card/" method="get" %}
 [Ottu API last (1).yaml](<../../.gitbook/assets/Ottu API last (1).yaml>)
 {% endswagger %}
 
-#### [Delete Cards](user-saved-cards.md#delete-cards)
+#### [Delete Cards](user-cards.md#delete-cards)
 
 {% swagger src="../../.gitbook/assets/Ottu API last (1).yaml" path="https://<ottu-url>/b/pbl/v2/card/{{token}}" method="delete" %}
 [Ottu API last (1).yaml](<../../.gitbook/assets/Ottu API last (1).yaml>)

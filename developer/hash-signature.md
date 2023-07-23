@@ -2,7 +2,7 @@
 
 ## [Hash-signature](hash-signature.md#hash-signature)
 
-### <mark style="color:blue;"></mark>[What is hashing](hash-signature.md#what-is-hashing)
+### [What is hashing](hash-signature.md#what-is-hashing)
 
 Hashing is the process of converting an input of any length into a fixed sized string of text involving a mathematical function, this generates an array of letters and number through an algorithm.
 
@@ -21,7 +21,7 @@ Digital signature can be generated, when hashes with asymmetric encryption were 
 **Integrity:** The message was received is the same message that originally was sent. **Authentication:** The message which received is really sent by sender.\
 **Non-repudiation:** The received message is not fake or provide by third party.
 
-## <mark style="color:blue;"></mark>[Ottu hash-signature](hash-signature.md#ottu-hash-signature)
+## [Ottu hash-signature](hash-signature.md#ottu-hash-signature)
 
 Ottu using hash-signature to support the security and trustability, by hashing part of the payload parameters and send hash-signature with every payload. This allows Ottu to ensure the data has not modified or cut within the payment transition process.
 
@@ -29,7 +29,7 @@ Ottu using hash-signature to support the security and trustability, by hashing p
 
 SHA256
 
-### <mark style="color:blue;"></mark>[Fields used](hash-signature.md#fields-used)
+### [Fields used](hash-signature.md#fields-used)
 
 **amount**
 
@@ -67,7 +67,7 @@ SHA256
 
 **state**
 
-### <mark style="color:blue;"></mark>[Ottu hash-signature key](hash-signature.md#ottu-hash-signature-key)
+### [Ottu hash-signature key](hash-signature.md#ottu-hash-signature-key)
 
 Ottu using the key defined by the merchant.
 
@@ -77,11 +77,11 @@ Ottu using the key defined by the merchant.
 
 <figure><img src="../.gitbook/assets/HMAC_Key.png" alt=""><figcaption></figcaption></figure>
 
-## <mark style="color:blue;"></mark>[Ottu signing API](hash-signature.md#ottu-signing-api)
+## [Ottu signing API](hash-signature.md#ottu-signing-api)
 
 In order to ensure that the hashing is completed properly, Ottu uses a signing API. Signing API should be limited to validation of implementation, not signing of responses.
 
-***
+
 
 **End point** \<ottu-url>/b/pbl/v2/sign
 

@@ -23,7 +23,7 @@
   * [Authentication](developer/rest-api/authentication.md)
   * [Checkout API](developer/rest-api/checkout-api.md)
   * [Operations](developer/rest-api/operations.md)
-  * [User Saved Cards](developer/rest-api/user-saved-cards.md)
+  * [User Cards](developer/rest-api/user-cards.md)
   * [Legacy](developer/rest-api/legacy/README.md)
     * [Ecommerce](developer/rest-api/legacy/ecommerce.md)
     * [Payment Request](developer/rest-api/legacy/payment-request.md)

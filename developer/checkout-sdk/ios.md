@@ -146,6 +146,6 @@ class ViewController: UIViewController,OttuDelegate {
 ## [Integrate Apple Pay](ios.md#integrate-apple-pay)
 
 {% hint style="info" %}
-For [Apple Pay integration](../../user-guide/apple-pay/), you have to enable Apple Pay in capabilities in your project.\
+For [Apple Pay integration](../../user-guide/apple-pay.md), you have to enable Apple Pay in capabilities in your project.\
 If apple pay available, will show by default.
 {% endhint %}

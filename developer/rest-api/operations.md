@@ -40,7 +40,7 @@ The required
 for capture
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name=""order_no " or "session_id"" required="true" %}
+{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
 It works with one of the two parameters, 
 
 [order_no](checkout-api.md#order_no-string-optional)
@@ -199,7 +199,7 @@ Additionally, Ottu offers an operation approval feature that enables merchants t
 void
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name=""order_no  " or "session_id"" required="true" %}
+{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
 It works with one of the two parameters, 
 
 [order_no](checkout-api.md#order_no-string-optional)
@@ -275,7 +275,7 @@ Ottu also provides an operation approval feature that allows merchants to manage
 cancel
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name=""order_no  " or "session_id"" required="true" %}
+{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
 It works with one of the two parameters, 
 
 [order_no](checkout-api.md#order_no-string-optional)
@@ -334,7 +334,7 @@ If True, the merchant will receive a disclosure request
 Where the request would be sent to
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name=""order_no  " or "session_id"" required="true" %}
+{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
 It works with one of the two parameters, 
 
 [order_no](checkout-api.md#order_no-string-optional)
@@ -424,7 +424,7 @@ Inquiry enabled when payment transaction state is either pending, attempted ,fai
 expire
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name=""order_no  " or "session_id"" required="true" %}
+{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
 It works with one of the two parameters, 
 
 [order_no](checkout-api.md#order_no-string-optional)

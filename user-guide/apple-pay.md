@@ -181,7 +181,7 @@ After saving, “PEM Certificate” & “Key File” would be generated automati
 
 ## [Creating apple payment processing certificate:](apple-pay.md#creating-apple-payment-processing-certificate)
 
-Ottu empowers businesses with seamless payment process through Apple Pay across [MPGS](broken-reference), [Cybersource](broken-reference), and KNET gateways. Below, discover the effortless setup process for integrating different payment gateways with Apple Pay through Ottu. Experience simplified payments and enhanced user experience with our seamless integration process.
+Ottu empowers businesses with seamless payment process through Apple Pay across [MPGS](apple-pay/setup-mpgs.md), [Cybersource](apple-pay/setup-cybersource.md), and KNET gateways. Below, discover the effortless setup process for integrating different payment gateways with Apple Pay through Ottu. Experience simplified payments and enhanced user experience with our seamless integration process.
 
 {% content-ref url="apple-pay/setup-mpgs.md" %}
 [setup-mpgs.md](apple-pay/setup-mpgs.md)

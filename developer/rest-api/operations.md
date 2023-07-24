@@ -122,7 +122,7 @@ The required
 for refund
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name=""order_no  " or "session_id"" required="true" %}
+{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
 IIt works with one of the two parameters, 
 
 [order_no](checkout-api.md#order_no-string-optional)

@@ -6,7 +6,9 @@
 
 * [Payment Gateway](user-guide/payment-gateway.md)
 * [Currencies](user-guide/currencies.md)
-* [Apple Pay](user-guide/apple-pay.md)
+* [Apple Pay](user-guide/apple-pay/README.md)
+  * [Setup MPGS](user-guide/apple-pay/setup-mpgs.md)
+  * [Setup Cybersource](user-guide/apple-pay/setup-cybersource.md)
 * [Payment Methods](user-guide/payment-methods.md)
 * [Payment Tracking](user-guide/payment-tracking.md)
 * [Plugins](user-guide/plugins/README.md)

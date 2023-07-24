@@ -51,6 +51,33 @@ It works with one of the two parameters,
 
 
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+   "amount":"4.000",
+   "initiator":{},
+   "is_sandbox":true,
+   "operation":"capture",
+   "pg_code":"ottu_pg",
+   "pg_response":{},
+   "reference_number":"hotfix4LERF6",
+   "result":"success",
+   "source":"input",
+   "success":true,
+   "timestamp_utc":"2023-07-24 09:47:07",
+   "txn":{
+      "amount":"4.000",
+      "currency_code":"KWD",
+      "customer_email":"",
+      "extra":{},
+      "order_no":"",
+      "state":"paid",
+      "session_id":"b8a01a440900ba629c00b201c805d589ba08de80"
+   }
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 #### [Capture](operations.md#capture-1)
@@ -106,6 +133,33 @@ IIt works with one of the two parameters,
 
 
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+   "amount":"2.000",
+   "initiator":{},
+   "is_sandbox":true,
+   "operation":"refund",
+   "pg_code":"ottu_pg",
+   "pg_response":{},
+   "reference_number":"hotfix4RKKRQ",
+   "result":"success",
+   "source":"input",
+   "success":true,
+   "timestamp_utc":"2023-07-24 09:59:49",
+   "txn":{
+      "amount":"2.000",
+      "currency_code":"KWD",
+      "customer_email":"",
+      "extra":{},
+      "order_no":"",
+      "state":"refunded",
+      "session_id":"0aceca9c3e7ebb6b5c6bf54497241a1818c1272f"
+   }
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 #### [Refund](operations.md#refund-1)
@@ -158,123 +212,29 @@ It works with one of the two parameters,
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
-```
-// Some code{
-    "amount": "19.00",
-    "initiator": {},
-    "is_sandbox": true,
-    "operation": "void",
-    "pg_code": "ksa-mpgs",
-    "pg_response": {
-        "authorizationResponse": {
-            "cardLevelIndicator": "88",
-            "cardSecurityCodeError": "M",
-            "commercialCard": "888",
-            "commercialCardIndicator": "3",
-            "marketSpecificData": "8",
-            "posData": "1025104006600",
-            "posEntryMode": "812",
-            "processingCode": "003000",
-            "responseCode": "00",
-            "returnAci": "8",
-            "stan": "219376",
-            "transactionIdentifier": "123456789012345",
-            "validationCode": "6789"
-        },
-        "customer": {
-            "firstName": "Example"
-        },
-        "device": {
-            "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-            "ipAddress": "161.129.70.6"
-        },
-        "gatewayEntryPoint": "WEB_SERVICES_API",
-        "merchant": "TEST121234345656",
-        "order": {
-            "amount": 19.0,
-            "certainty": "FINAL",
-            "chargeback": {
-                "amount": 0,
-                "currency": "SAR"
-            },
-            "creationTime": "2023-07-18T10:54:50.397Z",
-            "currency": "SAR",
-            "id": "hotfix445FEF",
-            "lastUpdatedTime": "2023-07-18T10:55:37.876Z",
-            "merchantAmount": 19.0,
-            "merchantCategoryCode": "1111",
-            "merchantCurrency": "SAR",
-            "reference": "hotfix445FEF",
-            "status": "CANCELLED",
-            "totalAuthorizedAmount": 0.0,
-            "totalCapturedAmount": 0.0,
-            "totalRefundedAmount": 0.0
-        },
-        "response": {
-            "acquirerCode": "00",
-            "acquirerMessage": "Approved",
-            "cardSecurityCode": {
-                "acquirerCode": "M",
-                "gatewayCode": "MATCH"
-            },
-            "gatewayCode": "APPROVED"
-        },
-        "result": "SUCCESS",
-        "sourceOfFunds": {
-            "provided": {
-                "card": {
-                    "brand": "VISA",
-                    "expiry": {
-                        "month": "1",
-                        "year": "39"
-                    },
-                    "fundingMethod": "DEBIT",
-                    "nameOnCard": "Example",
-                    "number": "450875xxxxxx1019",
-                    "scheme": "VISA",
-                    "storedOnFile": "NOT_STORED"
-                }
-            },
-            "type": "CARD"
-        },
-        "timeOfLastUpdate": "2023-07-18T10:55:37.876Z",
-        "timeOfRecord": "2023-07-18T10:55:37.838Z",
-        "transaction": {
-            "acquirer": {
-                "batch": 20230718,
-                "date": "0718",
-                "id": "BSF_S2I",
-                "merchantId": "121234345656",
-                "transactionId": "123456789012345"
-            },
-            "amount": 19.0,
-            "authorizationCode": "220466",
-            "currency": "SAR",
-            "id": "0_void",
-            "receipt": "319910219376",
-            "reference": "hotfix445FEF_0",
-            "source": "INTERNET",
-            "stan": "220466",
-            "targetTransactionId": "1",
-            "terminal": "bsf00001",
-            "type": "VOID_AUTHORIZATION"
-        },
-        "version": "57"
-    },
-    "reference_number": "hotfix46ACQY",
-    "result": "success",
-    "source": "input",
-    "success": true,
-    "timestamp_utc": "2023-07-18 10:55:37",
-    "txn": {
-        "amount": "19.00",
-        "currency_code": "SAR",
-        "customer_email": "",
-        "extra": {},
-        "order_no": "",
-        "state": "voided",
-        "session_id": "a4c59ceba9b57b61670281a4900d2a70f2090d59"
-
+```json
+{
+   "amount":"19.00",
+   "initiator":{},
+   "is_sandbox":true,
+   "operation":"void",
+   "pg_code":"mpgs",
+   "pg_response":{},
+   "reference_number":"hotfix4DV3JG",
+   "result":"success",
+   "source":"input",
+   "success":true,
+   "timestamp_utc":"2023-07-24 12:04:10",
+   "txn":{
+      "amount":"19.00",
+      "currency_code":"SAR",
+      "customer_email":"",
+      "extra":{},
+      "order_no":"",
+      "state":"voided",
+      "session_id":"976e8c4fbc45136133ddd0ab39dbbefdeaf1cf34"
+   }
+}
 ```
 {% endswagger-response %}
 {% endswagger %}
@@ -326,6 +286,15 @@ It works with one of the two parameters,
 
 
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "Operation done successfully",
+    "result": "success"
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 #### [Cancel](operations.md#cancel-1)
@@ -376,6 +345,44 @@ It works with one of the two parameters,
 
 
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Example for "attempted" state" %}
+```json
+{
+   "amount":"1.100",
+   "amount_details":{
+      "currency_code":"KWD",
+      "amount":"1.100",
+      "total":"1.100",
+      "fee":"0.000"
+   },
+   "currency_code":"KWD",
+   "customer_email":"test@test.com",
+   "customer_first_name":"Example-customer",
+   "customer_id":"Example-customer",
+   "customer_last_name":"Example-customer",
+   "customer_phone":"123456789",
+   "extra":{},
+   "gateway_account":"ottu_pg",
+   "gateway_response":{},
+   "initiator":{
+      "id":11,
+      "first_name":"Example-user",
+      "last_name":"Example-user",
+      "username":"Example-user",
+      "email":"test@test.com",
+      "phone":""
+   },
+   "order_no":"UzMzA",
+   "reference_number":"hotfix48G8YQ",
+   "remaining_amount":1.1,
+   "result":"canceled",
+   "session_id":"f92131d327093585ca58704fb3ea565d716f05e6",
+   "signature":"928c**********************************",
+   "state":"attempted"
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 #### [Inquiry](operations.md#inquiry-1)
@@ -390,17 +397,6 @@ Additionally, inquiry can be executed manually,  and it can be automated for its
 {% hint style="info" %}
 Inquiry enabled when payment transaction state is either pending, attempted ,failed or expired. See [payment transaction state](../../user-guide/payment-tracking.md#states-of-parent-payment-transaction).\
 
-
-**Error message:**
-
-1. If order\_number or session\_id isn't exist: \
-   **"No payment attempts found for this Lookup"**
-2. If there is no transaction with provided order number but transaction have no attempts:\
-   "**payment attempts for order {your order number}**"
-3. If `disclose_to_merchant` is True and `disclosure_url` isn't defined: \
-   "**No disclosure url found for order {txn order number}**"
-4. If operation isn't allowed: \
-   "**Operation is not allowed**"
 {% endhint %}
 
 \
@@ -439,6 +435,15 @@ It works with one of the two parameters,
 
 
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "Operation done successfully",
+    "result": "success"
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 #### [Expire](operations.md#expire-1)

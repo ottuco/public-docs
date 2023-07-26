@@ -524,7 +524,7 @@ Name of the gateway, settings are applied to.
 
 It is environment used for this PG settings or not.
 
-#### :digit\_five:[ **icon**](checkout-api.md#icon-string-url) _<mark style="color:blue;">`string:URL`</mark>_&#x20;
+#### :digit\_five: [**icon**](checkout-api.md#icon-string) _<mark style="color:blue;">`string`</mark>_&#x20;
 
 URL to default icon of the current gateway.
 
@@ -532,9 +532,9 @@ URL to default icon of the current gateway.
 
 Choice from (“redirect”, ...).
 
-#### :digit\_seven: [**payment\_url**](checkout-api.md#payment\_url-string-url) _<mark style="color:blue;">`string:URL`</mark>_&#x20;
+#### :digit\_seven: [**redirect\_url**](checkout-api.md#redirect\_url-string) _<mark style="color:blue;">`string`</mark>_&#x20;
 
-This URL redirects to the payment page.
+This URL redirects to the payment page.See [redirect\_url](checkout-api.md#redirect\_url-string-optional)
 
 </details>
 

@@ -506,7 +506,7 @@ An array containing all the payment methods derived from the [pg\_codes](checkou
 
 <details>
 
-<summary><em>object details</em></summary>
+<summary>payment_methods <em>object details</em></summary>
 
 #### :digit\_one: [**code** ](checkout-api.md#code-string)_<mark style="color:blue;">**`string`**</mark>_
 

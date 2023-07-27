@@ -230,7 +230,20 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 <summary><mark style="color:orange;">MPGS</mark></summary>
 
-**Payment gateway:** MPGS
+**Payment gateway:** MPGS\
+
+
+**Card type:** Mastercard
+
+**Country:** International
+
+**Card number:** `5123450000000008`&#x20;
+
+**Expiry:** 01/39
+
+**CVV:** 100
+
+
 
 **Card type:** VISA
 

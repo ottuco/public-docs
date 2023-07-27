@@ -291,7 +291,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** 123
 
-**Note:** Pin:Any 4 digits For not captured use expiry as 08/21
+**Note:** Pin: Any 4 digits For not captured use expiry as 08/21
 
 </details>
 
@@ -335,7 +335,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** 766
 
-**Note:** OTP:Comes to saif@ottu.com      &#x20;
+**Note:** OTP Comes to saif@ottu.com      &#x20;
 
 </details>
 
@@ -397,7 +397,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** 123
 
-**Note: OTP:** 123456
+**Note:** OTP: 123456
 
 </details>
 

@@ -371,7 +371,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **Country:** International
 
-**Card number:** 371449635398431
+**Card number:** `371449635398431`
 
 **Expiry:** 01/39
 
@@ -391,7 +391,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **Country:** International
 
-**Card number:** 5123456789012346
+**Card number:** `5123456789012346`
 
 **Expiry:** Greater than current date
 
@@ -413,7 +413,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **Country:** Oman
 
-**Card number:** 5421603300397131
+**Card number:** `5421603300397131`
 
 **Expiry:** 01/25
 

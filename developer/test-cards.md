@@ -17,35 +17,19 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 <summary><mark style="color:orange;">Ottu PG</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** Ottu PG
 
-Ottu PG
+**Card type:** VISA
 
-**Card type**             &#x20;
+**Country:** International
 
-VISA
+**Card number:** `4030000010001234`
 
-**Country**                 &#x20;
+**Expiry:** 01/39
 
-International
+**CVV :** 100&#x20;
 
-**Card number**          &#x20;
-
-```
-4030000010001234
-```
-
-**Expiry**                &#x20;
-
-&#x20;01/39
-
-**CVV**                  &#x20;
-
-100&#x20;
-
-**Note**                      &#x20;
-
-&#x20;Non 3DS
+**Note :** Non 3DS
 
 </details>
 
@@ -55,89 +39,37 @@ International
 
 <summary><mark style="color:orange;">Amazon Pay</mark></summary>
 
-**Payment gateway** &#x20;
+**Payment gateway:** Amazon Pay
 
-&#x20;Amazon Pay
+
 
 **Non-3DS**
 
-**Country**             &#x20;
+**Country:** International
 
-International
+**Card type:** VISA **Card number:** `4005550000000001`
 
-**Card type**
+**Card Type:** MasterCard **Card number:** `5123456789012346`
 
-VISA
+**Card type:** AMEX **Card number:** `345678901234564`
 
-**Card number**          &#x20;
 
-```
-4005550000000001
-```
-
-**Card Type**
-
-MasterCard
-
-**Card number**
-
-```
-5123456789012346
-```
-
-**Card type**
-
-AMEX
-
-**Card number**
-
-```
-345678901234564
-```
 
 **3DS**
 
-**Card type**
+**Card type:** VISA **Card number:** `4557012345678902`
 
-VISA
+**Card type:** MasterCard **Card number:** `5313581000123430`
 
-**Card number**
+**Card type:** AMEX **Card number:** `374200000000004`
 
-```
-4557012345678902
-```
 
-**Card type**
 
-MasterCard
+**Expiry for all:** 05/25
 
-**Card number**
+**CVV for VISA, MasterCard, non-3DS & 3DS** : 123
 
-```
-5313581000123430
-```
-
-**Card type**
-
-AMEX
-
-**Card number**
-
-```
-374200000000004
-```
-
-**Expiry**                  For all
-
-05/25
-
-**CVV**    For VISA & MasterCard         non-3DS & 3DS      &#x20;
-
-123
-
-**CVV**          For AMEX                               non-3DS & 3DS
-
-1234
+**CVV** **for AMEX, non-3DS & 3DS:** 1234
 
 </details>
 
@@ -147,31 +79,17 @@ AMEX
 
 <summary><mark style="color:orange;">Bombora</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** Bambora
 
-Bambora
+**Card type:** VISA
 
-**Card type**             &#x20;
+**Country:** International
 
-VISA
+**Card number:** `4030000010001234`
 
-**Country**                &#x20;
+**Expiry :** 05/25
 
-&#x20;International
-
-**Card number**          &#x20;
-
-```
-4030000010001234
-```
-
-**Expiry**                &#x20;
-
-05/25
-
-**CVV**                   &#x20;
-
-123            &#x20;
+**CVV:** 123            &#x20;
 
 </details>
 
@@ -181,15 +99,12 @@ VISA
 
 <summary><mark style="color:orange;">Bookeey</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway**: Bookeey
 
-Bookeey
+**Method to test :** Merchant login for payment&#x20;
 
-**Method to test**    Merchant login for payment&#x20;
-
-```
-66333333/1234
-```
+<pre><code><strong>66333333/1234
+</strong></code></pre>
 
 </details>
 
@@ -199,31 +114,17 @@ Bookeey
 
 <summary><mark style="color:orange;">Burgan</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway**: Burgan
 
-Burgan
+**Card type:** VISA
 
-**Card type**            &#x20;
+**Country:** Kuwait
 
-&#x20;VISA
+**Card number**: `4012000033330026`
 
-**Country**                 &#x20;
+**Expiry:** 01/39
 
-Kuwait
-
-**Card number**          &#x20;
-
-```
-4012000033330026
-```
-
-**Expiry**                 &#x20;
-
-01/39
-
-**CVV**                   &#x20;
-
-100
+**CVV:** 100
 
 </details>
 
@@ -233,36 +134,19 @@ Kuwait
 
 <summary><mark style="color:orange;">FSS</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway**: FSS
 
-FSS
+**Card type:** VISA
 
-**Card type**             &#x20;
+**Country:** International
 
-VISA
+**Card number**: `4012001037141112`
 
-**Country**                 &#x20;
+**Expiry:** 12/27
 
-International
+**CVV:** 212
 
-**Card number**          &#x20;
-
-```
-4012001037141112
-```
-
-**Expiry**                 &#x20;
-
-12/27
-
-**CVV**                    &#x20;
-
-212
-
-**Note**                        &#x20;
-
-Secure Code: 123456\
-OTP:123456
+**Note:** Secure Code: 123456 & OTP:123456
 
 </details>
 
@@ -272,37 +156,19 @@ OTP:123456
 
 <summary><mark style="color:orange;">N-genius</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway**: N-genius
 
-N-genius
+**Card type:** VISA
 
-**Card type**             &#x20;
+**Country:** International
 
-VISA
+**Card number:** `4012001037141112`
 
-**Country**                 &#x20;
+**Expiry:** 05/25                         &#x20;
 
-International
-
-**Card number**          &#x20;
-
-```
-4012001037141112
-```
-
-**Expiry**                &#x20;
-
-&#x20;05/25
-
-**CVV**                    &#x20;
-
-**Note**                        &#x20;
-
-pin:123
+**Note:** Pin:123
 
 </details>
-
-###
 
 ### [MiGS](test-cards.md#migs)
 
@@ -310,31 +176,17 @@ pin:123
 
 <summary><mark style="color:orange;">MiGS</mark></summary>
 
-**Payment gateway** &#x20;
+**Payment gateway:** MiGS
 
-&#x20;MiGS
+**Card type:** Mastercard
 
-**Card type**             &#x20;
+**Country:** International
 
-Mastercard
+**Card number:** 5123450000000008
 
-**Country**                &#x20;
+**Expiry:** 01/39
 
-International
-
-**Card number**     &#x20;
-
-```
-5123450000000008
-```
-
-**Expiry**                &#x20;
-
-&#x20;01/39
-
-**CVV**                   &#x20;
-
-123              &#x20;
+**CVV:** 123              &#x20;
 
 </details>
 
@@ -344,53 +196,31 @@ International
 
 <summary><mark style="color:orange;">Cybersource</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** Cybersource
 
-Cybersource
 
-**Card type**            &#x20;
 
-&#x20;VISA
+**Card type:** VISA
 
-**Country**                 &#x20;
+**Country:** International
 
-International
+**Card number:** 4111111111111111&#x20;
 
-**Card number**          &#x20;
+**Expiry:** Any future date
 
-```
-4111111111111111 
-```
+**CVV:** Any 3-digit number
 
-**Expiry**               &#x20;
 
-&#x20;Any future date
 
-**CVV**                   &#x20;
+**Card type:** Mastercard
 
-Any 3-digit number
+**Country:** International
 
-**Card type**
+**Card number:** `5555555555554444`&#x9;
 
-Mastercard
+**Expiry:** Any future date
 
-**Country**                 &#x20;
-
-International
-
-**Card number**
-
-```
-5555555555554444	
-```
-
-**Expiry**               &#x20;
-
-Any future date
-
-**CVV**                   &#x20;
-
-Any 3-digit number
+**CVV:** Any 3-digit number
 
 </details>
 
@@ -400,85 +230,55 @@ Any 3-digit number
 
 <summary><mark style="color:orange;">MPGS</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** MPGS
 
-MPGS
+**Card type:** VISA
 
-**Card type**            &#x20;
+**Country:** International
 
-&#x20;VISA
+**Card number:** `4508750015741019`&#x20;
 
-**Country**                 &#x20;
+**Expiry:** 01/39
 
-International
+**CVV:** 100
 
-**Card number**          &#x20;
 
-```
-4508750015741019 
-```
-
-**Expiry**               &#x20;
-
-&#x20;01/39
-
-**CVV**                   &#x20;
-
-100
 
 **Test card to receive token data**
 
-**Card number**
+**1- Card number:** `5120350100064537`&#x9;
 
-```
-5120350100064537	
-```
+**Expiry:** Any future date
 
-**Expiry**               &#x20;
+**CVV:** Any 3 digits
 
-Any future date
+**2- Card number:** 5120350100064545&#x9;
 
-**CVV**                   &#x20;
+**Expiry:** Any future date
 
-Any 3 digits
+**CVV:** Any 3 digits
 
 </details>
 
-### [Knet](test-cards.md#knet)
+### [KNET](test-cards.md#knet)
 
 <details>
 
-<summary><mark style="color:orange;">Knet</mark></summary>
+<summary><mark style="color:orange;">KNET</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** KNET
 
-Knet
+**Card type:** KNET test card
 
-**Card type**            &#x20;
+**Country:** Kuwait
 
-Knet test card
+**Card number:** 888888-0000000001
 
-**Country**                 &#x20;
+**Expiry:** 09/25
 
-Kuwait
+**CVV:** 123
 
-**Card number**          &#x20;
-
-```
-888888-0000000001
-```
-
-**Expiry**                &#x20;
-
-09/25
-
-**CVV**                   &#x20;
-
-123
-
-**Note**                        &#x20;
-
-Pin:Any 4 digits For not captured use expiry as 08/21
+**Note:** Pin:Any 4 digits For not captured use expiry as 08/21
 
 </details>
 
@@ -488,35 +288,19 @@ Pin:Any 4 digits For not captured use expiry as 08/21
 
 <summary><mark style="color:orange;">MADA</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** MADA
 
-MADA
+**Card type:** Mastercard
 
-**Card type**             &#x20;
+**Country:** KSA
 
-Mastercard
+**Card number:** `5588480000000003`
 
-**Country**                 &#x20;
+**Expiry:** 05/21
 
-KSA
+**CVV:** 100
 
-**Card number**          &#x20;
-
-```
-5588480000000003
-```
-
-**Expiry**                &#x20;
-
-&#x20;05/21
-
-**CVV**                   &#x20;
-
-100
-
-**Note**                        &#x20;
-
-On 3D Auth page just click Submit
+**Note:** On 3D Auth page just click Submit
 
 </details>
 
@@ -526,36 +310,19 @@ On 3D Auth page just click Submit
 
 <summary><mark style="color:orange;">OmanNet</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** Muscat
 
-Muscat
+**Card Type:** VISA
 
-**Card Type**             &#x20;
+**Country:** Oman
 
-VISA
+**Card number:** `4837915082856089`
 
-**Country**                &#x20;
+**Expiry:** 06/27
 
-Oman
+**CVV:** 766
 
-**Card number**         &#x20;
-
-```
- 4837915082856089
-```
-
-**Expiry**                &#x20;
-
-&#x20;06/27
-
-**CVV**                   &#x20;
-
-766
-
-**Note**                  \
-OTP:\
-Comes to\
-saif@ottu.com      &#x20;
+**Note:** OTP:Comes to saif@ottu.com      &#x20;
 
 </details>
 
@@ -565,31 +332,17 @@ saif@ottu.com      &#x20;
 
 <summary><mark style="color:orange;">CBK</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** CBK
 
-CBK
+**Card type:** Mastercard
 
-**Card type**            &#x20;
+**Country:** Kuwait
 
-Mastercard
+**Card number:** `5123450000000008`
 
-**Country**                 &#x20;
+**Expiry:** 01/39
 
-Kuwait
-
-**Card number**          &#x20;
-
-```
-5123450000000008
-```
-
-**Expiry**                &#x20;
-
-01/39
-
-**CVV**                   &#x20;
-
-100   &#x20;
+**CVV:** 100   &#x20;
 
 </details>
 
@@ -599,31 +352,17 @@ Kuwait
 
 <summary><mark style="color:orange;">PayPal</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** Paypal
 
-Paypal
+**Card Type:** American express
 
-**Card Type**             &#x20;
+**Country:** International
 
-American express
+**Card number:** 371449635398431
 
-**Country**                &#x20;
+**Expiry:** 01/39
 
-&#x20;International
-
-**Card number**          &#x20;
-
-```
-371449635398431
-```
-
-**Expiry**                 &#x20;
-
-01/39
-
-**CVV**                   &#x20;
-
-1000    &#x20;
+**CVV:** 1000    &#x20;
 
 </details>
 
@@ -633,35 +372,19 @@ American express
 
 <summary><mark style="color:orange;">Payu-india</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** payu\_india
 
-payu\_india
+**Card type:** Mastercard
 
-**Card type**             &#x20;
+**Country:** International
 
-Mastercard
+**Card number:** 5123456789012346
 
-**Country**                 &#x20;
+**Expiry:** Greater than current date
 
-International
+**CVV:** 123
 
-**Card number**         &#x20;
-
-```
- 5123456789012346
-```
-
-**Expiry**                 &#x20;
-
-Greater than current date
-
-**CVV**                   &#x20;
-
-123
-
-**Note**    &#x20;
-
-**OTP:** 123456
+**Note: OTP:** 123456
 
 </details>
 
@@ -671,31 +394,17 @@ Greater than current date
 
 <summary><mark style="color:orange;">NBO</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** NBO
 
-NBO
+**Card type:** Mastercard
 
-**Card type**             &#x20;
+**Country:** Oman
 
-Mastercard
+**Card number:** 5421603300397131
 
-**Country**                 &#x20;
+**Expiry:** 01/25
 
-Oman
-
-**Card number**          &#x20;
-
-```
-5421603300397131
-```
-
-**Expiry**                &#x20;
-
-01/25
-
-**CVV**                   &#x20;
-
-070  &#x20;
+**CVV:** 070  &#x20;
 
 </details>
 
@@ -705,51 +414,29 @@ Oman
 
 <summary><mark style="color:orange;">QPAY</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** QPAY
 
-QPAY
+**Card type:** NAPS
 
-**Card type**              &#x20;
+**Country:** Qatar
 
-NAPS
+**Card number:**           &#x20;
 
-**Country**                 &#x20;
+For success: `4215375500883243`
 
-Qatar
+For failed: `4151801200003960`
 
-**Card number**           &#x20;
+**Expiry:**&#x20;
 
-For success&#x20;
+For success: 6/22
 
-```
-4215375500883243
-```
+For failed: Greater than current date
 
-&#x20;For failed
+**CVV:**&#x20;
 
-```
-4151801200003960
-```
+For success: 1234
 
-**Expiry**                &#x20;
-
-For success
-
-6/22
-
-For failed                             &#x20;
-
-Greater than current date
-
-**CVV**                  &#x20;
-
-For success
-
-1234
-
-&#x20;For failed
-
-Any 4 digits
+&#x20;For failed: Any 4 digits
 
 </details>
 
@@ -759,43 +446,23 @@ Any 4 digits
 
 <summary><mark style="color:orange;">HYPERPAY</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** HYPERPAY
 
-HYPERPAY
+**Card type:** VISA
 
-**Card type**             &#x20;
-
-VISA
-
-**Country**                &#x20;
-
-International
+**Country:** International
 
 **Card number** &#x20;
 
-For success&#x20;
+For success: `4111111111111111`
 
-```
-4111111111111111
-```
-
-&#x20;For failed
-
-```
-5204730000002514 
-```
-
-**Expiry**               &#x20;
+&#x20;For failed: `5204730000002514`                     &#x20;
 
 **CVV**                  &#x20;
 
-For success
+For success: 123
 
-123
-
-&#x20;For failed
-
-251
+For failed: 251
 
 </details>
 
@@ -805,107 +472,51 @@ For success
 
 <summary><mark style="color:orange;">Benefit</mark></summary>
 
-**Expiry date for all card numbers:**&#x20;
+**Expiry date for all card numbers:** Should be greater than current date.&#x20;
 
-Should be greater than current date.&#x20;
+**CVV :** Any 4 digits&#x20;
 
-**CVV :**&#x20;
+* **Result:** Approved
 
-Any 4 digits .
+**Card number:** `4600410123456789`
 
-**Card number**            &#x20;
+**Response code:** 00 &#x20;
 
-```
- 4600410123456789
-```
+* **Result:** Expired card
 
-**Response code**      &#x20;
+**Card number:** `4550120123456789`
 
-00 &#x20;
+**Response code:** 54
 
-**Result**                     &#x20;
+* **Result:** Limit exceeded
 
-Approved
+**Card number:** `4889780123456789`
 
-**Card number**            &#x20;
+**Response code:** 61
 
-```
-4550120123456789
-```
+* **Result:** Insufficient funds
 
-**Response code**      &#x20;
+**Card number:** `4415550123456789`
 
-54
+**Response code:** 51
 
-**Result**                     &#x20;
+* **Result:** Refer to issuer
 
-Expired card\
-\
-**Card number**             &#x20;
+**Card number:** `4575550123456789`
 
-```
-4889780123456789
-```
+**Response code:** 78
 
-**Response code**      &#x20;
+* **Result:** Invalid pin
 
-61
+**Card number:** `4845550123456789`
 
-**Result**                     &#x20;
+**Response code:** 55
 
-Limit exceeded
+* **Result:** Do not honor
 
-**Card number**             &#x20;
+**Card number:** `4895550123456789`
 
-```
-4415550123456789
-```
-
-**Response code**      &#x20;
-
-51
-
-**Result**                     &#x20;
-
-Insufficient funds
-
-**Card number**             &#x20;
-
-```
-4575550123456789
-```
-
-**Response code**      &#x20;
-
-78
-
-**Result**                     &#x20;
-
-Refer to issuer
-
-**Card number**             &#x20;
-
-```
-4845550123456789
-```
-
-**Response code**      &#x20;
-
-55
-
-**Result**                    &#x20;
-
-Invalid pin
-
-**Card number**             &#x20;
-
-```
-4895550123456789
-```
-
-**Response code**       05
-
-**Result**                      Do not honor
+**Response code:** 05
 
 </details>
 
@@ -915,36 +526,18 @@ Invalid pin
 
 <summary><mark style="color:orange;">UPG</mark></summary>
 
-**Payment gateway**  &#x20;
+**Payment gateway:** United payment gateway (UPG)
 
-United payment gateway (UPG)
+**Card type:** Mastercard
 
-**Card type**             &#x20;
+**Country:** Egypt
 
-Mastercard
+**Card number:** `5078 0362 4660 0381`
 
-**Country**                &#x20;
+**Expiry:** 09/25
 
-Egypt
+**CVV:** 331
 
-**Card number**
-
-```
-5078 0362 4660 0381
-```
-
-**Expiry**
-
-09/25
-
-**CVV**
-
-331
-
-**Note**
-
-OTP: 111111
-
-
+**Note:** OTP: 111111
 
 </details>

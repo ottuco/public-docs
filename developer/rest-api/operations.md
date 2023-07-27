@@ -174,7 +174,7 @@ When a refund operation is performed, a child payment transaction of the origina
 
 Additionally, Ottu offers an operation approval feature that enables merchants to control the refund operation. A staff member is designated as a checker who can approve or reject any refund requests sent by other staff members. This ensures that refunds are only issued when authorized by a designated person, which helps prevent fraudulent or unauthorized refunds. See [operation request flow](../../user-guide/plugins/features/operation-request-flow.md).
 
-&#x20;Payment gateways support refund operation: \[Benefit, FSS, Kpay, MPGS, MyFatoorah, NGenius , payuindia, QPay,Tabby].\
+&#x20;Payment gateways support refund operation: \[Benefit, FSS, Kpay, MPGS, MyFatoorah, NGenius , payuindia, QPay,Tabby, STC Pay].\
 \
 
 

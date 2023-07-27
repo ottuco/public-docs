@@ -146,17 +146,17 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** 212
 
-**Note:** Secure Code: 123456 & OTP:123456
+**Note:** Secure Code: 123456 & OTP: 123456
 
 </details>
 
-### [N-genius](test-cards.md#n-genius)
+#### [N-Genius](test-cards.md#n-genius)
 
 <details>
 
-<summary><mark style="color:orange;">N-genius</mark></summary>
+<summary><mark style="color:orange;">N-Genius</mark></summary>
 
-**Payment gateway**: N-genius
+**Payment gateway**: N-Genius
 
 **Card type:** VISA
 
@@ -166,7 +166,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **Expiry:** 05/25                         &#x20;
 
-**Note:** Pin:123
+**Note:** Pin: 123
 
 </details>
 
@@ -176,7 +176,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 <summary><mark style="color:orange;">MiGS</mark></summary>
 
-**Payment gateway:** MiGS
+**Payment gateway:** MiGS (Mastercard Internet Gateway Service)
 
 **Card type:** Mastercard
 
@@ -198,9 +198,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **Payment gateway:** Cybersource
 
-
-
-**Card type:** VISA
+* **Card type:** VISA
 
 **Country:** International
 
@@ -210,9 +208,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** Any 3-digit number
 
-
-
-**Card type:** Mastercard
+* **Card type:** Mastercard
 
 **Country:** International
 
@@ -230,10 +226,9 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 <summary><mark style="color:orange;">MPGS</mark></summary>
 
-**Payment gateway:** MPGS\
+**Payment gateway:** MPGS
 
-
-**Card type:** Mastercard
+* **Card type:** Mastercard
 
 **Country:** International
 
@@ -243,9 +238,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** 100
 
-
-
-**Card type:** VISA
+* **Card type:** VISA
 
 **Country:** International
 
@@ -255,9 +248,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** 100
 
-
-
-**Test card to receive token data**
+* **Test card to receive token data**
 
 **1- Card number:** `5120350100064537`&#x9;
 
@@ -291,7 +282,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **CVV:** 123
 
-**Note:** Pin: Any 4 digits For not captured use expiry as 08/21
+**Note:** Pin: Any 4 digits. For not captured use expiry as 08/21
 
 </details>
 
@@ -379,13 +370,13 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 </details>
 
-### [Payu-india](test-cards.md#payu-india)
+#### [PayU India](test-cards.md#payu-india)
 
 <details>
 
-<summary><mark style="color:orange;">Payu-india</mark></summary>
+<summary><mark style="color:orange;">PayU India</mark></summary>
 
-**Payment gateway:** payu\_india
+**Payment gateway:** PayU India
 
 **Card type:** Mastercard
 
@@ -421,13 +412,13 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 </details>
 
-### [QPAY](test-cards.md#qpay)
+#### [QPay](test-cards.md#qpay)
 
 <details>
 
-<summary><mark style="color:orange;">QPAY</mark></summary>
+<summary><mark style="color:orange;">QPay</mark></summary>
 
-**Payment gateway:** QPAY
+**Payment gateway:** QPay
 
 **Card type:** NAPS
 
@@ -453,13 +444,13 @@ For success: 1234
 
 </details>
 
-### [HYPERPAY](test-cards.md#hyperpay)
+#### [HyperPay](test-cards.md#hyperpay)
 
 <details>
 
-<summary><mark style="color:orange;">HYPERPAY</mark></summary>
+<summary><mark style="color:orange;">HyperPay</mark></summary>
 
-**Payment gateway:** HYPERPAY
+**Payment gateway:** HyperPay
 
 **Card type:** VISA
 

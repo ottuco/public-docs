@@ -530,7 +530,7 @@ For failed: 251
 
 <summary><mark style="color:orange;">UPG</mark></summary>
 
-**Payment gateway:** United payment gateway (UPG)
+**Payment gateway:** United Payment Gateway (UPG)
 
 **Card type:** Mastercard
 
@@ -543,5 +543,27 @@ For failed: 251
 **CVV:** 331
 
 **Note:** OTP: 111111
+
+</details>
+
+#### [AlRajhi Bank](test-cards.md#alrajhi-bank)
+
+<details>
+
+<summary><mark style="color:orange;">AlRajhi</mark></summary>
+
+**Payment gateway:** AlRajhi Payment Gateway
+
+**Card type:** Visa / Master
+
+**Country:** KSA
+
+**Card number:** `5105105105105100`
+
+**Expiry:** 23/12
+
+**CVV:** 123
+
+**Note:** OTP: 123123
 
 </details>

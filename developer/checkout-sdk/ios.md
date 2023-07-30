@@ -145,7 +145,21 @@ class ViewController: UIViewController,OttuDelegate {
 
 ## [Integrate Apple Pay](ios.md#integrate-apple-pay)
 
+Please follow below steps to integrate Apple Pay button in storyboard.
+
+Apply the configuration shown in the following figure.
+
+<figure><img src="../../.gitbook/assets/822EA136-2ACE-45FA-9E04-7FD5D0A9D552 (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+Now create an action for the button and initialize the SDK with [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory).
+
+```swift
+
+let session_id = "ENTER_YOUR_SESSION_ID"
+_ = Ottu.init(session_id, merchant_id: "MERCHANT_ID", apiKey: "API_KEY" ,lang: "ENTER_LANGUAGE_ID_en_or_ar",formsOfPayment: ["applePay"], viewController: self, delegate: self)
+```
+
 {% hint style="info" %}
-For [Apple Pay integration](../../user-guide/apple-pay.md), you have to enable Apple Pay in capabilities in your project.\
-If apple pay available, will show by default.
+* You need to pass formsOfPayment as \["applePay"]. If it is not passed then normal flow will start working.
+* To inetgrate apple pay you need to enable Apple Pay in capabilites in your project.
 {% endhint %}

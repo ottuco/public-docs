@@ -73,11 +73,11 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 </details>
 
-### [Bombora](test-cards.md#bombora)
+### [Bambora](test-cards.md#bambora)
 
 <details>
 
-<summary><mark style="color:orange;">Bombora</mark></summary>
+<summary><mark style="color:orange;">Bambora</mark></summary>
 
 **Payment gateway:** Bambora
 

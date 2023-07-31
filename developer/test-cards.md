@@ -546,7 +546,7 @@ For failed: 251
 
 </details>
 
-#### [AlRajhi Bank](test-cards.md#alrajhi-bank)
+### [AlRajhi Bank](test-cards.md#alrajhi-bank)
 
 <details>
 

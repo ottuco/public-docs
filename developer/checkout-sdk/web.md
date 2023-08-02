@@ -1,10 +1,8 @@
 # Web
 
-## [Getting Started](web.md#getting-started)
-
 The [Checkout SDK](./) is a JavaScript library provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your web application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
 
-To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory), and [API key](../rest-api/authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [css](web.md#css-object) styling for the checkout interface, and more.
+To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API key](../rest-api/authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [css](web.md#css-object) styling for the checkout interface, and more.
 
 {% hint style="warning" %}
 Please note that the Checkout SDK requires the implementation of the [Checkout API](../rest-api/checkout-api.md) in order to function properly.
@@ -37,7 +35,7 @@ Replace [errorCallback](web.md#window.errorcallback), [cancelCallback](web.md#wi
 
 You're all set! You can now use the [Checkout SDK ](./)to create a checkout form on your web page and process payments through Ottu.
 
-### [Functions](web.md#functions)
+## [Functions](web.md#functions)
 
 #### [**Checkout.init**](web.md#checkout.init)
 
@@ -61,7 +59,7 @@ In this example, the `Checkout.reload` function is called to refresh the content
 
 #### [**selector**](web.md#selector-string)  _<mark style="color:blue;">**`string`**</mark>_
 
-The `selector` property in the Checkout SDK is used to specify the css selector for the HTML element that will contain the checkout form. This is typically a `<div>` element on your web page.
+The `selector` property in the Checkout SDK is used to specify the `css` selector for the HTML element that will contain the checkout form. This is typically a `<div>` element on your web page.
 
 To specify the selector, you can add a `<div>` element to your web page with a unique `id` attribute, like this:
 
@@ -88,7 +86,7 @@ In this example, the `selector` property is set to `"checkout"`, which means tha
 
 The `merchant_id` specifies your Ottu merchant domain. This should be the root domain of your Ottu account, without the "https://" or "http://" prefix.
 
-For example, if your Ottu URL is `https://example.ottu.com`, then your `merchant_id` should be **example.ottu.com**. This property is used to identify which Ottu merchant account the checkout process should be linked to.
+For example, if your Ottu URL is `https://example.ottu.com`, then your `merchant_id` is **example.ottu.com**. This property is used to identify which Ottu merchant account the checkout process should be linked to.
 
 #### [**apiKey**](web.md#apikey)
 
@@ -96,18 +94,22 @@ The `apiKey` is your Ottu [API public key](../rest-api/authentication.md#public-
 
 According to the REST [API documentation](../rest-api/), the `apiKey` property should be set to your Ottu  [API public key](../rest-api/authentication.md#public-key).
 
+{% hint style="warning" %}
+Ensure that you utilize the public key and refrain from using the private key. The private key should remain confidential at all times and must not be shared with any clients.
+{% endhint %}
+
 #### [**session\_id**](web.md#session\_id-string) _<mark style="color:blue;">**`string`**</mark>_
 
-The `session_id` the unique identifier for the payment transaction associated with the checkout process.
+The `session_id` is the unique identifier for the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see session\_id.
+This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only).
 
 #### [**lang**](web.md#lang-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The `lang` property is used to specify the language in which the checkout elements should be displayed. This property can be set to either `"en"` (for English) or `"ar"` (for Arabic).
 
 When `lang` is set to `"en"`, the checkout form will be displayed in English, and when it's set to `"ar"`, the checkout elements will be displayed in Arabic. Additionally, when the `lang` parameter is set to `"ar"`, the layout will switch to right-to-left (RTL) to accommodate Arabic script. \
-For more information on how to use lang parameter in the Checkout API, see [language](../rest-api/checkout-api.md#language-string-optional).
+For more information on how to use lang parameter in the Checkout API, see [lang](../rest-api/checkout-api.md#language-string-optional).
 
 #### [**formsOfPayment**](web.md#formsofpayment-array) _<mark style="color:blue;">**`array`**</mark>_
 
@@ -116,9 +118,11 @@ For more information on how to use lang parameter in the Checkout API, see [lang
 The available options for `formsOfPayment` are:
 
 * `"applePay"`: The Apple Pay payment method that allows customers to make purchases using their Apple Pay-enabled devices.
-* `"cardForm"`: A form that allows customers to enter their credit or debit card details to make a payment.
+* `"googlePay"`: The Google Pay payment method that allows customers to make purchases using their Google wallet cards linked in google accounts.
+* `"ottuPG"`: A method that redirects customers to a page where customers enter their credit or debit card details to make a payment.
 * `"tokenPay"`: A payment method that uses tokenization to securely store and process customers' payment information.
 * `"redirect"`: A method where customers are redirected to a payment gateway or a third-party payment processor to complete their payment.
+* `"stcPay"`: A method where customers enter their mobile number and provide an OTP send to their mobile number to complete their payment.
 
 This property can be particularly useful when you want to customize the checkout process and display only specific forms of payment, such as only displaying the Apple Pay button and hiding the other payment options.
 
@@ -126,11 +130,11 @@ This property can be particularly useful when you want to customize the checkout
 
 `css` can be used to override some of the elements rendered by the SDK to better integrate with your website.
 
-There are several css classes that can be overridden using the [css](web.md#css-object) property, including:
+There are several `css` classes that can be overridden using the [css](web.md#css-object) property, including:
 
 * `.ottu__sdk-main`: the class of the div which wraps all the elements of the container. It's useful to override this when you want to modify the size of the rendered content by the SDK.
 * `.ottu__sdk-apple-pay-button-type`: specifies the button type of the Apple Pay button. This class defaults to `pay` and if there is no card in the wallet, it will automatically change to `setUp`. More information can be found on the ApplePay official documentation for [ApplePay Button Type](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).
-* `.apple-pay-button`: the class of the Apple Pay button, which is a div. It can be customized for width, padding, margin, and more. Useful to customize when `formsOfPayment` is configured to display only the Apple Pay button.
+* `.apple-pay-button`: the class of the Apple Pay button, which is a `div`. It can be customized for width, padding, margin, and more. Useful to customize when `formsOfPayment` is configured to display only the Apple Pay button.
 
 Here's an example of how [Checkout.init](web.md#checkout.init) might be called with a  [css](web.md#css-object) property to customize the `.ottu__sdk-main` class, `.ottu__sdk-apple-pay-button-type` class, and `.apple-pay-button` class:
 
@@ -140,7 +144,7 @@ Checkout.init({
     merchant_id: 'domain',
     session_id: 'session_id',
     apiKey: 'api_key',
-    formsOfPayment: ['applePay', 'cardForm', 'tokenPay', 'redirect'],
+    formsOfPayment: ['applePay', 'tokenPay', 'redirect'],
     css: `
     .ottu__sdk-main {
       flex-basis: 100%;
@@ -163,7 +167,45 @@ Checkout.init({
 
 In this example, the [css](web.md#css-object) property is set to override the `.ottu__sdk-main`, `.ottu__sdk-apple-pay-button-type`, and `.apple-pay-button` classes with new styles. The updated styles for these classes will be applied to the checkout container when it's rendered by the SDK.
 
-#### [Example](web.md#example)
+#### [googlePayInit](web.md#googlepayinit-object) <mark style="color:blue;">`object`</mark>
+
+The `googlePayInit` object enables users to modify the Google Pay configurations used for generating payment sessions through Google Pay. By default, all options are pre-configured. However, developers have the flexibility to customize these configurations using `googlePayInit` according to their requirements by utilizing the options outlined in the documentation [here](https://developers.google.com/pay/api/web/reference/request-objects.). \
+Additionally, the `buttonStyles` property allows users to customize the `css` of the Google button in the SDK, making it easier to integrate with your website.
+
+* **buttonStyles** <mark style="color:blue;">**`object`**</mark>\
+  The `buttonStyle` is an object in the Google Pay API that enables merchants to customize the default styling properties of the Google Pay button. This object provides options to modify the width, margin-top, and margin-bottom of the button. By utilizing the `ButtonStyle` object, merchants can tailor the appearance of the Google Pay button to align with their website or app design.\
+  Default `css` is:  **width: 90%**, **margin-top: 12px**, **margin-bottom: 12px**.
+
+**Example**
+
+To display only the Google Pay button, use the following code:
+
+```javascript
+Checkout.init({
+      selector: "checkout",
+      merchant_id:"merchant.ottu.dev",
+	formsOfPayment: ["googlePay"],
+	// ...mandatory properties,
+googlePayInit: {
+ 		apiVersion: 2,
+ 		apiVersionMinor: 0,
+ 		allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"],
+ 		allowedCardAuthMethods:  ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+ 		tokenizationSpecificationType: 'PAYMENT_GATEWAY',
+ 		totalPriceStatus: 'FINAL',
+ 		totalPriceLabel: 'TOTAL',
+ 		buttonType: 'buy',
+ 		buttonLocale: 'en',
+ 		buttonStyles: {
+   			'width': '90% !important',
+   			'margin-top': '12px !important',
+   			'margin-bottom': '12px !important',
+ 		}
+},
+}
+```
+
+**Example**
 
 <mark style="color:blue;">**HTML**</mark>
 
@@ -180,7 +222,7 @@ Checkout.init({
     session_id: "",
     apiKey: "",
     lang: "en",
-    formsOfPayment: ['applePay', 'cardForm', 'tokenPay', 'redirect'],
+    formsOfPayment: ['applePay', 'tokenPay', 'ottuPG', 'redirect', 'googlePay', 'stcPay']
     css: `
         ottu__sdk-main {
         flex-basis: 100%;
@@ -191,15 +233,34 @@ Checkout.init({
 });
 ```
 
-### [Callbacks](web.md#callbacks)
+#### [**Checkout.showErrorPopup(message, pg\_response)**](web.md#checkout.showerrorpopup-message-pg\_response)
 
-In the Checkout SDK, callback functions play a vital role in providing real-time updates on the status of payment transactions. Callbacks enhance the user experience by enabling seamless and efficient handling of various payment scenarios, such as errors, successful payments, and cancellations.
+Is a function that shows an error message in a popup on the screen. The message parameter must be a string, and the optional `pg_response` parameter is an object that displays key-value pairs representing object values within the popup.
+
+* **message** <mark style="color:blue;">**`string`**</mark>\
+  The message for a failed payment can be displayed to the customer.
+* **pg\_response** <mark style="color:blue;">**`object`**</mark>\
+  The raw response data that was received directly from the payment gateway after the transaction attempt. This typically includes transaction status, transaction identifier, and potentially error messages or additional data provided by the gateway.
+
+#### Example
+
+`Checkout.showErrorPopup('Selected payment method failed. Try again.' , { "merchant":"009057332", "timeOfLastUpdate":"2023-08-01T14:19:00.510Z", "version":"65" })`
+
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+
+`Checkout.showErrorPopup('Selected payment method failed. Try again.' , cancel.payment_gateway_info.pg_response)`
+
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+
+## [Callbacks](web.md#callbacks)
+
+In the Checkout SDK, callback functions play a vital role in providing real-time updates on the status of payment transactions. `Callbacks` enhance the user experience by enabling seamless and efficient handling of various payment scenarios, such as errors, successful payments, and cancellations.
 
 Please note that due to technical constraints associated with off-site redirection during the payment process, the `successCallback` and `cancelCallback` functions are only called for on-site checkouts. However, the `errorCallback` function is called for any kind of payments. On-site checkouts include options such as Apple Pay, Google Pay, payments with saved cards, and on-site card form transactions, which support callback functionality for a seamless user experience.
 
 #### [**window.errorCallback**](web.md#window.errorcallback)
 
-The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new session ID using the Checkout API.
+The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) using the [Checkout API](../rest-api/checkout-api.md).
 
 To define the `errorCallback` function, you can use the `data-error` attribute on the Checkout script tag to specify a global function that will handle errors. If an error occurs during a payment, the `errorCallback` function will be invoked with an `error` object.
 
@@ -235,7 +296,7 @@ The `cancelCallback` in the Checkout SDK is a callback function that is invoked 
 
 To define the `cancelCallback` function, you can use the `data-cancel` attribute on the Checkout script tag to specify a global function that will handle cancellations. If a customer cancels a payment, the `cancelCallback` function will be invoked with a [data object](web.md#data-object).
 
-`cancelCallback` receives a [data object](web.md#data-object),  where the data.status is "canceled".
+`cancelCallback` receives a [data object](web.md#data-object),  where the `data.status` is `"canceled"`.
 
 Here's an example of how `cancelCallback` might be defined:
 
@@ -251,7 +312,7 @@ In this example, the `cancelCallback` function is defined and passed as the valu
 
 #### [**window.successCallback**](web.md#window.successcallback)
 
-The `successCallback` in the Checkout SDK is a callback function that is invoked when the payment process has been completed successfully.
+The `successCallback` in the Checkout SDK is a `callback` function that is invoked when the payment process has been completed successfully.
 
 Here's an example of how `successCallback` might be defined:
 
@@ -261,11 +322,11 @@ window.successCallback = function (data) {
 };
 ```
 
-`successCallback` receives a [data object](web.md#data-object), where the `data.status` is "success".
+`successCallback` receives a [data object](web.md#data-object), where the `data.status` is `"success"`.
 
 In this example, the `successCallback` function is defined and passed as the value of the `data-success` attribute on the Checkout script tag. If the payment process completes successfully, the function will be invoked with a [data object](web.md#data-object) containing information about the completed transaction. The function will then redirect the customer to the specified `redirect_url` using `window.location.href`.
 
-#### **Example**
+**Example**
 
 ```javascript
 window.successCallback = function (data) {
@@ -321,147 +382,134 @@ Here's an example of how to define the `beforeRedirect` callback:
 </head>
 ```
 
-In this example, the beforeRedirect callback sends a request to an API endpoint to freeze the customer's basket while waiting for the redirection to occur. If the API response is successful, the Promise is resolved and the redirection proceeds. If the API request fails or the response is unsuccessful, the Promise is rejected and the redirection is cancelled.
+In this example, the `beforeRedirect` callback sends a request to an API endpoint to freeze the customer's basket while waiting for the redirection to occur. If the API response is successful, the Promise is resolved and the redirection proceeds. If the API request fails or the response is unsuccessful, the Promise is rejected and the redirection is cancelled.
 
 #### [**data Object**](web.md#data-object)
 
-The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
+The data object received by the [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](web.md#session\_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
 
-<details>
+* **Data object child parameters**
+  *   #### **message**<mark style="color:blue;">**`string`**</mark>
 
-<summary><a href="web.md#data-object-child-parameters">Data object child parameters</a></summary>
+      It is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
+  * **session\_id **<mark style="color:blue;">**`string`**</mark>\
+    It is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
+  *   &#x20;**status **<mark style="color:blue;">**`string`**</mark>
 
-#### [**message**](web.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
+      It is of the checkout process. Possible values are:
 
-Is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
+      * `success`: The customer was charged successfully, and they can be redirected to a success page or display a success message.
+      * `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session\_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
+      * `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
+  * **redirect\_url **<mark style="color:blue;">**`UR`**</mark>`L`\
+    The URL which is provided in Checkout API for redirect\_url. See [Checkout API ](../rest-api/checkout-api.md)& [redirect\_url](../rest-api/checkout-api.md#redirect\_url-url-optional).
+  * &#x20;**order\_no **<mark style="color:blue;">**`string`**</mark>\
+    The order number provided in the [Checkout API](../rest-api/checkout-api.md). See [Checkout API](../rest-api/checkout-api.md) & [order\_no](../rest-api/checkout-api.md#order\_no-string-optional).
+  *   #### **reference\_number**<mark style="color:blue;">**`string`**</mark>
 
-#### [**session\_id**](web.md#session\_id-string-1) _<mark style="color:blue;">**`string`**</mark>_
+      A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
+  *   #### form\_of\_payment <mark style="color:blue;">`string`</mark>
 
-`session_id` is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
+      The form of payment which was used to process the payment. This could be one of several values, such as\
+      Enum: `"apple_pay"`, `"google_pay"`, `"token_pay"`, `"stc_pay"`.
+  * **payment\_gateway\_info** <mark style="color:blue;">**`object`**</mark>\
+    Information about the payment gateway, accompanied by the response received from the payment gateway
+    *   **pg\_code **<mark style="color:blue;">**`string`**</mark>
 
-#### &#x20;[**status**](web.md#status-string) _<mark style="color:blue;">**`string`**</mark>_
+        The unique identifier, or `pg_code`, for the payment gateway that was used to process the  payment. This value corresponds to the specific payment method utilized by the customer, such as `credit-card`.
+    *   **pg\_name **<mark style="color:blue;">**`string`**</mark>
 
-The status of the checkout process. Possible values are:
+        The name of the payment gateway, represented in all lowercase letters, that was used to perform the payment. This could be one of several values, such as `kpay` (for KNET), `mpgs`, or `cybersource`. These identifiers provide a human-readable way to understand the payment mechanism that was utilized.
+    *   **pg\_response **<mark style="color:blue;">**`object`**</mark>
 
-* `success`: The customer was charged successfully, and they can be redirected to a success page or display a success message.
-* `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session\_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
-* `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
+        The raw response data that was received directly from the payment gateway after the transaction attempt. This typically includes transaction status, transaction identifier, and potentially error messages or additional data provided by the gateway.
 
-#### [**redirect\_url** ](web.md#redirect\_url-url)_<mark style="color:blue;">**`URL`**</mark>_
+## [**Extended example**](web.md#extended-example)
 
-`redirect_url`, is the URL which is provided in [Checkout API](../rest-api/checkout-api.md) for redirect\_url. See check out API [redirect\_url](../rest-api/checkout-api.md#redirect\_url-url-optional).
+```html
+<!-- HTML -->
+<div id="checkout"></div>
+<script src="https://assets.ottu.net/checkout/v2/checkout.min.js"
+  data-error="errorCallback"
+  data-success="successCallback"
+  data-cancel="cancelCallback">
+</script>
 
-#### [**order\_no**](web.md#order\_no-string) _<mark style="color:blue;">**`string`**</mark>_
-
-The order number provided in the [Checkout API](../rest-api/checkout-api.md). See checkout API [order\_no](../rest-api/checkout-api.md#order\_no-string-optional).
-
-#### [**operation**](web.md#operation-string) _<mark style="color:blue;">**`string`**</mark>_
-
-This property indicates whether the payment was a direct charge (`pay`) or an authorization (`authorized`) of the payment amount.
-
-* `pay`: the payment is immediately charged to the customer's account and the funds are transferred to the merchant.
-* `authorized`: the payment amount is only reserved on the customer's account and not immediately charged. The payment can then be captured at a later time using the [capture API](broken-reference).
-
-Note that authorization typically lasts for a limited time, after which it will expire and the reserved funds will be released back to the customer's account.
-
-#### [**reference\_number**](web.md#reference\_numberstring)_<mark style="color:blue;">**`string`**</mark>_
-
-A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
-
-</details>
-
-####
-
-#### [Extended example](web.md#extended-example)
-
-```javascript
-// HTML
-    
-    <div id="checkout"></div>
-    
-    <script src='./checkout.min.js' 
-        data-error="errorCallback", 
-        data-success="successCallback", 
-        data-cancel="cancelCallback">
-        
-    
-    </script>
-// JS
-    
-    // Error callback function
-    // Possible values:
-    error:    
-    {
-        "status": "error",
-        "message": "create_session error."
-    }
-
-    window.errorCallback = function(error) {
-        console.log('applw pay error callback',error)
-        if (error.redirect_url)
-            window.location.href = error.redirect_url
-    }
-// JS
-    
-    // Success callback function   
-    // Possible values:
-    success:
-    {
-        "status": "success",
-        "message": "Payment operation completed successfully.",
-        "session_id": "",
-        "order_no": "",
-        "operation": "pay",
-        "reference_number": ""
-        "redirect_url": ""
-    }
-    
-    
-    window.successCallback = function(success) {
-        window.location.href = success.redirect_url
-        if(success.data.redirect_url)
-            window.location.href = success.data.redirect_url
-    }
-// JS
-    
-    // Cancel callback function 
-    // Possible values:
-    cancel:
-    {
-        "status": "canceled",
-        "message": "payment operation is cancelled.",
-        "session_id": "",
-        "order_no": "",
-        "operation": "pay",
-        "reference_number": ""
-        "redirect_url": ""
-    }
-    
-    
-    window.cancelCallback = function(cancel) {
-        Checkout.reload()
-        console.log('cancel callback', cancel)
-    }
-// JS
-    
-    // Checkout init function
-
-    Checkout.init({
-      selector: 'checkout', 
-      merchant_id: 'sandbox.ottu.net',
-      session_id: '51436d465f77e59242ef25f15409c2f23fe54761',
-      apiKey: 'L0Fc5f81.dLqByodGesaD9pJdzoKpo6rP1FQBkVzr',
-      lang: 'en', // en or ar default en
-    });
 ```
 
-### [Apple Pay](web.md#apple-pay)
+```javascript
+// JS
+// Error callback function
+window.errorCallback = function(error) {
+  let validFormsOfPayments = ['apple_pay', 'google_pay' , 'stc_pay'];
+  if (!validFormsOfPayments.includes(error.form_of_payment)) {
+    const message = "Oops, something went wrong. Refresh the page and try again.";
+    window.Checkout.showErrorPopup(error.message || message);
+  }
+  console.log('Error callback', error);
+};
+
+// Success callback function
+window.successCallback = function(success) {
+  window.location.href = success.redirect_url;
+};
+
+// Cancel callback function
+window.cancelCallback = function(cancel) {
+  if (cancel.payment_gateway_info && cancel.payment_gateway_info.pg_name === "kpay") {
+    window.Checkout.showErrorPopup('', cancel.payment_gateway_info.pg_response);
+  }
+  console.log('Cancel callback', cancel);
+};
+
+// Checkout init function
+Checkout.init({
+  selector: "checkout",
+  merchant_id: "sandbox.ottu.net",
+  session_id: "51436d465f77e59242ef25f15409c2f23fe54761",
+  apiKey: "3bf2a041d0896419415feac3228b17e3ec53e793",
+  lang: "en", // en or ar default en
+  formsOfPayments: ['applePay', 'googlePay', 'stcPay', 'ottuPG', 'tokenPay', 'redirect'],
+  css: `ottu__sdk-main {
+    flex-basis: 100%;
+    justify-content: center;
+    width: 150px!important;
+    max-width: 150px!important;
+  }
+  .apple-pay-button {
+    width: 90%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }`,
+  googlePayInit: {
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedCardNetworks: ['AMEX', 'DISCOVER', 'INTERAC', 'JCB', 'MASTERCARD', 'VISA'],
+    allowedCardAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+    tokenizationSpecificationType: 'PAYMENT_GATEWAY',
+    baseCardPaymentMethodType: null,
+    paymentsClient: null,
+    totalPriceStatus: 'FINAL',
+    totalPriceLabel: 'Total',
+    buttonType: 'buy',
+    buttonLocale: 'en',
+    buttonStyles: {
+      'width': '90%',
+      'margin-top': '12px',
+      'margin-bottom': '12px',
+    },
+  },
+});
+
+```
+
+## [Apple Pay](web.md#apple-pay)
 
 If you have completed the [Apple Pay integration](web.md#apple-pay) between Ottu and Apple, the Checkout SDK will automatically make the necessary checks to display the Apple Pay button.
 
-When you initialize the Checkout SDK with your [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) and payment gateway [codes](../rest-api/checkout-api.md#session\_id-string-mandatory), the SDK will automatically verify the following conditions:
+When you initialize the Checkout SDK with your [session\_id](web.md#session\_id-string) and payment gateway [codes](../rest-api/checkout-api.md#pg\_codes-list-required), the SDK will automatically verify the following conditions:
 
-* When initializing the Checkout SDK, a [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) with a [pg\_codes](../rest-api/checkout-api.md#pg\_codes-array-required) that was associated with the Apple Pay Payment Service was supplied.
+* When initializing the Checkout SDK, a [session\_id](web.md#session\_id-string) with a [pg\_codes](../rest-api/checkout-api.md#pg\_codes-list-required) that was associated with the Apple Pay Payment Service was supplied.
 * The customer has an Apple device that supports Apple Pay payments.
 * The browser being used supports Apple Pay.
 * The customer has a wallet configured on their Apple Pay device.
@@ -527,3 +575,48 @@ By default, the width of the Apple Pay button is 90% of the Checkout SDK contain
 <figure><img src="../../.gitbook/assets/Button2.png" alt=""><figcaption></figcaption></figure>
 
 To learn more about the `css` property, see the [css](web.md#css-object).
+
+## [Google Pay](web.md#google-pay)
+
+If you have completed the Google Pay integration between Ottu and Google Pay, the Checkout SDK will handle the necessary checks to display the Google Pay button seamlessly.
+
+When you initialize the Checkout SDK with your [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) and payment gateway codes [pg\_codes](../rest-api/checkout-api.md#pg\_codes-array-required) , the SDK will automatically verify the following conditions:
+
+* The `session_id` and `pg_codes` provided during SDK initialization must be associated with the Google Pay Payment Service. This ensures that the Google Pay option is available for the customer to choose as a payment method.
+* Web SDK checks if the merchant configuration for Google Pay is correct or not and then show Google Pay button based on it.
+* The Web SDK displays the Google Pay button irrespective of whether the customer's Google Pay wallet is configured. When the customer clicks the button, they are prompted to log in with their email and add their card if their wallet is not set up.
+
+Google Pay configuration is controlled by using [googlePayInit](web.md#googlepayinit-object) object.
+
+**Customize Google Pay button**
+
+You can customize the Google Pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array) and [css](web.md#css-object) properties. The [formsOfPayment](web.md#formsofpayment-array) property tells the Checkout SDK to render only the Google Pay button. If you don't include this property, the SDK will render all available payment options.
+
+## [**KNET - Apple Pay**](web.md#knet-apple-pay)
+
+Due to compliance requirements, KNET requires a popup displaying the payment result after each failed payment. This is available only on the cancelCallback when there is a response from the payment gateway. As a side effect, the user can not try again the payment without clicking on Apple Pay again.
+
+{% hint style="info" %}
+The use of the popup notification described above is specific to the KNET payment gateway. Other payment gateways might have different requirements or notification mechanisms, so be sure to follow the respective documentation for each payment gateway integration.
+{% endhint %}
+
+To properly handle the popup notification for KNET, you need to implement the provided code snippet into your payment processing flow. The code looks like this:
+
+```javascript
+window.cancelCallback = function(cancel) {
+  if (cancel.payment_gateway_info && cancel.payment_gateway_info.pg_name === "kpay") {
+    const errorMessage = cancel.payment_gateway_info.pg_response || "Payment was cancelled.";
+    window.Checkout.showErrorPopup(errorMessage);
+  }
+  console.log('Cancel callback', cancel);
+};
+```
+
+The above code performs the following checks and actions:
+
+1. It first verifies if the `cancel` object contains information about the payment gateway (`payment_gateway_info`).
+2. Next, it checks if the `pg_name` property in `payment_gateway_info` is equal to `"kpay"`, indicating that the payment gateway used is indeed KNET.
+3. If the above conditions are met, it retrieves the payment gateway's response from the `pg_response` property or, if not available, uses a default "Payment was cancelled." error message.
+4. Finally, it displays the error message in a popup using the `window.Checkout.showErrorPopup()` function to notify the user about the failed payment.
+
+<figure><img src="https://lh6.googleusercontent.com/GJTRncYnjYee6d2KoSp_tvlCQlwmyegTLPOH-A0_BjI1czbmaYIV4qKrG9-1YJL32hPuYKkjC0iwG8pHYHdktydBISN_Ryccb_9HXrYvUAciiP2F7c6u5g13UIqTZCWpr2RM0ZQKJykvTYe_RS6E2mA" alt=""><figcaption></figcaption></figure>

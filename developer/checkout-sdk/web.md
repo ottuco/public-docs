@@ -246,11 +246,11 @@ Is a function that shows an error message in a popup on the screen. The message 
 
 `Checkout.showErrorPopup('Selected payment method failed. Try again.' , { "merchant":"009057332", "timeOfLastUpdate":"2023-08-01T14:19:00.510Z", "version":"65" })`
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 `Checkout.showErrorPopup('Selected payment method failed. Try again.' , cancel.payment_gateway_info.pg_response)`
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [Callbacks](web.md#callbacks)
 

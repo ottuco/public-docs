@@ -4,456 +4,164 @@ description: Version 2
 
 # Operations
 
-## [Getting started](operations.md#getting-started)
+## [Introduction](operations.md#introduction)
 
-Ottu offers a range of operations via Rest API for merchants to carry out across multiple payment gateways, including capturing, refunding, voiding, canceling, inquiring, and expiring transactions. Ottu is dedicated to continuous development and has recently launched version 2 of its operation API. Nonetheless, documentation for version 1 of the operation API remains accessible [here](http://127.0.0.1:5000/s/HliFFcthyaYAsSykrr31/)[Ottu Operation API Version 1](http://127.0.0.1:5000/s/HliFFcthyaYAsSykrr31/ "mention").\
-There are conditions should be applied to perform operations, in addition, not all the payment gateways support all the operations. See [Operation Definitions & Conditions.](../../user-guide/payment-gateway.md#\_h9m0s92vp7g8)\
-\
-
-
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v2/operation" summary="Capture" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-
-
-[Basic authentication](authentication.md#basic-authentication)
-
- or 
-
-[API Private key.](authentication.md#private-key)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="operation" required="true" %}
-capture
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="amount" required="true" %}
-The required 
-
-[amount ](checkout-api.md#amount-string-required)
-
-for capture
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
-It works with one of the two parameters, 
-
-[order_no](checkout-api.md#order_no-string-optional)
-
- or 
-
-[session_id](checkout-api.md#session_id-string-read-only)
-
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-   "amount":"4.000",
-   "initiator":{},
-   "is_sandbox":true,
-   "operation":"capture",
-   "pg_code":"ottu_pg",
-   "pg_response":{},
-   "reference_number":"hotfix4LERF6",
-   "result":"success",
-   "source":"input",
-   "success":true,
-   "timestamp_utc":"2023-07-24 09:47:07",
-   "txn":{
-      "amount":"4.000",
-      "currency_code":"KWD",
-      "customer_email":"",
-      "extra":{},
-      "order_no":"",
-      "state":"paid",
-      "session_id":"b8a01a440900ba629c00b201c805d589ba08de80"
-   }
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
-#### [Capture](operations.md#capture-1)
-
-The capture operation is a payment processing function that allows merchants to capture authorized funds for payment transactions that have not yet been settled.\
-\
-Capture operation can only be performed on authorized payment transactions.\
-Merchants can capture the authorized amount in full or partially. However, it is not possible to capture more than the authorized amount.
-
-The capture operation creates a child payment transaction of the original payment transaction. This child payment transaction will contain the details of the capture operation. The child payment transaction is only created if the capture operation has succeeded. Child transaction can be tracked over [child transaction table](../../user-guide/payment-tracking.md#child-table-transaction).\
-\
-Payment gateways support capture operation: \[MPGS,Tabby].\
-\
-
-
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v2/operation" summary="Refund" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-
-
-[Basic authentication](authentication.md#basic-authentication)
-
- or 
-
-[API Private key.](authentication.md#private-key)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="operation" required="true" %}
-refund
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="amount" required="true" %}
-The required 
-
-[amount ](checkout-api.md#amount-string-required)
-
-for refund
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
-IIt works with one of the two parameters, 
-
-[order_no](checkout-api.md#order_no-string-optional)
-
- or 
-
-[sesssion_id](checkout-api.md#session_id-string-read-only)
-
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-   "amount":"2.000",
-   "initiator":{},
-   "is_sandbox":true,
-   "operation":"refund",
-   "pg_code":"ottu_pg",
-   "pg_response":{},
-   "reference_number":"hotfix4RKKRQ",
-   "result":"success",
-   "source":"input",
-   "success":true,
-   "timestamp_utc":"2023-07-24 09:59:49",
-   "txn":{
-      "amount":"2.000",
-      "currency_code":"KWD",
-      "customer_email":"",
-      "extra":{},
-      "order_no":"",
-      "state":"refunded",
-      "session_id":"0aceca9c3e7ebb6b5c6bf54497241a1818c1272f"
-   }
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
-#### [Refund](operations.md#refund-1)
-
-The Payment Refund operation offered by Ottu enables merchants to refund previously captured or paid payment transactions. This allows for the transfer of funds back to the customer's account when required.
-
-For authorized payment transactions, a capture should be performed beforehand, and the captured amount must be sufficient for the requested refund amount. \
-For purchase payment transactions, the paid amount should be enough to cover the refund amount.
-
-Refund can be performed in full or partial amounts. \
-When a refund operation is performed, a child payment transaction of the original payment transaction is generated. This child transaction contains all the details related to the refund operation and is created only if the refund operation is successful. Child transaction can be tracked over [child transaction table](../../user-guide/payment-tracking.md#child-table-transaction).
-
-Additionally, Ottu offers an operation approval feature that enables merchants to control the refund operation. A staff member is designated as a checker who can approve or reject any refund requests sent by other staff members. This ensures that refunds are only issued when authorized by a designated person, which helps prevent fraudulent or unauthorized refunds. See [operation request flow](../../user-guide/plugins/features/operation-request-flow.md).
-
-&#x20;Payment gateways support refund operation: \[Benefit, FSS, Kpay, MPGS, MyFatoorah, NGenius , payuindia, QPay,Tabby, STC Pay].\
-\
-
-
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v2/operation" summary="Void" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-
-
-[Basic authentication](authentication.md#basic-authentication)
-
- or 
-
-[API Private key.](authentication.md#private-key)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="operation" required="true" %}
-void
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
-It works with one of the two parameters, 
-
-[order_no](checkout-api.md#order_no-string-optional)
-
- or 
-
-[sesssion_id](checkout-api.md#session_id-string-read-only)
-
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-   "amount":"19.00",
-   "initiator":{},
-   "is_sandbox":true,
-   "operation":"void",
-   "pg_code":"mpgs",
-   "pg_response":{},
-   "reference_number":"hotfix4DV3JG",
-   "result":"success",
-   "source":"input",
-   "success":true,
-   "timestamp_utc":"2023-07-24 12:04:10",
-   "txn":{
-      "amount":"19.00",
-      "currency_code":"SAR",
-      "customer_email":"",
-      "extra":{},
-      "order_no":"",
-      "state":"voided",
-      "session_id":"976e8c4fbc45136133ddd0ab39dbbefdeaf1cf34"
-   }
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
-#### [Void](operations.md#void-1)
-
-Over void operation,  merchants can cancel an authorized payment transaction before any capture operation is performed. This means that the payment transaction will not be captured, and the customer will not be charged.
-
-To perform the void operation, the payment transaction must be authorized, and no capture operation should have been previously performed.\
-Partial voids are not applicable, and void can only be applied to the whole payment transaction.
-
-Each void operation creates a child payment transaction of the original payment transaction, which will contain the details of the operation. Child transaction can be tracked over [child transaction table](../../user-guide/payment-tracking.md#child-table-transaction).
-
-Ottu also provides an operation approval feature that allows merchants to manage void operations. The feature designates a staff member as a checker who can approve or reject any void requests sent by other staff members. This ensures that voids are only issued with authorization from a designated person, preventing fraudulent or unauthorized voids. See [operation request flow](../../user-guide/plugins/features/operation-request-flow.md).
-
-&#x20;Payment gateway supports void operation: \[MPGS].\
-\
-
-
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v2/operation" summary="Cancel" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-
-
-[Basic authentication](authentication.md#basic-authentication)
-
- or 
-
-[API Private key.](authentication.md#private-key)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="operation" required="true" %}
-cancel
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
-It works with one of the two parameters, 
-
-[order_no](checkout-api.md#order_no-string-optional)
-
- or 
-
-[session_id](checkout-api.md#session_id-string-read-only)
-
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-    "message": "Operation done successfully",
-    "result": "success"
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
-#### [Cancel](operations.md#cancel-1)
-
-The Payment Cancel operation is used to cancel a payment transaction that is in the “created”, ”pending”, ”cod”, or “attempted” state. See [payment transaction states](../../user-guide/payment-tracking.md#states-of-parent-payment-transaction).\
-If a payment needs to be canceled, the merchant can initiate a cancel operation to stop the payment from proceeding.
-
-\
-Once a payment has been canceled, it cannot be resumed or processed further, and it cannot be reversed once executed. Therefore, merchants should use this operation with caution and only cancel payments when necessary.
-
-All payment gateways support cancel operation.\
-\
-
-
-{% swagger method="post" path="" baseUrl=" https://<ottu-url>/b/pbl/v2/inquiry" summary="Inquiry" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-
-
-[Basic authentication](authentication.md#basic-authentication)
-
- or 
-
-[API Private key.](authentication.md#private-key)
-
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="disclose_to_merchant" required="false" type="bool" %}
-If True, the merchant will receive a disclosure request
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="disclosure_url" type="URL" %}
-Where the request would be sent to
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
-It works with one of the two parameters, 
-
-[order_no](checkout-api.md#order_no-string-optional)
-
- or 
-
-[session_id](checkout-api.md#session_id-string-read-only)
-
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Example for "attempted" state" %}
-```json
-{
-   "amount":"1.100",
-   "amount_details":{
-      "currency_code":"KWD",
-      "amount":"1.100",
-      "total":"1.100",
-      "fee":"0.000"
-   },
-   "currency_code":"KWD",
-   "customer_email":"test@test.com",
-   "customer_first_name":"Example-customer",
-   "customer_id":"Example-customer",
-   "customer_last_name":"Example-customer",
-   "customer_phone":"123456789",
-   "extra":{},
-   "gateway_account":"ottu_pg",
-   "gateway_response":{},
-   "initiator":{
-      "id":11,
-      "first_name":"Example-user",
-      "last_name":"Example-user",
-      "username":"Example-user",
-      "email":"test@test.com",
-      "phone":""
-   },
-   "order_no":"UzMzA",
-   "reference_number":"hotfix48G8YQ",
-   "remaining_amount":1.1,
-   "result":"canceled",
-   "session_id":"f92131d327093585ca58704fb3ea565d716f05e6",
-   "signature":"928c**********************************",
-   "state":"attempted"
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
-#### [Inquiry](operations.md#inquiry-1)
-
-Payment inquiry operation is a functionality that enables merchants to retrieve information about a payment transaction. This information includes the transaction status, details, and other related information.
-
-Inquiry operation is enabled when the payment transaction state is either pending, attempted, failed, or expired.
-
-Merchants can also disclose the transaction data using the "disclose\_to\_merchant" parameter within the inquiry API request.\
-Additionally, inquiry can be executed manually,  and it can be automated for its scheduling, when the transaction is in attempted state, to enable merchants to stay up to date with their payment transactions without manual intervention.
+In the evolving landscape of businesses, the necessity to perform subsequent operations on a payment often emerges. These may include issuing a refund, or making a payment link unavailable, effectively cancelling a payment to prevent a customer from proceeding with it. Ottu’s Operations API has been meticulously designed to facilitate seamless payment integration between your merchant system and the [Payment Gateway](../../user-guide/payment-gateway.md) (PG). One of Ottu’s standout features is the concept of a Unified API. With this approach, Ottu accepts a uniform payload structure, irrespective of the targeted payment gateway. Ottu takes on the role of managing the intricate communication with the PG, effectively relieving your team of the heavy-lifting. Ottu offers a total of six operations. Three are Internal Operations, performed within Ottu’s system itself: [cancel](operations.md#cancel), [delete](operations.md#delete), and [expire](operations.md#expire). If any of these operations are triggered and the payment transaction is in a valid state for that operation, the payment transaction state is updated directly within Ottu’s system. The other three operations are External Operations, synchronized with the Payment Gateway level: [refund](operations.md#refund-1), [capture](operations.md#capture-1), and [void](operations.md#void-1). For these operations, when a request is initiated by the merchant, Ottu communicates with the corresponding PG to attempt the operation, thus ensuring synchronization.
 
 {% hint style="info" %}
-Inquiry enabled when payment transaction state is either pending, attempted ,failed or expired. See [payment transaction state](../../user-guide/payment-tracking.md#states-of-parent-payment-transaction).\
-
+Ottu’s Operations API provides a seamless and unified interface for performing subsequent operations on a payment, including refunds, cancellations, and expiration. It ensures consistent communication with different payment gateways, lifting the burden of direct interaction.
 {% endhint %}
 
-\
-\
+Importantly, if a PG accepts an operation, a [child payment transaction](../../user-guide/payment-tracking.md#states-of-child-payment-transaction) is created within Ottu’s system. This child transaction, [linked](../../user-guide/payment-tracking.md#child-table-transaction) to the original payment transaction against which the operation was triggered, will record the new state along with the PG’s response, the operational [amount](../../user-guide/payment-tracking.md#amount-definitions-and-calculation-mechanism), and the [currency code](checkout-api.md#currency\_code-string-required). For example, if a payment transaction of 100 KWD has been processed and the merchant now wishes to issue a `refund` of 20 KWD, triggering the operation will not change the state or amount of the original payment transaction. Instead, a child transaction will be created within Ottu’s system, reflecting the refunded amount of 20 KWD, the currency, and the new state as `refund`. Please note that **not** all payment gateways support all external operations. Ottu is consistently working to broaden its payment gateway integrations. However, if a particular payment gateway does not offer support for certain operations, Ottu is unable to facilitate those specific operations. In such cases, API calls for unsupported external operations will be rejected by Ottu, with an appropriate error message indicating the lack of support. For a comprehensive list of payment gateways and the operations they support see [Operation Definitions & Conditions](../../user-guide/payment-gateway.md#operation-definitions-and-conditions).
 
+{% hint style="warning" %}
+Please be aware that operations via the Operations API do not function with **foreign currencies**. If your customer has completed a payment using a [currency exchange](../../user-guide/currencies.md#currency-exchanges) (for instance, if the Merchant ID or MID is set to KWD but the customer has paid the amount in USD using Ottu's currency exchange to calculate and display the amount), external operations will not be successful. External operations only work when the payment currency is identical to the MID currency.
+{% endhint %}
 
-{% swagger method="post" path="" baseUrl="https://<ottu-url>/b/pbl/v2/operation" summary="Expire" %}
-{% swagger-description %}
+The Operations API is part of Ottu’s ongoing commitment to development, and the recent upgrade to **version 2** is testament to this. Nevertheless, the documentation for **version 1** of the operation API remains accessible [here](http://127.0.0.1:5000/s/HliFFcthyaYAsSykrr31/). It’s worth noting that certain conditions must be met to perform operations, and not all PGs support all operations. For more details, please see our section on [Operation Definitions & Conditions.](../../user-guide/payment-gateway.md#operation-definitions-and-conditions)
 
-{% endswagger-description %}
+{% hint style="info" %}
+Ottu’s Operations API supports both system-side operations `cancel`, `delete`, `expire` and gateway-level operations `capture`, `refund`, `void`, ensuring your transaction data is always in sync with the PG. Remember, availability of gateway-level operations may depend on the specific payment gateway’s capabilities.
+{% endhint %}
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
+## [Installation](operations.md#installation)
 
+Before proceeding with any operation, it is essential to have an existing payment transaction. This transaction can be created in one of two ways:
 
-[Basic authentication](authentication.md#basic-authentication)
+1. **Via the Checkout API:** You can initiate a payment transaction through Ottu’s [Checkout API](checkout-api.md). This will create a new transaction and return a unique [session\_id](checkout-api.md#session\_id-string-mandatory) which you can use for subsequent operations.
+2. **Via the Ottu Dashboard:** Alternatively, you can manually create a payment transaction directly from the Ottu Dashboard. Check [Creating Payment Request](../../#creating-payment-request). From the dashboard, you can track and manage all your transactions. See [Payment Tracking](../../user-guide/payment-tracking.md).
 
- or 
+Once a payment transaction has been initiated, you will receive either a [session\_id](checkout-api.md#session\_id-string-mandatory) or an [order\_no](checkout-api.md#order\_no-string-optional). It is recommended to use the session\_id for operations, as it is always present in the response, whereas order\_no is a property defined by the merchant and may not always be available. Remember to securely store these identifiers, as they are essential for performing operations on the payment transaction.
 
-[API Private key.](authentication.md#private-key)
+## [Authentication](operations.md#authentication)
 
+To interact with Ottu’s Operation API, both [API Key](authentication.md#api-keys) and [Basic Authentication](authentication.md#basic-authentication) methods are supported. Using the API Key for authentication provides superadmin privileges, enabling the performance of any operation. It’s crucial to handle this information with utmost care and restrict its sharing to prevent misuse. For enhanced security, it is recommended to use Basic Authentication and assign specific permissions, ensuring controlled access to different API endpoints.
 
-{% endswagger-parameter %}
+{% hint style="info" %}
+For optimal security, we highly recommend using Basic Authentication and assigning specific permissions to control access to various API endpoints.
+{% endhint %}
 
-{% swagger-parameter in="body" name="operation" required="true" %}
-expire
-{% endswagger-parameter %}
+## [Permissions](operations.md#permissions)
 
-{% swagger-parameter in="body" name=""order_no" or "session_id"" required="true" %}
-It works with one of the two parameters, 
+**API Key:** Superadmin privileges are automatically granted to the [private API Key](authentication.md#private-key). For more information on using the API Key, check this [resource](authentication.md#api-keys).
 
-[order_no](checkout-api.md#order_no-string-optional)
+**Basic Authentication:** This method works with any user and permission that has access to the system. If a user is a superadmin, they have access to all operations. However, for a more granular control, you can assign specific permissions to the user.
 
- or 
+Each action performed on the system is logged and can be traced back to the specific user who performed the operation. For this reason, it’s strongly recommended not to share a single user among multiple people. Instead, create an individual user for each person who needs access. Permissions can be assigned for one or more specific operations.&#x20;
 
-[session_id](checkout-api.md#session_id-string-read-only)
+#### Permission codes for each operation:
 
+* `payment.capture`: For the **Capture** operation
+* `payment.expire`: For the **Expire** operation
+* `payment.refund`: For the **Refund** operation
+* `payment.void`: For the **Void** operation
+* `payment.cancel`: For the **Cancel** operation
+* `payment.delete`: For the **Delete** operation
+* `payment.inquiry`: For the **Inquiry** operation
 
-{% endswagger-parameter %}
+{% hint style="info" %}
+Remember to assign the relevant permissions to your users based on the operations they need to perform.
+{% endhint %}
 
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-    "message": "Operation done successfully",
-    "result": "success"
-}
-```
-{% endswagger-response %}
+## [Internal Operations](operations.md#internal-operations)
+
+Internal operations are actions performed directly on Ottu’s system level, affecting the status of transactions without interacting with external payment gateways. They provide control over transaction lifecycles and data management.
+
+### [Cancel](operations.md#cancel-1)
+
+The Payment Cancel operation is employed to halt a payment process in progress. It’s applicable to transactions in the following states:
+
+* `created`
+* `pending`
+* `cod`
+* `attempted`
+
+This operation provides a means for a merchant to stop a payment process that hasn’t reached its completion.
+
+### [Expire](operations.md#expire-1)
+
+The Expire operation is used to automatically invalidate a payment transaction that hasn’t been completed within a certain period of time. This operation targets transactions in these states:
+
+* `created`
+* `pending`
+* `attempted`
+
+It ensures that lingering incomplete payments are tidied up by transitioning them to an `expired` state, from which they cannot be resumed or completed.
+
+### [Delete](operations.md#delete)
+
+The Delete operation allows for the removal of transactions that are no longer needed. The action taken depends on the current state of the transaction:
+
+* For transactions in the `paid`, `authorized`, or `cod/cash` state, a soft deletion is applied. These transactions are removed from reports and dashboard listings but remain retrievable from the Deleted Transactions section.
+* For all other transaction states, a hard delete is executed, resulting in the permanent removal of the transactions from the system.
+
+## [External Operations](operations.md#external-operations)
+
+External operations involve communication with [payment gateways](../../user-guide/payment-gateway.md), aiming to modify the state of transactions on the payment gateway’s side. These operations provide additional control over the payment lifecycle by allowing further actions after initial payment authorization. They include Capture, Refund, and Void operations. Not all payment gateways support all operations. Check [here](../../user-guide/payment-gateway.md#available-operations) to see which operations are supported by each payment gateway.
+
+### [Capture](operations.md#capture-1)
+
+The Capture operation is a function that lets merchants secure authorized funds for transactions that haven’t yet been settled. This operation can only be performed on transactions in the `authorized` state. Merchants can opt to capture the full authorized amount or just a portion of it, however, capturing more than the authorized amount is not possible. If the operation is successful, a [child transaction](../../user-guide/payment-tracking.md#states-of-child-payment-transaction) linked to the original payment transaction is created, which contains the details of the capture operation. Child transactions can be tracked in the [Child Transaction Table](../../user-guide/payment-tracking.md#child-table-transaction).
+
+### [Refund](operations.md#refund-1)
+
+The Refund operation enables merchants to refund previously captured or paid transactions, effectively returning funds back to the customer’s account when necessary. To carry out a refund on an authorized payment transaction, a prior [capture ](operations.md#capture)operation must have been completed and the captured amount must be sufficient to cover the refund. For `paid` transactions, the refund amount should not exceed the paid amount. The refund can be done either fully or partially. Just like the Capture operation, a successful refund operation creates a [child transaction](../../user-guide/payment-tracking.md#states-of-child-payment-transaction) linked to the original payment transaction, containing all the details related to the refund. Ottu also offers an [approval feature](../../user-guide/plugins/features/operation-request-flow.md) for refund operations, enabling merchants to assign a checker role to specific staff members. This checker can approve or reject any refund requests, thus preventing unauthorized or fraudulent refunds.
+
+### [Void](operations.md#void-1)
+
+The Void operation allows merchants to cancel an `authorized` payment transaction before a capture operation is performed. This means that the transaction won’t be captured and the customer will not be charged. The Void operation is strictly applicable to transactions in the `authorized`state.
+
+For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the [Operation API Schema Reference](operations.md#operations-api-schema-reference).
+
+## [Operations API Schema Reference](operations.md#operations-api-schema-reference)
+
+{% swagger src="../../.gitbook/assets/Ottu API (23).yaml" path="/b/pbl/v2/operation/" method="post" %}
+[Ottu API (23).yaml](<../../.gitbook/assets/Ottu API (23).yaml>)
 {% endswagger %}
-
-#### [Expire](operations.md#expire-1)
-
-The payment expire operation via REST API is used to cancel a payment transaction that has been initiated but not completed within a certain period of time. This operation is only applicable to payment transactions whose state is either created, pending, or attempted.
-
-The expire operation is triggered when a payment transaction has been initiated but has not been completed within the specified time limit. Once the payment transaction enters the expired state, it cannot be resumed or completed.
-
-All payment gateways support cancel operation.
 
 {% hint style="warning" %}
 [Operations](operations.md) are not working for foreign [currenies](../../user-guide/currencies.md).&#x20;
 {% endhint %}
+
+## [FAQ](operations.md#faq)
+
+#### :digit\_one: [**What happens if I try to perform an operation that is not supported by the Payment Gateway (PG)?**](operations.md#what-happens-if-i-try-to-perform-an-operation-that-is-not-supported-by-the-payment-gateway-pg)
+
+If you attempt to perform an operation that is not supported by the PG, the operation will be rejected by Ottu with an error message. The list of supported operations for each PG can be found [here](../../user-guide/payment-gateway.md#available-operations).
+
+#### :digit\_two: [**Can I perform operations on a transaction that is already completed?**](operations.md#can-i-perform-operations-on-a-transaction-that-is-already-completed)
+
+For certain operations like [refund](operations.md#refund-1), you can perform operations on transactions that have been successfully completed. However, operations like [cancel](operations.md#cancel-1) or [expire](operations.md#expire-1) can only be performed on transactions that are not yet completed.
+
+#### :digit\_three: [**Can I partially refund or capture a transaction?**](operations.md#can-i-partially-refund-or-capture-a-transaction)
+
+Yes, for operations like [refund](operations.md#refund-1) or [capture](operations.md#capture-1), you can specify the amount to be actioned. If not specified, Ottu will attempt to perform the operation on the full amount of the transaction.
+
+#### :digit\_four: [**What does 'soft delete' and 'hard delete' mean?**](operations.md#what-does-soft-delete-and-hard-delete-mean)
+
+**Soft delete** is used for transactions that are `paid`, `authorized`, or `cod`/`cash`. These transactions are removed from reports and dashboard listings, but they're still available in the **deleted transactions** section and can be restored anytime. \
+**Hard delete** is used for non-success transactions, which are permanently removed from the system
+
+#### :digit\_five: [**What does a 'child transaction' mean?**](operations.md#what-does-a-child-transaction-mean)
+
+A [child transaction](../../user-guide/payment-tracking.md#states-of-child-payment-transaction) is a sub-transaction created when operations like [refund](operations.md#refund-1) or [capture](operations.md#capture-1) are performed. This child transaction holds the details of the operation, including the new [state](../../user-guide/payment-tracking.md#states-of-child-payment-transaction), the [amount](../../user-guide/payment-tracking.md#amount-definitions-and-calculation-mechanism), and the [payment gateway](../../user-guide/payment-gateway.md)'s response.&#x20;
+
+#### :digit\_six: [**How do I know which operations a payment gateway supports?**](operations.md#how-do-i-know-which-operations-a-payment-gateway-supports)
+
+Ottu maintains a list of the operations supported by each payment gateway, which can be found [here](../../user-guide/payment-gateway.md#available-operations).
+
+#### :digit\_seven: [**What is the difference between using API Key authentication and Basic Authentication?**](operations.md#what-is-the-difference-between-using-api-key-authentication-and-basic-authentication)
+
+Using an [API Key](authentication.md#api-keys) grants you superadmin privileges and allows you to perform any operation. However, with [Basic Authentication](authentication.md#basic-authentication), you can assign specific [permissions ](operations.md#permissions)to control access to various API endpoints. It's recommended to use Basic Authentication for granular access control.
+
+#### :digit\_eight: [**What permissions are required to perform operations?**](operations.md#what-permissions-are-required-to-perform-operations)
+
+The required permissions depend on the operation you want to perform. You can grant permissions for specific operations like 'payment.capture' for[ capture](operations.md#capture-1), 'payment.expire' for [expire](operations.md#expire-1), and so on. See the list of permission codes for each operation [here](operations.md#permission-codes-for-each-operation).
+
+#### :digit\_nine: [**What happens when a refund operation is requested via the API?**](operations.md#what-happens-when-a-refund-operation-is-requested-via-the-api)
+
+When a [refund](operations.md#refund-1) operation is requested via the API, the request goes directly to the payment gateway and the maker-checker flow is not activated. Currently, the maker-checker flow can only be enabled for operations performed manually via the Ottu dashboard. This ensures that refunds are issued directly when requested via the API, bypassing the internal approval process.
+
+
+
+As we conclude this guide, we hope that the provided information has given you a comprehensive understanding of the operations endpoint and its various functionalities. We've covered everything from initial setup to the various types of operations and how they interact with different transaction states. However, in case you need to delve deeper into the technical implementation, feel free to explore the [Operation API Schema Reference](operations.md#operations-api-schema-reference). Remember, each operation has specific requirements and behaviors, so it's important to carefully review this documentation before proceeding. As always, we're here to help should you need any further assistance or clarification. Happy integrating with Ottu!

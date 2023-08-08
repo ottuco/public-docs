@@ -1,18 +1,18 @@
 # Payment Gateway
 
-### [**Getting Started**](payment-gateway.md#\_xlaz7ioclffk) <a href="#_xlaz7ioclffk" id="_xlaz7ioclffk"></a>
+## [**Getting Started**](payment-gateway.md#\_xlaz7ioclffk) <a href="#_xlaz7ioclffk" id="_xlaz7ioclffk"></a>
 
 Now, let's explore the world of payment gateways. A payment gateway is an advanced technology utilized by merchants that enable them to effortlessly accept debit and credit card transactions from their customers, whether in physical retail stores (e.g., physical card readers typically found in retail establishments) or online portals (e.g., user-friendly online payment processing portals integrated into e-commerce platforms).
 
 Elevate your business to a new height of convenience and customer satisfaction with our state-of-the-art Online Payment Management System (OPMS). Experience hassle-free transactions and seamless integration, empowering you to expand your customer base and boost your sales. Leave your competitors in the dust as you unleash the full potential of _Ottu's_ exceptional prowess in seamlessly connecting and tuning the payment gateway. Ignite your business's success by harnessing the power of our meticulously optimized online payment management system (OPMS), meticulously crafted to meet the dynamic needs of today's thriving businesses. Discover a new era of convenience, efficiency, and growth with _Ottu_ at your side.
 
-### [**Available Operations**](payment-gateway.md#\_18k5z9i9sals) <a href="#_18k5z9i9sals" id="_18k5z9i9sals"></a>
+## [**Available Operations**](payment-gateway.md#\_18k5z9i9sals) <a href="#_18k5z9i9sals" id="_18k5z9i9sals"></a>
 
 With _Ottu_, merchants gain the power to seamlessly carry out essential operations, including capture, refund, and void, across various payment gateways. It's important to note that specific conditions must be met to execute these operations successfully. Furthermore, it's worth mentioning that not all payment gateways support every operation.
 
 Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful.
 
-### [**Operation Definitions & Conditions**](payment-gateway.md#\_h9m0s92vp7g8) <a href="#_h9m0s92vp7g8" id="_h9m0s92vp7g8"></a>
+## [**Operation Definitions & Conditions**](payment-gateway.md#\_h9m0s92vp7g8) <a href="#_h9m0s92vp7g8" id="_h9m0s92vp7g8"></a>
 
 Foreign currencies are not functioning properly in operations.
 

@@ -26,6 +26,7 @@
   * [Checkout API](developer/rest-api/checkout-api.md)
   * [Operations](developer/rest-api/operations.md)
   * [User Cards](developer/rest-api/user-cards.md)
+  * [Payment Status Inquiry API](developer/rest-api/payment-status-inquiry-api.md)
   * [Auto-Debit API](developer/rest-api/auto-debit-api.md)
   * [Legacy](developer/rest-api/legacy/README.md)
     * [Ecommerce](developer/rest-api/legacy/ecommerce.md)

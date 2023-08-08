@@ -1,6 +1,6 @@
 # Payment Gateway
 
-## [**Getting Started**](payment-gateway.md#\_xlaz7ioclffk) <a href="#_xlaz7ioclffk" id="_xlaz7ioclffk"></a>
+## [Getting Started](payment-gateway.md#getting-started)
 
 Now, let's explore the world of payment gateways. A payment gateway is an advanced technology utilized by merchants that enable them to effortlessly accept debit and credit card transactions from their customers, whether in physical retail stores (e.g., physical card readers typically found in retail establishments) or online portals (e.g., user-friendly online payment processing portals integrated into e-commerce platforms).
 

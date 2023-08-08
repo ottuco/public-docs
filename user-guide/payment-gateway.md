@@ -12,7 +12,7 @@ With _Ottu_, merchants gain the power to seamlessly carry out essential operatio
 
 Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful.
 
-## [**Operation Definitions & Conditions**](payment-gateway.md#\_h9m0s92vp7g8) <a href="#_h9m0s92vp7g8" id="_h9m0s92vp7g8"></a>
+## [Operations Definitions & Conditions](payment-gateway.md#operations-definitions-and-conditions)
 
 Foreign currencies are not functioning properly in operations.
 

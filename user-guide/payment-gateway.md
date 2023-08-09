@@ -12,6 +12,206 @@ With _Ottu_, merchants gain the power to seamlessly carry out essential operatio
 
 Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful.
 
+{% tabs %}
+{% tab title="Amazon Pay" %}
+PG Name: amazon\_pay
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_six:
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Bambora" %}
+PG Name: bambora
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :x:
+
+Minutes after auto inquiry is called: N/A
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Benefit" %}
+PG Name: benefit
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_eight:
+
+Refund: :heavy\_check\_mark:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Benefit Pay" %}
+PG Name: benefit\_pay
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_eight:
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Beyon Money" %}
+PG Name: beyon\_money
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_eight:
+
+Refund: :heavy\_check\_mark:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Bookey" %}
+PG Name: bookey
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_eight:
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Burgan" %}
+PG Name: burgan
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :x:
+
+Minutes after auto inquiry is called: N/A
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="CBK" %}
+PG Name: cbk
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_eight:
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Ccavenues" %}
+PG Name: ccavenues
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :x:
+
+Minutes after auto inquiry is called: N/A
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="Cybersource" %}
+PG Name: cybersource
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :x:
+
+Minutes after auto inquiry is called: N/A
+
+Refund: :heavy\_check\_mark:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="FSS" %}
+PG Name: fss
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_eight:
+
+Refund: :heavy\_check\_mark:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+{% endtabs %}
+
 ## [Operations Definitions & Conditions](payment-gateway.md#operations-definitions-and-conditions)
 
 Foreign currencies are not functioning properly in operations.

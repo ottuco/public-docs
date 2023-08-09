@@ -4,6 +4,27 @@
 
 The Payment Status Inquiry API endpoint is a part of Ottu's Check Status API designed to check the status of a specific payment transaction. This is especially useful when your system may not have received notifications about changes to a transaction's status. The Payment Status Inquiry API effectively acts as a manual status confirmation mechanism, reflecting the structure of a [payment webhook notification](../webhook/payment-notification.md). The endpoint can be triggered for payment transactions in the following states: `pending`, `attempted`, `failed`, or `expired`. If the transaction state is already `paid` or `authorized`, the status is returned immediately without needing to re-confirm with third-party [Payment Gateways](../../user-guide/payment-gateway.md) (PGs). However, if the transaction state is not up-to-date and is still listed in one of the aforementioned states, Ottu will trigger an API call to the PG to update the transaction state. In cases where multiple payment options were `attempted` using different PGs, all PGs that support payment status checks will be called, ensuring that you receive the most updated status for the payment.
 
+## [Automatic Inquiry](payment-status-inquiry.md#automatic-inquiry)
+
+The payment process can be intricate, and numerous unforeseen events might disrupt the smooth flow of a transaction. Ottu’s Automatic Inquiry feature is designed to mitigate such issues and ensure that merchants receive accurate payment statuses.
+
+### [How It Works](payment-status-inquiry.md#how-it-works)
+
+1. Scheduled Inquiry Job: For every Payment Gateway (PG) that supports the inquiry feature, Ottu schedules an automatic inquiry job. This job is set to trigger after a predetermined period, which is defined based on the session expiration time of each specific PG. The exact timing for each PG can be found [here](../../user-guide/payment-gateway.md#available-operations).
+2. Purpose: The objective behind this automatic inquiry job is to account for scenarios where a payer might abruptly close their browser tab, face internet connectivity issues, or in instances where the PG fails to notify Ottu (or Ottu misses the notification due to temporary downtime). The job ensures that Ottu reconciles with the PG and updates the payment status accordingly.
+3. Execution: This job calls the PG’s inquiry API three times to guarantee accurate reconciliation. However, if a successful response (indicating a payment success) is received during any of these calls, the subsequent calls are halted.
+4. Exceptions: Certain aggregator integrations, like MyFatoorah, might still have a `pending` payment status even after the redirection to Ottu, due to a lack of clear response from the actual PG. In such cases, Ottu schedules another inquiry job to ensure status clarity.
+
+## [Recommendations for Using Ottu’s Inquiry API](payment-status-inquiry.md#recommendations-for-using-ottus-inquiry-api)
+
+If you’ve set up [Webhook Payment Notifications](../webhook/payment-notification.md) with Ottu, it’s best to rely on the responses from these notifications after Ottu’s automatic inquiry. Only consider integrating the inquiry API if you haven’t enabled webhook notifications.
+
+* **Timing is Crucial:** Scheduling your inquiry calls with precision is essential. Otherwise, you might miss the most recent transaction status.
+* **Example with MPGS:** The PG [MPGS](../../user-guide/payment-gateway.md#mpgs) typically requires an inquiry after approximately 11 minutes. If you initiate your inquiry call prematurely, say around the 8-minute mark, you might miss out on the most recent status. It’s advisable to add a margin of **2-3 minutes**, making your inquiry after about 13-14 minutes for MPGS.
+* **Differing PG Times:** With PGs like [KNET](../../user-guide/payment-gateway.md#knet), the inquiry is scheduled for 8 minutes post-payment initiation. When you integrate with multiple PGs through Ottu, it’s beneficial to identify the PG with the longest inquiry time, add a 2-3 minute margin to it, and use this extended timeframe as a standard for all inquiries.
+
+In essence, the Automatic Inquiry feature is Ottu’s commitment to providing consistent and updated payment statuses, ensuring you never miss a payment update. Always remember to time your inquiries wisely and stay in sync with Ottu’s schedule for the best results.
+
 ## [Installation](payment-status-inquiry.md#installation)
 
 ### [Prerequisites](payment-status-inquiry.md#prerequisites)

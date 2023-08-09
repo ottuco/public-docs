@@ -8,9 +8,7 @@ Elevate your business to a new height of convenience and customer satisfaction w
 
 ## [Available Operations](payment-gateway.md#available-operations)
 
-With _Ottu_, merchants gain the power to seamlessly carry out essential operations, including capture, refund, and void, across various payment gateways. It's important to note that specific conditions must be met to execute these operations successfully. Furthermore, it's worth mentioning that not all payment gateways support every operation.
-
-Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful.
+With _Ottu_, merchants gain the power to seamlessly carry out essential operations, including capture, refund, and void, across various payment gateways. It's important to note that specific conditions must be met to execute these operations successfully. Furthermore, it's worth mentioning that not all payment gateways support every operation. Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful. To understand what the Automatic Inquiry feature is and why it's crucial for ensuring transaction reliability, please visit [Payment Status-Inquiry](../developer/rest-api/payment-status-inquiry.md). It offers a detailed explanation on how this feature safeguards your transactions from unforeseen disruptions.
 
 {% tabs %}
 {% tab title="Amazon Pay" %}
@@ -304,7 +302,7 @@ Capture: :heavy\_check\_mark:
 
 ## [Operations Definitions & Conditions](payment-gateway.md#operations-definitions-and-conditions)
 
-Foreign currencies are not functioning properly in operations.
+Operations don't support foreign [currencies](currencies.md). If a customer pays using a different currency than the MID (e.g., MID is KWD but payment is in USD via Ottu's [currency exchange](currencies.md#currency-exchanges)), [operations](../developer/rest-api/operations.md#external-operations) won't work. They only function when the payment currency matches the MID currency.
 
 | **Operation** | **Definition**                                                                                  | **Conditions**                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | **Available in**                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |

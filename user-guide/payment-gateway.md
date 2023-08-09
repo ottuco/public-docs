@@ -304,31 +304,18 @@ Capture: :heavy\_check\_mark:
 
 Operations don't support foreign [currencies](currencies.md). If a customer pays using a different currency than the MID (e.g., MID is KWD but payment is in USD via Ottu's [currency exchange](currencies.md#currency-exchanges)), [operations](../developer/rest-api/operations.md#external-operations) won't work. They only function when the payment currency matches the MID currency.
 
-### [Void](payment-gateway.md#void)
-
-Canceling or rolling back an authorized payment transaction. \
-\
-**Conditions:**
-
-1. The payment transaction must be authorized.
-2. No capture operation was performed.
-
 ### [Capture](payment-gateway.md#capture)
 
-Collecting a full or partial authorized amount and crediting it to the merchant's bank account.\
-\
-**Conditions:**
+Collecting a full or partial authorized amount and crediting it to the merchant's bank account. It’s applicable under following conditions:
 
 1. The payment transaction must be authorized.
 2. The authorized amount must be sufficient.
 
 ### [Refund](payment-gateway.md#refund)
 
-Returning the full or partial amount paid (or captured) to the customer's bank account.\
-\
-**Conditions:**
+Returning the full or partial amount paid (or captured) to the customer's bank account. It’s applicable under following conditions:
 
-There are different requirements for refunding payments based on the **type of payment transaction** (i.e., operation):
+There are different requirements for refunding payments based on the type of payment transaction (i.e., operation):
 
 * **For Auth transactions:**
 
@@ -339,8 +326,15 @@ There are different requirements for refunding payments based on the **type of p
 
 The paid amount must be sufficient for the requested refund.
 
+### [Void](payment-gateway.md#void)
 
+Canceling or rolling back an authorized payment transaction. It’s applicable under following conditions:
+
+1. The payment transaction must be authorized.
+2. No capture operation was performed.
 
 ## [Available Operations](payment-gateway.md#available-operations)
 
-With _Ottu_, merchants gain the power to seamlessly carry out essential operations, including capture, refund, and void, across various payment gateways. It's important to note that specific conditions must be met to execute these operations successfully. Furthermore, it's worth mentioning that not all payment gateways support every operation. Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful. To understand what the Automatic Inquiry feature is and why it's crucial for ensuring transaction reliability, please visit [Payment Status-Inquiry](../developer/rest-api/payment-status-inquiry.md). It offers a detailed explanation on how this feature safeguards your transactions from unforeseen disruptions.
+With _Ottu_, merchants gain the power to seamlessly carry out essential operations, including capture, refund, and void, across various payment gateways. It's important to note that specific conditions must be met to execute these operations successfully. Furthermore, it's worth mentioning that not all payment gateways support every operation. Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful. To understand what the Automatic Inquiry feature is and why it's crucial for ensuring transaction reliability, please check [here](../developer/rest-api/payment-status-inquiry.md#automatic-inquiry). It offers a detailed explanation on how this feature safeguards your transactions from unforeseen disruptions.
+
+<table><thead><tr><th>PG Name</th><th>Pretty Name</th><th>Purchase</th><th>Authorize</th><th>Supported PG Operations (Inquiry)</th><th>Auto inquiry minutes</th><th width="100" data-type="checkbox">Refund</th><th align="center">Void</th><th align="center">Capture</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>false</td><td align="center">Void</td><td align="center">Capture</td></tr><tr><td>amazon_pay</td><td>Amazon Pay</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>6</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>bambora</td><td>Bambora</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td></td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>benefit</td><td>Benefit</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>benefit_pay</td><td>Benefit Pay</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>beyon_money</td><td>Beyon Money</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>bookeey</td><td>Bookey</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>burgan</td><td>Burgan</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td></td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>cbk</td><td>CBK</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>ccavenues</td><td>Ccavenues</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td></td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>cybersource</td><td>Cybersource</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td></td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>fss</td><td>FSS</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>hesabe</td><td>Hesabe</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>10</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>hyperpay</td><td>HyperPay</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>31</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>knet</td><td>KNET</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>migs</td><td>MIGS</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td></td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>mpgs</td><td>MPGS</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>11</td><td>true</td><td align="center">TRUE</td><td align="center">TRUE</td></tr><tr><td>myfatoorah</td><td>MyFatoorah</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>nbo</td><td>NBO</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>ngenius</td><td>Ngenius</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>omannet</td><td>OmanNet</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>paypal</td><td>PayPal</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td></td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>payu_india</td><td>PayuIndia</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>15</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>qpay</td><td>Qpay</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>20</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>rajhi</td><td>Rajhi</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">TRUE</td><td align="center">TRUE</td></tr><tr><td>smart_pay</td><td>SmartPay</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>16</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>stc_pay</td><td>stc pay</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>8</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>tabby</td><td>Tabby</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>30</td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr><tr><td>upg</td><td>UPG</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td></td><td>true</td><td align="center">FALSE</td><td align="center">FALSE</td></tr></tbody></table>

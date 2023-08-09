@@ -1,6 +1,6 @@
-# Auto-Debit API
+# Auto-Debit
 
-## [Introduction](auto-debit-api.md#introduction)
+## [Introduction](auto-debit.md#introduction)
 
 Ottu provides businesses and developers with the ability to incorporate Ottu's auto-debit functionality into their existing systems, allowing for seamless and automated payment processing.
 
@@ -8,7 +8,7 @@ Ottu provides businesses and developers with the ability to incorporate Ottu's a
 
 In the following sections , we will guide you through the steps of installation, authentication, and how to use the various endpoints available. This will give you the tools and knowledge needed to fully leverage the capabilities of the Ottu Auto Debit API.&#x20;
 
-## [Installation](auto-debit-api.md#installation)
+## [Installation](auto-debit.md#installation)
 
 Before you can integrate with Ottu's Auto Debit API, there are several prerequisites that need to be fulfilled. These prerequisites are essential to ensure that the API functions correctly and securely.&#x20;
 
@@ -21,11 +21,11 @@ Before you can integrate with Ottu's Auto Debit API, there are several prerequis
 
 Once you've fulfilled these prerequisites, you're ready to integrate the Auto Debit API. The following sections of this document will guide you through the authentication process and the usage of various API endpoints.
 
-## [How It Works](auto-debit-api.md#how-it-works)
+## [How It Works](auto-debit.md#how-it-works)
 
 Ottu's Auto Debit API process involves two primary phases - The First Payment and Subsequent Payments. Let's dive into each step:
 
-#### :digit\_one:[ **First Payment**](auto-debit-api.md#first-payment)
+#### :digit\_one:[ **First Payment**](auto-debit.md#first-payment)
 
 For the initial payment, the payer must be online to initiate and perform the transaction. During this process, the payer can opt to save their card for future automatic payments. Here's the flow:
 
@@ -37,20 +37,20 @@ For the initial payment, the payer must be online to initiate and perform the tr
 
 <figure><img src="../../.gitbook/assets/Auto-Debit Docs - First Payment (1).png" alt="" width="264"><figcaption></figcaption></figure>
 
-#### :digit\_two: [**Subsequent Payments**](auto-debit-api.md#subsequent-payments)
+#### :digit\_two: [**Subsequent Payments**](auto-debit.md#subsequent-payments)
 
-After the [initial payment](auto-debit-api.md#first-payment), you can automate subsequent payments using the Auto Debit API.
+After the [initial payment](auto-debit.md#first-payment), you can automate subsequent payments using the Auto Debit API.
 
 * **Call Checkout API:** Start by calling the [Checkout API](checkout-api.md) to create a payment transaction. Remember to use the [pg\_code](checkout-api.md#pg\_codes-array-required) associated with the saved card, and the [customer\_id](checkout-api.md#customer\_email-string-optional) value that was used for the initial payment.
 * **Call Auto Debit API:** Now, call the Auto Debit API using the [session\_id](checkout-api.md#session\_id-string-mandatory) from the Checkout API and the card/token you wish to use to charge the customer.
 * The automated debit process is now initiated, and the payment will be processed automatically without the need for the payer to be online.
-* Keep in mind that this process assumes that the payer has **agreed** to have their card saved and enabled for auto-debit during the [first payment](auto-debit-api.md#first-payment).
+* Keep in mind that this process assumes that the payer has **agreed** to have their card saved and enabled for auto-debit during the [first payment](auto-debit.md#first-payment).
 
 <figure><img src="../../.gitbook/assets/Auto-Debit Docs - Subsequent Payments (2).png" alt="" width="264"><figcaption></figcaption></figure>
 
 This diagram visually represents the steps needed to set up subsequent payments. After calling the [Checkout API](checkout-api.md), you then call the Auto Debit API using the [session\_id](checkout-api.md#session\_id-string-mandatory) and card/token. The payment is then processed automatically, eliminating the need for the payer to manually authorize each transaction.
 
-#### :digit\_three: [**Updating Card Information**](auto-debit-api.md#updating-card-information)
+#### :digit\_three: [**Updating Card Information**](auto-debit.md#updating-card-information)
 
 There might be instances where the card linked to automatic payments might expire or the customer may want to change the card being used. Here's how you can handle such scenarios:
 
@@ -60,27 +60,27 @@ There might be instances where the card linked to automatic payments might expir
 <figure><img src="../../.gitbook/assets/Auto-Debit Docs - Updating ard Information (2).png" alt="" width="264"><figcaption></figcaption></figure>
 
 * **Customer Does Not Have Saved Cards**\
-  If the customer does not have any other saved cards, you will need to repeat the process used for the [first payment](auto-debit-api.md#first-payment). The customer will need to complete a payment and save a new card.
+  If the customer does not have any other saved cards, you will need to repeat the process used for the [first payment](auto-debit.md#first-payment). The customer will need to complete a payment and save a new card.
 
 <figure><img src="../../.gitbook/assets/Auto-Debit Docs - Updating ard Information (3).png" alt="" width="264"><figcaption></figcaption></figure>
 
 In both cases, always remember to update the saved card information in your database for future automatic payments.
 
-## [Authentication](auto-debit-api.md#authentication)
+## [Authentication](auto-debit.md#authentication)
 
 The Auto Debit API utilizes [API Key](authentication.md#api-keys) Authentication to ensure secure communication and prevent unauthorized access.  Before making requests to the API, you need to [generate](authentication.md#how-to-get-api-key) an API Key from your Ottu account. Once you have the API Key, it needs to be included in the header of each API request. To understand in detail how API Key authentication works and how you can generate your API Key, please refer to [Authentication](authentication.md#api-keys) User Guide. Always ensure to keep your API Key secret. If you believe your API Key has been compromised, regenerate it immediately from your Ottu account.
 
-For a more detailed technical understanding and the implementation specifics of these operations, please refer to the Open API schema in the [API Schema Reference](auto-debit-api.md#api-schema-reference).
+For a more detailed technical understanding and the implementation specifics of these operations, please refer to the Open API schema in the [API Schema Reference](auto-debit.md#api-schema-reference).
 
-## [API Schema Reference](auto-debit-api.md#api-schema-reference)
+## [API Schema Reference](auto-debit.md#api-schema-reference)
 
 {% swagger src="../../.gitbook/assets/Ottu API (23).yaml" path="/b/pbl/v2/auto-debit/" method="post" %}
 [Ottu API (23).yaml](<../../.gitbook/assets/Ottu API (23).yaml>)
 {% endswagger %}
 
-## [Examples](auto-debit-api.md#examples)
+## [Examples](auto-debit.md#examples)
 
-### [ First Payment](auto-debit-api.md#first-payment-1)
+### [ First Payment](auto-debit.md#first-payment-1)
 
 Suppose the initial payment is being made and the payer has opted to save their card details. Here's an example of a request to the Checkout API:
 
@@ -99,7 +99,7 @@ POST: https://<ottu-url>/b/checkout/v1/pymt-txn/
 
 This request will return a [session\_id](checkout-api.md#session\_id-string-mandatory) which you need to save and use for the subsequent payments.
 
-### [ Subsequent Payments](auto-debit-api.md#subsequent-payments-1)
+### [ Subsequent Payments](auto-debit.md#subsequent-payments-1)
 
 When making subsequent payments, the Auto Debit API will be used. Here's an example:
 
@@ -113,7 +113,7 @@ POST: https://<ottu-url>/b/pbl/v2/auto-debit/
 
 This request will return a response indicating whether the transaction was successful.
 
-### [Updating Card](auto-debit-api.md#updating-card)
+### [Updating Card](auto-debit.md#updating-card)
 
 If the card has expired or the customer wants to switch the card, you can [fetch](user-cards.md#fetch-cards) the saved cards of the customer by calling the User Cards API. Here's an example:
 
@@ -123,31 +123,31 @@ GET: https:<ottu-url>/b/pbl/v2/card?type=sandbox&pg_codes=PG001&customer_id=Cust
 
 This will return a list of saved cards for that customer. You can present these options to the customer and let them select the card they want to use for future payments.
 
-For a scenario where the customer does not have other saved cards, the [first payment](auto-debit-api.md#first-payment) process needs to be repeated.
+For a scenario where the customer does not have other saved cards, the [first payment](auto-debit.md#first-payment) process needs to be repeated.
 
 {% hint style="info" %}
 Please note that the above examples are illustrative and the actual API calls would depend on the specific configuration of your Ottu setup.
 {% endhint %}
 
-## [FAQ](auto-debit-api.md#faq)
+## [FAQ](auto-debit.md#faq)
 
-#### :digit\_one: [**Can I use the Auto-Debit feature even if I'm not PCI DSS compliant?**](auto-debit-api.md#can-i-use-the-auto-debit-feature-even-if-im-not-pci-dss-compliant)
+#### :digit\_one: [**Can I use the Auto-Debit feature even if I'm not PCI DSS compliant?**](auto-debit.md#can-i-use-the-auto-debit-feature-even-if-im-not-pci-dss-compliant)
 
 Absolutely. With Ottu, you don't have to worry about PCI DSS compliance. Our platform securely handles all the sensitive data and never exposes this information to the merchant. This means you can safely implement the auto-debit feature just like any other Rest API
 
-#### :digit\_two: [**Can I store card tokens in my database if I'm not PCI DSS compliant?**](auto-debit-api.md#can-i-store-card-tokens-in-my-database-if-im-not-pci-dss-compliant)
+#### :digit\_two: [**Can I store card tokens in my database if I'm not PCI DSS compliant?**](auto-debit.md#can-i-store-card-tokens-in-my-database-if-im-not-pci-dss-compliant)
 
 Yes, you certainly can. Ottu uses [tokenization](../tokenization.md) to ensure that your customer's Primary Account Number (PAN) is never exposed. What you receive and can safely store is a token, not an actual card number. It's structured like a card number but doesn't carry the same security risks. If you're curious about how tokenization works, you can check out [this](https://en.wikipedia.org/wiki/Tokenization\_\(data\_security\)) for a deeper dive.
 
-#### :digit\_three: [**When should I save the card token in my database?**](auto-debit-api.md#when-should-i-save-the-card-token-in-my-database)
+#### :digit\_three: [**When should I save the card token in my database?**](auto-debit.md#when-should-i-save-the-card-token-in-my-database)
 
-The optimal time to save the card token in your database is immediately after the [first payment](auto-debit-api.md#first-payment) against the subscription that you plan to auto-debit. While it's not strictly necessary—you can always [fetch](user-cards.md#fetch-cards) this information through the [User Cards API](user-cards.md) and Payment Methods APIs—it does streamline your processes and reduce development complexity.
+The optimal time to save the card token in your database is immediately after the [first payment](auto-debit.md#first-payment) against the subscription that you plan to auto-debit. While it's not strictly necessary—you can always [fetch](user-cards.md#fetch-cards) this information through the [User Cards API](user-cards.md) and Payment Methods APIs—it does streamline your processes and reduce development complexity.
 
-#### :digit\_four: [**How can I add a new card for a customer?**](auto-debit-api.md#how-can-i-add-a-new-card-for-a-customer)
+#### :digit\_four: [**How can I add a new card for a customer?**](auto-debit.md#how-can-i-add-a-new-card-for-a-customer)
 
 Currently, the only way to save a new card is by having the customer successfully complete a payment with it. At the moment, it's not possible to just save new card details directly.
 
-#### :digit\_five: [**Do I need to use the Checkout SDK to display payment options to the customer?**](auto-debit-api.md#do-i-need-to-use-the-checkout-sdk-to-display-payment-options-to-the-customer)
+#### :digit\_five: [**Do I need to use the Checkout SDK to display payment options to the customer?**](auto-debit.md#do-i-need-to-use-the-checkout-sdk-to-display-payment-options-to-the-customer)
 
 No, it's not mandatory to use the [Checkout SDK](../checkout-sdk/). You can control the payment process using the responses from the [Checkout API](checkout-api.md). However, it's worth noting that the Checkout SDK simplifies the UI implementation and is necessary for certain payment methods such as [Apple Pay](../checkout-sdk/web.md#apple-pay), [Google Pay](../checkout-sdk/web.md#google-pay), STC Pay, and others. While it's recommended to use the Checkout SDK for its simplicity and comprehensive features, the choice ultimately lies in your hands based on your specific needs.
 

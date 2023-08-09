@@ -210,6 +210,96 @@ Void: :x:
 
 Capture: :x:
 {% endtab %}
+
+{% tab title="Hesabe" %}
+PG Name: hesabe
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_one::digit\_zero:
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="HyperPay" %}
+PG Name: hyperpay
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_three::digit\_one:
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="KNET" %}
+PG Name: Knet
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_eight:
+
+Refund: :heavy\_check\_mark:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="MIGS" %}
+PG Name: migs
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :x:
+
+Inquiry: :x:
+
+Minutes after auto inquiry is called: N/A
+
+Refund: :x:
+
+Void: :x:
+
+Capture: :x:
+{% endtab %}
+
+{% tab title="MPGS" %}
+PG Name: MPGS
+
+Purchase: ::heavy\_check\_mark:
+
+Authorize: :heavy\_check\_mark:
+
+Inquiry: :heavy\_check\_mark:
+
+Minutes after auto inquiry is called: :digit\_one::digit\_one:
+
+Refund: :heavy\_check\_mark:
+
+Void: :heavy\_check\_mark:
+
+Capture: :heavy\_check\_mark:
+{% endtab %}
 {% endtabs %}
 
 ## [Operations Definitions & Conditions](payment-gateway.md#operations-definitions-and-conditions)

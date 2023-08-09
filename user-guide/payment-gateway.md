@@ -306,27 +306,27 @@ Operations don't support foreign [currencies](currencies.md). If a customer pays
 
 ### [Void](payment-gateway.md#void)
 
-Canceling or rolling back an authorized payment transaction.
+Canceling or rolling back an authorized payment transaction. \
+\
+**Conditions:**
 
-#### Conditions:
-
-1. The payment transaction must be **authorized**
-2. **No capture** operation was performed.
+1. The payment transaction must be authorized.
+2. No capture operation was performed.
 
 ### [Capture](payment-gateway.md#capture)
 
-Collecting a full or partial authorized amount and crediting it to the merchant's bank account.
+Collecting a full or partial authorized amount and crediting it to the merchant's bank account.\
+\
+**Conditions:**
 
-#### Conditions:
-
-1. The payment transaction must be **authorized**.
-2. The authorized amount must be **sufficient**.
+1. The payment transaction must be authorized.
+2. The authorized amount must be sufficient.
 
 ### [Refund](payment-gateway.md#refund)
 
-Returning the full or partial amount paid (or captured) to the customer's bank account.
-
-#### Conditions:
+Returning the full or partial amount paid (or captured) to the customer's bank account.\
+\
+**Conditions:**
 
 There are different requirements for refunding payments based on the **type of payment transaction** (i.e., operation):
 

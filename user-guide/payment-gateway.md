@@ -6,10 +6,6 @@ Now, let's explore the world of payment gateways. A payment gateway is an advanc
 
 Elevate your business to a new height of convenience and customer satisfaction with our state-of-the-art Online Payment Management System (OPMS). Experience hassle-free transactions and seamless integration, empowering you to expand your customer base and boost your sales. Leave your competitors in the dust as you unleash the full potential of _Ottu's_ exceptional prowess in seamlessly connecting and tuning the payment gateway. Ignite your business's success by harnessing the power of our meticulously optimized online payment management system (OPMS), meticulously crafted to meet the dynamic needs of today's thriving businesses. Discover a new era of convenience, efficiency, and growth with _Ottu_ at your side.
 
-## [Available Operations](payment-gateway.md#available-operations)
-
-With _Ottu_, merchants gain the power to seamlessly carry out essential operations, including capture, refund, and void, across various payment gateways. It's important to note that specific conditions must be met to execute these operations successfully. Furthermore, it's worth mentioning that not all payment gateways support every operation. Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful. To understand what the Automatic Inquiry feature is and why it's crucial for ensuring transaction reliability, please visit [Payment Status-Inquiry](../developer/rest-api/payment-status-inquiry.md). It offers a detailed explanation on how this feature safeguards your transactions from unforeseen disruptions.
-
 {% tabs %}
 {% tab title="Amazon Pay" %}
 PG Name: amazon\_pay
@@ -308,8 +304,43 @@ Capture: :heavy\_check\_mark:
 
 Operations don't support foreign [currencies](currencies.md). If a customer pays using a different currency than the MID (e.g., MID is KWD but payment is in USD via Ottu's [currency exchange](currencies.md#currency-exchanges)), [operations](../developer/rest-api/operations.md#external-operations) won't work. They only function when the payment currency matches the MID currency.
 
-| **Operation** | **Definition**                                                                                  | **Conditions**                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | **Available in**                                                                                                       |
-| ------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| Void          | Canceling or rolling back an authorized payment transaction.                                    | <ol><li>The payment transaction must be <strong>authorized</strong>.</li><li><strong>No capture</strong> operation was performed.</li></ol>                                                                                                                                                                                                                                                                                                                                                | MPGS                                                                                                                   |
-| Capture       | Collecting a full or partial authorized amount and crediting it to the merchant's bank account. | <ol><li>The payment transaction must be <strong>authorized</strong>.</li><li>The authorized amount must be <strong>sufficient</strong>.</li></ol>                                                                                                                                                                                                                                                                                                                                          | <p>MPGS</p><p>Tabby</p>                                                                                                |
-| Refund        | Returning the full or partial amount paid (or captured) to the customer's bank account.         | <p>There are different requirements for refunding payments based on the <strong>type of payment transaction</strong> (i.e., operation):</p><ul><li><strong>For Auth transactions:</strong></li></ul><ol><li>A capture operation must be done before refunding.</li><li>The captured amount must be enough to cover the refund amount.</li></ol><ul><li><strong>For Purchase transactions:</strong></li></ul><ol><li>The paid amount must be sufficient for the requested refund.</li></ol> | <p>FSS</p><p>MPGS</p><p>MyFatoorah</p><p>NGenius</p><p>PayU India</p><p>QPay</p><p>Tabby<br>Cybersource<br>STC Pay</p> |
+### [Void](payment-gateway.md#void)
+
+Canceling or rolling back an authorized payment transaction.
+
+#### Conditions:
+
+1. The payment transaction must be **authorized**
+2. **No capture** operation was performed.
+
+### [Capture](payment-gateway.md#capture)
+
+Collecting a full or partial authorized amount and crediting it to the merchant's bank account.
+
+#### Conditions:
+
+1. The payment transaction must be **authorized**.
+2. The authorized amount must be **sufficient**.
+
+### [Refund](payment-gateway.md#refund)
+
+Returning the full or partial amount paid (or captured) to the customer's bank account.
+
+#### Conditions:
+
+There are different requirements for refunding payments based on the **type of payment transaction** (i.e., operation):
+
+* **For Auth transactions:**
+
+1. A capture operation must be done before refunding.
+2. The captured amount must be enough to cover the refund amount.
+
+* **For Purchase transactions:**
+
+The paid amount must be sufficient for the requested refund.
+
+
+
+## [Available Operations](payment-gateway.md#available-operations)
+
+With _Ottu_, merchants gain the power to seamlessly carry out essential operations, including capture, refund, and void, across various payment gateways. It's important to note that specific conditions must be met to execute these operations successfully. Furthermore, it's worth mentioning that not all payment gateways support every operation. Choosing _Ottu_ means an exceptional online payment management experience that keeps your business secure, streamlined, and successful. To understand what the Automatic Inquiry feature is and why it's crucial for ensuring transaction reliability, please visit [Payment Status-Inquiry](../developer/rest-api/payment-status-inquiry.md). It offers a detailed explanation on how this feature safeguards your transactions from unforeseen disruptions.

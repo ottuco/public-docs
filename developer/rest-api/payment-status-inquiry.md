@@ -111,6 +111,6 @@ We hope you found this guide to the Payment Status Inquiry API useful. As you pr
 * **Stay within the Request Limits:** Be mindful of our API’s built-in throttling mechanisms to ensure smooth operation.
 * **Understand the Webhook Response:** Knowing how to interpret the Payment Webhook response is crucial for accurate results. Check [Payment Notification](../webhook/payment-notification.md).
 * **Use the Correct Identifier:** Provide either the [session\_id](checkout-api.md#session\_id-string-mandatory) or [order\_no](checkout-api.md#order\_no-string-optional) when requesting a status inquiry.
-* **Consider the Transaction State:** The states `paid` and `authorized` will return the status immediately, while others will trigger a status check with the [Payment Gateway](../../user-guide/payment-gateway.md).
+* **Consider the Transaction State:** The states `paid` and `authorized` will return the status immediately, while others will trigger a status check with the [Payment Gateway](../../user-guide/payment-gateway.md). Please refer to the [Operation Available](../../user-guide/payment-gateway.md#available-operations) table to explore the processes supported by each Payment Gateway.
 
 The payment process can be intricate, and numerous unforeseen events might disrupt the smooth flow of a transaction. Ottu’s Automatic Inquiry feature is designed to mitigate such issues and ensure that merchants receive accurate payment statuses. This feature is enabled by default for every payment gateway and one that’s non-negotiable.

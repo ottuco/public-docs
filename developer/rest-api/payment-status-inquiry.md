@@ -76,7 +76,7 @@ To request a status inquiry, you must provide at least one of the following iden
 
 #### :digit\_one: [**What are the prerequisites to using the Payment Status Inquiry API?**](payment-status-inquiry.md#what-are-the-prerequisites-to-using-the-payment-status-inquiry-api)
 
-You should have at least one [Payment Gateway](../../user-guide/payment-gateway.md) that supports status checks, and you should be familiar with the [Payment Webhook response](../webhook/payment-notification.md).
+You should have at least one [Payment Gateway](../../user-guide/payment-gateway.md) that supports status checks, and you should be familiar with the [Payment Webhook response](../webhook/payment-notification.md). Refer to [available operation](../../user-guide/payment-gateway.md#available-operations) table to explore the PGs support status checks.
 
 #### :digit\_two: [**What types of authentication does the Payment Status Inquiry API support?**](payment-status-inquiry.md#what-types-of-authentication-does-the-payment-status-inquiry-api-support)
 

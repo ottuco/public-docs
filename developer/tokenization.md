@@ -78,7 +78,7 @@ Absolutely. Tokenization is a security measure that replaces sensitive card deta
 
 #### :digit\_five: [Can I use tokenization for recurring payments?](tokenization.md#can-i-use-tokenization-for-recurring-payments)
 
-Yes, tokenization is an ideal feature for setting up recurring payments. Please refer to our [Auto Debit](broken-reference) documentation section for more details.
+Yes, tokenization is an ideal feature for setting up recurring payments. Please refer to our [Auto Debit](rest-api/auto-debit.md) documentation section for more details.
 
 #### :digit\_six: [Can I use tokenization even if I’m not PCI DSS compliant?](tokenization.md#can-i-use-tokenization-even-if-im-not-pci-dss-compliant)
 
@@ -90,7 +90,7 @@ Absolutely. You can safely store tokens in your database even without PCI DSS co
 
 #### :digit\_eight: [Can I use the Auto-Debit feature even if I’m not PCI DSS compliant?](tokenization.md#can-i-use-the-auto-debit-feature-even-if-im-not-pci-dss-compliant)
 
-Absolutely. With Ottu, you don’t have to worry about PCI DSS compliance. Our platform securely handles all the sensitive data and never exposes this information to the merchant. This means you can safely implement the [auto-debit](broken-reference) feature just like any other [REST API](rest-api/).
+Absolutely. With Ottu, you don’t have to worry about PCI DSS compliance. Our platform securely handles all the sensitive data and never exposes this information to the merchant. This means you can safely implement the [auto-debit](rest-api/auto-debit.md) feature just like any other [REST API](rest-api/).
 
 #### :digit\_nine: [Can I store card tokens in my database if I’m not PCI DSS compliant?](tokenization.md#can-i-store-card-tokens-in-my-database-if-im-not-pci-dss-compliant)
 
@@ -98,7 +98,7 @@ Yes, you certainly can. Ottu uses tokenization to ensure that your customer’s 
 
 #### :digit\_one::digit\_zero: [When should I save the card token in my database?](tokenization.md#when-should-i-save-the-card-token-in-my-database)
 
-The optimal time to save the card token in your database is immediately after the first payment against the subscription that you plan to [auto-debit](broken-reference). While it’s not strictly necessary—you can always fetch this information through the [User Cards](rest-api/user-cards.md) API and Payment Methods APIs—it does streamline your processes and reduce development complexity.
+The optimal time to save the card token in your database is immediately after the first payment against the subscription that you plan to [auto-debit](rest-api/auto-debit.md). While it’s not strictly necessary—you can always fetch this information through the [User Cards](rest-api/user-cards.md) API and Payment Methods APIs—it does streamline your processes and reduce development complexity.
 
 #### :digit\_one::digit\_one: [How can I add a new card for a customer?](tokenization.md#how-can-i-add-a-new-card-for-a-customer)
 
@@ -110,7 +110,7 @@ No, it’s not mandatory to use the Checkout SDK. You can control the payment pr
 
 ## What’s Next?
 
-To explore the full potential of tokenization, check out the [Checkout SDK](checkout-sdk/), [User Cards](rest-api/user-cards.md) Section and the [Auto Debit](broken-reference) section of our documentation. These sections provide a deep dive into managing saved cards and automating recurring payments respectively, helping you leverage the best of Ottu’s payment solutions. Whether you’re a merchant looking to provide your customers with a seamless checkout experience or a developer eager to integrate state-of-the-art payment solutions, Ottu’s tokenization feature is your go-to choice for secure, hassle-free transactions.
+To explore the full potential of tokenization, check out the [Checkout SDK](checkout-sdk/), [User Cards](rest-api/user-cards.md) Section and the [Auto Debit](rest-api/auto-debit.md) section of our documentation. These sections provide a deep dive into managing saved cards and automating recurring payments respectively, helping you leverage the best of Ottu’s payment solutions. Whether you’re a merchant looking to provide your customers with a seamless checkout experience or a developer eager to integrate state-of-the-art payment solutions, Ottu’s tokenization feature is your go-to choice for secure, hassle-free transactions.
 
 {% hint style="info" %}
 **Efficiency and Customer Convenience:** By enabling tokenization, you simplify the checkout process for returning customers, as they won’t need to re-enter their card details for every transaction. This not only speeds up the payment process but also improves the customer experience.

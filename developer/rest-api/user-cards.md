@@ -2,7 +2,7 @@
 
 ## [Introduction](user-cards.md#introduction)
 
-Before diving into this section, it’s recommended to first review the [Tokenization](../tokenization.md) section for an understanding of how Ottu securely manages user card data. Optionally, you may also want to familiarize yourself with the [Checkout SDK](../checkout-sdk/) for a smoother integration process. With Ottu, managing your customers’ saved cards is straightforward and secure, thanks to our user-friendly API endpoints. These APIs allow you to [fetch](user-cards.md#fetch-cards) all saved cards for a customer or [delete](user-cards.md#delete-cards) a specific card. By incorporating this functionality into your system, you’re ensuring a seamless, personalized, and efficient payment experience for your customers.
+Before diving into this section, it’s recommended to first review the [Tokenization](../tokenization.md) section for an understanding of how Ottu securely manages user card data. Optionally, you may also want to familiarize yourself with the [Checkout SDK](../checkout-sdk/) for a smoother integration process. With Ottu, managing your customers’ saved cards is straightforward and secure, thanks to our user-friendly API endpoints. These APIs allow you to [fetch](user-cards.md#fetch-cards) all saved cards for a customer or [delete](user-cards.md#delete-card) a specific card. By incorporating this functionality into your system, you’re ensuring a seamless, personalized, and efficient payment experience for your customers.
 
 {% hint style="info" %}
 User Cards API is not available in KSA.
@@ -54,7 +54,7 @@ You have two methods for removing a card. The first one involves utilizing the U
 
 #### :digit\_three:[Can I trigger auto-debit payments?](user-cards.md#can-i-trigger-auto-debit-payments)
 
-Yes, but only if the customer has agreed, and their card has been enabled for auto-debit. For more details, refer to our [Auto-Debit documentation](broken-reference).
+Yes, but only if the customer has agreed, and their card has been enabled for auto-debit. For more details, refer to our [Auto-Debit](auto-debit.md) documentation.
 
 #### :digit\_four:[Does Ottu save the cards within the Ottu system?](user-cards.md#does-ottu-save-the-cards-within-the-ottu-system)
 
@@ -64,7 +64,7 @@ No, Ottu doesn’t store the cards internally. We utilize an external vault for 
 
 Now that you’re familiar with how to use and manage User Cards within the Ottu system, you might want to expand your knowledge and capabilities by exploring additional features.
 
-1. **Checkout SDK:** To make your integration even easier and more seamless, consider utilizing the Ottu Checkout SDK. This tool simplifies many aspects of the payment process, including UI implementation and handling specific payment methods like Apple Pay, Google Pay, STC Pay, among others. You can find more details in our [Checkout SDK Documentation](../checkout-sdk/).
-2. **Auto-Debit:** Interested in recurring payments or charging your customers when they are offline? Our Auto-Debit feature enables you to do just that. You can learn more about setting up and using Auto-Debit in our [Auto-Debit Documentation](broken-reference).
+1. **Checkout SDK:** To make your integration even easier and more seamless, consider utilizing the Ottu Checkout SDK. This tool simplifies many aspects of the payment process, including UI implementation and handling specific payment methods like Apple Pay, Google Pay, STC Pay, among others. You can find more details in our [Checkout SDK](../checkout-sdk/) Documentation.
+2. **Auto-Debit:** Interested in recurring payments or charging your customers when they are offline? Our Auto-Debit feature enables you to do just that. You can learn more about setting up and using Auto-Debit in our [Auto-Debit](auto-debit.md) Documentation.
 
 Remember, our support team is here to help if you have any questions or need further assistance. Keep exploring, and let’s make your payment process as efficient and user-friendly as possible!

@@ -263,7 +263,7 @@ Ottu Dashboard > administration panel > Webhook >Webhook Config
 
 #### [HMAC Key](configuration.md#hmac-key)
 
-&#x20;For API payloads, this key is used to generate [signatures](../developer/webhook/signing-mechanism.md#signature-generation).
+&#x20;For API payloads, this key is used to [generate signature](../developer/webhook/signing-mechanism.md#signature-generation).
 
 #### [Ignore ssl](configuration.md#ignore-ssl)&#x20;
 

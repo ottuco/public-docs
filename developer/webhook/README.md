@@ -1,6 +1,6 @@
 # Webhook
 
-## [Getting started](./#getting-started)
+## [Getting Started](./#getting-started)
 
 Webhooks are automated messages sent from apps when something happens. \
 They have either payload or message which are sent to a unique URL, essentially the app's phone number or address.
@@ -14,17 +14,21 @@ It operates when requests come from other 3rd party apps.\
 
 {% endhint %}
 
-## [Ottu webhook](./#ottu-webhook)
+## [Ottu Webhook](./#ottu-webhook)
 
 Ottu has auto-trigger HTTP call to [operation webhook\_url](../../user-guide/configuration.md#operations-webhook\_url) when payment operation gets happened.\
 For payment event, [webhook\_url](../checkout-api.md#webhook\_url-string-optional)[ ](https://docs-ottu.gitbook.io/o/developer/rest-api/checkout-api#webhook\_url-url-optional)should be included in the payload, so call to [webhook\_url](../checkout-api.md#webhook\_url-string-optional)[ ](https://docs-ottu.gitbook.io/o/developer/rest-api/checkout-api#webhook\_url-url-optional)will be triggered when the payment has been completed and BEFORE redirecting the customer back to merchant website.
 
-## [Webhook mechanism](./#webhook-mechanism)
+## [Webhook Mechanism](./#webhook-mechanism)
 
-1- Payment event [authorized, paid, attempted, and failed](../../user-guide/payment-tracking.md#states-of-parent-payment-transaction), the transactional data will disclose to [webhook\_url](../checkout-api.md#webhook\_url-string-optional)\
-2- Payment transaction operation [void, capture, refund, and cancel](../../user-guide/payment-tracking.md#states-of-child-payment-transaction), the transactional data will disclose to [operation webhook\_url](../../user-guide/configuration.md#operations-webhook\_url)
+1. Payment event [authorized, paid, attempted, and failed](../../user-guide/payment-tracking.md#states-of-parent-payment-transaction), the transactional data will disclose to [webhook\_url](../checkout-api.md#webhook\_url-string-optional)
+2. Payment transaction operation [void, capture, refund, and cancel](../../user-guide/payment-tracking.md#states-of-child-payment-transaction), the transactional data will disclose to [operation webhook\_url](../../user-guide/configuration.md#operations-webhook\_url)
 
-### [Payload example](./#payload-example)
+## [Webhook Configuration](./#webhook-configuration)
+
+Ottu presents an incredibly smooth and efficient webhook configuration experience, catering to both [operational ](operation-notification.md)and [payment](payment-notification.md) webhooks. For comprehensive guidance on webhook configuration, delve into the details available right [here](../../user-guide/configuration.md#webhook-configuration).
+
+## [Payload Example](./#payload-example)
 
 #### [Payment event (attempted)](./#payment-event-attempted)
 

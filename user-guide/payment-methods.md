@@ -5,7 +5,7 @@
 In the world of commerce, payment methods refer to the method in which a product or service is paid for by the customer.&#x20;
 
 {% hint style="info" %}
-**Note: There are usually multiple payment options within each type of payment method, for example:**\
+**There are usually multiple payment options within each type of payment method, for example:**\
 **Payment processors** best example Ottu Payment Gateway.\
 **Credit card options** can include American Express, Mastercard and Visa. Other payment methods include  Apple Pay.
 {% endhint %}
@@ -38,7 +38,7 @@ Outt payment checkout indicates errors throughout the checkout steps. This guide
 
 ![](<../.gitbook/assets/4 (3) (1).png>)
 
-
+***
 
 ### [Offer multiple payment options](payment-methods.md#offer-multiple-payment-options.)
 

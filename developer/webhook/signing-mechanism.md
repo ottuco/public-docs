@@ -79,11 +79,11 @@ Following these steps, the resulting signature is:
 
 Developers should compare this generated signature to the signature received in the webhook payload to validate its authenticity.
 
-## [**HMAC Generation**](signing-mechanism.md#hmac-generation)
+## [Signature Generation](signing-mechanism.md#signature-generation)
 
 Ensuring the integrity and authenticity of webhook payloads is paramount for the security of both the service provider and the merchants. To achieve this, an HMAC (Hash-Based Message Authentication Code) signature is generated and sent along with the payload. This signature needs to be validated at the merchant's end to confirm that the data has not been tampered with. For the convenience of developers working with different programming languages, we provide ready-to-use code snippets in various popular languages to generate and verify this HMAC signature. This section showcases how to compute the HMAC signature for the payload in languages like Python, PHP, Java, .NET (C#), Node.js, Ruby, and Go.
 
-## [**Language Examples**](signing-mechanism.md#language-examples)
+## [Specific Examples](signing-mechanism.md#specific-examples)
 
 ### Python
 

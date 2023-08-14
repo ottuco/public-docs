@@ -2,7 +2,7 @@
 
 ## [Getting Started](checkout-api.md#getting-started)
 
-Ottu provides a comprehensive collection of APIs that offer a seamless and efficient way to test payments and enable merchants to accept and process transactions instantly. The Checkout API is the cornerstone of any payment initiation, whether it's [API-based](checkout-api.md) or [SDK-based](../checkout-sdk/).
+Ottu provides a comprehensive collection of APIs that offer a seamless and efficient way to test payments and enable merchants to accept and process transactions instantly. The Checkout API is the cornerstone of any payment initiation, whether it's [API-based](checkout-api.md) or [SDK-based](checkout-sdk/).
 
 ## [Best Practices and Guidelines](checkout-api.md#best-practices-and-guidelines)
 
@@ -29,16 +29,16 @@ For [Basic Authentication](authentication.md#basic-authentication), permissions 
 
 #### [Create](checkout-api.md#create)
 
-* To create a transaction, the user needs specific permission depending on the [plugin](../../user-guide/plugins/) being used:
-  * "**Can add payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
-  * "**Can add e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
+* To create a transaction, the user needs specific permission depending on the [plugin](../user-guide/plugins/) being used:
+  * "**Can add payment requests**" for the [Payment Request](../user-guide/plugins/#payment-request) plugin
+  * "**Can add e-commerce payments**" for the [E-Commerce](../user-guide/plugins/#e-commerce) plugin
 * Permission to use the payment gateway [code](checkout-api.md#pg\_codes-array-required) is also required: "**Can use `pg_code`**"
 
 #### [Update](checkout-api.md#update)
 
 * To update a transaction, the user needs specific permission depending on the plugin being used:
-  * "**Can change payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
-  * "**Can change e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
+  * "**Can change payment requests**" for the [Payment Request](../user-guide/plugins/#payment-request) plugin
+  * "**Can change e-commerce payments**" for the [E-Commerce](../user-guide/plugins/#e-commerce) plugin
 * Permission to use the payment gateway [code](checkout-api.md#pg\_codes-array-required) is also required: **"Can use `pg_code`**"
 
 {% hint style="info" %}
@@ -49,8 +49,8 @@ The PUT operation cannot be used if the user does not have permission to use the
 
 * By default, if a user has either the "**Can add**" or "**Can change**" permission, they can [fetch](checkout-api.md#retrieve) transactions from the API.
 * For more granular control, the following view permissions can be used:
-  * "**Can view e-commerce payments**" for the [E-Commerce](../../user-guide/plugins/#e-commerce) plugin
-  * "**Can view payment requests**" for the [Payment Request](../../user-guide/plugins/#payment-request) plugin
+  * "**Can view e-commerce payments**" for the [E-Commerce](../user-guide/plugins/#e-commerce) plugin
+  * "**Can view payment requests**" for the [Payment Request](../user-guide/plugins/#payment-request) plugin
 
 ## [Create Payment Transaction](checkout-api.md#create-payment-transaction)
 
@@ -115,8 +115,8 @@ Max length: 12.
 
 #### [**currency\_code**](checkout-api.md#currency\_code-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The currency in which the transaction is denominated. However, it does not guarantee that the payment must be made in this currency, as there can be currency conversions or [exchanges ](../../user-guide/currencies.md#currency-exchanges)resulting in a different currency being charged.\
-See [currencies](../../user-guide/currencies.md).\
+The currency in which the transaction is denominated. However, it does not guarantee that the payment must be made in this currency, as there can be currency conversions or [exchanges ](../user-guide/currencies.md#currency-exchanges)resulting in a different currency being charged.\
+See [currencies](../user-guide/currencies.md).\
 3 letters code.
 
 #### [**customer\_email**](checkout-api.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -238,7 +238,7 @@ Max length: 128.
 
 #### [**redirect\_url**](checkout-api.md#redirect\_url-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-string-optional) returns a success status. [order\_no](checkout-api.md#order\_no-string-optional), [reference\_number](../webhook/payment-notification.md#reference\_number-string-mandatory) and [session\_id](checkout-api.md#session\_id-string-mandatory) will be appended to the redirect\_url as query parameters. Check [how redirection works](../webhook/payment-notification.md#redirect-behavior-based-on-webhook\_url-response).\
+The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-string-optional) returns a success status. [order\_no](checkout-api.md#order\_no-string-optional), [reference\_number](webhook/payment-notification.md#reference\_number-string-mandatory) and [session\_id](checkout-api.md#session\_id-string-mandatory) will be appended to the redirect\_url as query parameters. Check [how redirection works](webhook/payment-notification.md#redirect-behavior-based-on-webhook\_url-response).\
 redirect\_url can be set in the administration panel.\
 Max length: 200.
 
@@ -307,18 +307,18 @@ Max length: 16.
 #### [s**hortify\_attachment\_url** ](checkout-api.md#shortify\_attachment\_url-bool-optional)<mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short attachment retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-string-conditional) will be shorter than attachment response parameter. if not configured, the attachment\_short\_url will be in the same format with [attachment](checkout-api.md#attachment-string-conditional) response parameter.\
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../user-guide/configuration.md#url-shortener-configurations), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-string-conditional) will be shorter than attachment response parameter. if not configured, the attachment\_short\_url will be in the same format with [attachment](checkout-api.md#attachment-string-conditional) response parameter.\
 Default value is false.
 
 #### [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) <mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short checkout retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-conditional) will be shorter than [checkout\_url](checkout-api.md#checkout\_url-string-mandatory) parameter. If not configured, the checkout\_short\_url will be in the format of "https://\<ottu-url>>/b/abc123".\
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-conditional) will be shorter than [checkout\_url](checkout-api.md#checkout\_url-string-mandatory) parameter. If not configured, the checkout\_short\_url will be in the format of "https://\<ottu-url>>/b/abc123".\
 Default value is false.
 
 #### [**type**](checkout-api.md#type-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
-The type of the payment transaction. This field represents the purpose of the payment and can be one of several pre-defined choices. Available choices: [payment\_request](../../user-guide/plugins/#payment-request), [e\_commerce](../../user-guide/plugins/#e-commerce).\
+The type of the payment transaction. This field represents the purpose of the payment and can be one of several pre-defined choices. Available choices: [payment\_request](../user-guide/plugins/#payment-request), [e\_commerce](../user-guide/plugins/#e-commerce).\
 Max length: 24.
 
 #### [**vendor\_name**](checkout-api.md#vendor\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -330,7 +330,7 @@ Max length: 64.
 
 In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.\
 It should be provided by merchant.\
-See Webhook [Payment Notification](../webhook/payment-notification.md).
+See Webhook [Payment Notification](webhook/payment-notification.md).
 
 ### [Response Parameters](checkout-api.md#response-parameters)
 
@@ -587,7 +587,7 @@ See the request parameter [shipping\_address](checkout-api.md#shipping\_address-
 
 The current state of the payment transaction, it helps to understand the progress of the payment.\
 Enum: "created" "pending" "attempted" "authorized" "paid" "failed" "canceled" "expired" "invalided" "refunded" "cod".\
-See [payment transaction state](../../user-guide/payment-tracking.md#payment-transaction-state-and-payment-attempt-state) for more information.
+See [payment transaction state](../user-guide/payment-tracking.md#payment-transaction-state-and-payment-attempt-state) for more information.
 
 #### [type](checkout-api.md#type-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
@@ -606,7 +606,7 @@ For more information see [vendor\_name](checkout-api.md#vendor\_name-string-opti
 #### [**webhook\_url**](checkout-api.md#webhook\_url-url-conditional)  _<mark style="color:blue;">**`URL`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 It contains the URL where the payment result will be sent via a POST request after the customer has completed the payment session. The payment result will be included in the request body.\
-See Webhook [Payment Notification](../webhook/payment-notification.md).
+See Webhook [Payment Notification](webhook/payment-notification.md).
 
 **Presence condition:**
 

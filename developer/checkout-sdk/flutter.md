@@ -44,10 +44,10 @@ The Ottu requires Flutter >=2.0 or above is compatible with android and iOS.
 
 ## [**Getting started**](flutter.md#getting-started)
 
-You have to get a session token by using Ottu public API to initiate the required SDK. See [Rest API](../rest-api/)
+You have to get a session token by using Ottu public API to initiate the required SDK. See [Rest API](broken-reference)
 
 {% hint style="info" %}
-For "api\_Key" API [Public key](../rest-api/authentication.md#public-key) sohuld be used.
+For "api\_Key" API [Public key](../authentication.md#public-key) sohuld be used.
 {% endhint %}
 
 ### [**Installation**](flutter.md#installation)

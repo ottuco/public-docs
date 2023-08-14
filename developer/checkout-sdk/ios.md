@@ -46,10 +46,10 @@ Xcode 13.0 or later is required, which is compatible with apps targeting iOS 12 
 
 ## [**Getting started**](ios.md#getting-started)
 
-Initially, a session token should be created by Ottu public API, then SDK could be initialized. See [Rest API](../rest-api/)
+Initially, a session token should be created by Ottu public API, then SDK could be initialized. See [Rest API](broken-reference)
 
 {% hint style="info" %}
-For "apiKey" API [Public key](../rest-api/authentication.md#public-key) sohuld be used.
+For "apiKey" API [Public key](../authentication.md#public-key) sohuld be used.
 {% endhint %}
 
 ## [**Installation**](ios.md#installation)
@@ -151,7 +151,7 @@ Apply the configuration shown in the following figure.
 
 <figure><img src="../../.gitbook/assets/822EA136-2ACE-45FA-9E04-7FD5D0A9D552 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-Now create an action for the button and initialize the SDK with [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory).
+Now create an action for the button and initialize the SDK with [session\_id](../checkout-api.md#session\_id-string-mandatory).
 
 ```swift
 

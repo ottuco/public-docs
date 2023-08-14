@@ -263,19 +263,19 @@ Ottu Dashboard > administration panel > Webhook >Webhook Config
 
 #### [HMAC Key](configuration.md#hmac-key)
 
-&#x20;For API payloads, this key is used to generate [hash signatures](../developer/hash-signature.md).
+&#x20;For API payloads, this key is used to generate [hash signatures](../developer/webhook/signing-mechanism.md).
 
 #### [Ignore ssl](configuration.md#ignore-ssl)&#x20;
 
-When ticked, SSL certificate will not be verified while calling [webhook\_url](../developer/rest-api/checkout-api.md#webhook\_url-url-optional)
+When ticked, SSL certificate will not be verified while calling [webhook\_url](../developer/checkout-api.md#webhook\_url-url-optional)
 
 #### [Notify on error](configuration.md#notify-on-error)&#x20;
 
-When ticked, an email will be sent in case of any error occurred while calling [webhook\_url](../developer/rest-api/checkout-api.md#webhook\_url-url-optional).
+When ticked, an email will be sent in case of any error occurred while calling [webhook\_url](../developer/checkout-api.md#webhook\_url-url-optional).
 
 #### [Email list](configuration.md#email-list)&#x20;
 
-Email address list, where the calling [webhook\_url](../developer/rest-api/checkout-api.md#webhook\_url-url-optional) error notification email should be sent to.
+Email address list, where the calling [webhook\_url](../developer/checkout-api.md#webhook\_url-url-optional) error notification email should be sent to.
 
 #### [Timeout](configuration.md#timeout)&#x20;
 

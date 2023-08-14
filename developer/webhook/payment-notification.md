@@ -2,7 +2,7 @@
 
 ## [Overview](payment-notification.md#overview)
 
-The Ottu payment system provides a webhook designed specifically for payment events, including authorization, purchase, failed, canceled, and error. Whenever any of these payment events occur, Ottu will automatically trigger the webhook, sending a JSON payload to the specified [webhook\_url](../rest-api/checkout-api.md#webhook\_url-string-optional) provided in the [Checkout API](../rest-api/checkout-api.md). This JSON payload includes all relevant payment event results, payment details, and payment gateway responses, allowing merchants to receive and process this information in real-time, and to update their own systems accordingly.
+The Ottu payment system provides a webhook designed specifically for payment events, including authorization, purchase, failed, canceled, and error. Whenever any of these payment events occur, Ottu will automatically trigger the webhook, sending a JSON payload to the specified [webhook\_url](../checkout-api.md#webhook\_url-string-optional) provided in the [Checkout API](../checkout-api.md). This JSON payload includes all relevant payment event results, payment details, and payment gateway responses, allowing merchants to receive and process this information in real-time, and to update their own systems accordingly.
 
 By integrating with Ottu's payment webhook, merchants can streamline their payment processes and enhance their payment workflows. With publicly documented details and straightforward integration instructions, developers can seamlessly integrate Ottu's payment system into their own applications and online stores. Ultimately, the Ottu payment webhook provides a reliable, secure, and efficient way for merchants to manage their payment processing, enabling them to focus on growing their business and serving their customers.
 
@@ -10,7 +10,7 @@ By integrating with Ottu's payment webhook, merchants can streamline their payme
 
 #### [amount](payment-notification.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-The initial amount of the payment transaction. See [amount](../rest-api/checkout-api.md#amount-string-required)\
+The initial amount of the payment transaction. See [amount](../checkout-api.md#amount-string-required)\
 Max length: 24\
 Min value: 0.01
 
@@ -150,7 +150,7 @@ Min value: 0.01
 
 #### [gateway\_account](payment-notification.md#gateway\_account-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-The [code](../rest-api/checkout-api.md#pg\_codes-array-required) of the payment gateway used to proceed the payment\
+The [code](../checkout-api.md#pg\_codes-array-required) of the payment gateway used to proceed the payment\
 Max length 16
 
 #### [gateway\_name](payment-notification.md#gateway\_name-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
@@ -172,7 +172,7 @@ This object contains information about the user who created the transaction from
 
 **Presence condition:**
 
-* It is present only when [Basic Authentication](../rest-api/authentication.md#basic-authentication) is used, because [API Key Authentication](../rest-api/authentication.md#api-key) is not associated with any user.
+* It is present only when [Basic Authentication](../authentication.md#basic-authentication) is used, because [API Key Authentication](../authentication.md#api-key) is not associated with any user.
 * Merchant includes the initiator ID in the payload when creating the transaction
 
 #### [is\_sandbox](payment-notification.md#is\_sandbox-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
@@ -248,7 +248,7 @@ Max length 50\
 #### [session\_id](payment-notification.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 Ottu unique identifier which gets generated when the transaction is created.\
-It can be used to perform subsequent operations, like [retrieve, acknowledge, refund, capture, and cancelation](../rest-api/operations.md).\
+It can be used to perform subsequent operations, like [retrieve, acknowledge, refund, capture, and cancelation](../operations.md).\
 Max length 128
 
 #### [settled\_amount](payment-notification.md#settled\_amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
@@ -329,7 +329,7 @@ Min value: 0.01
 #### [**Redirect behavior based on webhook\_url response**](payment-notification.md#redirect-behavior-based-on-webhook\_url-response)&#x20;
 
 Redirect behavior based on webhook\_url response:\
-\-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  200,  the customer will be redirected to [redirect\_url](../rest-api/checkout-api.md#redirect\_url-string-optional).\
+\-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  200,  the customer will be redirected to [redirect\_url](../checkout-api.md#redirect\_url-string-optional).\
 \-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  201,  the customer will be redirected to Ottu payment summary page.\
 \-[ status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications?  Activated
 

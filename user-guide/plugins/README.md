@@ -105,7 +105,7 @@ Ottu portal offers the merchant's ecommerce plugin, which empowers merchants bus
 
 1. Tracking all ecommerce business transactions.
 2. Create a full payment integration with a number of well known ecommerce suites.
-3. White-label: merchants will take the advantage of adding their branding to customers in checkout-page, [redirect\_url](../../developer/rest-api/checkout-api.md#redirect\_url-string-optional).
+3. White-label: merchants will take the advantage of adding their branding to customers in checkout-page, [redirect\_url](../../developer/checkout-api.md#redirect\_url-string-optional).
 4. Risk Compliant, settlement directly to a merchant bank account without third-party involvement.
 5. Direct Integration, Ottu operational team will fully support the merchants with the plug-ins and guidelines based on their confirmed ecommerce platform.
 

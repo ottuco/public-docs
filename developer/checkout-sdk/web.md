@@ -2,10 +2,10 @@
 
 The [Checkout SDK](./) is a JavaScript library provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your web application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
 
-To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API key](../rest-api/authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [css](web.md#css-object) styling for the checkout interface, and more.
+To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API key](../authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [css](web.md#css-object) styling for the checkout interface, and more.
 
 {% hint style="warning" %}
-Please note that the Checkout SDK requires the implementation of the [Checkout API](../rest-api/checkout-api.md) in order to function properly.
+Please note that the Checkout SDK requires the implementation of the [Checkout API](../checkout-api.md) in order to function properly.
 
 For optimal security, call REST APIs from server-side implementations, not client-side applications such as mobile apps or web browsers.
 {% endhint %}
@@ -90,9 +90,9 @@ For example, if your Ottu URL is `https://example.ottu.com`, then your `merchant
 
 #### [**apiKey**](web.md#apikey)
 
-The `apiKey` is your Ottu [API public key](../rest-api/authentication.md#public-key). This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
+The `apiKey` is your Ottu [API public key](../authentication.md#public-key). This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
 
-According to the REST [API documentation](../rest-api/), the `apiKey` property should be set to your Ottu  [API public key](../rest-api/authentication.md#public-key).
+According to the REST [API documentation](broken-reference), the `apiKey` property should be set to your Ottu  [API public key](../authentication.md#public-key).
 
 {% hint style="warning" %}
 Ensure that you utilize the public key and refrain from using the private key. The private key should remain confidential at all times and must not be shared with any clients.
@@ -102,14 +102,14 @@ Ensure that you utilize the public key and refrain from using the private key. T
 
 The `session_id` is the unique identifier for the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only).
+This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../checkout-api.md#session\_id-string-read-only).
 
 #### [**lang**](web.md#lang-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The `lang` property is used to specify the language in which the checkout elements should be displayed. This property can be set to either `"en"` (for English) or `"ar"` (for Arabic).
 
 When `lang` is set to `"en"`, the checkout form will be displayed in English, and when it's set to `"ar"`, the checkout elements will be displayed in Arabic. Additionally, when the `lang` parameter is set to `"ar"`, the layout will switch to right-to-left (RTL) to accommodate Arabic script. \
-For more information on how to use lang parameter in the Checkout API, see [lang](../rest-api/checkout-api.md#language-string-optional).
+For more information on how to use lang parameter in the Checkout API, see [lang](../checkout-api.md#language-string-optional).
 
 #### [**formsOfPayment**](web.md#formsofpayment-array) _<mark style="color:blue;">**`array`**</mark>_
 
@@ -260,7 +260,7 @@ Please note that due to technical constraints associated with off-site redirecti
 
 #### [**window.errorCallback**](web.md#window.errorcallback)
 
-The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) using the [Checkout API](../rest-api/checkout-api.md).
+The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new [session\_id](../checkout-api.md#session\_id-string-mandatory) using the [Checkout API](../checkout-api.md).
 
 To define the `errorCallback` function, you can use the `data-error` attribute on the Checkout script tag to specify a global function that will handle errors. If an error occurs during a payment, the `errorCallback` function will be invoked with an `error` object.
 
@@ -393,7 +393,7 @@ The data object received by the [cancelCallback](web.md#window.cancelcallback) a
 
       It is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
   * **session\_id **<mark style="color:blue;">**`string`**</mark>\
-    It is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../rest-api/checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
+    It is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
   *   &#x20;**status **<mark style="color:blue;">**`string`**</mark>
 
       It is of the checkout process. Possible values are:
@@ -402,9 +402,9 @@ The data object received by the [cancelCallback](web.md#window.cancelcallback) a
       * `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session\_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
       * `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
   * **redirect\_url **<mark style="color:blue;">**`UR`**</mark>`L`\
-    The URL which is provided in Checkout API for redirect\_url. See [Checkout API ](../rest-api/checkout-api.md)& [redirect\_url](../rest-api/checkout-api.md#redirect\_url-url-optional).
+    The URL which is provided in Checkout API for redirect\_url. See [Checkout API ](../checkout-api.md)& [redirect\_url](../checkout-api.md#redirect\_url-url-optional).
   * &#x20;**order\_no **<mark style="color:blue;">**`string`**</mark>\
-    The order number provided in the [Checkout API](../rest-api/checkout-api.md). See [Checkout API](../rest-api/checkout-api.md) & [order\_no](../rest-api/checkout-api.md#order\_no-string-optional).
+    The order number provided in the [Checkout API](../checkout-api.md). See [Checkout API](../checkout-api.md) & [order\_no](../checkout-api.md#order\_no-string-optional).
   *   #### **reference\_number**<mark style="color:blue;">**`string`**</mark>
 
       A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
@@ -507,9 +507,9 @@ Checkout.init({
 
 If you have completed the [Apple Pay integration](web.md#apple-pay) between Ottu and Apple, the Checkout SDK will automatically make the necessary checks to display the Apple Pay button.
 
-When you initialize the Checkout SDK with your [session\_id](web.md#session\_id-string) and payment gateway [codes](../rest-api/checkout-api.md#pg\_codes-list-required), the SDK will automatically verify the following conditions:
+When you initialize the Checkout SDK with your [session\_id](web.md#session\_id-string) and payment gateway [codes](../checkout-api.md#pg\_codes-list-required), the SDK will automatically verify the following conditions:
 
-* When initializing the Checkout SDK, a [session\_id](web.md#session\_id-string) with a [pg\_codes](../rest-api/checkout-api.md#pg\_codes-list-required) that was associated with the Apple Pay Payment Service was supplied.
+* When initializing the Checkout SDK, a [session\_id](web.md#session\_id-string) with a [pg\_codes](../checkout-api.md#pg\_codes-list-required) that was associated with the Apple Pay Payment Service was supplied.
 * The customer has an Apple device that supports Apple Pay payments.
 * The browser being used supports Apple Pay.
 * The customer has a wallet configured on their Apple Pay device.
@@ -580,7 +580,7 @@ To learn more about the `css` property, see the [css](web.md#css-object).
 
 If you have completed the Google Pay integration between Ottu and Google Pay, the Checkout SDK will handle the necessary checks to display the Google Pay button seamlessly.
 
-When you initialize the Checkout SDK with your [session\_id](../rest-api/checkout-api.md#session\_id-string-mandatory) and payment gateway codes [pg\_codes](../rest-api/checkout-api.md#pg\_codes-array-required) , the SDK will automatically verify the following conditions:
+When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#session\_id-string-mandatory) and payment gateway codes [pg\_codes](../checkout-api.md#pg\_codes-array-required) , the SDK will automatically verify the following conditions:
 
 * The `session_id` and `pg_codes` provided during SDK initialization must be associated with the Google Pay Payment Service. This ensures that the Google Pay option is available for the customer to choose as a payment method.
 * Web SDK checks if the merchant configuration for Google Pay is correct or not and then show Google Pay button based on it.

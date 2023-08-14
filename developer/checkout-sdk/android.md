@@ -28,11 +28,11 @@ IDE is required to develop an android app. SDK is compatible with minimum SDK 22
 
 ## [**Getting started**](android.md#getting-started)
 
-Firstly, a session token should be created  by Ottu public API, then SDK could be initialized. See [Rest API](../rest-api/).\
+Firstly, a session token should be created  by Ottu public API, then SDK could be initialized. See [Rest API](broken-reference).\
 
 
 {% hint style="info" %}
-For "Api\_Key" API [Public key](../rest-api/authentication.md#public-key) sohuld be used.
+For "Api\_Key" API [Public key](../authentication.md#public-key) sohuld be used.
 {% endhint %}
 
 ## [Installation](android.md#installation)

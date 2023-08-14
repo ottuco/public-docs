@@ -2,11 +2,11 @@
 
 ## [Overview](./#overview)
 
-If you are planning to use the Checkout SDK for your application, it is important to note that you will need to first implement the [Checkout API](../rest-api/checkout-api.md) on your backend server. This is because the  Checkout SDK requires a [session ID](../rest-api/checkout-api.md#session\_id-string-read-only) in order to function, and the [session ID](../rest-api/checkout-api.md#session\_id-string-read-only) is obtained through the [Checkout API](../rest-api/checkout-api.md).
+If you are planning to use the Checkout SDK for your application, it is important to note that you will need to first implement the [Checkout API](../checkout-api.md) on your backend server. This is because the  Checkout SDK requires a [session ID](../checkout-api.md#session\_id-string-read-only) in order to function, and the [session ID](../checkout-api.md#session\_id-string-read-only) is obtained through the [Checkout API](../checkout-api.md).
 
-The [Checkout API](../rest-api/checkout-api.md) is responsible for generating a [session ID](../rest-api/checkout-api.md#session\_id-string-read-only), which is a unique identifier that is used to initiate the  Checkout SDK. This [session ID](../rest-api/checkout-api.md#session\_id-string-read-only) is required to be passed to the Checkout SDK in order for it to work properly.
+The [Checkout API](../checkout-api.md) is responsible for generating a [session ID](../checkout-api.md#session\_id-string-read-only), which is a unique identifier that is used to initiate the  Checkout SDK. This [session ID](../checkout-api.md#session\_id-string-read-only) is required to be passed to the Checkout SDK in order for it to work properly.
 
-It is important to keep in mind that the Checkout SDK cannot work without a backend implementation, as it relies on the [Checkout API](../rest-api/checkout-api.md) to generate the necessary [session ID](../rest-api/checkout-api.md#session\_id-string-read-only). Therefore, it is recommended that you first implement the [Checkout API](../rest-api/checkout-api.md) on your backend server before integrating the  Checkout SDK into your application.
+It is important to keep in mind that the Checkout SDK cannot work without a backend implementation, as it relies on the [Checkout API](../checkout-api.md) to generate the necessary [session ID](../checkout-api.md#session\_id-string-read-only). Therefore, it is recommended that you first implement the [Checkout API](../checkout-api.md) on your backend server before integrating the  Checkout SDK into your application.
 
 By following this process, you can ensure that your application is able to properly leverage the features and functionality provided by the Checkout SDK, while also maintaining a secure and reliable payment processing system for your users.
 
@@ -36,10 +36,10 @@ Ottu-checkout is a seamless, confidential and flexible payment checkout. Allows 
 
 ![](<../../.gitbook/assets/1 (12).png>)
 
-In the event the due amount is determined, the merchant should be notified to initiate the payment transaction. The merchant server calls the [Checkout API](../rest-api/checkout-api.md), then it goes to process the response. The API needs to be updated each time the amount changes. In case there is a validation error while updating the API, the current session will be ended and a new payment transaction should be created once again.
+In the event the due amount is determined, the merchant should be notified to initiate the payment transaction. The merchant server calls the [Checkout API](../checkout-api.md), then it goes to process the response. The API needs to be updated each time the amount changes. In case there is a validation error while updating the API, the current session will be ended and a new payment transaction should be created once again.
 
-* If the [Checkout API](../rest-api/checkout-api.md) returns success, it will render the page after providing the [session ID](../rest-api/checkout-api.md#session\_id-string-read-only).
-* If the [Checkout API](../rest-api/checkout-api.md)returns error, the admin should be notified, then redirect to an error page and end the session.&#x20;
+* If the [Checkout API](../checkout-api.md) returns success, it will render the page after providing the [session ID](../checkout-api.md#session\_id-string-read-only).
+* If the [Checkout API](../checkout-api.md)returns error, the admin should be notified, then redirect to an error page and end the session.&#x20;
 
 ![](<../../.gitbook/assets/2 (11).png>)
 

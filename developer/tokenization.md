@@ -14,11 +14,11 @@ Consider tokenization as a powerful security vault where all sensitive data is r
 
 ## [How Does it Work?](tokenization.md#how-does-it-work)
 
-To kick off the process, use the [Checkout API](rest-api/checkout-api.md) to create a payment session ([session\_id](rest-api/checkout-api.md#session\_id-string-mandatory)) with a customer ID ([customer\_id](rest-api/checkout-api.md#customer\_id-string-optional)) associated with a Merchant Identification Number (MID) that supports and has tokenization enabled. The presence of the customer ID is critical, as it’s the primary way to associate saved cards with a specific customer. The payment you’ve just initiated can then be rendered using the [Checkout SDK](checkout-sdk/). Remember, the Card Verification Value (CVV) may be required based on your [Payment Gateway](../user-guide/payment-gateway.md) configuration – this can be set by contacting our technical team.
+To kick off the process, use the [Checkout API](checkout-api.md) to create a payment session ([session\_id](checkout-api.md#session\_id-string-mandatory)) with a customer ID ([customer\_id](checkout-api.md#customer\_id-string-optional)) associated with a Merchant Identification Number (MID) that supports and has tokenization enabled. The presence of the customer ID is critical, as it’s the primary way to associate saved cards with a specific customer. The payment you’ve just initiated can then be rendered using the [Checkout SDK](checkout-sdk/). Remember, the Card Verification Value (CVV) may be required based on your [Payment Gateway](../user-guide/payment-gateway.md) configuration – this can be set by contacting our technical team.
 
 ## [The Process](tokenization.md#the-process)
 
-When the merchant utilizes the Checkout SDK and fulfills all the necessary requirements, the “Save Card” button will become available. This will enable the customers with the choice to securely save their payment card information for potential future transactions. After a customer decides to save their card and successfully completes a payment, the card details are converted into a tokenized form for added security. For upcoming transactions, if the merchant includes the same [`customer_id`](rest-api/checkout-api.md#customer\_id-string-optional) as in the preceding transaction within the request payload, all cards linked to that `customer_id` are presented to the customer. This streamlines the process of choosing and utilizing any of the stored cards for payment. Only the last four digits of each card are revealed. Subsequently, customers can employ any of these saved cards for payment, with the CVV being optional based on the acquiring bank's policies. Our Checkout SDK seamlessly handles challenges like 3D Secure or One-Time Password (OTP) codes, relieving you of the complexities of payment processing.
+When the merchant utilizes the Checkout SDK and fulfills all the necessary requirements, the “Save Card” button will become available. This will enable the customers with the choice to securely save their payment card information for potential future transactions. After a customer decides to save their card and successfully completes a payment, the card details are converted into a tokenized form for added security. For upcoming transactions, if the merchant includes the same [`customer_id`](checkout-api.md#customer\_id-string-optional) as in the preceding transaction within the request payload, all cards linked to that `customer_id` are presented to the customer. This streamlines the process of choosing and utilizing any of the stored cards for payment. Only the last four digits of each card are revealed. Subsequently, customers can employ any of these saved cards for payment, with the CVV being optional based on the acquiring bank's policies. Our Checkout SDK seamlessly handles challenges like 3D Secure or One-Time Password (OTP) codes, relieving you of the complexities of payment processing.
 
 ### [Implementation](tokenization.md#implementation)
 
@@ -26,7 +26,7 @@ Simplifying your checkout process with tokenization is easy with Ottu. Here’s 
 
 #### **1. Create a Payment Link**
 
-The first step involves creating a payment link via the [Checkout API](rest-api/checkout-api.md). Make sure to include the [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) parameter, and the [pg\_code](rest-api/checkout-api.md#pg\_codes-array-required) you’re using is enabled for tokenization.\
+The first step involves creating a payment link via the [Checkout API](checkout-api.md). Make sure to include the [customer\_id](checkout-api.md#customer\_id-string-optional) parameter, and the [pg\_code](checkout-api.md#pg\_codes-array-required) you’re using is enabled for tokenization.\
 Request Example:
 
 ```json
@@ -42,7 +42,7 @@ Request Example:
 
 #### 2. Access the Checkout Page
 
-Once you’ve created the payment link, the next step is to access the [checkout\_url](rest-api/checkout-api.md#checkout\_url-string-mandatory) from the [Checkout API](rest-api/checkout-api.md) response. This action will open the Ottu checkout page where the [Checkout SDK](checkout-sdk/) will render all available payment methods. **To save a card**, select a hosted payment method that has the save card input enabled, or the Ottu pg hosted page, based on the [pg\_code](rest-api/checkout-api.md#pg\_codes-array-required) you input in the API. If the customer chooses to save the card and performs a successful payment, the card details will be saved, and a token will be associated with the [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional).
+Once you’ve created the payment link, the next step is to access the [checkout\_url](checkout-api.md#checkout\_url-string-mandatory) from the [Checkout API](checkout-api.md) response. This action will open the Ottu checkout page where the [Checkout SDK](checkout-sdk/) will render all available payment methods. **To save a card**, select a hosted payment method that has the save card input enabled, or the Ottu pg hosted page, based on the [pg\_code](checkout-api.md#pg\_codes-array-required) you input in the API. If the customer chooses to save the card and performs a successful payment, the card details will be saved, and a token will be associated with the [customer\_id](checkout-api.md#customer\_id-string-optional).
 
 <figure><img src="../.gitbook/assets/Checkout Page Pre-Tokenization.png" alt=""><figcaption></figcaption></figure>
 
@@ -52,7 +52,7 @@ Once you’ve created the payment link, the next step is to access the [checkout
 
 #### 3. Use a Saved Card
 
-For subsequent transactions, repeat the same API call as in [step 1](tokenization.md#1.-create-a-payment-link) using the same [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) and [pg\_code](rest-api/checkout-api.md#pg\_codes-array-required). When reaching the Ottu checkout page again, the previously saved card will be available as a new payment method. The customer can simply click on it to process the payment immediately.
+For subsequent transactions, repeat the same API call as in [step 1](tokenization.md#1.-create-a-payment-link) using the same [customer\_id](checkout-api.md#customer\_id-string-optional) and [pg\_code](checkout-api.md#pg\_codes-array-required). When reaching the Ottu checkout page again, the previously saved card will be available as a new payment method. The customer can simply click on it to process the payment immediately.
 
 <figure><img src="../.gitbook/assets/Tokenized Checkout Page.png" alt=""><figcaption></figcaption></figure>
 
@@ -70,7 +70,7 @@ The ‘Save Card’ option is entirely voluntary. If a customer chooses not to s
 
 #### :digit\_three: [What if a customer wants to remove a saved card?](tokenization.md#what-if-a-customer-wants-to-remove-a-saved-card)
 
-A customer can remove their saved cards at any point. For detailed information on this, please refer to the [User Cards](rest-api/user-cards.md) and [Checkout SDK](checkout-sdk/) documentation.
+A customer can remove their saved cards at any point. For detailed information on this, please refer to the [User Cards](user-cards.md) and [Checkout SDK](checkout-sdk/) documentation.
 
 #### :digit\_four: [Is tokenization safe?](tokenization.md#is-tokenization-safe)
 
@@ -78,7 +78,7 @@ Absolutely. Tokenization is a security measure that replaces sensitive card deta
 
 #### :digit\_five: [Can I use tokenization for recurring payments?](tokenization.md#can-i-use-tokenization-for-recurring-payments)
 
-Yes, tokenization is an ideal feature for setting up recurring payments. Please refer to our [Auto Debit](rest-api/auto-debit.md) documentation section for more details.
+Yes, tokenization is an ideal feature for setting up recurring payments. Please refer to our [Auto Debit](auto-debit.md) documentation section for more details.
 
 #### :digit\_six: [Can I use tokenization even if I’m not PCI DSS compliant?](tokenization.md#can-i-use-tokenization-even-if-im-not-pci-dss-compliant)
 
@@ -90,7 +90,7 @@ Absolutely. You can safely store tokens in your database even without PCI DSS co
 
 #### :digit\_eight: [Can I use the Auto-Debit feature even if I’m not PCI DSS compliant?](tokenization.md#can-i-use-the-auto-debit-feature-even-if-im-not-pci-dss-compliant)
 
-Absolutely. With Ottu, you don’t have to worry about PCI DSS compliance. Our platform securely handles all the sensitive data and never exposes this information to the merchant. This means you can safely implement the [auto-debit](rest-api/auto-debit.md) feature just like any other [REST API](rest-api/).
+Absolutely. With Ottu, you don’t have to worry about PCI DSS compliance. Our platform securely handles all the sensitive data and never exposes this information to the merchant. This means you can safely implement the [auto-debit](auto-debit.md) feature just like any other [REST API](broken-reference).
 
 #### :digit\_nine: [Can I store card tokens in my database if I’m not PCI DSS compliant?](tokenization.md#can-i-store-card-tokens-in-my-database-if-im-not-pci-dss-compliant)
 
@@ -98,7 +98,7 @@ Yes, you certainly can. Ottu uses tokenization to ensure that your customer’s 
 
 #### :digit\_one::digit\_zero: [When should I save the card token in my database?](tokenization.md#when-should-i-save-the-card-token-in-my-database)
 
-The optimal time to save the card token in your database is immediately after the first payment against the subscription that you plan to [auto-debit](rest-api/auto-debit.md). While it’s not strictly necessary—you can always fetch this information through the [User Cards](rest-api/user-cards.md) API and Payment Methods APIs—it does streamline your processes and reduce development complexity.
+The optimal time to save the card token in your database is immediately after the first payment against the subscription that you plan to [auto-debit](auto-debit.md). While it’s not strictly necessary—you can always fetch this information through the [User Cards](user-cards.md) API and Payment Methods APIs—it does streamline your processes and reduce development complexity.
 
 #### :digit\_one::digit\_one: [How can I add a new card for a customer?](tokenization.md#how-can-i-add-a-new-card-for-a-customer)
 
@@ -110,7 +110,7 @@ No, it’s not mandatory to use the Checkout SDK. You can control the payment pr
 
 ## What’s Next?
 
-To explore the full potential of tokenization, check out the [Checkout SDK](checkout-sdk/), [User Cards](rest-api/user-cards.md) Section and the [Auto Debit](rest-api/auto-debit.md) section of our documentation. These sections provide a deep dive into managing saved cards and automating recurring payments respectively, helping you leverage the best of Ottu’s payment solutions. Whether you’re a merchant looking to provide your customers with a seamless checkout experience or a developer eager to integrate state-of-the-art payment solutions, Ottu’s tokenization feature is your go-to choice for secure, hassle-free transactions.
+To explore the full potential of tokenization, check out the [Checkout SDK](checkout-sdk/), [User Cards](user-cards.md) Section and the [Auto Debit](auto-debit.md) section of our documentation. These sections provide a deep dive into managing saved cards and automating recurring payments respectively, helping you leverage the best of Ottu’s payment solutions. Whether you’re a merchant looking to provide your customers with a seamless checkout experience or a developer eager to integrate state-of-the-art payment solutions, Ottu’s tokenization feature is your go-to choice for secure, hassle-free transactions.
 
 {% hint style="info" %}
 **Efficiency and Customer Convenience:** By enabling tokenization, you simplify the checkout process for returning customers, as they won’t need to re-enter their card details for every transaction. This not only speeds up the payment process but also improves the customer experience.

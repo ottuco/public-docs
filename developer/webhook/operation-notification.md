@@ -62,7 +62,7 @@ Choice from ["purchase","authorize".](../../user-guide/payment-gateway.md#config
 
 #### [pg\_code ](operation-notification.md#pg\_code-string)_<mark style="color:blue;">`string`</mark>_
 
-It is being generated according to user payment gateway [code](../rest-api/checkout-api.md#pg\_codes-array-required) choice from [pg\_codes](../rest-api/checkout-api.md#pg\_codes-array-required) list
+It is being generated according to user payment gateway [code](../checkout-api.md#pg\_codes-array-required) choice from [pg\_codes](../checkout-api.md#pg\_codes-array-required) list
 
 #### [gateway\_response ](operation-notification.md#gateway\_response-dict)_<mark style="color:blue;">`dict`</mark>_
 

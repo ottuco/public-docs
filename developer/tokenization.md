@@ -44,7 +44,7 @@ Request Example:
 
 Once you’ve created the payment link, the next step is to access the [checkout\_url](rest-api/checkout-api.md#checkout\_url-string-mandatory) from the [Checkout API](rest-api/checkout-api.md) response. This action will open the Ottu checkout page where the [Checkout SDK](checkout-sdk/) will render all available payment methods. **To save a card**, select a hosted payment method that has the save card input enabled, or the Ottu pg hosted page, based on the [pg\_code](rest-api/checkout-api.md#pg\_codes-array-required) you input in the API. If the customer chooses to save the card and performs a successful payment, the card details will be saved, and a token will be associated with the [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional).
 
-<figure><img src="../.gitbook/assets/Token-1 Enter-Card-Details (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Checkout Page Pre-Tokenization.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Successful Payment is a Prerequisite:** A saved card, represented by a unique token, can only be created after the customer completes a successful payment transaction. This process ensures the validity of the card and enables tokenization.
@@ -54,7 +54,7 @@ Once you’ve created the payment link, the next step is to access the [checkout
 
 For subsequent transactions, repeat the same API call as in [step 1](tokenization.md#1.-create-a-payment-link) using the same [customer\_id](rest-api/checkout-api.md#customer\_id-string-optional) and [pg\_code](rest-api/checkout-api.md#pg\_codes-array-required). When reaching the Ottu checkout page again, the previously saved card will be available as a new payment method. The customer can simply click on it to process the payment immediately.
 
-<figure><img src="../.gitbook/assets/Token-2 sandbox-ottu-net (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Tokenized Checkout Page.png" alt=""><figcaption></figcaption></figure>
 
 By following these steps, you can easily streamline your payment process, ensuring that customers have a seamless checkout experience. As mentioned, we’ll be providing visual aids between each step to further guide you in implementing this feature. Remember, at Ottu, we are always here to assist you in navigating the complexities of online transactions, so don’t hesitate to reach out if you need any help.
 

@@ -612,6 +612,14 @@ See Webhook [Payment Notification](webhook/payment-notification.md).
 
 * The request parameter [webhook\_url](checkout-api.md#webhook\_url-string-optional) should be provided.
 
+### [API Schema Reference ](checkout-api.md#api-schema-reference)
+
+For a more detailed technical understanding and the implementation specifics of these Checkout API please refer to the below Open API schema.
+
+{% swagger src="../.gitbook/assets/Ottu API (24).yaml" path="/b/checkout/v1/pymt-txn/" method="post" %}
+[Ottu API (24).yaml](<../.gitbook/assets/Ottu API (24).yaml>)
+{% endswagger %}
+
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
 
 #### [**API-Request (default required data)**](checkout-api.md#api-request-default-required-data)

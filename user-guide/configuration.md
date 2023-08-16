@@ -2,128 +2,112 @@
 
 ## [Global Configuration](configuration.md#global-configuration)
 
-Ottu empowers the merchant to make his own configuration easily.
+Ottu puts the power of configuration in the hands of merchants, ensuring a hassle-free experience. Our mission is to provide you with seamless configuration options, enabling you to take absolute control like never before! With Ottu, merchants can customize their dashboard, logo, favicon, website URL, email address, phone number, and more. Embrace the power of Ottu and unlock a world of possibilities for your business. Get ready to revolutionize your experience with our user-friendly tools and elevate your online presence to new heights!
 
 ## [Global Configuration walkthrough](configuration.md#global-configuration-walkthrough)
 
-Ottu dashboard> administration panel > Config
+The global settings can be reached from the Ottu Dashboard > Administration Panel > Config.
 
 ![](<../.gitbook/assets/1 (5).png>)
 
 ### [Configuration](configuration.md#configuration)
 
-Ottu dashboard> administration panel > Config > Configuration
+**Fine-Tune Your Settings with Ottu's Configuration Options**\
+**To access the configurations:** from the Ottu Dashboard > navigate to the Administration Panel > head to Config > then select Configuration.
 
 <figure><img src="../.gitbook/assets/Configuration.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Global configuration.png" alt=""><figcaption></figcaption></figure>
 
-#### [**Merchant Name or title**](configuration.md#merchant-name-or-title)
+**Here is a brief explanation of each field:**
 
-Merchant’s name to be displayed on the dashboard.
+#### **Merchant Identity - Stand Out in Style**
 
-#### [**Merchant subheader**](configuration.md#merchant-subheader)
+* **Merchant name or title:** Display your preferred name on the dashboard.
+* **Merchant subheader:** Highlight vital information concisely to grab attention.
 
-A merchant's most important information is briefly highlighted in this field.
+#### **Branding - Making Your Mark**
 
-#### [**Logo**](configuration.md#logo)
+* **Logo:** Showcase your unique market logo.
+* **Favicon:** Capture attention with an eye-catching icon next to your site's name in bookmarks and browser tabs.
 
-Merchant trade market logo
+#### **Connectivity - Stay in the Loop**
 
-#### [**Favicon**](configuration.md#favicon)
+* **Merchant website URL:** The URL address of the merchant's website.
+* **Email:** The email address that will receive the permission authorization request. Typically, this is the installation owner's email.
+* **Merchant phone:** The merchant's contact phone number.
 
-An icon displayed beside URL in the browser tab or next to the site name in a user's list of bookmarks.
+#### **Seamless Currency Exchange**
 
-#### [**Merchant Website URL**](configuration.md#merchant-website-url)
+* **Fixer access key:** The fixer access key is used to get currency exchange rates from Fixer.io API. **Fixer.io** is an online service that provides real-time currency exchange rates. Obtain your Fixer Access Key by creating an account on their website.
 
-URL address of the merchant website.
+{% hint style="info" %}
+For this service (i.e., Fixer.io) to be active, remember to enable the online conversion feature: from Ottu Dashboard > Administration Panel > Currency > Currency Exchange Configs \[set the field “Work as” to the value “Online”].
+{% endhint %}
 
-#### [**Email**](configuration.md#email)
+#### **Control Your Functionality**
 
-This email address gets the request for authorizing the permission. Should be only one email address. Normally, it is the email of the installation owner.
+* **Is paused:** Allows merchants to temporarily disable or freeze all their payment request links (i.e., freeze all payment transaction processes). This can be useful if the merchant is experiencing technical problems or if they are taking a break from accepting payments.
+* **Enable 2FA:** Allows merchants to enable two-factor authentication for their dashboard logins.
 
-#### [**Merchant phone**](configuration.md#merchant-phone)
+{% hint style="info" %}
+In 2FA, An OTP (One-Time Passcode)—a single-use numerical passcode—will be sent to your email for every dashboard login. This adds an extra layer of security by requiring merchants to enter the code in addition to their password for each login action.
+{% endhint %}
 
-Merchant contact phone number.
+#### **Time-Sensitive**
 
-#### [**Fixer access key**](configuration.md#fixer-access-key)
+* **Live date:** The date of the first live transaction.
+* **Renewal date:** The renewal date is the date when the merchant's Ottu subscription will end. It is important for merchants who want to renew their subscriptions to keep using Ottu. It is specified in the contract signed between Ottu and the merchant.
+* **Expire payment transaction:** If activated, an expiration date will be set for the customer to complete the payment through the payment request URL.
 
-Fixer.io, is an online service to get currency exchanging rate on real time base, when the merchant creates an account on fixer.io he will get a fixer access key. To be effective, the merchant should enable the online conversion feature.\
-Ottu dashboard > Administration panel > currency > currency exchange configs \[works as should choose online].
+{% hint style="info" %}
+* When the expiration date passes, the payment will be transitioned to the Expired state, and the payment request URL will no longer be valid.
+* By default, the expiration date is 24 hours, but it can be modified: From the Ottu Dashboard > Administration Panel > Payment Request > Payment Request Configuration \[Transaction Expiration Time]
+{% endhint %}
 
-#### [**Is paused**](configuration.md#is-paused)
+#### **Customization and Extra Notes**
 
-Enabling it, will lead to freeze all the transaction process related to payment request link till it gets disabled.
+* **Notes:** A place for the merchant to write any additional configuration notes.
 
-#### [**Enable 2FA on**](configuration.md#enable-2fa-on)
+#### **Security and Efficiency**
 
-Enabling it, will send OTP to the dedicated email address for every dashboard logging in action.
+* **SSL expiry date:** The SSL (Security Socket Layer) expiry date is the date when the merchant's SSL certificate will expire, and It is automatically populated based on the installation date. SSL guarantees the security of the merchant server.
 
-#### [**Live update**](configuration.md#live-update)
+#### **Effortless Management of Multiple Installations**
 
-It is the date of the first live transaction.
+* **Reference prefix:** A unique prefix that can be used by the Ottu Operations Team to avoid duplicate track IDs for the PG ([Payment Gateway](payment-gateway.md)), as duplicating IDs can cause problems with tracking and reporting.
 
-#### [**Renewal update**](configuration.md#renewal-update)
+{% hint style="info" %}
+If you have multiple Ottu installations and one PG (Payment Gateway), one of the installations should have the Reference Prefix so that each installation has a unique track ID, even if they use the same PG.
+{% endhint %}
 
-Installation renewal date, It is determined by the signed contract between Ottu and the merchant.
+#### **Fine-Tune User Experience**
 
-#### [**Expire payment transaction?**](configuration.md#expire-payment-transaction)
+* **Enable session timeout:** If checked, users who do not have refund/void permissions will be automatically logged out after passing the defined session timeout.
+* **Enable URL shortener:** Activate the URL shortener for public links, making sharing links with others hassle-free. Check [URL Shortener Configuration](configuration.md#url-shortener-configurations) for more details.
 
-It is the time of proceeding the payment by the customer through payment request URL.\
-When expiry date passed, then the payment will be transited to expired state and payment request URL will be expired.\
-By default, is 24 hours and could be changed from Ottu dashboard > Administration panel > payment request > payment request configuration\[Transaction expiration time].
-
-#### [**Notes**](configuration.md#notes)
-
-Where the merchant can write a note for any additional configuration other than default configuration.
-
-#### [**SSL expiry date**](configuration.md#ssl-expiry-date)
-
-Security socket layer, it is used to secure a merchant’s server and should be updated according to the SSL expiry date which is populated automatically based on the date of the installation.
-
-#### [**Reference Prefix**](configuration.md#reference-prefix)
-
-It is for Ottu operations team, If a merchant is having two Ottu installations and one PG then one of the installation should have the reference prefix configured to avoid duplicate track ID for the PG.
-
-#### [Enable Session Timeout](configuration.md#enable-session-timeout)
-
-If ticked, a user without refund/void permissions will be logged out after passing the defined session timeout.
-
-#### [Enable URL Shortener](configuration.md#enable-url-shortener)
-
-If ticked, URL shortener will be activated for public link. See [URL shortener configuration](configuration.md#url-shortener-configurations).
+Empower your online payment management with Ottu's remarkable configuration options. Let positive impressions, seamless transactions, and engaging experiences define your journey to success.
 
 ### [**URL shortener configurations**](configuration.md#url-shortener-configurations)
 
-Ottu dashboard> administration panel > Config > URL shortener configurations
+To configure the URL Shortener, go to the Ottu Dashboard > Administration Panel > Config > URL Shortener Configurations.
 
 <figure><img src="../.gitbook/assets/URL.png" alt=""><figcaption></figcaption></figure>
 
-Then click on **Add URL shortener configuration.**
+Next, click on `Add URL Shortener Configuration`.
 
 <figure><img src="../.gitbook/assets/URL_Confg.png" alt=""><figcaption></figcaption></figure>
 
-#### <mark style="color:green;">Fields description</mark>
+#### **Description of Fields:**
 
-#### [URL shortening tool ](configuration.md#url-shortening-tool)
-
-Determine the shortening utility.
-
-#### [**API URL**](configuration.md#api-url)
-
-API endpoint link.
-
-#### [User & Password](configuration.md#user-and-password)&#x20;
-
-Credential.
-
-#### [**Is global**](configuration.md#is-global)
-
-If ticked, this configuration will be applied for all cased.
+* **URL shortening tool:** Specify the tool used to shorten URLs.
+* **API URL:** The API endpoint link.
+* **User & Password:** Enter the credentials for authentication.
+* **Is global:** Check this option if you want this configuration to apply to all cases.
 
 ## [**Transaction report generation Configuration**](configuration.md#transaction-report-generation-configuration)
 
-Ottu dashboard> administration panel > Report > Periodic Transaction Report Config
+To access the Configuration of Transaction Report Generator, navigate to Ottu Dashboard > Administration Panel > Report > Periodic Transaction Report Config.
 
 <figure><img src="../.gitbook/assets/report (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -131,68 +115,42 @@ Ottu dashboard> administration panel > Report > Periodic Transaction Report Conf
 
 <figure><img src="../.gitbook/assets/Periodic transaction report general configuration.png" alt=""><figcaption></figcaption></figure>
 
-#### [<mark style="color:green;">Fields description</mark>](configuration.md#undefined)
+#### **Description of Fields:**
 
-#### [Period](configuration.md#period)
-
-How often report generating process recurs.
-
-#### [Report Generation Date/Time](configuration.md#report-generation-date-time)
-
-When report generation process starts.
-
-#### [Plugins](configuration.md#plugins)
-
-Which plugin the report belong.
-
-#### [Send transaction report by email](configuration.md#send-transaction-report-by-email)
-
-If ticked, the report will send to merchant email automatically.
-
-#### [Emails](configuration.md#emails)
-
-Define the email addresses, where the report required to be sent to.
-
-#### [Email notification template ](configuration.md#email-notification-template)
-
-The used template for email notifications.
-
-#### [File name prefix](configuration.md#file-name-prefix)
-
-&#x20;Determine the format in which reports should be saved.
+* **Period:** Specify how often the report generation process should recur.
+* **Report generation date/time:** Set the date and time when the report generation process should start.
+* **Plugins:** Which plugin the report belongs to.
+* **Send transaction report by email:** If this checkbox is checked, the report will be sent to the merchant's email address automatically.
+* **Emails:** The email addresses to which the report should be sent.
+* **Email notification template:** The template used for email notifications.
+* **File name prefix:** The filename prefix can be used to specify the format in which reports are saved.
 
 ### [Periodic Transaction report fields](configuration.md#periodic-transaction-report-fields)
 
-To add a new field to the required report, go to **Periodic Transaction report fields** Tab.
+To include a new field in the report, navigate to the **Periodic Transaction Report Fields** tab.
 
 <figure><img src="../.gitbook/assets/Periodic transaction report fields.png" alt=""><figcaption></figcaption></figure>
 
-#### [<mark style="color:green;">Fields description</mark>](configuration.md#undefined)
+#### Description of Fields:
 
 {% hint style="info" %}
-The report will export each field that is added here.
+Each field added here will be included in the report.
 {% endhint %}
 
 {% hint style="info" %}
-Based on the source type where the field data is extracted, the required fields are categorized, **Config**, **Static**, **Gateway response**, and **Common**.\
-For each type of added field, different information is required.
+The required fields are categorized based on the source type from which the data is extracted. The categories are as follows: [**Config**](configuration.md#type-config-required-field-is-from-plugins-configuration), [**Static**](configuration.md#type-static-required-field-is-one-of-the-constant-fields), [**Gateway Response**](configuration.md#type-gateway-response-required-field-is-from-pg-response), and [**Common**](configuration.md#type-common-required-field-is-other-than-fields-from-pg-static-and-plugin-configuration.-such-as-pay), and each type requires different information.
 {% endhint %}
 
 <details>
 
 <summary><strong>Type:</strong> Config <br>(Required field is from Plugins configuration)</summary>
 
-**Is active?:** If ticked, It would be used and displayed.&#x20;
-
-**Field:** Built in field list where the required field would be inserted.
-
-**Label \[en]:** Create a custom label if the built-in fields do not meet your needs. For English language.
-
-**Label \[ar]:** Create a custom label if the built-in fields do not meet your needs. For Arabic language.
-
-**Name:** HTML field name, used for backend validation, and will not be shown anywhere.
-
-**Order:** The location of the required field in the generated report.
+* **Is active:** If you check this box, the field will be used and displayed.
+* **Field:** A pre-populated list of fields where the required field should be selected.
+* **Label \[en]**: Create a custom label for the field in English, if needed.
+* **Label \[ar]:** Create a custom label for the field in Arabic, if needed.
+* **Name:** The name of the HTML field, which is used for backend validation. It will not be displayed anywhere.
+* **Order:** The location of the field in the generated report
 
 </details>
 
@@ -200,17 +158,12 @@ For each type of added field, different information is required.
 
 <summary><strong>Type: Static</strong>  <br><strong>(Required field is one of the constant fields)</strong></summary>
 
-**Is active?:**If ticked, It would be used and displayed.
-
-**Label \[en]:** Create a custom label of the required field. For English language.
-
-**Label \[ar]:** Create a custom label of the required field. For Arabic language
-
-**Name:** HTML field name, used for backend validation, and will not be shown anywhere.
-
-**Static value:** Define the value of constant field. It will be the same for all generated reports.
-
-**Order:** The location of the required field in the generated report.
+* **Is active:** If checked, the field will be used and displayed.
+* **Label \[en]:** Create a custom label for the field in English, if needed.
+* **Label \[ar]:** Create a custom label for the field in Arabic, if needed.
+* **Name:** The name of the HTML field, which is used for backend validation. It will not be displayed anywhere.
+* **Static value:** Assign a value to the constant field. It will be the same for all generated reports.
+* **Order:** The location of the field in the generated report.
 
 </details>
 
@@ -218,18 +171,12 @@ For each type of added field, different information is required.
 
 <summary><strong>Type: Gateway response</strong> <br><strong>(Required field is from PG response)</strong></summary>
 
-**Is active?:**If ticked, It would be used and displayed.
-
-**Label \[en]:** Create a custom label of the required field. For English language.
-
-**Label \[ar]:** Create a custom label of the required field. For Arabic language
-
-**Name:** HTML field name, used for backend validation, and will not be shown anywhere.
-
-**Gateway response keys:** Since PG response sent in Dict {Key:Value}\
-Here, the keys of the required value are determined.
-
-**Order:** The location of the required field in the generated report
+* **Is active:** If checked, the field will be used and displayed.
+* **Label \[en]:** Create a custom label for the field in English, if needed.
+* **Label \[ar]:** Create a custom label for the field in Arabic, if needed.
+* **Name:** The name of the HTML field, which is used for backend validation. It will not be displayed anywhere.
+* **Gateway response keys:** Since the PG (Payment Gateway) response is sent in a dictionary format, i.e., a set of key-value pairs {Key:Value}, so here you specify the keys of the values you need.
+* **Order:** The location of the field in the generated report.
 
 </details>
 
@@ -237,21 +184,19 @@ Here, the keys of the required value are determined.
 
 <summary><strong>Type: Common</strong> <br>(Required field is other than fields from PG, static, and plugin configuration. Such as payment_date).</summary>
 
-**Is active?:**If ticked, It would be used and displayed.
-
-**Label \[en]:** Create a custom label of the required field. For English language.
-
-**Label \[ar]:** Create a custom label of the required field. For Arabic language.
-
-**Name:** HTML field name, used for backend validation, and will not be shown anywhere.
-
-**Order:** The location of the required field in the generated report
+* **Is active:** If checked, the field will be used and displayed.
+* **Label \[en]:** Create a custom label for the field in English, if needed.
+* **Label \[ar]:** Create a custom label for the field in Arabic, if needed.
+* **Name:** The name of the HTML field, which is used for backend validation. It will not be displayed anywhere.
+* **Order:** The location of the field in the generated report.
 
 </details>
 
 ## [**Webhook configuration**](configuration.md#webhook-configuration)
 
-Ottu Dashboard > administration panel > Webhook >Webhook Config
+A [webhook](../developer/webhook/) is an HTTP endpoint that is used to receive notifications about events that occur in the Ottu system. For example, if a payment is created, Ottu can send a webhook notification to the merchant's server with the details of the payment. The merchant can then use this information to update their systems. Enhance your Ottu experience with our powerful Webhook Configuration. Take advantage of API payloads, SSL certificate verification options, error notifications, and more to optimize your webhook usage. Let's explore the exciting options you can customize:
+
+To access the Webhook Configuration, navigate to Ottu Dashboard > Administration Panel > Webhook > Webhook Config
 
 <figure><img src="../.gitbook/assets/webhook.png" alt=""><figcaption></figcaption></figure>
 
@@ -259,104 +204,63 @@ Ottu Dashboard > administration panel > Webhook >Webhook Config
 
 <figure><img src="../.gitbook/assets/webhook config.png" alt=""><figcaption></figcaption></figure>
 
-#### [<mark style="color:green;">Fields description</mark>](configuration.md#undefined)
+#### **Description of Fields:**
 
-#### [HMAC Key](configuration.md#hmac-key)
-
-&#x20;For API payloads, this key is used to [generate signature](../developer/webhook/signing-mechanism.md#signature-generation).
-
-#### [Ignore ssl](configuration.md#ignore-ssl)&#x20;
-
-When ticked, SSL certificate will not be verified while calling [webhook\_url](../developer/checkout-api.md#webhook\_url-string-optional).
-
-#### [Notify on error](configuration.md#notify-on-error)&#x20;
-
-When ticked, an email will be sent in case of any error occurred while calling [webhook\_url](../developer/checkout-api.md#webhook\_url-string-optional).
-
-#### [Email list](configuration.md#email-list)&#x20;
-
-Email address list, where the calling [webhook\_url](../developer/checkout-api.md#webhook\_url-string-optional)
-
-&#x20;error notification email should be sent to.
-
-#### [Timeout](configuration.md#timeout)&#x20;
-
-the period of the time that Ottu server waits for the merchant server to response.
-
-#### [Retries](configuration.md#retries)&#x20;
-
-Number of the times that Ottu server retries to send the request to merchant server
-
-#### [Backoff factor](configuration.md#backoff-factor)&#x20;
-
-Period of time between two retries.
+* **HMAC key:** This key is used to [generate signatures](../developer/webhook/signing-mechanism.md#signature-generation).
+* **Ignore SSL:** If checked, the SSL certificate will not be verified when calling the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional).
+* **Notify on Error:** If checked, an email will be sent if an error occurs while calling the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional).
+* **Email List:** Specify the list of email addresses where the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional) error notification should be sent.
+* **Timeout:** The amount of time that the Ottu server will wait for a response from the merchant server.
+* **Retries:** The number of retry attempts the Ottu server will make to resend the request to the merchant server if the first attempt fails. Note that the **Enable retry webhook mechanism** option should be checked to activate this feature.
+* **Backoff factor:** The amount of time the Ottu server will wait before retrying the request (i.e., the time between two attempts).
 
 #### [Example:](configuration.md#example)&#x20;
 
-**Timeout = 20 sec, retries= 3 and Back off factor =5sec.**
+Imagine a scenario where the merchant’s server experiences **downtime for 30 seconds**. If the **timeout is set to 20 seconds**, the **retries are set to 3**, and the **backoff factor is set to 5 seconds**, then the following will happen:\
+Keep in mind that the merchant’s server will take 30 seconds to respond, and the number of attempts is 3.
 
-Merchant server is down for 30 sec.&#x20;
+* **First Try:**
 
-1- First try, Ottu sends the request, then waits for response 20 sec and 5 sec more as back off factor. Failed \
-2- Second try, Ottu sends another request, then waits for 5 sec then gets response from the merchant order, since the server downtime is over and returned to normal mode. **Succeeded**
+1. Ottu's server will send a request to the merchant's server.
+2. Ottu's server will wait 20 seconds for a response (timeout = 20), and this attempt will fail.
+3. Then Ottu's server will wait 5 seconds for the backoff factor (backoff factor = 5).
 
-#### [Version](configuration.md#version-1)
+**Note that the first attempt took 25 seconds.**
 
-API webhook. Version
+* **Second Try:**
 
-#### [Enable webhook notifications?](configuration.md#enable-webhook-notifications)
+1. Ottu's server will retry the request, i.e., send another request.
+2. After 5 seconds, the merchant's server will respond since the server downtime will be over (30 seconds), and the request will be successful.
 
-&#x20;When ticked, webhook notification will be activated.
+* **Version:** The version of the webhook API.
+* **Enable webhook notifications:** If checked, webhook notifications will be activated.
 
 {% hint style="info" %}
-**Redirect behavior based on webhook\_url response on payment events and payment operation:**
+**Redirect behavior:** The redirect behavior is determined by the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional) response to payment events and payment operations.
 
-* status code 200, the customer will be redirected to redirect\_url
-* status code 201, the customer will be redirected to Ottu payment summary page
-* status code any other code, the customer will be redirected to Ottu payment summary page. For this particular case, Ottu can notify on the email, when Enable webhook notifications? Activated.
+* If the webhook URL returns a status code of 200, the customer will be redirected to the [redirect\_url](../developer/checkout-api.md#redirect\_url-string-optional).
+* If the webhook URL returns a status code of 201, the customer will be redirected to the **Ottu payment summary page**.
+* If the webhook URL returns any other status code, the customer will be redirected to the **Ottu payment summary page**. \
+  In this case, Ottu can send an email notification if the **Enable webhook notifications** option is checked.
 {% endhint %}
 
-#### [Enable retry webhook mechanism?](configuration.md#enable-retry-webhook-mechanism)
-
-When ticked, Ottu will another request in case first one gets failed. See [example](configuration.md#example).
-
-#### [Operations webhook\_url](configuration.md#operations-webhook\_url)&#x20;
-
-Where the transaction data will get disclosed once operation transaction flow triggered.
-
-#### [Enable webhook notifications if transaction initiated from API](configuration.md#enable-webhook-notifications-if-transaction-initiated-from-api)
-
-When ticked, webhook notification will be activated even the transaction gets created over API.
+* **Enable retry webhook mechanism**: If checked, Ottu will retry the request if the first attempt fails. See the [example scenario](configuration.md#example) above for further clarity.
+* **Operations webhook\_url:** The URL where transaction data will be disclosed once an operation transaction flow is triggered. See [Operation Notification](../developer/webhook/operation-notification.md).
+* **Enable webhook notifications if transaction initiated from API:** If checked, [webhook notifications](../developer/webhook/payment-notification.md) will be activated even if the transaction is created via the API.
 
 ### [Webhook Plugin Configs](configuration.md#webhook-plugin-configs)
 
-In this Tab, the merchant can define which and how webhook works in the required plugin.
+In this tab, the merchant can define the desired webhook behavior for specific plugins.
 
 <figure><img src="../.gitbook/assets/Webhook plugin configs.png" alt=""><figcaption></figcaption></figure>
 
-#### [Webhook Plugin](configuration.md#webhook-plugin)
+**Description of Fields:**
 
-Define which plugin webhook works for.
-
-#### [Webhook Url](configuration.md#webhook-url)
-
-In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.
-
-#### [Enable transaction state webhook notifications?](configuration.md#enable-transaction-state-webhook-notifications)
-
-If ticked, webhook notification will be push against defined [status](configuration.md#notification-status).
-
-#### [Notification status](configuration.md#notification-status)
-
-Define the status where the webhook notification will be triggered.
-
-{% hint style="info" %}
-Status: Paid, Failed, Authorized, and Canceled. See [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction).
-{% endhint %}
-
-#### [Delete](configuration.md#delete)
-
-To remove defined plugin webhook configuration.
+* **Webhook plugin:** The plugin that the webhook works for. See [Plugins](plugins/)
+* **Webhook UrL:** When a [payment event](../developer/webhook/payment-notification.md) or [payment operation](../developer/webhook/operation-notification.md) occurs, Ottu sends an HTTP request to this URL to disclose transactional data.
+* **Enable transaction state webhook notifications:** If checked, webhook notifications will be sent for the defined Notification status.
+* **Notification status:** Define the transaction status that will trigger the [webhook notification](../developer/webhook/payment-notification.md), including `paid`, `failed`, `authorized`, and `canceled`. Review the [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction) for more information.
+* **Delete:** Deletes the defined plugin webhook configuration.
 
 {% hint style="info" %}
 The [webhook\_Url](configuration.md#webhook-url) specified in the [webhook plugin configuration](configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../developer/webhook/payment-notification.md) and [operations](../developer/webhook/operation-notification.md). If we provide values for both the [operation webhook\_url](configuration.md#operations-webhook\_url) and the [webhook\_Url](configuration.md#webhook-url) in the plugin configuration, the system will transmit data to both URLs.

@@ -1,93 +1,89 @@
 # Currencies
 
-## [Introduction](currencies.md#undefined)
+## [Introduction](currencies.md#introduction)
 
-Ottu is a solution for multi-currency payment gateway. The options of currency in currency exchange enable the merchant to get a flexible way of accepting multi-currencies payment(s) with or without markup fees.
+Discover Ottu, the groundbreaking multi-currency Online Payment Management System (OPMS) developed to revolutionize your online business. Ottu empowers merchants with unprecedented flexibility, allowing them to effortlessly accept payments in multiple currencies. With our advanced [currency exchange](currencies.md#currency-exchanges) options, businesses can seamlessly manage online payments with a wide array of currency options across borders, ensuring a smooth and user-friendly experience for customers worldwide, with the ability to customize the markup fees according to their preferences. Say goodbye to limitations and unlock a world of endless payment possibilities with Ottu, your ultimate solution to currency restrictions.
 
-## [Currency configuration](currencies.md#currency-configuration)
+## [Currency Configurations](currencies.md#introduction)
 
-Payment gateway has a built-in currency configuration, e.g., KPAY(PG) default currency is KWD (Kuwaiti Dinar).
+Ottu offers a convenient [payment gateway](payment-gateway.md) with preconfigured currency settings. For instance, the default currency for KNET Payment Gateway is the Kuwaiti Dinar (KWD). This feature guarantees smooth transactions and enhances user experience, simplifying the management of online payments.
 
-## [Currency configuration page](currencies.md#currency-configuration-page)
+## [Currency Configuration Page](currencies.md#currency-configuration-page)
 
-After logging into Ottu dashboard, you click on the three dots located at the right corner of the page which will lead you to the “Administration panel”. From the left pane in the “Administration panel”, you have “Currency” tab.
+Once you access the Ottu Dashboard, click on the three dots positioned in the right corner of the page. This action will lead you to the Administration Panel, where you'll find a range of exciting options. Within the Administration Panel, you'll discover the Currency Tab awaiting your attention.
 
-<figure><img src="../.gitbook/assets/Dashboard2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh6.googleusercontent.com/urGtHZvozcu5GUVIX5V3oUPURSXZfMp6e91ZopAcTYW2bd0YMz9zt4tcxwxzFvUV5fsYGjBJ-1vizF2YQWZrVRJ-zZs2raf-La9OXa0es7B8fVtMCJqtbt3h6pGU0lGPEw1HjoKmB-FQDfWTcucudow" alt=""><figcaption></figcaption></figure>
 
-There are three types of currency configuration: - [Currencies](currencies.md#currencies) - [Currency exchanges](currencies.md#currency-exchanges) - [Exchanges config](currencies.md#exchange-configuration).
+There are three types of currency configuration:
 
-<figure><img src="../.gitbook/assets/1.gif" alt=""><figcaption></figcaption></figure>
+* [Currencies](currencies.md#currencies) (adding and managing different currencies)
+* [Currency exchanges](currencies.md#currency-exchanges) (setting up currency exchange)
+* [Exchanges config](currencies.md#exchange-configuration) (defining currency rules for the payment gateway)
+
+Each type serves a distinct purpose and aspect in enabling smooth and efficient transactions. These configurations empower merchants to navigate the complexities of multiple currencies, facilitate currency exchanges, and define specific currency rules for [payment gateways](payment-gateway.md).
+
+<figure><img src="https://lh3.googleusercontent.com/HgVaKDsdgw828Tw2IJUEIDfUPVa6WXJHG25iau9W7-N-dcobfpeEuLeM3oDo0LWW6-qYP83Ltq4W9ETpeE03IAPKwZ-WPAI8FyHaS24xf6vM_gR_O8F4vL8yzpZUZEVy0f-5jmD58RQ43_dZqJjOmmg" alt=""><figcaption></figcaption></figure>
 
 ### [Currencies](currencies.md#currencies)
 
-There is a list of available currencies in Ottu.
+In Ottu “dashboard”, you can find a wide range of currencies to choose from. If you wish to add a new currency, just follow these simple steps:
 
-**To add a new currency, kindly follow these steps:**
+**Step 1:**
 
-#### [Step 1](currencies.md#undefined)
+Click on the `Add Currency` button to include a new currency.
 
-Click on “Add Currency” button to add a new currency
+<figure><img src="https://lh3.googleusercontent.com/_Mt15bCpg6uYmzeyRRSHYRoRT4Lrc1gME69rJdx17jPOMzuFCyl8Tikl01PVh7nrFsHZGe93gKv4YQhhTo-yAGnmiWg9DVvJOaaym8qk0AJnnLSe46c_K29D1jjabvy0mZNbNDVegsu5n0owFD4B-uA" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/2 (2) (1).png" alt=""><figcaption></figcaption></figure>
+**Step 2:**
 
-#### [Step 2](currencies.md#undefined)
+Mark the active option and then click on `Save` to finalize the process.
 
-Tick active option, then click on “save”
+<figure><img src="https://lh4.googleusercontent.com/ySGV7pR9HR2yaiDlCk5yvh9CLIqBGicE_WXn3hP85db7gPLw4Iy6WRRvjbUPK1Sk5QPf90IHv-NyaGeu9gXaSFZlzHjsuINNoPVru43FABR6r4dJDNOEWEuAh6vC-CqIK39c-DbXsVTUcUur-Qgjfc0" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/3 (2).png" alt=""><figcaption></figcaption></figure>
+### [Currency Exchanges](currencies.md#currency-exchanges)
 
-### [Currency exchanges](currencies.md#currency-exchanges)
+Sometimes, merchants may prefer receiving payments in their local currency, even when the customer resides in a different country. To facilitate this payment process, Ottu offers a convenient currency exchange service that benefits merchants and customers, enhancing seamless payment processes. Occasionally, when the bank acts as an intermediary between the merchant and the customer, they may impose a markup fee to cover the currency exchange fees.\
+To configure the currency exchange feature, simply follow these **three steps:**
 
-Sometimes, the merchant prefers to get their payment(s) in the local currency of their country, even if the customer is living abroad. Thus, currency exchange comes as a solution offered by Ottu to help both of the merchant and customer to achieve the process of payment easily.
+**Step 1**
 
-{% hint style="info" %}
-Sometimes the bank mediated between the merchant and customer forces a markup fee in order to cover the currency exchange fee.
-{% endhint %}
+Click on `Add Currency Exchange`.
 
-**To configure currency exchange, you have only to follow these three steps:**
+<figure><img src="https://lh4.googleusercontent.com/_ghefaec0hnRwl2z3wgaqG6ZrukSJTQMdDQ6FjhaU2Rqgu2GXGAsdBWiRXfUr_OQz4r-sqlOXFvGd5SFC7HkJcQUbejzGO0kpGAd9QeyAbcBLbvUnjl5kTTR2L6p1MgeDig1dIanfnPTeIgnaJfIFkU" alt=""><figcaption></figcaption></figure>
 
-#### [ Step 1](currencies.md#undefined)
+**Step 2**
 
-Click on “Add Currency Exchange”
+Enter the necessary parameters as required.
 
-<figure><img src="../.gitbook/assets/4 (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh3.googleusercontent.com/_LLoqGD7wYxqAstnAJB1IXs3rvCRVwf1uslT-7oaXkQeQ9rZxxuTv-FDZEuy_ZkNq50eCxQGbXmJIYPbvg_2HOWZ8m7ddciiaO_7-L8NDJ1aWfhsPAPU3fCznDSoW25COGlz47PF5xtLtm6gst7RC80" alt=""><figcaption></figcaption></figure>
 
-#### [Step 2](currencies.md#undefined)
+**Step 3**
 
-Insert the required parameters
+&#x20; Finally, click on `Save`.
 
-<figure><img src="../.gitbook/assets/5edited (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh4.googleusercontent.com/heCTb0exfobE-zL92RGeHGZ45NNatnkByimdGw-TXwwBgKTMq3V5p9ImqY5rPkWBBCwaX_LfZX-m_uzh1NaTD-Z5moJPaiAPeYoj0At5T08IWi8tv4N-uJ49XOY2DUI87Hc_TdfxkNuhyNxylXEuYuo" alt=""><figcaption></figcaption></figure>
 
-#### [Step 3](currencies.md#step-3)
+### [Exchange Configuration](currencies.md#exchange-configuration)
 
-&#x20;Then click on “save”
+The configuration of the [payment gateway](payment-gateway.md) is closely tied to the configuration of the exchange. This configuration determines the currency rules that should be applied to any payments made through that gateway.\
+Adding an exchange configuration is a straightforward process consisting of just **two steps:**
 
-<figure><img src="../.gitbook/assets/6 (1) (1).png" alt=""><figcaption></figcaption></figure>
+**Step 1**
 
-### [Exchange configuration](currencies.md#exchange-configuration)
+Click on the `Add Exchange Config` button.
 
-Payment gateway settings are linked to exchange configuration, as it defines the currency rules that should be applied to payment(s).
+<figure><img src="https://lh3.googleusercontent.com/nkFn-3RpYJJF9FgP4EnDQhzo6HwdlqrgBNYRrJeSt0V8vwBmTcQvxbEQxaa6CSE5dRFCjmVD1gSEqwItxtvaQULJGidrfIZeS-JIBhuvxIFIN99Id1CSFForO31hy_2tlyfLG2f5WcUOia0sAGUmgMg" alt=""><figcaption></figcaption></figure>
 
-**To add exchange configure, you have only to follow these two steps:**
+**Step 2**
 
-#### [Step 1](currencies.md#undefined)
+Provide the necessary information and click on the `Save` button.
 
-Click on “Add Exchange Config”
+<figure><img src="https://lh3.googleusercontent.com/39dzntap3KPTfkspXcLONjGElnLmEFfTtHEpouMTLlt4HqYSIhJ6DxwrtvXuWJMyQIrxlzXOnz_wN-T-nABT9TPYWCZ2mOeodX0o9LScIr8NmEYpqG_Otxh230ct_LEPYgrXpFbrVInvZCnwv0X5fBQ" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/7 (1).png" alt=""><figcaption></figcaption></figure>
+**Parameters Description**
 
-#### [Step 2](currencies.md#step-2)
-
-Enter the required information and click on “save”
-
-<figure><img src="../.gitbook/assets/Exchange_config.png" alt=""><figcaption></figcaption></figure>
-
-#### [Required Parameters Descriptions](currencies.md#required-parameters-descriptions)
-
-<table data-header-hidden><thead><tr><th width="150"></th><th></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Field</strong></mark></td><td><mark style="color:blue;"><strong>Required info</strong></mark></td></tr><tr><td>Name</td><td>Identifying the exchange configuration</td></tr><tr><td>Default currency</td><td>Payment gateway currency</td></tr><tr><td>Currencies</td><td>The payment currency that the merchant(s) want(s) to deal with</td></tr><tr><td>Fee type</td><td><br><mark style="color:blue;"><strong>Fix fee:</strong></mark> Fixed markup amount on the payment<br><mark style="color:blue;"><strong>Percent fee:</strong></mark> An additional amount that will be added according to a certain percentage of the payment</td></tr><tr><td>Fees Description</td><td>Identification of the fee according to the merchant’s purposes</td></tr><tr><td>Work as</td><td><br><mark style="color:blue;"><strong>Online:</strong></mark> Utilizing online services to define exchange rate<br><mark style="color:blue;"><strong>Local:</strong></mark> The exchange rate will be defined manually by the merchant(s)</td></tr><tr><td>Fix fee</td><td>Fixed amount</td></tr><tr><td>Percentage fee</td><td>Dynamic amount</td></tr><tr><td>Charge default currency</td><td>When the event is activated, a fee will be added to the original amount even if the payment transaction is proceeded in the default currency</td></tr></tbody></table>
-
-
+<table><thead><tr><th width="178">Field</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>This field is used to identify the <a href="currencies.md#exchange-configuration">exchange configuration</a>.</td></tr><tr><td>Default currency</td><td>The default currency of the <a href="payment-gateway.md">payment gateway</a>.</td></tr><tr><td>Currencies</td><td>These are the payment currencies that the merchant wants to deal with.</td></tr><tr><td>Fee type</td><td><p>There are two types of fees, <strong>Fixed fees</strong> and <strong>Percent fees</strong>.</p><p><strong>Fix fee:</strong> A predetermined amount that is added to the payment.</p><p><strong>Percent fee:</strong> An additional amount calculated based on a percentage of the payment.</p></td></tr><tr><td>Fees Description</td><td>Identification of the fee according to the merchant’s purposes</td></tr><tr><td>Work as</td><td><p>The exchange rate can be determined in two ways: <strong>Online</strong> or <strong>Local</strong>.</p><p><strong>Online:</strong> Utilizing online services to define the exchange rate.</p><p><strong>Local:</strong> Allows the merchant to manually define the exchange rate.</p></td></tr><tr><td>Fix fee</td><td>Fixed amount</td></tr><tr><td>Percentage fee</td><td>Dynamic amount</td></tr><tr><td>Charge default currency</td><td>When this event is activated, a fee will be added to the original amount, even if the payment transaction is conducted in the default currency of the <a href="payment-gateway.md">payment gateway</a>.</td></tr></tbody></table>
 
 {% hint style="warning" %}
-[Operations](../developer/operations.md) are not working for foreign currencies.
+Foreign currencies are not functioning properly in [operations](../developer/operations.md).
 {% endhint %}

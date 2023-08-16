@@ -2,41 +2,41 @@
 
 ## [Introduction](apple-pay.md#introduction)
 
-Generally, payment services refer to two main services: mobile payment and digital wallets.
+Apple Pay is a comprehensive payment service that encompasses two primary categories: mobile payment and digital wallets. These services provide convenient and secure methods for customers to make transactions, enhancing the overall payment experience.
 
-## [Ottu payment services](apple-pay.md#ottu-payment-services)
+Mobile payments are payments that are made using a mobile device, such as a smartphone or tablet, Mac or MacBook device. Digital wallets are online accounts that store payment information, such as credit card numbers and bank account information. Both mobile payments and digital wallets offer many benefits over traditional payment methods (i.e., cash and checks). These benefits include convenience, security, and speed.
 
-Payment services are like different channels on top of bank integration that speed up charging customers.
-
-## [Apple Pay](apple-pay.md#apple-pay)
-
-Ottu supports Apple Pay in Kuwait, KSA and Bahrain.
+Ottu supports Apple Pay in Kuwait, Saudi Arabia (KSA), and Bahrain. This means that users in these countries can leverage the benefits of Apple Pay to make payments conveniently and securely.
 
 ![](<../.gitbook/assets/Apple Pay.png>)
 
-## [Apple Pay configuration](apple-pay.md#apple-pay-configuration)
+## [Apple Pay Configuration Guide](apple-pay.md#apple-pay-configuration-guide)
 
-### [Apple Pay setup](apple-pay.md#apple-pay-setup)
+To set up Apple Pay, you will need to:
+
+* [Create a merchant ID](apple-pay.md#creating-merchant-id).
+* [Add and verify a domain](apple-pay.md#adding-and-verifying-a-domain).
+* [Create Apple Pay certificates](apple-pay.md#creating-apple-pay-certificates).
+
+In addition, a merchant must have an Apple developer account to accept Apple Pay payments.
 
 ### [Creating merchant ID](apple-pay.md#creating-merchant-id)
 
 Merchant needs to have a developer account in Apple.
 
-#### :digit\_one: [**Login to the account**](apple-pay.md#login-to-the-account)
+#### **1.** Log in to your Apple Developer account
 
-#### :digit\_two:[**Go to “Certificates, IDs & Profiles” section**](apple-pay.md#go-to-certificates-ids-and-profiles-section)
+#### **2.** Go to the Certificates, IDs & Profiles section
 
 ![](../.gitbook/assets/creating-merchant-id.png)
 
-#### :digit\_three:[**Go to “Identifiers”** ](apple-pay.md#go-to-identifiers)
 
-From “App IDs” dropdown list ![](<../.gitbook/assets/image (11).png>)choose “Merchant IDs”, then click on ![](<../.gitbook/assets/image (14).png>) &#x20;
+
+#### 3. From “App IDs” dropdown list ![](<../.gitbook/assets/image (11).png>)choose “Merchant IDs”, then click on ![](<../.gitbook/assets/image (14).png>) &#x20;
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_four:[Choose the Merchant ID type ](apple-pay.md#choose-the-merchant-id-type)
-
-Select “Merchant IDs” from the list of identifier types and click “Continue”.
+#### 4. From the identifier types, choose the Merchant IDs type and click Continue.
 
 <div data-full-width="true">
 
@@ -44,144 +44,118 @@ Select “Merchant IDs” from the list of identifier types and click “Continu
 
 </div>
 
-#### :digit\_five:[**Enter the Merchant Information**](apple-pay.md#enter-the-merchant-information)
+#### [**5. Enter the Merchant Information**](apple-pay.md#5.-enter-the-merchant-information)
 
-Provide the necessary details of the merchant, such as the display name and description. When entering the identifier field, it is recommended to include Ottu installation URL in reverse order. For instance, if your domain is “demo.ottu.net,” enter “net.ottu.demo” in the identifier field. Merchant will automatically show up.
+Fill out the fields, such as display name, description, and so on. The identifier field should include your Ottu installation URL in reverse order; For example, if the domain is `demo.ottu.net`, enter `net.ottu.demo`. Then click `Continue`.
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_six:[**Click on register**](apple-pay.md#click-on-register)&#x20;
-
-Review the provided details from the previous step before clicking on the “Register” button.
+#### 6. Review the provided details and click on the Register button.
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ### [Adding and verifying a domain](apple-pay.md#adding-and-verifying-a-domain)
 
-#### :digit\_seven:[Select the targeted identifier that was previously created](apple-pay.md#select-the-targeted-identifier-that-was-previously-created)
-
-For demonstration purposes, let's consider the “Ottu Apple pay” ID from the “Identifiers” section.
+#### 1. From the Identifiers section, select the merchant ID that you created in the previous step (e.g., “Ottu Apple Pay”).
 
 <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_eight:[**Add merchant domain**](apple-pay.md#add-merchant-domain)
-
-Click on “Add Domain” from “Merchant Domains” section.
+#### 2. Click on `Add Domain`
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-#### &#x20; :digit\_nine:[**Enter the domain you want to register**](apple-pay.md#enter-the-domain-you-want-to-register)
-
-Provide the domain URL, then save.
+#### 3. Enter the domain URL you want to register and click Save.
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_one::digit\_zero:[**Download the “.text” file and provide it to Ottu**](apple-pay.md#download-the-.text-file-and-provide-it-to-ottu)
-
-To verify the domain, download the “.text” file and ensure that you have it ready for uploading in the subsequent steps.
+#### 4. Download the .text file and make sure it is ready for upload, as you will provide it to Ottu later (i.e., in the next step), which will be used for domain verification.
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_one::digit\_one:[**Ottu will update and configure the file in the installation backend**](apple-pay.md#ottu-will-update-and-configure-the-file-in-the-installation-backend)
+#### 5. On the Ottu side, you should also add a new Apple Pay service and upload the .text file that you downloaded in the previous step, i.e., step 4:
 
-The Ottu side should include the new Apple Pay service that is specifically configured for the “Merchant ID” and “Merchant Domain”.
-
-#### [How to Add New Apple Pay Service (Ottu side)](apple-pay.md#how-to-add-new-apple-pay-service-ottu-side)
-
-After logging into Ottu dashboard, you click on the three dots located at the right corner of the page, which will lead you to the “Administration panel”. From the left pane in the “Administration panel” choose “Payment  Service”.
+&#x20;   5.1. Log in to the Ottu Dashboard and click on the three dots in the upper right corner to access    the Administration Panel.\
+&#x20;   5.2. From the left-hand sidebar, select `Payment Service`.
 
 <figure><img src="../.gitbook/assets/16-1 (1).png" alt=""><figcaption></figcaption></figure>
 
-Click on “:heavy\_plus\_sign: Add payment service”.
-
-\
-
+&#x20;  5.3. Click on `Add payment service`.
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-Fill the required fields and click “Save”
+&#x20;  5.4. Fill out the fields and click `Save`.
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Field</th><th>Description</th><th data-hidden></th></tr></thead><tbody><tr><td>Name</td><td>The name to be displayed in the dropdown or any other location where the settings are shown</td><td></td></tr><tr><td>Code</td><td>Code to identify the service in the API/URLs/etc</td><td></td></tr><tr><td>Apple Merchant Identifier</td><td>Unique identifier assigned to a merchant by Apple when they sign up for Apple Pay</td><td></td></tr><tr><td>Display Name</td><td>The name that will appear on the payment sheet for Apple transactions</td><td></td></tr><tr><td>Domain</td><td>The domain configured for Apple pay. IE: ksa.ottu.dev</td><td></td></tr><tr><td>Domain Verification File</td><td>File that contains a unique code that is used to verify the ownership of a domain name</td><td></td></tr><tr><td>PG</td><td>Payment gateway</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="233">Field</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>The name that will be displayed in the drop-down menu or any other location where the settings are displayed.</td></tr><tr><td>Code</td><td>A code that identifies the service in APIs, URLs, and other places.</td></tr><tr><td>Apple Merchant Identifier</td><td>The unique identifier that Apple assigns to merchants when they sign up for Apple Pay.</td></tr><tr><td>Display Name</td><td>The name that will be displayed on the payment sheet for Apple transactions</td></tr><tr><td>Domain</td><td>The domain that is configured for Apple Pay. For example, ksa.ottu.dev.</td></tr><tr><td>Domain Verification File</td><td><p>A file that contains a unique code used to verify the ownership of a specific domain name.</p><p>Here you should upload the <code>.text file</code> that you downloaded in the previous step, i.e., <a href="apple-pay.md#4.-download-the-.text-file-and-make-sure-it-is-ready-for-upload-as-you-will-provide-it-to-ottu-later">step 4</a>.</p></td></tr><tr><td>PG</td><td>The payment gateway</td></tr></tbody></table>
 
-**New Apple Pay service for merchant.net.ottu.demo & demo.ottu.net has been added successfully.**
+&#x20; 5.5. The new Apple Pay service for "merchant.net.ottu.demo" and "demo.ottu.net" has been successfully added.
 
 <figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
+#### 6. Once you have added the Apple Pay service and submitted the .text file on the Ottu side, you should verify the domain on the Apple side:
 
-
-**To upload the “.text” file in** [step 10](apple-pay.md#download-the-.text-file-and-provide-it-to-ottu) Go to \
-Ottu Dashboard > Administration Panel > Payment Service\
-Choose the required Apple Pay service, which already added above. Named test.
-
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-Upload the “.text” file in [step 10](apple-pay.md#download-the-.text-file-and-provide-it-to-ottu) to “Domain Verification File”, then save.
-
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
-
-#### :digit\_one::digit\_two:[Domain verification](apple-pay.md#domain-verification)
-
-Once the [“.text” file](apple-pay.md#download-the-.text-file-and-provide-it-to-ottu) has been submitted to Ottu, on the Apple Pay side, navigate to the merchant domain section and click on the “verify” option to initiate the verification process for the domain. Ottu will then confirm the completion of this verification step.
+On the Apple side, from the **Certificates, IDs & Profiles** section, scroll down to the **Merchant Domains** portion, and click `Verify`.\
+Ottu will then confirm the completion of the verification.
 
 <figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-#### &#x20;:digit\_one::digit\_three:[**The domain is verified**](apple-pay.md#the-domain-is-verified)
-
 ### [Creating Apple Pay certificates](apple-pay.md#creating-apple-pay-certificates)
 
-#### :digit\_one::digit\_four:[**Go again to Certificates, Identifiers & profiles. Scroll down**](apple-pay.md#go-again-to-certificates-identifiers-and-profiles.-scroll-down)
+#### **1.** Once again, from your Apple Developer account, go to the Certificates, IDs & Profiles section
 
 <figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
-#### &#x20;:digit\_one::digit\_five: [**Go to Apple Pay Merchant Identity Certificate and click on “create certificate”**](apple-pay.md#go-to-apple-pay-merchant-identity-certificate-and-click-on-create-certificate)
+#### &#x20;2. Scroll down to the Apple Pay Merchant Identity Certificate portion.
+
+#### 3. Click Create Certificate.
 
 <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_one::digit\_six: [**Ottu will provide CSR certificate**](apple-pay.md#ottu-will-provide-csr-certificate)
+#### 4. Ottu will provide you with a Certificate Signing Request (CSR) file, which you will need in the next step:
 
-After logging into Ottu dashboard, you click on the three dots located at the right corner of the page, which will lead you to the “Administration panel”. From the left pane in the “Administration panel” choose “Payment  Service”. \
-Select the payment service which is designated for your “Merchant ID” & “Merchant Domain”. \
-In case the payment service has not been added before, follow the [steps of adding new Apple Pay](apple-pay.md#how-to-add-new-apple-pay-service-ottu-side) payment service.&#x20;
+&#x20;    4.1. Log in to the **Ottu Dashboard**, go to the **Administration Panel**, then from the left-hand   sidebar, select `Payment Service`.
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+&#x20;    4.2. Select the `payment service` that is associated with your `Merchant ID` & `Merchant Domain`.
 
-Then click on “Download CSR file”.
+If the payment service has not been added previously, follow the instructions above to [add a new Apple Pay payment service](apple-pay.md#5.-on-the-ottu-side-you-should-also-add-a-new-apple-pay-service-and-upload-the-.text-file-that-you-d).
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh3.googleusercontent.com/PWC0M59qxYBSDRAgSWH5xMPH4nO7LTG9gb8MPHMN2vLqYYW97Ouuz_0YAhZO5zmGyqwwbALDfxvSU2pIbdskU10G1kApn8opySUs5bQgSDxbcx3owUEvJ82dYktpGd2D8ciwDu6cnkHkeAFUCZGmzEo" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_one::digit\_seven:[**Upload the CSR certificate**](apple-pay.md#upload-the-csr-certificate)
+&#x20;     4.3. Click `Download CSR file`.
 
-Upload the CSR file that has been provided by Ottu in [step 16](apple-pay.md#ottu-will-provide-csr-certificate).
+<figure><img src="https://lh6.googleusercontent.com/U9aYBEaYkPnbzrmn-VpEZfdrSCUwT1_FH-ZswDnRvP6PFfur4TM5LkOwLlr33Q6InuIXg6SwLiVVkhuh0pmwcSkNvGOFuOCW3ctAZPQBuZGC5OoPBexHu5vzza-LNE_vYMY0Ofh8kPdCL9XrmF7Hetk" alt=""><figcaption></figcaption></figure>
 
-![](<../.gitbook/assets/17-get-certfile (1).png>)
+#### 5. Upload the CSR file provided to you by Ottu in the previous step, i.e., step 4.
 
-#### :digit\_one::digit\_eight:[**Click on Continue and then click download to get your .**CER **file**](apple-pay.md#click-on-continue-and-then-click-download-to-get-your-.cer-file)
+<figure><img src="https://lh4.googleusercontent.com/Xv1D2HLulUyGVijMN-RnBu4ka2e3gJfHQ9iMnGu-78Fd-Zex205M4PDSAo-PZuDkkEYj1UUF5JzTnyuC6tRKJOWQMckhNpCvYxQspjP3lLuFg1ZRLGo8zvaVQ1_Tj8pI8bbfTlf_IijZ8dHJa37iGwM" alt=""><figcaption></figcaption></figure>
 
-![](../.gitbook/assets/18-download-certfile.png)
+#### 6. Click Continue, then click on Download to get the (.CER) file.
 
-#### :digit\_one::digit\_nine:[**Download the Certificate**](apple-pay.md#download-the-certificate) &#x20;
+<figure><img src="https://lh5.googleusercontent.com/hwnUA8iIWXwKk7EYiGm2wn67vZoL6yCgVx4ZwEQMz95WXZXzt9l4s141-GXx78KWqbhGKSS3dkWp38c-bIdB0q2bOloam7ABL8L_I5bTJev7kxK2wM-T0M1ep6tqi7nbY6VeBOTuPe2an5qpy2aDmBs" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh6.googleusercontent.com/f6JpVl5oULlBU4UGQCdSRPzYrvuRN5isnpljqHFqlP6cZy_5a5l7F6kAQfpMCiGZbPohaWNmI4V4bTvyNuQ97NeIpwfU201Ng9o_IUZMLpTr4XfAm5eiV6XhTWr1-fOdhIfM-zWmsS0ee6DxoeMS7XE" alt=""><figcaption></figcaption></figure>
 
-#### :digit\_two::digit\_zero:[**Provide the certificate (.cer) file to Ottu**](apple-pay.md#provide-the-certificate-.cer-file-to-ottu)
+#### 7. Upload the certificate (.CER) file to Ottu:
 
-After logging into Ottu dashboard, you click on the three dots located at the right corner of the page which will lead you to the “Administration panel”. From the left pane in the “Administration panel” choose “Payment  Service”, then choose the same Apple Pay service  selected in [Step 16](apple-pay.md#ottu-will-provide-csr-certificate).
+&#x20;   7.1. From the **Ottu Dashboard**, go to the **Administration Panel**, then from the left-hand sidebar, select `Payment Service`.
 
-Then upload [.cer file](apple-pay.md#download-the-certificate) to “Apple Pay Identifier CER”, then click “Save”
+&#x20;   7.2. Select the same Apple Pay service that you selected in Step 4.2 under [Step 4](apple-pay.md#4.-ottu-will-provide-you-with-a-certificate-signing-request-csr-file-which-you-will-need-in-the-next).
 
-<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+&#x20;    7.3. Upload the `.CER` file that you downloaded in the previous step (i.e., [step 6](apple-pay.md#6.-click-continue-then-click-on-download-to-get-the-.cer-file.)) to **Apple Pay Identifier CER** and click `Save`.
 
+<figure><img src="https://lh5.googleusercontent.com/V5lo5Az8NOcdJUcimM028lQvFZhe6iKYDv6swvb3LD88VH1KH7Qkn9EbT5LA0-YId0wb76Tt3UIOxfKLWmhyVp9UDahEzdIJQlyimS8n2RcaxRnapQtXyZ1HWAs4dx8zD07_OuoWmG6qXVLokME84cA" alt=""><figcaption></figcaption></figure>
 
+After saving, the `PEM Certificate` and `Key File` will be generated automatically.
 
-After saving, “PEM Certificate” & “Key File” would be generated automatically.&#x20;
+<figure><img src="https://lh6.googleusercontent.com/sf3X1kb6pbPR1lVABC9DT3egqzUyXSiknEuqFdYZY7vBNYygpRMUOdh2ajp2bj3ge7u-6RxWQluM65igjRuhMhJ390lPY2AgbwV3MGAHALLoIH_cRxFLV1AC2OzRG4Nh5mqLZFBMnZ1iIuF6NUTnqLw" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/19-2.png" alt=""><figcaption></figcaption></figure>
+## [Creating Apple Payment Processing Certificate](apple-pay.md#creating-apple-payment-processing-certificate)
 
-## [Creating apple payment processing certificate:](apple-pay.md#creating-apple-payment-processing-certificate)
+Ottu empowers businesses with a seamless payment process through Apple Pay across [MPGS](https://docs.ottu.com/user-guide/apple-pay/setup-mpgs), [Cybersource](https://docs.ottu.com/user-guide/apple-pay/setup-cybersource), and KNET gateways. Below, discover the effortless setup process for integrating different payment gateways with Apple Pay through Ottu. Experience simplified payments and enhanced user experience with our seamless integration process.
 
-Ottu empowers businesses with seamless payment process through Apple Pay across [MPGS](apple-pay/setup-mpgs.md), [Cybersource](apple-pay/setup-cybersource.md), and KNET gateways. Below, discover the effortless setup process for integrating different payment gateways with Apple Pay through Ottu. Experience simplified payments and enhanced user experience with our seamless integration process.
+\
+
 
 {% content-ref url="apple-pay/setup-mpgs.md" %}
 [setup-mpgs.md](apple-pay/setup-mpgs.md)

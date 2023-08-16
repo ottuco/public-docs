@@ -20,7 +20,7 @@ To set up Apple Pay, you will need to:
 
 In addition, a merchant must have an Apple developer account to accept Apple Pay payments.
 
-### [Creating merchant ID](apple-pay.md#creating-merchant-id)
+### [Creating Merchant ID](apple-pay.md#creating-merchant-id)
 
 Merchant needs to have a developer account in Apple.
 
@@ -29,8 +29,6 @@ Merchant needs to have a developer account in Apple.
 #### **2.** Go to the Certificates, IDs & Profiles section
 
 ![](../.gitbook/assets/creating-merchant-id.png)
-
-
 
 #### 3. From “App IDs” dropdown list ![](<../.gitbook/assets/image (11).png>)choose “Merchant IDs”, then click on ![](<../.gitbook/assets/image (14).png>) &#x20;
 
@@ -54,7 +52,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-### [Adding and verifying a domain](apple-pay.md#adding-and-verifying-a-domain)
+### [Adding and Verifying a Domain](apple-pay.md#adding-and-verifying-a-domain)
 
 #### 1. From the Identifiers section, select the merchant ID that you created in the previous step (e.g., “Ottu Apple Pay”).
 
@@ -100,7 +98,7 @@ Ottu will then confirm the completion of the verification.
 
 <figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-### [Creating Apple Pay certificates](apple-pay.md#creating-apple-pay-certificates)
+### [Creating Apple Pay Certificates](apple-pay.md#creating-apple-pay-certificates)
 
 #### **1.** Once again, from your Apple Developer account, go to the Certificates, IDs & Profiles section
 
@@ -153,9 +151,6 @@ After saving, the `PEM Certificate` and `Key File` will be generated automatical
 ## [Creating Apple Payment Processing Certificate](apple-pay.md#creating-apple-payment-processing-certificate)
 
 Ottu empowers businesses with a seamless payment process through Apple Pay across [MPGS](https://docs.ottu.com/user-guide/apple-pay/setup-mpgs), [Cybersource](https://docs.ottu.com/user-guide/apple-pay/setup-cybersource), and KNET gateways. Below, discover the effortless setup process for integrating different payment gateways with Apple Pay through Ottu. Experience simplified payments and enhanced user experience with our seamless integration process.
-
-\
-
 
 {% content-ref url="apple-pay/setup-mpgs.md" %}
 [setup-mpgs.md](apple-pay/setup-mpgs.md)

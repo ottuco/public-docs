@@ -263,7 +263,7 @@ In this tab, the merchant can define the desired webhook behavior for specific p
 * **Delete:** Deletes the defined plugin webhook configuration.
 
 {% hint style="info" %}
-The [webhook\_Url](configuration.md#webhook-url) specified in the [webhook plugin configuration](configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../developer/webhook/payment-notification.md) and [operations](../developer/webhook/operation-notification.md). If we provide values for both the [operation webhook\_url](configuration.md#operations-webhook\_url) and the [webhook\_Url](configuration.md#webhook-url) in the plugin configuration, the system will transmit data to both URLs.
+The webhook\_Url specified in the [webhook plugin configuration](configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../developer/webhook/payment-notification.md) and [operations](../developer/webhook/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
 {% endhint %}
 
 For more information about how and where webhook works in Ottu see [webhook](../developer/webhook/).

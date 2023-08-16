@@ -42,7 +42,7 @@ Merchant needs to have a developer account in Apple.
 
 </div>
 
-#### [**5. Enter the Merchant Information**](apple-pay.md#5.-enter-the-merchant-information)
+#### **5. Enter the Merchant Information**
 
 Fill out the fields, such as display name, description, and so on. The identifier field should include your Ottu installation URL in reverse order; For example, if the domain is `demo.ottu.net`, enter `net.ottu.demo`. Then click `Continue`.
 
@@ -72,7 +72,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 5. On the Ottu side, you should also add a new Apple Pay service and upload the .text file that you downloaded in the previous step, i.e., step 4:
 
-&#x20;   5.1. Log in to the Ottu Dashboard and click on the three dots in the upper right corner to access    the Administration Panel.\
+&#x20;   5.1. Log in to the **Ottu Dashboard** and click on the three dots in the upper right corner to access  the **Administration Panel**.\
 &#x20;   5.2. From the left-hand sidebar, select `Payment Service`.
 
 <figure><img src="../.gitbook/assets/16-1 (1).png" alt=""><figcaption></figcaption></figure>
@@ -87,7 +87,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 <table><thead><tr><th width="233">Field</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>The name that will be displayed in the drop-down menu or any other location where the settings are displayed.</td></tr><tr><td>Code</td><td>A code that identifies the service in APIs, URLs, and other places.</td></tr><tr><td>Apple Merchant Identifier</td><td>The unique identifier that Apple assigns to merchants when they sign up for Apple Pay.</td></tr><tr><td>Display Name</td><td>The name that will be displayed on the payment sheet for Apple transactions</td></tr><tr><td>Domain</td><td>The domain that is configured for Apple Pay. For example, ksa.ottu.dev.</td></tr><tr><td>Domain Verification File</td><td><p>A file that contains a unique code used to verify the ownership of a specific domain name.</p><p>Here you should upload the <code>.text file</code> that you downloaded in the previous step, i.e., <a href="apple-pay.md#4.-download-the-.text-file-and-make-sure-it-is-ready-for-upload-as-you-will-provide-it-to-ottu-later">step 4</a>.</p></td></tr><tr><td>PG</td><td>The payment gateway</td></tr></tbody></table>
 
-&#x20; 5.5. The new Apple Pay service for "merchant.net.ottu.demo" and "demo.ottu.net" has been successfully added.
+&#x20; 5.5. The new Apple Pay service for `merchant.net.ottu.demo` & `demo.ottu.net` has been successfully added.
 
 <figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
@@ -112,7 +112,7 @@ Ottu will then confirm the completion of the verification.
 
 #### 4. Ottu will provide you with a Certificate Signing Request (CSR) file, which you will need in the next step:
 
-&#x20;    4.1. Log in to the **Ottu Dashboard**, go to the **Administration Panel**, then from the left-hand   sidebar, select `Payment Service`.
+&#x20;    4.1. Log in to the **Ottu Dashboard**, go to the **Administration Panel**, then from the left-hand sidebar, select `Payment Service`.
 
 &#x20;    4.2. Select the `payment service` that is associated with your `Merchant ID` & `Merchant Domain`.
 
@@ -140,7 +140,7 @@ If the payment service has not been added previously, follow the instructions ab
 
 &#x20;   7.2. Select the same Apple Pay service that you selected in Step 4.2 under [Step 4](apple-pay.md#4.-ottu-will-provide-you-with-a-certificate-signing-request-csr-file-which-you-will-need-in-the-next).
 
-&#x20;    7.3. Upload the `.CER` file that you downloaded in the previous step (i.e., [step 6](apple-pay.md#6.-click-continue-then-click-on-download-to-get-the-.cer-file.)) to **Apple Pay Identifier CER** and click `Save`.
+&#x20;   7.3. Upload the `.CER` file that you downloaded in the previous step (i.e., [step 6](apple-pay.md#6.-click-continue-then-click-on-download-to-get-the-.cer-file.)) to **Apple Pay Identifier CER** and click `Save`.
 
 <figure><img src="https://lh5.googleusercontent.com/V5lo5Az8NOcdJUcimM028lQvFZhe6iKYDv6swvb3LD88VH1KH7Qkn9EbT5LA0-YId0wb76Tt3UIOxfKLWmhyVp9UDahEzdIJQlyimS8n2RcaxRnapQtXyZ1HWAs4dx8zD07_OuoWmG6qXVLokME84cA" alt=""><figcaption></figcaption></figure>
 

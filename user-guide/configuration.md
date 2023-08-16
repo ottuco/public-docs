@@ -4,7 +4,7 @@
 
 Ottu puts the power of configuration in the hands of merchants, ensuring a hassle-free experience. Our mission is to provide you with seamless configuration options, enabling you to take absolute control like never before! With Ottu, merchants can customize their dashboard, logo, favicon, website URL, email address, phone number, and more. Embrace the power of Ottu and unlock a world of possibilities for your business. Get ready to revolutionize your experience with our user-friendly tools and elevate your online presence to new heights!
 
-## [Global Configuration walkthrough](configuration.md#global-configuration-walkthrough)
+## [Global Configuration Walkthrough](configuration.md#global-configuration-walkthrough)
 
 The global settings can be reached from the Ottu Dashboard > Administration Panel > Config.
 
@@ -88,7 +88,7 @@ If you have multiple Ottu installations and one PG (Payment Gateway), one of the
 
 Empower your online payment management with Ottu's remarkable configuration options. Let positive impressions, seamless transactions, and engaging experiences define your journey to success.
 
-### [**URL shortener configurations**](configuration.md#url-shortener-configurations)
+### [**URL Shortener Configurations**](configuration.md#url-shortener-configurations)
 
 To configure the URL Shortener, go to the Ottu Dashboard > Administration Panel > Config > URL Shortener Configurations.
 
@@ -105,7 +105,7 @@ Next, click on `Add URL Shortener Configuration`.
 * **User & Password:** Enter the credentials for authentication.
 * **Is global:** Check this option if you want this configuration to apply to all cases.
 
-## [**Transaction report generation Configuration**](configuration.md#transaction-report-generation-configuration)
+## [**Transaction Report Generation Configuration**](configuration.md#transaction-report-generation-configuration)
 
 To access the Configuration of Transaction Report Generator, navigate to Ottu Dashboard > Administration Panel > Report > Periodic Transaction Report Config.
 
@@ -125,7 +125,7 @@ To access the Configuration of Transaction Report Generator, navigate to Ottu Da
 * **Email notification template:** The template used for email notifications.
 * **File name prefix:** The filename prefix can be used to specify the format in which reports are saved.
 
-### [Periodic Transaction report fields](configuration.md#periodic-transaction-report-fields)
+### [Periodic Transaction Report Fields](configuration.md#periodic-transaction-report-fields)
 
 To include a new field in the report, navigate to the **Periodic Transaction Report Fields** tab.
 
@@ -192,7 +192,7 @@ The required fields are categorized based on the source type from which the data
 
 </details>
 
-## [**Webhook configuration**](configuration.md#webhook-configuration)
+## [**Webhook Configuration**](configuration.md#webhook-configuration)
 
 A [webhook](../developer/webhook/) is an HTTP endpoint that is used to receive notifications about events that occur in the Ottu system. For example, if a payment is created, Ottu can send a webhook notification to the merchant's server with the details of the payment. The merchant can then use this information to update their systems. Enhance your Ottu experience with our powerful Webhook Configuration. Take advantage of API payloads, SSL certificate verification options, error notifications, and more to optimize your webhook usage. Let's explore the exciting options you can customize:
 

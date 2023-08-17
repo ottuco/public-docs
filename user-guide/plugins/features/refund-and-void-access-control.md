@@ -6,10 +6,7 @@ At Ottu, our cutting-edge online payment management systems (OPMS), we have esta
 This convenient feature will be activated by adding the permissions approval plugin. Just head to Ottu Dashboard > Administration Panel > Plugins > Installed Plugin.
 {% endhint %}
 
-{% hint style="info" %}
-* However, to ensure accountability and security, only a single user should be authorized to approve or reject refund/void permission requests.
-* If you are worried about pending requests cluttering your system, then fear no anymore! By default, all requests will automatically be canceled after 48 hours. And guess what? You can even customize this expiration time from the backend to suit your needs!
-{% endhint %}
+However, to ensure accountability and security, only a single user should be authorized to approve or reject **refund/void** permission requests. If you are worried about pending requests cluttering your system, then fear no anymore! By default, all requests will automatically be canceled after 48 hours. And guess what? You can even customize this expiration time from the backend to suit your needs!
 
 ## [Refund & Void Access Control W**alkthrough**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/408/user-guide/plugins/features/refund-and-void-access-control#refund-and-void-access-control-walkthrough)
 

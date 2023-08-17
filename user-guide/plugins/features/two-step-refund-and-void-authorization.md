@@ -18,7 +18,7 @@ The checker has the authority to proceed directly with the refund or void operat
 
 <figure><img src="../../../.gitbook/assets/installed_plugins.png" alt=""><figcaption></figcaption></figure>
 
-Then, add the Operation Approval to the Plugins window. Later on the name will change to Two-Step Refund & Void Authorization.&#x20;
+Then, add the Operation Approval to the Plugins window.&#x20;
 
 <figure><img src="../../../.gitbook/assets/activate_request.png" alt=""><figcaption></figcaption></figure>
 

@@ -10,7 +10,7 @@ Ottu offers a convenient [payment gateway](payment-gateway.md) with preconfigure
 
 ## [Currency Configuration Page](currencies.md#currency-configuration-page)
 
-Once you access the Ottu Dashboard, click on the three dots positioned in the right corner of the page. This action will lead you to the Administration Panel, where you'll find a range of exciting options. Within the Administration Panel, you'll discover the Currency Tab awaiting your attention.
+Once you access the Ottu Dashboard, click on the three dots positioned in the right corner of the page. This action will lead you to the **Administration Panel**, where you'll find a range of exciting options. Within the Administration Panel, you'll discover the Currency Tab awaiting your attention.
 
 <figure><img src="https://lh6.googleusercontent.com/urGtHZvozcu5GUVIX5V3oUPURSXZfMp6e91ZopAcTYW2bd0YMz9zt4tcxwxzFvUV5fsYGjBJ-1vizF2YQWZrVRJ-zZs2raf-La9OXa0es7B8fVtMCJqtbt3h6pGU0lGPEw1HjoKmB-FQDfWTcucudow" alt=""><figcaption></figcaption></figure>
 
@@ -18,15 +18,15 @@ There are three types of currency configuration:
 
 * [Currencies](currencies.md#currencies) (adding and managing different currencies)
 * [Currency exchanges](currencies.md#currency-exchanges) (setting up currency exchange)
-* [Exchanges config](currencies.md#exchange-configuration) (defining currency rules for the payment gateway)
+* [Exchanges config](currencies.md#exchange-configuration) (defining currency rules for the [payment gateway](payment-gateway.md))
 
-Each type serves a distinct purpose and aspect in enabling smooth and efficient transactions. These configurations empower merchants to navigate the complexities of multiple currencies, facilitate currency exchanges, and define specific currency rules for [payment gateways](payment-gateway.md).
+Each type serves a distinct purpose and aspect in enabling smooth and efficient transactions. These configurations empower merchants to navigate the complexities of multiple currencies, facilitate currency exchanges, and define specific currency rules for payment gateways.
 
 <figure><img src="https://lh3.googleusercontent.com/HgVaKDsdgw828Tw2IJUEIDfUPVa6WXJHG25iau9W7-N-dcobfpeEuLeM3oDo0LWW6-qYP83Ltq4W9ETpeE03IAPKwZ-WPAI8FyHaS24xf6vM_gR_O8F4vL8yzpZUZEVy0f-5jmD58RQ43_dZqJjOmmg" alt=""><figcaption></figcaption></figure>
 
 ### [Currencies](currencies.md#currencies)
 
-In Ottu “dashboard”, you can find a wide range of currencies to choose from. If you wish to add a new currency, just follow these simple steps:
+In Ottu dashboard, you can find a wide range of currencies to choose from. If you wish to add a new currency, just follow these simple steps:
 
 **Step 1:**
 
@@ -80,7 +80,7 @@ Provide the necessary information and click on the `Save` button.
 
 <figure><img src="https://lh3.googleusercontent.com/39dzntap3KPTfkspXcLONjGElnLmEFfTtHEpouMTLlt4HqYSIhJ6DxwrtvXuWJMyQIrxlzXOnz_wN-T-nABT9TPYWCZ2mOeodX0o9LScIr8NmEYpqG_Otxh230ct_LEPYgrXpFbrVInvZCnwv0X5fBQ" alt=""><figcaption></figcaption></figure>
 
-**Parameters Description**
+#### Field Descriptions
 
 <table><thead><tr><th width="178">Field</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>This field is used to identify the <a href="currencies.md#exchange-configuration">exchange configuration</a>.</td></tr><tr><td>Default currency</td><td>The default currency of the <a href="payment-gateway.md">payment gateway</a>.</td></tr><tr><td>Currencies</td><td>These are the payment currencies that the merchant wants to deal with.</td></tr><tr><td>Fee type</td><td><p>There are two types of fees, <strong>Fixed fees</strong> and <strong>Percent fees</strong>.</p><p><strong>Fix fee:</strong> A predetermined amount that is added to the payment.</p><p><strong>Percent fee:</strong> An additional amount calculated based on a percentage of the payment.</p></td></tr><tr><td>Fees Description</td><td>Identification of the fee according to the merchant’s purposes</td></tr><tr><td>Work as</td><td><p>The exchange rate can be determined in two ways: <strong>Online</strong> or <strong>Local</strong>.</p><p><strong>Online:</strong> Utilizing online services to define the exchange rate.</p><p><strong>Local:</strong> Allows the merchant to manually define the exchange rate.</p></td></tr><tr><td>Fix fee</td><td>Fixed amount</td></tr><tr><td>Percentage fee</td><td>Dynamic amount</td></tr><tr><td>Charge default currency</td><td>When this event is activated, a fee will be added to the original amount, even if the payment transaction is conducted in the default currency of the <a href="payment-gateway.md">payment gateway</a>.</td></tr></tbody></table>
 

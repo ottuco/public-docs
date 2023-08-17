@@ -4,7 +4,7 @@ Ottu introduces the Two-Step Refund & Void Authorization feature. With this feat
 
 ## [Definition of Maker and Checker](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/407/user-guide/plugins/features/two-step-refund-and-void-authorization#definition-of-maker-and-checker)
 
-**Maker:** The user who has the required permissions (i.e., Can do refund / Can do void) to submit a request to check for refund/void operation. See the [permission approval process](permission-approval-process.md) for more information.\
+**Maker:** The user who has the required permissions (i.e., Can do refund / Can do void) to submit a request to check for refund/void operation. See the [Refund & Void Access Control](refund-and-void-access-control.md) for more information.\
 **Checker:** The user who has the authority to approve or reject a submitted request.
 
 {% hint style="info" %}
@@ -27,7 +27,7 @@ Then, add the Operation Approval to the Plugins window. Later on the name will c
 
 <figure><img src="../../../.gitbook/assets/Assign_checker (1).png" alt=""><figcaption></figcaption></figure>
 
-* A void, or a refund operation request, will remain `Pending` until the checker makes his decision of `approval` or `rejection`. Then the operation request will transit to `Rejection` state or `Done` state. Within the `Approval` state, any user with permission could trigger an attempt by retry button until it is succeeded or turns to `Expired` state once the expiration time gets passed.
+* A void, or a refund operation request, will remain `Pending` until the checker makes his decision of `approval` or `rejection`. Then the operation request will transit to `Rejected` state or `Done` state. Within the `Approved` state, any user with permission could trigger an attempt by `Retry` button until it is succeeded or turns to `Expired` state once the expiration time gets passed.
 * Any operation request in the `Pending` state can be canceled by all users except the checker from the [operation request table](two-step-refund-and-void-authorization.md#operation-request-table).
 
 The operation request table is automatically synced and updated.
@@ -40,7 +40,7 @@ The operation request table is automatically synced and updated.
   The below message should be displayed\
   **(Requested {Operation} is pending for approval).**
 * If the checker somehow approves a `Canceled` request, an error message will be returned indicating that the request has been `Canceled`
-* Once the checker approves the request, the operation will be executed automatically, and the state will transition to the `done` state. If the execution fails, the state will change to `Manual Action Required` state, and the maker will be **notified** that manual action is required.
+* Once the checker approves the request, the operation will be executed automatically, and the state will transition to the `Done` state. If the execution fails, the state will change to `Manual Action Required` state, and the maker will be **notified** that manual action is required.
 * If the state transitioned to `Manual Action Required`, and no changes are made within the specified expiration time, the transaction state will transition to the `Expired` state.
 
 {% hint style="info" %}
@@ -52,7 +52,7 @@ The default time will be 48 hrs, defined from backend.
 * Upon completion of the process, an email notification will be triggered.
   * If the transaction transitioned to the `Manual Action Required` state, the maker will be notified.
   * If the refund or void operation transitioned to the `Done` state, an email will be sent to the customer. The maker can also receive this email by enabling the required configuration—to enable this configuration: go to the Ottu Dashboard > Administration Panel > Unit > Unit Configs, then scroll down to the BCC initiator checkbox and check it.
-  * If the refund or void operation transitioned to the `rejection` state, an email will only be sent to the maker.
+  * If the refund or void operation transitioned to the `Rejected` state, an email will only be sent to the maker.
 
 ## [**Operation request table**](two-step-refund-and-void-authorization.md#operation-request-table)
 

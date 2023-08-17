@@ -9,8 +9,8 @@ layout: landing
 
 ####
 
-{% content-ref url="permission-approval-process.md" %}
-[permission-approval-process.md](permission-approval-process.md)
+{% content-ref url="refund-and-void-access-control.md" %}
+[refund-and-void-access-control.md](refund-and-void-access-control.md)
 {% endcontent-ref %}
 
 {% content-ref url="two-step-refund-and-void-authorization.md" %}

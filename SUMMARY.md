@@ -13,7 +13,7 @@
 * [Payment Tracking](user-guide/payment-tracking.md)
 * [Plugins](user-guide/plugins/README.md)
   * [Features](user-guide/plugins/features/README.md)
-    * [Permission approval process](user-guide/plugins/features/permission-approval-process.md)
+    * [Refund & Void Access Control](user-guide/plugins/features/refund-and-void-access-control.md)
     * [Two-Step Refund & Void Authorization](user-guide/plugins/features/two-step-refund-and-void-authorization.md)
 * [Integration](user-guide/integration.md)
 * [Configuration](user-guide/configuration.md)

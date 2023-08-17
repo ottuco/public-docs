@@ -16,75 +16,73 @@ Unlock the full potential of your [e-commerce ](plugins/#e-commerce)suites with 
 
 Ottu makes it simple for merchants to add and connect plug-ins to their e-commerce suites. We provide easy-to-follow guidelines and a wide range of plug-ins designed for popular e-commerce platforms such as Shopify, WordPress - WooCommerce, PrestaShop, OpenCart, Magento, and NopCommerce. Seamlessly integrate with your preferred platform and elevate your online business.
 
-## [Shopify plugin](integration.md#shopify-plugin)
+## [Enhance Your Shopify Store with Ottu](integration.md#enhance-your-shopify-store-with-ottu)
 
-Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, Shopify is a commerce platform that offers a way to quickly launch your dream business and start selling to your customers.If you are a Shopify merchant, Ottu platform solution will be the best choice for you. Start integrating your ecommerce platform with Ottu platform via Shopify plugin and begin utilizing the useful features of Ottu platform.
+If you are a Shopify merchant, Ottu, our advanced online payment management system (OPMS), is the ultimate choice for you. Experience the future of transaction management with Ottu Shopify integration. Boost your efficiency, gain valuable insights, and take control of your business's financial success! Shopify, a subscription-based software, empowers entrepreneurs to launch their online stores and sell their products effortlessly. You can even sell in physical locations using Shopify POS. With Ottu's Shopify plugin, you can take your business to the next level. Integrate your Shopify store with Ottu and unlock a host of exceptional features that will enhance your customers' shopping experience. Don't miss out on the opportunity to transform your business.
 
-## [**Ottu payment app installation guide for Shopify merchants**](integration.md#ottu-payment-app-installation-guide-for-shopify-merchants)
+### [Install the Ottu Payment App for Shopify Merchants: Step-by-Step Guide](integration.md#install-the-ottu-payment-app-for-shopify-merchants-step-by-step-guide)
 
-#### [Step 1](integration.md#step-1)
+#### Step 1: Access the Ottu App Listing Page
 
-Go to the Ottu App Listing Page-[ https://apps.shopify.com/debit-credit-cards](https://apps.shopify.com/debit-credit-cards) and Login to your Shopify account with your registered email ID and password:
+Visit the [Ottu App Listing Page](https://apps.shopify.com/debit-credit-cards) and log in to your Shopify account.
 
 ![](<../.gitbook/assets/1 (14).png>)
 
-#### [Step 2](integration.md#step-2)
+#### Step 2: Select Your Stores
 
-After logging in, select the stores that you have in your Shopify account.
+Once logging in, select the stores where you want to install the payment app.
 
 ![](<../.gitbook/assets/2 (15).png>)
 
-#### [Step 3](integration.md#step-3)
+#### Step 3: Install the Payment App
 
-&#x20;After selecting the store where you want to install the payment app, click on “Add app”.
+Click on `Add app` and then `Install app`.
 
 ![](<../.gitbook/assets/3 (14).png>)
 
-#### [Step 4](integration.md#step-4)
-
-After adding the app, you will be redirected to the below page. Click on “Install app”.
-
 ![](<../.gitbook/assets/4 (10) (1).png>)
 
-#### [Step 5](integration.md#step-5)
+#### Step 4: Redirecting to Ottu's Page
 
-After clicking install app, you will be redirected to the Ottu Page as below:
+Upon clicking `Install app`, you will be directed to the **Ottu’s Page**.
 
 ![](../.gitbook/assets/5.png)
 
-#### [Step 6](integration.md#step-6)
+#### Step 5: Enter Your Ottu Installation URL
 
-Enter your Ottu installation URL that will be provided by the Ottu Onboarding team after signing the agreement. An example of the URL is [https://pay.yourdomain.com](https://pay.yourdomain.com).
+Enter your Ottu installation URL, which will be provided by the Ottu Onboarding team after signing the agreement. An example URL would be https://pay.yourdomain.com.
 
 ![](<../.gitbook/assets/6 (10).png>)
 
-#### [Step 7](integration.md#step-7)
+#### Step 6: Select Preferred Payment Methods
 
-Select the payment methods that you want to display to your customers from the list and click on “Activate Ottu”.
+From the list provided, select the [payment methods](payment-methods.md) that you want to display to your customers. Then, click on `Activate Ottu`.
 
 ![](<../.gitbook/assets/7 (1) (2).png>)
 
-#### [Step 8](integration.md#step-8)
+#### Step 7: Ottu App Integration
 
-Finally, Ottu App appears in your payment settings as below.
+Voilà! The Ottu App now appears in your payment settings.
 
 ![](../.gitbook/assets/8.png)
 
-### [Ottu portal transactions interface for Shopify.](integration.md#ottu-portal-transactions-interface-for-shopify.)
+Experience seamless payments with the Ottu Payment App for Shopify. Install it today and enhance your customers with a convenient and secure payment experience. Get started now!
 
-From the Ottu portal under the Shopify Tab, go to the transaction option.\
-From transaction page, merchant can get the following information for whole transactions:
+### [Streamlined Transaction Interface for Shopify](integration.md#streamlined-transaction-interface-for-shopify)
 
-* Total generated
-* Total received
-* Net balance
+With just a few clicks, you can access a world of valuable transaction insights for your Shopify stores. From the Ottu Portal > head to the Shopify Tab > and select the Transaction Option.
 
 ![](<../.gitbook/assets/4 (6) (1).png>)
 
+Gain a comprehensive overview of your business's financial performance with these key metrics:
+
+* **Total Generated:** Track the total amount generated from your transactions.
+* **Total Received:** Monitor the total funds successfully received from your transactions.
+* **Net Balance:** Stay on top of your finances by keeping an eye on your net balance.
+
 ![](../.gitbook/assets/10.png)
 
-In the table at the bottom of the page, you can find details about each transaction process, as well as the status of each one. The state can be varied as follows:\
-Paid state, failed state, attempted state and created state.
+Dive deeper into your transaction details using the table located at the bottom of the page. This comprehensive overview not only displays information about each transaction process but also showcases the state of each transaction. The transaction states you may encounter include: Paid, failed, attempted, and created. See the [payment transaction states](payment-tracking.md#payment-transaction-state-and-payment-attempt-state) for more information.
 
 ![](<../.gitbook/assets/11 (3).png>)
 

@@ -13,8 +13,8 @@ layout: landing
 [permission-approval-process.md](permission-approval-process.md)
 {% endcontent-ref %}
 
-{% content-ref url="operation-request-flow.md" %}
-[operation-request-flow.md](operation-request-flow.md)
+{% content-ref url="two-step-refund-and-void-authorization.md" %}
+[two-step-refund-and-void-authorization.md](two-step-refund-and-void-authorization.md)
 {% endcontent-ref %}
 
 

@@ -1,6 +1,6 @@
 # Permission approval process
 
-To perform [operation requests](operation-request-flow.md), a Staff user must obtain approval for **do refund/void permissions**. Conversely, a Super user is not subject to this permission flow and can perform operation requests without requiring approval for **do refund/void permissions**.
+To perform [operation requests](two-step-refund-and-void-authorization.md), a Staff user must obtain approval for **do refund/void permissions**. Conversely, a Super user is not subject to this permission flow and can perform operation requests without requiring approval for **do refund/void permissions**.
 
 {% hint style="success" %}
 This feature will be activated by adding permissions approval plugin\

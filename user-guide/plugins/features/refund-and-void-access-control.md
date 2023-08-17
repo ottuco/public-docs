@@ -8,7 +8,7 @@ This convenient feature will be activated by adding the permissions approval plu
 
 However, to ensure accountability and security, only a single user should be authorized to approve or reject **refund/void** permission requests. If you are worried about pending requests cluttering your system, then fear no anymore! By default, all requests will automatically be canceled after 48 hours. And guess what? You can even customize this expiration time from the backend to suit your needs!
 
-## [Refund & Void Access Control W**alkthrough**](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/408/user-guide/plugins/features/refund-and-void-access-control#refund-and-void-access-control-walkthrough)
+## [Refund & Void Access Control W**alkthrough**](refund-and-void-access-control.md#refund-and-void-access-control-walkthrough)
 
 Access the Ottu Dashboard > Navigate to the Administration Panel > Go to the User section and select Users.
 
@@ -28,7 +28,7 @@ Move them from the **Available User Permissions** window to the **Chosen User Pe
 
 <figure><img src="../../../.gitbook/assets/permissions.png" alt=""><figcaption></figcaption></figure>
 
-## [Table of Permission Requests](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/408/user-guide/plugins/features/refund-and-void-access-control#table-of-permission-requests)
+## [Table of Permission Requests](refund-and-void-access-control.md#table-of-permission-requests)
 
 In the Ottu Dashboard, under the **Tickets Tab**, there is a **Permissions Requests Table** where authorized users are listed. A permission request will be sent to the authorized user via this table, and the authorized user can then approve or reject the request, as illustrated below.
 

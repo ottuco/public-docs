@@ -58,7 +58,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-#### 2. Click on `Add Domain`
+#### 2. Click on Add Domain
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -72,7 +72,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 5. On the Ottu side, you should also add a new Apple Pay service and upload the .text file that you downloaded in the previous step, i.e., step 4:
 
-&#x20;   5.1. Log in to the **Ottu Dashboard** and click on the three dots in the upper right corner to access  the **Administration Panel**.\
+&#x20;   5.1. Log in to the **Ottu Dashboard** and click on the three dots in the upper right corner to access the **Administration Panel**.\
 &#x20;   5.2. From the left-hand sidebar, select `Payment Service`.
 
 <figure><img src="../.gitbook/assets/16-1 (1).png" alt=""><figcaption></figcaption></figure>
@@ -82,6 +82,8 @@ Fill out the fields, such as display name, description, and so on. The identifie
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;  5.4. Fill out the fields and click `Save`.
+
+#### Field Descriptions
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 

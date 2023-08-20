@@ -4,7 +4,7 @@
 
 At Ottu, we believe that your success is our success. That's why our dashboard is meticulously crafted to support your growth, enhance your operations, and elevate your business to new heights. Discover trends, identify opportunities, and stay ahead of the curve with data-driven guidance right at your fingertips. Our dashboard is a user-friendly and intuitive workspace designed to empower all Ottu clients with a robust payment pipeline, saving your time and effort as you manage your payments efficiently. With a comprehensive suite of tools and features, clients can effortlessly create, monitor, and track payments. All in one place. But that's not all—As soon as you log in, the Ottu dashboard welcomes you warmly with insightful analytics derived from your payment workloads, offering valuable insights into the payment pipeline and guiding you toward your next steps upon login. Embrace efficiency, drive success, and take control of your payment operations today. Your success starts here!
 
-## [Transaction table ](payment-tracking.md#transaction-table)
+## [Transaction Table](payment-tracking.md#transaction-table)
 
 Ottu ensures a seamless experience for merchants by providing an easily accessible transaction table integrated with each installed [plugin](plugins/). This user-friendly feature grants merchants full visibility into their transaction history and details. Through the transaction table, users can effortlessly perform various payment [operations](../developer/operations.md#external-operations), including voiding, refunding, and capturing, ensuring easy management of payment activities. The transaction table provides a centralized hub for efficient management.
 
@@ -12,7 +12,7 @@ Ottu ensures a seamless experience for merchants by providing an easily accessib
 To access the transaction table, simply navigate to the “Transaction Tab” located under each installed [plugin](https://docs.ottu.com/user-guide/plugins).
 {% endhint %}
 
-### [Proxy fields ](payment-tracking.md#proxy-fields)
+### [Proxy Fields](payment-tracking.md#proxy-fields)
 
 Ottu enhances the merchant experience by providing a dedicated transaction table for each plugin, enabling seamless monitoring of transactions. With Ottu's innovative approach, merchants gain the flexibility to customize the transaction table's headers, allowing for quick and effortless access to the desired information. This empowering feature ensures merchants can efficiently navigate and retrieve the necessary details, optimizing their transaction management process.&#x20;
 
@@ -25,7 +25,7 @@ Ottu enhances the merchant experience by providing a dedicated transaction table
 
 <figure><img src="../.gitbook/assets/activate proxy fields.png" alt=""><figcaption></figcaption></figure>
 
-#### [Header list ](payment-tracking.md#header-list)
+#### [Header List](payment-tracking.md#header-list)
 
 To manage the headers, follow these steps:
 
@@ -35,13 +35,13 @@ To manage the headers, follow these steps:
 
 <figure><img src="../.gitbook/assets/Add or remove headers (1).png" alt=""><figcaption></figcaption></figure>
 
-#### [Child table transaction ](payment-tracking.md#child-table-transaction)
+#### [Child Table Transaction](payment-tracking.md#child-table-transaction)
 
 [Child transactions](payment-tracking.md#child-payment-transaction) refer to transactions generated from capture, refund, or void operations (i.e., [external operations](../developer/operations.md#external-operations)). These transactions are linked to the main origin payment transaction, known as the [Parent Transaction](payment-tracking.md#parent-payment-transaction), and are displayed under them accordingly. The headers of each child transaction inherit from the parent transaction's headers, ensuring consistency and easy reference.
 
 <figure><img src="../.gitbook/assets/Child proxy header (1).png" alt=""><figcaption></figcaption></figure>
 
-### [Amount definitions and calculation mechanism](payment-tracking.md#amount-definitions-and-calculation-mechanism)&#x20;
+### [Amount Definitions & Calculation Mechanism](payment-tracking.md#amount-definitions-and-calculation-mechanism)
 
 Transaction tables offer the flexibility to add or remove multiple headers. Take a look at the [proxy fields](payment-tracking.md#proxy-fields) for more options. Amount headers are intelligently categorized under different titles, ensuring clarity on their specific roles within the payment process flow.
 
@@ -97,30 +97,30 @@ It is applicable only for authorized payments that have not been fully or partia
 * **Void:** It will nullify (or void) the entire amount, including the associated fee, if any.
 {% endhint %}
 
-## [Dashboard charts](payment-tracking.md#dashboard-charts)
+## [Dashboard Charts](payment-tracking.md#dashboard-charts)
 
 Now, merchants can effortlessly track and monitor their overall transactions and sales progress in a single, convenient location. With our user-friendly interface, merchants gain unprecedented visibility into their business performance. Stay informed with real-time updates and make the right decisions. All in one centralized hub. Our innovative charts provide a clear and comprehensive overview of your transactions and sales progress, empowering you to identify trends, analyze patterns, and seize new opportunities. Don't miss out on the power of data-driven insights. Experience the difference firsthand!\
 Take advantage of our cutting-edge Dashboard Charts feature and revolutionize the way you track and monitor your business. Contemplate these snapshots captured directly from our intuitive dashboard, showcasing a variety of insightful and actionable charts.
 
-### [Total transactions chart](payment-tracking.md#total-transactions-chart)
+### [Total Transactions Chart](payment-tracking.md#total-transactions-chart)
 
 Shows the total value and overall rate of success across different periods.
 
 ![](<../.gitbook/assets/1 (2) (1).png>)
 
-### [Average transaction size chart](payment-tracking.md#average-transaction-size-chart)
+### [Average Transaction Size Chart](payment-tracking.md#average-transaction-size-chart)
 
 <figure><img src="../.gitbook/assets/AverageTransaction (1).png" alt=""><figcaption></figcaption></figure>
 
-### [Product wise sales chart](payment-tracking.md#product-wise-sales-chart)
+### [Product Wise Sales Chart](payment-tracking.md#product-wise-sales-chart)
 
 ![](<../.gitbook/assets/3 (4).png>)
 
-### [Recent orders dynamic report](payment-tracking.md#recent-orders-dynamic-report)
+### [Recent Orders Dynamic Report](payment-tracking.md#recent-orders-dynamic-report)
 
 ![](<../.gitbook/assets/4 (4) (1).png>)
 
-## [ Payment transaction ](payment-tracking.md#payment-transaction)
+## [ Payment Transaction](payment-tracking.md#payment-transaction)
 
 Payment transactions form the backbone of every successful merchant's operations. These vital pieces of operations empower merchants to effortlessly create payments and execute other actions such as refunds, voids, and cancellations. To ensure optimal efficiency and convenience, transactions are categorized into two types:
 
@@ -131,13 +131,13 @@ Payment transactions form the backbone of every successful merchant's operations
 
     Designed specifically to streamline subsequent operations triggered by merchants, these transactions seamlessly handle tasks that arise after initiating the payment.
 
-### [Payment transactions states](payment-tracking.md#payment-transactions-states)
+### [Payment Transactions States](payment-tracking.md#payment-transactions-states)
 
 Payment Transaction States play a pivotal role in empowering merchants to maintain an impeccable audit trail of the transaction process. These states are represented by flags, providing valuable insights into each stage of the payment journey. With a clear understanding of the transaction's current state, merchants can ensure streamlined [operations](../developer/operations.md#external-operations) and enhanced financial oversight. Stay informed, stay in control, and elevate your financial leadership with the power of transaction state tracking. Our advanced OPMS combines simplicity, accuracy, and security to elevate your business operations. Experience hassle-free payment processing, maximize efficiency, reduce errors, and boost your business's success.
 
-### [**States of parent payment transaction**](payment-tracking.md#states-of-parent-payment-transaction)
+### [**States of Parent Payment Transaction**](payment-tracking.md#states-of-parent-payment-transaction)
 
-<table><thead><tr><th width="138" align="center">State</th><th width="268">          State Description</th><th width="128" align="center">Actor</th><th>                  Note</th></tr></thead><tbody><tr><td align="center"><strong>Created</strong></td><td>The payment has been initiated successfully.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>Pending</strong></td><td>The transaction is awaiting the customer to complete the payment process, i.e., the payment transaction has reached a stage where the customer has interacted with it. This interaction could involve the customer having seen the payment information, accessed the payment link page, or being redirected to the Ottu checkout page. In essence, it is awaiting further action, such as confirmation or completion.</td><td align="center">Customer</td><td>This state is only available with the installed Ottu plugin and utilizes the checkout page.</td></tr><tr><td align="center"><strong>Attempted</strong></td><td>This state is assigned to payments that require a retry process when there is a failure at the customer's end. The payment remains in this state until it is successfully processed, reaches its expiration date, or is canceled by the merchant. Alternatively, payments can be marked as invalid if certain crucial configurations of the payment gateway are modified, such as the removal of currency exchange support.</td><td align="center">Customer</td><td><p>Attempted status has different states.</p><p><br></p><p>Please note that for payments that can only be attempted once, there is no "Attempted" state; Instead, they will be either in a "Failed" or "Authorized" state.</p></td></tr><tr><td align="center"><strong>Authorized</strong></td><td>The customer has securely entered his card details, and the bank has allocated the payment amount, but it is not deducted yet.</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Paid</strong></td><td>The bank has deducted the payment amount successfully.</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Failed</strong></td><td>The transaction encountered an error and couldn't be completed.</td><td align="center">Customer</td><td>This state is specific to payment transactions that can only be attempted once.</td></tr><tr><td align="center"><strong>Canceled</strong></td><td>The merchant has canceled the payment, and no further action can be taken.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>Expired</strong></td><td>The payment's lifespan has ended (i.e., expired).</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Invalid</strong></td><td>The payment is no longer available due to changes in the payment configuration, currency exchange configuration, or other unforeseen events.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>COD</strong></td><td>Cash on Delivery</td><td align="center">Customer</td><td><br></td></tr></tbody></table>
+<table><thead><tr><th width="138" align="center">State</th><th width="268">          State Description</th><th width="128" align="center">Actor</th><th>                  Note</th></tr></thead><tbody><tr><td align="center"><strong>Created</strong></td><td>The payment has been initiated successfully.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>Pending</strong></td><td>The transaction is awaiting the customer to complete the payment process, i.e., the payment transaction has reached a stage where the customer has interacted with it. This interaction could involve the customer having seen the payment information, accessed the payment link page, or being redirected to the Ottu checkout page. In essence, it is awaiting further action, such as confirmation or completion.</td><td align="center">Customer</td><td>This state is only available with the installed Ottu plugin and utilizes the checkout page.</td></tr><tr><td align="center"><strong>Attempted</strong></td><td>This state is assigned to payments that require a retry process when there is a failure at the customer's end. The payment remains in this state until it is successfully processed, reaches its expiration date, or is canceled by the merchant. Alternatively, payments can be marked as invalid if certain crucial configurations of the payment gateway are modified, such as the removal of currency exchange support.</td><td align="center">Customer</td><td><ul><li>Attempted status has different states.</li></ul><ul><li>Please note that for payments that can only be attempted once, there is no <code>attempted</code> state; Instead, they will be either in a <code>failed</code> or <code>authorized</code> state.</li></ul></td></tr><tr><td align="center"><strong>Authorized</strong></td><td>The customer has securely entered his card details, and the bank has allocated the payment amount, but it is not deducted yet.</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Paid</strong></td><td>The bank has deducted the payment amount successfully.</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Failed</strong></td><td>The transaction encountered an error and couldn't be completed.</td><td align="center">Customer</td><td>This state is specific to payment transactions that can only be attempted once.</td></tr><tr><td align="center"><strong>Canceled</strong></td><td>The merchant has canceled the payment, and no further action can be taken.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>Expired</strong></td><td>The payment's lifespan has ended (i.e., expired).</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Invalid</strong></td><td>The payment is no longer available due to changes in the payment configuration, currency exchange configuration, or other unforeseen events.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>COD</strong></td><td>Cash on Delivery</td><td align="center">Customer</td><td><br></td></tr></tbody></table>
 
 ### [**States of child payment transaction**](payment-tracking.md#states-of-child-payment-transaction)
 

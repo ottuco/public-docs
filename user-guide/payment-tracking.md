@@ -2,95 +2,99 @@
 
 ## [Overview](payment-tracking.md#overview)
 
-Ottu dashboard is an intuitive workspace composed of a set of tools, to empower all Ottu clients\
-to have a proper payment pipeline, create, monitor, and track payments, the dashboard greets clients with analytical information captured from payment workload(s), to give the client an insight about the payment pipeline and how could proceed with next-login.
+At Ottu, we believe that your success is our success. That's why our dashboard is meticulously crafted to support your growth, enhance your operations, and elevate your business to new heights. Discover trends, identify opportunities, and stay ahead of the curve with data-driven guidance right at your fingertips. Our dashboard is a user-friendly and intuitive workspace designed to empower all Ottu clients with a robust payment pipeline, saving your time and effort as you manage your payments efficiently. With a comprehensive suite of tools and features, clients can effortlessly create, monitor, and track payments. All in one place. But that's not all—As soon as you log in, the Ottu dashboard welcomes you warmly with insightful analytics derived from your payment workloads, offering valuable insights into the payment pipeline and guiding you toward your next steps upon login. Embrace efficiency, drive success, and take control of your payment operations today. Your success starts here!
 
 ## [Transaction table ](payment-tracking.md#transaction-table)
 
-All transaction history and details are easily accessible for merchants using Ottu's transaction table, which is provided with each [plugin](plugins/) installed. \
-Through the transaction table, users can proceed with payment [operations](../developer/operations.md) such as void, refund, and capture.
+Ottu ensures a seamless experience for merchants by providing an easily accessible transaction table integrated with each installed [plugin](plugins/). This user-friendly feature grants merchants full visibility into their transaction history and details. Through the transaction table, users can effortlessly perform various payment [operations](../developer/operations.md#external-operations), including voiding, refunding, and capturing, ensuring easy management of payment activities. The transaction table provides a centralized hub for efficient management.
 
 {% hint style="info" %}
-The transaction table is located in the transaction tab under each installed [plugin](plugins/).
+To access the transaction table, simply navigate to the “Transaction Tab” located under each installed [plugin](https://docs.ottu.com/user-guide/plugins).
 {% endhint %}
 
 ### [Proxy fields ](payment-tracking.md#proxy-fields)
 
-Ottu creates a transaction table for each [plugin](plugins/) in order to allow merchant(s) to monitor their transactions. \
-Ottu offers an amazing method of adding or removing transaction table’s headers, by using this method, the merchant(s) are empowered to find the required information quickly and easily.&#x20;
+Ottu enhances the merchant experience by providing a dedicated transaction table for each plugin, enabling seamless monitoring of transactions. With Ottu's innovative approach, merchants gain the flexibility to customize the transaction table's headers, allowing for quick and effortless access to the desired information. This empowering feature ensures merchants can efficiently navigate and retrieve the necessary details, optimizing their transaction management process.&#x20;
 
 #### [How to activate headers setting on the dashboard](payment-tracking.md#how-to-activate-headers-setting-on-the-dashboard)
 
-&#x20;Ottu dashboard > administration panel> plugin config (the plugin of the targeted transaction table) >Tick on (**Individual proxy fields enabled**)
+1. From the **Ottu Dashboard**.
+2. Navigate to the **Administration Panel**.
+3. Access the **Plugin Config** for the desired transaction table.
+4. Enable the **Individual Proxy Fields** option by ticking the checkbox.
 
 <figure><img src="../.gitbook/assets/activate proxy fields.png" alt=""><figcaption></figcaption></figure>
 
 #### [Header list ](payment-tracking.md#header-list)
 
-Ottu dashboard > Required Plugin Tab> Setting > Table headers By dragging the required header (right ⇆ left), the merchant(s) can add or remove the header.
+To manage the headers, follow these steps:
+
+1. From the **Ottu Dashboard** go to the **Required Plugin Tab**.
+2. Access the **Settings**.
+3. In the **Table Headers** section, you can add or remove headers by dragging them from the right to the left or vice versa **(right ⇆ left)**. This dynamic empowers the merchants to customize the displayed headers according to their preferences.
 
 <figure><img src="../.gitbook/assets/Add or remove headers (1).png" alt=""><figcaption></figcaption></figure>
 
 #### [Child table transaction ](payment-tracking.md#child-table-transaction)
 
-[Child transactions](payment-tracking.md#states-of-child-payment-transaction) are those created by subsequent operations (capture, refund, or void). \
-They should be listed in the transaction table under the main origin payment transaction, which is called parent transaction.\
-The headers of each child payment transaction are inherited from the headers of the parent payment transaction.
+[Child transactions](payment-tracking.md#states-of-child-payment-transaction) refer to transactions generated from capture, refund, or void operations (i.e., [external operations](../developer/operations.md#external-operations)). These transactions are linked to the main origin payment transaction, known as the [Parent Transaction](payment-tracking.md#states-of-parent-payment-transaction), and are displayed under them accordingly. The headers of each child transaction inherit from the parent transaction's headers, ensuring consistency and easy reference.
 
 <figure><img src="../.gitbook/assets/Child proxy header (1).png" alt=""><figcaption></figcaption></figure>
 
 ### [Amount definitions and calculation mechanism](payment-tracking.md#amount-definitions-and-calculation-mechanism)&#x20;
 
-Many headers can be added / removed in transaction tables. See [proxy fields](payment-tracking.md#proxy-fields) \
-Amount headers are displayed in different titles based on where the header refers to the payment amount in the process flow.
+Transaction tables offer the flexibility to add or remove multiple headers. Take a look at the [proxy fields](payment-tracking.md#proxy-fields) for more options. Amount headers are intelligently categorized under different titles, ensuring clarity on their specific roles within the payment process flow.
 
 #### [**Amount**:](payment-tracking.md#amount)
 
-This is the initial amount at the creation of the transaction.
+It is the initial amount when the transaction is first created.
 
 #### [**Settled amount:**](payment-tracking.md#settled-amount)&#x20;
 
-**Is the amount with the same currency of the initiating amount,**
+**It refers to the amount in the same currency as the initial amount.**
 
-* **For editable amount:** It is the amount that the customer enters at the checkout page, If the customer pays the full required amount, it will have the same value as the [initiating amount](payment-tracking.md#amount).
-* **For non-editable amount:** The settled amount is the same value as the [initiating amount](payment-tracking.md#amount).
+* **For editable amount:** It is the customer's entered amount at the checkout page. If the customer pays the full required amount, it will be equal to the [initiating amount](payment-tracking.md#amount).
+* **For non-editable amount:** The settled amount remains the same as the [initiating amount](payment-tracking.md#amount).
 
 #### [**Paid amount:**](payment-tracking.md#paid-amount)&#x20;
 
-It is the amount that is credited to the merchant's bank account.&#x20;
+It is the amount that is transferred or credited to the merchant's bank account.
 
-* **For purchase:** It is a settled amount after adding the fee.
-* **For authorize:** Is the total amount captured by the staff.
+* **For purchase:** It represents the settled amount, including the fee.
+* **For authorize:** It is the total amount captured by the staff.
 
 {% hint style="info" %}
-Purchase or authorized is determined in payment gateway setting or configuration.
+The selection between Purchase and Authorization is typically determined within the [payment gateway](payment-gateway.md)'s operational configuration, specifically through the gateway settings (MID) operation configuration. This configuration governs whether the operation conducted is an authorization or a purchase.
 {% endhint %}
 
 #### [Remaining amount:](payment-tracking.md#remaining-amount)&#x20;
+
+It refers to the calculated difference between the initially specified [Amount](payment-tracking.md#amount) (what the customer was initially required to pay) and the [Settled Amount](payment-tracking.md#settled-amount) (the actual amount settled or paid).
 
 |[Amount](payment-tracking.md#amount) - [Settled amount](payment-tracking.md#settled-amount)|
 
 #### [Fee:](payment-tracking.md#fee)&#x20;
 
-It represents a markup amount on the [initiating amount](payment-tracking.md#amount), which the customer proceeds with.
+The fee refers to an additional amount that is added to the [initiating amount](payment-tracking.md#amount), which the customer proceeds with.
 
 {% hint style="info" %}
-Depending on the selected merchant(s) [currency configuration](currencies.md#currency-configuration), which is used by the selected PG, fees may be applied or not to the transactions in the default currency or foreign currency.
+Depending on the [currency configuration](currencies.md#currency-configuration-page) of the merchant and the selected [payment gateway](payment-gateway.md) (PG), fees may or may not be applied to transactions conducted in the default currency or foreign currency.
 {% endhint %}
 
 #### [Refunded amount:](payment-tracking.md#refunded-amount)&#x20;
 
-The amount, which is sent back to customer's bank account, which is deducted from the[ paid amount](payment-tracking.md#paid-amount).
+It refers to the amount that is sent back or returned to the customer's bank account, which is deducted from the[ paid amount](payment-tracking.md#paid-amount).
 
 #### [Voided amount: ](payment-tracking.md#voided-amount)
 
-It is the full transaction amount, which is credited to the customer's bank account, when the transaction rolling back process gets done.\
-It works only for authorized payment, which is not fully or partially captured.
+It refers to the total transaction amount that is credited back to the customer's bank account upon completion of the rollback process.
+
+It is applicable only for authorized payments that have not been fully or partially captured.
 
 {% hint style="info" %}
-* **Capture,** can capture the entire amount, fee + settled amount.&#x20;
-* **Refund,** can only refund the settled amount, that’s without fee.&#x20;
-* **Void,** will void the full amount, including the fee.
+* **Capture:** It can capture the entire amount, including the fee and settled amount.
+* **Refund:** It can only refund the settled amount (i.e., without the fee).
+* **Void:** It will nullify (or void) the entire amount, including the associated fee, if any.
 {% endhint %}
 
 ## [Dashboard charts](payment-tracking.md#dashboard-charts)

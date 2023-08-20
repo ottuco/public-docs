@@ -215,11 +215,11 @@ At a glance, Ottu's Notification Event feature keeps you informed about every st
 
 With Ottu, you can effortlessly track the progress of your online payments. Stay ahead of the game and ensure a seamless experience for both you and your customers. Embrace the power of real-time updates!
 
-## [Optimize SMS Efficiency with URL Shortening (Short-URL)](payment-tracking.md#optimize-sms-efficiency-with-url-shortening-short-url)
+## [Optimizing SMS with Shortened URLs](payment-tracking.md#optimizing-sms-with-shortened-urls)
 
 With our innovative[ URL shortener configuration](configuration.md#url-shortener-configurations), you can streamline your messaging process and ensure optimal utilization of your SMS resources. It is a game-changing feature that allows you to effortlessly shorten URLs for SMS delivery, resulting in reduced SMS consumption. Say goodbye to wasteful long links and embrace the efficiency of Short-URL.
 
-## [**Payment transaction expiration time**](payment-tracking.md#payment-transaction-expiration-time)
+## [**Payment Transaction Expiration Time**](payment-tracking.md#payment-transaction-expiration-time)
 
 Controlling your payment transaction expiration time is crucial to ensure smooth and secure transactions. This expiration time defines the duration in which a failed transaction can be retried or reprocessed. However, once this stipulated time frame has elapsed, the payment cannot be processed again. With our advanced online payment management system (OPMS), you can confidently navigate the digital landscape, knowing that your transactions are processed swiftly and securely. Embrace the future of online payments and unlock new possibilities for your business. Together, let's redefine the way you manage transactions and pave the way for success!
 

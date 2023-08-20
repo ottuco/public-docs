@@ -139,68 +139,88 @@ Payment Transaction States play a pivotal role in empowering merchants to mainta
 
 <table><thead><tr><th width="138" align="center">State</th><th width="268">          State Description</th><th width="128" align="center">Actor</th><th>                  Note</th></tr></thead><tbody><tr><td align="center"><strong>Created</strong></td><td>The payment has been initiated successfully.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>Pending</strong></td><td>The transaction is awaiting the customer to complete the payment process, i.e., the payment transaction has reached a stage where the customer has interacted with it. This interaction could involve the customer having seen the payment information, accessed the payment link page, or being redirected to the Ottu checkout page. In essence, it is awaiting further action, such as confirmation or completion.</td><td align="center">Customer</td><td>This state is only available with the installed Ottu plugin and utilizes the checkout page.</td></tr><tr><td align="center"><strong>Attempted</strong></td><td>This state is assigned to payments that require a retry process when there is a failure at the customer's end. The payment remains in this state until it is successfully processed, reaches its expiration date, or is canceled by the merchant. Alternatively, payments can be marked as invalid if certain crucial configurations of the payment gateway are modified, such as the removal of currency exchange support.</td><td align="center">Customer</td><td><ul><li>Attempted status has different states.</li></ul><ul><li>Please note that for payments that can only be attempted once, there is no <code>attempted</code> state; Instead, they will be either in a <code>failed</code> or <code>authorized</code> state.</li></ul></td></tr><tr><td align="center"><strong>Authorized</strong></td><td>The customer has securely entered his card details, and the bank has allocated the payment amount, but it is not deducted yet.</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Paid</strong></td><td>The bank has deducted the payment amount successfully.</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Failed</strong></td><td>The transaction encountered an error and couldn't be completed.</td><td align="center">Customer</td><td>This state is specific to payment transactions that can only be attempted once.</td></tr><tr><td align="center"><strong>Canceled</strong></td><td>The merchant has canceled the payment, and no further action can be taken.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>Expired</strong></td><td>The payment's lifespan has ended (i.e., expired).</td><td align="center">Customer</td><td><br></td></tr><tr><td align="center"><strong>Invalid</strong></td><td>The payment is no longer available due to changes in the payment configuration, currency exchange configuration, or other unforeseen events.</td><td align="center">Merchant</td><td><br></td></tr><tr><td align="center"><strong>COD</strong></td><td>Cash on Delivery</td><td align="center">Customer</td><td><br></td></tr></tbody></table>
 
-### [**States of child payment transaction**](payment-tracking.md#states-of-child-payment-transaction)
+### [**States of Child Payment Transaction**](payment-tracking.md#states-of-child-payment-transaction)
 
-| Child State                                          | Parent State                                    | Child State Description                                              | Note                                                                                                                                                                                                                      |
-| ---------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <mark style="color:blue;">**paid**</mark>            | <mark style="color:blue;">**authorized**</mark> | <p>Part of</p><p>The payment amount will be captured by merchant</p> | A clone of the payment transaction has been created.                                                                                                                                                                      |
-| <mark style="color:blue;">**refund**</mark>          | <mark style="color:blue;">**authorized**</mark> | Part of payment amount will be back to customer                      | <p>There are two refund state</p><ul><li>Queued refund</li><li>Rejected refund</li></ul>                                                                                                                                  |
-| <mark style="color:blue;">**refund-queued**</mark>   | <mark style="color:blue;">**authorized**</mark> | Waiting bank’s approval on payment amount.                           |                                                                                                                                                                                                                           |
-| <mark style="color:blue;">**refund-rejected**</mark> | <mark style="color:blue;">**authorized**</mark> | Payment amount not authorized from the bank.                         |                                                                                                                                                                                                                           |
-| <mark style="color:blue;">**voided**</mark>          | <mark style="color:blue;">**authorized**</mark> |                                                                      | <p>Void attempts to immediately revert payment.</p><p>Voids can only be performed on transactions that have not yet been sent to</p><p>the bank could be a single job which can be fired by the end of working hours.</p> |
+<table><thead><tr><th width="138">Child State</th><th width="134">Parent State</th><th width="222">Child State Description</th><th>                     Note</th></tr></thead><tbody><tr><td><strong>Paid</strong></td><td>Authorized</td><td>As a merchant, you'll receive a portion of the authorized payment amount (i.e., will be captured).</td><td>Rest assured, a copy of the payment transaction will be created to keep track of all the details.</td></tr><tr><td><strong>Refund</strong></td><td>Authorized</td><td>In case of a refund, a partial or the full paid amount will be returned to the customer.</td><td><p>There are two refund states to be aware of:</p><p><br></p><ul><li>Queued-refund.</li><li>Rejected-refund.</li></ul></td></tr><tr><td><strong>Refund-queued</strong></td><td>Authorized</td><td>The payment amount is currently awaiting bank approval.</td><td><br></td></tr><tr><td><strong>Refund-rejected</strong></td><td>Authorized</td><td>The payment amount has not been authorized by the bank.</td><td><br></td></tr><tr><td><strong>Voided</strong></td><td>Authorized</td><td>Sometimes, circumstances change, and you need to reverse the payment immediately. Our system allows you to void (i.e., cancel) transactions that have not yet been sent to the bank.</td><td><p>Voiding can only be performed on transactions that have not yet been sent to the bank.</p><p>This action may be executed as a single task at the end of the working hours.</p></td></tr></tbody></table>
 
-{% hint style="info" %}
-Below figure shows the payment transaction details which is having parent and child state for same payment transaction process. \
-A. The full payment amount.\
-B. Parent state (**authorized**).\
-C. Child state (**paid** and **refunded**).
-{% endhint %}
+The accompanying below figure shows the details of a payment transaction featuring both parent and child states for the same payment transaction process. Here are the main elements depicted:
+
+1. The total payment amount.
+2. Parent state `authorized`.
+3. Child state `paid` and `refunded`.
+
+Take a closer look at the figure to gain a comprehensive understanding of how these states interact in the payment transaction process.
 
 ![](<../.gitbook/assets/5 (2).gif>)
 
-## [**Payment-attempt**](payment-tracking.md#payment-attempt)
+## [**Payment-Attempt**](payment-tracking.md#payment-attempt)
 
-Payment attempt is the trial that the customer(s) make to proceed the payment when the payment transaction fails, and it is allowed to proceed multiple times.
+A payment attempt refers to the customer's attempt to complete a payment when the transaction fails. Please note that customers can make multiple attempts to complete their payment.\
+Don't let a single failed payment ruin the payment experience. The Payment Retry feature is the perfect solution for customers who encounter payment failures during their transactions. With Payment Retry, customers have the power to try again and again until they complete their payment successfully. With our innovative approach, we ensure that you won't miss out on the things you love. No longer will you have to start the entire process from scratch. We've simplified things for you, making it easier than ever to finalize your customer payment and giving you the flexibility and peace of mind you deserve. It's time to say goodbye to frustration and hello to a smoother payment experience. Say goodbye to payment failures and hello to successful transactions.
 
-### [**Payment-attempt states**](payment-tracking.md#payment-attempt-states)
+### [**Payment-Attempt States**](payment-tracking.md#payment-attempt-states)
 
-Payment attempt state represents the payment state at the customer-end.
+Payment attempt states represent the payment state at the customer end.
 
-<table><thead><tr><th>Payment Attempt State</th><th>Description</th><th>Note</th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>pending</strong></mark></td><td>The customer viewed the transaction.</td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>created</strong></mark></td><td>The payment attempt is created due to a failed state.</td><td>Customers will be redirected to the bank page.</td><td></td></tr><tr><td><mark style="color:red;"><strong>failed</strong></mark></td><td>The payment attempt failed, number of attempts based on payment configuration.</td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>canceled</strong></mark></td><td>When a customer clicks on the cancel button.</td><td></td><td></td></tr><tr><td><mark style="color:green;"><strong>success</strong></mark></td><td>Attempts to pay were successful.</td><td></td><td></td></tr></tbody></table>
+| Payment-Attempt State |             Description                                                                               |                    Note                                            |
+| --------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Pending**           | The customer has viewed the transaction details.                                                      | <p><br></p>                                                        |
+| **Created**           | The payment attempt is created as a result of an unsuccessful transaction (i.e., failed state).       | Customers will be redirected to the bank's page.                   |
+| **Failed**            | Payment failed due to various reasons, such as insufficient funds and other related issues.           | The number of attempts is determined by the payment configuration. |
+| **Canceled**          | The customer has chosen to click the cancel button.                                                   | <p><br></p>                                                        |
+| **Success**           | The payment attempt was successful (i.e., successful pay).                                            | <p><br></p>                                                        |
+| **Error**             | When we receive an error from the PG for that payment (e.g., PG Service is down, network error, etc.) | <p><br></p>                                                        |
 
-## [**Payment transaction state and payment attempt state**](payment-tracking.md#payment-transaction-state-and-payment-attempt-state)
+{% hint style="info" %}
+when **Cod** (Cash on Delivery) is used for cash payments, a payment attempt is created. This is because every change in the final state of the payment transaction must be associated with a payment attempt.
+{% endhint %}
 
-**Payment transaction allowed to be tried multiple times** \
-<mark style="color:blue;">**attempted**</mark> state for payment transaction :heavy\_plus\_sign: <mark style="color:blue;">**canceled**</mark> or <mark style="color:red;">**failed**</mark> state for payment attempt :arrow\_right: <mark style="color:blue;">**attempted**</mark> state for payment transaction (the payment transaction is ready to be attempted another time and stay having <mark style="color:blue;">**attempted**</mark> state until it changed to <mark style="color:blue;">**expired**</mark> or <mark style="color:blue;">**paid**</mark>).
+## **Payment Transaction State & Payment Attempt State**
 
-<mark style="color:blue;">**attempted**</mark> state for payment transaction :heavy\_plus\_sign: <mark style="color:green;">**success**</mark> state for payment attempt :arrow\_right: <mark style="color:blue;">**paid**</mark> or <mark style="color:blue;">**authorized**</mark> state for payment transaction.&#x20;
+Understanding the various possible combination of Payment Transactions that are in the <mark style="color:orange;">`attempted`</mark> state with the Payment-Attempts states is crucial. Let's simplify them:
 
-**Payment transaction NOT allowed to be tried multiple times**
+**For the payment transactions that allow multiple attempts, we encounter two combinations:**
 
-It does not have an <mark style="color:blue;">**attempted**</mark> state, it has either <mark style="color:red;">**failed**</mark> state or <mark style="color:blue;">**authorized**</mark> state.
+* When a Payment Transaction is in the <mark style="color:orange;">`attempted`</mark> state, and the Payment-Attempt state is <mark style="color:red;">`canceled`</mark> or <mark style="color:red;">`failed`</mark>, the payment transaction state remains <mark style="color:orange;">`attempted`</mark>. That means that the transaction is open for another attempt until it either expires (i.e., <mark style="color:red;">`expired`</mark> state) or successfully reaches the <mark style="color:green;">`paid`</mark> state.\
+  **In simple terms:**\
+  <mark style="color:orange;">`attempted`</mark> state for payment transaction ➕ <mark style="color:red;">`canceled`</mark> or <mark style="color:red;">`failed`</mark> state for payment attempt ➡ <mark style="color:orange;">`attempted`</mark> state for payment transaction, until it changed to <mark style="color:red;">`expired`</mark> or <mark style="color:green;">`paid`</mark>, and the payment transaction can be attempted again
+* Alternatively, when a Payment Transaction is in the <mark style="color:orange;">`attempted`</mark> state and the Payment-Attempt succeeds (i.e., <mark style="color:blue;">`success`</mark> state), the payment transaction progresses into the <mark style="color:green;">`paid`</mark> or <mark style="color:green;">`authorized`</mark> state.\
+  **In simple terms:**\
+  <mark style="color:orange;">`attempted`</mark> state for payment transaction ➕ <mark style="color:blue;">`success`</mark> state for payment attempt ➡ <mark style="color:green;">`paid`</mark> or <mark style="color:green;">`authorized`</mark> state for payment transaction.
+
+**For the payment transactions that do not allow multiple attempts:**
+
+* Such transactions do not have an <mark style="color:orange;">`attempted`</mark> state. Instead, they can either be in a <mark style="color:red;">`failed`</mark> or <mark style="color:green;">`authorized`</mark> state.
+
+The following image sums it all up clearly:
 
 ![](<../.gitbook/assets/6 (2).png>)
 
 ## [**Notifications**](payment-tracking.md#notifications)
 
-Ottu has implemented an event notification system, merchant(s) has the ability to choose the types of the notification event such as (Email, SMS, and WhatsApp).
+Ottu has a cutting-edge Notification System, empowering merchants with unparalleled control to personalize their preferred notification channels, including Email, SMS, and WhatsApp.\
+At a glance, Ottu's Notification Event feature keeps you informed about every stage of your online payment process. Seamlessly integrated into your workflow, these events provide real-time updates on crucial milestones. Let's explore the triggers and events:
 
-| Notification Event | Triggered When                                                                                                           |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| created            | Payment transaction has been created                                                                                     |
-| failed             | Payment transits to <mark style="color:red;">**error**</mark> state and <mark style="color:red;">**failed**</mark> state |
-| authorized         | Payment transits to <mark style="color:blue;">**authorized**</mark> state                                                |
-| paid               | Payment transits to <mark style="color:blue;">**paid**</mark> state                                                      |
-| canceled           | Payment transits to <mark style="color:blue;">**canceled**</mark> state                                                  |
-| expired            | Payment transits to <mark style="color:blue;">**expired**</mark> state                                                   |
-| voided             | Payment transits to <mark style="color:blue;">**voided**</mark> state                                                    |
-| refunded           | Payment transits to <mark style="color:blue;">**refunded**</mark> state                                                  |
-| captured           | Payment transits to <mark style="color:blue;">**captured**</mark> state                                                  |
+| Notification Event | Triggered When                                                                                                     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| **Created**        | The payment transaction is successfully initiated.                                                                 |
+| **Failed**         | The Payment encounters an error, preventing its completion (i.e., the payment transitioned to the `failed` state). |
+| **Authorized**     | The payment is successfully authorized.                                                                            |
+| **Paid**           | The payment is successfully processed and transitioned to the `paid` state.                                        |
+| **Canceled**       | The payment is canceled.                                                                                           |
+| **Expired**        | The payment has reached its expiration date.                                                                       |
+| **Voided**         | The payment transitioned to the `voided` state.                                                                    |
+| **Refunded**       | The payment transitioned to the `refunded` state.                                                                  |
+| **Captured**       | The payment is captured.                                                                                           |
 
-## [**Short-URL**](payment-tracking.md#short-url)
+With Ottu, you can effortlessly track the progress of your online payments. Stay ahead of the game and ensure a seamless experience for both you and your customers. Embrace the power of real-time updates!
 
-It is the ability to shorten the URL to be sent by SMS in order to reduce SMS consumption. See [URL shortener configuration](configuration.md#url-shortener-configurations).
+## [Optimize SMS Efficiency with URL Shortening (Short-URL)](payment-tracking.md#optimize-sms-efficiency-with-url-shortening-short-url)
+
+With our innovative[ URL shortener configuration](configuration.md#url-shortener-configurations), you can streamline your messaging process and ensure optimal utilization of your SMS resources. It is a game-changing feature that allows you to effortlessly shorten URLs for SMS delivery, resulting in reduced SMS consumption. Say goodbye to wasteful long links and embrace the efficiency of Short-URL.
 
 ## [**Payment transaction expiration time**](payment-tracking.md#payment-transaction-expiration-time)
 
-The expiration time is the length of time within which a failed transaction can be processed again, and the payment can no longer be processed after the stipulated period has expired. **By default,** the expiration period is one hour.
+Controlling your payment transaction expiration time is crucial to ensure smooth and secure transactions. This expiration time defines the duration in which a failed transaction can be retried or reprocessed. However, once this stipulated time frame has elapsed, the payment cannot be processed again. With our advanced online payment management system (OPMS), you can confidently navigate the digital landscape, knowing that your transactions are processed swiftly and securely. Embrace the future of online payments and unlock new possibilities for your business. Together, let's redefine the way you manage transactions and pave the way for success!
+
+\

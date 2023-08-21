@@ -222,5 +222,3 @@ With our innovative[ URL shortener configuration](configuration.md#url-shortener
 ## [**Payment Transaction Expiration Time**](payment-tracking.md#payment-transaction-expiration-time)
 
 Controlling your payment transaction expiration time is crucial to ensure smooth and secure transactions. This expiration time defines the duration in which a failed transaction can be retried or reprocessed. However, once this stipulated time frame has elapsed, the payment cannot be processed again. With our advanced online payment management system (OPMS), you can confidently navigate the digital landscape, knowing that your transactions are processed swiftly and securely. Embrace the future of online payments and unlock new possibilities for your business. Together, let's redefine the way you manage transactions and pave the way for success!
-
-\

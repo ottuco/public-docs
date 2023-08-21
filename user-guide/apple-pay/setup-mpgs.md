@@ -38,7 +38,7 @@ Merchants can provide customers with a secure and user-friendly payment option f
 
 <figure><img src="https://lh5.googleusercontent.com/-R8m1wuN1-Jzbilqu5Taja2ggIraqHMOQQMVPb96Aj1JlC-0OzZTSwX5-J2ROXWtmfVXOE4KVFQIGL7R0Vp4pJlcxUDXDdhtdh5cSvLJm12A7xG30NajxolJ7kfbn7ooKPCEt8mFOrOjTa6_kBTcp70" alt=""><figcaption></figcaption></figure>
 
-### [Providing Apple Pay Certificate](setup-mpgs.md#providing-apple-pay-certificate)
+### [Providing Apple Pay Payment Processing Certificate](setup-mpgs.md#providing-apple-pay-payment-processing-certificate)
 
 1. Log in to the Mastercard Payment Gateway Services (MPGS) portal and go to **Device Payments**.
 

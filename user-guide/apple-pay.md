@@ -83,9 +83,9 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 &#x20;  5.4. Fill out the fields and click `Save`.
 
-#### Field Descriptions
-
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+#### Field Descriptions
 
 <table><thead><tr><th width="233">Field</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>The name that will be displayed in the drop-down menu or any other location where the settings are displayed.</td></tr><tr><td>Code</td><td>A code that identifies the service in APIs, URLs, and other places.</td></tr><tr><td>Apple Merchant Identifier</td><td>The unique identifier that Apple assigns to merchants when they sign up for Apple Pay.</td></tr><tr><td>Display Name</td><td>The name that will be displayed on the payment sheet for Apple transactions</td></tr><tr><td>Domain</td><td>The domain that is configured for Apple Pay. For example, ksa.ottu.dev.</td></tr><tr><td>Domain Verification File</td><td><p>A file that contains a unique code used to verify the ownership of a specific domain name.</p><p>Here you should upload the <code>.text file</code> that you downloaded in the previous step, i.e., <a href="apple-pay.md#4.-download-the-.text-file-and-make-sure-it-is-ready-for-upload-as-you-will-provide-it-to-ottu-later">step 4</a>.</p></td></tr><tr><td>PG</td><td>The payment gateway</td></tr></tbody></table>
 

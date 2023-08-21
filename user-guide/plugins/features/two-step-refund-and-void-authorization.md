@@ -2,7 +2,7 @@
 
 Ottu introduces the Two-Step Refund & Void Authorization feature. With this feature, merchants gain the power to grant permissions to multiple users for conducting refund or void operations. Once authorized, users can seamlessly carry out these approved operations either through the user-friendly dashboard or via the API. Empower your team by assigning specific permissions, ensuring only authorized individuals can initiate these critical operations.
 
-## [Definition of Maker and Checker](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/407/user-guide/plugins/features/two-step-refund-and-void-authorization#definition-of-maker-and-checker)
+## [Definition of Maker and Checker](two-step-refund-and-void-authorization.md#definition-of-maker-and-checker)
 
 **Maker:** The user who has the required permissions (i.e., Can do refund / Can do void) to submit a request to check for refund/void operation. See the [Refund & Void Access Control](refund-and-void-access-control.md) for more information.\
 **Checker:** The user who has the authority to approve or reject a submitted request.
@@ -12,7 +12,7 @@ A merchant may have multiple makers, but there is only one checker.\
 The checker has the authority to proceed directly with the refund or void operations.
 {% endhint %}
 
-## [Key Features of Two-Step Refund & Void Authorization](https://app.gitbook.com/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/407/user-guide/plugins/features/two-step-refund-and-void-authorization#key-features-of-two-step-refund-and-void-authorization)
+## [Key Features of Two-Step Refund & Void Authorization](two-step-refund-and-void-authorization.md#key-features-of-two-step-refund-and-void-authorization)
 
 * To activate the Two-Step Refund & Void Authorization feature, you need to add the Operations Approval Plugin. From the Ottu Dashboard > Access the Administration Panel > Navigate to the Plugins section. > Locate the Installed Plugins.
 
@@ -54,7 +54,7 @@ The default time will be 48 hrs, defined from backend.
   * If the refund or void operation transitioned to the `Done` state, an email will be sent to the customer. The maker can also receive this email by enabling the required configuration—to enable this configuration: go to the Ottu Dashboard > Administration Panel > Unit > Unit Configs, then scroll down to the BCC initiator checkbox and check it.
   * If the refund or void operation transitioned to the `Rejected` state, an email will only be sent to the maker.
 
-## [**Operation request table**](two-step-refund-and-void-authorization.md#operation-request-table)
+## [**Operation Request Table**](two-step-refund-and-void-authorization.md#operation-request-table)
 
 Seamlessly manage and track this feature, with the option to `approve` or `reject` them for the checker role and `cancel` them for the maker role. Get access to comprehensive transaction histories, all in one central location. Discover our advanced Operations Request Table under the **Tickets** Tab. To make it easier to find specific requests, we have implemented an intelligent filter based on the following criteria: state, operations, date, payment gateway (pg), and currency.
 

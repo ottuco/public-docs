@@ -28,6 +28,8 @@ Move them from the **Available User Permissions** window to the **Chosen User Pe
 
 <figure><img src="../../../.gitbook/assets/permissions.png" alt=""><figcaption></figcaption></figure>
 
+Subsequently, two Permission Requests for Void and Refund are inserted into the Permission Request Table. Check [Table of Permission Request](refund-and-void-access-control.md#table-of-permission-requests).
+
 ## [Table of Permission Requests](refund-and-void-access-control.md#table-of-permission-requests)
 
 In the Ottu Dashboard, under the **Tickets Tab**, there is a **Permissions Requests Table** where authorized users are listed. A permission request will be sent to the authorized user via this table, and the authorized user can then approve or reject the request, as illustrated below.

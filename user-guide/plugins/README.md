@@ -30,7 +30,7 @@ Unlock the full potential of your Ottu experience with seamless plugin managemen
 
 <figure><img src="https://lh6.googleusercontent.com/lNNDHeuOrbDgbKa_yyPjIi7v_3CMq1RQDBmt_FPTfWWHSUxAv_tY9Abp1nTBgioBdicC_s0IVoq4PfCVEI8CC54-EXnFJWLqt0gF-QUsBeadPU45j1Vls59cjOOWZMLRVLAxNK9fvqhwn9DfUZM4plQ" alt=""><figcaption></figcaption></figure>
 
-* To add a plugin, click on the Section **Plugins** area. A comprehensive list of available plugins will be displayed, giving you the flexibility to choose the plugins that best suit your requirements.
+* To add a plugin, click on the Section `Plugins` area. A comprehensive list of available plugins will be displayed, giving you the flexibility to choose the plugins that best suit your requirements.
 * If you wish to remove any unwanted plugins, simply locate the `X` mark displayed in the figure below and click on it.
 
 <figure><img src="https://lh5.googleusercontent.com/qK31xDfjmqY_1-6q5YOTce8_K_UQKxthncLlzkr1pO1eU9mebG9qefFlrN09MfueTnkd52-iq9VQ-4cNmpbCGfHEdqeb9eOSgo2AWUCaIWiVfAjgRfgrqX2z418Q09gyyhcEQB4-Xl5F_s1dXkBA4xs" alt=""><figcaption></figcaption></figure>

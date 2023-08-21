@@ -2,7 +2,7 @@
 
 ## [Simplify Your E-Payments with Seamless Integrations](integration.md#simplify-your-e-payments-with-seamless-integrations)
 
-Integrate your business with Ottu and discover the power of our advanced integration capabilities. Ottu is an exceptional and easy-to-use online payment management system (OPMS) that recognizes the importance of seamless integration with various e-commerce platforms. We understand the need for effective communication between merchants and their chosen e-commerce suites. With Ottu, you can quickly and easily set up secure and reliable payments for your customers, regardless of their location or preferred [payment method](payment-methods.md). No matter which integration option you choose, Ottu makes it easy to get started with secure and reliable payments for your business. Now, you can focus on growing your business while we take care of the payments!
+Integrate your business with Ottu and discover the power of our advanced integration capabilities. Ottu is an exceptional and easy-to-use online payment management system (OPMS) that recognizes the importance of seamless integration with various e-commerce platforms. We understand the need for effective communication between merchants and their chosen e-commerce suites. With Ottu, you can quickly and easily set up secure and reliable payments for your customers, regardless of their location or preferred [payment method](broken-reference). No matter which integration option you choose, Ottu makes it easy to get started with secure and reliable payments for your business. Now, you can focus on growing your business while we take care of the payments!
 
 ### [Direct and smooth Payment Gateway Integration](integration.md#direct-and-smooth-payment-gateway-integration)
 
@@ -56,7 +56,7 @@ Enter your Ottu installation URL, which will be provided by the Ottu Onboarding 
 
 #### Step 6: Select Preferred Payment Methods
 
-From the list provided, select the [payment methods](payment-methods.md) that you want to display to your customers. Then, click on `Activate Ottu`.
+From the list provided, select the [payment methods](broken-reference) that you want to display to your customers. Then, click on `Activate Ottu`.
 
 ![](<../.gitbook/assets/7 (1) (2).png>)
 

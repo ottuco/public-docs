@@ -19,7 +19,7 @@
 
 ## developer
 
-* [Page](developer/page.md)
+* [Getting Started](developer/getting-started.md)
 * [Tokenization](developer/tokenization.md)
 * [Authentication](developer/authentication.md)
 * [Checkout API](developer/checkout-api.md)

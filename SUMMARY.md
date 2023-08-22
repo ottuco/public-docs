@@ -19,6 +19,7 @@
 
 ## developer
 
+* [Page](developer/page.md)
 * [Tokenization](developer/tokenization.md)
 * [Authentication](developer/authentication.md)
 * [Checkout API](developer/checkout-api.md)

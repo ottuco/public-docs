@@ -1,72 +1,38 @@
 # Authentication
 
-## [Authentication types](authentication.md#authentication-types)
+## [Authentication](authentication.md#authentication)
 
-Ottu works with three authentication types:
+Navigating the digital commerce and financial transactions landscape requires a keen understanding of security, specifically authentication methods. At Ottu, we support three distinct types of authentication to help ensure the safe and seamless operation of your payment system: [Basic Authentication](authentication.md#basic-authentication), [Private Key (API-Key)](authentication.md#private-key-api-key), and [Public Key](authentication.md#public-key).
 
-[ Basic authentication](authentication.md#basic-authentication), [token authentication](authentication.md#token-authentication), and [API key](authentication.md#api-key).
+## [**Basic Authentication**](authentication.md#basic-authentication)
 
-### [Basic authentication](authentication.md#basic-authentication)
+Basic Authentication employs a username and password combination. The access permissions associated with the username must be explicitly defined.
 
-Username and password are required. \
-The permission access for the user to be defined.
+**Header:** `Authorization Basic <username:password>` **basic auth string**.
 
-**It should be mentioned as below:**
+Please ensure that you follow best practices for credential security. Never **store** passwords in your code or on the client side. It’s recommended not to assign super-admin permissions via this method, but to carefully regulate the access permissions for each user. Securely store the credentials within the server environment.
 
-<mark style="color:blue;">**Header:**</mark> Authorization
+## [**Private Key (API-Key)**](authentication.md#private-key-api-key)
 
-<mark style="color:blue;">**Username:**</mark>\*\*\*\*\*\*\*&#x20;
+This key is a high-privilege access token used for server-side communication between your server and Ottu’s API. The private API key should be closely guarded and never shared.
 
-<mark style="color:blue;">**Password:**</mark>\*\*\*\*\*\*\*
+**Header:** `Authorization`\
+**Value:** `Api-Key {{api_key}}`
 
-### [Token authentication](authentication.md#token-authentication)
+Bear in mind, this key grants admin-level privileges across all public endpoints, and leaking it can lead to serious security implications.&#x20;
 
-It is obsolete and only for legacy.
+{% hint style="warning" %}
+It should NEVER be embedded in SDKs or made public. Ensure it’s used on the server side and securely stored within the server environment, separate from your code.
+{% endhint %}
 
-### [API key](authentication.md#api-key)
+## [**Public Key**](authentication.md#public-key)
 
-#### **Private key**
+The Public Key is used to initialize the [Checkout SDK](checkout-sdk/) and can safely be shared with clients. This key doesn’t provide access to public API endpoints, making it secure for client-side use.
 
-This key is used when merchant's server communicates with Ottu API, it should not be embedded in SDKs or made it public.&#x20;
+> **For detailed instructions on generating an API keys for both** [**Public** ](authentication.md#public-key)**&** [**Private** ](authentication.md#private-key-api-key)**Keys, kindly refer to** [How to Get API Keys section](broken-reference).
 
-**It should be mentioned as below:**
+## [**Token Authentication**](authentication.md#token-authentication)
 
-<mark style="color:blue;">**Header:**</mark> Authorization
+Please note that Token Authentication, an earlier method, is now considered obsolete and isn’t recommended.
 
-<mark style="color:blue;">**Value:**</mark> Api-Key \{{api\_key\}}
-
-#### **Public key**
-
-This key is used for SDKs such like Web, Android, iOS, or Flutter.
-
-### [How to get API key](authentication.md#how-to-get-api-key)
-
-![](../../.gitbook/assets/API.png)
-
-#### [**Step 1**](authentication.md#step-1)
-
-Click on add API key.
-
-![](<../../.gitbook/assets/Click on add API Key (1).png>)
-
-#### [**Step 2**](authentication.md#step-2)
-
-Fill the required fields and click save.
-
-Name: _<mark style="color:red;">**`required`**</mark>_ Max length 50.
-
-Revoke: _<mark style="color:blue;">**`optional`**</mark>_ once checked, the API key can not be used anymore.&#x20;
-
-Expires: _<mark style="color:blue;">**`optional`**</mark>_ once the API gets expired, it can not be used anymore.
-
-![](<../../.gitbook/assets/Fill the required fields.png>)
-
-#### [Step 3](authentication.md#step-3)
-
-Click on the created API key here is named as “Example”.
-
-![](<../../.gitbook/assets/Click on Created API key (1).png>)
-
-**The API keys** [**private** ](authentication.md#private-key)**and** [**public**](authentication.md#public-key) **will be shown as below figure.**
-
-<figure><img src="../../.gitbook/assets/Private and public Keys.png" alt=""><figcaption></figcaption></figure>
+Understanding and implementing these authentication methods correctly are crucial steps toward ensuring the security of your transactions and the protection of your data. Secure key management significantly contributes to the overall safety and integrity of your operations.

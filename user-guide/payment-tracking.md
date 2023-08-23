@@ -217,7 +217,7 @@ With Ottu, you can effortlessly track the progress of your online payments. Stay
 
 ## [Optimizing SMS with Shortened URLs](payment-tracking.md#optimizing-sms-with-shortened-urls)
 
-With our innovative[ URL shortener configuration](configuration/#url-shortener-configurations), you can streamline your messaging process and ensure optimal utilization of your SMS resources. It is a game-changing feature that allows you to effortlessly shorten URLs for SMS delivery, resulting in reduced SMS consumption. Say goodbye to wasteful long links and embrace the efficiency of Short-URL.
+With our innovative[ URL shortener configuration](configuration.md#url-shortener-configurations), you can streamline your messaging process and ensure optimal utilization of your SMS resources. It is a game-changing feature that allows you to effortlessly shorten URLs for SMS delivery, resulting in reduced SMS consumption. Say goodbye to wasteful long links and embrace the efficiency of Short-URL.
 
 ## [**Payment Transaction Expiration Time**](payment-tracking.md#payment-transaction-expiration-time)
 

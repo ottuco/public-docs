@@ -35,7 +35,7 @@ Once a payment transaction has been initiated, you will receive either a [sessio
 
 ## [Authentication](operations.md#authentication)
 
-To interact with Ottu’s Operation API, both [API Key](authentication.md#api-keys) and [Basic Authentication](authentication.md#basic-authentication) methods are supported. Using the API Key for authentication provides superadmin privileges, enabling the performance of any operation. It’s crucial to handle this information with utmost care and restrict its sharing to prevent misuse. For enhanced security, it is recommended to use Basic Authentication and assign specific permissions, ensuring controlled access to different API endpoints.
+To interact with Ottu’s Operation API, both [API-Key](authentication.md#private-key-api-key) and [Basic Authentication](authentication.md#basic-authentication) methods are supported. Using the API Key for authentication provides superadmin privileges, enabling the performance of any operation. It’s crucial to handle this information with utmost care and restrict its sharing to prevent misuse. For enhanced security, it is recommended to use Basic Authentication and assign specific permissions, ensuring controlled access to different API endpoints.
 
 {% hint style="info" %}
 For optimal security, we highly recommend using Basic Authentication and assigning specific permissions to control access to various API endpoints.

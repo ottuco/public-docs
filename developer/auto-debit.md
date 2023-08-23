@@ -68,7 +68,7 @@ In both cases, always remember to update the saved card information in your data
 
 ## [Authentication](auto-debit.md#authentication)
 
-The Auto Debit API utilizes [API Key](authentication.md#api-keys) Authentication to ensure secure communication and prevent unauthorized access.  Before making requests to the API, you need to [generate](authentication.md#how-to-get-api-key) an API Key from your Ottu account. Once you have the API Key, it needs to be included in the header of each API request. To understand in detail how API Key authentication works and how you can generate your API Key, please refer to [Authentication](authentication.md#api-keys) User Guide. Always ensure to keep your API Key secret. If you believe your API Key has been compromised, regenerate it immediately from your Ottu account.
+The Auto Debit API utilizes [API-Key](authentication.md#private-key-api-key) Authentication to ensure secure communication and prevent unauthorized access.  Before making requests to the API, you need to [generate](../user-guide/configuration/how-to-get-api-keys.md) an API-Key from your Ottu account. Once you have the API-Key, it needs to be included in the header of each API request. To understand in detail how API-Key authentication works and how you can generate your API Key, please refer to [Authentication](authentication.md#api-keys) User Guide. Always ensure to keep your API-Key secret. If you believe your API-Key has been compromised, regenerate it immediately from your Ottu account.
 
 For a more detailed technical understanding and the implementation specifics of these operations, please refer to the Open API schema in the [API Schema Reference](auto-debit.md#api-schema-reference).
 

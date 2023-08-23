@@ -15,7 +15,8 @@
     * [Refund & Void Access Control](user-guide/plugins/features/refund-and-void-access-control.md)
     * [Two-Step Refund & Void Authorization](user-guide/plugins/features/two-step-refund-and-void-authorization.md)
 * [Integration](user-guide/integration.md)
-* [Configuration](user-guide/configuration.md)
+* [Configuration](user-guide/configuration/README.md)
+  * [How to Get API Keys](user-guide/configuration/how-to-get-api-keys.md)
 
 ## developer
 

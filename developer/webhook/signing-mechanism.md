@@ -6,7 +6,7 @@ To ensure the integrity and authenticity of the [webhook notifications](payment-
 
 #### [**1. HMAC Key (Secret Key)**](signing-mechanism.md#1.-hmac-key-secret-key)
 
-* This is the backbone of the signing and verification process. Merchants can retrieve their unique HMAC Key from the Webhook Configuration panel within Ottu's admin dashboard [here](../../user-guide/configuration.md#hmac-key).
+* This is the backbone of the signing and verification process. Merchants can retrieve their unique HMAC Key from the Webhook Configuration panel within Ottu's admin dashboard [here](../../user-guide/configuration/#hmac-key).
 * It's paramount that this key remains confidential. Always store it securely and avoid exposing it to the public.
 
 #### [**2. Fields for Signature** ](signing-mechanism.md#2.-fields-for-signature)
@@ -47,7 +47,7 @@ This update ensures that developers understand the significance of field presenc
 #### [**4. Verification by Merchant**](signing-mechanism.md#4.-verification-by-merchant)
 
 * On receipt of the webhook, merchants should rebuild the message string, using the listed fields.
-* Generate an HMAC signature using their stored [HMAC Key](../../user-guide/configuration.md#hmac-key).
+* Generate an HMAC signature using their stored [HMAC Key](../../user-guide/configuration/#hmac-key).
 * If the computed signature corresponds to the provided one, the payload's authenticity is confirmed. Any discrepancies suggest potential tampering.
 
 ## [Example](signing-mechanism.md#example)

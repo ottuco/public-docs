@@ -1,23 +1,23 @@
 # Configuration
 
-## [Global Configuration](configuration.md#global-configuration)
+## [Global Configuration](./#global-configuration)
 
 Ottu puts the power of configuration in the hands of merchants, ensuring a hassle-free experience. Our mission is to provide you with seamless configuration options, enabling you to take absolute control like never before! With Ottu, merchants can customize their dashboard, logo, favicon, website URL, email address, phone number, and more. Embrace the power of Ottu and unlock a world of possibilities for your business. Get ready to revolutionize your experience with our user-friendly tools and elevate your online presence to new heights!
 
-## [Global Configuration Walkthrough](configuration.md#global-configuration-walkthrough)
+## [Global Configuration Walkthrough](./#global-configuration-walkthrough)
 
 The global settings can be reached from the Ottu Dashboard > Administration Panel > Config.
 
-![](<../.gitbook/assets/1 (5).png>)
+![](<../../.gitbook/assets/1 (5).png>)
 
-### [Configuration](configuration.md#configuration)
+### [Configuration](./#configuration)
 
 **Fine-Tune Your Settings with Ottu's Configuration Options**\
 **To access the configurations:** from the Ottu Dashboard > navigate to the Administration Panel > head to Config > then select Configuration.
 
-<figure><img src="../.gitbook/assets/Configuration.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Configuration.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Global configuration.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Global configuration.png" alt=""><figcaption></figcaption></figure>
 
 **Here is a brief explanation of each field:**
 
@@ -75,7 +75,7 @@ In 2FA, An OTP (One-Time Passcode)—a single-use numerical passcode—will be s
 
 #### **Effortless Management of Multiple Installations**
 
-* **Reference prefix:** A unique prefix that can be used by the Ottu Operations Team to avoid duplicate track IDs for the PG ([Payment Gateway](payment-gateway.md)), as duplicating IDs can cause problems with tracking and reporting.
+* **Reference prefix:** A unique prefix that can be used by the Ottu Operations Team to avoid duplicate track IDs for the PG ([Payment Gateway](../payment-gateway.md)), as duplicating IDs can cause problems with tracking and reporting.
 
 {% hint style="info" %}
 If you have multiple Ottu installations and one PG (Payment Gateway), one of the installations should have the Reference Prefix so that each installation has a unique track ID, even if they use the same PG.
@@ -84,19 +84,19 @@ If you have multiple Ottu installations and one PG (Payment Gateway), one of the
 #### **Fine-Tune User Experience**
 
 * **Enable session timeout:** If checked, users who do not have refund/void permissions will be automatically logged out after passing the defined session timeout.
-* **Enable URL shortener:** Activate the URL shortener for public links, making sharing links with others hassle-free. Check [URL Shortener Configuration](configuration.md#url-shortener-configurations) for more details.
+* **Enable URL shortener:** Activate the URL shortener for public links, making sharing links with others hassle-free. Check [URL Shortener Configuration](./#url-shortener-configurations) for more details.
 
 Empower your online payment management with Ottu's remarkable configuration options. Let positive impressions, seamless transactions, and engaging experiences define your journey to success.
 
-### [**URL Shortener Configurations**](configuration.md#url-shortener-configurations)
+### [**URL Shortener Configurations**](./#url-shortener-configurations)
 
 To configure the URL Shortener, go to the Ottu Dashboard > Administration Panel > Config > URL Shortener Configurations.
 
-<figure><img src="../.gitbook/assets/URL.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/URL.png" alt=""><figcaption></figcaption></figure>
 
 Next, click on `Add URL Shortener Configuration`.
 
-<figure><img src="../.gitbook/assets/URL_Confg.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/URL_Confg.png" alt=""><figcaption></figcaption></figure>
 
 #### **Description of Fields:**
 
@@ -105,15 +105,15 @@ Next, click on `Add URL Shortener Configuration`.
 * **User & Password:** Enter the credentials for authentication.
 * **Is global:** Check this option if you want this configuration to apply to all cases.
 
-## [**Transaction Report Generation Configuration**](configuration.md#transaction-report-generation-configuration)
+## [**Transaction Report Generation Configuration**](./#transaction-report-generation-configuration)
 
 To access the Configuration of Transaction Report Generator, navigate to Ottu Dashboard > Administration Panel > Report > Periodic Transaction Report Config.
 
-<figure><img src="../.gitbook/assets/report (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/report (1).png" alt=""><figcaption></figcaption></figure>
 
-### [General](configuration.md#general)
+### [General](./#general)
 
-<figure><img src="../.gitbook/assets/Periodic transaction report general configuration.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Periodic transaction report general configuration.png" alt=""><figcaption></figcaption></figure>
 
 #### **Description of Fields:**
 
@@ -125,11 +125,11 @@ To access the Configuration of Transaction Report Generator, navigate to Ottu Da
 * **Email notification template:** The template used for email notifications.
 * **File name prefix:** The filename prefix can be used to specify the format in which reports are saved.
 
-### [Periodic Transaction Report Fields](configuration.md#periodic-transaction-report-fields)
+### [Periodic Transaction Report Fields](./#periodic-transaction-report-fields)
 
 To include a new field in the report, navigate to the **Periodic Transaction Report Fields** tab.
 
-<figure><img src="../.gitbook/assets/Periodic transaction report fields.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Periodic transaction report fields.png" alt=""><figcaption></figcaption></figure>
 
 #### Description of Fields:
 
@@ -138,7 +138,7 @@ Each field added here will be included in the report.
 {% endhint %}
 
 {% hint style="info" %}
-The required fields are categorized based on the source type from which the data is extracted. The categories are as follows: [**Config**](configuration.md#type-config-required-field-is-from-plugins-configuration), [**Static**](configuration.md#type-static-required-field-is-one-of-the-constant-fields), [**Gateway Response**](configuration.md#type-gateway-response-required-field-is-from-pg-response), and [**Common**](configuration.md#type-common-required-field-is-other-than-fields-from-pg-static-and-plugin-configuration.-such-as-pay), and each type requires different information.
+The required fields are categorized based on the source type from which the data is extracted. The categories are as follows: [**Config**](./#type-config-required-field-is-from-plugins-configuration), [**Static**](./#type-static-required-field-is-one-of-the-constant-fields), [**Gateway Response**](./#type-gateway-response-required-field-is-from-pg-response), and [**Common**](./#type-common-required-field-is-other-than-fields-from-pg-static-and-plugin-configuration.-such-as-pay), and each type requires different information.
 {% endhint %}
 
 <details>
@@ -192,29 +192,29 @@ The required fields are categorized based on the source type from which the data
 
 </details>
 
-## [**Webhook Configuration**](configuration.md#webhook-configuration)
+## [**Webhook Configuration**](./#webhook-configuration)
 
-A [webhook](../developer/webhook/) is an HTTP endpoint that is used to receive notifications about events that occur in the Ottu system. For example, if a payment is created, Ottu can send a webhook notification to the merchant's server with the details of the payment. The merchant can then use this information to update their systems. Enhance your Ottu experience with our powerful Webhook Configuration. Take advantage of API payloads, SSL certificate verification options, error notifications, and more to optimize your webhook usage. Let's explore the exciting options you can customize:
+A [webhook](../../developer/webhook/) is an HTTP endpoint that is used to receive notifications about events that occur in the Ottu system. For example, if a payment is created, Ottu can send a webhook notification to the merchant's server with the details of the payment. The merchant can then use this information to update their systems. Enhance your Ottu experience with our powerful Webhook Configuration. Take advantage of API payloads, SSL certificate verification options, error notifications, and more to optimize your webhook usage. Let's explore the exciting options you can customize:
 
 To access the Webhook Configuration, navigate to Ottu Dashboard > Administration Panel > Webhook > Webhook Config
 
-<figure><img src="../.gitbook/assets/webhook.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/webhook.png" alt=""><figcaption></figcaption></figure>
 
-### [General](configuration.md#general-1)
+### [General](./#general-1)
 
-<figure><img src="../.gitbook/assets/webhook config.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/webhook config.png" alt=""><figcaption></figcaption></figure>
 
 #### **Description of Fields:**
 
-* **HMAC key:** This key is used to [generate signatures](../developer/webhook/signing-mechanism.md#signature-generation).
-* **Ignore SSL:** If checked, the SSL certificate will not be verified when calling the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional).
-* **Notify on Error:** If checked, an email will be sent if an error occurs while calling the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional).
-* **Email List:** Specify the list of email addresses where the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional) error notification should be sent.
+* **HMAC key:** This key is used to [generate signatures](../../developer/webhook/signing-mechanism.md#signature-generation).
+* **Ignore SSL:** If checked, the SSL certificate will not be verified when calling the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional).
+* **Notify on Error:** If checked, an email will be sent if an error occurs while calling the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional).
+* **Email List:** Specify the list of email addresses where the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional) error notification should be sent.
 * **Timeout:** The amount of time that the Ottu server will wait for a response from the merchant server.
 * **Retries:** The number of retry attempts the Ottu server will make to resend the request to the merchant server if the first attempt fails. Note that the **Enable retry webhook mechanism** option should be checked to activate this feature.
 * **Backoff factor:** The amount of time the Ottu server will wait before retrying the request (i.e., the time between two attempts).
 
-#### [Example:](configuration.md#example)&#x20;
+#### [Example:](./#example)&#x20;
 
 Imagine a scenario where the merchant’s server experiences **downtime for 30 seconds**. If the **timeout is set to 20 seconds**, the **retries are set to 3**, and the **backoff factor is set to 5 seconds**, then the following will happen:\
 Keep in mind that the merchant’s server will take 30 seconds to respond, and the number of attempts is 3.
@@ -236,34 +236,34 @@ Keep in mind that the merchant’s server will take 30 seconds to respond, and t
 * **Enable webhook notifications:** If checked, webhook notifications will be activated.
 
 {% hint style="info" %}
-**Redirect behavior:** The redirect behavior is determined by the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional) response to payment events and payment operations.
+**Redirect behavior:** The redirect behavior is determined by the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional) response to payment events and payment operations.
 
-* If the webhook URL returns a status code of 200, the customer will be redirected to the [redirect\_url](../developer/checkout-api.md#redirect\_url-string-optional).
+* If the webhook URL returns a status code of 200, the customer will be redirected to the [redirect\_url](../../developer/checkout-api.md#redirect\_url-string-optional).
 * If the webhook URL returns a status code of 201, the customer will be redirected to the **Ottu payment summary page**.
 * If the webhook URL returns any other status code, the customer will be redirected to the **Ottu payment summary page**. \
   In this case, Ottu can send an email notification if the **Enable webhook notifications** option is checked.
 {% endhint %}
 
-* **Enable retry webhook mechanism**: If checked, Ottu will retry the request if the first attempt fails. See the [example scenario](configuration.md#example) above for further clarity.
-* **Operations webhook\_url:** The URL where transaction data will be disclosed once an operation transaction flow is triggered. See [Operation Notification](../developer/webhook/operation-notification.md).
-* **Enable webhook notifications if transaction initiated from API:** If checked, [webhook notifications](../developer/webhook/payment-notification.md) will be activated even if the transaction is created via the API.
+* **Enable retry webhook mechanism**: If checked, Ottu will retry the request if the first attempt fails. See the [example scenario](./#example) above for further clarity.
+* **Operations webhook\_url:** The URL where transaction data will be disclosed once an operation transaction flow is triggered. See [Operation Notification](../../developer/webhook/operation-notification.md).
+* **Enable webhook notifications if transaction initiated from API:** If checked, [webhook notifications](../../developer/webhook/payment-notification.md) will be activated even if the transaction is created via the API.
 
-### [Webhook Plugin Configs](configuration.md#webhook-plugin-configs)
+### [Webhook Plugin Configs](./#webhook-plugin-configs)
 
 In this tab, the merchant can define the desired webhook behavior for specific plugins.
 
-<figure><img src="../.gitbook/assets/Webhook plugin configs.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Webhook plugin configs.png" alt=""><figcaption></figcaption></figure>
 
 **Description of Fields:**
 
-* **Webhook plugin:** The plugin that the webhook works for. See [Plugins](plugins/)
-* **Webhook UrL:** When a [payment event](../developer/webhook/payment-notification.md) or [payment operation](../developer/webhook/operation-notification.md) occurs, Ottu sends an HTTP request to this URL to disclose transactional data.
+* **Webhook plugin:** The plugin that the webhook works for. See [Plugins](../plugins/)
+* **Webhook UrL:** When a [payment event](../../developer/webhook/payment-notification.md) or [payment operation](../../developer/webhook/operation-notification.md) occurs, Ottu sends an HTTP request to this URL to disclose transactional data.
 * **Enable transaction state webhook notifications:** If checked, webhook notifications will be sent for the defined Notification status.
-* **Notification status:** Define the transaction status that will trigger the [webhook notification](../developer/webhook/payment-notification.md), including `paid`, `failed`, `authorized`, and `canceled`. Review the [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction) for more information.
+* **Notification status:** Define the transaction status that will trigger the [webhook notification](../../developer/webhook/payment-notification.md), including `paid`, `failed`, `authorized`, and `canceled`. Review the [payment transaction states](../payment-tracking.md#states-of-parent-payment-transaction) for more information.
 * **Delete:** Deletes the defined plugin webhook configuration.
 
 {% hint style="info" %}
-The webhook\_Url specified in the [webhook plugin configuration](configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../developer/webhook/payment-notification.md) and [operations](../developer/webhook/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
+The webhook\_Url specified in the [webhook plugin configuration](./#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../../developer/webhook/payment-notification.md) and [operations](../../developer/webhook/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
 {% endhint %}
 
-For more information about how and where webhook works in Ottu see [webhook](../developer/webhook/).
+For more information about how and where webhook works in Ottu see [webhook](../../developer/webhook/).

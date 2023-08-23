@@ -24,7 +24,7 @@ When integrating the User Saved Cards endpoints into your system, here are the k
 
 ## [**Authentication**](user-cards.md#authentication)
 
-To access Ottu’s User Saved Cards API, ensure to use the [API Key](authentication.md#api-keys) authentication method.
+To access Ottu’s User Saved Cards API, ensure to use the [API-Key](authentication.md#private-key-api-key) authentication method.
 
 ## [API Schema Reference](user-cards.md#api-schema-reference)
 

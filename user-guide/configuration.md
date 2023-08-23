@@ -194,7 +194,7 @@ The required fields are categorized based on the source type from which the data
 
 ## [**Webhook Configuration**](configuration.md#webhook-configuration)
 
-A [webhook](../developer/webhook/) is an HTTP endpoint that is used to receive notifications about events that occur in the Ottu system. For example, if a payment is created, Ottu can send a webhook notification to the merchant's server with the details of the payment. The merchant can then use this information to update their systems. Enhance your Ottu experience with our powerful Webhook Configuration. Take advantage of API payloads, SSL certificate verification options, error notifications, and more to optimize your webhook usage. Let's explore the exciting options you can customize:
+A [webhook](../developer/webhooks/) is an HTTP endpoint that is used to receive notifications about events that occur in the Ottu system. For example, if a payment is created, Ottu can send a webhook notification to the merchant's server with the details of the payment. The merchant can then use this information to update their systems. Enhance your Ottu experience with our powerful Webhook Configuration. Take advantage of API payloads, SSL certificate verification options, error notifications, and more to optimize your webhook usage. Let's explore the exciting options you can customize:
 
 To access the Webhook Configuration, navigate to Ottu Dashboard > Administration Panel > Webhook > Webhook Config
 
@@ -206,7 +206,7 @@ To access the Webhook Configuration, navigate to Ottu Dashboard > Administration
 
 #### **Description of Fields:**
 
-* **HMAC key:** This key is used to [generate signatures](../developer/webhook/signing-mechanism.md#signature-generation).
+* **HMAC key:** This key is used to [generate signatures](../developer/webhooks/signing-mechanism.md#signature-generation).
 * **Ignore SSL:** If checked, the SSL certificate will not be verified when calling the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional).
 * **Notify on Error:** If checked, an email will be sent if an error occurs while calling the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional).
 * **Email List:** Specify the list of email addresses where the [webhook URL](../developer/checkout-api.md#webhook\_url-string-optional) error notification should be sent.
@@ -245,8 +245,8 @@ Keep in mind that the merchant’s server will take 30 seconds to respond, and t
 {% endhint %}
 
 * **Enable retry webhook mechanism**: If checked, Ottu will retry the request if the first attempt fails. See the [example scenario](configuration.md#example) above for further clarity.
-* **Operations webhook\_url:** The URL where transaction data will be disclosed once an operation transaction flow is triggered. See [Operation Notification](../developer/webhook/operation-notification.md).
-* **Enable webhook notifications if transaction initiated from API:** If checked, [webhook notifications](../developer/webhook/payment-notification.md) will be activated even if the transaction is created via the API.
+* **Operations webhook\_url:** The URL where transaction data will be disclosed once an operation transaction flow is triggered. See [Operation Notification](../developer/webhooks/operation-notification.md).
+* **Enable webhook notifications if transaction initiated from API:** If checked, [webhook notifications](../developer/webhooks/payment-notification.md) will be activated even if the transaction is created via the API.
 
 ### [Webhook Plugin Configs](configuration.md#webhook-plugin-configs)
 
@@ -257,13 +257,13 @@ In this tab, the merchant can define the desired webhook behavior for specific p
 **Description of Fields:**
 
 * **Webhook plugin:** The plugin that the webhook works for. See [Plugins](plugins/)
-* **Webhook UrL:** When a [payment event](../developer/webhook/payment-notification.md) or [payment operation](../developer/webhook/operation-notification.md) occurs, Ottu sends an HTTP request to this URL to disclose transactional data.
+* **Webhook UrL:** When a [payment event](../developer/webhooks/payment-notification.md) or [payment operation](../developer/webhooks/operation-notification.md) occurs, Ottu sends an HTTP request to this URL to disclose transactional data.
 * **Enable transaction state webhook notifications:** If checked, webhook notifications will be sent for the defined Notification status.
-* **Notification status:** Define the transaction status that will trigger the [webhook notification](../developer/webhook/payment-notification.md), including `paid`, `failed`, `authorized`, and `canceled`. Review the [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction) for more information.
+* **Notification status:** Define the transaction status that will trigger the [webhook notification](../developer/webhooks/payment-notification.md), including `paid`, `failed`, `authorized`, and `canceled`. Review the [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction) for more information.
 * **Delete:** Deletes the defined plugin webhook configuration.
 
 {% hint style="info" %}
-The webhook\_Url specified in the [webhook plugin configuration](configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../developer/webhook/payment-notification.md) and [operations](../developer/webhook/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
+The webhook\_Url specified in the [webhook plugin configuration](configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../developer/webhooks/payment-notification.md) and [operations](../developer/webhooks/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
 {% endhint %}
 
-For more information about how and where webhook works in Ottu see [webhook](../developer/webhook/).
+For more information about how and where webhook works in Ottu see [webhook](../developer/webhooks/).

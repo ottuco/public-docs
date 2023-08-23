@@ -20,7 +20,7 @@ Every payment or API operation starts with or involves a payment transaction. Es
 
 #### [4. REST API](getting-started.md#4.-rest-api)
 
-To get started with Ottu’s REST API, first understand our authentication methods in the [Authentication section](authentication.md). Then proceed to the [Checkout API section](checkout-api.md) to learn how to create payments and charge customers. Following this, you might want to explore the [Payment Notification Webhook](webhook/payment-notification.md). This feature is crucial if you want to integrate Ottu with a system and get notified about payment status updates. After creating a payment transaction, you can specify a [webhook URL](checkout-api.md#webhook\_url-string-optional) where Ottu will send updates about the payment status. This will keep your systems up to date in real-time with payment events. See [Webhook](webhook/).
+To get started with Ottu’s REST API, first understand our authentication methods in the [Authentication section](authentication.md). Then proceed to the [Checkout API section](checkout-api.md) to learn how to create payments and charge customers. Following this, you might want to explore the [Payment Notification Webhook](webhooks/payment-notification.md). This feature is crucial if you want to integrate Ottu with a system and get notified about payment status updates. After creating a payment transaction, you can specify a [webhook URL](checkout-api.md#webhook\_url-string-optional) where Ottu will send updates about the payment status. This will keep your systems up to date in real-time with payment events. See [Webhook](webhooks/).
 
 ## [API Selection Guide](getting-started.md#api-selection-guide)
 
@@ -37,13 +37,13 @@ Based on your specific needs, you can proceed to the sections that apply to your
     These services work only with the [Checkout SDK](checkout-sdk/). The SDK automatically enables these services on your website or app without any further configuration.
 *   #### [Refund, Capture, or Void Operations](getting-started.md#refund-capture-or-void-operations)
 
-    After familiarizing yourself with the [Checkout API](checkout-api.md), check the [Operations section](operations.md) to understand how they work. If you wish to use these operations, the next step is to check the [Webhook Operation Notification section](webhook/operation-notification.md).
+    After familiarizing yourself with the [Checkout API](checkout-api.md), check the [Operations section](operations.md) to understand how they work. If you wish to use these operations, the next step is to check the [Webhook Operation Notification section](webhooks/operation-notification.md).
 *   #### [Subscription, Recurring Payments, and Offline Payments](getting-started.md#subscription-recurring-payments-and-offline-payments)
 
     Check the [User Cards](user-cards.md) and [Auto-Debit](auto-debit.md) Docs.
 *   #### [Concerned about Security?](getting-started.md#concerned-about-security)
 
-    Our sensitive API calls are signed for added security. Check out the [Signing Mechanism section](webhook/signing-mechanism.md).
+    Our sensitive API calls are signed for added security. Check out the [Signing Mechanism section](webhooks/signing-mechanism.md).
 
 For any other questions, please feel free to contact your local Ottu representative.\
 Happy integration!

@@ -238,7 +238,7 @@ Max length: 128.
 
 #### [**redirect\_url**](checkout-api.md#redirect\_url-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-string-optional) returns a success status. [order\_no](checkout-api.md#order\_no-string-optional), [reference\_number](webhook/payment-notification.md#reference\_number-string-mandatory) and [session\_id](checkout-api.md#session\_id-string-mandatory) will be appended to the redirect\_url as query parameters. Check [how redirection works](webhook/payment-notification.md#redirect-behavior-based-on-webhook\_url-response).\
+The URL where the customer will be redirected after the payment stage only if the [webhook\_url](checkout-api.md#webhook\_url-string-optional) returns a success status. [order\_no](checkout-api.md#order\_no-string-optional), [reference\_number](webhooks/payment-notification.md#reference\_number-string-mandatory) and [session\_id](checkout-api.md#session\_id-string-mandatory) will be appended to the redirect\_url as query parameters. Check [how redirection works](webhooks/payment-notification.md#redirect-behavior-based-on-webhook\_url-response).\
 redirect\_url can be set in the administration panel.\
 Max length: 200.
 
@@ -330,7 +330,7 @@ Max length: 64.
 
 In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.\
 It should be provided by merchant.\
-See Webhook [Payment Notification](webhook/payment-notification.md).
+See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 ### [Response Parameters](checkout-api.md#response-parameters)
 
@@ -606,7 +606,7 @@ For more information see [vendor\_name](checkout-api.md#vendor\_name-string-opti
 #### [**webhook\_url**](checkout-api.md#webhook\_url-url-conditional)  _<mark style="color:blue;">**`URL`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 It contains the URL where the payment result will be sent via a POST request after the customer has completed the payment session. The payment result will be included in the request body.\
-See Webhook [Payment Notification](webhook/payment-notification.md).
+See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 **Presence condition:**
 

@@ -43,7 +43,7 @@ For optimal security, we highly recommend using Basic Authentication and assigni
 
 ## [Permissions](operations.md#permissions)
 
-**API Key:** Superadmin privileges are automatically granted to the [private API Key](authentication.md#private-key). For more information on using the API Key, check this [resource](authentication.md#api-keys).
+**API Key:** Superadmin privileges are automatically granted to the [private API Key](authentication.md#private-key). For more information on using the API Key, check this [resource](authentication.md#private-key-api-key).
 
 **Basic Authentication:** This method works with any user and permission that has access to the system. If a user is a superadmin, they have access to all operations. However, for a more granular control, you can assign specific permissions to the user.
 
@@ -150,9 +150,9 @@ A [child transaction](../user-guide/payment-tracking.md#states-of-child-payment-
 
 Ottu maintains a list of the operations supported by each payment gateway, which can be found [here](../user-guide/payment-gateway.md#available-operations).
 
-#### :digit\_seven: [**What is the difference between using API Key authentication and Basic Authentication?**](operations.md#what-is-the-difference-between-using-api-key-authentication-and-basic-authentication)
+#### :digit\_seven: [**What is the difference between using API-Key authentication and Basic Authentication?**](operations.md#what-is-the-difference-between-using-api-key-authentication-and-basic-authentication)
 
-Using an [API Key](authentication.md#api-keys) grants you superadmin privileges and allows you to perform any operation. However, with [Basic Authentication](authentication.md#basic-authentication), you can assign specific [permissions ](operations.md#permissions)to control access to various API endpoints. It's recommended to use Basic Authentication for granular access control.
+Using an [API-Key](authentication.md#private-key-api-key) grants you superadmin privileges and allows you to perform any operation. However, with [Basic Authentication](authentication.md#authentication), you can assign specific [permissions ](operations.md#permissions)to control access to various API endpoints. It's recommended to use Basic Authentication for granular access control.
 
 #### :digit\_eight: [**What permissions are required to perform operations?**](operations.md#what-permissions-are-required-to-perform-operations)
 
@@ -161,7 +161,5 @@ The required permissions depend on the operation you want to perform. You can gr
 #### :digit\_nine: [**What happens when a refund operation is requested via the API?**](operations.md#what-happens-when-a-refund-operation-is-requested-via-the-api)
 
 When a [refund](operations.md#refund-1) operation is requested via the API, the request goes directly to the payment gateway and the maker-checker flow is not activated. Currently, the maker-checker flow can only be enabled for operations performed manually via the Ottu dashboard. This ensures that refunds are issued directly when requested via the API, bypassing the internal approval process.
-
-
 
 As we conclude this guide, we hope that the provided information has given you a comprehensive understanding of the operations endpoint and its various functionalities. We've covered everything from initial setup to the various types of operations and how they interact with different transaction states. However, in case you need to delve deeper into the technical implementation, feel free to explore the [Operation API Schema Reference](operations.md#operations-api-schema-reference). Remember, each operation has specific requirements and behaviors, so it's important to carefully review this documentation before proceeding. As always, we're here to help should you need any further assistance or clarification. Happy integrating with Ottu!

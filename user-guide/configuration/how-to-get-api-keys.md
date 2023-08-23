@@ -12,7 +12,7 @@ Obtaining your API keys is a simple and essential step that enables you to acces
 
 2.  #### Provide the Required Information
 
-    Fill the required fields and click save.
+    Fill the required fields and click `save`.
 
 ![](<../../.gitbook/assets/Fill the required fields.png>)
 

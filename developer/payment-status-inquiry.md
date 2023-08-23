@@ -2,7 +2,7 @@
 
 ## [Introduction](payment-status-inquiry.md#introduction)
 
-The Payment Status Inquiry API endpoint is a part of Ottu's Check Status API designed to check the status of a specific payment transaction. This is especially useful when your system may not have received notifications about changes to a transaction's status. The Payment Status Inquiry API effectively acts as a manual status confirmation mechanism, reflecting the structure of a [payment webhook notification](webhooks/payment-notification.md). The endpoint can be triggered for payment transactions in the following states: `pending`, `attempted`, `failed`, or `expired`. If the transaction state is already `paid` or `authorized`, the status is returned immediately without needing to re-confirm with third-party [Payment Gateways](../user-guide/payment-gateway.md) (PGs). However, if the transaction state is not up-to-date and is still listed in one of the aforementioned states, Ottu will trigger an API call to the PG to update the transaction state. In cases where multiple payment options were `attempted` using different PGs, all PGs that support payment status checks will be called, ensuring that you receive the most updated status for the payment.
+The Payment Status Inquiry API endpoint is a part of Ottu's Check Status API designed to check the status of a specific payment transaction. This is especially useful when your system may not have received notifications about changes to a transaction's status. The Payment Status Inquiry API effectively acts as a manual status confirmation mechanism, reflecting the structure of a [payment webhook notification](webhooks/payment-webhooks.md). The endpoint can be triggered for payment transactions in the following states: `pending`, `attempted`, `failed`, or `expired`. If the transaction state is already `paid` or `authorized`, the status is returned immediately without needing to re-confirm with third-party [Payment Gateways](../user-guide/payment-gateway.md) (PGs). However, if the transaction state is not up-to-date and is still listed in one of the aforementioned states, Ottu will trigger an API call to the PG to update the transaction state. In cases where multiple payment options were `attempted` using different PGs, all PGs that support payment status checks will be called, ensuring that you receive the most updated status for the payment.
 
 ## [Automatic Inquiry](payment-status-inquiry.md#automatic-inquiry)
 
@@ -17,7 +17,7 @@ The payment process can be intricate, and numerous unforeseen events might disru
 
 ## [Recommendations for Using Ottu’s Inquiry API](payment-status-inquiry.md#recommendations-for-using-ottus-inquiry-api)
 
-If you’ve set up [Webhook Payment Notifications](webhooks/payment-notification.md) with Ottu, it’s best to rely on the responses from these notifications after Ottu’s automatic inquiry. Only consider integrating the inquiry API if you haven’t enabled webhook notifications.
+If you’ve set up [Webhook Payment Notifications](webhooks/payment-webhooks.md) with Ottu, it’s best to rely on the responses from these notifications after Ottu’s automatic inquiry. Only consider integrating the inquiry API if you haven’t enabled webhook notifications.
 
 * **Timing is Crucial:** Scheduling your inquiry calls with precision is essential. Otherwise, you might miss the most recent transaction status.
 * **Example with MPGS:** The PG [MPGS](../user-guide/payment-gateway.md#mpgs) typically requires an inquiry after approximately 11 minutes. If you initiate your inquiry call prematurely, say around the 8-minute mark, you might miss out on the most recent status. It’s advisable to add a margin of **2-3 minutes**, making your inquiry after about 13-14 minutes for MPGS.
@@ -32,7 +32,7 @@ In essence, the Automatic Inquiry feature is Ottu’s commitment to providing co
 For this API to work efficiently, here are a few things you need to be familiar with:
 
 1. **Payment Gateway:** At least one Payment Gateway that supports status checks should be available. You can find more about Payment Gateways [here](../user-guide/payment-gateway.md).
-2. **Webhook:** The Payment Webhook response, as this is the response format which Payment Status Inquiry API returns. More details can be found [here](webhooks/payment-notification.md).
+2. **Webhook:** The Payment Webhook response, as this is the response format which Payment Status Inquiry API returns. More details can be found [here](webhooks/payment-webhooks.md).
 
 ### [Authentication](payment-status-inquiry.md#authentication)
 
@@ -76,7 +76,7 @@ To request a status inquiry, you must provide at least one of the following iden
 
 #### :digit\_one: [**What are the prerequisites to using the Payment Status Inquiry API?**](payment-status-inquiry.md#what-are-the-prerequisites-to-using-the-payment-status-inquiry-api)
 
-You should have at least one [Payment Gateway](../user-guide/payment-gateway.md) that supports status checks, and you should be familiar with the [Payment Webhook response](webhooks/payment-notification.md). Refer to [available operation](../user-guide/payment-gateway.md#available-operations) table to explore the PGs support status checks.
+You should have at least one [Payment Gateway](../user-guide/payment-gateway.md) that supports status checks, and you should be familiar with the [Payment Webhook response](webhooks/payment-webhooks.md). Refer to [available operation](../user-guide/payment-gateway.md#available-operations) table to explore the PGs support status checks.
 
 #### :digit\_two: [**What types of authentication does the Payment Status Inquiry API support?**](payment-status-inquiry.md#what-types-of-authentication-does-the-payment-status-inquiry-api-support)
 
@@ -109,7 +109,7 @@ To request a status inquiry, you need to provide either the [session\_id](checko
 We hope you found this guide to the Payment Status Inquiry API useful. As you proceed with your implementation, remember the following key points:
 
 * **Stay within the Request Limits:** Be mindful of our API’s built-in throttling mechanisms to ensure smooth operation.
-* **Understand the Webhook Response:** Knowing how to interpret the Payment Webhook response is crucial for accurate results. Check [Payment Notification](webhooks/payment-notification.md).
+* **Understand the Webhook Response:** Knowing how to interpret the Payment Webhook response is crucial for accurate results. Check [Payment Notification](webhooks/payment-webhooks.md).
 * **Use the Correct Identifier:** Provide either the [session\_id](checkout-api.md#session\_id-string-mandatory) or [order\_no](checkout-api.md#order\_no-string-optional) when requesting a status inquiry.
 * **Consider the Transaction State:** The states `paid` and `authorized` will return the status immediately, while others will trigger a status check with the [Payment Gateway](../user-guide/payment-gateway.md). Please refer to the [Operation Available](../user-guide/payment-gateway.md#available-operations) table to explore the processes supported by each Payment Gateway.
 

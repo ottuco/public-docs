@@ -172,7 +172,7 @@ This object contains information about the user who created the transaction from
 
 **Presence condition:**
 
-* It is present only when [Basic Authentication](../authentication.md#basic-authentication) is used, because [API Key Authentication](../authentication.md#api-key) is not associated with any user.
+* It is present only when [Basic Authentication](../authentication.md#basic-authentication) is used, because [API-Key Authentication](../authentication.md#private-key-api-key) is not associated with any user.
 * Merchant includes the initiator ID in the payload when creating the transaction
 
 #### [is\_sandbox](payment-notification.md#is\_sandbox-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_

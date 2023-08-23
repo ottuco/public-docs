@@ -32,7 +32,7 @@ Firstly, a session token should be created  by Ottu public API, then SDK could b
 
 
 {% hint style="info" %}
-For "Api\_Key" API [Public key](../authentication.md#public-key) sohuld be used.
+For "Api\_Key" [API Public key](../authentication.md#public-key) sohuld be used.
 {% endhint %}
 
 ## [Installation](android.md#installation)

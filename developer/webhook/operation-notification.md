@@ -50,7 +50,7 @@ The merchant should always check if the amount he received from Ottu is the amou
 
 #### [initiator](operation-notification.md#initiator-dict) _<mark style="color:blue;">`dict`</mark>_&#x20;
 
-Payment operation creator details, it will be populated only if the operation was triggered from the dashboard or using api with basic auth and not api key
+Payment operation creator details, it will be populated only if the operation was triggered from the dashboard or using API with [Basic Authentication](../authentication.md#basic-authentication) and not [API-Key Authentication](../authentication.md#private-key-api-key).
 
 #### [is\_sandbox ](operation-notification.md#is\_sandbox-bool)_<mark style="color:blue;">`bool`</mark>_
 

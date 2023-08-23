@@ -49,7 +49,7 @@ Xcode 13.0 or later is required, which is compatible with apps targeting iOS 12 
 Initially, a session token should be created by Ottu public API, then SDK could be initialized. See [Rest API](broken-reference)
 
 {% hint style="info" %}
-For "apiKey" API [Public key](../authentication.md#public-key) sohuld be used.
+For "apiKey" [API Public key](../authentication.md#public-key) sohuld be used.
 {% endhint %}
 
 ## [**Installation**](ios.md#installation)

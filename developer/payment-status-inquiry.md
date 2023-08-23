@@ -36,7 +36,7 @@ For this API to work efficiently, here are a few things you need to be familiar 
 
 ### [Authentication](payment-status-inquiry.md#authentication)
 
-This API endpoint uses both [API Key](authentication.md#api-keys) and [Basic Authentication](authentication.md#basic-authentication). No special permissions are required for Basic Authentication.
+This API endpoint uses both [API-Key](authentication.md#private-key-api-key) and [Basic Authentication](authentication.md#basic-authentication). No special permissions are required for Basic Authentication.
 
 ### [How it Works](payment-status-inquiry.md#how-it-works)
 
@@ -80,7 +80,7 @@ You should have at least one [Payment Gateway](../user-guide/payment-gateway.md)
 
 #### :digit\_two: [**What types of authentication does the Payment Status Inquiry API support?**](payment-status-inquiry.md#what-types-of-authentication-does-the-payment-status-inquiry-api-support)
 
-The API endpoint supports both [API Key](authentication.md#api-keys) and [Basic Authentication](authentication.md#basic-authentication).
+The API endpoint supports both [API-Key](authentication.md#private-key-api-key) and [Basic Authentication](authentication.md#basic-authentication).
 
 #### :digit\_three: [**Which payment transaction states can I inquire using the Payment Status Inquiry API?**](payment-status-inquiry.md#which-payment-transaction-states-can-i-inquire-using-the-payment-status-inquiry-api)
 

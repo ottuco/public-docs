@@ -487,7 +487,7 @@ The operation field provides insight into the type of transaction:
 #### **4. Verifying the Amount**
 
 * The [amount](payment-webhooks.md#amount-string-mandatory) field provides the value the customer has paid in the currency set during the payment setup.
-* However, the actual amount captured by the [Payment Gateway](../../user-guide/payment-gateway.md) (PG) might differ. This can be due to additional fees, currency conversion, or other factors. To get the exact amount captured by the PG, refer to [amount\_details.amount](payment-webhooks.md#amount\_details-object-mandatory). The currency in which this amount is denominated can be found in [amount\_details.currency\_code](payment-webhooks.md#amount\_details-child-parameters).
+* However, the actual amount captured by the [Payment Gateway](../../user-guide/payment-gateway.md) (PG) might differ. This can be due to additional fees, currency conversion, or other factors. To get the exact amount captured by the PG, refer to [amount\_details.amount](payment-webhooks.md#amount\_details-object-mandatory). The currency in which this amount is denominated can be found in [amount\_details.currency\_code](payment-webhooks.md#currency\_code-string-mandatory).
 * In most scenarios, cross-referencing with the amount field should suffice. But if there are discrepancies or if you’ve set up fees or currency conversions, it’s advisable to verify with `amount_details`.
 
 #### **5. Cash Payments**

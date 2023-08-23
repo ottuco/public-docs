@@ -92,10 +92,10 @@ For example, if your Ottu URL is `https://example.ottu.com`, then your `merchant
 
 The `apiKey` is your Ottu [API public key](../authentication.md#public-key). This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
 
-According to the REST [API documentation](broken-reference), the `apiKey` property should be set to your Ottu  [API public key](../authentication.md#public-key).
+According to the REST [API documentation](../authentication.md), the `apiKey` property should be set to your Ottu  API public key.
 
 {% hint style="warning" %}
-Ensure that you utilize the public key and refrain from using the private key. The private key should remain confidential at all times and must not be shared with any clients.
+Ensure that you utilize the public key and refrain from using the [private key](../authentication.md#private-key-api-key). The private key should remain confidential at all times and must not be shared with any clients.
 {% endhint %}
 
 #### [**session\_id**](web.md#session\_id-string) _<mark style="color:blue;">**`string`**</mark>_

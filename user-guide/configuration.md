@@ -246,7 +246,7 @@ Keep in mind that the merchant’s server will take 30 seconds to respond, and t
 
 * **Enable retry webhook mechanism**: If checked, Ottu will retry the request if the first attempt fails. See the [example scenario](configuration.md#example) above for further clarity.
 * **Operations webhook\_url:** The URL where transaction data will be disclosed once an operation transaction flow is triggered. See [Operation Notification](../developer/webhooks/operation-notification.md).
-* **Enable webhook notifications if transaction initiated from API:** If checked, [webhook notifications](../developer/webhooks/payment-webhooks.md) will be activated even if the transaction is created via the API.
+* **Enable webhook notifications if transaction initiated from API:** If checked, [Payment Webhooks](../developer/webhooks/payment-webhooks.md) will be activated even if the transaction is created via the API.
 
 ### [Webhook Plugin Configs](configuration.md#webhook-plugin-configs)
 

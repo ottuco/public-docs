@@ -259,11 +259,11 @@ In this tab, the merchant can define the desired webhook behavior for specific p
 * **Webhook plugin:** The plugin that the webhook works for. See [Plugins](plugins/)
 * **Webhook UrL:** When a [payment event](../developer/webhooks/payment-webhooks.md) or [payment operation](../developer/webhooks/operation-notification.md) occurs, Ottu sends an HTTP request to this URL to disclose transactional data.
 * **Enable transaction state webhook notifications:** If checked, webhook notifications will be sent for the defined Notification status.
-* **Notification status:** Define the transaction status that will trigger the [webhook notification](../developer/webhooks/payment-webhooks.md), including `paid`, `failed`, `authorized`, and `canceled`. Review the [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction) for more information.
+* **Notification status:** Define the transaction status that will trigger the [Payment Webhook,](../developer/webhooks/payment-webhooks.md) including `paid`, `failed`, `authorized`, and `canceled`. Review the [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction) for more information.
 * **Delete:** Deletes the defined plugin webhook configuration.
 
 {% hint style="info" %}
 The webhook\_Url specified in the [webhook plugin configuration](configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../developer/webhooks/payment-webhooks.md) and [operations](../developer/webhooks/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
 {% endhint %}
 
-For more information about how and where webhook works in Ottu see [webhook](../developer/webhooks/).
+For more information about how and where webhook works in Ottu see [Webhooks](../developer/webhooks/).

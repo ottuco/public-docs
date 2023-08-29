@@ -16,7 +16,11 @@
     * [Two-Step Refund & Void Authorization](user-guide/plugins/features/two-step-refund-and-void-authorization.md)
 * [Integration](user-guide/integration.md)
 * [Configuration](user-guide/configuration.md)
+  * [Global Configuration](user-guide/configuration/global-configuration.md)
+  * [Webhooks Configuration](user-guide/configuration/webhooks-configuration.md)
+  * [Transaction Report Configuration](user-guide/configuration/transaction-report-configuration.md)
   * [How to Get API Keys](user-guide/configuration/how-to-get-api-keys.md)
+  * [URL Shortener Configuration](user-guide/configuration/url-shortener-configuration.md)
 
 ## developer
 

@@ -4,7 +4,7 @@
 
 This webhook is a valuable feature offered by Ottu that enables merchants to stay up-to-date with transactional activity. With this feature, Ottu can trigger a call to a designated webhook URL whenever a specific operation such as capture, refund, void, or cancel is performed, providing real-time transactional data. By receiving the relevant information, merchants can promptly respond to events and ensure the accuracy of their records.
 
-Note that Operation Notifications configuration can be checked at [Webhook configuration document](../../user-guide/configuration.md#webhook-configuration). This documentation provides information on how to set up and configure the webhook URL for receiving the notifications, as well as how to manage and troubleshoot any issues that may arise during the configuration process.
+Note that Operation Notifications configuration can be checked at [Webhooks configuration document](../../user-guide/configuration/webhooks-configuration.md). This documentation provides information on how to set up and configure the webhook URL for receiving the notifications, as well as how to manage and troubleshoot any issues that may arise during the configuration process.
 
 ## [Payload example (void)](operation-notification.md#payload-example-void)
 

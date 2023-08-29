@@ -4,14 +4,8 @@ Ottu puts the power of configuration in the hands of merchants, ensuring a hassl
 
 ## [Global Configuration Walkthrough](global-configuration.md#global-configuration-walkthrough)
 
-The global settings can be reached from the Ottu Dashboard > Administration Panel > Config.
-
-![](<../../.gitbook/assets/1 (5).png>)
-
-### [Configuration](global-configuration.md#configuration)
-
 **Fine-Tune Your Settings with Ottu's Configuration Options**\
-**To access the configurations:** from the Ottu Dashboard > navigate to the Administration Panel > head to Config > then select Configuration.
+**To access the configurations:** from the Ottu Dashboard > navigate to the Administration Panel > head to Config > then select `Configuration`.
 
 <figure><img src="../../.gitbook/assets/Configuration.png" alt=""><figcaption></figcaption></figure>
 

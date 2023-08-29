@@ -1,7 +1,5 @@
 # Configuration
 
-## [Getting Started](configuration.md#getting-started)
-
 This documentation is designed to provide you with a clear and detailed guide to configuring and utilizing Ottu's powerful features. From managing global settings that govern the behavior of your payment system, to setting up webhooks that enable real-time communication, and understanding how to generate and use API keys effectively – we've got you covered.
 
 ## [Explore Ottu's Configuration Sections](configuration.md#explore-ottus-configuration-sections)

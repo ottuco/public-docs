@@ -2,7 +2,7 @@
 
 Learn how to configure Ottu's transaction reports for valuable insights into your payment activities. This section guides you through the setup process, allowing you to generate comprehensive reports tailored to your business needs.
 
-## [**Report Generation Configuration Walkthrough**](https://app.gitbook.com/o/zPYVxVRFHGcXaJwu5Lii/s/6jPPS6SrHa77njezUydM/\~/changes/1/user-guide/configuration/transaction-report-configuration#report-generation-configuration-walkthrough)
+## [**Report Generation Configuration Walkthrough**](transaction-report-configuration.md#report-generation-configuration-walkthrough)
 
 To access the Configuration of Transaction Report Generator, navigate to Ottu Dashboard > Administration Panel > Report > Periodic Transaction Report Config.
 

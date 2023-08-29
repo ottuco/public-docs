@@ -2,7 +2,7 @@
 
 Discover the power of Ottu's URL Shortener Configuration. This section walks you through the setup, enabling you to create concise and efficient shortened links while providing insights into each configuration aspect.
 
-### [**URL Shortener Configuration Walkthrough**](https://app.gitbook.com/o/zPYVxVRFHGcXaJwu5Lii/s/6jPPS6SrHa77njezUydM/\~/changes/1/user-guide/configuration/url-shortener-configuration#url-shortener-configuration-walkthrough)
+### [**URL Shortener Configuration Walkthrough**](url-shortener-configuration.md#url-shortener-configuration-walkthrough)
 
 To configure the URL Shortener, go to the Ottu Dashboard > Administration Panel > Config > URL Shortener Configurations.
 

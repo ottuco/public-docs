@@ -76,6 +76,6 @@ If you have multiple Ottu installations and one PG (Payment Gateway), one of the
 #### [**Fine-Tune User Experience**](global-configuration.md#fine-tune-user-experience)
 
 * **Enable session timeout:** If checked, users who do not have refund/void permissions will be automatically logged out after passing the defined session timeout.
-* **Enable URL shortener:** Activate the URL shortener for public links, making sharing links with others hassle-free. Check [URL Shortener Configuration](global-configuration.md#url-shortener-configurations) for more details.
+* **Enable URL shortener:** Activate the URL shortener for public links, making sharing links with others hassle-free. Check [URL Shortener Configuration ](url-shortener-configuration.md)for more details.
 
 Empower your online payment management with Ottu's remarkable configuration options. Let positive impressions, seamless transactions, and engaging experiences define your journey to success.

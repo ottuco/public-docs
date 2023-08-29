@@ -13,23 +13,23 @@ Ottu puts the power of configuration in the hands of merchants, ensuring a hassl
 
 **Here is a brief explanation of each field:**
 
-#### **Merchant Identity - Stand Out in Style**
+#### [**Merchant Identity - Stand Out in Style**](global-configuration.md#merchant-identity-stand-out-in-style)
 
 * **Merchant name or title:** Display your preferred name on the dashboard.
 * **Merchant subheader:** Highlight vital information concisely to grab attention.
 
-#### **Branding - Making Your Mark**
+#### [**Branding - Making Your Mark**](global-configuration.md#branding-making-your-mark)
 
 * **Logo:** Showcase your unique market logo.
 * **Favicon:** Capture attention with an eye-catching icon next to your site's name in bookmarks and browser tabs.
 
-#### **Connectivity - Stay in the Loop**
+#### [**Connectivity - Stay in the Loop**](global-configuration.md#connectivity-stay-in-the-loop)
 
 * **Merchant website URL:** The URL address of the merchant's website.
 * **Email:** The email address that will receive the permission authorization request. Typically, this is the installation owner's email.
 * **Merchant phone:** The merchant's contact phone number.
 
-#### **Seamless Currency Exchange**
+#### [**Seamless Currency Exchange**](global-configuration.md#seamless-currency-exchange)
 
 * **Fixer access key:** The fixer access key is used to get currency exchange rates from Fixer.io API. **Fixer.io** is an online service that provides real-time currency exchange rates. Obtain your Fixer Access Key by creating an account on their website.
 
@@ -37,7 +37,7 @@ Ottu puts the power of configuration in the hands of merchants, ensuring a hassl
 For this service (i.e., Fixer.io) to be active, remember to enable the online conversion feature: from Ottu Dashboard > Administration Panel > Currency > Currency Exchange Configs \[set the field “Work as” to the value “Online”].
 {% endhint %}
 
-#### **Control Your Functionality**
+#### [**Control Your Functionality**](global-configuration.md#control-your-functionality)
 
 * **Is paused:** Allows merchants to temporarily disable or freeze all their payment request links (i.e., freeze all payment transaction processes). This can be useful if the merchant is experiencing technical problems or if they are taking a break from accepting payments.
 * **Enable 2FA:** Allows merchants to enable two-factor authentication for their dashboard logins.
@@ -46,7 +46,7 @@ For this service (i.e., Fixer.io) to be active, remember to enable the online co
 In 2FA, An OTP (One-Time Passcode)—a single-use numerical passcode—will be sent to your email for every dashboard login. This adds an extra layer of security by requiring merchants to enter the code in addition to their password for each login action.
 {% endhint %}
 
-#### **Time-Sensitive**
+#### [**Time-Sensitive**](global-configuration.md#time-sensitive)
 
 * **Live date:** The date of the first live transaction.
 * **Renewal date:** The renewal date is the date when the merchant's Ottu subscription will end. It is important for merchants who want to renew their subscriptions to keep using Ottu. It is specified in the contract signed between Ottu and the merchant.
@@ -57,15 +57,15 @@ In 2FA, An OTP (One-Time Passcode)—a single-use numerical passcode—will be s
 * By default, the expiration date is 24 hours, but it can be modified: From the Ottu Dashboard > Administration Panel > Payment Request > Payment Request Configuration \[Transaction Expiration Time]
 {% endhint %}
 
-#### **Customization and Extra Notes**
+#### [**Customization and Extra Notes**](global-configuration.md#customization-and-extra-notes)
 
 * **Notes:** A place for the merchant to write any additional configuration notes.
 
-#### **Security and Efficiency**
+#### [**Security and Efficiency**](global-configuration.md#security-and-efficiency)
 
 * **SSL expiry date:** The SSL (Security Socket Layer) expiry date is the date when the merchant's SSL certificate will expire, and It is automatically populated based on the installation date. SSL guarantees the security of the merchant server.
 
-#### **Effortless Management of Multiple Installations**
+#### [**Effortless Management of Multiple Installations**](global-configuration.md#effortless-management-of-multiple-installations)
 
 * **Reference prefix:** A unique prefix that can be used by the Ottu Operations Team to avoid duplicate track IDs for the PG ([Payment Gateway](../payment-gateway.md)), as duplicating IDs can cause problems with tracking and reporting.
 
@@ -73,7 +73,7 @@ In 2FA, An OTP (One-Time Passcode)—a single-use numerical passcode—will be s
 If you have multiple Ottu installations and one PG (Payment Gateway), one of the installations should have the Reference Prefix so that each installation has a unique track ID, even if they use the same PG.
 {% endhint %}
 
-#### **Fine-Tune User Experience**
+#### [**Fine-Tune User Experience**](global-configuration.md#fine-tune-user-experience)
 
 * **Enable session timeout:** If checked, users who do not have refund/void permissions will be automatically logged out after passing the defined session timeout.
 * **Enable URL shortener:** Activate the URL shortener for public links, making sharing links with others hassle-free. Check [URL Shortener Configuration](global-configuration.md#url-shortener-configurations) for more details.

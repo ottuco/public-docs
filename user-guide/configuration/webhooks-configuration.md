@@ -2,13 +2,13 @@
 
 [Webhooks](../../developer/webhooks/) is an HTTP endpoint that is used to receive notifications about events that occur in the Ottu system. For example, if a payment is created, Ottu can send a webhook notification to the merchant's server with the details of the payment. The merchant can then use this information to update their systems. Enhance your Ottu experience with our powerful Webhook Configuration. Take advantage of API payloads, SSL certificate verification options, error notifications, and more.
 
-## [**Webhooks Configuration Walkthrough**](https://app.gitbook.com/o/zPYVxVRFHGcXaJwu5Lii/s/6jPPS6SrHa77njezUydM/\~/changes/3/user-guide/configuration/webhooks-configuration#webhooks-configuration-walkthrough)
+## [**Webhooks Configuration Walkthrough**](webhooks-configuration.md#webhooks-configuration-walkthrough)
 
 To access the Webhook Configuration, navigate to Ottu Dashboard > Administration Panel > Webhook > Webhook Config
 
 <figure><img src="../../.gitbook/assets/webhook.png" alt=""><figcaption></figcaption></figure>
 
-### [General](webhooks-configuration.md#general-1)
+### [General](webhooks-configuration.md#general)
 
 <figure><img src="../../.gitbook/assets/webhook config.png" alt=""><figcaption></figcaption></figure>
 
@@ -71,7 +71,7 @@ In this tab, the merchant can define the desired webhook behavior for specific p
 * **Delete:** Deletes the defined plugin webhook configuration.
 
 {% hint style="info" %}
-The webhook\_Url specified in the [webhook plugin configuration](webhooks-configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../../developer/webhooks/payment-webhooks.md) and [operations](../../developer/webhooks/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
+The **webhook\_Url** specified in the [webhook plugin configuration](webhooks-configuration.md#webhook-plugin-configs) serves as the endpoint for receiving notifications related to both [payments](../../developer/webhooks/payment-webhooks.md) and [operations](../../developer/webhooks/operation-notification.md). If we provide values for both the operation webhook\_url and the webhook\_Url in the plugin configuration, the system will transmit data to both URLs.
 {% endhint %}
 
 For more information about how and where webhook works in Ottu see [Webhooks](../../developer/webhooks/).

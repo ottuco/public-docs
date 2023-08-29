@@ -307,13 +307,13 @@ Max length: 16.
 #### [s**hortify\_attachment\_url** ](checkout-api.md#shortify\_attachment\_url-bool-optional)<mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short attachment retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../user-guide/configuration.md#url-shortener-configurations), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-string-conditional) will be shorter than attachment response parameter. if not configured, the attachment\_short\_url will be in the same format with [attachment](checkout-api.md#attachment-string-conditional) response parameter.\
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../user-guide/configuration/url-shortener-configuration.md), the [attachment\_short\_url](checkout-api.md#attachment\_short\_url-string-conditional) will be shorter than attachment response parameter. if not configured, the attachment\_short\_url will be in the same format with [attachment](checkout-api.md#attachment-string-conditional) response parameter.\
 Default value is false.
 
 #### [shortify\_checkout\_url](checkout-api.md#shortify\_checkout\_url-bool-optional) <mark style="color:blue;">**`bool`**</mark> _<mark style="color:blue;">**`optional`**</mark>_
 
 If true, it generates short checkout retrieval URL, which could be embedded in either SMS, Email, or WhatsApp messages, as it uses fewer characters.\
-If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../user-guide/configuration.md#url-shortener-configurations), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-conditional) will be shorter than [checkout\_url](checkout-api.md#checkout\_url-string-mandatory) parameter. If not configured, the checkout\_short\_url will be in the format of "https://\<ottu-url>>/b/abc123".\
+If an external URL shortening service, such as [Bitly](https://bitly.com/), is [configured](../user-guide/configuration/url-shortener-configuration.md), the [checkout\_short\_url](checkout-api.md#checkout\_short\_url-string-conditional) will be shorter than [checkout\_url](checkout-api.md#checkout\_url-string-mandatory) parameter. If not configured, the checkout\_short\_url will be in the format of "https://\<ottu-url>>/b/abc123".\
 Default value is false.
 
 #### [**type**](checkout-api.md#type-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_

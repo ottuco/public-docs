@@ -100,6 +100,10 @@ Ottu will then confirm the completion of the verification.
 
 <figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+If the merchant using his own domain alongside to Ottu, it's necessary to verify your domain. To complete this process, refer to the guide provided [here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/configuring\_your\_environment#3179109).
+{% endhint %}
+
 ### [Creating Apple Pay Certificates](apple-pay.md#creating-apple-pay-certificates)
 
 #### **1.** Once again, from your Apple Developer account, go to the Certificates, IDs & Profiles section

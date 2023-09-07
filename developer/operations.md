@@ -144,7 +144,7 @@ Yes, for operations like [refund](operations.md#refund-1) or [capture](operation
 
 #### :digit\_five: [**What does a 'child transaction' mean?**](operations.md#what-does-a-child-transaction-mean)
 
-A [child transaction](../user-guide/payment-tracking/#states-of-child-payment-transaction) is a sub-transaction created when operations like [refund](operations.md#refund-1) or [capture](operations.md#capture-1) are performed. This child transaction holds the details of the operation, including the new [state](../user-guide/payment-tracking/#states-of-child-payment-transaction), the [amount](../user-guide/payment-tracking/#amount-definitions-and-calculation-mechanism), and the [payment gateway](../user-guide/payment-gateway.md)'s response.&#x20;
+A [child transaction](../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) is a sub-transaction created when operations like [refund](operations.md#refund-1) or [capture](operations.md#capture-1) are performed. This child transaction holds the details of the operation, including the new state, the [amount](../user-guide/payment-tracking/#amount-definitions-and-calculation-mechanism), and the [payment gateway](../user-guide/payment-gateway.md)'s response.&#x20;
 
 #### :digit\_six: [**How do I know which operations a payment gateway supports?**](operations.md#how-do-i-know-which-operations-a-payment-gateway-supports)
 

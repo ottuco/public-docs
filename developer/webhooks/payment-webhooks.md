@@ -255,7 +255,7 @@ Min value: 0.01
 
 #### [result](payment-webhooks.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-Could be "success", "pending", "failed", "canceled", "error", and "cod". See [payment transaction states](../../user-guide/payment-tracking/#payment-transactions-states)\
+Could be "success", "pending", "failed", "canceled", "error", and "cod". See [payment transaction states](../../user-guide/payment-tracking/payment-transactions-states.md).\
 Max length 50\
 
 
@@ -282,7 +282,7 @@ A cryptographic hash used to guarantee data integrity and authenticity during cl
 
 #### [state](payment-webhooks.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It is one of the [Payment transaction state.](../../user-guide/payment-tracking/#payment-transactions-states) And could one of the below: \
+It is one of the [Payment transaction state](../../user-guide/payment-tracking/payment-transactions-states.md#parent-states). And could one of the below: \
 **created, pending, attempted, authorized, paid, failed, canceled, expired, invalided, or cod.**\
 Max length 50
 

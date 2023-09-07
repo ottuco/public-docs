@@ -88,7 +88,7 @@ Time and date of operation creation.
 
 #### [txn ](operation-notification.md#txn-dict)_<mark style="color:blue;">`dict`</mark>_
 
-A dictionary will be generated including a short summary of the [child payment transaction](../../user-guide/payment-tracking/#states-of-child-payment-transaction) which was created
+A dictionary will be generated including a short summary of the [child payment transaction](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) which was created
 
 #### :digit\_one: [amount](operation-notification.md#amount-string-1) _<mark style="color:blue;">`string`</mark>_
 
@@ -123,4 +123,4 @@ It is a unique identifier, assigned by Ottu to any child payment transaction , n
 
 #### :digit\_seven: [state ](operation-notification.md#state-string)_<mark style="color:blue;">`string`</mark>_
 
-[Payment operation state](../../user-guide/payment-tracking/#states-of-child-payment-transaction).
+[Payment operation state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states).

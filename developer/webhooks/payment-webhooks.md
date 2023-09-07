@@ -199,7 +199,7 @@ Whether the transaction was carried out in a sandbox environment.
 
 #### [message](payment-webhooks.md#message-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-A message indicating the cause of a [payment attempt](../../user-guide/payment-tracking.md#payment-attempt) failure., which is directly related to the payment attempt itself\
+A message indicating the cause of a [payment attempt](../../user-guide/payment-tracking/#payment-attempt) failure., which is directly related to the payment attempt itself\
 Max length 255.
 
 **Presence condition:**
@@ -255,7 +255,7 @@ Min value: 0.01
 
 #### [result](payment-webhooks.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-Could be "success", "pending", "failed", "canceled", "error", and "cod". See [payment transaction states](../../user-guide/payment-tracking.md#payment-transactions-states)\
+Could be "success", "pending", "failed", "canceled", "error", and "cod". See [payment transaction states](../../user-guide/payment-tracking/#payment-transactions-states)\
 Max length 50\
 
 
@@ -282,7 +282,7 @@ A cryptographic hash used to guarantee data integrity and authenticity during cl
 
 #### [state](payment-webhooks.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It is one of the [Payment transaction state.](../../user-guide/payment-tracking.md#payment-transactions-states) And could one of the below: \
+It is one of the [Payment transaction state.](../../user-guide/payment-tracking/#payment-transactions-states) And could one of the below: \
 **created, pending, attempted, authorized, paid, failed, canceled, expired, invalided, or cod.**\
 Max length 50
 
@@ -302,7 +302,7 @@ Max length 32-bit String (2^31 - 1)
 <summary>transaction  child parameters</summary>
 
 Transactions resulted to the PG operations performed on the parent transaction\
-See [child transaction sate](../../user-guide/payment-tracking.md#child-table-transaction)
+See [child transaction sate](../../user-guide/payment-tracking/#child-table-transaction)
 
 **Presence conditions:**
 

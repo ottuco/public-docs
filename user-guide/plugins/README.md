@@ -48,7 +48,7 @@ Payment Request Characteristics:
 * Rest assured with Ottu's unwavering commitment to security and confidentiality.
 * Enjoy the flexibility of choosing from a range of [payment gateway](../payment-gateway.md) options provided by Ottu.
 * Enjoy the convenience of a sharable link, specially generated for your transactions. The payment process will be seamlessly carried out through a shareable link created by trusted online payment gateways.
-* Gain peace of mind as Ottu enables easy tracking and monitoring of your transactions. See [Payment Tracking](../payment-tracking.md).
+* Gain peace of mind as Ottu enables easy tracking and monitoring of your transactions. See [Payment Tracking](../payment-tracking/).
 
 By prioritizing simplicity, security, and convenience, you can leave the complexities behind and focus on what matters most: growing your business.
 

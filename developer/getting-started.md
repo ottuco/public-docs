@@ -16,7 +16,7 @@ Currency configuration involves setting up the currencies you want to charge you
 
 #### [3. Payment Transaction](getting-started.md#3.-payment-transaction)
 
-Every payment or API operation starts with or involves a payment transaction. Essentially, this is the metadata for the payment. It includes information like amount, currency, customer data (email, phone number, address), and more. A payment transaction’s state can change based on the flow `created`, `paid`, `expired`, `canceled`, etc.). Learn more in the [Payment Transaction section](../user-guide/payment-tracking.md#payment-transaction).
+Every payment or API operation starts with or involves a payment transaction. Essentially, this is the metadata for the payment. It includes information like amount, currency, customer data (email, phone number, address), and more. A payment transaction’s state can change based on the flow `created`, `paid`, `expired`, `canceled`, etc.). Learn more in the [Payment Transaction section](../user-guide/payment-tracking/#payment-transaction).
 
 #### [4. REST API](getting-started.md#4.-rest-api)
 

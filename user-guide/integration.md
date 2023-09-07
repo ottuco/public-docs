@@ -82,7 +82,7 @@ Gain a comprehensive overview of your business's financial performance with thes
 
 ![](../.gitbook/assets/10.png)
 
-Dive deeper into your transaction details using the table located at the bottom of the page. This comprehensive overview not only displays information about each transaction process but also showcases the state of each transaction. The transaction states you may encounter include: `paid`, `failed`, `attempted`, and `created`. See the [payment transaction states](payment-tracking.md#states-of-parent-payment-transaction) for more information.
+Dive deeper into your transaction details using the table located at the bottom of the page. This comprehensive overview not only displays information about each transaction process but also showcases the state of each transaction. The transaction states you may encounter include: `paid`, `failed`, `attempted`, and `created`. See the [payment transaction states](payment-tracking/#states-of-parent-payment-transaction) for more information.
 
 ![](<../.gitbook/assets/11 (3).png>)
 

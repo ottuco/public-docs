@@ -587,7 +587,7 @@ See the request parameter [shipping\_address](checkout-api.md#shipping\_address-
 
 The current state of the payment transaction, it helps to understand the progress of the payment.\
 Enum: "created" "pending" "attempted" "authorized" "paid" "failed" "canceled" "expired" "invalided" "refunded" "cod".\
-See [payment transaction state](../user-guide/payment-tracking.md#payment-transaction-state-and-payment-attempt-state) for more information.
+See [payment transaction state](../user-guide/payment-tracking/#payment-transaction-state-and-payment-attempt-state) for more information.
 
 #### [type](checkout-api.md#type-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 

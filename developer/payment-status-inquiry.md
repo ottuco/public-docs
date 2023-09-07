@@ -41,7 +41,7 @@ This API endpoint uses both [API-Key](authentication.md#private-key-api-key) and
 ### [How it Works](payment-status-inquiry.md#how-it-works)
 
 1.  Payment Status Inquiry for `pending`, `attempted`, `failed`, or `expired` states\
-    See [Payment Transaction State](../user-guide/payment-tracking/#payment-transaction-state-and-payment-attempt-state).\
+    See [Payment Transaction State](../user-guide/payment-tracking/payment-transactions-states.md).\
 
 
     <figure><img src="../.gitbook/assets/ideas - Inquiry API (&#x60;pending&#x60;, &#x60;attempted&#x60;, &#x60;failed&#x60;, or &#x60;expired&#x60;) (5).png" alt="" width="375"><figcaption></figcaption></figure>
@@ -84,7 +84,7 @@ The API endpoint supports both [API-Key](authentication.md#private-key-api-key) 
 
 #### :digit\_three: [**Which payment transaction states can I inquire using the Payment Status Inquiry API?**](payment-status-inquiry.md#which-payment-transaction-states-can-i-inquire-using-the-payment-status-inquiry-api)
 
-You can trigger the endpoint for payment transactions in the `pending`, `attempted`, `failed`, or `expired` states. If the transaction state is `paid` or `authorized`, the status is returned immediately. See [Payment Transactions State](../user-guide/payment-tracking/#payment-transactions-states).
+You can trigger the endpoint for payment transactions in the `pending`, `attempted`, `failed`, or `expired` states. If the transaction state is `paid` or `authorized`, the status is returned immediately. See [Payment Transactions State](../user-guide/payment-tracking/payment-transactions-states.md).
 
 #### :digit\_four: [**How does Ottu handle inquiries for transactions with outdated states?**](payment-status-inquiry.md#how-does-ottu-handle-inquiries-for-transactions-with-outdated-states)
 

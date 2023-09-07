@@ -7,7 +7,7 @@ Delve into the heart of your financial universe with Ottu's Payment Transaction 
 Ottu ensures a seamless experience for merchants by providing an easily accessible transaction table integrated with each installed [plugin](../plugins/). This user-friendly feature grants merchants full visibility into their transaction history and details. Through the transaction table, users can effortlessly perform various payment [operations](../../developer/operations.md#external-operations), including voiding, refunding, and capturing, ensuring easy management of payment activities. The transaction table provides a centralized hub for efficient management.
 
 {% hint style="info" %}
-To access the transaction table, simply navigate to the “Transaction Tab” located under each installed [plugin](https://docs.ottu.com/user-guide/plugins).
+To access the transaction table, simply navigate to the “Transaction Tab” located under each installed [plugin](../plugins/).
 {% endhint %}
 
 ### [Proxy Fields](payment-transactions-insights.md#proxy-fields)

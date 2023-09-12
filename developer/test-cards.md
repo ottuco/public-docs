@@ -567,3 +567,23 @@ For failed: 251
 **Note:** OTP: 123123
 
 </details>
+
+## [Tamara](test-cards.md#tamara)
+
+<details>
+
+<summary><mark style="color:orange;">Tamara</mark></summary>
+
+**Payment gateway:** Tamara
+
+**Card type:** Mastercard
+
+**Country:** Kuwait
+
+**Card number:** `5436031030606378`
+
+**Expiry:** 01/99
+
+**CVV:** 257
+
+</details>

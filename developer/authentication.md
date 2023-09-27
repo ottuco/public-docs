@@ -30,7 +30,7 @@ It should NEVER be embedded in SDKs or made public. Ensure it’s used on the se
 The Public Key is used to initialize the [Checkout SDK](checkout-sdk/) and can safely be shared with clients. This key doesn’t provide access to public API endpoints, making it secure for client-side use.
 
 {% hint style="info" %}
-For detailed instructions on generating an API keys for both [Public ](authentication.md#public-key)& [Private ](authentication.md#private-key-api-key)Keys, kindly refer to [How to Get API Keys section](broken-reference).
+For detailed instructions on generating an API keys for both [Public ](authentication.md#public-key)& [Private ](authentication.md#private-key-api-key)Keys, kindly refer to [How to Get API Keys section](../user-guide/configuration/how-to-get-api-keys.md).
 {% endhint %}
 
 ## [**Token Authentication**](authentication.md#token-authentication)

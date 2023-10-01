@@ -90,7 +90,7 @@ POST: https://<ottu-url>/b/checkout/v1/pymt-txn/
   "amount": "2000",
   "type": "type", // Available choices are `payment_request` or `e_commerce`.
   "currency": "USD",
-  "pg_code": "PG001",
+  "pg_codes": "PG001",
   "customer_id": "CustomerID",
   "redirect_url": "https://yourwebsite.com/return",
   "webhook_url": "https://yourwebsite.com/webhook"

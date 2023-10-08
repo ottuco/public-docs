@@ -412,7 +412,7 @@ To ensure a smooth redirection of the payer back to the designated [redirect\_ur
 
 <figure><img src="../../.gitbook/assets/chr2 (1).png" alt=""><figcaption></figcaption></figure>
 
-## Payload example (paid)
+## [Payload Example (paid)](payment-webhooks.md#payload-example-paid)
 
 ```json
 {

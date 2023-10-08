@@ -416,31 +416,41 @@ To ensure a smooth redirection of the payer back to the designated [redirect\_ur
 
 ```json
 {
-    "amount": "285.000",
-    "amount_details": {
-        "amount": "285.000",
-        "currency_code": "KWD",
-        "fee": "0.000",
-        "total": "285.000"
-    },
-    "currency_code": "KWD",
-    "customer_email": "test@test.com",
-    "customer_phone": "96511111111",
-    "extra": { },
-    "fee": "0.000 KWD",
-    "gateway_account": "test",
-    "gateway_name": "test",
-    "gateway_response": { "It will contain the raw pg response sent by the pg to Ottu"},
-    "initiator": { "id": 1, "first_name":"test", "last_name":"test",
-     "username":"test", "email":"test@ottu.com", "phone":"+911111111111"},
-    "order_no": "test-123",
-    "paid_amount": 285.0,
-    "reference_number": "6ACE9",
-    "result": "success",
-    "session_id": "1111111111111",
-    "settled_amount": 285.0,
-    "signature": "f6ac2********",
-    "state": "paid"
+   "amount":"285.000",
+   "amount_details":{
+      "amount":"285.000",
+      "currency_code":"KWD",
+      "fee":"0.000",
+      "total":"285.000"
+   },
+   "currency_code":"KWD",
+   "customer_email":"test@test.com",
+   "customer_phone":"96511111111",
+   "extra":{
+      
+   },
+   "fee":"0.000 KWD",
+   "gateway_account":"test",
+   "gateway_name":"test",
+   "gateway_response":{
+      "It will contain the raw pg response sent by the pg to Ottu"
+   },
+   "initiator":{
+      "id":1,
+      "first_name":"test",
+      "last_name":"test",
+      "username":"test",
+      "email":"test@ottu.com",
+      "phone":"+911111111111"
+   },
+   "order_no":"test-123",
+   "paid_amount":285.0,
+   "reference_number":"6ACE9",
+   "result":"success",
+   "session_id":"1111111111111",
+   "settled_amount":285.0,
+   "signature":"f6ac2********",
+   "state":"paid"
 }
 ```
 

@@ -309,7 +309,7 @@ Yes, you can. Use the [User Cards API](user-cards.md) and provide the agreement 
 
 #### :digit\_seven: [Can I update an existing agreement? How?](auto-debit.md#can-i-update-an-existing-agreement-how)
 
-For the moment, this feature is not live yet. If you require this functionality, please reach out to us at support@ottu.com.
+For the moment, this feature is not live yet. If you require this functionality, please reach out to us at support@ottu.com[^1].
 
 As we come to the end of this guide to Ottu's Auto Debit API, we hope you found it comprehensive and instructive. This document has aimed to demystify the process of integrating our API into your system, equipping you with the necessary insights to employ auto-debit payments effectively.&#x20;
 
@@ -317,3 +317,5 @@ Should you have more specific queries or require further guidance, we urge you t
 
 At Ottu, we believe in simplifying payments and enhancing user experience. We're confident that with the Auto Debit API, you'll have the tools at your disposal to achieve seamless, automated transactions. \
 Thank you for choosing Ottu, and we look forward to powering your business's payment solutions.
+
+[^1]: email

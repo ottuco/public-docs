@@ -136,8 +136,8 @@ In both cases, always remember to update the saved card information in your data
 
 ## [API Schema Reference](auto-debit.md#api-schema-reference)
 
-{% swagger src="broken-reference" path="/b/pbl/v2/auto-debit/" method="post" %}
-[Broken file](broken-reference)
+{% swagger src="../.gitbook/assets/Ottu API (29).yaml" path="/b/pbl/v2/auto-debit/" method="post" %}
+[Ottu API (29).yaml](<../.gitbook/assets/Ottu API (29).yaml>)
 {% endswagger %}
 
 ## [Comprehensive Guide to Payments: Step-by-Step](auto-debit.md#comprehensive-guide-to-payments-step-by-step)

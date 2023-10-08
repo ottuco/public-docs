@@ -427,7 +427,6 @@ To ensure a smooth redirection of the payer back to the designated [redirect\_ur
    "customer_email":"test@test.com",
    "customer_phone":"96511111111",
    "extra":{
-      
    },
    "fee":"0.000 KWD",
    "gateway_account":"test",

@@ -412,49 +412,36 @@ To ensure a smooth redirection of the payer back to the designated [redirect\_ur
 
 <figure><img src="../../.gitbook/assets/chr2 (1).png" alt=""><figcaption></figcaption></figure>
 
-## [Payload example (attempted)](payment-webhooks.md#payload-example-attempted-1)
+## Payload example (paid)
 
 ```json
 {
-    "amount":"0.01",
-    "amount_details":{
-       "currency_code":"KWD",
-       "amount":"0.01",
-       "total":"0.01",
-       "fee":"0.00"
+    "amount": "285.000",
+    "amount_details": {
+        "amount": "285.000",
+        "currency_code": "KWD",
+        "fee": "0.000",
+        "total": "285.000"
     },
-    "currency_code":"KWD",
-    "customer_email":"test@ottu.com",
-    "customer_phone":"96511111111",
-    "fee":"0.00 KWD",
-    "gateway_account":"test",
-    "gateway_name":"test",
-    "message":"test",
-    "gateway_response":{
-        "It will contain the raw pg response sent by the pg to Ottu"
-    },
-    "initiator": {
-        "id": 1, "first_name":"test", "last_name":"test", "username":"test", "email":"test@ottu.com", "phone":"+911111111111"
-    },
-    "is_sandbox":true,
-    "order_no":"t-1111",
-    "paid_amount":"0.01",
-    "reference_number":"test111",
-    "result":"success",
-    "session_id":"111111111111111111111111111111111111",
-    "settled_amount":"0.01",
-    "signature":"11111111111111111111111111111111111111111111111111111111",
-    "state":"paid",
-    "transactions":[
-       {
-          "amount":"0.01",
-          "currency_code":"KWD",
-          "order_no":"None",
-          "session_id":"1111111111111111111111111111111111111111111",
-          "state":"refund_queued"
-       }
-    ]
- }
+    "currency_code": "KWD",
+    "customer_email": "test@test.com",
+    "customer_phone": "96511111111",
+    "extra": { },
+    "fee": "0.000 KWD",
+    "gateway_account": "test",
+    "gateway_name": "test",
+    "gateway_response": { "It will contain the raw pg response sent by the pg to Ottu"},
+    "initiator": { "id": 1, "first_name":"test", "last_name":"test",
+     "username":"test", "email":"test@ottu.com", "phone":"+911111111111"},
+    "order_no": "test-123",
+    "paid_amount": 285.0,
+    "reference_number": "6ACE9",
+    "result": "success",
+    "session_id": "1111111111111",
+    "settled_amount": 285.0,
+    "signature": "f6ac2********",
+    "state": "paid"
+}
 ```
 
 ## [Acknowledging a Payment](payment-webhooks.md#acknowledging-a-payment)

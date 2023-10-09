@@ -87,7 +87,7 @@ The currency code of the payment transaction \
 For more details, [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
 3 letters code
 
-<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence condition:</strong> </p><ul><li>The customer should include the billing address data while making the payment of the transaction.</li></ul></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0031">1</span><a href="payment-webhooks.md#customer_address_city-string-conditional">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0032">2</span><a href="payment-webhooks.md#customer_address_country-string-conditional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0033">3</span><a href="payment-webhooks.md#customer_address_line1-string-conditional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0034">4</span><a href="payment-webhooks.md#customer_address_line2-string-conditional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-webhooks.md#customer_address_line1-string-conditional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0035">5</span> <a href="payment-webhooks.md#customer_address_postal_code-string-conditional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0036">6</span><a href="payment-webhooks.md#customer_address_state-string-conditional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a> (sometimes the same as the <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence condition:</strong> </p><ul><li>Billing address data should be included while making the payment of the transaction.</li></ul></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0031">1</span><a href="payment-webhooks.md#customer_address_city-string-conditional">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0032">2</span><a href="payment-webhooks.md#customer_address_country-string-conditional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0033">3</span><a href="payment-webhooks.md#customer_address_line1-string-conditional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0034">4</span><a href="payment-webhooks.md#customer_address_line2-string-conditional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-webhooks.md#customer_address_line1-string-conditional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0035">5</span> <a href="payment-webhooks.md#customer_address_postal_code-string-conditional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0036">6</span><a href="payment-webhooks.md#customer_address_state-string-conditional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a> (sometimes the same as the <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
 
 #### [customer\_email](payment-webhooks.md#customer\_email-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -97,7 +97,7 @@ Max length 128
 
 **Presence condition:**
 
-* The customer should include it while making the payment of the transaction.
+* The customer email should included while making the payment of the transaction.
 
 #### [**customer\_first\_name**](payment-webhooks.md#customer\_first\_name-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -106,7 +106,7 @@ Max length 64
 
 **Presence condition:**
 
-* The customer should include it while making the payment of the transaction.
+* The customer first name should be included while making the payment of the transaction.
 
 #### [**customer\_id**](payment-webhooks.md#customer\_id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_&#x20;
 
@@ -124,7 +124,7 @@ Max length 64
 
 **Presence condition:**
 
-* The customer should include it while making the payment of the transaction.
+* The customer last name should be included while making the payment of the transaction.
 
 #### [**customer\_phone**](payment-webhooks.md#customer\_phone-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -133,7 +133,7 @@ Max length 32
 
 **Presence condition:**
 
-* The customer should include it while making the payment of the transaction.
+* The customer phone number should be included while making the payment of the transaction.
 
 #### [extra](payment-webhooks.md#extra-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -216,7 +216,7 @@ Max length 128\
 
 **Presence condition:**
 
-* It will be present only if order\_no has been provided in the request payload.
+* It will be present only if `order_no` has been provided in the request payload.
 
 #### [paid\_amount](payment-webhooks.md#paid\_amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 

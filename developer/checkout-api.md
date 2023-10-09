@@ -64,7 +64,7 @@ Represents the total amount of the payment transaction, which includes the cost 
 Max length: 24\
 Min value: 0.01
 
-#### [attachment](checkout-api.md#attachment-stringoptional) <mark style="color:blue;">**`string`**</mark>_<mark style="color:blue;">**`optional`**</mark>_
+#### [attachment](checkout-api.md#attachment-stringoptional) _<mark style="color:blue;">**`file`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 Attachments can be included as an optional feature in email notifications sent to the customer regarding their payment. These attachments will also be available for download on the checkout page. The primary purpose of this field is to provide the customer with additional information or documentation related to their purchase. However, it's important to note the following:
 

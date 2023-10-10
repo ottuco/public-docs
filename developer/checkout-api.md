@@ -68,9 +68,8 @@ Min value: 0.01
 
 Attachments can be included as an optional feature in email notifications sent to the customer regarding their payment. These attachments will also be available for download on the checkout page. The primary purpose of this field is to provide the customer with additional information or documentation related to their purchase. However, it's important to note the following:
 
-* Attachments should be sent using the [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type. They cannot be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding.
-* After the initial "create" API call has been made and a session ID has been generated, the "update" API should be used to send the attachment.
-* Allowed file extensions for attachments are: "pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", and "xlsx".
+* Attachments should be sent using the [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type. Ensure that you change the content type to `multipart/form-data` when sending attachments. They cannot be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/JSON) encoding.
+* Allowed file extensions for attachments are: "pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx", and "txt".
 * The name of the attached file should not exceed 100 characters.
 
 #### [**billing\_address**](checkout-api.md#billing\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_

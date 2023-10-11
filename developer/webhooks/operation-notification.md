@@ -1,10 +1,124 @@
 # Operation Notification
 
-### [Overview](operation-notification.md#overview)
+## [Introduction](operation-notification.md#introduction)
 
-This webhook is a valuable feature offered by Ottu that enables merchants to stay up-to-date with transactional activity. With this feature, Ottu can trigger a call to a designated webhook URL whenever a specific operation such as capture, refund, void, or cancel is performed, providing real-time transactional data. By receiving the relevant information, merchants can promptly respond to events and ensure the accuracy of their records.
+Ottu’s operation webhooks provide real-time insights into post-transaction activities, specifically focusing on `refund`, `capture`, and `void`. Operating asynchronously, they ensure merchants are promptly informed about these crucial subsequent payment gateway operations without disrupting the main transaction flow. By utilizing these webhooks, merchants gain a clearer view of their transactional landscape, enhancing decision-making and customer interactions.
 
-Note that Operation Notifications configuration can be checked at [Webhooks configuration document](../../user-guide/configuration/webhooks-configuration.md). This documentation provides information on how to set up and configure the webhook URL for receiving the notifications, as well as how to manage and troubleshoot any issues that may arise during the configuration process.
+## [Setup](operation-notification.md#setup)
+
+To ensure you receive notifications for subsequent payment gateway operations, it’s essential to configure the operation webhooks correctly. Here’s a brief guide on setting it up:
+
+1. **Webhook URL Configuration:** \
+   There are two ways to configure `webhook_url` for operations&#x20;
+
+* Configuring the operation `webhook_url` within webhook general configuration. For more details, click [here](../../user-guide/configuration/webhooks-configuration.md#general).
+* Configuring the operation `webhook_url` through payment webhook plugin configuration. For further information, click [here](../../user-guide/configuration/webhooks-configuration.md#webhook-plugin-configs).
+
+2. **Enable API-initiated Transaction Notifications:**\
+   If you want to receive webhook notifications for transactions initiated via the API, ensure you check the box labeled “Enable webhook notifications if transaction initiated from API.” For instructions on how to do this, please consult the following [reference](../../user-guide/configuration/webhooks-configuration.md#general).
+3. **Webhook Configuration Details**: \
+   For a more in-depth understanding and additional configuration options, refer to the dedicated [webhook config section](../../user-guide/configuration/webhooks-configuration.md) in the documentation.
+4. **Webhook Setup Requirements:** \
+   It’s worth noting that the requirements for setting up operation webhooks align with those detailed in the “webhooks overview” page. Ensure you’re familiar with these requirements to guarantee a smooth setup process. For details on these requirements, click [here](./#endpoint-requirements).
+
+By following these steps and ensuring your webhook is correctly configured, you’ll be well-equipped to receive timely updates on all your payment gateway operations.
+
+## [Payload Details](operation-notification.md#payload-details)
+
+#### [amount](operation-notification.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The merchant should always check if the amount he received from Ottu is the amount of the order, to avoid user changing the cart amount in between.
+
+#### [initiator](operation-notification.md#initiator-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_&#x20;
+
+Payment operation creator details, it will be populated only if the operation was triggered from the dashboard or using API with [Basic Authentication](../authentication.md#basic-authentication) and not [API-Key Authentication](../authentication.md#private-key-api-key).
+
+#### [is\_sandbox](operation-notification.md#is\_sandbox-bool-mandatory) _<mark style="color:blue;">`bool`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+If true, sandbox environment used for this PG settings.
+
+#### [operation ](operation-notification.md#operation-string-mandatory)_<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Choice from ["purchase","authorize".](../../user-guide/payment-gateway.md#configure-payment-gateway) Depending on how the PG is being selected.
+
+#### [pg\_code](operation-notification.md#pg\_code-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It is being generated according to user payment gateway [code](../checkout-api.md#pg\_codes-array-required) choice from [pg\_codes](../checkout-api.md#pg\_codes-array-required) list
+
+#### [gateway\_response](operation-notification.md#gateway\_response-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) response sent by the [payment gateway](../../user-guide/payment-gateway.md) to Ottu.
+
+#### [reference\_number](operation-notification.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It is a unique identifier, assigned by Ottu to any [parent payment transaction.](../../user-guide/payment-tracking/#states-of-parent-payment-transaction)
+
+#### [result](operation-notification.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+**Since** it states if the operation was success or not, and webhook operations are not triggered if the operation has failed, so It is a **Fixed value:** success.&#x20;
+
+#### [source](operation-notification.md#source-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+can be input or pg:\
+**Input** means it was triggered by Ottu side via API or dashboard. PG means it was triggered by bank **PG** dashboard and Ottu was informed via webhook.\
+**Note:** Not all PGs are informing Ottu when operations are happening on their side, so Ottu might not be aware of all operations on all PGs, only on those which are offering webhook feature.
+
+#### [timestamp\_utc](operation-notification.md#timestamp\_utc-date-time-mandatory) _<mark style="color:blue;">`date-time`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The time and date of operation creation. It should follow the format: YYYY-MM-DD / HH:MM:SS.
+
+#### [txn](operation-notification.md#txn-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+An object will be generated including a short summary of the [child payment transaction](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) which was created.
+
+<details>
+
+<summary>txn  child parameters</summary>
+
+#### [amount](operation-notification.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Requested amount of the payment operation.
+
+#### [currency\_code](operation-notification.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The currency code of the payment operation.\
+More details [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
+3 letters code
+
+#### [customer\_email](operation-notification.md#customer\_email-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Email address of the customer.
+
+#### [extra](operation-notification.md#extra-object-mandatory) _<mark style="color:blue;">`object`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The extra information for the payment details, which the merchant has sent it in key value form. For example:
+
+```
+"flight-number": "1234",
+"full_name": "customer
+```
+
+#### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Merchant unique identifier for the transaction. ABC123\_1, ABC123\_2, Max length: 128.
+
+#### [reference\_number](operation-notification.md#reference\_number-string-mandatory-1) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It is a unique identifier, assigned by Ottu to any child payment transaction, namely the [payment attempt.](../../user-guide/payment-tracking/#payment-transaction)
+
+#### [state](operation-notification.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It can take on one of the following values: `refunded`, `refund-queued, refund-rejected, voided`, or `paid`. For additional information, please refer to [Payment operation state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states).
+
+</details>
+
+## [Event Types](operation-notification.md#event-types)
+
+Operation webhooks are activated under the following scenarios:
+
+1. **Ottu Dashboard Trigger:** When a payment operation (`refund`, `void`, or `capture`) is initiated directly from the Ottu dashboard, the system will automatically send a webhook notification to the subscriber’s registered endpoint.
+2. **REST API Trigger:** If a payment operation is executed via Ottu’s REST API, [external operations API](../operations.md#external-operations), the webhook system will again ensure that a notification is dispatched to the subscriber’s endpoint. This ensures that even automated or system-driven operations are communicated in real-time.
+3. **Payment Gateway Dashboard Trigger:** Some [Payment Gateways](../../user-guide/payment-gateway.md) (PG) have their own webhook systems in place. If a payment operation is performed on the Payment Gateway’s dashboard and that PG has enabled webhooks, it will notify Ottu. Ottu, in turn, will relay this information to the subscriber by triggering the operation webhook. This cascading notification ensures that even if operations are performed outside of Ottu’s immediate ecosystem, subscribers remain in the loop. To access further details regarding the available operations for each payment gateway, please click [here](../../user-guide/payment-gateway.md#available-operations).
 
 ## [Payload example (void)](operation-notification.md#payload-example-void)
 
@@ -18,7 +132,7 @@ Note that Operation Notifications configuration can be checked at [Webhooks conf
    },
    "is_sandbox":false,
    "operation":null,
-   "pg_code":"mpgs-ksa",
+   "pg_code":"credit-card",
    "pg_response":{
       "It will contain the raw pg response sent by the pg to Ottu."
    },
@@ -38,89 +152,39 @@ Note that Operation Notifications configuration can be checked at [Webhooks conf
       "order_no":"",
       "reference_number":"LEQCJ",
       "state":"voided"
-      }
+   }
 }
 ```
 
-## [Response parameters](operation-notification.md#response-parameters)
+## [Acknowledging an Operation](operation-notification.md#acknowledging-an-operation)
 
-#### [amount](operation-notification.md#amount-string) _<mark style="color:blue;">`string`</mark>_
+Upon receiving an operation notification, it’s essential to discern and acknowledge the operation’s status and specifics. Here’s a guide on how to interpret the provided details:\
+\
+**Identifying the Transaction:**\
+Every operation is a subsequent action performed on a specific payment transaction, identifiable by its [session\_id](../checkout-api.md#session\_id-string-mandatory) or [order\_no](../checkout-api.md#order\_no-string-optional). These operations spawn [child payment transactions](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states), each with its distinct payment [attempt](../../user-guide/payment-tracking/payment-transactions-states.md#payment-attempt) and [state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states), without altering the primary transaction. The child transaction details are housed in the [txn ](operation-notification.md#txn-dict)field of the [webhook payload](operation-notification.md#payload-details). You can retrieve all child transactions from the Payment webhook under the transactions parameter or by invoking the [Payment Status API](../payment-status-inquiry.md).
 
-The merchant should always check if the amount he received from Ottu is the amount of the order, to avoid user changing the cart amount in between
+1. **Types of Operations:**
 
-#### [initiator](operation-notification.md#initiator-dict) _<mark style="color:blue;">`dict`</mark>_&#x20;
+* **Real-time Operations:** Immediate actions where, for instance, a refund request results in an instant refund. [Child transactions](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) are created for successful real-time operations, while failures aren’t stored.
+* **Queued Operations:** The Payment Gateway (PG) might not approve the request instantly, placing it in a queue for later processing. Such operations initially bear a `<operation>_queued` state. Once processed, the state either transitions to the specific operation state (like `refunded`, `captured`, `voided`) or `<operation>_rejected`.
 
-Payment operation creator details, it will be populated only if the operation was triggered from the dashboard or using API with [Basic Authentication](../authentication.md#basic-authentication) and not [API-Key Authentication](../authentication.md#private-key-api-key).
+2. **Understanding Real-time and Queued Payment Gateways:**To determine which Payment Gateways operate in real-time and which ones use the queued system, you can consult the list provided [here](../../user-guide/payment-gateway.md#available-operations).
+3. **Additional Information:** Upon receiving a `<operation>_queued` status, such as `refund_queued`, it’s imperative to archive this response. Ottu will subsequently notify the operation webhook URL with the conclusive result.
+4. **Understanding the result Field:** [result](operation-notification.md#result-string) this field elucidates the operation’s outcome:
 
-#### [is\_sandbox ](operation-notification.md#is\_sandbox-bool)_<mark style="color:blue;">`bool`</mark>_
+* `success`: The operation was executed successfully.
+* `rejected`: The operation was declined. This status invariably succeeds a queued status.
+* `queued`: The operation awaits processing and will be updated in due course.
 
-If true, sandbox environment used for this PG settings.
+5. **Verifying the Amount:** As operations exclusively function in the original payment transaction currency, inspecting the amount field ensures the accurate amount is either deducted or appended.
+6. **Interpreting the Transaction State (Optional):** The transaction’s state can be discerned using the [txn.state](operation-notification.md#state-string) field:
 
-#### [operation ](operation-notification.md#operation-string)_<mark style="color:blue;">`string`</mark>_
+* `txn.state = paid`: The transaction was captured.
+* `txn.refunded`: The transaction was refunded.
+* `txn.refund_queued`: The refund operation is pending.
+* `txn.refund_rejected`: The refund operation was declined.
+* `txn.voided`: The transaction was voided.
 
-Choice from ["purchase","authorize".](../../user-guide/payment-gateway.md#configure-payment-gateway) Depending on how the PG is being selected.
+By accurately interpreting these fields and states, you can ensure precise acknowledgment of all your subsequent payment operations.
 
-#### [pg\_code ](operation-notification.md#pg\_code-string)_<mark style="color:blue;">`string`</mark>_
-
-It is being generated according to user payment gateway [code](../checkout-api.md#pg\_codes-array-required) choice from [pg\_codes](../checkout-api.md#pg\_codes-array-required) list
-
-#### [gateway\_response ](operation-notification.md#gateway\_response-dict)_<mark style="color:blue;">`dict`</mark>_
-
-It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) response sent by the [payment gateway](../../user-guide/payment-gateway.md) to Ottu.
-
-#### [reference\_number](operation-notification.md#reference\_number-string) _<mark style="color:blue;">`string`</mark>_
-
-It is a unique identifier, assigned by Ottu to any [parent payment transaction.](../../user-guide/payment-tracking/#states-of-parent-payment-transaction)
-
-#### [result](operation-notification.md#result-string) _<mark style="color:blue;">`string`</mark>_
-
-**Since** it states if the operation was success or not, and webhook operations are not triggered if the operation has failed, so It is a **Fixed value:** success.&#x20;
-
-#### [source ](operation-notification.md#source-string)_<mark style="color:blue;">`string`</mark>_
-
-can be input or pg:\
-**Input** means it was triggered by Ottu side via API or dashboard. PG means it was triggered by bank **PG** dashboard and Ottu was informed via webhook.\
-**Note:** Not all PGs are informing Ottu when operations are happening on their side, so Ottu might not be aware of all operations on all PGs, only on those which are offering webhook feature.
-
-#### [timestamp\_utc](operation-notification.md#timestamp\_utc-format-yyyy-mm-dd-hh-mm-ss) _<mark style="color:blue;">`format YYYY-MM-DD / HH:MM:SS`</mark>_&#x20;
-
-Time and date of operation creation.
-
-#### [txn ](operation-notification.md#txn-dict)_<mark style="color:blue;">`dict`</mark>_
-
-A dictionary will be generated including a short summary of the [child payment transaction](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) which was created
-
-#### :digit\_one: [amount](operation-notification.md#amount-string-1) _<mark style="color:blue;">`string`</mark>_
-
-Requested amount of the payment operation&#x20;
-
-#### :digit\_two: [currency\_code](operation-notification.md#currency\_code-string) _<mark style="color:blue;">`string`</mark>_
-
-The currency code of the payment operation.\
-More details [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
-3 letters code
-
-#### :digit\_three: [customer\_email](operation-notification.md#customer\_email-string) _<mark style="color:blue;">`string`</mark>_
-
-Email address of the customer.
-
-#### :digit\_four: [extra ](operation-notification.md#extra-dict)_<mark style="color:blue;">`dict`</mark>_
-
-The extra information for the payment details, which the merchant has sent it in key value form. For example:
-
-```
-"flight-number": "1234",
-"full_name": "customer
-```
-
-#### :digit\_five: [order\_no ](operation-notification.md#order\_no-string)_<mark style="color:blue;">`string`</mark>_
-
-Merchant unique identifier for the transaction. ABC123\_1, ABC123\_2, Max length: 128.
-
-#### :digit\_six: [reference\_number ](operation-notification.md#reference\_number-string-1)_<mark style="color:blue;">`string`</mark>_
-
-It is a unique identifier, assigned by Ottu to any child payment transaction , namely the [payment attempt.](../../user-guide/payment-tracking/#payment-transaction)
-
-#### :digit\_seven: [state ](operation-notification.md#state-string)_<mark style="color:blue;">`string`</mark>_
-
-[Payment operation state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states).
+**In Conclusion,** Navigating Ottu's operation webhooks can be a complex task, so it's essential to familiarize yourself with the overarching principles. We highly advise you to explore our extensive [Webhooks page](./) to gain a comprehensive understanding. Furthermore, should you encounter any inquiries or doubts, you might discover the solutions you need in our [FAQ section](./#faq). Our dedication to providing a smooth experience is greatly dependent on your in-depth grasp of our systems.

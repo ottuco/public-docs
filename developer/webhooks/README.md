@@ -1,10 +1,12 @@
 # Webhooks
 
-## [Webhooks Overview](./#webhooks-overview)
+## [Introduction](./#introduction)
 
 Ottu offers an optional end-to-end integration with the [Payment Gateway](../../user-guide/payment-gateway.md) (PG) through webhooks. By default, these webhooks are **disabled**, ensuring merchants only receive notifications if they choose to. These webhooks act as a reactive mechanism, notifying merchants either in real-time or on-demand, depending on the event. Whether it’s a payment being processed or a subsequent payment gateway [operation](../operations.md#external-operations) taking place, Ottu ensures that the merchant is promptly informed once the webhooks are enabled. Merchants can enable these webhooks in various ways, either directly from the Ottu dashboard or via the [Checkout API](../checkout-api.md).
 
-Ottu simplifies the integration process by providing a unified response across all payment gateways. Whether you’re working with MPGS, KNET, PayPal, or any other gateway, you only need to handle Ottu’s standardized response. This ensures a consistent experience, eliminating the need to interpret varied responses from different payment gateways. Moreover, for those who might need it, the original response from the payment gateway, always converted to JSON format, is included in Ottu’s webhooks. This means that while Ottu takes on the heavy lifting of interpreting and standardizing payment gateway responses, you still have access to the raw data if required. The beauty of this approach is its extensibility. As you expand and decide to incorporate more payment gateways into your system, there’s no need for additional integration work on your end. Ottu ensures that everything will work seamlessly out of the box, saving you time and effort in the long run.
+Ottu simplifies the integration process by providing a unified response across all payment gateways. Whether you’re working with MPGS, KNET, PayPal, or any other gateway, you only need to handle Ottu’s standardized response. This ensures a consistent experience, eliminating the need to interpret varied responses from different payment gateways.&#x20;
+
+Moreover, for those who might need it, the original response from the payment gateway, always converted to `JSON` format, is included in Ottu’s webhooks. This means that while Ottu takes on the heavy lifting of interpreting and standardizing payment gateway responses, you still have access to the raw data if required. The beauty of this approach is its extensibility. As you expand and decide to incorporate more payment gateways into your system, there’s no need for additional integration work on your end. Ottu ensures that everything will work seamlessly out of the box, saving you time and effort in the long run.
 
 ## [**Types of Webhooks**](./#types-of-webhooks)
 
@@ -49,7 +51,9 @@ While Ottu supports endpoints with disabled SSL verification, it’s not recomme
 
 ## [Security](./#security)
 
-Ensuring the integrity and authenticity of webhook data is paramount. To guarantee that the data you receive originates from Ottu and hasn’t been tampered with during transit, we employ a robust [signing mechanism](signing-mechanism.md). Ottu uses the **SHA-256 algorithm** to sign all webhook payloads. This cryptographic hash function provides a consistent and secure way to verify the data’s integrity. By checking the signature, you can be confident that the payload is genuine and has not been altered since it was sent by Ottu. For a detailed guide on how to verify the signature and implement this security measure in your system, click [here](signing-mechanism.md).
+Ensuring the integrity and authenticity of webhook data is paramount. To guarantee that the data you receive originates from Ottu and hasn’t been tampered with during transit, we employ a robust [signing mechanism](signing-mechanism.md). Ottu uses the **SHA-256 algorithm** to sign all webhook payloads.&#x20;
+
+This cryptographic hash function provides a consistent and secure way to verify the data’s integrity. By checking the signature, you can be confident that the payload is genuine and has not been altered since it was sent by Ottu. For a detailed guide on how to verify the signature and implement this security measure in your system, click [here](signing-mechanism.md).
 
 ## [Webhook Notification Mechanism](./#webhook-notification-mechanism)
 
@@ -77,4 +81,34 @@ All the fields mentioned below come with default values to ensure a smooth integ
 
 * **Fields:** `timeout`, `retries`, and `backoff_factor`
 * **Defaults:** timeout: `15` seconds, retries: `3`, backoff\_factor: `5` seconds
-* **Description:** When Ottu sends a webhook, it waits for 15 seconds (`timeout`) for a response. If there’s no response within this timeframe, it’s considered a timeout. In the event of a timeout, Ottu will retry sending the webhook. It will make 3 attempts (`retries`) in total, waiting 5 seconds (`backoff_factor`) between each retry. This means, in a scenario where all retries are exhausted due to timeouts, Ottu would have tried for a total of 55 seconds to deliver the webhook. It’s crucial to note that retries are only triggered in case of timeouts. For other errors or non-200 HTTP responses, Ottu won’t retry. This means your endpoint should always return an HTTP status of 200 to indicate successful receipt of the webhook. If not, Ottu will consider the notification as `failed`. Given the retry mechanism, there’s a possibility that your endpoint might receive the same webhook multiple times in case of timeouts. It’s essential to design your endpoint to handle such scenarios to avoid duplicate processing.
+* **Description:** When Ottu sends a webhook, it waits for 15 seconds `timeout` for a response. If there’s no response within this timeframe, it’s considered a timeout. In the event of a timeout, Ottu will retry sending the webhook. It will make 3 attempts `retries` in total, waiting 5 seconds `backoff_factor` between each retry. This means, in a scenario where all retries are exhausted due to timeouts, Ottu would have tried for a total of 55 seconds to deliver the webhook. It’s crucial to note that retries are only triggered in case of timeouts. \
+  For other errors or non-200 HTTP responses, Ottu won’t retry. This means your endpoint should always return an HTTP status of 200 to indicate successful receipt of the webhook. If not, Ottu will consider the notification as `failed`. Given the retry mechanism, there’s a possibility that your endpoint might receive the same webhook multiple times in case of timeouts. It’s essential to design your endpoint to handle such scenarios to avoid duplicate processing.
+
+## [**FAQ**](./#faq)
+
+#### :digit\_one: [What are webhooks, and why would I use them?](./#what-are-webhooks-and-why-would-i-use-them)
+
+Webhooks are automated messages sent from Ottu to a specified endpoint when a particular event occurs. They’re useful for real-time notifications, allowing you to automate reactions to events like payment completions or gateway operations without constantly polling our API.
+
+#### :digit\_two: [I’ve set up my webhook, but I’m not receiving any notifications. What could be the issue?](./#ive-set-up-my-webhook-but-im-not-receiving-any-notifications.-what-could-be-the-issue)
+
+**There could be several reasons:**
+
+1. Ensure that the webhook is enabled, either via the Ottu dashboard or the Checkout API.
+2. Check that your endpoint meets all the requirements, such as being secure (HTTPS) and having a response time under 25 seconds.
+3. Verify that your endpoint returns an HTTP status of 200 or 201 to acknowledge receipt.
+4. If you’re still facing issues, reach out to our support team for assistance.
+
+#### :digit\_three: [How can I ensure the webhook notifications I receive are genuinely from Ottu?](./#how-can-i-ensure-the-webhook-notifications-i-receive-are-genuinely-from-ottu)
+
+Ottu uses the **SHA-256** [signing mechanism](signing-mechanism.md) to sign all webhook payloads. By verifying the signature attached to each payload, you can ensure its authenticity and integrity. Detailed steps on how to verify the signature can be found [here](signing-mechanism.md#4.-verification-by-merchant).
+
+#### :digit\_four: [What should I do if I receive the same webhook notification multiple times?](./#what-should-i-do-if-i-receive-the-same-webhook-notification-multiple-times)
+
+Webhooks can be retried, especially in cases of timeouts. It’s essential to make your webhook processing idempotent, meaning processing the same webhook notification more than once should not have a different effect. Always check the event ID or transaction ID to ensure you’re not processing duplicates.
+
+#### :digit\_five: [How long will Ottu retry a webhook if my server doesn’t respond?](./#how-long-will-ottu-retry-a-webhook-if-my-server-doesnt-respond)
+
+By default, Ottu will retry a webhook three times, with a `backoff` factor of 5 seconds between retries. This behavior can be adjusted in the webhook settings.
+
+Feel free to ask any other questions or provide more context, and we can craft more FAQs accordingly!

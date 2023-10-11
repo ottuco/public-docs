@@ -20,7 +20,22 @@ Payment webhooks are specific to payment events and are triggered on multiple oc
 
     When an [inquiry API](../payment-status-inquiry.md#b-pbl-v2-inquiry) call is initiated by the merchant. Optionally, a notification can be sent to the [webhook\_url](../checkout-api.md#webhook\_url-string-optional) associated with the payment transaction or to a new one specified during the inquiry API call.
 
-## [Webhook Parameters](payment-webhooks.md#webhook-parameters)
+## [**Setup**](payment-webhooks.md#setup)
+
+1. **Configuring URLs**:
+
+* **Via Checkout API:** Provide the [webhook\_url](../checkout-api.md#webhook\_url-string-optional) and an optional [redirect\_url](../checkout-api.md#redirect\_url-string-optional) when calling the [Checkout API](../checkout-api.md).
+* **Using Plugin Config:** Set the `webhook_url` and `redirect_url` globally via the plugin config, applicable to either [E-Commerce](../../user-guide/plugins/#e-commerce) or [Payment reques](../../user-guide/plugins/#payment-request)t plugins. Even if these values are set globally, they can be overridden for specific transactions when using the `Checkout API`. For more details on this configuration, click [here](../../user-guide/configuration/webhooks-configuration.md#webhook-plugin-configs).
+
+2. **Endpoint Requirements:** \
+   Ensure your endpoint adheres to all the stipulations outlined in the Webhook Overview. To review the requirements, click [here](./#endpoint-requirements).
+3. **Redirecting the Payer:**
+
+* **Successful Redirect:** If you aim for the payer to be redirected back to your website post-payment, your endpoint should return an HTTP status of 200. Any other status will keep the payer on the Ottu payment details page.
+* **Retaining on Ottu Page:** If you intentionally want the payer to remain on the Ottu page post-payment, return a status code of 201. Ottu will interpret this as a successful notification, and the payer won’t be redirected. Any other status will be deemed as a failed notification by Ottu.
+* **Specific Redirects:** If you have a particular URL to which you wish to redirect the payer after the payment process, ensure you specify the [redirect\_url](../checkout-api.md#redirect\_url-string-optional) during the payment setup. Ottu will use this URL to navigate the payer back to your platform or any designated page post-payment.
+
+## [Payload Details](payment-webhooks.md#payload-details)
 
 #### [amount](payment-webhooks.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
@@ -40,24 +55,24 @@ Payment transaction due amount details&#x20;
 
 <summary>amount_details child parameters</summary>
 
-#### :digit\_one:[currency\_code](payment-webhooks.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [currency\_code](payment-webhooks.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The code represents the used currency\
 3 letters
 
-#### :digit\_two:[amount](payment-webhooks.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [amount](payment-webhooks.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 Payment transaction original amount. See amount\
 Max length: 24\
 Min value: 0.01
 
-#### :digit\_three: [total](payment-webhooks.md#total-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [total](payment-webhooks.md#total-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 It represents the whole payment amount ([amount](payment-webhooks.md#amount-string-mandatory)+[fee](payment-webhooks.md#fee-string-mandatory))\
 Max length: 24\
 Min value: 0.01
 
-#### :digit\_four: [fee](payment-webhooks.md#fee-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [fee](payment-webhooks.md#fee-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 It represents a markup amount on the original amount\
 Max length: 24\
@@ -71,7 +86,7 @@ Indicates whether to capture delivery address.
 
 **Presence condition:**
 
-* The merchant should include it during the creation of the transaction.
+* The merchant should add it when setting up the payment transaction.
 
 #### [capture\_delivery\_location ](payment-webhooks.md#capture\_delivery\_location-bool-conditional)_<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -79,7 +94,7 @@ Indicates whether to capture delivery location.
 
 **Presence condition:**
 
-* The merchant should include it during the creation of the transaction.
+* The merchant should provide it during the creation of the transaction.
 
 #### [currency\_code](payment-webhooks.md#currency\_code-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
@@ -87,7 +102,7 @@ The currency code of the payment transaction \
 For more details, [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
 3 letters code
 
-<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence condition:</strong> </p><ul><li>Billing address data should be included while making the payment of the transaction.</li></ul></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0031">1</span><a href="payment-webhooks.md#customer_address_city-string-conditional">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0032">2</span><a href="payment-webhooks.md#customer_address_country-string-conditional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0033">3</span><a href="payment-webhooks.md#customer_address_line1-string-conditional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0034">4</span><a href="payment-webhooks.md#customer_address_line2-string-conditional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-webhooks.md#customer_address_line1-string-conditional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0035">5</span> <a href="payment-webhooks.md#customer_address_postal_code-string-conditional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><span data-gb-custom-inline data-tag="emoji" data-code="0036">6</span><a href="payment-webhooks.md#customer_address_state-string-conditional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a> (sometimes the same as the <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence condition:</strong> </p><ul><li>The presence of each parameter is contingent on the provision of any selection of "customer billing address data" parameters during payment transaction creation.</li></ul></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_city-string-conditional">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_country-string-conditional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_line1-string-conditional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_line2-string-conditional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-webhooks.md#customer_address_line1-string-conditional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4> <a href="payment-webhooks.md#customer_address_postal_code-string-conditional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_state-string-conditional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a> (sometimes the same as the <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
 
 #### [customer\_email](payment-webhooks.md#customer\_email-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -97,7 +112,7 @@ Max length 128
 
 **Presence condition:**
 
-* The customer email should included while making the payment of the transaction.
+* It needs to be included when generating the payment transaction.
 
 #### [**customer\_first\_name**](payment-webhooks.md#customer\_first\_name-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -106,7 +121,7 @@ Max length 64
 
 **Presence condition:**
 
-* The customer first name should be included while making the payment of the transaction.
+* The merchant should include it while making the payment of the transaction.
 
 #### [**customer\_id**](payment-webhooks.md#customer\_id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_&#x20;
 
@@ -115,7 +130,7 @@ Max length 64
 
 **Presence condition:**
 
-* The merchant should include it during the creation of the transaction.
+* The merchant should include it during initiating the payment transaction.
 
 #### [**customer\_last\_name**](payment-webhooks.md#customer\_last\_name-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -124,7 +139,7 @@ Max length 64
 
 **Presence condition:**
 
-* The customer last name should be included while making the payment of the transaction.
+* The merchant should include it while making the payment of the transaction.
 
 #### [**customer\_phone**](payment-webhooks.md#customer\_phone-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -133,7 +148,7 @@ Max length 32
 
 **Presence condition:**
 
-* The customer phone number should be included while making the payment of the transaction.
+* The merchant should include it when processing the payment for the transaction.
 
 #### [extra](payment-webhooks.md#extra-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -187,7 +202,7 @@ This object contains information about the user who created the transaction from
 **Presence condition:**
 
 * It is present only when [Basic Authentication](../authentication.md#basic-authentication) is used, because [API Key Authentication](../authentication.md#api-key) is not associated with any user.
-* Merchant includes the initiator ID in the payload when creating the transaction
+* Merchant includes the initiator ID in the payload when creating the transaction.
 
 #### [is\_sandbox](payment-webhooks.md#is\_sandbox-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
@@ -274,7 +289,7 @@ Max length 128
 
 **Presence condition:**
 
-* It will be present only if the transaction is paid, authorized or cod.
+* It will be present only if the transaction is `paid`, `authorized` or `cod`.
 
 #### [signature](payment-webhooks.md#signature-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
@@ -308,27 +323,27 @@ See [child transaction sate](../../user-guide/payment-tracking/#child-table-tran
 
 * It will be sent only if operations processed on transaction and resulted child transaction records.
 
-#### :digit\_one:[amount](payment-webhooks.md#amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [amount](payment-webhooks.md#amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The amount of child transaction object represented in transactions Array\
 Must be positive\
 Max length: 24\
 Min value: 0.01
 
-#### :digit\_two:[currency\_code](payment-webhooks.md#currency\_code-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [currency\_code](payment-webhooks.md#currency\_code-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The code represents the used currency.\
 3 letters
 
-#### :digit\_three:[order\_no](payment-webhooks.md#order\_no-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [order\_no](payment-webhooks.md#order\_no-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The order\_no of child transaction object represented in transactions Array
 
-#### :digit\_four: [session\_id](payment-webhooks.md#session\_id-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [session\_id](payment-webhooks.md#session\_id-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The unique session identifier of child transaction object represented in transactions Array
 
-#### :digit\_five:[state](payment-webhooks.md#state-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [state](payment-webhooks.md#state-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The state of a child transaction object represented in transactions Array
 
@@ -346,34 +361,34 @@ Represents token details.
 
 When user pays with a tokenized card, Ottu will include the token details in the response
 
-#### :digit\_one:[brand](payment-webhooks.md#brand-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [brand](payment-webhooks.md#brand-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The card brand (e.g., Visa, Mastercard) associated with the card. Display this information for customer reference.
 
-#### :digit\_two:[auto\_debit\_enabled](payment-webhooks.md#auto\_debit\_enabled-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [auto\_debit\_enabled](payment-webhooks.md#auto\_debit\_enabled-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 Define if provided card token can be used to initiate auto debit requests.
 
-#### :digit\_three: [customer\_id](payment-webhooks.md#customer\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [customer\_id](payment-webhooks.md#customer\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The unique identifier for the customer who owns the card\
 Max length: 36
 
-#### :digit\_four: [cvv\_required](payment-webhooks.md#cvv\_required-bool-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [cvv\_required](payment-webhooks.md#cvv\_required-bool-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 Specifies if the card requires the submission of a CVV for transactions. A card without CVV requirement can be used for auto-debit or recurring payments
 
-#### :digit\_five:[ expiry\_month](payment-webhooks.md#expiry\_month-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [expiry\_month](payment-webhooks.md#expiry\_month-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The card's expiration month. Provide this information for transaction processing and validation.\
 Max length: 2
 
-#### :digit\_six: [expiry\_year](payment-webhooks.md#expiry\_yearstring-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [expiry\_year](payment-webhooks.md#expiry\_yearstring-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The card's expiration year. Provide this information for transaction processing and validation.\
 Max length: 2
 
-#### :digit\_seven: [is\_expired](payment-webhooks.md#is\_expired-bool-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [is\_expired](payment-webhooks.md#is\_expired-bool-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 A boolean field indicating whether the card has expired. Use this information to determine if the card is valid for transactions and to notify the customer if necessary.
 
@@ -387,7 +402,7 @@ Min value: 0.01
 
 **Presence condition:**
 
-* It will only be present if a void action is being processed on the transaction and the voided amount is recorded.
+* It will only appear if a void action is being performed on the transaction, and the voided amount is documented.
 
 ## [**Event Types**](payment-webhooks.md#event-types)
 
@@ -396,10 +411,6 @@ Ottu notifies the [webhook\_url](../checkout-api.md#webhook\_url-string-optional
 {% hint style="info" %}
 &#x20;Events like **Refund**, **Void**, or **Capture** are considered operation events and not payment events. If you’re looking for information on these, please refer to the [Operation Webhook page](operation-notification.md).
 {% endhint %}
-
-#### [**Setup & Configuration**](payment-webhooks.md#setup-and-configuration)
-
-Ensure you meet all the endpoint requirements mentioned in the Webhooks Overview [here](./#endpoint-requirements). Additionally, if you want the payer to be finally redirected to your website, ensure your endpoint returns an HTTP status of 200. Any other status will retain the payer on the Ottu payment details page. If you intentionally wish to keep the payer on the Ottu page, return a status code of 201. This will be interpreted by Ottu as a successful notification, and the payer won’t be redirected. Otherwise, Ottu will consider the notification as failed. In cases where you want to redirect the payer to a specific URL after the payment process, ensure you provide the [redirect\_url](../checkout-api.md#redirect\_url-string-optional) during the payment setup. This URL will be used by Ottu to guide the payer back to your platform or any desired page after the payment process is completed. See [Webhooks Configuration](../../user-guide/configuration/webhooks-configuration.md).
 
 ## [Redirectional Diagram](payment-webhooks.md#redirectional-diagram)
 
@@ -412,7 +423,7 @@ To ensure a smooth redirection of the payer back to the designated [redirect\_ur
 
 <figure><img src="../../.gitbook/assets/chr2 (1).png" alt=""><figcaption></figcaption></figure>
 
-## [Payload Example (paid)](payment-webhooks.md#payload-example-paid)
+## [Payload example (paid)](payment-webhooks.md#payload-example-paid)
 
 ```json
 {
@@ -492,31 +503,4 @@ For Cash on Delivery transactions, the [result](payment-webhooks.md#result-strin
 
 By understanding and interpreting these fields correctly, you can ensure accurate and timely acknowledgment of all your payments, be they online or offline.
 
-## [**FAQ**](payment-webhooks.md#faq)
-
-#### :digit\_one:[What are webhooks and why would I use them?](payment-webhooks.md#what-are-webhooks-and-why-would-i-use-them)
-
-AWebhooks are automated messages sent from Ottu to a specified endpoint when a particular event occurs. They’re useful for real-time notifications, allowing you to automate reactions to events like payment completions or gateway [operations](../operations.md#external-operations) without constantly polling our API.
-
-#### :digit\_two:[I’ve set up my webhook, but I’m not receiving any notifications. What could be the issue?](payment-webhooks.md#ive-set-up-my-webhook-but-im-not-receiving-any-notifications.-what-could-be-the-issue)
-
-There could be several reasons:
-
-1. Ensure that the webhook is enabled, either via the Ottu dashboard or the [Checkout API](../checkout-api.md).
-2. Check that your endpoint meets all the [requirements](./#endpoint-requirements), such as being secure (HTTPS) and having a response time under 25 seconds.
-3. Verify that your endpoint returns an HTTP status of 200 or 201 to acknowledge receipt.
-4. If you’re still facing issues, reach out to our support team for assistance.
-
-#### :digit\_three:[How can I ensure the webhook notifications I receive are genuinely from Ottu?](payment-webhooks.md#how-can-i-ensure-the-webhook-notifications-i-receive-are-genuinely-from-ottu)
-
-Ottu uses the **SHA-256** [signing mechanism](signing-mechanism.md) to sign all webhook payloads. By verifying the signature attached to each payload, you can ensure its authenticity and integrity. Detailed steps on how to verify the signature can be found [here](signing-mechanism.md#hmac-generation).
-
-#### :digit\_four:[What should I do if I receive the same webhook notification multiple times?](payment-webhooks.md#what-should-i-do-if-i-receive-the-same-webhook-notification-multiple-times)
-
-Webhooks can be retried, especially in cases of timeouts. It’s essential to make your webhook processing **idempotent**, meaning processing the same webhook notification more than once should not have a different effect. Always check the event ID or transaction ID to ensure you’re not processing duplicates.
-
-#### :digit\_five:[How long will Ottu retry a webhook if my server doesn’t respond?](payment-webhooks.md#how-long-will-ottu-retry-a-webhook-if-my-server-doesnt-respond)
-
-By default, Ottu will retry a webhook three times with a backoff factor of 5 seconds between retries. This behavior can be adjusted in the webhook settings.
-
-Feel free to ask any other questions or provide more context, and we can craft more FAQs accordingly!
+**In Conclusion**, As you navigate the intricacies of Ottu’s payment webhooks, it’s paramount to ensure you’re well-acquainted with all the general guidelines. We strongly recommend reviewing our comprehensive [Webhooks page](./) for a holistic understanding. Additionally, if you find yourself with questions or uncertainties, our [FAQ](./#faq) section might already have the answers you seek. We’re committed to ensuring a seamless experience, and your thorough understanding of our systems is a crucial part of that journey.

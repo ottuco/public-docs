@@ -43,11 +43,11 @@ Choice from ["purchase","authorize".](../../user-guide/payment-gateway.md#config
 
 #### [pg\_code](operation-notification.md#pg\_code-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It is being generated according to user payment gateway [code](../checkout-api.md#pg\_codes-array-required) choice from [pg\_codes](../checkout-api.md#pg\_codes-array-required) list
+It is being generated according to user payment gateway code choice from [pg\_codes](../checkout-api.md#pg\_codes-array-required) list
 
 #### [gateway\_response](operation-notification.md#gateway\_response-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) response sent by the [payment gateway](../../user-guide/payment-gateway.md) to Ottu.
+It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) response sent by the payment gateway to Ottu.
 
 #### [reference\_number](operation-notification.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
@@ -161,7 +161,7 @@ Operation webhooks are activated under the following scenarios:
 Upon receiving an operation notification, it’s essential to discern and acknowledge the operation’s status and specifics. Here’s a guide on how to interpret the provided details:\
 \
 **Identifying the Transaction:**\
-Every operation is a subsequent action performed on a specific payment transaction, identifiable by its [session\_id](../checkout-api.md#session\_id-string-mandatory) or [order\_no](../checkout-api.md#order\_no-string-optional). These operations spawn [child payment transactions](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states), each with its distinct payment [attempt](../../user-guide/payment-tracking/payment-transactions-states.md#payment-attempt) and [state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states), without altering the primary transaction. The child transaction details are housed in the [txn ](operation-notification.md#txn-dict)field of the [webhook payload](operation-notification.md#payload-details). You can retrieve all child transactions from the Payment webhook under the transactions parameter or by invoking the [Payment Status API](../payment-status-inquiry.md).
+Every operation is a subsequent action performed on a specific payment transaction, identifiable by its [session\_id](../checkout-api.md#session\_id-string-mandatory) or [order\_no](../checkout-api.md#order\_no-string-optional). These operations spawn [child payment transactions](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states), each with its distinct payment [attempt](../../user-guide/payment-tracking/payment-transactions-states.md#payment-attempt) and [state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states), without altering the primary transaction. The child transaction details are housed in the [txn](operation-notification.md#txn-object-mandatory) field of the [webhook payload](operation-notification.md#payload-details). You can retrieve all child transactions from the Payment webhook under the transactions parameter or by invoking the [Payment Status API](../payment-status-inquiry.md).
 
 1. **Types of Operations:**
 
@@ -177,7 +177,7 @@ Every operation is a subsequent action performed on a specific payment transacti
 * `queued`: The operation awaits processing and will be updated in due course.
 
 5. **Verifying the Amount:** As operations exclusively function in the original payment transaction currency, inspecting the amount field ensures the accurate amount is either deducted or appended.
-6. **Interpreting the Transaction State (Optional):** The transaction’s state can be discerned using the [txn.state](operation-notification.md#state-string) field:
+6. **Interpreting the Transaction State (Optional):** The transaction’s state can be discerned using the [txn.state](operation-notification.md#state-string-mandatory) field:
 
 * `txn.state = paid`: The transaction was captured.
 * `txn.refunded`: The transaction was refunded.

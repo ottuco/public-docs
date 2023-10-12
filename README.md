@@ -15,7 +15,7 @@ With Ottu, you are choosing an innovative online payment technology that puts yo
 
 ## [Ottu Architecture](./#ottu-architecture)
 
-<figure><img src=".gitbook/assets/Architecture1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Ottu_architecture.jpg" alt=""><figcaption></figcaption></figure>
 
 ## [Quick start](./#quick-start)
 

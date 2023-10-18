@@ -30,10 +30,8 @@ To access Ottu’s User Saved Cards API, ensure to use the [API-Key](authenticat
 
 For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the API Schema Reference section below
 
-#### Fetch Cards
-
-{% swagger src="../.gitbook/assets/Ottu API last (1).yaml" path="https://<ottu-url>/b/pbl/v2/card/" method="get" %}
-[Ottu API last (1).yaml](<../.gitbook/assets/Ottu API last (1).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (31).yaml" path="/b/pbl/v2/card/" method="post" %}
+[Ottu API (31).yaml](<../.gitbook/assets/Ottu API (31).yaml>)
 {% endswagger %}
 
 #### Delete Card

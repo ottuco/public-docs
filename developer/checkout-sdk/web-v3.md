@@ -135,7 +135,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="https://lh3.googleusercontent.com/ZCy8Gocqut1Aaba_e5T_m9PjH3e8QL46dATH4ITxr_zYSOdRQeUA8sIXg7DCLLe7cAFU2tld3eAv_JkEIx5hdUcLS9cXdI6Km3uqCqWNXoVMVUWcG7b27aOMFx3ibKjL0XlmLz0vwIGffqQtMXg3ILvk26tuGGGc" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/grid.png" alt=""><figcaption></figcaption></figure>
 
 *   #### column
 
@@ -148,7 +148,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="https://lh4.googleusercontent.com/ghKn6CbmcJ8IopA_r_4R9sCyLew1Yf7_f9zfOkY6SBExHQEvrHOVX_jI7d28H756QTReaVA8XX5aA_70wE4LBAN1vkVQlKevDJqMEHU3cx-dFb2C9HenOMwdQLgBZEPx3dDKy2iDZYFC7jWSP2o5jZZvyoIYGd0v" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh4.googleusercontent.com/FZ0I_tPFfapX1FikWHSYAXS9wLbPO2wxnspVGGgt7HbHHM-VCVp72oYAU9xjwDGxPj-EOa11pY8vekeCQ28YRsmBDUqF2YPff27be46T-EiKBs4VAy-KXTsOzlsPRntvrq5eVGn5x5kti6UknLrUgic9wMdt-ebK" alt=""><figcaption></figcaption></figure>
 
 #### [applePayInit](web-v3.md#applepayinit-object) _<mark style="color:blue;">`object`</mark>_
 
@@ -337,7 +337,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="https://lh5.googleusercontent.com/JblKm74U-xJHdkhuDE8w-q0hAEGwgnQpREMgOp5Q6GhF-t9RaxGmGVdJr1Q_vBLNmlZL6caU2TJd1JDzNIwU8bAO6oev9564K0XOr1aWyjYjM4H3oGSZ1hv3BSWJELOEt_ZwMa5DdwDTzAx0rt1d5ds0IZSqRB1z" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Sample.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Dark theme" %}
@@ -419,7 +419,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Dark.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Minimal theme " %}
@@ -460,7 +460,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Mini (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Side By Side Buttons" %}
@@ -485,7 +485,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/side by side.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Hide SDK Header" %}
@@ -506,7 +506,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/hide.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -529,17 +529,17 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Senario.png" alt=""><figcaption></figcaption></figure>
 
 #### [Supported Values](web-v3.md#supported-values)
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><ol><li><strong>Main</strong></li></ol><ul><li><code>main</code></li><li><code>title-text</code></li><li><code>primary-text</code></li><li><code>secondary-text</code></li><li><code>pay-button</code></li><li><code>border</code></li><li><code>payment-details-heading</code></li><li><code>payment-methods-heading</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="2"><li><strong>Amount Box</strong></li></ol><ul><li><code>amount-box</code></li><li><code>amount</code></li><li><code>amount-label</code></li><li><code>amount-currency</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="3"><li><strong>Fees</strong></li></ol><ul><li><code>fees</code></li><li><code>fees-label</code></li><li><code>fees-currency</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="4"><li><strong>Checkboxes</strong></li></ol><ul><li><code>checkbox-label</code></li><li><code>stc-checkbox-label</code></li><li><code>selected-checkbox</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="5"><li><strong>WalletButtons</strong></li></ol><ul><li><code>wallet-buttons</code></li><li><code>applePay</code></li><li><code>applePay-tooltip</code></li><li><code>googlePay</code></li><li><code>stcPay</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="6"><li><strong>PaymentMethods</strong></li></ol><ul><li><code>methods-block</code></li><li><code>methods</code></li><li><code>saved-cards</code></li><li><code>redirect-links</code></li><li><code>selected-method</code></li><li><code>payment-method-name</code></li><li><code>card-number</code></li><li><code>card-expiry</code></li><li><code>delete-card-logo</code></li><li><code>ccv-input</code></li><li><code>floating-label</code></li><li><code>cvv-info-text</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="7"><li><strong>Modals</strong></li></ol><ul><li><code>card-removal-modal</code></li><li><code>info-modal</code></li><li><code>stc-modal</code></li><li><code>modal-overlay</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="8"><li><strong>CloseButton</strong></li></ol><ul><li><code>popup-close-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="9"><li><strong>DeleteCardPopup</strong></li></ol><ul><li><code>delete-card-button</code></li><li><code>delete-card-message</code></li><li><code>keep-card-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="10"><li><strong>ErrorPopup</strong></li></ol><ul><li><code>error-popup-heading</code></li><li><code>error-popup-message</code></li><li><code>error-popup-data</code></li><li><code>retry-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="11"><li><strong>SuccessPopup</strong></li></ol><ul><li><code>success-popup-heading</code></li><li><code>success-popup-message</code></li><li><code>success-popup-data</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="12"><li><strong>StcPayPopup</strong></li></ol><ul><li><code>stc-popup-heading</code></li><li><code>stc-mobile-popup-heading</code></li><li><code>stc-otp-popup-heading</code></li><li><code>stc-input</code></li><li><code>stc-mobile-input</code></li><li><code>stc-otp-input</code></li><li><code>stc-popup-error</code></li><li><code>stc-sendOtp-button</code></li><li><code>stc-resendOtp-button</code></li><li><code>stc-pay-button</code></li><li><code>stc-popup-back-button</code></li></ul></td><td></td><td></td></tr></tbody></table>
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image10.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image13 (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image2.png" alt=""><figcaption></figcaption></figure>
 
 **Example**
 
@@ -585,7 +585,7 @@ Popup will not display null values passed in the response.
 
 `Checkout.showPopup("success","Payment Successful! Redirecting you now. Please hold on.")`
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 `Checkout.showPopup(‘error’,'Selected payment method failed. Try again.' , { "merchant":"009057332", "timeOfLastUpdate":"2023-08-01T14:19:00.510Z", "version":"65" })`
 
@@ -1089,7 +1089,7 @@ The Apple Pay button inside the Checkout SDK container can be customized using t
 
 By default, the width of the Apple Pay button is 100% of the Checkout SDK container width, gap of 8px from other buttons. The Checkout SDK creates a containerized div with the css class ottu\_\_sdk-main and places the Apple Pay button inside it. This container has no margin or padding added, as shown in below figure.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image9.png" alt=""><figcaption></figcaption></figure>
 
 To learn more about the `applePay` property, see the [theme](web-v3.md#theme).
 
@@ -1136,7 +1136,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image11.png" alt=""><figcaption></figcaption></figure>
 
 ## [STC Pay​](web-v3.md#stc-pay)
 
@@ -1165,7 +1165,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image16.png" alt=""><figcaption></figcaption></figure>
 
 ## [**KNET - Apple Pay**](web-v3.md#knet-apple-pay)
 
@@ -1203,7 +1203,7 @@ The above code performs the following checks and actions:
 3. If the above conditions are met, it retrieves the payment gateway's response from the `pg_response` property or, if not available, uses a default "Payment was cancelled." error message.
 4. Finally, it displays the error message in a popup using the `window.Checkout.showPopup()` function to notify the user about the failed payment.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2480DAEF-F1E6-47CE-A271-418F222A0BBD.jpg" alt=""><figcaption></figcaption></figure>
 
 ## [FAQ](web-v3.md#faq)
 

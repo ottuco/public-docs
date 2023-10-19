@@ -644,7 +644,7 @@ In this example, the `errorCallback` function is defined and passed as the value
 
 #### [**window.cancelCallback**](web.md#window.cancelcallback)
 
-The `cancelCallback` in the [Checkout SDK](web.md#checkout-sdk) is a callback function that is invoked when a payment is canceled. To define the `cancelCallback` function, you can use the `data-cancel` attribute on the Checkout script tag to specify a global function that will handle cancellations. If a customer cancels a payment, the `cancelCallback` function will be invoked with a[ data object](https://ottu-sandbox.gitbook.io/public/developer/checkout-sdk/web-v3#data-object).with a data.status value of "`canceled`”
+The `cancelCallback` in the Checkout SDK is a callback function that is invoked when a payment is canceled. To define the `cancelCallback` function, you can use the `data-cancel` attribute on the Checkout script tag to specify a global function that will handle cancellations. If a customer cancels a payment, the `cancelCallback` function will be invoked with a[ data object](https://ottu-sandbox.gitbook.io/public/developer/checkout-sdk/web-v3#data-object).with a data.status value of "`canceled`”
 
 **Params Available in Data Object for `cancelCallback`**
 
@@ -684,7 +684,7 @@ In this example, the `cancelCallback` function is defined and passed as the valu
 
 #### [**window.successCallback**](web.md#window.successcallback)
 
-In the [Checkout SDK](./), the `successCallback` is a function triggered upon successful completion of the payment process. This callback receives a [data object](web.md#data-object),with a data.status value of "`success"`
+In the Checkout SDK, the `successCallback` is a function triggered upon successful completion of the payment process. This callback receives a [data object](web.md#data-object),with a data.status value of "`success"`
 
 **Params Available in Data Object for `successCallback`**
 

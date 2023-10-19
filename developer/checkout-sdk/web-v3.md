@@ -460,7 +460,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/Mini (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image144.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Side By Side Buttons" %}

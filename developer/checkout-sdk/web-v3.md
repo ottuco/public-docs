@@ -148,7 +148,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="https://lh4.googleusercontent.com/FZ0I_tPFfapX1FikWHSYAXS9wLbPO2wxnspVGGgt7HbHHM-VCVp72oYAU9xjwDGxPj-EOa11pY8vekeCQ28YRsmBDUqF2YPff27be46T-EiKBs4VAy-KXTsOzlsPRntvrq5eVGn5x5kti6UknLrUgic9wMdt-ebK" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image8 (1).png" alt=""><figcaption></figcaption></figure>
 
 #### [applePayInit](web-v3.md#applepayinit-object) _<mark style="color:blue;">`object`</mark>_
 

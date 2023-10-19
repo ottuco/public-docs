@@ -37,7 +37,6 @@
 * [Auto-Debit](developer/auto-debit.md)
 * [Checkout SDK](developer/checkout-sdk/README.md)
   * [Web](developer/checkout-sdk/web.md)
-  * [Web V3](developer/checkout-sdk/web-v3.md)
   * [iOS](developer/checkout-sdk/ios.md)
   * [Android](developer/checkout-sdk/android.md)
   * [Flutter](developer/checkout-sdk/flutter.md)

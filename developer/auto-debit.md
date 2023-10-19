@@ -301,7 +301,7 @@ Currently, the only way to save a new card is by having the customer successfull
 
 #### :digit\_five: [**Do I need to use the Checkout SDK to display payment options to the customer?**](auto-debit.md#do-i-need-to-use-the-checkout-sdk-to-display-payment-options-to-the-customer)
 
-No, it's not mandatory to use the [Checkout SDK](checkout-sdk/). You can control the payment process using the responses from the [Checkout API](checkout-api.md). However, it's worth noting that the Checkout SDK simplifies the UI implementation and is necessary for certain payment methods such as [Apple Pay](checkout-sdk/web.md#apple-pay), [Google Pay](checkout-sdk/web.md#google-pay), STC Pay, and others. While it's recommended to use the Checkout SDK for its simplicity and comprehensive features, the choice ultimately lies in your hands based on your specific needs.
+No, it's not mandatory to use the [Checkout SDK](checkout-sdk/). You can control the payment process using the responses from the [Checkout API](checkout-api.md). However, it's worth noting that the Checkout SDK simplifies the UI implementation and is necessary for certain payment methods such as [Apple Pay](broken-reference), [Google Pay](broken-reference), STC Pay, and others. While it's recommended to use the Checkout SDK for its simplicity and comprehensive features, the choice ultimately lies in your hands based on your specific needs.
 
 #### :digit\_six: [I missed saving the card which the customer agreed to be charged. Can I get it back?](auto-debit.md#i-missed-saving-the-card-which-the-customer-agreed-to-be-charged.-can-i-get-it-back)
 

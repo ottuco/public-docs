@@ -766,20 +766,20 @@ The data object received by the [errorCallback](web.md#window.errorcallback), [c
 
 #### Data Object Child Parameters
 
-*   #### **message**_<mark style="color:blue;">**`string`**</mark>_
+*   #### [**message**](web.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
 
     It is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
-*   #### session\_id _<mark style="color:blue;">`string`</mark>_
+*   #### [session\_id](web.md#session\_id-string-1) _<mark style="color:blue;">`string`</mark>_
 
     It is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
-*   #### status _<mark style="color:blue;">`string`</mark>_
+*   #### [status](web.md#status-string) _<mark style="color:blue;">`string`</mark>_
 
     It is of the checkout process. Possible values are:
 
     * `success`: The customer was charged successfully, and they can be redirected to a success page or display a success message.
     * `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session\_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
     * `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
-*   #### redirect\_url _<mark style="color:blue;">`URL`</mark>_
+*   #### [redirect\_url](web.md#redirect\_url-url) _<mark style="color:blue;">`URL`</mark>_
 
     The URL where the customer will be redirected after the payment stage only if the webhook URL returns a success status. [order\_no](../webhooks/payment-webhooks.md#order\_no-string-conditional), [reference\_number](../webhooks/payment-webhooks.md#reference\_number-string-mandatory) and [session\_id](../webhooks/payment-webhooks.md#session\_id-string-mandatory) will be appended to the redirect URL as query parameters. The developer implementing the SDK must ensure that the redirection process is smooth and secure, providing a seamless experience for the customer while maintaining the integrity of the payment process.&#x20;
 
@@ -787,13 +787,13 @@ The data object received by the [errorCallback](web.md#window.errorcallback), [c
 It's important to note that the redirect\_url option is only present in the [successCallback](web.md#window.successcallback). In other scenarios, especially with [cancelCallback](web.md#window.cancelcallback) and [errorCallback](web.md#window.errorcallback), it's absent.
 {% endhint %}
 
-*   #### order\_no _<mark style="color:blue;">`string`</mark>_
+*   #### [order\_no](web.md#order\_no-string) _<mark style="color:blue;">`string`</mark>_
 
     The order number provided in the [Checkout API](../checkout-api.md). See [Checkout API](../checkout-api.md) & [order\_no](../checkout-api.md#order\_no-string-optional).
-*   #### **reference\_number**<mark style="color:blue;">**`string`**</mark>
+*   #### [**reference\_number**](web.md#reference\_numberstring)<mark style="color:blue;">**`string`**</mark>
 
     A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
-*   #### form\_of\_payment <mark style="color:blue;">`string`</mark>
+*   #### [form\_of\_payment](web.md#form\_of\_payment-string) <mark style="color:blue;">`string`</mark>
 
     Enum: `apple_pay`, `google_pay`, `token_pay`, `stc_pay` , `redirect`
 
@@ -804,19 +804,19 @@ It's important to note that the redirect\_url option is only present in the [suc
     * `token_pay` - Token Pay
     * `stc_pay` - STC Pay
     * `redirect` - Redirect
-*   #### payment\_gateway\_info _<mark style="color:blue;">`object`</mark>_
+*   #### [payment\_gateway\_info](web.md#payment\_gateway\_info-object) _<mark style="color:blue;">`object`</mark>_
 
     Information about the payment gateway, accompanied by the response received from the payment gateway
-*   #### pg\_code _<mark style="color:blue;">`string`</mark>_
+*   #### [pg\_code](web.md#pg\_code-string) _<mark style="color:blue;">`string`</mark>_
 
     The unique identifier, or `pg_code`, for the payment gateway that was used to process the  payment. This value corresponds to the specific payment method utilized by the customer, such as `credit-card`.
-*   #### pg\_name _<mark style="color:blue;">`string`</mark>_
+*   #### [pg\_name](web.md#pg\_name-string) _<mark style="color:blue;">`string`</mark>_
 
     The name of the payment gateway, represented in all lowercase letters, that was used to perform the payment. This could be one of several values, such as `kpay` (for KNET), `mpgs`, or `cybersource`. These identifiers provide a human-readable way to understand the payment mechanism that was utilized.
-*   #### pg\_response _<mark style="color:blue;">`object`</mark>_
+*   #### [pg\_response](web.md#pg\_response-object) _<mark style="color:blue;">`object`</mark>_
 
     The raw response data that was received directly from the payment gateway after the transaction attempt. This typically includes transaction status, transaction identifier, and potentially error messages or additional data provided by the gateway.
-*   #### challenge\_occurred _<mark style="color:blue;">`bool`</mark>_
+*   #### [challenge\_occurred ](web.md#challenge\_occurred-bool)_<mark style="color:blue;">`bool`</mark>_
 
     Default: false\
     This flag indicates if an additional verification, such as 3DS, OTP, PIN, etc., was initiated during the payment process. Use this flag in `cancelCallback` and `errorCallback` to control the presentation of error messages, especially for on-site payments undergoing a challenge flow. For example, after a failed 3DS verification, it's useful to show a custom popup informing the user of the payment failure. However, it's crucial to note that not all on-site failed payments need custom error messaging. In cases like `GooglePay` or `ApplePay`, error messages are inherently handled by the Payment Sheet, which remains open for the user to retry, making this distinction vital.

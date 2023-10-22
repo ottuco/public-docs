@@ -83,7 +83,7 @@ For the initial payment, the payer must be online to initiate and perform the tr
 1.  #### Call Payment Methods API
 
     Start by fetching the [pg\_codes](checkout-api.md#pg\_codes-array-required) (payment gateways) which are enabled for `tokenization`. This can be done by calling the Payment Methods API.
-2.  #### Call Checkout API:
+2.  #### Call Checkout API
 
     After obtaining the `pg_codes`, call the [Checkout API](checkout-api.md) to create a payment transaction.&#x20;
 
@@ -92,13 +92,13 @@ For the initial payment, the payer must be online to initiate and perform the tr
   * Ensure both the agreement (with its related subfields) and [customer\_id](checkout-api.md#customer\_id-string-optional) parameters are supplied, as they are **mandatory**. For more information about agreement, please check [here](auto-debit.md#importance-for-merchants).
   * Include [webhook\_url](checkout-api.md#webhook\_url-string-optional), and optionally include [redirect\_url](checkout-api.md#redirect\_url-string-optional) as well.
 
-3.  #### Present Payment Options to Payer:
+3.  #### Present Payment Options to Payer
 
     Now, present the payment options to the payer. You can either use the [payment\_methods](checkout-api.md#payment\_methods-array-object-mandatory) response from the Checkout API or use the [Checkout SDK](checkout-sdk/). The SDK does the heavy lifting by rendering all payment options and capturing the payment.
-4.  #### Customer Makes Payment and Saves Card:
+4.  #### Customer Makes Payment and Saves Card
 
     The customer then proceeds to pay and save their card.
-5.  #### Webhook Payemnt Notification:
+5.  #### Webhook Payemnt Notification
 
     After the payment is processed, Ottu will notify your [webhook\_url](checkout-api.md#webhook\_url-string-optional) (which was provided during the Checkout API call).&#x20;
 
@@ -114,13 +114,13 @@ For the initial payment, the payer must be online to initiate and perform the tr
 
 After the [initial payment](auto-debit.md#first-payment), subsequent payments can be automated using the Auto Debit API.
 
-1.  #### Call Checkout API with Consistent Parameters:
+1.  #### Call Checkout API with Consistent Parameters
 
     &#x20;When initiating subsequent payments, call the [Checkout API](checkout-api.md) using the `pg_code` associated with the saved card. It’s crucial to maintain consistency by using the exact same agreement and [customer\_id](checkout-api.md#customer\_id-string-optional) as in the first payment. Ottu will handle the task of sending the required parameters to the bank, ensuring a seamless transaction process.\
     \
     **For Parameter Updates:** Avoid sending updated parameters for subsequent payments, as they will have no effect. The method to update the agreement will be discussed in a later section.\
 
-2.  #### Call Auto Debit API:
+2.  #### Call Auto Debit API
 
     Now, call the Auto Debit API using the [session\_id](checkout-api.md#session\_id-string-mandatory) from the Checkout API and the card/token you wish to use to charge the customer.
 
@@ -162,31 +162,32 @@ Navigating the world of digital payments can be intricate. Whether you’re proc
 
 ### [First Payment Process](auto-debit.md#first-payment-process)
 
-#### [**Step 1** ](auto-debit.md#step-1)
+1.  #### Retrieving `pg_codes` (Optional)
 
-Retrieving [pg\_codes](checkout-api.md#pg\_codes-array-required) (Optional)\
-Before initiating the first payment, you have the option to call the **Payment Methods API** to retrieve the necessary `pg_codes`. This can be done using the following payload:
+    Before initiating the first payment, you have the option to call the **Payment Methods API** to retrieve the necessary `pg_codes`. This can be done using the following payload:\
 
-```json
-{
-    "plugin": "e_commerce",
-    "currencies": ["KWD", "SAR"],
-    "operation": "purchase",
-    "customer_id": "test",
-    "tokenizable": true
-}
-```
 
-* **Why Consider This Step?**\
-  While this step is optional, it offers several advantages:
-  * **Flexibility:** If you’re uncertain about the `pg_code` or anticipate it might change in the future, this step ensures you always have the most up-to-date code.
-  * **End-to-End Integration:** By retrieving the `pg_codes`dynamically, you ensure a seamless integration with OTTU. This means that any changes in the configuration, such as a code alteration or the addition of a new payment gateway, will be automatically reflected in your system.
-  * **Hardcoding Alternative:** If you’re confident that the `pg_code` will remain consistent and won’t change, you can opt to hardcode it directly into your system. This approach might simplify the process but could require updates if there are changes on Ottu end.
+    ```json
+    {
+        "plugin": "e_commerce",
+        "currencies": ["KWD", "SAR"],
+        "operation": "purchase",
+        "customer_id": "test",
+        "tokenizable": true
+    }
+    ```
 
-#### [**Step 2**](auto-debit.md#step-2)
 
-Initiating the Payment via [Checkout API](checkout-api.md)\
-To proceed with the payment, you’ll need to call the Checkout API. Here’s an example of the payload you might use:
+
+    **Why Consider This Step?**\
+    While this step is optional, it offers several advantages:
+
+    * **Flexibility:** If you’re uncertain about the `pg_code` or anticipate it might change in the future, this step ensures you always have the most up-to-date code.
+    * **End-to-End Integration:** By retrieving the `pg_codes`dynamically, you ensure a seamless integration with OTTU. This means that any changes in the configuration, such as a code alteration or the addition of a new payment gateway, will be automatically reflected in your system.
+    * **Hardcoding Alternative:** If you’re confident that the `pg_code` will remain consistent and won’t change, you can opt to hardcode it directly into your system. This approach might simplify the process but could require updates if there are changes on Ottu end.
+2.  #### Initiating the Payment via `Checkout API`
+
+    To proceed with the payment, you’ll need to call the Checkout API. Here’s an example of the payload you might use:
 
 ```json
 {
@@ -257,22 +258,35 @@ Wohoo! The groundwork is laid, and you’re all set to process subsequent paymen
 
 To ensure a smooth subsequent payment process, follow these steps:
 
-1. **Pre-Charging Notifications:** Before the charging day, it’s recommended to send the payer 1-2 email notifications, ideally one week before and then one day before the scheduled charge. This serves as a reminder to ensure they have the necessary funds available or to go online and modify the card they wish to use for the payment.
-2. **Initiating the Checkout API Using the Prior pg\_code:** For subsequent payments, generate a new [session\_id](checkout-api.md#session\_id-string-mandatory) by initiating a new payment transaction using the Checkout API, and this transaction should incorporate the `pg_code` from the previous successful transaction. This is either associated with the current agreement or derived from the initial payment. While supplying other parameters, ensure consistency with the initial payment setup. Remember, the amount might differ if your agreement allows for variable amounts.
-3. **Retrieve the session\_id:** The Checkout API call will return a [session\_id](checkout-api.md#session\_id-string-mandatory). This ID is crucial for the next step in the process.
-4. **Initiate the AutoDebit API Call:** Use the received `session_id` and the token from the last payment to charge the payer by calling the [AutoDebit API](auto-debit.md#api-schema-reference). This call will yield one of two responses: `success` or `failure`.
-   * **Success:** If you receive a success response, it indicates that the payment was processed successfully. You can then notify the payer about the successful payment.
-   * **Failure:** In the event of a failed payment, notify the payer about the payment failure and provide the reason, which will be sent to you by Ottu. At this stage, update the payment `session_id` by calling the [Checkout API](checkout-api.md) again and provide both the [expiration\_time](checkout-api.md#expiration\_time-string-optional) and [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) parameters to set a grace period for the customer, for example, 3 days. While waiting for the customer to attempt a manual payment, it’s recommended to try charging again after 24 hours, in case the customer has added funds or resolved the issue with their card.
+1.  #### Pre-Charging Notifications
 
-```json
-POST: https://<ottu-url>/b/pbl/v2/auto-debit/
-{
-  "session_id": "sess_123",
-  "token": "token_123"
-}
-```
+    Before the charging day, it’s recommended to send the payer 1-2 email notifications, ideally one week before and then one day before the scheduled charge. This serves as a reminder to ensure they have the necessary funds available or to go online and modify the card they wish to use for the payment.
+2.  #### Initiating the `Checkout API` Using the Prior `pg_codes`
 
-5. **Payer’s Manual Action:** If the `auto-debit` fails, the payer must be notified that they need to action the payment manually using the provided [checkout\_url](checkout-api.md#checkout\_url-string-mandatory). When they access the link, they will be directed to make the payment, which can be done using an existing card or by entering a new card’s details.
+    For subsequent payments, generate a new [session\_id](checkout-api.md#session\_id-string-mandatory) by initiating a new payment transaction using the Checkout API, and this transaction should incorporate the `pg_code` from the previous successful transaction. This is either associated with the current agreement or derived from the initial payment. While supplying other parameters, ensure consistency with the initial payment setup. Remember, the amount might differ if your agreement allows for variable amounts.
+3.  #### Retrieve the `session_id`
+
+    The [Checkout API](checkout-api.md) call will return a [session\_id](checkout-api.md#session\_id-string-mandatory). This ID is crucial for the next step in the process.
+4.  #### Initiate the `AutoDebit API` Call
+
+    Use the received `session_id` and the token from the last payment to charge the payer by calling the [AutoDebit API](auto-debit.md#api-schema-reference). This call will yield one of two responses: `success` or `failure`.
+
+    * **Success:** If you receive a success response, it indicates that the payment was processed successfully. You can then notify the payer about the successful payment.
+    * **Failure:** In the event of a failed payment, notify the payer about the payment failure and provide the reason, which will be sent to you by Ottu. At this stage, update the payment `session_id` by calling the [Checkout API](checkout-api.md) again and provide both the [expiration\_time](checkout-api.md#expiration\_time-string-optional) and [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) parameters to set a grace period for the customer, for example, 3 days. While waiting for the customer to attempt a manual payment, it’s recommended to try charging again after 24 hours, in case the customer has added funds or resolved the issue with their card.\
+
+
+    ```json
+    POST: https://<ottu-url>/b/pbl/v2/auto-debit/
+    {
+      "session_id": "sess_123",
+      "token": "token_123"
+    }
+    ```
+
+
+5.  #### Payer's Manual Action
+
+    If the `auto-debit` fails, the payer must be notified that they need to action the payment manually using the provided [checkout\_url](checkout-api.md#checkout\_url-string-mandatory). When they access the link, they will be directed to make the payment, which can be done using an existing card or by entering a new card’s details.
 
 ### [Updating Card Information for Auto-Debit Payments](auto-debit.md#updating-card-information-for-auto-debit-payments)
 

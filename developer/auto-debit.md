@@ -1,6 +1,6 @@
 # Auto-Debit
 
-## [Intro](auto-debit.md#intro)
+## [Introduction](auto-debit.md#introduction)
 
 Ottu provides businesses and developers with the ability to incorporate Ottu's auto-debit functionality into their existing systems, allowing for seamless and automated payment processing.
 
@@ -258,16 +258,16 @@ Wohoo! The groundwork is laid, and you’re all set to process subsequent paymen
 
 To ensure a smooth subsequent payment process, follow these steps:
 
-1.  #### Pre-Charging Notifications
+1.  #### [Pre-Charging Notifications](auto-debit.md#pre-charging-notifications)
 
     Before the charging day, it’s recommended to send the payer 1-2 email notifications, ideally one week before and then one day before the scheduled charge. This serves as a reminder to ensure they have the necessary funds available or to go online and modify the card they wish to use for the payment.
-2.  #### Initiating the `Checkout API` Using the Prior `pg_codes`
+2.  #### [Initiating the `Checkout API` Using the Prior `pg_codes`](auto-debit.md#initiating-the-checkout-api-using-the-prior-pg\_codes)
 
     For subsequent payments, generate a new [session\_id](checkout-api.md#session\_id-string-mandatory) by initiating a new payment transaction using the Checkout API, and this transaction should incorporate the `pg_code` from the previous successful transaction. This is either associated with the current agreement or derived from the initial payment. While supplying other parameters, ensure consistency with the initial payment setup. Remember, the amount might differ if your agreement allows for variable amounts.
-3.  #### Retrieve the `session_id`
+3.  #### [Retrieve the `session_id`](auto-debit.md#retrieve-the-session\_id)
 
     The [Checkout API](checkout-api.md) call will return a [session\_id](checkout-api.md#session\_id-string-mandatory). This ID is crucial for the next step in the process.
-4.  #### Initiate the `AutoDebit API` Call
+4.  #### [Initiate the `AutoDebit API` Call](auto-debit.md#initiate-the-autodebit-api-call)
 
     Use the received `session_id` and the token from the last payment to charge the payer by calling the [AutoDebit API](auto-debit.md#api-schema-reference). This call will yield one of two responses: `success` or `failure`.
 
@@ -284,7 +284,7 @@ To ensure a smooth subsequent payment process, follow these steps:
     ```
 
 
-5.  #### Payer's Manual Action
+5.  #### [Payer's Manual Action](auto-debit.md#payers-manual-action)
 
     If the `auto-debit` fails, the payer must be notified that they need to action the payment manually using the provided [checkout\_url](checkout-api.md#checkout\_url-string-mandatory). When they access the link, they will be directed to make the payment, which can be done using an existing card or by entering a new card’s details.
 
@@ -292,14 +292,12 @@ To ensure a smooth subsequent payment process, follow these steps:
 
 There might be situations when a customer wishes to update their card details for existing auto-debit payments. Here’s how you can facilitate this:
 
-
-
-* #### Fetching Existing Saved Cards:
-  1. **Using the User Cards API:** If a customer wants to update their card details, start by calling the [User Cards API](user-cards.md). This will fetch all cards saved against the pg\_code used for the auto-debit payment.
+* #### [Fetching Existing Saved Cards](auto-debit.md#fetching-existing-saved-cards)
+  1. **Using the `User Cards API`:** If a customer wants to update their card details, start by calling the [User Cards API](user-cards.md). This will fetch all cards saved against the pg\_code used for the auto-debit payment.
   2. **Listing Cards:** Display the fetched cards on your platform, allowing the customer to choose their preferred card.
   3. **Expiration Date Check:** Before accepting the selected card, check its expiration date. If the card is set to expire soon (e.g., within the next month), raise an error and inform the customer that they should choose a different card or update the expiration date of the current card.
   4. **Updating the Database:** If the selected card’s expiration date is valid, update your database to replace the previous card with the newly selected one.
-* #### Adding a New Card:
+* #### [Adding a New Card](auto-debit.md#adding-a-new-card)
   1. **Offering the Option:** In the same interface where you list saved cards, provide an option for the customer to add a new card.
   2. **Using the Add New Card API**: If the customer opts to add a new card, use the Add New Card API to facilitate this.
   3. **Database Update:** After successfully adding the new card, remember to update your database. This new card should replace the previous card associated with the `auto-debit` payment.

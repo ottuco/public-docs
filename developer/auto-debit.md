@@ -45,7 +45,7 @@ For a more detailed technical understanding and the implementation specifics of 
 
 Ottu’s Auto Debit API process is structured around two primary phases: [The First Payment](auto-debit.md#first-payment) and [Subsequent Payments](auto-debit.md#subsequent-payments). To ensure a smooth transaction flow, it’s essential to understand the foundational concept of an Agreement before initiating the first payment.
 
-**What is an Agreement?**
+#### [**What is an Agreement?**](auto-debit.md#what-is-an-agreement)
 
 An agreement represents a commercial contract you establish with your payer, allowing you to store and utilize their payment details for subsequent transactions. This mutual understanding between you (the merchant) and the payer permits processing their payment details under specific conditions. Examples include:
 
@@ -80,22 +80,33 @@ If you have requirements for an `auto-debit` type other than **recurring** or ha
 
 For the initial payment, the payer must be online to initiate and perform the transaction. Given the `auto_debit` payment type, the payer’s card will be automatically saved for future transactions. Here’s the flow:
 
-1. **Call Payment Methods API:** Start by fetching the [pg\_codes](checkout-api.md#pg\_codes-array-required) (payment gateways) which are enabled for `tokenization`. This can be done by calling the Payment Methods API.
-2. **Call Checkout API:** After obtaining the `pg_codes`, call the [Checkout API](checkout-api.md) to create a payment transaction.&#x20;
+1.  #### Call Payment Methods API
+
+    Start by fetching the [pg\_codes](checkout-api.md#pg\_codes-array-required) (payment gateways) which are enabled for `tokenization`. This can be done by calling the Payment Methods API.
+2.  #### Call Checkout API:
+
+    After obtaining the `pg_codes`, call the [Checkout API](checkout-api.md) to create a payment transaction.&#x20;
 
 * **For `auto_debit` transactions, it’s essential to:**
   * Include the `payment_type` parameter set to `auto_debit`.
   * Ensure both the agreement (with its related subfields) and [customer\_id](checkout-api.md#customer\_id-string-optional) parameters are supplied, as they are **mandatory**. For more information about agreement, please check [here](auto-debit.md#importance-for-merchants).
   * Include [webhook\_url](checkout-api.md#webhook\_url-string-optional), and optionally include [redirect\_url](checkout-api.md#redirect\_url-string-optional) as well.
 
-3. **Present Payment Options to Payer:** Now, present the payment options to the payer. You can either use the [payment\_methods](checkout-api.md#payment\_methods-array-object-mandatory) response from the Checkout API or use the [Checkout SDK](checkout-sdk/). The SDK does the heavy lifting by rendering all payment options and capturing the payment.
-4. **Customer Makes Payment and Saves Card:** The customer then proceeds to pay and save their card.
-5. **Webhook Payment Notification:** After the payment is processed, Ottu will notify your [webhook\_url](checkout-api.md#webhook\_url-string-optional) (which was provided during the Checkout API call).&#x20;
+3.  #### Present Payment Options to Payer:
 
-* **Here’s what you need to know:**
-  * **Token Retrieval:** The notification to your `webhook_url` will contain the saved card details in the token field. It’s crucial to always save this token, even for subsequent payments. This is because the payer might choose a different card for future `auto-debit` payments. For a detailed schema of the notification, refer to the [Payment Webhook documentation](webhooks/payment-webhooks.md).
-  * **Handling Lost Tokens:** In case you don’t save the token or lose it, you can retrieve it using the [User Cards API](user-cards.md#fetch-cards). Further details on this process are provided below.
-  * **Card and Agreement Association:** When a payment is made via `auto-debit`, the `agreement.id` value will be linked with the saved card. Ottu manages this association automatically. This means that if a payer decides to use a different card for subsequent payments, Ottu will handle the transition by disassociating the `agreement.id` from the previous card and linking it to the new one. It’s important to note that an `agreement.id` can only be associated with one card at a time. This automated management ensures that you always have the correct card details associated with the agreement, simplifying the process for subsequent payments.
+    Now, present the payment options to the payer. You can either use the [payment\_methods](checkout-api.md#payment\_methods-array-object-mandatory) response from the Checkout API or use the [Checkout SDK](checkout-sdk/). The SDK does the heavy lifting by rendering all payment options and capturing the payment.
+4.  #### Customer Makes Payment and Saves Card:
+
+    The customer then proceeds to pay and save their card.
+5.  #### Webhook Payemnt Notification:
+
+    After the payment is processed, Ottu will notify your [webhook\_url](checkout-api.md#webhook\_url-string-optional) (which was provided during the Checkout API call).&#x20;
+
+#### **Here’s what you need to know:**
+
+* **Token Retrieval:** The notification to your `webhook_url` will contain the saved card details in the token field. It’s crucial to always save this token, even for subsequent payments. This is because the payer might choose a different card for future `auto-debit` payments. For a detailed schema of the notification, refer to the [Payment Webhook documentation](webhooks/payment-webhooks.md).
+* **Handling Lost Tokens:** In case you don’t save the token or lose it, you can retrieve it using the [User Cards API](user-cards.md#fetch-cards). Further details on this process are provided below.
+* **Card and Agreement Association:** When a payment is made via `auto-debit`, the `agreement.id` value will be linked with the saved card. Ottu manages this association automatically. This means that if a payer decides to use a different card for subsequent payments, Ottu will handle the transition by disassociating the `agreement.id` from the previous card and linking it to the new one. It’s important to note that an `agreement.id` can only be associated with one card at a time. This automated management ensures that you always have the correct card details associated with the agreement, simplifying the process for subsequent payments.
 
 <figure><img src="../.gitbook/assets/Auto-Debit Docs - First Payment (1).png" alt="" width="264"><figcaption></figcaption></figure>
 
@@ -103,16 +114,17 @@ For the initial payment, the payer must be online to initiate and perform the tr
 
 After the [initial payment](auto-debit.md#first-payment), subsequent payments can be automated using the Auto Debit API.
 
-* **Call Checkout API with Consistent Parameters:** When initiating subsequent payments, call the [Checkout API](checkout-api.md) using the `pg_code` associated with the saved card. It’s crucial to maintain consistency by using the exact same agreement and [customer\_id](checkout-api.md#customer\_id-string-optional) as in the first payment. Ottu will handle the task of sending the required parameters to the bank, ensuring a seamless transaction process.
+1.  #### Call Checkout API with Consistent Parameters:
 
-{% hint style="info" %}
-**For Parameter Updates:** Avoid sending updated parameters for subsequent payments, as they will have no effect. The method to update the agreement will be discussed in a later section.
-{% endhint %}
-
-*   **Call Auto Debit API:** Now, call the Auto Debit API using the [session\_id](checkout-api.md#session\_id-string-mandatory) from the Checkout API and the card/token you wish to use to charge the customer.
-
+    &#x20;When initiating subsequent payments, call the [Checkout API](checkout-api.md) using the `pg_code` associated with the saved card. It’s crucial to maintain consistency by using the exact same agreement and [customer\_id](checkout-api.md#customer\_id-string-optional) as in the first payment. Ottu will handle the task of sending the required parameters to the bank, ensuring a seamless transaction process.\
     \
-    The automated debit process is now initiated, and the payment will be processed automatically without the need for the payer to be online.
+    **For Parameter Updates:** Avoid sending updated parameters for subsequent payments, as they will have no effect. The method to update the agreement will be discussed in a later section.\
+
+2.  #### Call Auto Debit API:
+
+    Now, call the Auto Debit API using the [session\_id](checkout-api.md#session\_id-string-mandatory) from the Checkout API and the card/token you wish to use to charge the customer.
+
+The automated debit process is now initiated, and the payment will be processed automatically without the need for the payer to be online.
 
 <figure><img src="../.gitbook/assets/Auto-Debit Docs - Subsequent Payments (2).png" alt="" width="264"><figcaption></figcaption></figure>
 
@@ -122,13 +134,17 @@ This diagram visually represents the steps needed to set up subsequent payments.
 
 There might be instances where the card linked to automatic payments might expire or the customer may want to change the card being used. Here's how you can handle such scenarios:
 
-* **Customer Has Other Saved Cards**\
-  If the customer has other saved cards, you can [fetch](user-cards.md#fetch-cards) these by calling the [User Cards API](user-cards.md). Present the available cards to the customer and let them select the one they wish to use for ongoing payments. Save the chosen card details and use it for future transactions.
+*   #### Customer Has Other Saved Cards:
+
+    If the customer has other saved cards, you can [fetch](user-cards.md#fetch-cards) these by calling the [User Cards API](user-cards.md). Present the available cards to the customer and let them select the one they wish to use for ongoing payments. Save the chosen card details and use it for future transactions.
 
 <figure><img src="../.gitbook/assets/Auto-Debit Docs - Updating ard Information (2).png" alt="" width="264"><figcaption></figcaption></figure>
 
-* **Customer Does Not Have Saved Cards**\
-  If the customer does not have any other saved cards, you will need to repeat the process used for the [first payment](auto-debit.md#first-payment). The customer will need to complete a payment and save a new card.
+*   #### Customer Does Not Have Saved Cards:
+
+    If the customer does not have any other saved cards, you will need to repeat the process used for the [first payment](auto-debit.md#first-payment). The customer will need to complete a payment and save a new card.
+
+
 
 <figure><img src="../.gitbook/assets/Auto-Debit Docs - Updating ard Information (3).png" alt="" width="264"><figcaption></figcaption></figure>
 
@@ -146,7 +162,9 @@ Navigating the world of digital payments can be intricate. Whether you’re proc
 
 ### [First Payment Process](auto-debit.md#first-payment-process)
 
-**Step 1:** Retrieving [pg\_codes](checkout-api.md#pg\_codes-array-required) (Optional)\
+#### [**Step 1** ](auto-debit.md#step-1)
+
+Retrieving [pg\_codes](checkout-api.md#pg\_codes-array-required) (Optional)\
 Before initiating the first payment, you have the option to call the **Payment Methods API** to retrieve the necessary `pg_codes`. This can be done using the following payload:
 
 ```json
@@ -165,7 +183,9 @@ Before initiating the first payment, you have the option to call the **Payment M
   * **End-to-End Integration:** By retrieving the `pg_codes`dynamically, you ensure a seamless integration with OTTU. This means that any changes in the configuration, such as a code alteration or the addition of a new payment gateway, will be automatically reflected in your system.
   * **Hardcoding Alternative:** If you’re confident that the `pg_code` will remain consistent and won’t change, you can opt to hardcode it directly into your system. This approach might simplify the process but could require updates if there are changes on Ottu end.
 
-**Step 2:** Initiating the Payment via [Checkout API](checkout-api.md)\
+#### [**Step 2**](auto-debit.md#step-2)
+
+Initiating the Payment via [Checkout API](checkout-api.md)\
 To proceed with the payment, you’ll need to call the Checkout API. Here’s an example of the payload you might use:
 
 ```json
@@ -220,7 +240,7 @@ The `pg_code` is especially important for [subsequent payments](auto-debit.md#su
 
 It’s noteworthy that the payload includes `card_acceptance_criteria.min_expiry_time` = 30. This parameter ensures that for this specific payment, any attempt by the customer to add a new card or select a card via the [Checkout SDK](checkout-sdk/), which has an expiration time not exceeding the current date plus 30 days, will be declined. Tailoring this field according to your operational requirements is crucial to prevent the acceptance of cards nearing their expiration. Ideally, a validity buffer of at least one month should be considered.
 
-Furthermore, parameters under card\_acceptance\_criteria, like exclude\_bins (allowing only specific BINs to pay), are applicable only for pg\_codes that are on direct payment integration and not for hosted sessions. For a comprehensive list of card\_acceptance\_criteria, refer to the [Checkout API](checkout-api.md).
+Furthermore, parameters under `card_acceptance_criteria,` like `exclude_bins` (allowing only specific BINs to pay), are applicable only for `pg_codes` that are on direct payment integration and not for hosted sessions. For a comprehensive list of `card_acceptance_criteria`, refer to the [Checkout API](checkout-api.md).
 
 #### Step Summary:
 

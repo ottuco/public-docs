@@ -391,16 +391,16 @@ Max length 32-bit String (2^31 - 1)
 
 #### [transaction  ](payment-webhooks.md#transaction-array-conditional)_<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-<details>
-
-<summary>transaction  child parameters</summary>
-
 Transactions resulted to the PG operations performed on the parent transaction\
 See [child transaction sate](../../user-guide/payment-tracking/#child-table-transaction)
 
 **Presence conditions:**
 
 * It will be sent only if operations processed on transaction and resulted child transaction records.
+
+<details>
+
+<summary>transaction  child parameters</summary>
 
 #### [amount](payment-webhooks.md#amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
@@ -430,15 +430,15 @@ The state of a child transaction object represented in transactions Array
 
 #### [token](payment-webhooks.md#token-object-conditional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-<details>
-
-<summary>token child parameters</summary>
-
 Represents token details.
 
 * **Presence conditions:**
 
 When user pays with a tokenized card, Ottu will include the token details in the response
+
+<details>
+
+<summary>token child parameters</summary>
 
 #### [brand](payment-webhooks.md#brand-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 

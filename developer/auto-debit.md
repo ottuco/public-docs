@@ -150,10 +150,8 @@ There might be instances where the card linked to automatic payments might expir
 
 In both cases, always remember to update the saved card information in your database for future automatic payments.
 
-## [API Schema Reference](auto-debit.md#api-schema-reference)
-
-{% swagger src="../.gitbook/assets/Ottu API (29).yaml" path="/b/pbl/v2/auto-debit/" method="post" %}
-[Ottu API (29).yaml](<../.gitbook/assets/Ottu API (29).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (32).yaml" path="/b/pbl/v2/auto-debit/" method="post" %}
+[Ottu API (32).yaml](<../.gitbook/assets/Ottu API (32).yaml>)
 {% endswagger %}
 
 ## [Comprehensive Guide to Payments: Step-by-Step](auto-debit.md#comprehensive-guide-to-payments-step-by-step)

@@ -320,7 +320,7 @@ Type of payment. Choose `one_off` for payments that occur only once without futu
 If `auto_debit` is selected:
 
 1. [agreement](payment-webhooks.md#agreement-object-conditional) and [customer\_id](payment-webhooks.md#customer\_id-string-conditional) parameters will also be mandatory.
-2. Only PG codes supporting tokenization can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for auto-debit payments
+2. Only `PG codes` supporting [tokenization](../tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments
 
 #### [reference\_number](payment-webhooks.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 

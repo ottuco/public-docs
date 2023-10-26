@@ -30,6 +30,7 @@
 * [Getting Started](developer/getting-started.md)
 * [Tokenization](developer/tokenization.md)
 * [Authentication](developer/authentication.md)
+* [Payment Methods](developer/payment-methods.md)
 * [Checkout API](developer/checkout-api.md)
 * [Operations](developer/operations.md)
 * [User Cards](developer/user-cards.md)

@@ -1,21 +1,21 @@
 # Payment Methods
 
-## [Introduction](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/90/developer/payment-method-api#introduction)
+## [Introduction](payment-methods.md#introduction)
 
 In the intricate realm of online transactions, a versatile payment experience is essential. \
 The `Payment Methods API` streamlines this process, allowing for effortless automation. by simply integrating with specified operation, [customer\_id](checkout-api.md#customer\_id-string-optional), [currencies](checkout-api.md#currency\_code-string-required), [payment gateway names](../user-guide/payment-gateway.md) and desired [payment plugins](../user-guide/plugins/), merchant can harness the full power of Ottu's payment automation, all while keeping his existing environment intact. no extra effort, just seamless integration.
 
-## [Setup](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/121/developer/payment-methods#setup)
+## [Setup](payment-methods.md#setup)
 
-#### [Enabling the Plugin](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/121/developer/payment-methods#enabling-the-plugin)
+#### [Enabling the Plugin](payment-methods.md#enabling-the-plugin)
 
 Ensure the relevant plugin ([E-Commerce](../user-guide/plugins/#e-commerce) or [Payment Request](../user-guide/plugins/#bulk-payment-request)) is activated in the Admin Panel under the Plugin Config section. For detailed activation steps, refer to the [Plugin Activation Guide](../user-guide/plugins/#adding-or-removing-plugins).
 
-#### [Activating Payment Gateway Codes](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/121/developer/payment-methods#activating-payment-gateway-codes)
+#### [Activating Payment Gateway Codes](payment-methods.md#activating-payment-gateway-codes)
 
 Activate the [payment gateway](../user-guide/payment-gateway.md) ([pg\_codes](checkout-api.md#pg\_codes-array-required)) you intend to use. Ensure all desired `pg_codes` are set to ‘`active`’ status in your configuration.
 
-#### [Understanding the `type` Filter](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/121/developer/payment-methods#understanding-the-type-filter)
+#### [Understanding the `type` Filter](payment-methods.md#understanding-the-type-filter)
 
 The `type` filter determines the mode of your environment:
 
@@ -26,7 +26,7 @@ The `type` filter determines the mode of your environment:
 Ensure you’re in the correct mode before initiating payments.
 {% endhint %}
 
-## [Authentication](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/90/developer/payment-method-api#authentication)
+## [Authentication](payment-methods.md#authentication)
 
 **Supported Methods**
 
@@ -35,7 +35,7 @@ Ensure you’re in the correct mode before initiating payments.
 
 For detailed information on authentication procedures, please refer to the [Authentication documentation](payment-methods.md#authentication).
 
-## [Permissions](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/90/developer/payment-method-api#permissions)
+## [Permissions](payment-methods.md#permissions)
 
 Ensuring the right level of access is crucial for maintaining the security and integrity of your payment processes. The `Payment Methods API` provides two authentication methods, each with its own set of permissions:
 
@@ -51,7 +51,7 @@ Ensuring the right level of access is crucial for maintaining the security and i
   For instance, if you want to grant a user access to a payment gateway with the code ‘`credit-card`’, you would assign them the permission “**Can use Credit Card**”.
 * **Usage:** Since `BasicAuth` is user-specific, it’s suitable for scenarios where you want to provide selective access to different payment methods based on user roles or responsibilities.
 
-## [How it Works](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/90/developer/payment-method-api#how-it-works)
+## [How it Works](payment-methods.md#how-it-works)
 
 The `Payment Methods API` is designed to streamline and automate the end-to-end integration with Ottu, ensuring that your payment processes remain up-to-date and efficient without the need for constant code modifications.
 
@@ -91,7 +91,7 @@ This request will return the `"pg_codes": ["knet"]`, which can then be used in s
 [Ottu API (30).yaml](<../.gitbook/assets/Ottu API (30).yaml>)
 {% endswagger %}
 
-## [Guide](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/121/developer/payment-methods#guide)
+## [Guide](payment-methods.md#guide)
 
 The `Payment Methods API` provides a wealth of information about each available payment method. It’s not just about determining which payment methods are available; it’s about understanding the capabilities and features of each method in-depth.
 
@@ -212,9 +212,9 @@ An e-commerce platform offers customers the convenience of saving their card det
 
 Customers are assured that only their approved and tokenization enabled cards will be charged, ensuring transparency and trust.
 
-## [Best Practices](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/121/developer/payment-methods#best-practices)
+## [Best Practices](payment-methods.md#best-practices)
 
-#### [**Caching API Call Responses**](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Yy3kCnzWg6kxAUZaGcuV/\~/changes/121/developer/payment-methods#caching-api-call-responses)
+#### [**Caching API Call Responses**](payment-methods.md#caching-api-call-responses)
 
 Given the infrequent changes in values — primarily when new MIDs are issued — it’s prudent to cache the API call response. This minimizes unnecessary and redundant calls to the API, especially considering the rare changes.
 

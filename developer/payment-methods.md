@@ -19,7 +19,7 @@ Activate the [payment gateway](../user-guide/payment-gateway.md) ([pg\_codes](ch
 
 The `type` filter determines the mode of your environment:
 
-* **Development Mode:** Set the `type` to `sandbox` for testing integrations without actual transactions.
+* **Development Mode:** Configure the `type` to `sandbox` mode for conducting tests with sandbox transactions instead of live transactions.
 * **Production Mode:** Set the `type` to `production` for handling real transactions in a live environment.
 
 {% hint style="info" %}

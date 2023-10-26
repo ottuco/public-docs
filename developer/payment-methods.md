@@ -55,14 +55,14 @@ Ensuring the right level of access is crucial for maintaining the security and i
 
 The `Payment Methods API` is designed to streamline and automate the end-to-end integration with Ottu, ensuring that your payment processes remain up-to-date and efficient without the need for constant code modifications.
 
-### Purpose of the Payment Methods API
+### [Purpose of the Payment Methods API](payment-methods.md#purpose-of-the-payment-methods-api)
 
 1. **Automation and Flexibility:** This API serves as a foundation for other Ottu APIs, providing the necessary data to facilitate seamless transactions. By using this API, you can ensure that your integration remains current, even when there are changes in the [payment gateway](../user-guide/payment-gateway.md) configurations.
 2. **Caching for Efficiency:** Given that the data from the `Payment Methods API` doesn’t change frequently, it’s recommended to cache the response for 24 hours. This approach enhances performance and reduces unnecessary API calls. However, ensure you have a mechanism to clear the cache when immediate updates are required.
 3. **Tailored Customer Experience:** With various filters available, you can customize the payment methods presented to the customer. For instance, if you’re setting up a customer for recurring payments, you can filter out payment methods that don’t support [tokenization ](tokenization.md)using the `tokenizable`=`true` filter.
 4. **Versatility:** The `Payment Methods API` isn’t just a prerequisite for the [Checkout API](checkout-api.md). It’s also essential for other APIs, such as the [User Cards API](user-cards.md).
 
-### Usage Scenarios
+### [Usage Scenarios](payment-methods.md#usage-scenarios)
 
 * **Currency-Specific Payments:** If you want to allow payments only in a specific currency, like USD, use the filter `currencies`=\["`USD`"]. This will return only the payment methods that support USD.
 * **Recurring Payments:** When setting up a customer for recurring payments, use the `tokenizable`=`true` filter. This ensures that the customer can set up a recurring payment using methods that support tokenization.
@@ -127,7 +127,7 @@ An e-commerce merchants aim to simplify and accelerate the checkout process for 
 
     By integrating this automated process, customers experience a smoother checkout journey. As they proceed to payment, they're presented with the most current and applicable payment options, thereby enhancing their shopping experience and increasing the likelihood of transaction completions.
 
-### Payment Methods API Workflow Diagram
+### [Payment Methods API Workflow Diagram](payment-methods.md#payment-methods-api-workflow-diagram)
 
 <figure><img src="https://documents.lucid.app/documents/cd77bada-241a-4e89-a9a7-8d62e631f669/pages/0_0?a=275&#x26;x=485&#x26;y=-223&#x26;w=353&#x26;h=594&#x26;store=1&#x26;accept=image%2F*&#x26;auth=LCA%206ff3c290a2d531335d860fc723b4d861ba7077e733a91948bace036dd449f88e-ts%3D1698044875" alt=""><figcaption></figcaption></figure>
 

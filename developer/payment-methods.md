@@ -67,7 +67,7 @@ The `Payment Methods API` is designed to streamline and automate the end-to-end 
 * **Currency-Specific Payments:** If you want to allow payments only in a specific currency, like USD, use the filter `currencies`=\["`USD`"]. This will return only the payment methods that support USD.
 * **Recurring Payments:** When setting up a customer for recurring payments, use the `tokenizable`=`true` filter. This ensures that the customer can set up a recurring payment using methods that support tokenization.
 * **Customized Payment Options:** If you have a history of the payment methods a customer has used, you can tailor the options presented to them during checkout. Instead of showing numerous payment methods, display only those they’ve used in the past.
-* **Specific Payment Types:** For purchases where only specific payment types, like Debit Cards, should be allowed, use filters like `pg_names`=\["`knet`"] to retrieve only the desired payment methods.
+* **Specific Payment Types:** For purchases where only specific payment types, like Debit Cards, should be allowed, use filters like `pg_names`=\["`kpay`"] to retrieve only the desired payment methods.
 
 #### Example:
 
@@ -83,7 +83,7 @@ POST: https://beta.ottu.net/b/pbl/v2/payment-methods/
 }
 ```
 
-This request will return the `"pg_codes": ["knet"]`, which can then be used in subsequent API calls.
+This request will return the `"pg_codes": ["kpay"]`, which can then be used in subsequent API calls.
 
 **For a detailed breakdown of the API response, refer to the Open API block below.**
 

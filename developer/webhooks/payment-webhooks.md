@@ -43,8 +43,7 @@ A pre-established contractual agreement with the customer making the payment, al
 
 **Presence condition:**
 
-* The merchant should include it when creating the payment transaction, typically provided during the [first payment](../auto-debit.md#first-payment) setup within the [auto-debit](../auto-debit.md) initiation process.\
-  It becomes a mandatory requirement when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is specified as "`auto_debit`".
+* This parameter should be included when the payment\_type is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
 
 <details>
 

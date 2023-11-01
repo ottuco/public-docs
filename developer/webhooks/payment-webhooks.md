@@ -39,64 +39,95 @@ Payment webhooks are specific to payment events and are triggered on multiple oc
 
 #### [agreement](payment-webhooks.md#agreement-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-A pre-established contractual agreement with the customer making the payment, allowing the merchant to securely retain and later use their payment details for particular purposes. This might include agreements like regular payments for services such as mobile subscriptions, payments in installments for purchases, arrangements for one-time charges like account reloads, or adhering to common industry practices such as penalty fees for missed appointments
+It denotes a pre-arranged contractual agreement with the paying customer, enabling the secure retention and future use of their payment details for specific purposes. These agreements encompass various payment arrangements, including recurring service payments like mobile subscriptions, installment payments for purchases, one-time charges such as account reloads, or compliance with industry practices like penalty fees for missed appointments.
 
 **Presence condition:**
 
-* This parameter should be included when the payment\_type is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
+* This parameter should be included when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
 
 <details>
 
-<summary>agreement child parameters</summary>
+<summary>agreement object child parameters</summary>
 
-#### [id](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [id](payment-webhooks.md#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-A unique identifier for the agreement
+A unique identifier for the agreement established with the payer. This ID links to the specific terms and conditions the payer has authorized for processing their stored card details. Use cases include:
 
-#### [amount\_variability](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+1. **Recurring Payments:** Periodic debits, e.g., gym memberships.
+2. **Installment Payments:** Multiple charges for a single purchase over time.
+3. **Unscheduled:** Future payments as required, e.g., account top-ups.
+4. **Industry Practice**: Standard business practices related to an original payment, e.g., hotel charges after checkout.
 
-Presents if the payment amount can vary with each transaction.
+#### [amount\_variability](payment-webhooks.md#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-#### [start\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+Indicates if all payments within the agreement use the same amount or if the amount differs between the payments.
 
-&#x20;Agreement starting date.
+* `fixed` - Fixed
+* `variable` - Variable
 
-#### [expiry\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [start\_date](payment-webhooks.md#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The final date until which the agreement remains valid.
+Date on which the agreement with the payer to process payments starts.
 
-#### [max\_amount\_per\_cycle](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [expiry\_date](payment-webhooks.md#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The maximum debit amount for one billing cycle.
+Date on which your agreement with the payer to process payments expires.
 
-#### [cycle\_interval\_days](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [max\_amount\_per\_cycle](payment-webhooks.md#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The number of days between each recurring payment.
+The maximum amount for a single payment in the series as agreed with the payer.
 
-#### [total\_cycles](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [cycle\_interval\_days](payment-webhooks.md#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The total number of payment cycles within the agreement duration.
+The minimum number of days between payments agreed with the payer.
 
-#### [frequency](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [total\_cycles](payment-webhooks.md#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-Represents how often the payment is to be processed.
+The number of merchant-initiated payments within the recurring payment agreement.
 
-#### [type](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [frequency](payment-webhooks.md#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-This is event-driven, with "`recurring`" as an example.
+The frequency of the payments within the series as agreed with the payer.
 
-#### [seller](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+* `irregular` - Irregular
+* `daily` - Daily
+* `weekly` - Weekly
+* `semi_monthly` - Semi Monthly
+* `monthly` - Monthly
+* `quarterly` - Quarterly
+* `semi_annually` - Semi Annually
+* `yearly` - Yearly
+* `other` - Other
 
-Seller information data including:&#x20;
+#### [type](payment-webhooks.md#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-* `"name": "string",`&#x20;
-* `"short_name": "string",`
-* `"category_code": "string"`
+The type of commercial agreement that the payer has with the merchant.
 
-#### [extra\_params](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+* `event_based` - Event Based
+* `installment` - Installment
+* `recurring` - Recurring
+* `unscheduled` - Unscheduled
+* `other` - Other
 
-&#x20;Provides additional information for payment processing. \
-It includes the parameter "`payment_processing_day`" which provide information about the day of the month or a specific date when payment processing should occur, offering more control over the timing of payments.
+#### [seller](payment-webhooks.md#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+Details about the retailer, if the agreement is for installment payments.\
+**It includes:**
+
+* `names` `string`:The retailer's trading name.\
+  <= 128 characters
+* `short_name` `string`:Abbreviation of the retailer's trading name, suitable for payer's statement display\
+  <= 64 characters
+* `category_code` `string`:A 4-digit code classifying the retailer's business by the type of goods or services it offers\
+  <= 64 characters
+
+#### [extra\_params](payment-webhooks.md#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+Additional parameters related to the agreement.\
+**It includes:**
+
+`payment_processing_day` `integer`:Day of the month on which the payment must be processed. Not required for unscheduled payment agreements.\
+\[ 1 .. 31 ]
 
 </details>
 
@@ -144,6 +175,27 @@ Min value: 0.01
 It represents a markup amount on the original amount\
 Max length: 24\
 Min value: 0.01
+
+</details>
+
+#### [card\_acceptance\_criteria](payment-webhooks.md#card\_acceptance\_criteria-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It outlines the rules for a card's payment eligibility\
+See the request parameter [card\_acceptance\_criteria](payment-webhooks.md#card\_acceptance\_criteria-object-optional) for more information.
+
+**Presence condition:**
+
+* Any child parameter provided with the [card\_acceptance\_criteria](payment-webhooks.md#card\_acceptance\_criteria-object-optional) object in the request payload will be populated in the response as [card\_acceptance\_criteria](payment-webhooks.md#card\_acceptance\_criteria-object-optional) child parameter.
+
+<details>
+
+<summary>card_acceptance_criteria  child parameters</summary>
+
+#### [min\_expiry\_time](payment-webhooks.md#min\_expiry\_time-string-optional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+Specifies the minimum required validity period, in days, for a card to be eligible for payment. If set to 30 days, for example, cards set to expire within the next month would be declined. This ensures short-lived cards nearing their expiration date are filtered out, reducing chances of payment failures. When implementing, balance merchant's operational needs with customer convenience. Setting it too stringent might increase payment declines, while a lenient approach could risk future payment failures.
+
+Additionally, it defaults to 30 days when the `payment_type` is `auto_debit`. If any other payment type is selected, no default value is set.
 
 </details>
 
@@ -312,14 +364,7 @@ Min value: 0.01
 
 #### [payment\_type ](payment-webhooks.md#payment\_type-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-**Enum:** "`one_off`" , "`auto_debit`"\
-Type of payment. Choose `one_off` for payments that occur only once without future commitments. Choose `auto_debit` for payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](../auto-debit.md).\
-
-
-If `auto_debit` is selected:
-
-1. [agreement](payment-webhooks.md#agreement-object-conditional) and [customer\_id](payment-webhooks.md#customer\_id-string-conditional) parameters will also be mandatory.
-2. Only `PG codes` supporting [tokenization](../tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments
+It presents options such as "`one_off`" for one-time payments without future obligations and "`auto_debit`" for automated deductions, encompassing recurring subscriptions, installment payments, or unscheduled debits. For further details on the `Auto Debit API` and payment\_type please refer to [Auto-Debit API](../auto-debit.md).
 
 #### [reference\_number](payment-webhooks.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 

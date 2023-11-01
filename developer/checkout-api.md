@@ -466,66 +466,12 @@ These parameters will be returned for all the response status.
 
 #### [agreement](checkout-api.md#agreement-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-A pre-established contractual agreement with the customer making the payment, allowing the merchant to securely retain and later use their payment details for particular purposes. This might include agreements like regular payments for services such as mobile subscriptions, payments in installments for purchases, arrangements for one-time charges like account reloads, or adhering to common industry practices such as penalty fees for missed appointments
+It denotes a pre-arranged contractual agreement with the paying customer, enabling the secure retention and future use of their payment details for specific purposes. These agreements encompass various payment arrangements, including recurring service payments like mobile subscriptions, installment payments for purchases, one-time charges such as account reloads, or compliance with industry practices like penalty fees for missed appointments.\
+See the request parameter [agreement](checkout-api.md#agreement-object-optional) for more information.
 
 **Presence condition:**
 
-* This parameter should be included when the payment\_type is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](checkout-api.md#payment\_type-string-mandatory) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
-
-<details>
-
-<summary>agreement object details</summary>
-
-#### [id](checkout-api.md#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-A unique identifier for the agreement
-
-#### [amount\_variability](checkout-api.md#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-Presents if the payment amount can vary with each transaction.
-
-#### [start\_date](checkout-api.md#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-&#x20;Agreement starting date.
-
-#### [expiry\_date](checkout-api.md#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The final date until which the agreement remains valid.
-
-#### [max\_amount\_per\_cycle](checkout-api.md#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The maximum debit amount for one billing cycle.
-
-#### [cycle\_interval\_days](checkout-api.md#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The number of days between each recurring payment.
-
-#### [total\_cycles](checkout-api.md#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The total number of payment cycles within the agreement duration.
-
-#### [frequency](checkout-api.md#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-Represents how often the payment is to be processed.
-
-#### [type](checkout-api.md#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-This is event-driven, with "`recurring`" as an example.
-
-#### [seller](checkout-api.md#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-Seller information data including:&#x20;
-
-* `"name": "string",`&#x20;
-* `"short_name": "string",`
-* `"category_code": "string"`
-
-#### [extra\_params](checkout-api.md#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-&#x20;Provides additional information for payment processing. \
-It includes the parameter "`payment_processing_day`" which provide information about the day of the month or a specific date when payment processing should occur, offering more control over the timing of payments.
-
-</details>
+* This parameter should be included when the payment\_type is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](checkout-api.md#payment\_type-string-optional) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
 
 {% hint style="info" %}
 In certain agreement types, the condition state becomes a required element. For further details on which parameters are mandatory for recurring agreements, please refer [here](auto-debit.md#importance-for-merchants).
@@ -562,6 +508,15 @@ See the request parameter [billing\_address](checkout-api.md#billing\_address-ob
 **Presence condition:**
 
 * Any child parameter provided with the [billing\_address](checkout-api.md#billing\_address-object-optional) object in the request payload will be populated in the response as [billing\_address](checkout-api.md#billing\_address-object-conditional) child parameter.
+
+#### [card\_acceptance\_criteria](checkout-api.md#card\_acceptance\_criteria-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It outlines the rules for a card's payment eligibility\
+See the request parameter [card\_acceptance\_criteria](checkout-api.md#card\_acceptance\_criteria-object-optional) for more information.
+
+**Presence condition:**
+
+* Any child parameter provided with the [card\_acceptance\_criteria](checkout-api.md#card\_acceptance\_criteria-object-optional) object in the request payload will be populated in the response as [card\_acceptance\_criteria](checkout-api.md#card\_acceptance\_criteria-object-optional) child parameter.
 
 #### [**checkout\_short\_url**](checkout-api.md#checkout\_short\_url-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -740,13 +695,14 @@ See the request parameter [pg\_codes](checkout-api.md#pg\_codes-array-required) 
 
 #### [payment\_type ](checkout-api.md#payment\_type-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-The payment type selection offers "`one_off`" for one-time payments without future obligations and "`auto_debit`" for automatic deductions like recurring subscriptions, installments, or unscheduled debits. For further details on the `Auto Debit API` and payment\_type please refer to [Auto-Debit API](auto-debit.md).\
-See the request parameter [payment\_type](checkout-api.md#payment\_type-string-optional) for information.
+It presents options such as "`one_off`" for one-time payments without future obligations and "`auto_debit`" for automated deductions, encompassing recurring subscriptions, installment payments, or unscheduled debits. For further details on the `Auto Debit API` and payment\_type please refer to [Auto-Debit API](auto-debit.md).\
+Default value: "`one_off`".\
+See the request parameter [payment\_type](checkout-api.md#payment\_type-string-optional) for more information.
 
 #### [product\_type](checkout-api.md#product\_type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 The nature of the purchased product or service, which can be employed for the purpose of keeping track and generating reports.\
-See the request parameter [product\_type](checkout-api.md#product\_type-string-optional) for information.
+See the request parameter [product\_type](checkout-api.md#product\_type-string-optional) for more information.
 
 **Presence condition:**
 

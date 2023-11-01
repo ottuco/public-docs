@@ -294,6 +294,17 @@ The list of payment gateway codes from which a customer can select to perform th
 **For**[ **Basic authentication**](authentication.md#basic-authentication)**:** User can use the PG code that has permission to access to.\
 **For** [**API Private key**](authentication.md#private-key-api-key)**:** User can use all the PG code.
 
+#### [payment\_type](checkout-api.md#payment\_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+**Enum:** "`one_off`" , "`auto_debit`"\
+Type of payment. Choose `one_off` for payments that occur only once without future commitments. Choose `auto_debit` for payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](auto-debit.md).\
+
+
+If `auto_debit` is selected:
+
+1. [agreement](checkout-api.md#agreement-object-conditional) and [customer\_id](checkout-api.md#customer\_id-string-conditional) parameters will also be mandatory.
+2. Only `PG codes` supporting [tokenization](tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments
+
 #### [**product\_type**](checkout-api.md#product\_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The type of product or service being purchased. This field may be used for tracking and reporting purposes\
@@ -672,6 +683,11 @@ This URL redirects to the payment page.See [redirect\_url](checkout-api.md#redir
 
 The options of the payment gateway codes included in the request payload to enable customers to make payments.\
 See the request parameter [pg\_codes](checkout-api.md#pg\_codes-array-required) for more information.
+
+#### [payment\_type ](checkout-api.md#payment\_type-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+
+The payment type selection offers "`one_off`" for one-time payments without future obligations and "`auto_debit`" for automatic deductions like recurring subscriptions, installments, or unscheduled debits. For further details on the `Auto Debit API` and payment\_type please refer to [Auto-Debit API](auto-debit.md).\
+See the request parameter [payment\_type](checkout-api.md#payment\_type-string-optional) for information.
 
 #### [product\_type](checkout-api.md#product\_type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 

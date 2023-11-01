@@ -233,7 +233,7 @@ After sending this request, you’ll be provided with a [session\_id](checkout-a
       This URL leads the payer to an Ottu page where any saved cards are displayed, and they also have the option to save a new card. for more information about `redirect_url`, check [here](checkout-api.md#checkout\_url-string-mandatory).
   *   #### payment\_methods.redirect\_url:
 
-      This URL takes the payer directly to the payment page where they can input their card details. More information aobut `payment_methods` objects could be found [here](checkout-api.md#payment\_methods-object-details).
+      This URL takes the payer directly to the payment page where they can input their card details. More information about `payment_methods` objects could be found [here](checkout-api.md#payment\_methods-object-details).
 
 If the payer has previously saved cards associated with the `pg_code` used to create the payment, it’s advisable to redirect them to the `checkout_url`. Otherwise, use the `payment_methods.redirect_url`.&#x20;
 

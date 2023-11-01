@@ -471,7 +471,7 @@ See the request parameter [agreement](checkout-api.md#agreement-object-optional)
 
 **Presence condition:**
 
-* This parameter should be included when the payment\_type is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](checkout-api.md#payment\_type-string-optional) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
+* This parameter should be included when the [payment\_type](checkout-api.md#payment\_type-string-mandatory) is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](checkout-api.md#payment\_type-string-optional) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
 
 {% hint style="info" %}
 In certain agreement types, the condition state becomes a required element. For further details on which parameters are mandatory for recurring agreements, please refer [here](auto-debit.md#importance-for-merchants).

@@ -58,6 +58,69 @@ The objective of the  POST request is to facilitate the creation of payment tran
 
 ### [Request Parameters](checkout-api.md#request-parameters)
 
+#### [agreement](checkout-api.md#agreement-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+An established contractual arrangement with the payer, which authorizes you to securely store and subsequently utilize their payment information for specific purposes. This could encompass arrangements like recurring payments for services such as mobile subscriptions, installment-based payments for purchases, arrangements for ad-hoc charges like account top-ups, or for standard industry practices like penalty charges for missed appointments.
+
+<details>
+
+<summary>agreement child parameters</summary>
+
+#### [id](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#id-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+A unique identifier for the agreement
+
+#### [amount\_variability](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#amount\_variability-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+Presents if the payment amount can vary with each transaction.
+
+#### [start\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#start\_date-date-optional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+&#x20;Agreement starting date.
+
+#### [expiry\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#expiry\_date-date-optional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+The final date until which the agreement remains valid.
+
+#### [max\_amount\_per\_cycle](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#max\_amount\_per\_cycle-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+The maximum debit amount for one billing cycle.
+
+#### [cycle\_interval\_days](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#cycle\_interval\_days-integer-optional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+The number of days between each recurring payment.
+
+#### [total\_cycles](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#total\_cycles-integer-optional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+The total number of payment cycles within the agreement duration.
+
+#### [frequency](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#frequency-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+Represents how often the payment is to be processed.
+
+#### [type](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+This is event-driven, with "`recurring`" as an example.
+
+#### [seller](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#seller-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+Seller information data including:&#x20;
+
+* `"name": "string",`&#x20;
+* `"short_name": "string",`
+* `"category_code": "string"`
+
+#### [extra\_params](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/543/developer/checkout-api#extra\_params-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+&#x20;Provides additional information for payment processing. \
+It includes the parameter "`payment_processing_day`" which provide information about the day of the month or a specific date when payment processing should occur, offering more control over the timing of payments.
+
+</details>
+
+{% hint style="info" %}
+If your intention is solely to store payment details for transactions initiated by the payer in the future, then this parameter group should not be used
+{% endhint %}
+
 #### [**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
 Represents the total amount of the payment transaction, which includes the cost of the purchased items or services but excludes any additional fees or charges. The number of decimals must correlate with the [currency\_code](checkout-api.md#currency\_code-string-required).\
@@ -335,6 +398,73 @@ See Webhook [Payment Notification](webhooks/payment-webhooks.md).
 ### [Response Parameters](checkout-api.md#response-parameters)
 
 These parameters will be returned for all the response status.
+
+#### [agreement](checkout-api.md#agreement-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+A pre-established contractual agreement with the customer making the payment, allowing the merchant to securely retain and later use their payment details for particular purposes. This might include agreements like regular payments for services such as mobile subscriptions, payments in installments for purchases, arrangements for one-time charges like account reloads, or adhering to common industry practices such as penalty fees for missed appointments
+
+**Presence condition:**
+
+* This parameter should be included when the payment\_type is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](checkout-api.md#payment\_type-string-mandatory) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
+
+<details>
+
+<summary>agreement child parameters</summary>
+
+#### [id](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+A unique identifier for the agreement
+
+#### [amount\_variability](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+Presents if the payment amount can vary with each transaction.
+
+#### [start\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+&#x20;Agreement starting date.
+
+#### [expiry\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The final date until which the agreement remains valid.
+
+#### [max\_amount\_per\_cycle](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The maximum debit amount for one billing cycle.
+
+#### [cycle\_interval\_days](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The number of days between each recurring payment.
+
+#### [total\_cycles](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The total number of payment cycles within the agreement duration.
+
+#### [frequency](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+Represents how often the payment is to be processed.
+
+#### [type](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+This is event-driven, with "`recurring`" as an example.
+
+#### [seller](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+Seller information data including:&#x20;
+
+* `"name": "string",`&#x20;
+* `"short_name": "string",`
+* `"category_code": "string"`
+
+#### [extra\_params](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+&#x20;Provides additional information for payment processing. \
+It includes the parameter "`payment_processing_day`" which provide information about the day of the month or a specific date when payment processing should occur, offering more control over the timing of payments.
+
+</details>
+
+{% hint style="info" %}
+In certain agreement types, the condition state becomes a required element. For further details on which parameters are mandatory for recurring agreements, please refer [here](auto-debit.md#importance-for-merchants).
+{% endhint %}
 
 #### [**amount**](checkout-api.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 

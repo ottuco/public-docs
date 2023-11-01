@@ -68,52 +68,84 @@ An established contractual arrangement with the payer, which authorizes the merc
 
 #### [id](checkout-api.md#id-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-A unique identifier for the agreement
+A unique identifier for the agreement established with the payer. This ID links to the specific terms and conditions the payer has authorized for processing their stored card details. Use cases include:
+
+1. **Recurring Payments:** Periodic debits, e.g., gym memberships.
+2. **Installment Payments:** Multiple charges for a single purchase over time.
+3. **Unscheduled:** Future payments as required, e.g., account top-ups.
+4. **Industry Practice**: Standard business practices related to an original payment, e.g., hotel charges after checkout.
 
 #### [amount\_variability](checkout-api.md#amount\_variability-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Presents if the payment amount can vary with each transaction.
+Indicates if all payments within the agreement use the same amount or if the amount differs between the payments.
+
+* `fixed` - Fixed
+* `variable` - Variable
 
 #### [start\_date](checkout-api.md#start\_date-date-optional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-&#x20;Agreement starting date.
+Date on which the agreement with the payer to process payments starts.
 
 #### [expiry\_date](checkout-api.md#expiry\_date-date-optional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The final date until which the agreement remains valid.
+Date on which your agreement with the payer to process payments expires.
 
 #### [max\_amount\_per\_cycle](checkout-api.md#max\_amount\_per\_cycle-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The maximum debit amount for one billing cycle.
+The maximum amount for a single payment in the series as agreed with the payer.
 
 #### [cycle\_interval\_days ](checkout-api.md#cycle\_interval\_days-integer-optional)_<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The number of days between each recurring payment.
+The minimum number of days between payments agreed with the payer.
 
 #### [total\_cycles](checkout-api.md#total\_cycles-integer-optional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The total number of payment cycles within the agreement duration.
+The number of merchant-initiated payments within the recurring payment agreement.
 
 #### [frequency ](checkout-api.md#frequency-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Represents how often the payment is to be processed.
+The frequency of the payments within the series as agreed with the payer.
+
+* `irregular` - Irregular
+* `daily` - Daily
+* `weekly` - Weekly
+* `semi_monthly` - Semi Monthly
+* `monthly` - Monthly
+* `quarterly` - Quarterly
+* `semi_annually` - Semi Annually
+* `yearly` - Yearly
+* `other` - Other
 
 #### [type](checkout-api.md#type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-This is event-driven, with "`recurring`" as an example.
+The type of commercial agreement that the payer has with the merchant.
+
+* `event_based` - Event Based
+* `installment` - Installment
+* `recurring` - Recurring
+* `unscheduled` - Unscheduled
+* `other` - Other
 
 #### [seller](checkout-api.md#seller-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Seller information data including:&#x20;
+Details about the retailer, if the agreement is for installment payments.\
+**It includes:**
 
-* `"name": "string",`&#x20;
-* `"short_name": "string",`
-* `"category_code": "string"`
+* `names` `string`:The retailer's trading name.\
+  <= 128 characters
+* `short_name` `string`:Abbreviation of the retailer's trading name, suitable for payer's statement display\
+  <= 64 characters
+* `category_code` `string`:A 4-digit code classifying the retailer's business by the type of goods or services it offers\
+  <= 64 characters
 
 #### [extra\_params](checkout-api.md#extra\_params-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-&#x20;Provides additional information for payment processing. \
-It includes the parameter "`payment_processing_day`" which provide information about the day of the month or a specific date when payment processing should occur, offering more control over the timing of payments
+Additional parameters related to the agreement.\
+**It includes:**
+
+`payment_processing_day` `integer`:Day of the month on which the payment must be processed. Not required for unscheduled payment agreements.\
+\[ 1 .. 31 ]\
+
 
 </details>
 
@@ -173,6 +205,28 @@ Max length: 2.
 
 Postal code (maybe has different length for different countries).\
 Max length: 12.
+
+</details>
+
+#### [card\_acceptance\_criteria](checkout-api.md#card\_acceptance\_criteria-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+This field allows the merchant to define specific rules and conditions that a card must meet to be eligible for payment. These stipulations apply regardless of whether a customer chooses to pay using a saved card or opts to add a new card for the transaction. By leveraging the `card_acceptance_criteria`, merchant gains the power to fine-tune his payment processing strategy, tailoring acceptance rules to align with his business needs, security standards, and risk management policies.
+
+**Example**: If merchant runs an exclusive service that caters predominantly to premium customers, he might set criteria that only allow transactions from high-tier credit cards like VISA Platinum. This ensures that payments align with the exclusivity and branding of his services. Merchant should configure these criteria thoughtfully. Striking the right balance between security, risk mitigation, and user experience is paramount.
+
+{% hint style="info" %}
+The card\_acceptance\_criteria field is applicable only for direct payments and not for hosted session payments.
+{% endhint %}
+
+<details>
+
+<summary>card_acceptance_criteria <em>object details</em></summary>
+
+#### [min\_expiry\_time](checkout-api.md#min\_expiry\_time-string-optional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+Specifies the minimum required validity period, in days, for a card to be eligible for payment. If set to 30 days, for example, cards set to expire within the next month would be declined. This ensures short-lived cards nearing their expiration date are filtered out, reducing chances of payment failures. When implementing, balance merchant's operational needs with customer convenience. Setting it too stringent might increase payment declines, while a lenient approach could risk future payment failures.
+
+Additionally, it defaults to 30 days when the `payment_type` is `auto_debit`. If any other payment type is selected, no default value is set.
 
 </details>
 

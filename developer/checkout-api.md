@@ -150,7 +150,7 @@ Additional parameters related to the agreement.\
 </details>
 
 {% hint style="info" %}
-If the merchant's sole intention is to store payment details for transactions initiated by the payer in the future, then this parameter group should not be used.
+It is imperative for the merchant to strictly avoid including these parameters when the payment type is labeled as "`one-off`" The agreement parameter should be sent exclusively when the payment type is designated as "`auto-debit`".
 {% endhint %}
 
 #### [**amount** ](checkout-api.md#amount-string-required)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_

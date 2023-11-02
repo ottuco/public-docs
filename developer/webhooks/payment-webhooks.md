@@ -35,99 +35,69 @@ Payment webhooks are specific to payment events and are triggered on multiple oc
 * **Retaining on Ottu Page:** If you intentionally want the payer to remain on the Ottu page post-payment, return a status code of 201. Ottu will interpret this as a successful notification, and the payer won’t be redirected. Any other status will be deemed as a failed notification by Ottu.
 * **Specific Redirects:** If you have a particular URL to which you wish to redirect the payer after the payment process, ensure you specify the [redirect\_url](../checkout-api.md#redirect\_url-string-optional) during the payment setup. Ottu will use this URL to navigate the payer back to your platform or any designated page post-payment.
 
-## [Payload Details](payment-webhooks.md#payload-details)
+## [Parameters](payment-webhooks.md#parameters)
 
 #### [agreement](payment-webhooks.md#agreement-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
-It denotes a pre-arranged contractual agreement with the paying customer, enabling the secure retention and future use of their payment details for specific purposes. These agreements encompass various payment arrangements, including recurring service payments like mobile subscriptions, installment payments for purchases, one-time charges such as account reloads, or compliance with industry practices like penalty fees for missed appointments.
+A pre-established contractual agreement with the customer making the payment, allowing the merchant to securely retain and later use their payment details for particular purposes. This might include agreements like regular payments for services such as mobile subscriptions, payments in installments for purchases, arrangements for one-time charges like account reloads, or adhering to common industry practices such as penalty fees for missed appointments
 
-**Presence condition:**
+**Presence Condition:**
 
-* This parameter should be included when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
+* The merchant should include it when creating the payment transaction, typically provided during the [first payment](../auto-debit.md#first-payment) setup within the [auto-debit](../auto-debit.md) initiation process.\
+  It becomes a mandatory requirement when the [payment\_type](payment-webhooks.md#payment\_type-string-mandatory) is specified as "`auto_debit`".
 
 <details>
 
-<summary>agreement object child parameters</summary>
+<summary>agreement child parameters</summary>
 
-#### [id](payment-webhooks.md#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [id](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-A unique identifier for the agreement established with the payer. This ID links to the specific terms and conditions the payer has authorized for processing their stored card details. Use cases include:
+A unique identifier for the agreement
 
-1. **Recurring Payments:** Periodic debits, e.g., gym memberships.
-2. **Installment Payments:** Multiple charges for a single purchase over time.
-3. **Unscheduled:** Future payments as required, e.g., account top-ups.
-4. **Industry Practice**: Standard business practices related to an original payment, e.g., hotel charges after checkout.
+#### [amount\_variability](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-#### [amount\_variability](payment-webhooks.md#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+Presents if the payment amount can vary with each transaction.
 
-Indicates if all payments within the agreement use the same amount or if the amount differs between the payments.
+#### [start\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-* `fixed` - Fixed
-* `variable` - Variable
+&#x20;Agreement starting date.
 
-#### [start\_date](payment-webhooks.md#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [expiry\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-Date on which the agreement with the payer to process payments starts.
+The final date until which the agreement remains valid.
 
-#### [expiry\_date](payment-webhooks.md#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [max\_amount\_per\_cycle](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-Date on which your agreement with the payer to process payments expires.
+The maximum debit amount for one billing cycle.
 
-#### [max\_amount\_per\_cycle](payment-webhooks.md#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [cycle\_interval\_days](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The maximum amount for a single payment in the series as agreed with the payer.
+The number of days between each recurring payment.
 
-#### [cycle\_interval\_days](payment-webhooks.md#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [total\_cycles](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The minimum number of days between payments agreed with the payer.
+The total number of payment cycles within the agreement duration.
 
-#### [total\_cycles](payment-webhooks.md#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [frequency](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The number of merchant-initiated payments within the recurring payment agreement.
+Represents how often the payment is to be processed.
 
-#### [frequency](payment-webhooks.md#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [type](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-The frequency of the payments within the series as agreed with the payer.
+This is event-driven, with "`recurring`" as an example.
 
-* `irregular` - Irregular
-* `daily` - Daily
-* `weekly` - Weekly
-* `semi_monthly` - Semi Monthly
-* `monthly` - Monthly
-* `quarterly` - Quarterly
-* `semi_annually` - Semi Annually
-* `yearly` - Yearly
-* `other` - Other
+#### [seller](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-#### [type](payment-webhooks.md#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+Seller information data including:&#x20;
 
-The type of commercial agreement that the payer has with the merchant.
+* `"name": "string",`&#x20;
+* `"short_name": "string",`
+* `"category_code": "string"`
 
-* `event_based` - Event Based
-* `installment` - Installment
-* `recurring` - Recurring
-* `unscheduled` - Unscheduled
-* `other` - Other
+#### [extra\_params](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
-#### [seller](payment-webhooks.md#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-Details about the retailer, if the agreement is for installment payments.\
-**It includes:**
-
-* `names` `string`:The retailer's trading name.\
-  <= 128 characters
-* `short_name` `string`:Abbreviation of the retailer's trading name, suitable for payer's statement display\
-  <= 64 characters
-* `category_code` `string`:A 4-digit code classifying the retailer's business by the type of goods or services it offers\
-  <= 64 characters
-
-#### [extra\_params](payment-webhooks.md#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-Additional parameters related to the agreement.\
-**It includes:**
-
-`payment_processing_day` `integer`:Day of the month on which the payment must be processed. Not required for unscheduled payment agreements.\
-\[ 1 .. 31 ]
+&#x20;Provides additional information for payment processing. \
+It includes the parameter "`payment_processing_day`" which provide information about the day of the month or a specific date when payment processing should occur, offering more control over the timing of payments.
 
 </details>
 
@@ -137,9 +107,7 @@ In certain agreement types, the condition state becomes a required element. For 
 
 #### [amount](payment-webhooks.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-The initial amount of the payment transaction. See [amount](../checkout-api.md#amount-string-required)\
-Max length: 24\
-Min value: 0.01
+Denotes the total sum of the payment transaction, which encompasses the cost of the procured items or services, excluding any supplementary fees or charges. See [amount](../checkout-api.md#amount-string-required)
 
 {% hint style="info" %}
 The merchant should always check if the received amount from Ottu side is the amount of the order, to avoid user changing the cart amount in between.
@@ -155,28 +123,38 @@ Payment transaction due amount details&#x20;
 
 #### [currency\_code](payment-webhooks.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-The code represents the used currency\
+The specified currency represents the denomination of the transaction. Nevertheless, it doesn't necessarily mandate payment in this exact currency. Due to potential currency conversions or exchanges, the final charge may be in a different currency. See [currencies](../../user-guide/currencies.md).\
 3 letters
 
 #### [amount](payment-webhooks.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-Payment transaction original amount. See amount\
-Max length: 24\
-Min value: 0.01
+Represents the total amount of the payment transaction, which includes the cost of the purchased items or services but excludes any additional fees or charges.
 
 #### [total](payment-webhooks.md#total-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It represents the whole payment amount ([amount](payment-webhooks.md#amount-string-mandatory)+[fee](payment-webhooks.md#fee-string-mandatory))\
-Max length: 24\
-Min value: 0.01
+Denotes the comprehensive total of the payment transaction, incorporating both the principal amount and any associated fees. ([amount](payment-webhooks.md#amount-string-mandatory)+[fee](payment-webhooks.md#fee-string-mandatory))
 
 #### [fee](payment-webhooks.md#fee-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It represents a markup amount on the original amount\
-Max length: 24\
-Min value: 0.01
+It indicates the sum disbursed by the customer in their chosen currency for the payment. Note, this currency could vary from the currency used for the transaction.
 
 </details>
+
+#### [capture\_delivery\_address](payment-webhooks.md#capture\_delivery\_address-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+By enabling this, you will ask for user's address. If enabled, capture delivery coordinates should also be active.
+
+**Presence Condition:**
+
+* The merchant should add it when setting up the payment transaction.
+
+#### [capture\_delivery\_location ](payment-webhooks.md#capture\_delivery\_location-bool-conditional)_<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+By enabling this, you will ask for user's delivery location on a map.
+
+**Presence Condition:**
+
+* The merchant should provide it during the creation of the transaction.
 
 #### [card\_acceptance\_criteria](payment-webhooks.md#card\_acceptance\_criteria-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -199,29 +177,13 @@ Additionally, it defaults to 30 days when the `payment_type` is `auto_debit`. If
 
 </details>
 
-#### [capture\_delivery\_address](payment-webhooks.md#capture\_delivery\_address-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
-
-Indicates whether to capture delivery address.
-
-**Presence condition:**
-
-* The merchant should add it when setting up the payment transaction.
-
-#### [capture\_delivery\_location ](payment-webhooks.md#capture\_delivery\_location-bool-conditional)_<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
-
-Indicates whether to capture delivery location.
-
-**Presence condition:**
-
-* The merchant should provide it during the creation of the transaction.
-
 #### [currency\_code](payment-webhooks.md#currency\_code-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 The currency code of the payment transaction \
 For more details, [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
 3 letters code
 
-<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence condition:</strong> </p><ul><li>The presence of each parameter is contingent on the provision of any selection of "customer billing address data" parameters during payment transaction creation.</li></ul></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_city-string-conditional">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_country-string-conditional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_line1-string-conditional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_line2-string-conditional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-webhooks.md#customer_address_line1-string-conditional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4> <a href="payment-webhooks.md#customer_address_postal_code-string-conditional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_state-string-conditional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a> (sometimes the same as the <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Billing address information</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><p>Customer billing address data</p><p><br><strong>Presence Condition:</strong> </p><ul><li>The presence of each parameter is contingent on the provision of any selection of "customer billing address data" parameters during payment transaction creation.</li></ul></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_city-string-conditional">customer_address_city</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The city where the customer is living and registered<br>Max length: 40</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_country-string-conditional">customer_address_country</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>The country where the customer is living and registered<br>Based on ISO 3166-1 Alpha-2 code<br>Validation will be performed against existing countries<br>Max length: 2</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_line1-string-conditional">customer_address_line1</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Customer's street &#x26; house data<br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_line2-string-conditional">customer_address_line2</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Additional data for accuracy purpose for <a href="payment-webhooks.md#customer_address_line1-string-conditional">line1</a><br>Max length: 255</p></td><td></td><td></td></tr><tr><td><h4> <a href="payment-webhooks.md#customer_address_postal_code-string-conditional">customer_address_postal_code</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>Postal code.<br>Max length 12 (it may have different length for different countries)</p></td><td></td><td></td></tr><tr><td><h4><a href="payment-webhooks.md#customer_address_state-string-conditional">customer_address_state</a> <em><mark style="color:blue;"><code>string</code></mark></em> <em><mark style="color:blue;background-color:blue;"><code>conditional</code></mark></em></h4><p>State of the customer’s <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a> (sometimes the same as the <a href="payment-webhooks.md#customer_address_city-string-conditional">city</a>)<br>Max length 40</p></td><td></td><td></td></tr></tbody></table>
 
 #### [customer\_email](payment-webhooks.md#customer\_email-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -229,7 +191,7 @@ Where to pass the customer’s email address\
 Have to be a valid email address\
 Max length 128
 
-**Presence condition:**
+**Presence Condition:**
 
 * It needs to be included when generating the payment transaction.
 
@@ -238,7 +200,7 @@ Max length 128
 For the customer's first name\
 Max length 64
 
-**Presence condition:**
+**Presence Condition:**
 
 * The merchant should include it while making the payment of the transaction.
 
@@ -247,7 +209,7 @@ Max length 64
 Customer ID is created by a merchant, and stored in the merchant database\
 Max length 64
 
-**Presence condition:**
+**Presence Condition:**
 
 * The merchant should include it during initiating the payment transaction.
 
@@ -256,7 +218,7 @@ Max length 64
 For the customer's last name\
 Max length 64
 
-**Presence condition:**
+**Presence Condition:**
 
 * The merchant should include it while making the payment of the transaction.
 
@@ -265,7 +227,7 @@ Max length 64
 Where to pass the customer’s phone number\
 Max length 32
 
-**Presence condition:**
+**Presence Condition:**
 
 * The merchant should include it when processing the payment for the transaction.
 
@@ -273,7 +235,7 @@ Max length 32
 
 The extra information for the payment details, which the merchant has sent it in key value form.
 
-**Presence condition:**
+**Presence Condition:**
 
 * The presence of the element will depend on whether the merchant includes it during transaction creation by adding each element from the plugin field configuration.
 
@@ -292,7 +254,7 @@ It represents a markup amount on the original amount.\
 Max length: 24\
 Min value: 0.01
 
-**Presence condition:**
+**Presence Condition:**
 
 * The merchant should add it in the [currency configuration](../../user-guide/currencies.md#currency-configuration) and include it during the transaction creation.
 
@@ -310,7 +272,7 @@ Max length 64
 
 It will contain the raw payment gateway response sent by the payment gateway to Ottu.
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will only be present in response to the PG's callback request for the transaction.
 
@@ -318,16 +280,51 @@ It will contain the raw payment gateway response sent by the payment gateway to 
 
 This object contains information about the user who created the transaction from Ottu side, specifically, the user who generated the payment URL
 
-**Presence condition:**
+**Presence Condition:**
 
 * It is present only when [Basic Authentication](../authentication.md#basic-authentication) is used, because [API Key Authentication](../authentication.md#api-key) is not associated with any user.
 * Merchant includes the initiator ID in the payload when creating the transaction.
+
+<details>
+
+<summary>initiator  child parameters</summary>
+
+#### [id](payment-webhooks.md#id-integer-mandatory) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It represents the unique identifier of the user who performs the operation.
+
+#### [first\_name](payment-webhooks.md#first\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It represents the first name  of the user who performs the operation.\
+<= 32 characters
+
+#### [last\_name](payment-webhooks.md#last\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It represents the last name  of the user who performs the operation.\
+<= 32 characters
+
+#### [username](payment-webhooks.md#username-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It represents the username of the user who performs the operation.\
+Required. 150 characters or fewer. Letters, digits and @/./+/-/\_ only.
+
+#### [email](payment-webhooks.md#email-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The email address of the user who performs the operation.\
+<= 254 characters
+
+#### [phone](payment-webhooks.md#phone-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It represents the phone number of the user who performs the operation.\
+<= 128 characters
+
+</details>
 
 #### [is\_sandbox](payment-webhooks.md#is\_sandbox-bool-conditional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 Whether the transaction was carried out in a sandbox environment.
 
-**Presence conditions:**
+**Presence Conditions:**
 
 * It will only be present when PG's setting configured as sandbox
 
@@ -336,7 +333,7 @@ Whether the transaction was carried out in a sandbox environment.
 A message indicating the cause of a [payment attempt](../../user-guide/payment-tracking/#payment-attempt) failure., which is directly related to the payment attempt itself\
 Max length 255.
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will only be present if a payment attempt records an error.
 
@@ -348,7 +345,7 @@ such like : ABC123\_1, ABC123\_2\
 Max length 128\
 
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will be present only if `order_no` has been provided in the request payload.
 
@@ -358,13 +355,20 @@ It is the amount that is credited to the merchant's bank account\
 Max length: 24\
 Min value: 0.01
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will only be present if a capture action is being processed on the transaction and the paid amount is recorded.
 
 #### [payment\_type ](payment-webhooks.md#payment\_type-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It presents options such as "`one_off`" for one-time payments without future obligations and "`auto_debit`" for automated deductions, encompassing recurring subscriptions, installment payments, or unscheduled debits. For further details on the `Auto Debit API` and payment\_type please refer to [Auto-Debit API](../auto-debit.md).
+**Enum:** "`one_off`" , "`auto_debit`"\
+Type of payment. Choose `one_off` for payments that occur only once without future commitments. Choose `auto_debit` for payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](../auto-debit.md).\
+
+
+If `auto_debit` is selected:
+
+1. [agreement](payment-webhooks.md#agreement-object-conditional) and [customer\_id](payment-webhooks.md#customer\_id-string-conditional) parameters will also be mandatory.
+2. Only `PG codes` supporting [tokenization](../tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments
 
 #### [reference\_number](payment-webhooks.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
@@ -377,7 +381,7 @@ The payment amount paid back from the merchant to the customer.\
 Max length: 24\
 Min value: 0.01
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will only be present if a refund action is being processed on the transaction and the refunded amount is recorded.
 
@@ -387,7 +391,7 @@ The amount remaining to be paid in the transaction. ([amount](payment-webhooks.m
 Max length: 24\
 Min value: 0.01
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will only be sent if the editable amount option is turned on.
 
@@ -410,13 +414,17 @@ Max length 128
 * **For editable amount:** It is the amount that the customer enters at the checkout page
 * **For on-editable amount:** The settled amount is the same value as the original payment amount
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will be present only if the transaction is `paid`, `authorized` or `cod`.
 
 #### [signature](payment-webhooks.md#signature-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 A cryptographic hash used to guarantee data integrity and authenticity during client-server exchanges. This hash ensures that the API payload has not been tampered with, and can only be verified by authorized parties.
+
+#### &#x20;[timestamp\_utc](payment-webhooks.md#timestamp\_utc-date-time-mandatory) _<mark style="color:blue;">`date-time`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+
+It represents the timestamp at which ottu processed the transaction.While this often corresponds to the payment time,it's important to note that it might not always be the case.Payments can be acknowledged at a later time,so this timestamp might not align precisely with the actual payment time.
 
 #### [state](payment-webhooks.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
@@ -429,54 +437,15 @@ Max length 50
 The ID of the transaction log associated with the transaction.\
 Max length 32-bit String (2^31 - 1)
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will be sent only if the transaction type is BULK as it's a bulk identifier.
-
-#### [transaction  ](payment-webhooks.md#transaction-array-conditional)_<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
-
-Transactions resulted to the PG operations performed on the parent transaction\
-See [child transaction sate](../../user-guide/payment-tracking/#child-table-transaction)
-
-**Presence conditions:**
-
-* It will be sent only if operations processed on transaction and resulted child transaction records.
-
-<details>
-
-<summary>transaction  child parameters</summary>
-
-#### [amount](payment-webhooks.md#amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The amount of child transaction object represented in transactions Array\
-Must be positive\
-Max length: 24\
-Min value: 0.01
-
-#### [currency\_code](payment-webhooks.md#currency\_code-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The code represents the used currency.\
-3 letters
-
-#### [order\_no](payment-webhooks.md#order\_no-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The order\_no of child transaction object represented in transactions Array
-
-#### [session\_id](payment-webhooks.md#session\_id-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The unique session identifier of child transaction object represented in transactions Array
-
-#### [state](payment-webhooks.md#state-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
-
-The state of a child transaction object represented in transactions Array
-
-</details>
 
 #### [token](payment-webhooks.md#token-object-conditional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Represents token details.
 
-* **Presence conditions:**
+* **Presence Conditions:**
 
 When user pays with a tokenized card, Ottu will include the token details in the response
 
@@ -517,13 +486,52 @@ A boolean field indicating whether the card has expired. Use this information to
 
 </details>
 
+#### [transaction  ](payment-webhooks.md#transaction-array-conditional)_<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+Transactions resulted to the PG operations performed on the parent transaction\
+See [child transaction sate](../../user-guide/payment-tracking/#child-table-transaction)
+
+**Presence Conditions:**
+
+* It will be sent only if operations processed on transaction and resulted child transaction records.
+
+<details>
+
+<summary>transaction  child parameters</summary>
+
+#### [amount](payment-webhooks.md#amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The amount of child transaction object represented in transactions Array\
+Must be positive\
+Max length: 24\
+Min value: 0.01
+
+#### [currency\_code](payment-webhooks.md#currency\_code-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The code represents the used currency.\
+3 letters
+
+#### [order\_no](payment-webhooks.md#order\_no-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The order\_no of child transaction object represented in transactions Array
+
+#### [session\_id](payment-webhooks.md#session\_id-stringconditional) _<mark style="color:blue;">`string`</mark><mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The unique session identifier of child transaction object represented in transactions Array
+
+#### [state](payment-webhooks.md#state-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+
+The state of a child transaction object represented in transactions Array
+
+</details>
+
 #### [voided\_amount](payment-webhooks.md#voided\_amount-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The payment amount resulted by performing [void](../../user-guide/payment-gateway.md#available-operations) operation\
 Max length: 24\
 Min value: 0.01
 
-**Presence condition:**
+**Presence Condition:**
 
 * It will only appear if a void action is being performed on the transaction, and the voided amount is documented.
 
@@ -550,40 +558,44 @@ To ensure a smooth redirection of the payer back to the designated [redirect\_ur
 
 ```json
 {
-   "amount":"285.000",
+   "amount":"10.000",
    "amount_details":{
-      "amount":"285.000",
+      "amount":"10.000",
       "currency_code":"KWD",
-      "fee":"0.000",
-      "total":"285.000"
+      "fee":"20.000",
+      "total":"30.000"
    },
    "currency_code":"KWD",
-   "customer_email":"test@test.com",
-   "customer_phone":"96511111111",
-   "extra":{
-   },
-   "fee":"0.000 KWD",
-   "gateway_account":"test",
-   "gateway_name":"test",
+   "customer_email":"example@example.com",
+   "customer_first_name":"first_name_example",
+   "customer_id":"Example",
+   "customer_last_name":"last_name_example",
+   "customer_phone":"1234567",
+   "fee":"20.000 KWD",
+   "gateway_account":"Credit-Card",
+   "gateway_name":"Gateway_Example",
    "gateway_response":{
       "It will contain the raw pg response sent by the pg to Ottu"
    },
    "initiator":{
-      "id":1,
-      "first_name":"test",
-      "last_name":"test",
-      "username":"test",
-      "email":"test@ottu.com",
-      "phone":"+911111111111"
+      "email":"initaitor@example.com",
+      "first_name":"example",
+      "id":35,
+      "last_name":"",
+      "phone":"",
+      "username":"username_example"
    },
-   "order_no":"test-123",
-   "paid_amount":285.0,
-   "reference_number":"6ACE9",
+   "is_sandbox":true,
+   "order_no":"Y3ODg",
+   "paid_amount":"30.000",
+   "payment_type":"one_off",
+   "reference_number":"staging48G8SS",
    "result":"success",
-   "session_id":"1111111111111",
-   "settled_amount":285.0,
-   "signature":"f6ac2********",
-   "state":"paid"
+   "session_id":"bb7fc280827c2f177a9690299cfefa4128dbbd60",
+   "settled_amount":"10.000",
+   "signature":"60bf40cf******",
+   "state":"paid",
+   "timestamp_utc":"2023-11-02 09:00:07"
 }
 ```
 

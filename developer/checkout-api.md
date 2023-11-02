@@ -266,7 +266,7 @@ If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md
 **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
 {% endhint %}
 
-#### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) _<mark style="color:blue;">`string date-time`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) _<mark style="color:blue;">`string datetime`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The date and time by which the payment is due. This field may be used to help remind the customer to complete the payment before the due date The default value is UTC.\
 Should be in format (DD/MM/YYYY hh:mm)

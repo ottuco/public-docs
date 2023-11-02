@@ -50,43 +50,43 @@ A pre-established contractual agreement with the customer making the payment, al
 
 <summary>agreement child parameters</summary>
 
-#### [id](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [id](payment-webhooks.md#id-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 A unique identifier for the agreement
 
-#### [amount\_variability](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [amount\_variability](payment-webhooks.md#amount\_variability-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 Presents if the payment amount can vary with each transaction.
 
-#### [start\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [start\_date](payment-webhooks.md#start\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 &#x20;Agreement starting date.
 
-#### [expiry\_date](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [expiry\_date](payment-webhooks.md#expiry\_date-date-conditional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The final date until which the agreement remains valid.
 
-#### [max\_amount\_per\_cycle](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [max\_amount\_per\_cycle](payment-webhooks.md#max\_amount\_per\_cycle-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The maximum debit amount for one billing cycle.
 
-#### [cycle\_interval\_days](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [cycle\_interval\_days](payment-webhooks.md#cycle\_interval\_days-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The number of days between each recurring payment.
 
-#### [total\_cycles](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [total\_cycles](payment-webhooks.md#total\_cycles-integer-conditional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 The total number of payment cycles within the agreement duration.
 
-#### [frequency](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [frequency](payment-webhooks.md#frequency-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 Represents how often the payment is to be processed.
 
-#### [type](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [type](payment-webhooks.md#type-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 This is event-driven, with "`recurring`" as an example.
 
-#### [seller](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [seller](payment-webhooks.md#seller-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 Seller information data including:&#x20;
 
@@ -94,7 +94,7 @@ Seller information data including:&#x20;
 * `"short_name": "string",`
 * `"category_code": "string"`
 
-#### [extra\_params](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/527/developer/webhooks/payment-webhooks#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
+#### [extra\_params](payment-webhooks.md#extra\_params-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;background-color:blue;">`conditional`</mark>_
 
 &#x20;Provides additional information for payment processing. \
 It includes the parameter "`payment_processing_day`" which provide information about the day of the month or a specific date when payment processing should occur, offering more control over the timing of payments.

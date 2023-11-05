@@ -424,7 +424,7 @@ A cryptographic hash used to guarantee data integrity and authenticity during cl
 
 #### &#x20;[timestamp\_utc](payment-webhooks.md#timestamp\_utc-date-time-mandatory) _<mark style="color:blue;">`string datetime`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-It represents the timestamp at which ottu processed the transaction.While this often corresponds to the payment time,it's important to note that it might not always be the case.Payments can be acknowledged at a later time,so this timestamp might not align precisely with the actual payment time.
+It represents the timestamp at which ottu processed the transaction. While this often corresponds to the payment time, it's important to note that it might not always be the case. Payments can be acknowledged at a later time, so this timestamp might not align precisely with the actual payment time..
 
 #### [state](payment-webhooks.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 

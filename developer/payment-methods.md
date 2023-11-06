@@ -87,8 +87,8 @@ This request will return the `"pg_codes": ["kpay"]`, which can then be used in s
 
 **For a detailed breakdown of the API response, refer to the Open API block below.**
 
-{% swagger src="../.gitbook/assets/Ottu API (30).yaml" path="/b/pbl/v2/payment-methods/" method="post" %}
-[Ottu API (30).yaml](<../.gitbook/assets/Ottu API (30).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (34).yaml" path="/b/pbl/v2/payment-methods/" method="post" %}
+[Ottu API (34).yaml](<../.gitbook/assets/Ottu API (34).yaml>)
 {% endswagger %}
 
 ## [Guide](payment-methods.md#guide)

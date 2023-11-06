@@ -63,7 +63,7 @@ Creating a bulk payment request is a breeze. Just follow these simple steps:
 1. From Ottu's user-friendly Dashboard, navigate to the **Bulk Tab**.
 2. Click on `Upload` to initiate the process.
 
-<figure><img src="https://lh4.googleusercontent.com/rxtcyKxTW4jOUW2Y50Lxz3DASSV2_wY7n7ctjXKUJr1Khd5tGhCev-4ONLjl847P7OIBD66auJ9-KRvKWxgCv1ok1dvntGnSY4cvLbd92iCzOQbMDukHi-mIQHT4v-ATDy7D-U1qiK7r8s-QzecbM5Y" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/plugins-bulk.png" alt=""><figcaption></figcaption></figure>
 
 To ensure accuracy, we provide sample files that you can download (i.e., the example file). They contain the required format for your convenience. We offer various formats to choose from.
 
@@ -147,7 +147,7 @@ Merchants can easily track the following information regarding their transaction
 * Total received.
 * Net balance.
 
-<figure><img src="https://lh4.googleusercontent.com/dP62MaBDiLUtNM9fwGog71dV3mRD7ij4hxO6WuzhyNgqKFKJk0hbvbj5V0eCmRu4fwWNOFltcUxl7WMUmmCTfZOQWc53IbLiHaVawuCBmDi9XXOQMnjPQl6Hleo88_IakJXE3Hs_yOC5VKKLSCh9wvc" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Plugins- E-commerce Transaction.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="https://lh3.googleusercontent.com/8B87VlEncgVpFQTlRKy1ijo6U_odJCuktll1CvRRI2vEzBD5HH6vZ4r2B1pvEdFIcsgq1TFkHZ_e1fY0DyI63kCH7sVnG1YSnW8ZYAwHzbNeP7fL8APj7VeYzJqDULbILwfmn80ghiq3UayX-boJErs" alt=""><figcaption></figcaption></figure>
 

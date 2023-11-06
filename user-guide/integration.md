@@ -72,7 +72,7 @@ Experience seamless payments with the Ottu Payment App for Shopify. Install it t
 
 With just a few clicks, you can access a world of valuable transaction insights for your Shopify stores. From the Ottu Portal > head to the Shopify Tab > and select the Transaction Option.
 
-![](<../.gitbook/assets/4 (6) (1).png>)
+![](<../.gitbook/assets/Integration shopify.png>)
 
 Gain a comprehensive overview of your business's financial performance with these key metrics:
 

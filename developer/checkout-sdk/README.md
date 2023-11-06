@@ -58,7 +58,7 @@ The customer has the option of choosing from different payment methods.
 3. Ottu redirect: Will guide to the required payment gateway page.
 4. Apple Pay: A type of payment service, Apple Pay is only available for iOS devices.
 
-![](../../.gitbook/assets/diagram.png)
+![](<../../.gitbook/assets/SDK main page second diagram.png>)
 
 e.g., After selecting the payment method, the response will be proceeded to one of the three below flow. <mark style="color:red;">**Form error:**</mark> for example when customer enter invalid card expiry dates, error message will be appeared, then the customer can try again. (this is only for multiple trial payment). <mark style="color:red;">**Error:**</mark> The cancel callback will be executed when the payment has an error. e.g., the session has expired. <mark style="color:green;">**Success**</mark>.&#x20;
 

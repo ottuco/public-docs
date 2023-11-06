@@ -104,7 +104,7 @@ Take advantage of our cutting-edge Dashboard Charts feature and revolutionize th
 
 Shows the total value and overall rate of success across different periods.
 
-![](<../../.gitbook/assets/1 (2) (1).png>)
+![](<../../.gitbook/assets/Tacking-insight- Total Trans.png>)
 
 ### [Average Transaction](payment-transactions-insights.md#average-transaction)
 

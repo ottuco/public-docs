@@ -23,49 +23,111 @@ To ensure you receive notifications for subsequent payment gateway operations, i
 
 By following these steps and ensuring your webhook is correctly configured, you’ll be well-equipped to receive timely updates on all your payment gateway operations.
 
-## [Payload Details](operation-notification.md#payload-details)
+## [Params](operation-notification.md#params)
 
 #### [amount](operation-notification.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-The merchant should always check if the amount he received from Ottu is the amount of the order, to avoid user changing the cart amount in between.
+The specific amount for which the operation was performed.
 
-#### [initiator](operation-notification.md#initiator-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_&#x20;
+#### [initiator](operation-notification.md#initiator-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_&#x20;
 
-Payment operation creator details, it will be populated only if the operation was triggered from the dashboard or using API with [Basic Authentication](../authentication.md#basic-authentication) and not [API-Key Authentication](../authentication.md#private-key-api-key).
+Payment operation creator details.
+
+**Presence Condition:**
+
+* &#x20;It will be populated only if the operation was triggered from the dashboard or using API with [Basic Authentication](../authentication.md#basic-authentication) and not [API-Key Authentication](../authentication.md#private-key-api-key).
+
+<details>
+
+<summary>initiator  child parameters</summary>
+
+#### [id](operation-notification.md#id-integer-mandatory) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It represents the unique identifier of the user who performs the operation.
+
+#### [first\_name](operation-notification.md#first\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It represents the first name of the user who performs the operation.\
+<= 32 characters
+
+#### [last\_name](operation-notification.md#last\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It represents the last name  of the user who performs the operation.\
+<= 32 characters
+
+#### [username](operation-notification.md#username-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+It represents the username of the user who performs the operation.\
+Required. 150 characters or fewer. Letters, digits and @/./+/-/\_ only.
+
+#### [email](operation-notification.md#email-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The email address of the user who performs the operation.\
+<= 254 characters
+
+#### [phone](operation-notification.md#phone-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It represents the phone number of the user who performs the operation.\
+<= 128 characters
+
+</details>
 
 #### [is\_sandbox](operation-notification.md#is\_sandbox-bool-mandatory) _<mark style="color:blue;">`bool`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-If true, sandbox environment used for this PG settings.
+Indicates whether the operation was performed in a test environment or not.
 
 #### [operation ](operation-notification.md#operation-string-mandatory)_<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-Choice from ["purchase","authorize".](../../user-guide/payment-gateway.md#configure-payment-gateway) Depending on how the PG is being selected.
+Identifies the operation that was executed.\
+Could be "`capture`",  "`refund`", or  "`void`". For more infromation about operation, please refer to [External Operations documentations](../operations.md#external-operations).
+
+#### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It indicates the unique order number of the [Parent Transaction](../../user-guide/payment-tracking/payment-transactions-states.md#parent-payment-transaction). This identifier is crucial for tracking and managing the related order within its entire lifecycle. For more information about `order_no`, please refer to [order\_no](../checkout-api.md#order\_no-string-optional).
+
+**Presence Condition:**
+
+* Should be included during the creation of the parent transaction.
 
 #### [pg\_code](operation-notification.md#pg\_code-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It is being generated according to user payment gateway code choice from [pg\_codes](../checkout-api.md#pg\_codes-array-required) list
+Represents the `pg_code` in the [Payment Gateway](../../user-guide/payment-gateway.md) setting utilized for the [operation](../operations.md#external-operations).
 
-#### [gateway\_response](operation-notification.md#gateway\_response-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [pg\_response](operation-notification.md#pg\_response-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) response sent by the payment gateway to Ottu.
+It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) response sent by the payment gateway to Ottu.\
+It will always be a valid JSON.
 
 #### [reference\_number](operation-notification.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It is a unique identifier, assigned by Ottu to any [parent payment transaction.](../../user-guide/payment-tracking/#states-of-parent-payment-transaction)
+A unique `reference_number` assigned by Ottu for the performed operation. It's also sent to the [Payment Gateway](../../user-guide/payment-gateway.md) and can be used as a reconciliation parameter.
 
 #### [result](operation-notification.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 **Since** it states if the operation was success or not, and webhook operations are not triggered if the operation has failed, so It is a **Fixed value:** success.&#x20;
 
+#### [session\_id](operation-notification.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The session ID of the [Parent Transaction](../../user-guide/payment-tracking/payment-transactions-states.md#parent-payment-transaction) will be included in the webhook payload. This session ID is crucial for associating the webhook event with the original transaction, allowing for accurate tracking and processing. For more details about `session_id`, please refer to [session\_id](../checkout-api.md#session\_id-string-mandatory).
+
+#### [signature](operation-notification.md#signature-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+A cryptographic hash used to guarantee data integrity and authenticity during client-server exchanges. This hash ensures that the API payload has not been tampered with, and can only be verified by authorized parties. Please check [Signing Mechanism](signing-mechanism.md) for more information.
+
 #### [source](operation-notification.md#source-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-can be input or pg:\
-**Input** means it was triggered by Ottu side via API or dashboard. PG means it was triggered by bank **PG** dashboard and Ottu was informed via webhook.\
-**Note:** Not all PGs are informing Ottu when operations are happening on their side, so Ottu might not be aware of all operations on all PGs, only on those which are offering webhook feature.
+Can have one of two values - `input` or `pg`. &#x20;
 
-#### [timestamp\_utc](operation-notification.md#timestamp\_utc-date-time-mandatory) _<mark style="color:blue;">`date-time`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+* &#x20;`input`, it means the operation was performed in an API call triggered by the merchant. For more information about exteranl operation API, Please refer to [External Operations documentation](../operations.md#external-operations).
+* `pg`, it means the operation was done on the PG management dashboard, and the PG notified Ottu via [webhook](./). The `pg` value will always be notified to the webhook, never in an API call.
 
-The time and date of operation creation. It should follow the format: YYYY-MM-DD / HH:MM:SS.
+#### [success](operation-notification.md#success-string-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Indicates whether the operation was successful or not (`success= True` or `success= False`).
+
+#### [timestamp\_utc](operation-notification.md#timestamp\_utc-date-time-mandatory)  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`datetime`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+Specifies the time when the operation was performed, in the UTC timezone.
 
 #### [txn](operation-notification.md#txn-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
@@ -81,34 +143,19 @@ Requested amount of the payment operation.
 
 #### [currency\_code](operation-notification.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-The currency code of the payment operation.\
-More details [https://en.wikipedia.org/wiki/ISO\_4217](https://en.wikipedia.org/wiki/ISO\_4217)\
-3 letters code
-
-#### [customer\_email](operation-notification.md#customer\_email-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
-
-Email address of the customer.
-
-#### [extra](operation-notification.md#extra-object-mandatory) _<mark style="color:blue;">`object`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
-
-The extra information for the payment details, which the merchant has sent it in key value form. For example:
-
-```
-"flight-number": "1234",
-"full_name": "customer
-```
+The specified currency represents the denomination of the transaction. Nevertheless, it doesn't necessarily mandate payment in this exact currency. Due to potential currency conversions or exchanges, the final charge may be in a different currency. For more information, please refer to [Currencies documentation](../../user-guide/currencies.md).
 
 #### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Merchant unique identifier for the transaction. ABC123\_1, ABC123\_2, Max length: 128.
 
-#### [reference\_number](operation-notification.md#reference\_number-string-mandatory-1) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [session\_id](operation-notification.md#session\_id-string-mandatory-1) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It is a unique identifier, assigned by Ottu to any child payment transaction, namely the [payment attempt.](../../user-guide/payment-tracking/#payment-transaction)
+A unique identifier for each payment transaction, used to maintain the session state during the payment process.
 
 #### [state](operation-notification.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It can take on one of the following values: `refunded`, `refund-queued, refund-rejected, voided`, or `paid`. For additional information, please refer to [Payment operation state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states).
+The current state of the payment transaction, it helps to understand the progress of the payment. It can take on one of the following values: `refunded`, `refund-queued, refund-rejected, voided`, or `paid`. For additional information, please refer to [Payment operation state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states).
 
 </details>
 
@@ -120,38 +167,39 @@ Operation webhooks are activated under the following scenarios:
 2. **REST API Trigger:** If a payment operation is executed via Ottu’s REST API, [external operations API](../operations.md#external-operations), the webhook system will again ensure that a notification is dispatched to the subscriber’s endpoint. This ensures that even automated or system-driven operations are communicated in real-time.
 3. **Payment Gateway Dashboard Trigger:** Some [Payment Gateways](../../user-guide/payment-gateway.md) (PG) have their own webhook systems in place. If a payment operation is performed on the Payment Gateway’s dashboard and that PG has enabled webhooks, it will notify Ottu. Ottu, in turn, will relay this information to the subscriber by triggering the operation webhook. This cascading notification ensures that even if operations are performed outside of Ottu’s immediate ecosystem, subscribers remain in the loop. To access further details regarding the available operations for each payment gateway, please click [here](../../user-guide/payment-gateway.md#available-operations).
 
-## [Payload example (void)](operation-notification.md#payload-example-void)
+## [Payload example (refund)](operation-notification.md#payload-example-refund)
 
 ```json
 {
-   "amount":"14.00",
+   "amount":"9.000",
    "initiator":{
-      "email":"initiator@example.com",
-      "id":83,
-      "username":"initiator"
+      "email":"initaitor@example.com",
+      "first_name":"example",
+      "id":35,
+      "last_name":"",
+      "phone":"",
+      "username":"username_example"
    },
-   "is_sandbox":false,
+   "is_sandbox":true,
    "operation":null,
+   "order_no":"Y3ODg",
    "pg_code":"credit-card",
    "pg_response":{
-      "It will contain the raw pg response sent by the pg to Ottu."
+      "It will contain the raw pg response sent by the pg to Ottu"
    },
-   "reference_number":"stageDV37C",
+   "reference_number":"staging4AQ64A",
    "result":"success",
+   "session_id":"bb7fc280827c2f177a9690299cfefa4128dbbd60",
+   "signature":"65f655d2161*************",
    "source":"input",
    "success":true,
-   "timestamp_utc":"2022-09-07 06:21:46",
+   "timestamp_utc":"2023-11-02 09:02:06",
    "txn":{
-      "amount":"14.00",
-      "currency_code":"SAR",
-      "customer_email":"customer@example.com",
-      "extra":{
-         "flight-number":"1234",
-         "full_name":"customer"
-      },
+      "amount":"9.000",
+      "currency_code":"KWD",
       "order_no":"",
-      "reference_number":"LEQCJ",
-      "state":"voided"
+      "session_id":"43ae8773f2c61f2ef41e3024e3b8f8bf45667d44",
+      "state":"refunded"
    }
 }
 ```

@@ -397,7 +397,7 @@ Min value: 0.01
 
 #### [result](payment-webhooks.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-Could be "success", "pending", "failed", "canceled", "error", and "cod". See [payment transaction states](../../user-guide/payment-tracking/payment-transactions-states.md).\
+Could be "`success`", "`pending`", "`failed`", "`canceled`", "`error`", and "`cod`". See [payment transaction states](../../user-guide/payment-tracking/payment-transactions-states.md).\
 Max length 50\
 
 
@@ -422,7 +422,7 @@ Max length 128
 
 A cryptographic hash used to guarantee data integrity and authenticity during client-server exchanges. This hash ensures that the API payload has not been tampered with, and can only be verified by authorized parties.
 
-#### &#x20;[timestamp\_utc](payment-webhooks.md#timestamp\_utc-date-time-mandatory) _<mark style="color:blue;">`string datetime`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### &#x20;[timestamp\_utc](payment-webhooks.md#timestamp\_utc-date-time-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`datetime`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 It represents the timestamp at which Ottu processed the transaction. While this often corresponds to the payment time, it's important to note that it might not always be the case. Payments can be acknowledged at a later time, so this timestamp might not align precisely with the actual payment time..
 

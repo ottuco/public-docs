@@ -25,11 +25,11 @@ By following these steps and ensuring your webhook is correctly configured, youâ
 
 ## [Params](operation-notification.md#params)
 
-#### [amount](operation-notification.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [amount](operation-notification.md#amount-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 The specific amount for which the operation was performed.
 
-#### [initiator](operation-notification.md#initiator-object-mandatory) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_&#x20;
+#### [initiator](operation-notification.md#initiator-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_&#x20;
 
 Payment operation creator details.
 
@@ -39,7 +39,7 @@ Payment operation creator details.
 
 <details>
 
-<summary>initiator  child parameters</summary>
+<summary>initiator child parameters</summary>
 
 #### [id](operation-notification.md#id-integer-mandatory) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
@@ -72,16 +72,16 @@ It represents the phone number of the user who performs the operation.\
 
 </details>
 
-#### [is\_sandbox](operation-notification.md#is\_sandbox-bool-mandatory) _<mark style="color:blue;">`bool`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [is\_sandbox](operation-notification.md#is\_sandbox-bool-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Indicates whether the operation was performed in a test environment or not.
 
-#### [operation ](operation-notification.md#operation-string-mandatory)_<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [operation ](operation-notification.md#operation-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Identifies the operation that was executed.\
 Could be "`capture`",  "`refund`", or  "`void`". For more infromation about operation, please refer to [External Operations documentations](../operations.md#external-operations).
 
-#### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 It indicates the unique order number of the [Parent Transaction](../../user-guide/payment-tracking/payment-transactions-states.md#parent-payment-transaction). This identifier is crucial for tracking and managing the related order within its entire lifecycle. For more information about `order_no`, please refer to [order\_no](../checkout-api.md#order\_no-string-optional).
 
@@ -89,7 +89,7 @@ It indicates the unique order number of the [Parent Transaction](../../user-guid
 
 * Should be included during the creation of the parent transaction.
 
-#### [pg\_code](operation-notification.md#pg\_code-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [pg\_code](operation-notification.md#pg\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Represents the `pg_code` in the [Payment Gateway](../../user-guide/payment-gateway.md) setting utilized for the [operation](../operations.md#external-operations).
 
@@ -98,23 +98,23 @@ Represents the `pg_code` in the [Payment Gateway](../../user-guide/payment-gatew
 It will contain the raw [payment gateway](../../user-guide/payment-gateway.md) response sent by the payment gateway to Ottu.\
 It will always be a valid JSON.
 
-#### [reference\_number](operation-notification.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [reference\_number](operation-notification.md#reference\_number-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 A unique `reference_number` assigned by Ottu for the performed operation. It's also sent to the [Payment Gateway](../../user-guide/payment-gateway.md) and can be used as a reconciliation parameter.
 
-#### [result](operation-notification.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [result](operation-notification.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 **Since** it states if the operation was success or not, and webhook operations are not triggered if the operation has failed, so It is a **Fixed value:** success.&#x20;
 
-#### [session\_id](operation-notification.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [session\_id](operation-notification.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 The session ID of the [Parent Transaction](../../user-guide/payment-tracking/payment-transactions-states.md#parent-payment-transaction) will be included in the webhook payload. This session ID is crucial for associating the webhook event with the original transaction, allowing for accurate tracking and processing. For more details about `session_id`, please refer to [session\_id](../checkout-api.md#session\_id-string-mandatory).
 
-#### [signature](operation-notification.md#signature-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [signature](operation-notification.md#signature-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 A cryptographic hash used to guarantee data integrity and authenticity during client-server exchanges. This hash ensures that the API payload has not been tampered with, and can only be verified by authorized parties. Please check [Signing Mechanism](signing-mechanism.md) for more information.
 
-#### [source](operation-notification.md#source-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [source](operation-notification.md#source-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Can have one of two values - `input` or `pg`. &#x20;
 
@@ -137,23 +137,23 @@ An object will be generated including a short summary of the [child payment tran
 
 <summary>txn  child parameters</summary>
 
-#### [amount](operation-notification.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [amount](operation-notification.md#amount-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Requested amount of the payment operation.
 
-#### [currency\_code](operation-notification.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [currency\_code](operation-notification.md#currency\_code-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 The specified currency represents the denomination of the transaction. Nevertheless, it doesn't necessarily mandate payment in this exact currency. Due to potential currency conversions or exchanges, the final charge may be in a different currency. For more information, please refer to [Currencies documentation](../../user-guide/currencies.md).
 
-#### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Merchant unique identifier for the transaction. ABC123\_1, ABC123\_2, Max length: 128.
 
-#### [session\_id](operation-notification.md#session\_id-string-mandatory-1) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [session\_id](operation-notification.md#session\_id-string-mandatory-1) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 A unique identifier for each payment transaction, used to maintain the session state during the payment process.
 
-#### [state](operation-notification.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark> <mark style="color:blue;"></mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [state](operation-notification.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 The current state of the payment transaction, it helps to understand the progress of the payment. It can take on one of the following values: `refunded`, `refund-queued, refund-rejected, voided`, or `paid`. For additional information, please refer to [Payment operation state](../../user-guide/payment-tracking/payment-transactions-states.md#child-payment-states).
 

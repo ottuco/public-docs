@@ -81,7 +81,7 @@ Indicates whether the operation was performed in a test environment or not.
 Identifies the operation that was executed.\
 Could be "`capture`",  "`refund`", or  "`void`". For more infromation about operation, please refer to [External Operations documentations](../operations.md#external-operations).
 
-#### [order\_no](operation-notification.md#order\_no-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [order\_no](operation-notification.md#order\_no-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 It indicates the unique order number of the [Parent Transaction](../../user-guide/payment-tracking/payment-transactions-states.md#parent-payment-transaction). This identifier is crucial for tracking and managing the related order within its entire lifecycle. For more information about `order_no`, please refer to [order\_no](../checkout-api.md#order\_no-string-optional).
 
@@ -121,11 +121,11 @@ Can have one of two values - `input` or `pg`. &#x20;
 * &#x20;`input`, it means the operation was performed in an API call triggered by the merchant. For more information about exteranl operation API, Please refer to [External Operations documentation](../operations.md#external-operations).
 * `pg`, it means the operation was done on the PG management dashboard, and the PG notified Ottu via [webhook](./). The `pg` value will always be notified to the webhook, never in an API call.
 
-#### [success](operation-notification.md#success-string-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [success](operation-notification.md#success-bool-mandatory) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-Indicates whether the operation was successful or not (`success= True` or `success= False`).
+Indicates whether the operation was successful or not (`success= true` or `success= false`).
 
-#### [timestamp\_utc](operation-notification.md#timestamp\_utc-date-time-mandatory)  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`datetime`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [timestamp\_utc](operation-notification.md#timestamp\_utc-string-datetime-mandatory)  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`datetime`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 Specifies the time when the operation was performed, in the UTC timezone.
 

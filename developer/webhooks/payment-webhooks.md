@@ -35,7 +35,7 @@ Payment webhooks are specific to payment events and are triggered on multiple oc
 * **Retaining on Ottu Page:** If you intentionally want the payer to remain on the Ottu page post-payment, return a status code of 201. Ottu will interpret this as a successful notification, and the payer won’t be redirected. Any other status will be deemed as a failed notification by Ottu.
 * **Specific Redirects:** If you have a particular URL to which you wish to redirect the payer after the payment process, ensure you specify the [redirect\_url](../checkout-api.md#redirect\_url-string-optional) during the payment setup. Ottu will use this URL to navigate the payer back to your platform or any designated page post-payment.
 
-## [Parameters](payment-webhooks.md#parameters)
+## [Params](payment-webhooks.md#params)
 
 #### [agreement](payment-webhooks.md#agreement-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 

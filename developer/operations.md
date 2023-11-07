@@ -115,8 +115,8 @@ For a more detailed technical understanding and the implementation specifics of 
 
 ## [Operations API Schema Reference](operations.md#operations-api-schema-reference)
 
-{% swagger src="../.gitbook/assets/Ottu API (23).yaml" path="/b/pbl/v2/operation/" method="post" %}
-[Ottu API (23).yaml](<../.gitbook/assets/Ottu API (23).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (35).yaml" path="/b/pbl/v2/operation/" method="post" %}
+[Ottu API (35).yaml](<../.gitbook/assets/Ottu API (35).yaml>)
 {% endswagger %}
 
 {% hint style="warning" %}

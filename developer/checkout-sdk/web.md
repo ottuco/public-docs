@@ -60,7 +60,7 @@ Here's an example of how `Checkout.reload` might be called:
 Checkout.reload();
 ```
 
-### [**Properties** ](web.md#properties)
+## [**Properties** ](web.md#properties)
 
 #### [**selector**](web.md#selector-string)  _<mark style="color:blue;">**`string`**</mark>_
 

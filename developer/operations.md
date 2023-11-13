@@ -111,12 +111,12 @@ The Refund operation enables merchants to refund previously captured or paid tra
 
 The Void operation allows merchants to cancel an `authorized` payment transaction before a capture operation is performed. This means that the transaction won’t be captured and the customer will not be charged. The Void operation is strictly applicable to transactions in the `authorized`state.
 
-For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the [Operation API Schema Reference](operations.md#operations-api-schema-reference).
+For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the [Operation API Schema Reference](operations.md#operation-api-schema-reference).
 
-## [Operations API Schema Reference](operations.md#operations-api-schema-reference)
+## [Operation API Schema Reference](operations.md#operation-api-schema-reference)
 
-{% swagger src="../.gitbook/assets/Ottu API (35).yaml" path="/b/pbl/v2/operation/" method="post" %}
-[Ottu API (35).yaml](<../.gitbook/assets/Ottu API (35).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (37).yaml" path="/b/pbl/v2/operation/" method="post" %}
+[Ottu API (37).yaml](<../.gitbook/assets/Ottu API (37).yaml>)
 {% endswagger %}
 
 {% hint style="warning" %}

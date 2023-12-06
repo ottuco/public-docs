@@ -301,6 +301,12 @@ All CUSTOM fields are validated inside extra field.
 If set to true, the [qr\_code\_url](checkout-api.md#qr\_code\_url-string-conditional) field will be present in the response. Upon scanning it, the customer will be redirected to the [checkout\_url,](checkout-api.md#checkout\_url-string-mandatory) which is the Ottu Checkout page.\
 Default value is false.
 
+#### [include\_sdk\_setup\_preload](checkout-api.md#include\_sdk\_setup\_preload-bool-optional) _<mark style="color:blue;">`bool`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+When set to true, the Checkout API will include the [sdk\_setup\_preload\_payload](checkout-api.md#sdk\_setup\_preload\_payload-object-conditional) in its response. This payload facilitates immediate UI setup without the need for further API calls.&#x20;
+
+By default, the parameter is set to `false`, and the `sdk_setup_preload_payload`  is not included in the API response.
+
 #### [**language**](checkout-api.md#language-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 This field specifies the language to be used for communication with the customer, including the payment page, receipt, invoice, email, SMS, and any other communications related to the payment transaction.\
@@ -724,6 +730,18 @@ See the request parameter [redirect\_url](checkout-api.md#redirect\_url-string-o
 **Presence condition:**
 
 * The request parameter [redirect\_url](checkout-api.md#redirect\_url-string-optional) should be provided.
+
+#### [sdk\_setup\_preload\_payload](checkout-api.md#sdk\_setup\_preload\_payload-object-conditional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+It is a JSON object containing preloaded data necessary for initializing the [Checkout SDK](checkout-sdk/). This data encompasses vital details such as customer information, available payment methods, and specific transaction details, all formatted according to the `Checkout SDK`'s initialization specifications. By offering essential information upfront, this feature streamlines the [checkout process](checkout-sdk/#ottu-checkout-sdk-flow), contributing to an improved user experience and increased efficiency.
+
+{% hint style="info" %}
+It must be passed to the `Checkout SDK` constructor without any modifications.
+{% endhint %}
+
+**Presence Conditions:**
+
+* It will be included in the response solely when the [include\_sdk\_setup\_preload](checkout-api.md#include\_sdk\_setup\_preload-bool-optional) parameter is set to `true`.
 
 #### [**session\_id**](checkout-api.md#session\_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 

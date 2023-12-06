@@ -152,6 +152,28 @@ Checkout.init({
 
 <figure><img src="../../.gitbook/assets/image8 (1).png" alt=""><figcaption></figcaption></figure>
 
+#### [setupPreload](web.md#setuppreload-object) _<mark style="color:blue;">`object`</mark>_
+
+The `setupPreload` feature is designed to optimize the `SDK` loading experience by allowing merchants to pre-fetch transaction details and pass them to the `SDK` during initialization. This eliminates the need for the `SDK` to make an API call, resulting in faster rendering of the UI.
+
+To utilize the `setupPreload` feature, include it as a property when calling [checkout.init()](web.md#checkout.init). The `setupPreload` object should contain the prefetched transaction details.
+
+```javascript
+Checkout.init({
+    // other parameters
+    setupPreload: {
+        // prefetched transaction details object
+    }
+});
+```
+
+The `setupPreload` functionality relies heavily on the [Checkout API](../checkout-api.md). When calling the create or update operation of a payment transaction (using the [session\_id](../checkout-api.md#session\_id-string-mandatory)), set the [include\_sdk\_setup\_preload](../checkout-api.md#include\_sdk\_setup\_preload-bool-optional) flag to `true`. This action will prompt the API to return the `sdk_setup_preload_payload` key, along with other values. Pass this value into the `Checkout.init()` just as you pass the `session_id`, ensuring no modifications are made to it.\
+For more information on how to use the `setupPreload` parameter, see [sdk\_setup\_preload\_payload](../checkout-api.md#sdk\_setup\_preload\_payload-object-conditional) in the [Checkout API](../checkout-api.md).
+
+{% hint style="info" %}
+If the `setupPreload` object passed during `SDK`initialization is not valid or does not adhere to the required structure, the `SDK` will discard it and automatically fall back to its previous functionality. In such cases, the `SDK` will initiate an API call to fetch the necessary transaction details from the backend. It is essential to ensure that the `setupPreload` object follows the specified format to leverage the instant loading feature effectively and avoid fallback scenarios and ensure a seamless integration.
+{% endhint %}
+
 #### [applePayInit](web.md#applepayinit-object) _<mark style="color:blue;">`object`</mark>_
 
 The `applePayInit` object enables users to modify the Apple Pay configurations used for generating payment sessions through Apple Pay. By default, all options are pre-configured. However users have the flexibility to customize these configurations using `applePayInit` according to their requirements.

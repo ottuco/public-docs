@@ -788,10 +788,8 @@ See Webhook [Payment Notification](webhooks/payment-webhooks.md).
 
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
-For a more detailed technical understanding and the implementation specifics of these Checkout API please refer to the below Open API schema.
-
-{% swagger src="../.gitbook/assets/Ottu API (24).yaml" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[Ottu API (24).yaml](<../.gitbook/assets/Ottu API (24).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (42).yaml" path="/b/checkout/v1/pymt-txn/" method="post" %}
+[Ottu API (42).yaml](<../.gitbook/assets/Ottu API (42).yaml>)
 {% endswagger %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)

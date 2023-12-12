@@ -18,7 +18,7 @@ Importantly, if a PG accepts an operation, a [child payment transaction](../user
 Please be aware that operations via the Operations API do not function with **foreign currencies**. If your customer has completed a payment using a [currency exchange](../user-guide/currencies.md#currency-exchanges) (for instance, if the Merchant ID or MID is set to KWD but the customer has paid the amount in USD using Ottu's currency exchange to calculate and display the amount), external operations will not be successful. External operations only work when the payment currency is identical to the MID currency.
 {% endhint %}
 
-The Operations API is part of Ottu’s ongoing commitment to development, and the recent upgrade to **version 2** is testament to this. Nevertheless, the documentation for **version 1** of the operation API remains accessible [here](http://127.0.0.1:5000/o/QvpaILbKwb9WBfHGe5bZ/s/HliFFcthyaYAsSykrr31/). It’s worth noting that certain conditions must be met to perform operations, and not all PGs support all operations. For more details, please see our section on [Operation Definitions & Conditions.](../user-guide/payment-gateway.md#operation-definitions-and-conditions)
+The Operations API is part of Ottu’s ongoing commitment to development, and the recent upgrade to **version 2** is testament to this. Nevertheless, the documentation for **version 1** of the operation API remains accessible [here](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/HliFFcthyaYAsSykrr31/). It’s worth noting that certain conditions must be met to perform operations, and not all PGs support all operations. For more details, please see our section on [Operation Definitions & Conditions.](../user-guide/payment-gateway.md#operation-definitions-and-conditions)
 
 {% hint style="info" %}
 Ottu’s Operations API supports both system-side operations `cancel`, `delete`, `expire` and gateway-level operations `capture`, `refund`, `void`, ensuring your transaction data is always in sync with the PG. Remember, availability of gateway-level operations may depend on the specific payment gateway’s capabilities.
@@ -110,6 +110,110 @@ The Refund operation enables merchants to refund previously captured or paid tra
 ### [Void](operations.md#void-1)
 
 The Void operation allows merchants to cancel an `authorized` payment transaction before a capture operation is performed. This means that the transaction won’t be captured and the customer will not be charged. The Void operation is strictly applicable to transactions in the `authorized`state.
+
+## [Tracking-Key Header](operations.md#tracking-key-header)
+
+### [Overview](operations.md#overview)
+
+The `Tracking-Key`, in the context of the Operation API, is a unique identifier embedded in the header of each [external operation](operations.md#external-operations) request initiated by the merchant. This key plays a pivotal role in maintaining the distinctiveness of every operation transaction, ensuring precise tracking and efficient retrieval of the latest status information.
+
+### [Purpose of Tracking Key](operations.md#purpose-of-tracking-key)
+
+It enables merchants to obtain the most recent status of an operation without the possibility of triggering **duplicate operations** in subsequent requests when using the same key.
+
+### [Guide: Step by Step](operations.md#guide-step-by-step)
+
+In this section will delve into an example illustrating how a merchant can employ the `Tracking-Key`.
+
+#### 1. [Perform Operation Request](operations.md#1.-perform-operation-request)
+
+The merchant initiates the process by including the `Tracking-Key` in the header of the operation API when submitting a request. This key serves as a distinctive identifier, differentiating each operation initiated by the merchant from others.
+
+To prevent the occurrence of multiple operations, the `Tracking-Key`, once added during the initial operation, is stored in the [child payment transaction](../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) data. **Consequently**, if the same `Tracking-Key`is later included in the header of **any** [external operation API](operations.md#external-operations) with the `session_id` or `order_no`,whether it was previously associated with the Tracking-Key or not, the system will refrain from initiating a new operation. Instead, it will promptly provide the latest operation status response. \
+**Nevertheless,** if the initial operation performed unsuccessfully, the `Tracking Key` will not be stored.
+
+#### **Example:**&#x20;
+
+The merchant initiates a POST [Refund](operations.md#refund) request by submitting the [session\_id](checkout-api.md#session\_id-string-mandatory) of the previous paid transaction and specifying the refund `amount`.  Additionally, a new header parameter, `Tracking-Key`, is included, with "`trackingtest`" used as an example value for demonstration purposes.
+
+#### **Header Parameter:**
+
+```json
+Tracking-Key: "trackingtest"
+```
+
+#### **Body Parameters:**
+
+```json
+{
+    "operation": "refund",
+    "session_id": "2a956e4c9294c2c0e9253c21b1a592ceb4018c68",
+    "amount": "1"
+}
+```
+
+#### 2. [**Retrieve the Latest Operation Status**](operations.md#2.-retrieve-the-latest-operation-status)
+
+When the merchant seeks to inquire about the status of a previously conducted operation, they should initiate another operation request using the same `Tracking-Key` value as the one utilized in the initial targeted operation transaction.
+
+* The merchant should include a new header parameter, `Tracking-Key`, with the same value as in the previous operation transaction.
+* Alongside the `Tracking-Key`, the [`session_id`](checkout-api.md#session\_id-string-mandatory)/ [`order_no`](checkout-api.md#order\_no-string-optional) of the specified operation transaction should be provided in the operation request.
+* Merchant specifies the [Extrenal Operation](operations.md#external-operations) associated with the provided `Tracking-Key` and `session_id` / `order_no` of  targeted operation transaction
+* Regardless the `session_id`/`order_no` value provide within external operation request. The response will keep providing that lastest status of the origin operation request when the Tracking-key value was provide initially.
+
+#### Example:
+
+The merchant initiates a new operation request, employing the same Tracking-Key, `session_id`, and operation parameters as specified in the last [Example](operations.md#example).
+
+#### **Header Parameter:**
+
+```json
+Tracking-Key: "trackingtest"
+```
+
+#### **Body Parameters:**
+
+```json
+{
+    "operation": "refund",
+    "session_id": "2a956e4c9294c2c0e9253c21b1a592ceb4018c68"
+}
+```
+
+#### **Response:**
+
+Ottu's system, recognizing the `Tracking-Key` and the associated `session_id` retrieves the relevant transaction details from the database. The response to the operation request includes the latest status information for the specified operation transaction
+
+```json
+{
+   "amount":"1.00",
+   "amount_details":{
+      "currency_code":"SAR",
+      "amount":"1.0",
+      "total":"1.0",
+      "fee":"0"
+   },
+   "currency_code":"SAR",
+   "customer_id":"Example_id",
+   "customer_phone":"12345678",
+   "extra":{},
+   "gateway_account":"Credit-Card",
+   "gateway_name":"mpgs",
+   "gateway_response":{
+      It will contain the raw pg response sent by the pg to Ottu
+   },
+   "initiator":{},
+   "is_sandbox":true,
+   "payment_type":"one_off",
+   "reference_number":"SMAUGGGLERDK",
+   "remaining_amount":"1.000",
+   "result":"success",
+   "session_id":"cb4b9e4cde8f2ac9664eba743497657d13e3c9b6",
+   "signature":"3f312d13**************",
+   "state":"refunded",
+   "timestamp_utc":"2023-11-23 11:20:50"
+}
+```
 
 For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the [Operation API Schema Reference](operations.md#operation-api-schema-reference).
 

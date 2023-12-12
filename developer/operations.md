@@ -154,12 +154,11 @@ Tracking-Key: "trackingtest"
 
 #### 2. [**Retrieve the Latest Operation Status**](operations.md#2.-retrieve-the-latest-operation-status)
 
-When the merchant seeks to inquire about the status of a previously conducted operation, they should initiate another operation request using the same `Tracking-Key` value as the one utilized in the initial targeted operation transaction.
+When the merchant seeks to inquire about the status of a previously conducted operation, he should initiate another operation request using the same `Tracking-Key` value as the one utilized in the initial targeted operation transaction.
 
 * The merchant should include a new header parameter, `Tracking-Key`, with the same value as in the previous operation transaction.
 * Alongside the `Tracking-Key`, the [`session_id`](checkout-api.md#session\_id-string-mandatory)/ [`order_no`](checkout-api.md#order\_no-string-optional) of the specified operation transaction should be provided in the operation request.
-* Merchant specifies the [Extrenal Operation](operations.md#external-operations) associated with the provided `Tracking-Key` and `session_id` / `order_no` of  targeted operation transaction
-* Regardless the `session_id`/`order_no` value provide within external operation request. The response will keep providing that lastest status of the origin operation request when the Tracking-key value was provide initially.
+* Regardless the `session_id`/`order_no` value provided within external operation request. The response will keep providing that lastest status of the origin operation request when the `Tracking-key` value was provided initially.
 
 #### Example:
 
@@ -182,7 +181,7 @@ Tracking-Key: "trackingtest"
 
 #### **Response:**
 
-Ottu's system, recognizing the `Tracking-Key` and the associated `session_id` retrieves the relevant transaction details from the database. The response to the operation request includes the latest status information for the specified operation transaction
+Ottu's system, recognizing the `Tracking-Key` and the associated `session_id` retrieves the relevant transaction details from the database. The response to the operation request includes the latest status information for the origin operation transaction.
 
 ```json
 {

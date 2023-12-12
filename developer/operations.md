@@ -157,12 +157,12 @@ Tracking-Key: "trackingtest"
 When the merchant seeks to inquire about the status of a previously conducted operation, he should initiate another operation request using the same `Tracking-Key` value as the one utilized in the initial targeted operation transaction.
 
 * The merchant should include a new header parameter, `Tracking-Key`, with the same value as in the previous operation transaction.
-* Alongside the `Tracking-Key`, the [`session_id`](checkout-api.md#session\_id-string-mandatory)/ [`order_no`](checkout-api.md#order\_no-string-optional) of the specified operation transaction should be provided in the operation request.
-* Regardless the `session_id`/`order_no` value provided within external operation request. The response will keep providing that lastest status of the origin operation request when the `Tracking-key` value was provided initially.
+* Alongside the `Tracking-Key`, the [session\_id](checkout-api.md#session\_id-string-mandatory) / [order\_no](checkout-api.md#order\_no-string-optional) of the specified operation transaction should be provided in the operation request.
+* Regardless of the `session_id`/`order_no`, `amount` (no need to provide), and `operation` parameter values provided within the external operation request, the response will consistently provide the latest status of the original operation request from the initial provision of the `Tracking-key`  value.
 
 #### Example:
 
-The merchant initiates a new operation request, employing the same Tracking-Key, `session_id`, and operation parameters as specified in the last [Example](operations.md#example).
+The merchant initiates a new operation request, employing the same `Tracking-Key`, `session_id`, and operation parameters as specified in the last [Example](operations.md#example).
 
 #### **Header Parameter:**
 

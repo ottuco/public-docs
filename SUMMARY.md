@@ -24,7 +24,6 @@
   * [Transaction Report Configuration](user-guide/configuration/transaction-report-configuration.md)
   * [How to Get API Keys](user-guide/configuration/how-to-get-api-keys.md)
   * [URL Shortener Configuration](user-guide/configuration/url-shortener-configuration.md)
-* [Satellite](user-guide/satellite.md)
 
 ## developer
 

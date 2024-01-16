@@ -68,84 +68,75 @@ An established contractual arrangement with the payer, which authorizes the merc
 
 #### [id](checkout-api.md#id-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-A unique identifier for the agreement established with the payer. This ID links to the specific terms and conditions the payer has authorized for processing their stored card details. Use cases include:
-
-1. **Recurring Payments:** Periodic debits, e.g., gym memberships.
-2. **Installment Payments:** Multiple charges for a single purchase over time.
-3. **Unscheduled:** Future payments as required, e.g., account top-ups.
-4. **Industry Practice**: Standard business practices related to an original payment, e.g., hotel charges after checkout.
+It serves as a unique identifier for the agreement established with the payer. It is integral to link to the specific terms and conditions authorized by the payer for processing their stored card details. The Agreement ID plays a crucial role as an identifier for correlated payments associated with a customer order or invoice, highlighting the need for it to vary based on the correlated payments.
 
 #### [amount\_variability](checkout-api.md#amount\_variability-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Indicates if all payments within the agreement use the same amount or if the amount differs between the payments.
-
-* `fixed` - Fixed
-* `variable` - Variable
+It defines if the payment amount can vary with each transaction within the agreement.\
+Enum: `fixed`, `variable`
 
 #### [start\_date](checkout-api.md#start\_date-date-optional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Date on which the agreement with the payer to process payments starts.
+The date on which the agreement with the payer to process payments begins.
 
 #### [expiry\_date](checkout-api.md#expiry\_date-date-optional) _<mark style="color:blue;">`date`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Date on which your agreement with the payer to process payments expires.
+The final date until which the agreement remains valid.
 
 #### [max\_amount\_per\_cycle](checkout-api.md#max\_amount\_per\_cycle-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The maximum amount for a single payment in the series as agreed with the payer.
+The agreed-upon maximum amount for an individual payment within the series.
 
 #### [cycle\_interval\_days ](checkout-api.md#cycle\_interval\_days-integer-optional)_<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The minimum number of days between payments agreed with the payer.
+The number of days between each recurring payment
 
 #### [total\_cycles](checkout-api.md#total\_cycles-integer-optional) _<mark style="color:blue;">`integer`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The number of merchant-initiated payments within the recurring payment agreement.
+The total number of payment cycles within the agreement duration.
 
 #### [frequency ](checkout-api.md#frequency-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The frequency of the payments within the series as agreed with the payer.
-
-* `irregular` - Irregular
-* `daily` - Daily
-* `weekly` - Weekly
-* `semi_monthly` - Semi Monthly
-* `monthly` - Monthly
-* `quarterly` - Quarterly
-* `semi_annually` - Semi Annually
-* `yearly` - Yearly
-* `other` - Other
+This pertains to the frequency of payments within the series as agreed upon with the payer. Such as: `irregular`, `daily`, ⁣`weekly`, `monthly`, `quarterly`, `semi_annually`, `yearly`, and `other`.\
+When `type` set as `unscheduled`, `frequency` should set as  `irregular`.
 
 #### [type](checkout-api.md#type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The type of commercial agreement that the payer has with the merchant.
+The type of commercial agreement that the payer has with the merchant, which can fall into categories such as:
 
-* `event_based` - Event Based
-* `installment` - Installment
-* `recurring` - Recurring
-* `unscheduled` - Unscheduled
-* `other` - Other
+* `recurring`  (Default value)
+* `unscheduled`&#x20;
+* `other`&#x20;
+* `event_based`&#x20;
+* `installment`
 
 #### [seller](checkout-api.md#seller-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Details about the retailer, if the agreement is for installment payments.\
-**It includes:**
+It details about the retailer, if the agreement is for installment payments.\
+**`seller` child object:**
 
-* `names` `string`:The retailer's trading name.\
-  <= 128 characters
-* `short_name` `string`:Abbreviation of the retailer's trading name, suitable for payer's statement display\
-  <= 64 characters
-* `category_code` `string`:A 4-digit code classifying the retailer's business by the type of goods or services it offers\
-  <= 64 characters
+* <mark style="color:blue;">**category\_code**</mark> _<mark style="color:blue;">**`string`**</mark>_\
+  A 4-digit code classifying the retailer's business by the type of goods or services it offers.
+
+<!---->
+
+* <mark style="color:blue;">**short\_name**</mark> _<mark style="color:blue;">**`string`**</mark>_\
+  Abbreviation of the retailer's trading name, suitable for payer's statement display.
+
+<!---->
+
+* <mark style="color:blue;">**names**</mark><mark style="color:blue;">** **</mark>_<mark style="color:blue;">**`string`**</mark>_\
+  The retailer's trading name.
 
 #### [extra\_params](checkout-api.md#extra\_params-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 Additional parameters related to the agreement.\
-**It includes:**
+**`extra_params` child object:**
 
-`payment_processing_day` `integer`:Day of the month on which the payment must be processed. Not required for unscheduled payment agreements.\
-\[ 1 .. 31 ]\
-
+* <mark style="color:blue;">**payment\_processing\_day**</mark><mark style="color:blue;">** **</mark>_<mark style="color:blue;">**`int`**</mark>_\
+  Day of the month on which the payment must be processed. \
+  Not required for `unscheduled` payment agreements.\
+  The retailer's trading name.
 
 </details>
 

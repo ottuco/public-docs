@@ -4,11 +4,9 @@
 
 Welcome to the Ottu `Auto Debit API` documentation. Our API provides businesses and developers with the ability to incorporate Ottu's auto-debit functionality into their existing systems, allowing for seamless and automated payment processing.
 
-**But what is auto debit?** Auto debit is a financial arrangement where a customer authorizes a company to deduct money from their account on a recurring basis. The frequency and amount of these deductions are determined in advance and can vary depending on the type of agreement, be it a subscription, a loan repayment, or any other kind of periodic payment.&#x20;
+**But what is auto debit?** Auto debit is a financial arrangement wherein a customer authorizes a company to deduct money from their account, whether on a recurring basis, an unscheduled basis, or potentially in the future, the deduction could occur on an event-based, installment, or other specified terms. The frequency and amount of these deductions are determined in advance and can vary depending on the type of agreement, be it a subscription, a loan repayment, or any other kind of periodic payment.&#x20;
 
 Imagine you are a merchant providing a monthly subscription service to your customers. Each month, you need to charge your customers, but the process becomes tedious when you have to remind them to make the payment or when they have to manually make the payment each time. This is where the auto debit functionality shines. With Ottu's `Auto Debit API`, you can schedule these charges automatically, ensuring seamless business operations and improving customer experience, all while saving valuable time and effort.&#x20;
-
-With the power of Ottu's `Auto Debit API` at your fingertips, setting up recurring payments, processing one-time payments, and managing transaction records becomes a breeze. All it takes to get started is a simple integration.
 
 In the following sections, we will guide you through the steps of [Setup](auto-debit.md#setup), [Authentication](auto-debit.md#authentication), and how to use the various endpoints available. This will give you the tools and knowledge needed to fully leverage the capabilities of the Ottu `Auto Debit API`.&#x20;
 
@@ -74,20 +72,14 @@ Please be aware that the **availability** of specific agreement types is subject
 
 #### **Importance for Merchants:**
 
-Before leveraging Ottu’s auto-debit feature, it’s essential to ensure you have the appropriate agreement in place. For the **recurring** agreement type, the following parameters are mandatory:
+Before utilizing Ottu's auto-debit feature, it is crucial to confirm the existence of the necessary agreement. For more information about the `agreement` parameters, please refer to the details in the [agreement object](checkout-api.md#agreement-object-details).
 
-* `id`: A unique identifier for the agreement.
-* `type`: Specifies the agreement type, e.g., recurring.
-* `amount_variability`: Defines if the payment amount can vary with each transaction.
-* `expiry_date`: The final date until which the agreement remains valid.
-* `cycle_interval_days`: The number of days between each recurring payment.
-* `total_cycles`: The total number of payment cycles within the agreement duration.
-* `frequency`: Specifies how often the payment is to be processed.
+Below table outlines mandatory and optional parameters for two agreement types: `recurring` and `unscheduled`, streamlining the agreement creation process.
 
-These parameters help ensure that recurring payments match the agreement’s terms. This alignment aids in adhering to payment regulations and offers clarity to both merchants and payers.
+<table data-full-width="false"><thead><tr><th align="center">type</th><th>                               Mandatory</th></tr></thead><tbody><tr><td align="center"><code>recurring</code></td><td><ul><li><code>id</code></li><li><code>frequency</code></li><li><code>amount_variability</code></li><li><code>expiry_date</code></li><li><code>cycle_interval_days</code></li><li><code>total_cycles</code></li></ul></td></tr><tr><td align="center"><code>unscheduled</code></td><td><ul><li><code>id</code></li><li><code>frequency</code></li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
-If you have requirements for an `auto-debit` type other than **recurring** or have specific customizations in mind, please don’t hesitate to contact us at <mark style="color:blue;">**support@ottu.com**</mark>. We’re here to support and assist you in tailoring a solution that best fits your business needs.
+If you have requirements for an `auto-debit` type other than **`recurring`/`unscheduled`** or have specific customizations in mind, please don’t hesitate to contact us at <mark style="color:blue;">**support@ottu.com**</mark>. We’re here to support and assist you in tailoring a solution that best fits your business needs
 {% endhint %}
 
 For the [First Payment](auto-debit.md#first-payment), the agreement lays the foundation by defining the terms under which the initial transaction takes place. During this step, the customer selects the specific card they wish to associate with the auto-debit payment. This chosen card will be the only one charged for all [Subsequent Payments](auto-debit.md#subsequent-payments) based on the agreement's terms.&#x20;
@@ -128,6 +120,7 @@ For the initial payment, which is a [Cardholder Initiated Transaction](auto-debi
 #### [**Here’s what you need to know**](auto-debit.md#heres-what-you-need-to-know)
 
 * **Token Retrieval:** The notification to your `webhook_url` will contain the saved card details in the token field. It’s crucial to always save this token, even for [Subsequent Payments](auto-debit.md#subsequent-payments). This is because the payer might choose a different card for future `auto-debit` payments. For a detailed schema of the notification, refer to the [Payment Webhook documentation](webhooks/payment-webhooks.md).
+* **Multiple Tokens:** The merchant  should pass the Agreement `ID` as a parameter to distinguish between a customer's tokens, especially when the customer possesses multiple tokens.
 * **Handling Lost Tokens:** In case you don’t save the token or lose it, you can retrieve it using the [User Cards API](user-cards.md#fetch-cards). Further details on this process are provided below.
 * **Card and Agreement Association:** When a payment is made via `auto-debit`, the `agreement.id` value will be linked with the saved card. Ottu manages this association automatically. This means that if a payer decides to use a different card for subsequent payments, Ottu will handle the transition by disassociating the `agreement.id` from the previous card and linking it to the new one. It’s important to note that an `agreement.id` can only be associated with one card at a time. This automated management ensures that you always have the correct card details associated with the agreement, simplifying the process for subsequent payments.
 
@@ -155,8 +148,8 @@ This diagram visually represents the steps needed to set up subsequent payments.
 
 For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the API Schema Reference section below.
 
-{% swagger src="../.gitbook/assets/Ottu API (32).yaml" path="/b/pbl/v2/auto-debit/" method="post" %}
-[Ottu API (32).yaml](<../.gitbook/assets/Ottu API (32).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (43).yaml" path="/b/pbl/v2/auto-debit/" method="post" %}
+[Ottu API (43).yaml](<../.gitbook/assets/Ottu API (43).yaml>)
 {% endswagger %}
 
 ## [Guide: Step By Step](auto-debit.md#guide-step-by-step)
@@ -165,62 +158,118 @@ Navigating the world of digital payments can be intricate. Whether you’re proc
 
 ### [First Payment Process](auto-debit.md#first-payment-process)
 
-1.  #### [Retrieving `pg_codes` (Optional)](auto-debit.md#retrieving-pg\_codes-optional)
+#### 1. [Retrieving `pg_codes` (Option](auto-debit.md#id-1.-retrieving-pg\_codes-optional)
 
-    Before initiating the first payment, you have the option to call the [Payment Methods API](payment-methods.md) to retrieve the necessary [pg\_codes](checkout-api.md#pg\_codes-array-required). This can be done using the following payload:\
-
-
-    ```json
-    {
-        "plugin": "e_commerce",
-        "currencies": ["KWD", "SAR"],
-        "operation": "purchase",
-        "customer_id": "test",
-        "tokenizable": true
-    }
-    ```
+Before initiating the first payment, you have the option to call the [Payment Methods API](payment-methods.md) to retrieve the necessary [pg\_codes](checkout-api.md#pg\_codes-array-required). This can be done using the following payload:\
 
 
+```json
+{
+    "plugin": "e_commerce",
+    "currencies": ["KWD", "SAR"],
+    "operation": "purchase",
+    "customer_id": "test",
+    "tokenizable": true
+}
+```
 
-    **Why Consider This Step?**\
-    While this step is optional, it offers several advantages:
 
-    * **Flexibility:** If you’re uncertain about the `pg_code` or anticipate it might change in the future, this step ensures you always have the most up-to-date code.
-    * **End-to-End Integration:** By retrieving the `pg_codes`dynamically, you ensure a seamless integration with Ottu. This means that any changes in the configuration, such as a code alteration or the addition of a new payment gateway, will be automatically reflected in your system.
-    * **Hardcoding Alternative:** If you’re confident that the `pg_code` will remain consistent and won’t change, you can opt to hardcode it directly into your system. This approach might simplify the process but could require updates if there are changes on Ottu end.
-2.  #### [Initiating the Payment via `Checkout API`](auto-debit.md#initiating-the-payment-via-checkout-api)
 
-    To proceed with the payment, you’ll need to call the [Checkout API](checkout-api.md). Here’s an example of the payload you might use:
+**Why Consider This Step?**\
+While this step is optional, it offers several advantages:
+
+* **Flexibility:** If you’re uncertain about the `pg_code` or anticipate it might change in the future, this step ensures you always have the most up-to-date code.
+* **End-to-End Integration:** By retrieving the `pg_codes`dynamically, you ensure a seamless integration with Ottu. This means that any changes in the configuration, such as a code alteration or the addition of a new payment gateway, will be automatically reflected in your system.
+* **Hardcoding Alternative:** If you’re confident that the `pg_code` will remain consistent and won’t change, you can opt to hardcode it directly into your system. This approach might simplify the process but could require updates if there are changes on Ottu end.
+
+#### 2. [Initiating the Payment via `Checkout API`](auto-debit.md#id-2.-initiating-the-payment-via-checkout-api)
+
+To proceed with the payment, you’ll need to call the [Checkout API](checkout-api.md). Here’s an example of the payload you might use:
 
 ```json
 {
    "type":"e_commerce",
    "amount":"200.00",
    "payment_type":"auto_debit",
-   "currency":"USD",
+   "currency_code":"KWD",
    "pg_codes":["credit-card"],
    "customer_id":"cust_123",
    "return_url":"https://yourwebsite.com/return",
    "webhook_url":"https://yourwebsite.com/webhook",
-   “card_acceptance_criteria”:{
-      “min_expiry_time”:30,   },
+   "card_acceptance_criteria":{
+      "min_expiry_time":30
+   },
    "agreement":{
       "id":"A123456789",
       "amount_variability":"fixed",
-      "start_date":"01/10/2023",
-      // mm-dd-yyyy"expiry_date":"01/10/2024",
-      // mm-dd-yyyy"max_amount_per_cycle":"200.00",
-      "cycle_interval_days":30,
-      "total_cycles":12,
-      "frequency":"monthly",
+      "start_date":"13/12/2023",
+      "expiry_date":"01/10/2024",
+      "cycle_interval_days":1,
+      "total_cycles":1,
+      "frequency":"daily",
       "type":"recurring",
       "seller":{
-         "name":"Tech Shop International",
-         "short_name":"TSI",
-         "category_code":"1234",
-      },
-      "extra_params":{"payment_processing_day": 5},  
+         "name":"Test-auto-debit",
+         "short_name":"Test",
+         "category_code":"1234"
+      }
    }
+}
+```
+
+#### Response:
+
+```json
+{
+   "agreement":{
+      "id":"A123456789",
+      "amount_variability":"fixed",
+      "start_date":"13/12/2023",
+      "expiry_date":"01/10/2024",
+      "cycle_interval_days":1,
+      "total_cycles":1,
+      "frequency":"daily",
+      "type":"recurring",
+      "seller":{
+         "name":"Test-auto-debit",
+         "short_name":"Test",
+         "category_code":"1234"
+      }
+   },
+   "amount":"200.000",
+   "card_acceptance_criteria":{
+      "min_expiry_time":30
+   },
+   "checkout_url":"https://sandbox.ottu.net/b/checkout/redirect/start/?session_id=4a462681df6aab64e27cedc9bbf733cd6442578b",
+   "currency_code":"KWD",
+   "customer_id":"cust_123",
+   "due_datetime":"13/12/2023 12:55:36",
+   "expiration_time":"1 00:00:00",
+   "language":"en",
+   "operation":"purchase",
+   "payment_methods":[
+      {
+         "code":"credit-card",
+         "name":"Credit Card",
+         "pg":"Ottu PG",
+         "type":"sandbox",
+         "amount":"200.000",
+         "currency_code":"KWD",
+         "fee":"0.000",
+         "fee_description":"",
+         "icon":"https://sandbox.ottu.net/media/gateway/settings/logos/MASTER-.jpeg",
+         "flow":"redirect",
+         "redirect_url":"https://pg.ottu.dev/checkout/c2FuZGJveC5vdHR1Lm5ldA==/Z0FBQUFBQ"
+      }
+   ],
+   "payment_type":"auto_debit",
+   "pg_codes":[
+      "credit-card"
+   ],
+   "session_id":"4a462681df6aab64e27cedc9bbf733cd6442578b",
+   "state":"created",
+   "type":"e_commerce",
+   "webhook_url":"https://yourwebsite.com/webhook"
 }
 ```
 
@@ -237,14 +286,9 @@ After sending this request, you’ll be provided with a [session\_id](checkout-a
 
 If the payer has previously saved cards associated with the `pg_code` used to create the payment, it’s advisable to redirect them to the `checkout_url`. Otherwise, use the `payment_methods.redirect_url`.&#x20;
 
-\
 For a seamless experience, we highly recommend using the [Checkout SDK](checkout-sdk/), which handles these decisions and processes automatically.
 
-\
-Once the customer completes the payment, the card will be saved and associated with the `agreement.id` that was provided earlier. A notification will then be sent to your [webhook\_url](checkout-api.md#webhook\_url-string-optional). Within this notification, the saved card will be represented by a parameter named token. It’s crucial to securely save both the token and the `pg_code` used for this payment.
-
-\
-The `pg_code` is especially important for [subsequent payments](auto-debit.md#subsequent-payments). Since the recurring payment setup is already established with the bank, there’s no need to call the [Payment Methods API](payment-methods.md) again in the future. Storing the `pg_code` ensures you can seamlessly continue with the established payment process.
+Once the customer completes the payment, the card will be saved and associated with the `agreement.id` that was provided earlier. A notification will then be sent to your [webhook\_url](checkout-api.md#webhook\_url-string-optional). Within this notification, the saved card will be represented by a parameter named token. It’s crucial to securely save both the token and the `pg_code` used for this payment. The `pg_code` is especially important for [subsequent payments](auto-debit.md#subsequent-payments). Since the recurring payment setup is already established with the bank, there’s no need to call the [Payment Methods API](payment-methods.md) again in the future. Storing the `pg_code` ensures you can seamlessly continue with the established payment process.
 
 #### [Card Acceptance Criteria](auto-debit.md#card-acceptance-criteria)
 
@@ -267,35 +311,192 @@ Wohoo! The groundwork is laid, and you’re all set to process subsequent paymen
 
 To ensure a smooth subsequent payment process, follow these steps:
 
-1.  #### [Pre-Charging Notifications](auto-debit.md#pre-charging-notifications)
+#### 1. [Pre-Charging Notifications](auto-debit.md#id-1.-pre-charging-notifications)
 
-    Before the charging day, it’s recommended to send the payer 1-2 email notifications, ideally one week before and then one day before the scheduled charge. This serves as a reminder to ensure they have the necessary funds available or to go online and modify the card they wish to use for the payment.
-2.  #### [Initiating the `Checkout API` Using the Prior `pg_codes`](auto-debit.md#initiating-the-checkout-api-using-the-prior-pg\_codes)
+Before the charging day, it’s recommended to send the payer 1-2 email notifications, ideally one week before and then one day before the scheduled charge. This serves as a reminder to ensure they have the necessary funds available or to go online and modify the card they wish to use for the payment.
 
-    For subsequent payments, generate a new [session\_id](checkout-api.md#session\_id-string-mandatory) by initiating a new payment transaction using the `Checkout API`, and this transaction should incorporate the `pg_code` from the previous successful transaction. This is either associated with the current [agreement](auto-debit.md#what-is-an-agreement) or derived from the initial payment. While supplying other parameters, ensure consistency with the initial payment setup. Remember, the amount might differ if your agreement allows for variable amounts.
-3.  #### [Retrieve the `session_id`](auto-debit.md#retrieve-the-session\_id)
+#### 2. [Initiating the `Checkout API` Using the Prior `pg_code`](auto-debit.md#id-2.-initiating-the-checkout-api-using-the-prior-pg\_codes)
 
-    The [Checkout API](checkout-api.md) call will return a [session\_id](checkout-api.md#session\_id-string-mandatory). This ID is crucial for the next step in the process.
-4.  #### [Initiate the `AutoDebit API` Call](auto-debit.md#initiate-the-autodebit-api-call)
+For subsequent payments, generate a new [session\_id](checkout-api.md#session\_id-string-mandatory) by initiating a new payment transaction using the `Checkout API`, and this transaction should incorporate the `pg_code` from the previous successful transaction. This is either associated with the current [agreement](auto-debit.md#what-is-an-agreement) or derived from the initial payment. While supplying other parameters, ensure consistency with the initial payment setup. Remember, the amount might differ if your agreement allows for variable amounts.
 
-    Use the received `session_id` and the token from the last payment to charge the payer by calling the [AutoDebit API](auto-debit.md#api-schema-reference). This call will yield one of two responses: `success` or `failure`.
+#### Request:&#x20;
 
-    * **Success:** If you receive a success response, it indicates that the payment was processed successfully. You can then notify the payer about the successful payment.
-    * **Failure:** In the event of a failed payment, notify the payer about the payment failure and provide the reason, which will be sent to you by Ottu. At this stage, update the payment `session_id` by calling the [Checkout API](checkout-api.md) again and provide both the [expiration\_time](checkout-api.md#expiration\_time-string-optional) and [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) parameters to set a grace period for the customer, for example, 3 days. While waiting for the customer to attempt a manual payment, it’s recommended to try charging again after 24 hours, in case the customer has added funds or resolved the issue with their card.\
+```json
+{
+   "type":"e_commerce",
+   "pg_codes":[
+      "credit-card"
+   ],
+   "customer_id":"cust_123",
+   "amount":"19",
+   "agreement":{
+      "id":"A123456789",
+      "amount_variability":"fixed",
+      "start_date":"13/12/2023",
+      "expiry_date":"01/10/2024",
+      "cycle_interval_days":1,
+      "total_cycles":1,
+      "frequency":"daily",
+      "type":"recurring",
+      "seller":{
+         "name":"Test-auto-debit",
+         "short_name":"Test",
+         "category_code":"1234"
+      }
+   },
+   "payment_type":"auto_debit",
+   "currency_code":"KWD"
+}
+```
 
+#### Response:
 
-    ```json
-    POST: https://<ottu-url>/b/pbl/v2/auto-debit/
-    {
-      "session_id": "sess_123",
-      "token": "token_123"
-    }
-    ```
+```json
+{
+   "agreement":{
+      "id":"A123456789",
+      "amount_variability":"fixed",
+      "start_date":"13/12/2023",
+      "expiry_date":"01/10/2024",
+      "cycle_interval_days":1,
+      "total_cycles":1,
+      "frequency":"daily",
+      "type":"recurring",
+      "seller":{
+         "name":"Test-auto-debit",
+         "short_name":"Test",
+         "category_code":"1234"
+      }
+   },
+   "amount":"19.000",
+   "card_acceptance_criteria":{
+      "min_expiry_time":30
+   },
+   "checkout_url":"https://sandbox.ottu.net/b/checkout/redirect/start/?session_id=19aa7cd3cfc43d9d7641f6c433767b25cbcd6c18",
+   "currency_code":"KWD",
+   "customer_id":"cust_123",
+   "due_datetime":"13/12/2023 13:41:29",
+   "expiration_time":"1 00:00:00",
+   "language":"en",
+   "operation":"purchase",
+   "payment_methods":[
+      {
+         "code":"credit-card",
+         "name":"Credit Card",
+         "pg":"Ottu PG",
+         "type":"sandbox",
+         "amount":"19.000",
+         "currency_code":"KWD",
+         "fee":"0.000",
+         "fee_description":"",
+         "icon":"https://sandbox.ottu.net/media/gateway/settings/logos/MASTER_q6sxwtA_md4lBKv.jpeg",
+         "flow":"redirect",
+         "redirect_url":"https://pg.ottu.dev/checkout/c2FuZGJveC5vdHR1Lm5ldA==/Z0FBQUFBQmxlYlNLWDB"
+      }
+   ],
+   "payment_type":"auto_debit",
+   "pg_codes":["credit-card"],
+   "session_id":"19aa7cd3cfc43d9d7641f6c433767b25cbcd6c18",
+   "state":"created",
+   "type":"e_commerce"
+}
+```
 
+#### 3. [Retrieve the `session_id`](auto-debit.md#id-3.-retrieve-the-session\_id)
 
-5.  #### [Payer's Manual Action](auto-debit.md#payers-manual-action)
+The [Checkout API](checkout-api.md) call will return a [session\_id](checkout-api.md#session\_id-string-mandatory). This ID is crucial for the next step in the process.\
+`"session_id": "`19aa7cd3cfc43d9d7641f6c433767b25cbcd6c18`"`\
+`"token": "9923965822244314"`
 
-    If the `auto-debit` fails, the payer must be notified that they need to action the payment manually using the provided [checkout\_url](checkout-api.md#checkout\_url-string-mandatory). When they access the link, they will be directed to make the payment, which can be done using an existing card or by entering a new card’s details.
+#### 4. [Initiate the `AutoDebit API` Call](auto-debit.md#id-4.-initiate-the-autodebit-api-call)
+
+Use the received `session_id` and the token from the last payment to charge the payer by calling the [AutoDebit API](auto-debit.md#api-schema-reference). This call will yield one of two responses: `success` or `failure`.
+
+* **Success:** If you receive a success response, it indicates that the payment was processed successfully. You can then notify the payer about the successful payment.
+* **Failure:** In the event of a failed payment, notify the payer about the payment failure and provide the reason, which will be sent to you by Ottu. At this stage, update the payment `session_id` by calling the [Checkout API](checkout-api.md) again and provide both the [expiration\_time](checkout-api.md#expiration\_time-string-optional) and [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) parameters to set a grace period for the customer, for example, 3 days. While waiting for the customer to attempt a manual payment, it’s recommended to try charging again after 24 hours, in case the customer has added funds or resolved the issue with their card.
+
+#### Request:
+
+```json
+POST: https://<ottu-url>/b/pbl/v2/auto-debit/
+{
+    "session_id":"19aa7cd3cfc43d9d7641f6c433767b25cbcd6c18",
+    "token":"9923965822244314"
+}
+```
+
+#### Response:
+
+```json
+{
+   "agreement":{
+      "id":"A123456789",
+      "amount_variability":"fixed",
+      "start_date":"2023-12-13",
+      "expiry_date":"2024-10-01",
+      "cycle_interval_days":1,
+      "total_cycles":1,
+      "frequency":"daily",
+      "type":"recurring",
+      "seller":{
+         "name":"Test-auto-debit",
+         "short_name":"Test",
+         "category_code":"1234"
+      }
+   },
+   "amount":"19.000",
+   "amount_details":{
+      "currency_code":"KWD",
+      "amount":"19.000",
+      "total":"19.000",
+      "fee":"0.000"
+   },
+   "card_acceptance_criteria":{
+      "min_expiry_time":30
+   },
+   "currency_code":"KWD",
+   "customer_id":"cust_123",
+   "fee":"0.000 KWD",
+   "gateway_account":"credit-card",
+   "gateway_name":"mpgs",
+   "gateway_response":{
+      "It will contain the raw pg response sent by the pg to Ottu"
+   },
+   "initiator":{},
+   "is_sandbox":true,
+   "paid_amount":"19.000",
+   "payment_type":"auto_debit",
+   "reference_number":"sandboxAQ5UT",
+   "result":"success",
+   "session_id":"19aa7cd3cfc43d9d7641f6c433767b25cbcd6c18",
+   "settled_amount":"19.000",
+   "signature":"9a2043*****************",
+   "state":"paid",
+   "timestamp_utc":"2023-12-13 13:42:35",
+   "token":{
+      "customer_id":"cust_123",
+      "brand":"VISA",
+      "name_on_card":"test-card",
+      "number":"**** 1019",
+      "expiry_month":"01",
+      "expiry_year":"39",
+      "token":"992*********",
+      "pg_code":"credit-card",
+      "is_preferred":true,
+      "is_expired":false,
+      "will_expire_soon":false,
+      "cvv_required":true,
+      "agreements":[
+         "k3",
+         "A123456789"
+      ]
+   }
+}
+```
+
+#### 5. [Payer's Manual Action](auto-debit.md#id-5.-payers-manual-action)
+
+If the `auto-debit` fails, the payer must be notified that they need to action the payment manually using the provided [checkout\_url](checkout-api.md#checkout\_url-string-mandatory). When they access the link, they will be directed to make the payment, which can be done using an existing card or by entering a new card’s details.
 
 ### [Updating Card Information for Auto-Debit Payments](auto-debit.md#updating-card-information-for-auto-debit-payments)
 
@@ -317,7 +518,7 @@ It's essential to remember that any change to the card associated with an auto-d
 * **Completion:** Like in the previous scenario, any new card details are shared with your system through a [webhook](webhooks/). Make sure your system is primed to record this update.
 
 {% hint style="info" %}
-The above examples are illustrative and the actual API calls would depend on the specific configuration of your Ottu setup
+The above examples are illustrative and the actual API calls would depend on the specific configuration of your Ottu setup.
 {% endhint %}
 
 ## [Best Practices](auto-debit.md#best-practices)

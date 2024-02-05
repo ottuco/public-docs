@@ -60,7 +60,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 2. Click on Add Domain
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 3. Enter the domain URL you want to register and click Save.
 

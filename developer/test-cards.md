@@ -128,6 +128,24 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 </details>
 
+### [Checkout.com](test-cards.md#checkout.com)
+
+<details>
+
+<summary><mark style="color:orange;">Checkout.com</mark></summary>
+
+**Card type:** VISA
+
+**Country:** GB
+
+**Card number:** `4242424242424242`
+
+**Expiry :** 05/25
+
+**CVV:** 100         &#x20;
+
+</details>
+
 ### [FSS](test-cards.md#fss)
 
 <details>

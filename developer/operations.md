@@ -67,7 +67,7 @@ Remember to assign the relevant permissions to your users based on the operation
 
 Internal operations are actions performed directly on Ottu’s system level, affecting the status of transactions without interacting with external payment gateways. They provide control over transaction lifecycles and data management.
 
-### [Cancel](operations.md#cancel-1)
+### [Cancel](operations.md#cancel)
 
 The Payment Cancel operation is employed to halt a payment process in progress. It’s applicable to transactions in the following states:
 
@@ -78,7 +78,7 @@ The Payment Cancel operation is employed to halt a payment process in progress. 
 
 This operation provides a means for a merchant to stop a payment process that hasn’t reached its completion.
 
-### [Expire](operations.md#expire-1)
+### [Expire](operations.md#expire)
 
 The Expire operation is used to automatically invalidate a payment transaction that hasn’t been completed within a certain period of time. This operation targets transactions in these states:
 
@@ -99,15 +99,19 @@ The Delete operation allows for the removal of transactions that are no longer n
 
 External operations involve communication with [payment gateways](../user-guide/payment-gateway.md), aiming to modify the state of transactions on the payment gateway’s side. These operations provide additional control over the payment lifecycle by allowing further actions after initial payment authorization. They include Capture, Refund, and Void operations. Not all payment gateways support all operations. Check [here](../user-guide/payment-gateway.md#available-operations) to see which operations are supported by each payment gateway.
 
-### [Capture](operations.md#capture-1)
+### [Capture](operations.md#capture)
 
 The Capture operation is a function that lets merchants secure authorized funds for transactions that haven’t yet been settled. This operation can only be performed on transactions in the `authorized` state. Merchants can opt to capture the full authorized amount or just a portion of it, however, capturing more than the authorized amount is not possible. If the operation is successful, a [child transaction](../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) linked to the original payment transaction is created, which contains the details of the capture operation. Child transactions can be tracked in the [Child Transaction Table](../user-guide/payment-tracking/payment-transactions-insights.md#transaction-table).
 
-### [Refund](operations.md#refund-1)
+### [Refund](operations.md#refund)
 
-The Refund operation enables merchants to refund previously captured or paid transactions, effectively returning funds back to the customer’s account when necessary. To carry out a refund on an authorized payment transaction, a prior [capture ](operations.md#capture)operation must have been completed and the captured amount must be sufficient to cover the refund. For `paid` transactions, the refund amount should not exceed the paid amount. The refund can be done either fully or partially. Just like the Capture operation, a successful refund operation creates a [child transaction](../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) linked to the original payment transaction, containing all the details related to the refund. Ottu also offers an [approval feature](../user-guide/plugins/features/two-step-refund-and-void-authorization.md) for refund operations, enabling merchants to assign a checker role to specific staff members. This checker can approve or reject any refund requests, thus preventing unauthorized or fraudulent refunds.
+The Refund operation enables merchants to refund previously captured or paid transactions, effectively returning funds back to the customer’s account when necessary. To carry out a refund on an authorized payment transaction, a prior [capture ](operations.md#capture)operation must have been completed and the captured amount must be sufficient to cover the refund. For paid transactions, the refund amount should not exceed the paid amount. The refund can be done either fully or partially.
 
-### [Void](operations.md#void-1)
+Just like the Capture operation, a successful refund operation creates a [child transaction](../user-guide/payment-tracking/payment-transactions-states.md#child-payment-transaction) linked to the [parent transaction](../user-guide/payment-tracking/payment-transactions-states.md#parent-payment-transaction), containing all the details related to the refund. Ottu also offers an [approval feature](../user-guide/plugins/features/two-step-refund-and-void-authorization.md) for refund operations, enabling merchants to assign a checker role to specific staff members. This checker can approve or reject any refund requests, thus preventing unauthorized or fraudulent refunds.
+
+Additionally, Ottu provides an `extra` object field, which is optional and serves to specify additional parameters for the operation. This field is generally utilized to support the Instant Fund Gratification (IFG) feature. IFG refers to a capability where refunds are processed instantly or very quickly following a transaction cancellation or return request.
+
+### [Void](operations.md#void)
 
 The Void operation allows merchants to cancel an `authorized` payment transaction before a capture operation is performed. This means that the transaction won’t be captured and the customer will not be charged. The Void operation is strictly applicable to transactions in the `authorized`state.
 
@@ -218,8 +222,8 @@ For a more detailed technical understanding and the implementation specifics of 
 
 ## [Operation API Schema Reference](operations.md#operation-api-schema-reference)
 
-{% swagger src="../.gitbook/assets/Ottu API (37).yaml" path="/b/pbl/v2/operation/" method="post" %}
-[Ottu API (37).yaml](<../.gitbook/assets/Ottu API (37).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (47).yaml" path="/b/pbl/v2/operation/" method="post" %}
+[Ottu API (47).yaml](<../.gitbook/assets/Ottu API (47).yaml>)
 {% endswagger %}
 
 {% hint style="warning" %}

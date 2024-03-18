@@ -25,12 +25,12 @@ Before you can integrate with Ottu's `Invoice API`, several prerequisites need t
 
 #### How `round` funtion works?
 
-In order to ensure the precision and consistency of the financial calculations across various international transactions, Ottu relies on a standardized rounding method known as "[ROUND\_HALF\_UP](https://docs.python.org/3.8/library/decimal.html#decimal.ROUND\_HALF\_UP)" from Python. This method adheres to specific standards established by reputable international organizations:
+In order to ensure the precision and consistency of the financial calculations across various international transactions, Ottu relies on a standardized rounding method known as [ROUND\_HALF\_UP](https://docs.python.org/3.8/library/decimal.html#decimal.ROUND\_HALF\_UP) from Python. This method adheres to specific standards established by reputable international organizations:
 
 * [**SIX Financial Information:** ](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=current-historical-lists)Ottu relies on currency decimal specifications provided by the SIX Group through SIX Financial Information.
 * [**ISO 4217 Currency Codes:**](https://www.iso.org/iso-4217-currency-codes.html) ISO 4217 provides currency codes and their corresponding minor units, indicating the decimal precision.
 
-The "`ROUND_HALF_UP`" method follows a careful procedure to ensure precision:
+The `ROUND_HALF_UP` method follows a careful procedure to ensure precision:
 
 1. Establish Precision: Begin by determining the number of decimal digits permitted for the currency involved, according to [**ISO 4217 Currency Codes**](https://www.iso.org/iso-4217-currency-codes.html)**.**
 2. Identify the Rounding Digit: Locate the digit immediately to the right of the desired precision. This digit is pivotal in determining the rounding outcome.

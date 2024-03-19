@@ -147,10 +147,11 @@ Details at the item level are encapsulated within the `invoice_items` object. Th
 
 * For optional properties, if they are not relevant, exclude them entirely from the payload. Avoid sending null or zero values; it's better to omit the property altogether if unnecessary.
 * All rate or percentage-related fields are limited to two decimal places. For other monetary fields, the number of decimal places is determined by the currency of the invoice, generally according to [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html).&#x20;
-* The `Invoice API` differs from the [Checkout API](checkout-api.md) in that it does not support the [`PATCH`](checkout-api.md#update-payment-transaction) method. Once an invoice is created, it is immutable and cannot be modified. Should any updates be necessary, a new invoice must be created in place of the original.\
+* The `Invoice API` differs from the [Checkout API](checkout-api.md) in that it does not support the [`PATCH`](checkout-api.md#update-payment-transaction) method. Once an invoice is created, it is immutable and cannot be modified. Should any updates be necessary, a new invoice must be created in place of the original.
 
-
-For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the API Schema Reference section below.
+{% swagger src="../.gitbook/assets/Ottu API (48).yaml" path="/b/invoice/v1/invoice/" method="post" %}
+[Ottu API (48).yaml](<../.gitbook/assets/Ottu API (48).yaml>)
+{% endswagger %}
 
 ## [Guide: Step by Step](invoice-api.md#guide-step-by-step)
 

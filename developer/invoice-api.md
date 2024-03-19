@@ -8,7 +8,7 @@ Ottu provides businesses and developers with the capability to incorporate its I
 
 Imagine you're a business owner selling a range of products online. As orders pour in, you're faced with the arduous task of creating, sending, and tracking invoices manually. This not only consumes precious time but can also lead to errors, missed payments, and dissatisfied customers.
 
-With Ottu's advanced `Invoice API`, these challenges become a thing of the past. This robust system automates invoicing, ensuring timely dispatch, clear communication, and streamlined payment collection. Whether you're billing for a one-time purchase, tracking bulk orders, or managing advance payments, the I`nvoice API` has got you covered. Through its intuitive integration, you can elevate the efficiency of your business operations and enhance the overall customer experience.
+With Ottu's advanced `Invoice API`, these challenges become a thing of the past. This robust system automates invoicing, ensuring timely dispatch, clear communication, and streamlined payment collection. Whether you're billing for a one-time purchase, tracking bulk orders, or managing advance payments, the `Invoice API` has got you covered. Through its intuitive integration, you can elevate the efficiency of your business operations and enhance the overall customer experience.
 
 Additionally, it's worth noting that this API bears significant similarities to Ottu's [Checkout API,](checkout-api.md) offering seamless integration and familiarity for businesses already leveraging Ottu's suite of tools.
 

@@ -48,26 +48,35 @@ We understand that choosing the appropriate payment method or gateway (PG) can b
 This process is done in total security to keep our clients’ confidentiality and meet their expectations with awareness to the secretness of the information.
 {% endhint %}
 
-### [Creating Payment Request](./#creating-payment-request)
+## [Creating Payment Request](./#creating-payment-request)
+
+In today's fast-paced digital world, efficiency and simplicity in payment processing are more crucial than ever.&#x20;
+
+Ottu empowers merchants with the ability to swiftly generate payment request links directly from the Ottu dashboard. This streamlined process not only facilitates a smoother transaction experience but also ensures that you, as a merchant, can efficiently manage and track payment requests with ease.
+
+The merchant just needs to navigate to the **Payment Request** section within Ottu dashboard and select the **Create** option to unveils a comprehensive form. This form serves as the cornerstone of your payment request creation, requiring specific details to tailor the request to your needs and those of your customers. The [subsequent section](./#payment-request-form-fields) will delve deeper into each component of the form, offering step-by-step guidance to ensure you are well-equipped to utilize this powerful feature effectively.&#x20;
+
+By following this process, you can enhance customer satisfaction through a seamless payment experience, thereby reinforcing the reliability and professionalism of your services. Stay tuned for detailed insights that will navigate you through each step of creating a payment request, setting the stage for a successful transaction journey.
 
 ![](<.gitbook/assets/Creating PaymentRequest.gif>)
 
-## [Payment Request Form Fields](./#payment-request-form-fields)
+### [Payment Request Form Fields](./#payment-request-form-fields)
 
 #### Fill in the form, the following fields are required.
 
 <table data-header-hidden><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Field</strong></mark></td><td><mark style="color:blue;"><strong>Input</strong></mark></td><td></td></tr><tr><td>Amount:</td><td>10 KWD</td><td></td></tr><tr><td>Currency:</td><td>Kuwaiti Dinar (KWD)</td><td></td></tr><tr><td>Gateway:</td><td>KNET (purchase)</td><td></td></tr><tr><td>Language:</td><td>English</td><td></td></tr><tr><td>Email:</td><td>developer@&#x3C;ottu-url>.com</td><td></td></tr><tr><td>First name:</td><td>first name</td><td></td></tr><tr><td>Last name:</td><td>family name</td><td></td></tr></tbody></table>
 
-#### Then, navigate to the Generated URL
+After completing the required fields as demonstrated in the table above, the merchant can proceed by submitting the form. Following submission, a payment URL will be generated, as illustrated in the figure below.
 
 ![](<.gitbook/assets/Generated (2).gif>)
 
-The URL will direct you to the page below.
+The generated URL can be shared with the customer, enabling him to proceed to the checkout page and complete the payment.
 
 ![](<.gitbook/assets/Checkout (2).png>)
 
-Once you click the (Pay Now) button, you will be redirected to the bank page, where you can enter your card details and submit your payment.\
-And congratulations! You have completed your first transaction using Ottu! It is that easy!
+Once the customer clicks on the **Pay Now** button, he will be redirected to the bank's page, where he can enter his card details and submit his payment.
+
+Congratulations! Your first transaction using Ottu has been completed successfully! It's that easy!
 
 ![](<.gitbook/assets/Checkout Done (1).png>)
 

@@ -39,3 +39,72 @@ Configuring the payment request plugin is straightforward and user-friendly, tha
      * Add both built-in and custom fields to personalize the plugin further.
 
 By following these steps, merchants can tailor the payment request plugin to meet their specific needs, enhancing both security and user experience.
+
+## [Plugin Fields Configuration ](payment-request.md#plugin-fields-configuration)
+
+The Payment Request plugin offers the ability to add new fields and to customize already existing built-in fields.
+
+Adding Custom (new) or Builtin fields can be done effortlessly by the following three steps:
+
+**Step 1: Go** **to** Ottu Dashboard > Administration Panel > Payment Request> Fields&#x20;
+
+**Step 2: Click** on **Add another Field**&#x20;
+
+**Step 3:** Complete the information below and proceed to save.
+
+#### **Type:**
+
+The type of the added field can be categorized as either “Custom” or “Builtin”.
+
+#### **Itinerary Display:**
+
+If checked, the new added field will be shown in the “schedule table” or “planning table” (itinerary table) within the invoice PDF.
+
+#### **Display Section:**&#x20;
+
+It determines the placement of the newly added field on the checkout page. \
+Available options include Order Description, From.
+
+#### **Is active?:**&#x20;
+
+It allows for the control and management of the newly added field on a site or platform, providing the ability to enable or disable its usage and visibility.
+
+#### **Required?:**&#x20;
+
+It determines whether a newly added field is mandatory or optional.
+
+#### **Validator:**&#x20;
+
+It imposes constraints or rules on the new field's value. It ensures that the provided value meet certain requirements or conditions specified by the validator.
+
+#### **Field:**&#x20;
+
+A drop-down list of predefined fields. It is presented when the Builtin type is selected in the [Type](payment-request.md#type) parameter.
+
+#### **Order:**&#x20;
+
+It determines the display positioning of the fields within the same section.
+
+#### **Placeholder \[en]:**&#x20;
+
+It provides guidance or an example of the expected input, helping users understand what information is required or the format it should take. (Should be In English).
+
+#### **Placeholder \[ar]:**&#x20;
+
+It provides guidance or an example of the expected input, helping users understand what information is required or the format it should take. (Should be In Arabic).
+
+If the [Type](payment-request.md#type) is marked as “Custom”, the [Field](payment-request.md#field) parameter will disappear, and the following fields will be displayed for filling:
+
+#### **Name:**
+
+&#x20;`HTML` field name utilized solely for backend validation. It will not be visible anywhere.
+
+#### **Label \[en]:**&#x20;
+
+Custom field's label in English.
+
+#### **Label \[ar]:**&#x20;
+
+Custom field's label in Arabic.
+
+<figure><img src="../../.gitbook/assets/plugin fields.gif" alt=""><figcaption></figcaption></figure>

@@ -85,9 +85,3 @@ Gain a comprehensive overview of your business's financial performance with thes
 Dive deeper into your transaction details using the table located at the bottom of the page. This comprehensive overview not only displays information about each transaction process but also showcases the state of each transaction. The transaction states you may encounter include: `paid`, `failed`, `attempted`, and `created`. See the [payment transaction states](payment-tracking/payment-transactions-states.md#payment-states) for more information.
 
 ![](<../.gitbook/assets/11 (3).png>)
-
-## [Payment request<img src="../.gitbook/assets/test (1).png" alt="" data-size="line">](plugins/#payment-request)
-
-## [Bulk payment request<img src="../.gitbook/assets/test (1).png" alt="" data-size="line">](plugins/#bulk-payment-request)
-
-## [E-commerce<img src="../.gitbook/assets/test (1).png" alt="" data-size="line">](plugins/#e-commerce)

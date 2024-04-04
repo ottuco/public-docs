@@ -1,10 +1,10 @@
 # E-Commerce
 
-## [Introduction](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/616/user-guide/plugins/e-commerce#introduction)
+## [Introduction](e-commerce.md#introduction)
 
 Unlock the full potential of your online business with Ottu's powerful e-commerce plugin. It empowers merchants, streamlines transactions, and ensures seamless payments for your products.
 
-## [**Key Features of Ottu E-commerce**](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/616/user-guide/plugins/e-commerce#key-features-of-ottu-e-commerce)
+## [**Key Features of Ottu E-commerce**](e-commerce.md#key-features-of-ottu-e-commerce)
 
 * **Comprehensive Transaction Tracking:** Keep a close eye on all your e-commerce business transactions with ease.
 * **Seamless Payment Integration:** Create a seamless payment experience by integrating with popular e-commerce suites.

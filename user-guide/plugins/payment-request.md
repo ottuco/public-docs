@@ -52,7 +52,7 @@ Adding Custom (new) or Built-in fields can be done effortlessly by the following
 
 *   #### **Type:**
 
-    The type of the added field can be categorized as either “Custom” or “Builtin”.
+    The type of the added field can be categorized as either **Custom** or **Builtin**.
 *   #### **Itinerary Display:**
 
     If checked, the new added field will be shown in the “schedule table” or “planning table” (itinerary table) within the invoice PDF.

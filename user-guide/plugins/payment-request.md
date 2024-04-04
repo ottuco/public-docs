@@ -36,7 +36,7 @@ Configuring the payment request plugin is straightforward and user-friendly, tha
    * #### **Plugin**:
      * Customize further with options like Code Pairing, Notification, and Multi-Step Checkout.
    * #### **Fields**:
-     * Add both built-in and custom fields to personalize the plugin further.
+     * Add both built-in and custom fields to personalize the plugin further. Please check [next section](payment-request.md#plugin-fields-configuration) for more information.
 
 By following these steps, merchants can tailor the payment request plugin to meet their specific needs, enhancing both security and user experience.
 

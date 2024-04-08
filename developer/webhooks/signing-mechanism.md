@@ -185,25 +185,50 @@ echo generateHmacSignature($payload, $hmacKey);
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SignatureGenerator {
 
     public static String generateHmacSignature(Map<String, String> payload, String hmacKey) throws Exception {
         String[] keys = {
-            "amount", "currency_code", "customer_first_name",
-            // ... [add all the other keys here] ...
-            "reference_number", "result", "state"
+            "amount",
+            "currency_code",
+            "customer_first_name",
+            "customer_last_name",
+            "customer_email",
+            "customer_phone",
+            "customer_address_line1",
+            "customer_address_line2",
+            "customer_address_city",
+            "customer_address_state",
+            "customer_address_country",
+            "customer_address_postal_code",
+            "gateway_name",
+            "gateway_account",
+            "order_no",
+            "reference_number",
+            "result",
+            "state",
         };
 
+        List<String> sortedKeys = new ArrayList<>();
         StringBuilder message = new StringBuilder();
         for (String key : keys) {
             if (payload.containsKey(key) && !payload.get(key).isEmpty()) {
-                message.append(key).append(payload.get(key));
+              sortedKeys.add(key);
             }
         }
+        Collections.sort(sortedKeys);
+        for (String key : sortedKeys) 
+        {
+              message.append(key).append(payload.get(key));
+        } 
 
+ 
         Mac sha256HMAC = Mac.getInstance("HmacSHA256");
         SecretKeySpec secretKey = new SecretKeySpec(hmacKey.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
         sha256HMAC.init(secretKey);
@@ -223,6 +248,7 @@ public class SignatureGenerator {
         payload.put("customer_first_name", "example-customer");
 
         String hmacKey = "pu9MpX3yPR";
+        
         System.out.println(generateHmacSignature(payload, hmacKey));
     }
 }

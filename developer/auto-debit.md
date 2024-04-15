@@ -405,8 +405,9 @@ For subsequent payments, generate a new [session\_id](checkout-api.md#session\_i
 #### 3. [Retrieve the `session_id`](auto-debit.md#id-3.-retrieve-the-session\_id)
 
 The [Checkout API](checkout-api.md) call will return a [session\_id](checkout-api.md#session\_id-string-mandatory). This ID is crucial for the next step in the process.\
-`session_id`: `19aa7cd3cfc43d9d7641f6c433767b25cbcd6c18`\
-`token`: `9923965822244314`
+`session_id`: `19aa7cd3cfc43d9d7641f6c433767b25cbcd6c18`.
+
+`token`: `9923965822244314`.
 
 #### 4. [Initiate the `AutoDebit API` Call](auto-debit.md#id-4.-initiate-the-autodebit-api-call)
 

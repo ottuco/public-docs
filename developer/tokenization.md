@@ -1,6 +1,6 @@
 # Tokenization
 
-## [Tokenization](tokenization.md#tokenization)
+## [Introduction](tokenization.md#introduction)
 
 Tokenization significantly reduces the risk associated with handling sensitive customer card data. Instead of storing the actual card details, a unique token is generated and used for future transactions, thus enhancing the security of your payment processes. This feature is currently compatible with MasterCard, Visa, and STC Pay, with further options planned for future inclusion.
 
@@ -44,7 +44,7 @@ Tokenization involves a series of steps designed to securely capture and convert
 
 1.  **Request Submission**:
 
-    Merchant initiates the tokenization process by sending a request to the Ottu `Checkout API`. This request must specify the `customer_id,` `payment_type` as `save_card`, `amount` as `0,` and any other required parameters. Please refer to the [Checkout API](checkout-api.md) section for detailed information on the required `Checkout API` parameters.
+    Merchant initiates the tokenization process by sending a request to the Ottu `Checkout API`. This request must specify the `customer_id,` `payment_type` as `save_card`, `amount` as `0`, and any other required parameters. Please refer to the [Checkout API](checkout-api.md) section for detailed information on the required `Checkout API` parameters.
 2.  **Payment URL Generation**:
 
     Upon receiving the tokenization request, Ottu generates a [checkout\_url](checkout-api.md#checkout\_url-string-mandatory).
@@ -71,7 +71,7 @@ Getting started with simplifying your checkout process through tokenization is s
 
 #### **1. Create a Payment Link**
 
-Create a payment link through the [Checkout API](checkout-api.md), ensuring to include the [customer\_id](checkout-api.md#customer\_id-string-optional) parameter. Additionally, verify that the [pg\_code](checkout-api.md#pg\_codes-array-required) you are using supports tokenization.
+Create a payment link through the [Checkout API](checkout-api.md), ensuring to include the [customer\_id](checkout-api.md#customer\_id-string-optional) parameter. Additionally, verify that the [pg\_codes](checkout-api.md#pg\_codes-array-required) you are using supports tokenization.
 
 **Request Payload Example:**
 
@@ -152,7 +152,7 @@ Simplifying your checkout process with tokenization is easy with Ottu. Here’s 
 
 #### **1. Create a Payment Link**
 
-The first step involves creating a payment link via the [Checkout API](checkout-api.md). Make sure to include the [customer\_id](checkout-api.md#customer\_id-string-optional) parameter, and the [pg\_code](checkout-api.md#pg\_codes-array-required) you’re using is enabled for tokenization.\
+The first step involves creating a payment link via the [Checkout API](checkout-api.md). Make sure to include the [customer\_id](checkout-api.md#customer\_id-string-optional) parameter, and the [pg\_codes](checkout-api.md#pg\_codes-array-required) you’re using is enabled for tokenization.\
 Request Example:
 
 ```json

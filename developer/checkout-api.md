@@ -347,8 +347,11 @@ The list of payment gateway codes from which a customer can select to perform th
 
 #### [payment\_type](checkout-api.md#payment\_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-**Enum:** "`one_off`" , "`auto_debit`"\
-Type of payment. Choose `one_off` for payments that occur only once without future commitments. Choose `auto_debit` for payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](auto-debit.md).\
+**Enum:** "`one_off`" , "`auto_debit`", or `save_card`
+
+* &#x20;`one_off` : For payments that occur only once without future commitments.&#x20;
+* `save_card` : To indicates that the transaction is for the purpose of saving the card information. For additional information, please refer to the [Tokenization without Payment](tokenization.md#tokenization-without-payment) document. &#x20;
+* &#x20;`auto_debit` : For payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](auto-debit.md).\
 
 
 If `auto_debit` is selected:
@@ -872,15 +875,15 @@ When we add [notification](checkout-api.md#notifications-object-optional) we sho
 
 ```
 
-{% swagger method="patch" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="Update Payment" %}
-{% swagger-description %}
+## Update Payment
 
-{% endswagger-description %}
+<mark style="color:purple;">`PATCH`</mark> `https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}`
 
-{% swagger-parameter in="header" required="true" name="Authorization" type="API key" %}
-Api-Key \{{api\_key\}}
-{% endswagger-parameter %}
-{% endswagger %}
+#### Headers
+
+| Name                                            | Type    | Description            |
+| ----------------------------------------------- | ------- | ---------------------- |
+| Authorization<mark style="color:red;">\*</mark> | API key | Api-Key \{{api\_key\}} |
 
 #### [Update Payment Transaction ](checkout-api.md#update-payment-transaction)
 
@@ -890,11 +893,9 @@ Using a patch function is a good method of increasing trustability whenever any 
 
 All the same fields from [create request](checkout-api.md#create-payment-transaction) can be used. The type of update is partial. But some fields can be cross-validated and require other fields to be provided.
 
-{% swagger method="get" path="" baseUrl="https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}" summary="Retrieve Payment" %}
-{% swagger-description %}
+## Retrieve Payment
 
-{% endswagger-description %}
-{% endswagger %}
+<mark style="color:blue;">`GET`</mark> `https://<ottu-url>/b/checkout/v1/pymt-txn/{session_id}`
 
 #### [Retrieve Payment Transaction](checkout-api.md#retrieve-payment-transaction)
 

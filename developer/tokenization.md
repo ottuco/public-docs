@@ -12,14 +12,14 @@ Just like a vault secures precious jewels by keeping them out of sight and repla
 
 With Ottu, we handle this complexity, so you don’t have to! To activate tokenization or for any inquiries, KSA merchants can reach us at [support@ottu.com](mailto:support@ottu.com).
 
-## [How to Add new Card](tokenization.md#how-to-add-new-card)
+## [How to Add New Card](tokenization.md#how-to-add-new-card)
 
 Ottu provides two distinct methods for merchants to add a new card to a customer's profile, catering to different scenarios and requirements. These methods are:
 
 1. **Adding a New Card Without Payment**: This approach is designed for situations where you want to store a customer's card details for future transactions without charging them at the moment of addition. It's especially useful for streamlining the checkout process for repeat customers, enhancing the user experience by removing the need to enter card details for every purchase. Please check [here](tokenization.md#tokenization-without-payment) for mroe details.
 2. **Adding a New Card With Payment**: Conversely, this method allows merchants to add a customer's card details to their profile while simultaneously processing a payment. This is suitable for instances where immediate payment is required, but the customer also prefers to save their card details for future convenience. Please check [here](tokenization.md#tokenization-with-payment) for more information.
 
-## [Tokenization without payment](tokenization.md#tokenization-without-payment)
+## [Tokenization without Payment](tokenization.md#tokenization-without-payment)
 
 It offers a streamlined way for merchants to securely add a new card to a specific customer's profile without conducting an actual payment transaction. This capability is particularly useful for creating a more efficient and user-friendly payment process, allowing for the future use of saved card details without requiring customers to re-enter their information for every transaction.
 

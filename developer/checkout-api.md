@@ -155,7 +155,7 @@ Min value: 0.01
 Attachments can be included as an optional feature in email notifications sent to the customer regarding their payment. These attachments will also be available for download on the checkout page. The primary purpose of this field is to provide the customer with additional information or documentation related to their purchase. However, it's important to note the following:
 
 * Attachments should be sent using the [multipart/form-data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using\_FormData\_Objects) encoding type. Ensure that you change the content type to `multipart/form-data` when sending attachments. They cannot be sent using [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/JSON) encoding.
-* Allowed file extensions for attachments are: "pdf", "jpeg", "png", "doc", "docx", "jpg", "xls", "xlsx", and "txt".
+* Allowed file extensions for attachments include: PDF, JPEG, PNG, DOC, DOCX, JPG, XLS, XLSX, and TXT.
 * The name of the attached file should not exceed 100 characters.
 
 #### [**billing\_address**](checkout-api.md#billing\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -307,12 +307,12 @@ Max length: 2.
 
 #### [**mode**](checkout-api.md#mode-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Default: “payment”.\
-Value: “payment”.
+Default: `payment`.\
+Value: `payment`.
 
 #### [**notifications**](checkout-api.md#notifications-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-An object that contains the notification settings for this payment transaction, including SMS and email notifications, as well as the events for which they will be sent (e.g., 'created', 'paid', 'refund', 'canceled', etc.). This field may be used to configure and customize the notifications sent to customers and internal recipients throughout the payment process.
+An object that contains the notification settings for this payment transaction, including SMS and email notifications, as well as the events for which they will be sent (e.g., `created`, `paid`, `refund`, `canceled`, etc.). This field may be used to configure and customize the notifications sent to customers and internal recipients throughout the payment process.
 
 <details>
 
@@ -347,17 +347,16 @@ The list of payment gateway codes from which a customer can select to perform th
 
 #### [payment\_type](checkout-api.md#payment\_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-**Enum:** "`one_off`" , "`auto_debit`", or `save_card`
+**Enum:** `one_off`, `auto_debit`, or `save_card`
 
 * &#x20;`one_off` : For payments that occur only once without future commitments.&#x20;
 * `save_card` : To indicates that the transaction is for the purpose of saving the card information. For additional information, please refer to the [Tokenization without Payment](tokenization.md#tokenization-without-payment) document. &#x20;
-* &#x20;`auto_debit` : For payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](auto-debit.md).\
-
+* &#x20;`auto_debit` : For payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](auto-debit.md).
 
 If `auto_debit` is selected:
 
 1. [agreement](checkout-api.md#agreement-object-conditional) and [customer\_id](checkout-api.md#customer\_id-string-conditional) parameters will also be mandatory.
-2. Only `PG codes` supporting [tokenization](tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments
+2. Only `PG codes` supporting [tokenization](tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments.
 
 #### [**product\_type**](checkout-api.md#product\_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -470,7 +469,7 @@ See the request parameter [agreement](checkout-api.md#agreement-object-optional)
 
 **Presence condition:**
 
-* This parameter should be included when the [payment\_type](checkout-api.md#payment\_type-string-mandatory) is set to "`auto_debit`" On the other hand, it must not be sent when the [payment\_type](checkout-api.md#payment\_type-string-optional) is designated as "`one_off`" Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
+* This parameter should be included when the [payment\_type](checkout-api.md#payment\_type-string-mandatory) is set to `auto_debit` On the other hand, it must not be sent when the [payment\_type](checkout-api.md#payment\_type-string-optional) is designated as `one_off` Importantly, this isn't restricted to just the initial transaction but should be consistently present in all following transactions associated with the "`auto_debit`" payment type.
 
 {% hint style="info" %}
 In certain agreement types, the condition state becomes a required element. For further details on which parameters are mandatory for recurring agreements, please refer [here](auto-debit.md#importance-for-merchants).
@@ -692,9 +691,9 @@ This URL redirects to the payment page.See [redirect\_url](checkout-api.md#redir
 The options of the payment gateway codes included in the request payload to enable customers to make payments.\
 See the request parameter [pg\_codes](checkout-api.md#pg\_codes-array-required) for more information.
 
-#### [payment\_type ](checkout-api.md#payment\_type-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
+#### [payment\_type ](checkout-api.md#payment\_type-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
-It presents options such as "`one_off`" for one-time payments without future obligations and "`auto_debit`" for automated deductions, encompassing recurring subscriptions, installment payments, or unscheduled debits. For further details on the `Auto Debit API` and payment\_type please refer to [Auto-Debit API](auto-debit.md).\
+It presents options such as `one_off` for one-time payments without future obligations and `auto_debit` for automated deductions, encompassing recurring subscriptions, installment payments, or unscheduled debits. For further details on the `Auto Debit API` and payment\_type please refer to [Auto-Debit API](auto-debit.md).\
 Default value: "`one_off`".\
 See the request parameter [payment\_type](checkout-api.md#payment\_type-string-optional) for more information.
 
@@ -713,7 +712,7 @@ A QR code that, when scanned, redirects to the checkout page for this payment. T
 
 **Presence condition:**
 
-* The request parameter [generate\_qr\_code](checkout-api.md#generate\_qr\_code-bool-optional) should be set to "true".
+* The request parameter [generate\_qr\_code](checkout-api.md#generate\_qr\_code-bool-optional) should be set to `true`.
 
 #### [redirect\_url](checkout-api.md#redirect\_url-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
@@ -753,7 +752,7 @@ See the request parameter [shipping\_address](checkout-api.md#shipping\_address-
 #### [**state**](checkout-api.md#state-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 The current state of the payment transaction, it helps to understand the progress of the payment.\
-Enum: "created" "pending" "attempted" "authorized" "paid" "failed" "canceled" "expired" "invalided" "refunded" "cod".\
+Enum: `created` , `pending` , `attempted` , `authorized` , `paid` , `failed` , `canceled` , `expired` , `invalided` ,`refunded` , `cod`.\
 See [payment transaction state](../user-guide/payment-tracking/#payment-transaction-state-and-payment-attempt-state) for more information.
 
 #### [type](checkout-api.md#type-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_

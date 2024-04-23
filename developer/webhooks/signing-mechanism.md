@@ -373,42 +373,110 @@ puts generate_hmac_signature(payload, hmac_key)
 ```go
 package main
 
-import (
-	"crypto/hmac"
-	"crypto/sha256"
-	"encoding/hex"
-	"fmt"
+import(
+    "crypto/hmac"
+    "crypto/sha256"
+    "encoding/hex"
+    "fmt"
+    "sort"
+    "strings"
 )
 
-func generateHmacSignature(payload map[string]string, hmacKey string) string {
-	keys := []string{
-		"amount", "currency_code", "customer_first_name",
-		// ... [add all the other keys here] ...
-		"reference_number", "result", "state",
-	}
+func SignMerchantPayload(payload map[string] interface {}, key string) string {
+    // Define keys in sorted order
+    keys: = [] string {
+        "amount",
+        "currency_code",
+        "customer_email",
+        "customer_first_name",
+        "customer_last_name",
+        "customer_phone",
+        "gateway_account",
+        "gateway_name",
+        "order_no",
+        "reference_number",
+        "result",
+        "state",
+    }
 
-	message := ""
-	for _, key := range keys {
-		if value, ok := payload[key]; ok && value != "" {
-			message += key + value
-		}
-	}
+    // Sort the keys
+    sort.Strings(keys)
 
-	h := hmac.New(sha256.New, []byte(hmacKey))
-	h.Write([]byte(message))
+    // Create the message by concatenating key-value pairs
+    var message strings.Builder
+    for _,
+    k: = range keys {
+        v: = fmt.Sprintf("%v", payload[k]) // Get value as string
+        if v != "" {
+            message.WriteString(k + v)
+        }
+    }
 
-	return hex.EncodeToString(h.Sum(nil))
+    // Generate the HMAC
+    h: = hmac.New(sha256.New, [] byte(key))
+    h.Write([] byte(message.String()))
+    digest: = hex.EncodeToString(h.Sum(nil))
+
+    return digest
 }
 
 func main() {
-	payload := map[string]string{
-		"amount":              "86.000",
-		"currency_code":       "KWD",
-		"customer_first_name": "example-customer",
-	}
-	hmacKey := "pu9MpX3yPR"
+    // Example payload
+    payload: = map[string] interface {} {
+        "amount": "14.000",
+        "amount_details": map[string] interface {} {
+            "currency_code": "KWD",
+            "amount": "14.000",
+            "total": "14.000",
+            "fee": "0.000",
+        },
+        "currency_code": "KWD",
+        "customer_email": "example@gmail.com",
+        "customer_first_name": "name",
+        "customer_id": "1",
+        "customer_last_name": "last name",
+        "customer_phone": "+96500000000",
+        "fee": "0.000 KWD",
+        "gateway_account": "credit-card",
+        "gateway_name": "mpgs",
+        "gateway_response": map[string] interface {} {},
+        "initiator": map[string] interface {} {},
+        "is_sandbox": true,
+        "order_no": "4567f45оkgkh6hjаhjg77hjh5645",
+        "paid_amount": "14.000",
+        "payment_type": "one_off",
+        "pg_params": map[string] interface {} {},
+        "reference_number": "sandboxAQ5DJ",
+        "result": "success",
+        "session_id": "a12f71075a834a34d692736ac43a212fcebfb6ec",
+        "settled_amount": "14.000",
+        "signature": "293023d42eec624fc92b869812a53ee97c98398a80511537deaa27501ff378c3",
+        "state": "paid",
+        "timestamp_utc": "2024-04-17 08:46:21",
+        "token": map[string] interface {} {
+            "customer_id": "1",
+            "brand": "MASTERCARD",
+            "name_on_card": "Test Test",
+            "number": "**** 0008",
+            "expiry_month": "01",
+            "expiry_year": "39",
+            "token": "9491500736137502",
+            "pg_code": "credit-card",
+            "pg": "mpgs",
+            "is_preferred": true,
+            "is_expired": false,
+            "will_expire_soon": false,
+            "cvv_required": true,
+            "agreements": [] interface {} {},
+        },
+    }
 
-	fmt.Println(generateHmacSignature(payload, hmacKey))
+    // Example HMAC key
+    key: = "your_hmac_key"
+
+    // Sign the payload
+    signature: = SignMerchantPayload(payload, key)
+    fmt.Println("Signature:", signature)
 }
 ```
 

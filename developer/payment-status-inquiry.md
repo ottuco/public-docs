@@ -38,7 +38,7 @@ For this API to work efficiently, here are a few things you need to be familiar 
 
 This API endpoint uses both [API-Key](authentication.md#private-key-api-key) and [Basic Authentication](authentication.md#basic-authentication). No special permissions are required for Basic Authentication.
 
-### [How it Works](payment-status-inquiry.md#how-it-works)
+### [How it Works](payment-status-inquiry.md#how-it-works-1)
 
 1.  Payment Status Inquiry for `pending`, `attempted`, `failed`, or `expired` states\
     See [Payment Transaction State](../user-guide/payment-tracking/payment-transactions-states.md).\

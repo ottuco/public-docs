@@ -50,4 +50,7 @@
   * [Payment Webhooks](developer/webhooks/payment-webhooks.md)
   * [Operation Notification](developer/webhooks/operation-notification.md)
   * [Signing Mechanism](developer/webhooks/signing-mechanism.md)
+  * [Integration Guides](developer/webhooks/integration-guides/README.md)
+    * [Laravel Webhook Receiver Guide](developer/webhooks/integration-guides/laravel-webhook-receiver-guide.md)
+    * [.NET Webhook Receiver Guide](developer/webhooks/integration-guides/.net-webhook-receiver-guide.md)
 * [Test Cards](developer/test-cards.md)

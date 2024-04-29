@@ -266,12 +266,9 @@ function generateHmacSignature(payload, hmacKey) {
         'reference_number', 'result', 'state'
     ];
     
-    let message = '';
-    keys.forEach(key => {
-        if (payload[key] && payload[key] !== '') {
-            message += key + payload[key];
-        }
-    });
+    const sortedKeys = Object.keys(payload).sort();
+    const messageArray = sortedKeys.filter(key => keys.includes(key)).map(key => [key, payload[key]]);
+    const message = messageArray.map(([k, v]) => `${k}${v}`).join('');
     
     const hmac = crypto.createHmac('sha256', hmacKey);
     hmac.update(message);
@@ -279,7 +276,7 @@ function generateHmacSignature(payload, hmacKey) {
     return hmac.digest('hex');
 }
 
-// Test
+
 const payload = {
     amount: "86.000",
     currency_code: "KWD",

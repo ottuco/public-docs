@@ -305,11 +305,6 @@ Available choices: en, ar.\
 Default language is en.\
 Max length: 2.
 
-#### [**mode**](checkout-api.md#mode-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
-
-Default: `payment`.\
-Value: `payment`.
-
 #### [**notifications**](checkout-api.md#notifications-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 An object that contains the notification settings for this payment transaction, including SMS and email notifications, as well as the events for which they will be sent (e.g., `created`, `paid`, `refund`, `canceled`, etc.). This field may be used to configure and customize the notifications sent to customers and internal recipients throughout the payment process.
@@ -620,11 +615,6 @@ Max length: 11.
 It represents the language code that is utilized for all communication related to payment transactions with the customer, including payment page, receipt, invoice, email, and SMS\
 For more details check the request parameter [language](checkout-api.md#language-string-optional)
 
-#### [**mode**](checkout-api.md#mode-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
-
-Default: “payment”.\
-Value: “payment”.&#x20;
-
 #### [notifications](checkout-api.md#notifications-object-conditional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 It represents the notification settings for this payment transaction which have been received and processed.\
@@ -823,7 +813,6 @@ When we add [notification](checkout-api.md#notifications-object-optional) we sho
     "due_datetime": "15/01/2023 11:04:55",
     "expiration_time": "1 00:00:00",
     "language": "en",
-    "mode": "payment",
     "notifications": {
         "email": [
             "authorized",

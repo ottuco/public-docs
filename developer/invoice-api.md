@@ -151,8 +151,8 @@ Details at the item level are encapsulated within the `invoice_items` object. Th
 
 For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the API Schema Reference section below.
 
-{% swagger src="../.gitbook/assets/Ottu API (50).yaml" path="/b/invoice/v1/invoice/" method="post" %}
-[Ottu API (50).yaml](<../.gitbook/assets/Ottu API (50).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API (59).yaml" path="/b/invoice/v1/invoice/" method="post" %}
+[Ottu API (59).yaml](<../.gitbook/assets/Ottu API (59).yaml>)
 {% endswagger %}
 
 ## [Guide: Step by Step](invoice-api.md#guide-step-by-step)

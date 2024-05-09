@@ -1,6 +1,6 @@
 # Signing Mechanism
 
-To ensure the integrity and authenticity of the [webhook notifications](payment-webhooks.md) sent to the merchant, Ottu employs a signing mechanism based on HMAC (Hash-based Message Authentication Code). By leveraging HMAC, Ottu can guarantee that the webhook's content remains untampered during transmission.
+To ensure the integrity and authenticity of the [webhook notifications](payment-notification.md) sent to the merchant, Ottu employs a signing mechanism based on HMAC (Hash-based Message Authentication Code). By leveraging HMAC, Ottu can guarantee that the webhook's content remains untampered during transmission.
 
 ## [Important Components](signing-mechanism.md#important-components)
 
@@ -11,7 +11,7 @@ To ensure the integrity and authenticity of the [webhook notifications](payment-
 
 #### [**2. Fields for Signature** ](signing-mechanism.md#2.-fields-for-signature)
 
-The signature is not derived from every field in the webhook payload. See payload example [here](payment-webhooks.md#payload-example-attempted-1). Only specific fields are considered. These are:
+The signature is not derived from every field in the webhook payload. See payload example [here](payment-notification.md#payload-example-attempted-1). Only specific fields are considered. These are:
 
 * amount
 * currency\_code
@@ -42,7 +42,7 @@ This update ensures that developers understand the significance of field presenc
 #### [**3. Signature Creation**](signing-mechanism.md#3.-signature-creation)
 
 * Fields from the payload are extracted based on the aforementioned list, sorted alphabetically by key name, and then concatenated to form a unique message string.
-* This string, combined with the HMAC Key, is used to create the **HMAC-SHA256** signature. This resultant signature is then dispatched with the [webhook notification](payment-webhooks.md).
+* This string, combined with the HMAC Key, is used to create the **HMAC-SHA256** signature. This resultant signature is then dispatched with the [webhook notification](payment-notification.md).
 
 #### [**4. Verification by Merchant**](signing-mechanism.md#4.-verification-by-merchant)
 

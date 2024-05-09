@@ -20,7 +20,7 @@ Every payment or API operation starts with or involves a payment transaction. Es
 
 #### [4. REST API](getting-started.md#4.-rest-api)
 
-To get started with Ottu’s REST API, first understand our authentication methods in the [Authentication section](authentication.md). Then proceed to the [Checkout API section](checkout-api.md) to learn how to create payments and charge customers. Following this, you might want to explore the [Payment Notification Webhook](webhooks/payment-webhooks.md). This feature is crucial if you want to integrate Ottu with a system and get notified about payment status updates. After creating a payment transaction, you can specify a [webhook URL](checkout-api.md#webhook\_url-string-optional) where Ottu will send updates about the payment status. This will keep your systems up to date in real-time with payment events. See [Webhook](webhooks/).
+To get started with Ottu’s REST API, first understand our authentication methods in the [Authentication section](authentication.md). Then proceed to the [Checkout API section](checkout-api.md) to learn how to create payments and charge customers. Following this, you might want to explore the [Payment Notification Webhook](webhooks/payment-notification.md). This feature is crucial if you want to integrate Ottu with a system and get notified about payment status updates. After creating a payment transaction, you can specify a [webhook URL](checkout-api.md#webhook\_url-string-optional) where Ottu will send updates about the payment status. This will keep your systems up to date in real-time with payment events. See [Webhook](webhooks/).
 
 ## [API Selection Guide](getting-started.md#api-selection-guide)
 

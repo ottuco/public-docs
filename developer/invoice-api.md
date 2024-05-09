@@ -96,9 +96,9 @@ The Ottu Invoice API serves as a robust mechanism for merchants to seamlessly is
    * Customers receive the `checkout_url` and, upon clicking, are redirected to Ottu's Checkout Page.
    * Here, customers can conveniently view and download the detailed invoice and proceed to make a direct payment.
 5. **Transaction Completion:**
-   * After completing the transaction, Ottu posts a response to the designated [webhook\_url](checkout-api.md#webhook\_url-string-optional), providing real-time updates on the transaction status. Please refer to [Payment Webhooks](webhooks/payment-webhooks.md).
+   * After completing the transaction, Ottu posts a response to the designated [webhook\_url](checkout-api.md#webhook\_url-string-optional), providing real-time updates on the transaction status. Please refer to [Payment Webhooks](webhooks/payment-notification.md).
 6. **Post-Transaction Customer Experience:**
-   * Following transaction completion, customers are redirected either to Ottu's Response Page or a specified [redirect\_url](checkout-api.md#redirect\_url-string-optional). Please refer to [Redirectional Diagram](webhooks/payment-webhooks.md#redirectional-diagram).
+   * Following transaction completion, customers are redirected either to Ottu's Response Page or a specified [redirect\_url](checkout-api.md#redirect\_url-string-optional). Please refer to [Redirectional Diagram](webhooks/payment-notification.md#redirectional-diagram).
    * Ottu's Response Page offers customers the option to download the invoice along with the payment receipt for their records.
 
 This end-to-end process ensures a seamless and secure transaction experience for both merchants and customers, integrating Ottu's `Invoice API` with Ottu `Checkout API` for efficient invoice generation, and payment processing.

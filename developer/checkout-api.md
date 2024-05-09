@@ -360,8 +360,8 @@ Max length: 128.
 
 #### [**redirect\_url**](checkout-api.md#redirect\_url-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-It is the destination where customers are redirected after the payment stage, only if the `webhook_url` returns a success status. Query parameters, including [order\_no](checkout-api.md#order\_no-string-optional), [reference\_number](webhooks/payment-webhooks.md#reference\_number-string-mandatory), [session\_id](checkout-api.md#session\_id-string-mandatory), and any [extra](checkout-api.md#extra-object-optional) parameters, will be added to the `redirect_url`. \
-For more information on how redirection works, please check [here](webhooks/payment-webhooks.md#redirectional-diagram).
+It is the destination where customers are redirected after the payment stage, only if the `webhook_url` returns a success status. Query parameters, including [order\_no](checkout-api.md#order\_no-string-optional), [reference\_number](webhooks/payment-notification.md#reference\_number-string-mandatory), [session\_id](checkout-api.md#session\_id-string-mandatory), and any [extra](checkout-api.md#extra-object-optional) parameters, will be added to the `redirect_url`. \
+For more information on how redirection works, please check [here](webhooks/payment-notification.md#redirectional-diagram).
 
 #### [shipping\_address](checkout-api.md#shipping\_address-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -451,7 +451,7 @@ Max length: 64.
 
 In case of a payment event or payment operation, Ottu triggers an HTTP request to this URL, to disclose transactional data.\
 It should be provided by merchant.\
-See Webhook [Payment Notification](webhooks/payment-webhooks.md).
+See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 ### [Response Parameters](checkout-api.md#response-parameters)
 
@@ -762,7 +762,7 @@ For more information see [vendor\_name](checkout-api.md#vendor\_name-string-opti
 #### [**webhook\_url**](checkout-api.md#webhook\_url-url-conditional)  _<mark style="color:blue;">**`URL`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 It contains the URL where the payment result will be sent via a POST request after the customer has completed the payment session. The payment result will be included in the request body.\
-See Webhook [Payment Notification](webhooks/payment-webhooks.md).
+See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 **Presence condition:**
 

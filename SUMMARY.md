@@ -47,7 +47,7 @@
   * [Android](developer/checkout-sdk/android.md)
   * [Flutter](developer/checkout-sdk/flutter.md)
 * [Webhooks](developer/webhooks/README.md)
-  * [Payment Webhooks](developer/webhooks/payment-webhooks.md)
+  * [Payment Notification](developer/webhooks/payment-notification.md)
   * [Operation Notification](developer/webhooks/operation-notification.md)
   * [Signing Mechanism](developer/webhooks/signing-mechanism.md)
   * [Integration Guides](developer/webhooks/integration-guides/README.md)

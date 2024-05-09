@@ -30,7 +30,7 @@ To successfully tokenize a card, merchants must adhere to the following requirem
 * **Payment Type**: The [payment\_type](checkout-api.md#payment\_type-string-optional) parameter in the request payload must be set to `save_card`. This indicates that the transaction is for the purpose of saving the card information.
 * **Amount**: The [amount](checkout-api.md#amount-string-required)  should be explicitly set to `0`. Setting `amount` to any other value will lead to an API error, as the intention is to tokenize the card, not process a payment.
 * **Customer ID**: Merchants must provide the [customer\_id](checkout-api.md#customer\_id-string-optional) parameter.
-* **Webhook URL:** [webhook\_url](checkout-api.md#webhook\_url-string-optional) should be provided, where the generated [token](webhooks/payment-webhooks.md#token-object-conditional) will be saved.
+* **Webhook URL:** [webhook\_url](checkout-api.md#webhook\_url-string-optional) should be provided, where the generated [token](webhooks/payment-notification.md#token-object-conditional) will be saved.
 
 In addition, for the tokenization process to be initiated correctly, all other required parameters for the Ottu [Checkout API](checkout-api.md) must be provided, including `currency_code`, `type`, and `pg_codes`.
 
@@ -61,7 +61,7 @@ Tokenization involves a series of steps designed to securely capture and convert
     Upon the successful completion of the card information submission, Ottu proceeds to tokenize the card details.\
 
 
-    The tokenized card details are then securely transmitted back to the merchant's system as part of the [webhook payload](webhooks/payment-webhooks.md) sent by Ottu. Merchants can locate the tokenized card information in the [token](webhooks/payment-webhooks.md#token-object-conditional) field of the webhook payload.
+    The tokenized card details are then securely transmitted back to the merchant's system as part of the [webhook payload](webhooks/payment-notification.md) sent by Ottu. Merchants can locate the tokenized card information in the [token](webhooks/payment-notification.md#token-object-conditional) field of the webhook payload.
 
 This tokenization process ensures that merchants can securely store card details for future transactions without handling sensitive card information directly, thereby enhancing the overall security and efficiency of the payment process.
 
@@ -101,7 +101,7 @@ On the **Save Card** page, the customer enters his card details and proceeds to 
 
 #### 4. Tokenization&#x20;
 
-After successfully submitting card information, Ottu tokenizes the details and securely sends them to the merchant via a [webhook payload](webhooks/payment-webhooks.md), where the tokenized information is found in the [token](webhooks/payment-webhooks.md#token-object-conditional) field.
+After successfully submitting card information, Ottu tokenizes the details and securely sends them to the merchant via a [webhook payload](webhooks/payment-notification.md), where the tokenized information is found in the [token](webhooks/payment-notification.md#token-object-conditional) field.
 
 <figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 

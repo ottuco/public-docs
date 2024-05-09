@@ -6,7 +6,7 @@ This section is designed for developers who are using `Laravel`, a popular `PHP`
 
 ## [Database Setup](laravel-webhook-receiver-guide.md#database-setup)
 
-In this section, we focus on setting up the necessary database models and migrations required to handle and store webhook notifications, both [Payment Webhooks](../payment-webhooks.md) and [Operation Notification](../operation-notification.md),  and related data in a `Laravel` application. Our primary goal is to capture data associated with both the webhook notifications and the [Checkout API responses](../../checkout-api.md#response-parameters) efficiently.
+In this section, we focus on setting up the necessary database models and migrations required to handle and store webhook notifications, both [Payment Webhooks](../payment-notification.md) and [Operation Notification](../operation-notification.md),  and related data in a `Laravel` application. Our primary goal is to capture data associated with both the webhook notifications and the [Checkout API responses](../../checkout-api.md#response-parameters) efficiently.
 
 ## [**Models and Migrations**](laravel-webhook-receiver-guide.md#models-and-migrations)
 

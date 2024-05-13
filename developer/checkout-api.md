@@ -233,7 +233,7 @@ This field specifies the customer's email address and is used to send payment no
 Max length 128
 
 {% hint style="info" %}
-* If Email [notifications](checkout-api.md#notifications-object-optional) are needed, the [`notification.email`](checkout-api.md#notifications-object-details) parameter must be included, making `customer_email parameter`<mark style="color:red;">**`required`**</mark>.
+* If Email [notifications](checkout-api.md#notifications-object-optional) are applied, the [`notification.email`](checkout-api.md#notifications-object-details) parameter must be included, making `customer_email parameter`<mark style="color:red;">**`required`**</mark>.
 * If no email notification is required, the parameter remains _<mark style="color:blue;">**`optional`**</mark>_.
 {% endhint %}
 
@@ -261,7 +261,7 @@ Max length 16.
 **It becomes a **<mark style="color:red;">**required**</mark>** parameter:**
 
 * If the merchant wants to enable KFAST on KNET. **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with `customer_phone`.
-* If SMS [notifications](checkout-api.md#notifications-object-optional) are needed, the [notification.sms](checkout-api.md#notifications-object-details) parameter must be included, making the `customer_phone` parameter <mark style="color:red;">**required**</mark>.&#x20;
+* If SMS [notifications](checkout-api.md#notifications-object-optional) are enabled, the [notification.sms](checkout-api.md#notifications-object-details) parameter must be included, making the `customer_phone` parameter <mark style="color:red;">**required**</mark>.&#x20;
 
 **Otherwise, it remains **<mark style="color:blue;">**optional**</mark>** parameter.**
 {% endhint %}

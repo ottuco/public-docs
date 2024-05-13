@@ -233,8 +233,7 @@ This field specifies the customer's email address and is used to send payment no
 Max length 128
 
 {% hint style="info" %}
-* If Email [notifications](checkout-api.md#notifications-object-optional) are applied, the [`notification.email`](checkout-api.md#notifications-object-details) parameter must be included, making `customer_email parameter`<mark style="color:red;">**`required`**</mark>.
-* If no email notification is required, the parameter remains _<mark style="color:blue;">**`optional`**</mark>_.
+* If Email [notifications](checkout-api.md#notifications-object-optional) are applied, the [`notification.email`](checkout-api.md#notifications-object-details) parameter must be included, making `customer_email parameter`<mark style="color:red;">**`required`**</mark>. **else will be **_<mark style="color:blue;">**`optional`**</mark>_.
 {% endhint %}
 
 #### [**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_

@@ -227,7 +227,7 @@ The currency in which the transaction is denominated. However, it does not guara
 See [currencies](../user-guide/currencies.md).\
 3 letters code.
 
-#### [**customer\_email**](checkout-api.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
+#### [**customer\_email**](checkout-api.md#customer\_email-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
 
 This field specifies the customer's email address and is used to send payment notifications and receipts. Additionally, it is used for fraud prevention and is transmitted to the payment gateway. The email address may also be included on invoices, receipts, and displayed on the payment page. It must be a valid email address.\
 Max length 128.
@@ -251,7 +251,7 @@ Max length: 64.
 The last name of the recipient of the payment. This field is used for various communications such as the invoice, receipt, email, SMS, or displayed on the payment page. It may also be sent to the payment gateway if necessary.\
 Max length 64.
 
-#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
+#### [customer\_phone](checkout-api.md#customer\_phone-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
 
 Customer phone number associated with the payment. This might be sent to the payment gateway and depending on the gateway, it may trigger a click to pay process on the payment page. The phone number will also be included in the invoice, receipt, email, and displayed on the payment page.\
 Max length 16.

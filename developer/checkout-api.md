@@ -229,7 +229,7 @@ See [currencies](../user-guide/currencies.md).\
 
 #### [**customer\_email**](checkout-api.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The email address of the customer that is used to send payment notifications and receipts, and can be used for fraud prevention. This field is mandatory and is always sent to the payment gateway. It may also be included in the invoice, receipt, email, and displayed on the payment page. Have to be a valid email address.\
+This field specifies the customer's email address, used for sending payment notifications and receipts. It is also utilized for fraud prevention purposes. When provided, this email address is transmitted to the payment gateway and may appear on invoices, receipts, and the payment page. It must be a valid email address.\
 Max length 128.
 
 #### [**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_

@@ -233,7 +233,7 @@ This field specifies the customer's email address and is used to send payment no
 Max length 128
 
 {% hint style="info" %}
-* It becomes a _<mark style="color:red;">**`required`**</mark>_ parameter when an email notification is necessary, triggered by any of the following states: \[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`], using the [`notifications.email`](checkout-api.md#notifications-object-details) parameter. In these cases, the `customer_email` should be included in the request payload.&#x20;
+* It becomes a _<mark style="color:red;">**`required`**</mark>_ parameter when an email notification is necessary, triggered by any of the following states: \[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`], using the [notifications.email](checkout-api.md#notifications-object-details) parameter. In these cases, the `customer_email` should be included in the request payload.&#x20;
 * If no email notification is required, the parameter remains _<mark style="color:blue;">**`optional`**</mark>_.
 {% endhint %}
 
@@ -260,8 +260,8 @@ Max length 16.
 {% hint style="info" %}
 **It becomes a **<mark style="color:red;">**required**</mark>** parameter:**
 
-* If the merchant wants to enable KFAST on KNET. **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
-* When an SMS notification is required, triggered by any of the following transaction states: \[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`], the [`notifications.sms`](checkout-api.md#notifications-object-details) parameter must be used. In such scenarios, the associated `customer_phone` should be included in the request payload.
+* If the merchant wants to enable KFAST on KNET. **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with `customer_phone`.
+* When an SMS notification is required, triggered by any of the following transaction states: \[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`], the [notifications.sms](checkout-api.md#notifications-object-details) parameter must be used. In such scenarios, the associated `customer_phone` should be included in the request payload.
 
 **Otherwise, it remains **<mark style="color:blue;">**optional**</mark>** parameter.**
 {% endhint %}

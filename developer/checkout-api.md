@@ -233,7 +233,7 @@ This field specifies the customer's email address and is used to send payment no
 Max length 128.
 
 {% hint style="info" %}
-It becomes a required parameter if [notification.email](checkout-api.md#email-list-optional) is sent; otherwise, it remains optional.
+It becomes a <mark style="color:red;">**required**</mark> parameter if [notification.email](checkout-api.md#email-list-optional) is sent; otherwise, it remains <mark style="color:blue;">**optional**</mark> parameter.
 {% endhint %}
 
 #### [**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -257,13 +257,12 @@ Customer phone number associated with the payment. This might be sent to the pay
 Max length 16.
 
 {% hint style="info" %}
-**It becomes a required parameter:**
+**It becomes a **<mark style="color:red;">**required**</mark>** parameter:**
 
-* If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md#customer\_phone-string-optional) will be _<mark style="color:red;">**`required`**</mark>_\
-  **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
-* if [notification.sms](checkout-api.md#sms-list-optional) is sent.
+* If the merchant wants to enable KFAST on KNET. **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
+* If [notification.sms](checkout-api.md#sms-list-optional) is sent.
 
-**Otherwise, it remains optional.**
+**Otherwise, it remains **<mark style="color:blue;">**optional**</mark>** parameter.**
 {% endhint %}
 
 #### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) _<mark style="color:blue;">`string datetime`</mark>_ _<mark style="color:blue;">`optional`</mark>_

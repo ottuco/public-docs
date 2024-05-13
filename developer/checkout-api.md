@@ -233,7 +233,8 @@ This field specifies the customer's email address and is used to send payment no
 Max length 128
 
 {% hint style="info" %}
-It becomes a <mark style="color:red;">**required**</mark> parameter if [notification.email](checkout-api.md#notifications-object-details) is sent; otherwise, it remains <mark style="color:blue;">**optional**</mark> parameter.
+* It becomes a _<mark style="color:red;">**`required`**</mark>_ parameter when an email notification is necessary, triggered by any of the following states: \[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`], using the [`notifications.email`](checkout-api.md#notifications-object-details) parameter. In these cases, the `customer_email` should be included in the request payload.&#x20;
+* If no email notification is required, the parameter remains _<mark style="color:blue;">**`optional`**</mark>_.
 {% endhint %}
 
 #### [**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -260,7 +261,7 @@ Max length 16.
 **It becomes a **<mark style="color:red;">**required**</mark>** parameter:**
 
 * If the merchant wants to enable KFAST on KNET. **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
-* If [notification.sms](checkout-api.md#notifications-object-details) is sent.
+* When an SMS notification is required, triggered by any of the following transaction states: \[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`], the [`notifications.sms`](checkout-api.md#notifications-object-details) parameter must be used. In such scenarios, the associated `customer_phone` should be included in the request payload.
 
 **Otherwise, it remains **<mark style="color:blue;">**optional**</mark>** parameter.**
 {% endhint %}
@@ -324,14 +325,14 @@ An object that contains the notification settings for this payment transaction, 
 #### :digit\_one: [**email**](checkout-api.md#email-list-optional) _<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
-\[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]
+\[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`]
 
 * If the payment transaction transitions to an **error** state and an email notification has been set up for the **failed** state, then the customer will receive an email.
 
 #### :digit\_two: [sms](checkout-api.md#sms-list-optional) _<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
-\[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]
+\[ `created`, `paid`, `canceled`, `failed`, `expired`, `authorized`, `voided`, `refunded`, `captured`]
 
 * If the payment transaction transitions to an **error** state and an SMS notification has been set up for the **failed** state, then the customer will receive an SMS.
 

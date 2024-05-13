@@ -328,7 +328,7 @@ An object that contains the notification settings for this payment transaction, 
 
 * If the payment transaction transitions to an **error** state and an email notification has been set up for the **failed** state, then the customer will receive an email.
 
-#### :digit\_two: **SMS **_<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_two: [sms](checkout-api.md#sms-list-optional) _<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
 \[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]

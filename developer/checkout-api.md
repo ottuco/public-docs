@@ -230,7 +230,7 @@ See [currencies](../user-guide/currencies.md).\
 #### [**customer\_email**](checkout-api.md#customer\_email-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
 
 This field specifies the customer's email address and is used to send payment notifications and receipts. Additionally, it is used for fraud prevention and is transmitted to the payment gateway. The email address may also be included on invoices, receipts, and displayed on the payment page. It must be a valid email address.\
-Max length 128.
+Max length 128
 
 {% hint style="info" %}
 It becomes a <mark style="color:red;">**required**</mark> parameter if [notification.email](checkout-api.md#email-list-optional) is sent; otherwise, it remains <mark style="color:blue;">**optional**</mark> parameter.
@@ -321,14 +321,14 @@ An object that contains the notification settings for this payment transaction, 
 
 <summary><em>notifications object details</em></summary>
 
-#### :digit\_one:[ **email** ](checkout-api.md#email-list-optional)_<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_one: [**email**](checkout-api.md#email-list-optional) _<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
 \[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]
 
 * If the payment transaction transitions to an **error** state and an email notification has been set up for the **failed** state, then the customer will receive an email.
 
-#### :digit\_two:[ **SMS**](checkout-api.md#sms-list-optional) _<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
+#### :digit\_two: **SMS **_<mark style="color:blue;">**`list`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 **Will be triggered at the following notification events:**\
 \[“created”, "paid", "canceled", "failed", "expired", "authorized", "voided", "refunded", "captured"]

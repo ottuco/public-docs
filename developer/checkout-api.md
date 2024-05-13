@@ -227,10 +227,14 @@ The currency in which the transaction is denominated. However, it does not guara
 See [currencies](../user-guide/currencies.md).\
 3 letters code.
 
-#### [**customer\_email**](checkout-api.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**customer\_email**](checkout-api.md#customer\_email-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
 
-This field specifies the customer's email address, used for sending payment notifications and receipts. It is also utilized for fraud prevention purposes. When provided, this email address is transmitted to the payment gateway and may appear on invoices, receipts, and the payment page. It must be a valid email address.\
+This field specifies the customer's email address and is used to send payment notifications and receipts. Additionally, it is used for fraud prevention and is transmitted to the payment gateway. The email address may also be included on invoices, receipts, and displayed on the payment page. It must be a valid email address.\
 Max length 128.
+
+{% hint style="info" %}
+It becomes a required parameter if [notification.email](checkout-api.md#email-list-optional) is sent; otherwise, it remains optional.
+{% endhint %}
 
 #### [**customer\_first\_name** ](checkout-api.md#customer\_first\_name-string-optional)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -247,14 +251,19 @@ Max length: 64.
 The last name of the recipient of the payment. This field is used for various communications such as the invoice, receipt, email, SMS, or displayed on the payment page. It may also be sent to the payment gateway if necessary.\
 Max length 64.
 
-#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [customer\_phone](checkout-api.md#customer\_phone-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
 
 Customer phone number associated with the payment. This might be sent to the payment gateway and depending on the gateway, it may trigger a click to pay process on the payment page. The phone number will also be included in the invoice, receipt, email, and displayed on the payment page.\
 Max length 16.
 
 {% hint style="info" %}
-If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md#customer\_phone-string-optional) will be _<mark style="color:red;">**`required`**</mark>_\
-**KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
+**It becomes a required parameter:**
+
+* If the merchant wants to enable KFAST on KNET, [customer\_phone](checkout-api.md#customer\_phone-string-optional) will be _<mark style="color:red;">**`required`**</mark>_\
+  **KFAST** is a tokenization feature on KPay page, which works with UDF3 mapped with [customer\_phone](checkout-api.md#customer\_phone-string-optional).
+* if [notification.sms](checkout-api.md#sms-list-optional) is sent.
+
+**Otherwise, it remains optional.**
 {% endhint %}
 
 #### [due\_datetime](checkout-api.md#due\_datetime-string-date-time-optional) _<mark style="color:blue;">`string datetime`</mark>_ _<mark style="color:blue;">`optional`</mark>_

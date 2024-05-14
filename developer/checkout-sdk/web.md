@@ -60,7 +60,7 @@ Here's an example of how `Checkout.reload` might be called:
 Checkout.reload();
 ```
 
-## [**Properties** ](web.md#properties)
+#### [**Properties** ](web.md#properties)
 
 #### [**selector**](web.md#selector-string)  _<mark style="color:blue;">**`string`**</mark>_
 
@@ -95,7 +95,7 @@ The `apiKey` is your Ottu [API public key](../authentication.md#public-key). Thi
 
 According to the REST [API documentation](../authentication.md), the `apiKey` property should be set to your Ottu  API public key.
 
-{% hint style="warning" %}
+{% hint style="info" %}
 Ensure that you utilize the public key and refrain from using the [private key](../authentication.md#private-key-api-key). The private key should remain confidential at all times and must not be shared with any clients.
 {% endhint %}
 
@@ -107,7 +107,13 @@ This unique identifier is automatically generated when the payment transaction i
 
 #### [**lang**](web.md#lang-string) _<mark style="color:blue;">**`string`**</mark>_
 
-The `lang` property serves to designate the language for presenting the checkout elements. You can configure this property with either "`en`" for English or "`ar`" for Arabic. When `lang` is configured as "`en`", the checkout form will appear in English, and if set to "`ar`", the checkout elements will be shown in Arabic. Moreover, when the `lang` parameter is set to "`ar`", the layout will adapt to a right-to-left (RTL) orientation to suit Arabic script.
+The `lang` property serves to designate the language for presenting the checkout elements. You can configure this property with either `en` for English or `ar` for Arabic. When `lang` is configured as `en`, the checkout form will appear in English, and if set to `ar`, the checkout elements will be shown in Arabic. Moreover, when the `lang` parameter is set to `ar`, the layout will adapt to a right-to-left (RTL) orientation to suit Arabic script.
+
+{% hint style="warning" %}
+For seamless user experience, it's recommended to maintain consistency by passing the same value for `lang` in [Checkout.init](web.md#checkout.init) used in [Checkout API](../checkout-api.md) while creating transactions.
+{% endhint %}
+
+For more information on how to use lang parameter in the Checkout API, please refer to [language](broken-reference) parameter in `Checkout API` section.
 
 #### [**formsOfPayment**](web.md#formsofpayment-array) _<mark style="color:blue;">**`array`**</mark>_
 
@@ -115,12 +121,13 @@ The `lang` property serves to designate the language for presenting the checkout
 
 The available options for `formsOfPayment` are:
 
-* `"applePay"`: The Apple Pay payment method that allows customers to make purchases using their Apple Pay-enabled devices.
-* `"googlePay"`: The Google Pay payment method that allows customers to make purchases using their Google wallet cards linked in google accounts.
-* `"ottuPG"`: A method that redirects customers to a page where customers enter their credit or debit card details to make a payment.
-* `"tokenPay"`: A payment method that uses tokenization to securely store and process customers' payment information.
-* `"redirect"`: A method where customers are redirected to a payment gateway or a third-party payment processor to complete their payment.
-* `"stcPay"`: A method where customers enter their mobile number and provide an OTP send to their mobile number to complete their payment.
+* `applePay`: The Apple Pay payment method that allows customers to make purchases using their Apple Pay-enabled devices.
+* `googlePay`: The Google Pay payment method that allows customers to make purchases using their Google wallet cards linked in google accounts.
+* `ottuPG`: A method that redirects customers to a page where customers enter their credit or debit card details to make a payment.
+* `tokenPay`: A payment method that uses tokenization to securely store and process customers' payment information.
+* `redirect`: A method where customers are redirected to a payment gateway or a third-party payment processor to complete their payment.
+* `stcPay`: A method where customers enter their mobile number and provide an OTP send to their mobile number to complete their payment.
+* `urPay`: A method where customers enter their mobile number and provide an OTP send to their mobile number to complete their payment.
 
 #### [displayMode](web.md#displaymode-string) _<mark style="color:blue;">`string`</mark>_
 
@@ -137,7 +144,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/grid.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/olQx9DJHiIsvv3ujwcvPWgg6UNfv6Qet0icjK3GhYOkSQg3PPtP8YcxFBpTty914KyT__aqq_55RdUbNxFSjYXJGekQ5B5CZ3ecTulqkQ1vrK4u_hhmxHCvM1vNJjd0JXSIbn1EMxJvvaQ3SxsxH37x6Lr6t_vpL" alt=""><figcaption></figcaption></figure>
 
 *   #### column
 
@@ -150,7 +157,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/image8 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/AIAlvACaCny1WZdNgUoMmUd-vuDYAyFjUwktZJFtHYfY5ys5FDIqRBWWRRr0spH8Wdz9BImGZ0oqdLF4SZUt9SqlpEBMDDnP_jhm0lkXhk4r8oKfTJsyq4XJsAnjUwty73ogPG3nXIZ0WzbQdsK6m4eK8WsRyrQp" alt=""><figcaption></figcaption></figure>
 
 #### [setupPreload](web.md#setuppreload-object) _<mark style="color:blue;">`object`</mark>_
 
@@ -178,13 +185,9 @@ If the `setupPreload` object passed during `SDK`initialization is not valid or d
 
 The `applePayInit` object enables users to modify the Apple Pay configurations used for generating payment sessions through Apple Pay. By default, all options are pre-configured. However users have the flexibility to customize these configurations using `applePayInit` according to their requirements.
 
-* **buttonType**\
-  Users can change Apple Pay Button Type by using `buttonType` property. Values supported by `buttonType` are written[ here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).
-* **buttonColor**\
-  Users can change Apple Pay Button Color by using `buttonColor` property. Values supported by `buttonColor` are white, white-outline and black.
 * **buttonLocale**\
   Users can change Apple Pay Button Locale by using buttonLocale property. \
-  Value of buttonLocale must be a 2 letter language code like “`ar`”, “`en`” etc.
+  Value of buttonLocale must be a 2 letter language code like `ar`, `en` etc.
 * **version**\
   Users can change the API version used for creating Apple Pay payment session by using the version property. Values supported by version are written[ here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/apple\_pay\_on\_the\_web\_version\_history).
 
@@ -220,9 +223,7 @@ Checkout.init({
     apiKey: 'apiKey',
     // Default values configured for Apple Pay
     applePayInit: {
-        version: 6,
-        buttonType: 'plain',
-        buttonColor: 'black',
+        version: 6
         buttonLocale: 'en',
         supportedNetworks: ['amex', 'masterCard', 'maestro', 'visa', 'mada'],
         merchantCapabilities: ['supports3DS']
@@ -235,15 +236,9 @@ Checkout.init({
 
 The `googlePayInit` object enables users to modify the Google Pay configurations used for generating payment sessions through Google Pay. By default, all options are pre-configured. However, developers have the flexibility to customize these configurations using `googlePayInit` according to their requirements.&#x20;
 
-* **buttonType**\
-  Users can change Google Pay Button Type by using `buttonType` property. Values supported by `buttonType` are written[ here](https://developers.google.com/pay/api/web/reference/request-objects#ButtonOptions).
-* **buttonColor**\
-  Users can change Google Pay Button Color by using `buttonColor` property. Values supported by `buttonColor` are white and black.
-* **buttonSizeMode**\
-  Users can change Google Pay Button Size Mode by using `buttonSizeMode` property. Values supported by `buttonSizeMode` are static and fill.
 * **buttonLocale**\
   Users can change Google Pay Button Locale by using `buttonLocale` property. \
-  Value of `buttonLocale` must be a 2 letter language code like “`ar`”, “`en`” etc.&#x20;
+  Value of `buttonLocale` must be a 2 letter language code like `ar`, `en,`etc...&#x20;
 
 In addition to above properties, users have the capability to customize Google Pay payment request by utilizing the options outlined in the documentation[ here](https://developers.google.com/pay/api/web/reference/request-objects#PaymentDataRequest).However, due to backend constraints, not all properties are modifiable. Below is the list of supported and unsupported values:
 
@@ -303,16 +298,14 @@ Checkout.init({
         tokenizationSpecificationType: 'PAYMENT_GATEWAY',
         totalPriceStatus: 'FINAL',
         totalPriceLabel: 'TOTAL',
-        buttonType: 'plain',
         buttonLocale: 'en',
-        buttonColor: 'black'
         // Remaining Values are configured via
         // init checkout API
     }
 });
 ```
 
-#### [theme](web.md#theme-object) _<mark style="color:blue;">`object`</mark>_
+### [theme](web.md#theme-object) _<mark style="color:blue;">`object`</mark>_
 
 The SDK Theme Customization feature allows you to modify the appearance of elements within the SDK using a `theme` object. This object contains specific `css` properties that are applied to various components, giving you control over their styling. `theme` object consists of key-value pairs, where each key corresponds to a specific component, and the associated value is a set of `css` properties to be applied to that component
 
@@ -337,8 +330,7 @@ Checkout.init({
 Checkout.init({
     // other parameters
     theme: {
-        "main": {
-            "padding": "0px 10px",
+        "main": {        
             "background": "#d4d4d461"
         },
         "primary-text": {
@@ -361,7 +353,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/Sample.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/Cuv3H1vhsyWvLR75a4Ccy6--DWoaDYD_5rh2iTii1OWCYbPBlgKQzoG4O8m3axohSSG2yl1CkLCkRKsLvBykhpWegGTqI6twWeHEPyCWyPuoVjUbVNrv-uXGZ65L_Z9Fwb3VwyRNA7kd1C8ccCVEI0A" alt="" width="563"><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Dark theme" %}
@@ -373,7 +365,6 @@ Checkout.init({
     apiKey: 'apiKey',
     theme: {
         "main": {
-            "padding": "0px 10px",
             "background": "#555555"
         },
         "title-text": {
@@ -393,12 +384,18 @@ Checkout.init({
             "background": "#333"
         },
         "stcPay": {
+            "buttonColor": "black"
+        },
+        "urPay": {
+            "buttonColor": "black"
+        },
+        "payment-modal": {
             "background": "black"
         },
-        "stc-modal": {
-            "background": "black"
+        "mobile-number-input": {
+            "color": "black"
         },
-        "stc-input": {
+        "otp-input": {
             "color": "black"
         },
         "methods": {
@@ -427,23 +424,23 @@ Checkout.init({
         "floating-label": {
             "background": "black"
         },
-        "stc-popup-error": {
+        "payment-error-message": {
             "color": "red"
         },
-        "stc-popup-back-button": {
+        "popup-back-button": {
             "stroke": "red"
         },
         "popup-close-button": {
             "fill": "red"
         },
-        "stc-resendOtp-button": {
+        "otp-resend-button": {
             "color": "black"
         }
     }
 });
 ```
 
-<figure><img src="../../.gitbook/assets/Dark.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/GWSGpUhnI7Ph-1gEAFX7I-2xYSUU-hyLmL2pBTuBxxzxobvZDLvxxiGq_Cd9WIhlXewkzzJAsBnB5pQeWDeASrkSmJdobeQhbnkNbLKmG04pg4wqo8DbdnXgO_mzSz2Mqo1cocardxw18VmloEZMjr8rRTYw9nRz" alt="" width="563"><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Minimal theme " %}
@@ -484,7 +481,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/image144.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/FBmnrDPPvigeZghiNxe0curnjNZgdLkPApKm7uGjXN_tcA1x0xWv0VueOb0nN1eTJeIJVPclHSQK_FYs4VKhEmGEjvW1iseP7FAReZt4cu38foM-Kbs-KZUl89eogn1zaoUwJ2OTMNF9HDRRX3FdKg4" alt="" width="563"><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Side By Side Buttons" %}
@@ -502,14 +499,11 @@ Checkout.init({
             "flex-direction": "row",
             "gap": "10px"
         },
-        "stcPay": {
-            "background": "black"
-        }
     }
 });
 ```
 
-<figure><img src="../../.gitbook/assets/side by side.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/GMOSVNbu0cbFB727v5XLSAGOy5eJ-eBQeTulQCSCbDdHYh2YMRbX7FHMcdP5OtdFEeOxoGqPOha9FHimKh8umiqlXVJzXrF9jur6Qm47b9_ifEjoVzEQvv_lRLo56o-sRyNoG1Mduib1S0rwf8enBM0" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Hide SDK Header" %}
@@ -530,7 +524,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/hide.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/aho82OfKWwwXmo5mjjCDyg9rUcoZ82YIU9B0mDwEDXN9s_SEWUoM4uTpxhu8qlN3sW6PeewCL3ILrpgiZiQYV8HRgEPWp5zqyrSDwAfYIPn5y7ou_njUoo1dwrxbB167gjOELnGXCxPB-rm2kT9hK2A" alt="" width="563"><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -553,17 +547,87 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/Senario.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/FCqMapxhs7mgsbqmyjAMN-LMfBsMTYbtZ11SWBSyd_PrT1P0veW_8b3O42UN2tm0Xc_jsc49OqDh2RM1U0-l-XeUDO63aGvhp1YxOrwmHbSqL82DMsad9gzueAuPZY0zIGYK4neKgKLNSKDO-kKOzvY" alt="" width="563"><figcaption></figcaption></figure>
+
+* **Change Button Type** \
+  Using the buttonType property in theme object merchant can change the type of ApplePay and GooglePay buttons according to his/her needs.
+
+```javascript
+Checkout.init({
+    selector: "checkout",
+    merchant_id: "domain",
+    session_id: "session_id",
+    apiKey: "apiKey",
+    theme: {
+        "applePay": {
+            "buttonType": "book"
+        },
+        "googlePay": {
+            "buttonType": "book"
+        }
+    }
+});
+```
+
+Values supported by ApplePay buttonType are written [here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).&#x20;
+
+Values supported by GooglePay buttonType are written [here](https://developers.google.com/pay/api/web/reference/request-objects#ButtonOptions).
+
+{% hint style="info" %}
+`buttonType` property is only supported by Apple Pay and Google Pay.&#x20;
+
+However, Google Pay supports an additional property `buttonSizeMode` property, which can alter the Google Pay Button Size Mode. Supported values are `static` and `fill`. By default, `fill` is selected. Using `fill` allows you to change the button size, while `static`sets the default size provided by Google
+{% endhint %}
+
+<figure><img src="https://lh7-us.googleusercontent.com/B3DwfPzBMDiIVvu8_rKDZ6-JorEaO2iUz0SxNzYj7XJEDr_YpYAtgyzO_AC3dt3QhBlHsPsZfetu64NrCkWTgF0eC7KM0hTqFDr5ef49fiW1vwneisQ_To8DoCICUQRG6CK1c02Y9t_xc3tKGs8VVv0" alt="" width="563"><figcaption></figcaption></figure>
+
+* **Change Button Color** \
+  Using the `buttonColor` property in `theme` object merchants can change the color of `ApplePay`, `GooglePay`, `StcPay`, and `UrPay` buttons according to his needs.
+
+```javascript
+Checkout.init({
+    selector: "checkout",
+    merchant_id: "domain",
+    session_id: "session_id",
+    apiKey: "apiKey",
+    theme: {
+        "applePay": {
+            "buttonColor": "black"
+        },
+        "googlePay": {
+            "buttonColor": "black"
+        },
+        "stcPay": {
+            "buttonColor": "black"
+        },
+        "urPay": {
+            "buttonColor": "black"
+        }
+    }
+});
+```
+
+{% hint style="info" %}
+`buttonColor` property is supported by `applePay`, `googlePay`, `stcPay`, and `urPay`
+
+Values supported by `ApplePay` `buttonColor` are white, black and white-outline
+
+Values supported by `GooglePay` `buttonColor` are white and black
+
+However, `stcPay` and `urPay` can supported any `css` collor in `buttonColor.`
+{% endhint %}
+
+<figure><img src="https://lh7-us.googleusercontent.com/96keCq8NFWAlWYihVR9Z5OrNYsvMJch58H3vSdolSOTiLYyEzyDz1bZ7PK5wbFZo8z3cZA9hwDKVl3V0XJdWzNK8UivZbqpttIXQoN3AFaV6DfNamY27iUa5n2gzJXQDUVBMjBr_OrozZTKAfYVcISo" alt="" width="563"><figcaption></figcaption></figure>
 
 #### [Supported Values](web.md#supported-values)
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><ol><li><strong>Main</strong></li></ol><ul><li><code>main</code></li><li><code>title-text</code></li><li><code>primary-text</code></li><li><code>secondary-text</code></li><li><code>pay-button</code></li><li><code>border</code></li><li><code>payment-details-heading</code></li><li><code>payment-methods-heading</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="2"><li><strong>Amount Box</strong></li></ol><ul><li><code>amount-box</code></li><li><code>amount</code></li><li><code>amount-label</code></li><li><code>amount-currency</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="3"><li><strong>Fees</strong></li></ol><ul><li><code>fees</code></li><li><code>fees-label</code></li><li><code>fees-currency</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="4"><li><strong>Checkboxes</strong></li></ol><ul><li><code>checkbox-label</code></li><li><code>stc-checkbox-label</code></li><li><code>selected-checkbox</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="5"><li><strong>WalletButtons</strong></li></ol><ul><li><code>wallet-buttons</code></li><li><code>applePay</code></li><li><code>applePay-tooltip</code></li><li><code>googlePay</code></li><li><code>stcPay</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="6"><li><strong>PaymentMethods</strong></li></ol><ul><li><code>methods-block</code></li><li><code>methods</code></li><li><code>saved-cards</code></li><li><code>redirect-links</code></li><li><code>selected-method</code></li><li><code>payment-method-name</code></li><li><code>card-number</code></li><li><code>card-expiry</code></li><li><code>delete-card-logo</code></li><li><code>ccv-input</code></li><li><code>floating-label</code></li><li><code>cvv-info-text</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="7"><li><strong>Modals</strong></li></ol><ul><li><code>card-removal-modal</code></li><li><code>info-modal</code></li><li><code>stc-modal</code></li><li><code>modal-overlay</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="8"><li><strong>CloseButton</strong></li></ol><ul><li><code>popup-close-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="9"><li><strong>DeleteCardPopup</strong></li></ol><ul><li><code>delete-card-button</code></li><li><code>delete-card-message</code></li><li><code>keep-card-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="10"><li><strong>ErrorPopup</strong></li></ol><ul><li><code>error-popup-heading</code></li><li><code>error-popup-message</code></li><li><code>error-popup-data</code></li><li><code>retry-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="11"><li><strong>SuccessPopup</strong></li></ol><ul><li><code>success-popup-heading</code></li><li><code>success-popup-message</code></li><li><code>success-popup-data</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="12"><li><strong>StcPayPopup</strong></li></ol><ul><li><code>stc-popup-heading</code></li><li><code>stc-mobile-popup-heading</code></li><li><code>stc-otp-popup-heading</code></li><li><code>stc-input</code></li><li><code>stc-mobile-input</code></li><li><code>stc-otp-input</code></li><li><code>stc-popup-error</code></li><li><code>stc-sendOtp-button</code></li><li><code>stc-resendOtp-button</code></li><li><code>stc-pay-button</code></li><li><code>stc-popup-back-button</code></li></ul></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><ol><li><strong>Main</strong></li></ol><ul><li><code>main</code></li><li><code>title-text</code></li><li><code>primary-text</code></li><li><code>secondary-text</code></li><li><code>pay-button</code></li><li><code>border</code></li><li><code>payment-details-heading</code></li><li><code>payment-methods-heading</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="2"><li><strong>Amount Box</strong></li></ol><ul><li><code>amount-box</code></li><li><code>amount</code></li><li><code>amount-label</code></li><li><code>amount-currency</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="3"><li><strong>Fees</strong></li></ol><ul><li><code>fees</code></li><li><code>fees-label</code></li><li><code>fees-currency</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="4"><li><strong>Checkboxes</strong></li></ol><ul><li><code>checkbox-label</code></li><li><code>save-account-label</code></li><li><code>selected-checkbox</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="5"><li><strong>WalletButtons</strong></li></ol><ul><li><code>wallet-buttons</code></li><li><code>applePay</code></li><li><code>applePay-tooltip</code></li><li><code>googlePay</code></li><li><code>stcPay</code></li><li><code>urPay</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="6"><li><strong>PaymentMethods</strong></li></ol><ul><li><code>methods-block</code></li><li><code>methods</code></li><li><code>saved-cards</code></li><li><code>redirect-links</code></li><li><code>selected-method</code></li><li><code>payment-method-name</code></li><li><code>card-number</code></li><li><code>card-expiry</code></li><li><code>delete-card-logo</code></li><li><code>ccv-input</code></li><li><code>floating-label</code></li><li><code>cvv-info-text</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="7"><li><strong>Modals</strong></li></ol><ul><li><code>card-removal-modal</code></li><li><code>info-modal</code></li><li><code>payment-modal</code></li><li><code>modal-overlay</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="8"><li><strong>CloseButton</strong></li></ol><ul><li><code>popup-close-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="9"><li><strong>DeleteCardPopup</strong></li></ol><ul><li><code>delete-card-button</code></li><li><code>delete-card-message</code></li><li><code>keep-card-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="10"><li><strong>ErrorPopup</strong></li></ol><ul><li><code>error-popup-heading</code></li><li><code>error-popup-message</code></li><li><code>error-popup-data</code></li><li><code>retry-button</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="11"><li><strong>SuccessPopup</strong></li></ol><ul><li><code>success-popup-heading</code></li><li><code>success-popup-message</code></li><li><code>success-popup-data</code></li></ul></td><td></td><td></td></tr><tr><td><ol start="12"><li><strong>PaymentPopup</strong></li></ol><ul><li><code>mobile-number-popup-heading</code></li><li><code>otp-popup-heading</code></li><li><code>mobile-number-input</code></li><li><code>otp-input</code></li><li><code>payment-error-message</code></li><li><code>otp-send-button</code></li><li><code>otp-resend-button</code></li><li><code>otp-submit-button</code></li><li><code>popup-back-button</code></li></ul></td><td></td><td></td></tr></tbody></table>
 
-<figure><img src="../../.gitbook/assets/image10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/w0VBQopwyWlw-IaYvF5JbGJt768simZGmrNaJFs2B7BOkhnes242a7L_F8AnhKXjW-nSVBpFVnilIPMiYVhjus0SQ9A8O_utzZP9i_ghktNA8By8VB48ZAiqPLT6UDKYuVFRyVSn4mFTlqwGza8rNTI" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image13 (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/mO72oFSb5bI3Sg0_h6XYakQfFRUNbvl4iHFxOQHQtlHrgJunVD0QB7MgYG00hX9FYdJYlKp-BhEAnlUPutJVlMb1ggDwnBLhEOOrBDfeVzdtNpttMq9iMBPeAy7ilMEek7Zg9UYTIChgVd_srHJXz3g" alt=""><figcaption></figcaption></figure>
 
 **Example**
 
@@ -584,8 +648,7 @@ Checkout.init({
     lang: "en",
     formsOfPayment: [
         'applePay', 'tokenPay', 'ottuPG', 'redirect',
-        'googlePay', 'stcPay'
-    ],
+        'googlePay', 'stcPay' ,'urPay'],
     displayMode: 'grid', // default is column
 });
 ```
@@ -629,15 +692,15 @@ Please note that due to technical constraints associated with off-site redirecti
 
 The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new [session\_id](../checkout-api.md#session\_id-string-mandatory) using the [Checkout API](../checkout-api.md).
 
-To define the `errorCallback` function, you can use the `data-error` attribute on the Checkout script tag to specify a global function that will handle errors. If an error occurs during a payment, the `errorCallback` function will be invoked with a [data object](web.md#data-object) with a data.status value of “`error`”
+To define the `errorCallback` function, you can use the `data-error` attribute on the Checkout script tag to specify a global function that will handle errors. If an error occurs during a payment, the `errorCallback` function will be invoked with a [data object](web.md#data-object) with a data.status value of `error`
 
 **Params Available in Data Object for `errorCallback`**
 
-* `message`
-* `form_of_payment`
+* `message` <mark style="color:red;">required</mark>
+* `form_of_payment` <mark style="color:red;">required</mark>
+* `status` <mark style="color:red;">required</mark>
 * `challenge_occurred`&#x20;
 * `session_id`&#x20;
-* `status`&#x20;
 * `order_no`&#x20;
 * `reference_number`
 
@@ -708,7 +771,7 @@ In this example, the `cancelCallback` function is defined and passed as the valu
 
 #### [**window.successCallback**](web.md#window.successcallback)
 
-In the Checkout SDK, the `successCallback` is a function triggered upon successful completion of the payment process. This callback receives a [data object](web.md#data-object),with a data.status value of "`success"`
+In the Checkout SDK, the `successCallback` is a function triggered upon successful completion of the payment process. This callback receives a [data object](web.md#data-object),with a data.status value of `success`
 
 **Params Available in Data Object for `successCallback`**
 
@@ -808,7 +871,8 @@ The data object received by the [errorCallback](web.md#window.errorcallback), [c
     The URL where the customer will be redirected after the payment stage only if the webhook URL returns a success status. [order\_no](../webhooks/payment-notification.md#order\_no-string-conditional), [reference\_number](../webhooks/payment-notification.md#reference\_number-string-mandatory) and [session\_id](../webhooks/payment-notification.md#session\_id-string-mandatory) will be appended to the redirect URL as query parameters. The developer implementing the SDK must ensure that the redirection process is smooth and secure, providing a seamless experience for the customer while maintaining the integrity of the payment process.&#x20;
 
 {% hint style="warning" %}
-It's important to note that the redirect\_url option is only present in the [successCallback](web.md#window.successcallback). In other scenarios, especially with [cancelCallback](web.md#window.cancelcallback) and [errorCallback](web.md#window.errorcallback), it's absent.
+It's important to note that while the `redirect_url` option is typically present only in the [successCallback](web.md#window.successcallback), there are specific cases where it may exist in failure scenarios. \
+**For example,** in the event of an MPGS cancel or if the transaction includes a `webhook URL` alongside a `redirect URL`, users may be redirected after cancellation, which is communicated to the webhook. Therefore, the presence of `redirect_url` in such cases is possible.
 {% endhint %}
 
 *   #### [order\_no](web.md#order\_no-string) _<mark style="color:blue;">`string`</mark>_
@@ -826,7 +890,7 @@ It's important to note that the redirect\_url option is only present in the [suc
     * `apple_pay` - Apple Pay
     * `google_pay` - Google Pay
     * `token_pay` - Token Pay
-    * `stc_pay` - STC Pay
+    * `stc_pay` - stc pay
     * `redirect` - Redirect
 *   #### [payment\_gateway\_info](web.md#payment\_gateway\_info-object) _<mark style="color:blue;">`object`</mark>_
 
@@ -1026,10 +1090,9 @@ Checkout.init({
     session_id: 'session_id',
     apiKey: 'apiKey',
     lang: 'en', // en or ar default en
-    formsOfPayments: ['applePay', 'googlePay', 'stcPay', 'ottuPG', 'tokenPay', 'redirect'],
+    formsOfPayments: ['applePay', 'googlePay', 'stcPay', 'ottuPG', 'tokenPay', 'redirect','urPay'],
     displayMode: 'grid', // default is column
     applePayInit: {
-        buttonType: 'plain',
         supportedNetworks: ['amex', 'masterCard', 'maestro', 'visa', 'mada'],
         merchantCapabilities: ['supports3DS'],
     },
@@ -1043,9 +1106,7 @@ Checkout.init({
         paymentsClient: null,
         totalPriceStatus: 'FINAL',
         totalPriceLabel: 'Total',
-        buttonType: 'buy',
         buttonLocale: 'en',
-        buttonColor: 'white',
     }
 });
 ```
@@ -1073,9 +1134,11 @@ If you're using only the Apple Pay button from the Checkout SDK and wish to cust
 
 It's the responsibility of the merchant to ensure that their use of the Apple Pay button follows Apple's guidelines, and Ottu cannot be held responsible for any issues that arise from non-compliance. If you have any questions or concerns about using the Apple Pay button, please consult the [Apple Pay guidelines](https://developer.apple.com/design/human-interface-guidelines/technologies/apple-pay/buttons-and-marks) or contact Apple directly for assistance.
 
-If you only want to use Apple Pay with the Ottu Checkout SDK and control the other payment methods yourself, you can customize the Apple Pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array), [applePayInit](web.md#applepayinit-object) and[ theme](web.md#theme-object) properties. Properties like button color, button type and button Locale can be customized using `ApplePayInit` while `CSS` properties like height, width, margin etc are can be customized using `theme`.
+If you only want to use Apple Pay with the Ottu Checkout SDK and control the other payment methods yourself, you can customize the Apple Pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array), [applePayInit](web.md#applepayinit-object) and[ theme](web.md#theme-object) properties.&#x20;
 
-To display only the Apple Pay button with default css, use the following code:
+Properties like `buttonColor`, `buttonType` and `css` properties like height, width, margin etc are can be customized using theme while buttonLocale can be customized using `ApplePayInit`&#x20;
+
+To display only the Apple Pay button with default `css`, use the following code:
 
 ```javascript
 Checkout.init({
@@ -1092,11 +1155,10 @@ To customize the Apple Pay button's appearance, you can use the [theme ](web.md#
 Checkout.init({
     // Define the mandatory properties
     formsOfPayment: ["applePay"],
-    applePayInit: {
-        buttonType: 'plain',
-    },
     theme: {
         applePay: {
+            “buttonType”: 'plain',
+            “buttonColor”: 'black'
             "width": '100%',
             "height": '50px',
             "margin-top": '0',
@@ -1106,16 +1168,21 @@ Checkout.init({
 });
 ```
 
-The Apple Pay button inside the Checkout SDK container can be customized using the[ ](https://hazems-organization-new.gitbook.io/demo-of-the-smarter-way-1/developer/checkout-sdk/web-v3#css-object)[theme ](web.md#theme)property by defining the following:
+The Apple Pay button inside the Checkout SDK container can be customized using the ​[theme](web.md#theme-object) property by defining the following:
 
-* `applePayInit.buttonType`: This determines the type of the Apple Pay button. For example, setting `buttonType`: `plain`will render a plain Apple Pay button, while setting it to `buy`or `donate`will render buttons with the corresponding labels.
 * `theme.applePay`: This class sets the width,height, margin, and padding of the button.
+* `theme.applePay.buttonType`: This determines the type of the Apple Pay button. \
+  **For example**, setting `buttonType`:
+  * `plain` will render a plain Apple Pay button.
+  * `buy` or `donate` will render buttons with the corresponding labels.
+* `theme.applePay.buttonColor`: This determines the color of the Apple Pay button. \
+  **For example**, setting `buttonColor`:&#x20;
+  * `black` will render a black Apple Pay button.
+  * `white` or `white-outline` will render buttons with the corresponding colors.
 
-By default, the width of the Apple Pay button is 100% of the Checkout SDK container width, gap of 8px from other buttons. The Checkout SDK creates a containerized div with the css class ottu\_\_sdk-main and places the Apple Pay button inside it. This container has no margin or padding added, as shown in below figure.
+By default, the width of the Apple Pay button is 100% of the Checkout SDK container width, gap of 8px from other buttons. The Checkout SDK creates a containerized div with the css class ottu\_\_sdk-main and places the Apple Pay button inside it. This container has no margin or padding added, as shown in below figure. To learn more about the `applePay` property, see the [theme](web.md#theme).
 
-<figure><img src="../../.gitbook/assets/image9.png" alt=""><figcaption></figcaption></figure>
-
-To learn more about the `applePay` property, see the [theme](web.md#theme).
+<figure><img src="broken-reference" alt=""><figcaption><p>Apple Pay Button</p></figcaption></figure>
 
 ## [Google Pay](web.md#google-pay)
 
@@ -1129,7 +1196,7 @@ When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#
 
 Google Pay configuration is controlled by using [googlePayInit](web.md#googlepayinit-object) object.
 
-**Customize Google Pay button**
+#### [**Customize Google Pay button**](web.md#customize-google-pay-button)
 
 {% hint style="info" %}
 If you're using only the Google Pay button from the Checkout SDK and wish to customize its appearance, it's vital to adhere to the [Google Pay guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines) to ensure your design aligns with Google's specifications. Note that the SDK uses default styles outlined in the guidelines. Using styles not supported by Google, such as certain background-colors or border-colors, will not take effect. Failure to comply with these guidelines could lead to your app being rejected or even a ban on your developer account by Google.&#x20;
@@ -1139,18 +1206,18 @@ It's the responsibility of the merchant to ensure that their use of the Google P
 
 You can customize the Google Pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array), googlePayInit and theme . The `formsOfPayment` property tells the Checkout SDK to render only the Google Pay button. If you don't include this property, the SDK will render all available payment options.
 
-Properties like button color, button type and button Locale can be customized using [googlePayInit ](web.md#googlepayinit-object)while `CSS` properties like height, width, margin etc are can be customized using [theme](web.md#theme-object).
+Properties like `buttonColor`, `buttonType`, `buttonSizeMode` and `css` properties like height, width, margin etc can be customized using `theme` while `buttonLocale` can be customized using `googlePayInit` .
 
 ```javascript
 Checkout.init({
     // Define the mandatory properties
     formsOfPayment: ["googlePay"],
     // Below are the default values configured for googlePay
-    googlePayInit: {
-        buttonType: 'donate',
     },
     theme: {
         googlePay: {
+            “buttonType”:”plain”,
+            “buttonColor”:”black”,
             "width": "100%",
             "height": "50px",
             "margin-top": "0",
@@ -1160,18 +1227,18 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/image11.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption><p>Google Pay Button</p></figcaption></figure>
 
-## [STC Pay​](web.md#stc-pay)
+## [stc pay​](web.md#stc-pay)
 
-If you have completed the STC Pay integration between Ottu and STC Pay, the Checkout SDK will handle the necessary checks to display the STC Pay button seamlessly. When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#session\_id-string-mandatory) and payment gateway codes [pg\_codes](../checkout-api.md#pg\_codes-array-required), the SDK will automatically verify the following conditions:
+If you have completed the stc pay integration between Ottu and stc pay, the Checkout SDK will handle the necessary checks to display the stc pay button seamlessly. When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#session\_id-string-mandatory) and payment gateway codes [pg\_codes](../checkout-api.md#pg\_codes-array-required), the SDK will automatically verify the following conditions:
 
-1. The `session_id` and `pg_codes` provided during SDK initialization must be associated with the STC Pay Payment Service. This ensures that the STC Pay option is available for the customer to choose as a payment method.
-2. The Web SDK displays the STC Pay button irrespective of whether the customer has provided a mobile number while creating the transaction or not.
+1. The `session_id` and `pg_codes` provided during SDK initialization must be associated with the stc pay Payment Service. This ensures that the stc pay option is available for the customer to choose as a payment method.
+2. The Web SDK displays the stc pay button irrespective of whether the customer has provided a mobile number while creating the transaction or not.
 
-#### Customize STC Pay Button
+#### [Customize stc pay Button](web.md#customize-stc-pay-button)
 
-You can customize the STC Pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array) and [theme](web.md#theme-object) properties. The `formsOfPayment` property tells the Checkout SDK to render only the STC Pay button. If you don't include this property, the SDK will render all available payment options.
+You can customize the stc pay button using the Checkout SDK's [formsOfPayment](web.md#formsofpayment-array) and [theme](web.md#theme-object) properties. The `formsOfPayment` property tells the Checkout SDK to render only the stc pay button. If you don't include this property, the SDK will render all available payment options.
 
 ```javascript
 Checkout.init({
@@ -1179,7 +1246,7 @@ Checkout.init({
     formsOfPayment: ["stcPay"],
     theme: {
         "stcPay": {
-            "background": "black",
+            “buttonColor”: "black",
             "width": "100%",
             "height": "50px",
             "margin-top": "0",
@@ -1189,7 +1256,36 @@ Checkout.init({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/image16.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption><p>stc pay button</p></figcaption></figure>
+
+## [urpay](web.md#urpay)​​
+
+If you have completed the urpay integration between Ottu and urpay, the [Checkout SDK](web.md#checkout-sdk) will handle the necessary checks to display the urpay button seamlessly. When you initialize the Checkout SDK with your `session_id` and payment gateway codes `pg_codes`, the SDK will automatically verify the following conditions:
+
+1. The `session_id` and `pg_codes` provided during SDK initialization must be associated with the urpay Payment Service. This ensures that the urpay option is available for the customer to choose as a payment method.
+2. The Web SDK displays the urpay button irrespective of whether the customer has provided a mobile number while creating the transaction or not.
+
+#### [**Customize** urpay **Button**](web.md#customize-urpay-button)
+
+You can customize the urpay button using the Checkout SDK's `formsOfPayment` and `theme` properties. The `formsOfPayment` property tells the Checkout SDK to render only the urpay button. If you don't include this property, the SDK will render all available payment options.
+
+```javascript
+Checkout.init({
+    // define the mandatory properties
+    formsOfPayment: ["urPay"],
+    theme: {
+        "urPay": {
+            "buttonColor": "white",
+            "width": "100%",
+            "height": "50px",
+            "margin-top": "0",
+            "margin-bottom": "0",
+        }
+    }
+})
+```
+
+<figure><img src="broken-reference" alt=""><figcaption><p>urpay Button</p></figcaption></figure>
 
 ## [**KNET - Apple Pay**](web.md#knet-apple-pay)
 
@@ -1223,7 +1319,7 @@ window.cancelCallback = function(data) {
 The above code performs the following checks and actions:
 
 1. It first verifies if the `cancel` object contains information about the payment gateway (`payment_gateway_info`).
-2. Next, it checks if the `pg_name` property in `payment_gateway_info` is equal to `"kpay"`, indicating that the payment gateway used is indeed KNET.
+2. Next, it checks if the `pg_name` property in `payment_gateway_info` is equal to `kpay`, indicating that the payment gateway used is indeed KNET.
 3. If the above conditions are met, it retrieves the payment gateway's response from the `pg_response` property or, if not available, uses a default "Payment was cancelled." error message.
 4. Finally, it displays the error message in a popup using the `window.Checkout.showPopup()` function to notify the user about the failed payment.
 
@@ -1235,7 +1331,7 @@ The above code performs the following checks and actions:
 
 The SDK supports the following payment forms: `applePay`, `tokenPay`, `ottuPG`, `redirect`, `googlePay`, and `stcPay`. Merchants can display specific methods according to their needs. \
 **For example,** if you want to only show the Apple Pay button, you can do so using \
-[formsOfPayment](web.md#formsofpayment-array) = \["`applePay"`], and only the Apple Pay button will be displayed. The same applies for `stcPay`, `googlePay`, and other methods.
+[formsOfPayment](web.md#formsofpayment-array) = \[`applePay`], and only the Apple Pay button will be displayed. The same applies for `stcPay`, `googlePay`, and other methods.
 
 #### :digit\_two: [How do I migrate from an older version of the SDK to the new version?](web.md#how-do-i-migrate-from-an-older-version-of-the-sdk-to-the-new-version)
 
@@ -1263,7 +1359,7 @@ theme: {
 Yes, there are some compatibility nuances to be aware of:
 
 * For the Apple Pay button, it is mainly displayed on Apple devices and the Safari browser. For Chrome, it will only be displayed on the latest iOS 16.
-* For and Google Pay, STC Pay & other payments methods, always refer to their official documentation for the most recent information about compatibility issues.
+* For and Google Pay, stc pay & other payments methods, always refer to their official documentation for the most recent information about compatibility issues.
 
 #### :digit\_six: [How do I customize the payment request for Apple Pay and Google Pay?](web.md#how-do-i-customize-the-payment-request-for-apple-pay-and-google-pay)
 

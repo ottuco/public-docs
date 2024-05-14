@@ -1182,7 +1182,7 @@ The Apple Pay button inside the Checkout SDK container can be customized using t
 
 By default, the width of the Apple Pay button is 100% of the Checkout SDK container width, gap of 8px from other buttons. The Checkout SDK creates a containerized div with the css class ottu\_\_sdk-main and places the Apple Pay button inside it. This container has no margin or padding added, as shown in below figure. To learn more about the `applePay` property, see the [theme](web.md#theme).
 
-<figure><img src="broken-reference" alt=""><figcaption><p>Apple Pay Button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Apple Pay button.png" alt=""><figcaption></figcaption></figure>
 
 ## [Google Pay](web.md#google-pay)
 
@@ -1227,7 +1227,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption><p>Google Pay Button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Google Pay Button.png" alt=""><figcaption></figcaption></figure>
 
 ## [stc pay​](web.md#stc-pay)
 
@@ -1256,7 +1256,7 @@ Checkout.init({
 });
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption><p>stc pay button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/stc pay Button.png" alt=""><figcaption></figcaption></figure>
 
 ## [urpay](web.md#urpay)​​
 
@@ -1285,7 +1285,7 @@ Checkout.init({
 })
 ```
 
-<figure><img src="broken-reference" alt=""><figcaption><p>urpay Button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/urpay Button.png" alt=""><figcaption></figcaption></figure>
 
 ## [**KNET - Apple Pay**](web.md#knet-apple-pay)
 

@@ -357,93 +357,6 @@ Checkout.init({
 {% endtab %}
 
 {% tab title="Dark theme" %}
-```javascript
-Checkout.init({
-    selector: "checkout",
-    merchant_id: 'domain',
-    session_id: 'session_id',
-    apiKey: 'apiKey',
-    theme: {
-        "main": {
-            "background": "#555555"
-        },
-        "title-text": {
-            "color": "white"
-        },
-        "primary-text": {
-            "color": "white"
-        },
-        "secondary-text": {
-            "color": "white"
-        },
-        "pay-button": {
-            "background": "#333",
-            "color": "white"
-        },
-        "amount-box": {
-            "background": "#333"
-        },
-        "stcPay": {
-            "buttonColor": "black"
-        },
-        "urPay": {
-            "buttonColor": "black"
-        },
-        "payment-modal": {
-            "background": "black"
-        },
-        "mobile-number-input": {
-            "color": "black"
-        },
-        "otp-input": {
-            "color": "black"
-        },
-        "methods": {
-            "background": "#333"
-        },
-        "selected-method": {
-            "background": "black",
-            "border": "2px solid #6e6ef5d4",
-        },
-        "card-removal-modal": {
-            "background": "black"
-        },
-        "keep-card-button": {
-            "color": "black"
-        },
-        "info-modal": {
-            "background": "black"
-        },
-        "error-retry-button": {
-            "color": "black"
-        },
-        "ccv-input": {
-            "background": "black",
-            "color": "white"
-        },
-        "floating-label": {
-            "background": "black"
-        },
-        "payment-error-message": {
-            "color": "red"
-        },
-        "popup-back-button": {
-            "stroke": "red"
-        },
-        "popup-close-button": {
-            "fill": "red"
-        },
-        "otp-resend-button": {
-            "color": "black"
-        }
-    }
-});
-
-
-```
-{% endtab %}
-
-{% tab title="Dark theme" %}
 ```
 Checkout.init({
     selector: "checkout",
@@ -525,8 +438,6 @@ Checkout.init({
         }
     }
 });
-
-
 ```
 
 <figure><img src="https://lh7-us.googleusercontent.com/38HhHbm74EHLWgca0d-r2bkOx5gliihMtCmyIPol179kZ83QA9HWyg_iAfMgxo1tTsUVOWh_joGDd-2KV1YvJKProWcIyKhSxbVZRXTH75Ze5pf0L-korQTTVpEH_Zpi_blfRdwaI3POVJWupGQ_IiMZLPvn3_tl" alt=""><figcaption></figcaption></figure>

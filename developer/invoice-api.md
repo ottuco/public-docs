@@ -47,7 +47,7 @@ Sources of Decimal Standards:
 
 Once you've fulfilled these prerequisites, you're ready to integrate the Invoice API. The following sections of this document will guide you through the authentication process and the usage of various API endpoints.
 
-### Boost Your Integration
+### [Boost Your Integration](invoice-api.md#boost-your-integration)
 
 Optimize your integration with the `Invoice API` using our official packages, designed to significantly simplify the process. These packages efficiently handle the complexities of API integration, allowing you to focus on the critical elements of your project.
 

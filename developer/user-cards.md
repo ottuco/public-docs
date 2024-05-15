@@ -8,7 +8,7 @@ Before diving into this section, it’s recommended to first review the [Tokeniz
 User Cards API is not available in KSA.
 {% endhint %}
 
-## [Installation](user-cards.md#installation)
+## [Setup](user-cards.md#setup)
 
 When integrating the User Saved Cards endpoints into your system, here are the key points you need to be aware of:
 
@@ -21,6 +21,17 @@ When integrating the User Saved Cards endpoints into your system, here are the k
 {% endhint %}
 
 4. Ottu already facilitates the display of saved cards and allows customers to delete their own cards. However, if you wish for a more granular level of control, you can perform these actions yourself using the provided tokens.
+
+### [Boost Your Integration](user-cards.md#boost-your-integration)
+
+Enhance your integration with User Card APIs by utilizing our Python SDK tailored for user card management operations. This SDK facilitates efficient interaction with APIs that manage customer card details.
+
+**Available Package:**
+
+* **Python SDK**: Provides an object-oriented approach to list all cards associated with a customer and delete a customer's card using a token. This SDK encapsulates the complexities of API calls, focusing on efficiency and simplicity. [Learn more](https://github.com/ottuco/ottu-py?tab=readme-ov-file#cards)
+* **Django SDK**: Facilitates the integration of payment methods into Django projects by providing Django-specific tools and utilities that streamline payment processing. [Find out more](https://github.com/ottuco/ottu-py?tab=readme-ov-file#django-integration)
+
+For successful implementation, comprehending the fundamental concepts and structures documented is essential. This understanding guarantees robust and maintainable integration of the SDK into your projects.
 
 ## [**Authentication**](user-cards.md#authentication)
 

@@ -1,7 +1,5 @@
 # Satellite
 
-## [**Introduction**](satellite.md#introduction)
-
 This section unveils the transformative power of Ottu Satellite, a cornerstone in optimizing and streamlining the merchant's business processes.&#x20;
 
 From providing a panoramic view of installations to automating Shopify billing and enhancing subscription management, Satellite is designed to elevate the Ottu experience.&#x20;

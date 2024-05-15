@@ -1,7 +1,5 @@
 # Bulk payment request
 
-## [Introduction](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/\~/changes/616/user-guide/plugins/bulk-payment-request#introduction)
-
 Enhance your experience with Ottu's innovative bulk payment request plugin. Now, you can effortlessly send [payment requests](bulk-payment-request.md#payment-request) to a group of customers simultaneously, with the added convenience of recurring requests that gives you the possibility to resend the request periodically and not just once. No more manual effort! No more limitations!
 
 ## [**Create bulk payment request**](bulk-payment-request.md#create-bulk-payment-request)

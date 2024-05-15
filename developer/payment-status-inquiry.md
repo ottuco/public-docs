@@ -1,7 +1,5 @@
 # Payment Status-Inquiry
 
-## [Introduction](payment-status-inquiry.md#introduction)
-
 The `Payment Status Inquiry API` endpoint is a part of Ottu's Check Status API designed to check the status of a specific payment transaction. This is especially useful when your system may not have received notifications about changes to a transaction's status.&#x20;
 
 `The Payment Status Inquiry API` effectively acts as a manual status confirmation mechanism, reflecting the structure of a [payment webhook notification](webhooks/payment-notification.md). The endpoint can be triggered for payment transactions in the following states: `pending`, `attempted`, `failed`, or `expired`. If the transaction state is already `paid` or `authorized`, the status is returned immediately without needing to re-confirm with third-party [Payment Gateways](../user-guide/payment-gateway.md) (PGs).&#x20;

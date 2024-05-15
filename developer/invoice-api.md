@@ -1,7 +1,5 @@
 # Invoice API
 
-## [Introduction](invoice-api.md#introduction)
-
 Ottu provides businesses and developers with the capability to incorporate its Invoice functionality into their existing systems, streamlining the process of invoice generation for both online and walk-in customers.
 
 **But what exactly is an Invoice?** An invoice is a document dispatched by a seller to a buyer, itemizing not only the quantity and cost of products or services rendered by the seller but also detailing any applicable taxes, discounts, and shipping costs. Whether issued for a traditional walk-in customer at a brick-and-mortar establishment or an online purchaser, the invoice stands as both a record of the sale and a call for payment.

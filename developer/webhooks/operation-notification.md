@@ -1,7 +1,5 @@
 # Operation Notification
 
-## [Introduction](operation-notification.md#introduction)
-
 Ottu’s operation webhooks provide real-time insights into post-transaction activities, specifically focusing on `refund`, `capture`, and `void`. Operating asynchronously, they ensure merchants are promptly informed about these crucial subsequent payment gateway operations without disrupting the main transaction flow. By utilizing these webhooks, merchants gain a clearer view of their transactional landscape, enhancing decision-making and customer interactions.
 
 ## [Setup](operation-notification.md#setup)

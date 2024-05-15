@@ -1,7 +1,5 @@
 # Android
 
-## [Ottu Checkout](android.md#ottu-checkout)
-
 Over The Ottu Checkout which is Android SDK, helps you to make your payment process easy and quick within your Android app, in addition it provides UI screen and elements  customizable empowering you to collect payment details of your user.
 
 {% hint style="warning" %}

@@ -1,7 +1,5 @@
 # Checkout SDK
 
-## [Overview](./#overview)
-
 If you are planning to use the Checkout SDK for your application, it is important to note that you will need to first implement the [Checkout API](../checkout-api.md) on your backend server. This is because the  Checkout SDK requires a [session ID](../checkout-api.md#session\_id-string-read-only) in order to function, and the [session ID](../checkout-api.md#session\_id-string-read-only) is obtained through the [Checkout API](../checkout-api.md).
 
 The [Checkout API](../checkout-api.md) is responsible for generating a [session ID](../checkout-api.md#session\_id-string-read-only), which is a unique identifier that is used to initiate the  Checkout SDK. This [session ID](../checkout-api.md#session\_id-string-read-only) is required to be passed to the Checkout SDK in order for it to work properly.

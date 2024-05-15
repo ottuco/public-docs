@@ -1,7 +1,5 @@
 # Tokenization
 
-## [Introduction](tokenization.md#introduction)
-
 Tokenization significantly reduces the risk associated with handling sensitive customer card data. Instead of storing the actual card details, a unique token is generated and used for future transactions, thus enhancing the security of your payment processes. This feature is currently compatible with MasterCard, Visa, and STC Pay, with further options planned for future inclusion.
 
 ## [What is Tokenization?](tokenization.md#what-is-tokenization)

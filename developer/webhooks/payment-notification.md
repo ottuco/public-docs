@@ -1,7 +1,5 @@
 # Payment Notification
 
-## [Introduction](payment-notification.md#introduction)
-
 Payment webhooks are specific to payment events and are triggered on multiple occasions:
 
 1.  #### Post-Payment Completion

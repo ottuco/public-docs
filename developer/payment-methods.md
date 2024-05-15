@@ -1,7 +1,5 @@
 # Payment Methods
 
-## [Introduction](payment-methods.md#introduction)
-
 In the intricate realm of online transactions, a versatile payment experience is essential. \
 The `Payment Methods API` streamlines this process, allowing for effortless automation. by simply integrating with specified operation, [customer\_id](checkout-api.md#customer\_id-string-optional), [currencies](checkout-api.md#currency\_code-string-required), [payment gateway names](../user-guide/payment-gateway.md) and desired [payment plugins](../user-guide/plugins/), merchant can harness the full power of Ottu's payment automation, all while keeping his existing environment intact. no extra effort, just seamless integration.
 

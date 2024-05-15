@@ -1,7 +1,5 @@
 # Apple Pay
 
-## [Introduction](apple-pay.md#introduction)
-
 Apple Pay is a comprehensive payment service that encompasses two primary categories: mobile payment and digital wallets. These services provide convenient and secure methods for customers to make transactions, enhancing the overall payment experience.
 
 Mobile payments are payments that are made using a mobile device, such as a smartphone or tablet, Mac or MacBook device. Digital wallets are online accounts that store payment information, such as credit card numbers and bank account information. Both mobile payments and digital wallets offer many benefits over traditional payment methods (i.e., cash and checks). These benefits include convenience, security, and speed.

@@ -1,7 +1,5 @@
 # Payment Request
 
-## [Introduction](payment-request.md#introduction)
-
 Effortlessly create payment requests with Ottu's user-friendly interface, minimizing form details for a streamlined experience. Rest assured with Ottu's security commitment and diverse payment gateway options.
 
 ## [**Payment Request Characteristics**](payment-request.md#payment-request-characteristics)

@@ -1,7 +1,5 @@
 # Checkout API
 
-## [Getting Started](checkout-api.md#getting-started)
-
 Ottu provides a comprehensive collection of APIs that offer a seamless and efficient way to test payments and enable merchants to accept and process transactions instantly. The Checkout API is the cornerstone of any payment initiation, whether it's [API-based](checkout-api.md) or [SDK-based](checkout-sdk/).
 
 ## [Best Practices and Guidelines](checkout-api.md#best-practices-and-guidelines)

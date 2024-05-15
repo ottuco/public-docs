@@ -1,7 +1,5 @@
 # Auto-Debit
 
-## [Introduction](auto-debit.md#introduction)
-
 Welcome to the Ottu `Auto Debit API` documentation. Our API provides businesses and developers with the ability to incorporate Ottu's auto-debit functionality into their existing systems, allowing for seamless and automated payment processing.
 
 **But what is auto debit?** Auto debit is a financial arrangement wherein a customer authorizes a company to deduct money from their account, whether on a recurring basis, an unscheduled basis, or potentially in the future, the deduction could occur on an event-based, installment, or other specified terms. The frequency and amount of these deductions are determined in advance and can vary depending on the type of agreement, be it a subscription, a loan repayment, or any other kind of periodic payment.&#x20;

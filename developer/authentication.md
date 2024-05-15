@@ -1,7 +1,5 @@
 # Authentication
 
-## [Authentication](authentication.md#authentication)
-
 Navigating the digital commerce and financial transactions landscape requires a keen understanding of security, specifically authentication methods. At Ottu, we support three distinct types of authentication to help ensure the safe and seamless operation of your payment system: [Basic Authentication](authentication.md#basic-authentication), [Private Key (API-Key)](authentication.md#private-key-api-key), and [Public Key](authentication.md#public-key).
 
 ## [**Basic Authentication**](authentication.md#basic-authentication)

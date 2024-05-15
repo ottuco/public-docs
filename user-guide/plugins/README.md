@@ -1,7 +1,5 @@
 # Plugins
 
-## [Ottu Plugins](./#ottu-plugins)
-
 Ottu is the ultimate plugin-based online payment management system (OPMS) designed to revolutionize your business. We provide an extensive array of valuable services aimed at enhancing the capabilities, adaptability, and trustworthiness of merchant businesses. We empower you with enhanced automation, unparalleled flexibility, and unwavering credibility. Unlock the full potential of your business with Ottu and take your success to new heights!
 
 ## [Available Plugins](./#available-plugins)

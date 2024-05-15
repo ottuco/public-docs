@@ -1,7 +1,5 @@
 # Currencies
 
-## [Introduction](currencies.md#introduction)
-
 Discover Ottu, the groundbreaking multi-currency Online Payment Management System (OPMS) developed to revolutionize your online business. Ottu empowers merchants with unprecedented flexibility, allowing them to effortlessly accept payments in multiple currencies. With our advanced [currency exchange](currencies.md#currency-exchanges) options, businesses can seamlessly manage online payments with a wide array of currency options across borders, ensuring a smooth and user-friendly experience for customers worldwide, with the ability to customize the markup fees according to their preferences. Say goodbye to limitations and unlock a world of endless payment possibilities with Ottu, your ultimate solution to currency restrictions.
 
 ## [Currency Configurations](currencies.md#currency-configurations)

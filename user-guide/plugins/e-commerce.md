@@ -1,7 +1,5 @@
 # E-Commerce
 
-## [Introduction](e-commerce.md#introduction)
-
 Unlock the full potential of your online business with Ottu's powerful e-commerce plugin. It empowers merchants, streamlines transactions, and ensures seamless payments for your products.
 
 ## [**Key Features of Ottu E-commerce**](e-commerce.md#key-features-of-ottu-e-commerce)

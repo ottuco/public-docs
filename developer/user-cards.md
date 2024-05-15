@@ -1,7 +1,5 @@
 # User Cards
 
-## [Introduction](user-cards.md#introduction)
-
 Before diving into this section, it’s recommended to first review the [Tokenization](tokenization.md) section for an understanding of how Ottu securely manages user card data. Optionally, you may also want to familiarize yourself with the [Checkout SDK](checkout-sdk/) for a smoother integration process. With Ottu, managing your customers’ saved cards is straightforward and secure, thanks to our user-friendly API endpoints. These APIs allow you to [fetch](user-cards.md#fetch-cards) all saved cards for a customer or [delete](user-cards.md#delete-card) a specific card. By incorporating this functionality into your system, you’re ensuring a seamless, personalized, and efficient payment experience for your customers.
 
 {% hint style="info" %}

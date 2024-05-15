@@ -1,7 +1,5 @@
 # Flutter
 
-## [Getting Started](flutter.md#getting-started)
-
 Let your Flutter app has an amazing and seamless payment experience by using Ottu SDK which is Flutter.\
 Ottu offers, various and customizable UI screen in addition to elements which can be used out of the box to get your user’s payment information.\
 Ottu supports your user interface by low level APIs, empowering you to build a custom experience.

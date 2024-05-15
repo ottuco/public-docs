@@ -1,13 +1,4 @@
----
-coverY: 0
-layout: landing
----
-
 # Features
-
-
-
-####
 
 {% content-ref url="refund-and-void-access-control.md" %}
 [refund-and-void-access-control.md](refund-and-void-access-control.md)
@@ -16,9 +7,3 @@ layout: landing
 {% content-ref url="two-step-refund-and-void-authorization.md" %}
 [two-step-refund-and-void-authorization.md](two-step-refund-and-void-authorization.md)
 {% endcontent-ref %}
-
-
-
-
-
-*

@@ -1,7 +1,5 @@
 # iOS
 
-## [**Ottu Checkout**](ios.md#ottu-checkout)
-
 It's easy and quick to build a great payment experience using Ottu Checkouts which is iOS SDK. In order to collect your user's payment information, we provide powerful and customizable UI screens.
 
 {% hint style="warning" %}

@@ -1,7 +1,5 @@
 # Webhooks
 
-## [Introduction](./#introduction)
-
 Ottu offers an optional end-to-end integration with the [Payment Gateway](../../user-guide/payment-gateway.md) (PG) through webhooks. By default, these webhooks are **disabled**, ensuring merchants only receive notifications if they choose to. These webhooks act as a reactive mechanism, notifying merchants either in real-time or on-demand, depending on the event. Whether it’s a payment being processed or a subsequent payment gateway [operation](../operations.md#external-operations) taking place, Ottu ensures that the merchant is promptly informed once the webhooks are enabled. Merchants can enable these webhooks in various ways, either directly from the Ottu dashboard or via the [Checkout API](../checkout-api.md).
 
 Ottu simplifies the integration process by providing a unified response across all payment gateways. Whether you’re working with MPGS, KNET, PayPal, or any other gateway, you only need to handle Ottu’s standardized response. This ensures a consistent experience, eliminating the need to interpret varied responses from different payment gateways.&#x20;

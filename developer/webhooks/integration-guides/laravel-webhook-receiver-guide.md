@@ -1,7 +1,5 @@
 # Laravel Webhook Receiver Guide
 
-## [Introduction](laravel-webhook-receiver-guide.md#introduction)
-
 This section is designed for developers who are using `Laravel`, a popular `PHP` framework, to integrate webhook notifications from Ottu. We aim to provide clear and practical examples to help you effectively set up and handle webhook events within your `Laravel` applications.&#x20;
 
 ## [Database Setup](laravel-webhook-receiver-guide.md#database-setup)

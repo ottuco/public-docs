@@ -5,8 +5,6 @@ coverY: 0
 
 # Getting Started
 
-## [Introduction](./#introduction)
-
 Welcome to Ottu, the ultimate online payment management system (OPMS) that focuses on ensuring secure financial transactions. Let us help you grow and thrive in today's digital economy.
 
 We understand that electronic payment is a necessity for people, and we continuously strive to provide the latest and most recent technology that meets the evolving needs of our users, including merchants, developers, IT professionals, and technicians. We also understand that in today's world, financial security is a top concern, so we are here to provide a reliable solution and help you navigate this landscape easily. Our goal is to help our clients and enable merchants to protect and enhance their businesses and achieve sustainable growth and expansion by providing them with customized tools tailored to meet their specific needs. At Ottu, clients can pay with their preferred currency and payment method. We prioritize client satisfaction, and we are always evolving to ensure that we are adapted to meet the demands of every client across multiple platforms, environments, and industries. We integrate with our users' businesses, infrastructure, and other systems without the need for restructuring or reinstalling, ensuring a seamless transition to our platform.\

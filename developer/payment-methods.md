@@ -26,6 +26,17 @@ The `type` filter determines the mode of your environment:
 Ensure you’re in the correct mode before initiating payments.
 {% endhint %}
 
+### [Boost Your Integration](payment-methods.md#boost-your-integration)
+
+To accelerate the integration process, consider using our official packages. These packages handle the heavy lifting involved in integrating with our API. They encapsulate much of the API interaction logic, allowing you to focus on core business logic.
+
+**Available Packages:**
+
+* **Python SDK:** Simplifies access to payment methods using a Pythonic interface, enhancing developer productivity by abstracting complex API calls. [Learn more](https://github.com/ottuco/ottu-py#accessing-the-payment-methods).
+* **Django SDK:** Integrates payment methods seamlessly into Django projects, providing tools and utilities specific to Django, which streamline payment processes. [Explore details](https://github.com/ottuco/ottu-py?tab=readme-ov-file#django-integration).
+
+While these packages offer substantial speed and convenience benefits, understanding the foundational concepts and structures outlined in the documentation is crucial. This ensures that you can effectively integrate and use the packages in a robust and maintainable manner.
+
 ## [Authentication](payment-methods.md#authentication)
 
 **Supported Methods**

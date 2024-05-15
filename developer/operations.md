@@ -24,7 +24,7 @@ The Operations API is part of Ottu’s ongoing commitment to development, and th
 Ottu’s Operations API supports both system-side operations `cancel`, `delete`, `expire` and gateway-level operations `capture`, `refund`, `void`, ensuring your transaction data is always in sync with the PG. Remember, availability of gateway-level operations may depend on the specific payment gateway’s capabilities.
 {% endhint %}
 
-## [Installation](operations.md#installation)
+## [Setup](operations.md#setup)
 
 Before proceeding with any operation, it is essential to have an existing payment transaction. This transaction can be created in one of two ways:
 
@@ -32,6 +32,17 @@ Before proceeding with any operation, it is essential to have an existing paymen
 2. **Via the Ottu Dashboard:** Alternatively, you can manually create a payment transaction directly from the Ottu Dashboard. Check [Creating Payment Request](../#creating-payment-request). From the dashboard, you can track and manage all your transactions. See [Payment Tracking](../user-guide/payment-tracking/).
 
 Once a payment transaction has been initiated, you will receive either a [session\_id](checkout-api.md#session\_id-string-mandatory) or an [order\_no](checkout-api.md#order\_no-string-optional). It is recommended to use the session\_id for operations, as it is always present in the response, whereas order\_no is a property defined by the merchant and may not always be available. Remember to securely store these identifiers, as they are essential for performing operations on the payment transaction.
+
+### [Boost Your Integration](operations.md#boost-your-integration)
+
+To enhance your integration with Operation APIs such as [Cancel](operations.md#cancel), [Expire](operations.md#expire), [Delete](operations.md#delete), [Capture](operations.md#capture), [Refund](operations.md#refund), and [Void](operations.md#void), consider leveraging our dedicated Python SDK. This SDK simplifies the integration process by encapsulating complex API interactions, thus allowing you to focus on the core functionalities of your business.
+
+**Available Package:**
+
+* **Python SDK:** Streamlines the management of operations like cancellation, expiration, deletion, capture, refund, and void actions through a straightforward, object-oriented interface. [Learn more](https://github.com/ottuco/ottu-py?tab=readme-ov-file#operations)
+* **Django SDK:** Seamlessly integrates payment methods into Django projects, offering specialized tools and utilities that simplify payment processes. [Explore details](https://github.com/ottuco/ottu-py?tab=readme-ov-file#django-integration)
+
+Understanding the key concepts and frameworks documented is crucial for utilizing this package effectively and ensuring robust, maintainable integration.
 
 ## [Authentication](operations.md#authentication)
 

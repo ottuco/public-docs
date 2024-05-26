@@ -18,7 +18,7 @@ For optimal security, call REST APIs from server-side implementations, not clien
 
 Below is a demo of the Checkout SDK in action. This demo shows how the Checkout SDK can be used to create a streamlined checkout experience for customers, with support for multiple forms of payment and a customizable interface.
 
-{% embed url="https://codepen.io/Ottu/pen/MWZrgPy" fullWidth="true" %}
+{% embed url="https://codepen.io/Ottu/pen/MWZrgPy" fullWidth="false" %}
 
 #### [Installation](web.md#installation)
 

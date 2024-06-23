@@ -85,7 +85,7 @@ To retrieve payment methods that support `USD` and `tokenization` for `e-commerc
 ```json
 POST: https://beta.ottu.net/b/pbl/v2/payment-methods/
 {
-    "plugin": "e-commerce",
+    "plugin": "e_commerce",
     "operation": "purchase",
     "tokenizable": "true",
     "currencies": ["USD"]

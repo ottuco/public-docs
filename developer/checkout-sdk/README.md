@@ -20,8 +20,8 @@ By following this process, you can ensure that your application is able to prope
 [android.md](android.md)
 {% endcontent-ref %}
 
-{% content-ref url="flutter.md" %}
-[flutter.md](flutter.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ## [Ottu-Checkout definition](./#ottu-checkout-definition)

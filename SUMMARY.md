@@ -45,7 +45,6 @@
   * [Web](developer/checkout-sdk/web.md)
   * [iOS](developer/checkout-sdk/ios.md)
   * [Android](developer/checkout-sdk/android.md)
-  * [Flutter](developer/checkout-sdk/flutter.md)
 * [Webhooks](developer/webhooks/README.md)
   * [Payment Notification](developer/webhooks/payment-notification.md)
   * [Operation Notification](developer/webhooks/operation-notification.md)

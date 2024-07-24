@@ -19,7 +19,7 @@ The SDK can be used on a device running iOS 13 or higher.
 _**Ottu:**_ Ottu is available through [CocoaPods](http://cocoapods.org/). To install it, simply add the following line to your Podfile:
 
 ```swift
-pod 'Ottu', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.14'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.14'
 ```
 
 ### [**Installation with Swift Package Manager**](ios.md#installation-with-swift-package-manager)

@@ -58,7 +58,7 @@ Ottu is available through [CocoaPods](http://cocoapods.org). \
 To install it, simply add the following line to your Podfile:
 
 ```swift
-pod 'Ottu'
+pod "ottu_checkout_sdk"
 ```
 
 ### [**Installation with Swift Package Manager**](ios.md#installation-with-swift-package-manager)
@@ -67,7 +67,7 @@ The Swift Package Manager is used for automating the distribution of Swift code,
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ottuco/ottu-ios-sdk.git")
+    .package(url: "https://github.com/ottuco/ottu-ios.git")
 ]
 ```
 

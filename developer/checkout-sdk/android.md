@@ -48,7 +48,7 @@ allprojects {
 }
     
 dependencies {
-       implementation 'com.github.ottuco:ottu-android-private-sdk:1.0.10'
+       implementation 'com.github.ottuco:ottu-android-checkout:1.0.4'
 }
 ```
 

@@ -21,7 +21,7 @@ allprojects {
     repositories {
         ...
         maven {
-            url '<https://jitpack.io>'
+            url 'https://jitpack.io'
         }
     }
 }
@@ -36,11 +36,11 @@ dependencies {
 The SDK UI is a `Fragment` embedded in any part of any `Activity` of the merchant's app.\
 Here is the example:
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 However, if there’s only one payment option available and it it a wallet, the UI is minified:
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 ## [SDK Configuration](android.md#sdk-configuration) <a href="#sdk-configuration" id="sdk-configuration"></a>
 

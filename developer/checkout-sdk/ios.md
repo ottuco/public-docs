@@ -39,11 +39,11 @@ dependencies: [
 The SDK UI is a `View` embedded in any part of any `ViewController` of the merchant's app.\
 Here is the example:
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Native UI.png" alt=""><figcaption></figcaption></figure>
 
 However, if there’s only one payment option available and it is a wallet, the UI is minified:
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Native UI 1.png" alt=""><figcaption></figcaption></figure>
 
 ## [SDK Configuration](ios.md#sdk-configuration) <a href="#sdk-configuration" id="sdk-configuration"></a>
 

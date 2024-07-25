@@ -34,6 +34,10 @@ dependencies: [
 ]
 ```
 
+{% hint style="warning" %}
+Due to a current issue with the Swift Package Manager (Swift PM), if you choose to use Swift PM for installation, it is necessary to manually install the `sentry-cocoa` package in addition to the `ottu_checkout_sdk`.
+{% endhint %}
+
 ## [Native UI](ios.md#native-ui) <a href="#native-ui" id="native-ui"></a>
 
 The SDK UI is a `View` embedded in any part of any `ViewController` of the merchant's app.\

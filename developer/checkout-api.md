@@ -776,8 +776,8 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
-{% swagger src="../.gitbook/assets/Ottu API (42).yaml" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[Ottu API (42).yaml](<../.gitbook/assets/Ottu API (42).yaml>)
+{% swagger src="../.gitbook/assets/Ottu API - 2024-07-25T155219.292.yaml" path="/b/checkout/v1/pymt-txn/" method="post" %}
+[Ottu API - 2024-07-25T155219.292.yaml](<../.gitbook/assets/Ottu API - 2024-07-25T155219.292.yaml>)
 {% endswagger %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)

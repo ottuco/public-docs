@@ -246,7 +246,7 @@ Is a boolean field determining whether “Payment details” section should be d
 
 ### [Properties description](android.md#properties-description) <a href="#properties-description" id="properties-description"></a>
 
-**Important Note:**All properties are optional and customizable by the user. If a property is not specified, the default value, as outlined in the above Figma design, will be [used](android.md#text).&#x20;
+**Important Note:**All properties are optional and customizable by the user. If a property is not specified, the default value, as outlined in the above Figma design, will be used.&#x20;
 
 #### [**Texts**](android.md#texts)
 
@@ -255,7 +255,7 @@ Is a boolean field determining whether “Payment details” section should be d
 | Property Name   |                            Description                            |        Data Type        |
 | --------------- | :---------------------------------------------------------------: | :---------------------: |
 | `mainTitleText` |                 Font and color for all “Captions”                 | [Text](android.md#text) |
-| `titleText`     |           Font and color for payment options in the list          | [used](android.md#text) |
+| `titleText`     |           Font and color for payment options in the list          | [Text](android.md#text) |
 | `subtitleText`  | Font and color for payment options details (like expiration date) | [Text](android.md#text) |
 
 #### **Fees**

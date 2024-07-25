@@ -272,7 +272,7 @@ Is a boolean field determining whether “Payment details” section should be d
 | `dataLabelText` | Font and color of payment details fields (like “Amount”) | [Text](android.md#text) |
 | `dataValueText` |         Font and color of payment details values         | [Text](android.md#text) |
 
-**Other**
+#### **Other**
 
 | Property Name      |                   Description                   |        Data Type        |
 | ------------------ | :---------------------------------------------: | :---------------------: |
@@ -312,7 +312,7 @@ Is a boolean field determining whether “Payment details” section should be d
 
 | Property Name |                      Description                      |            Data Type            |
 | ------------- | :---------------------------------------------------: | :-----------------------------: |
-| margins       | Top, left, bottom and right margins between component | [Margins](android.md#margins-1) |
+| `margins`     | Top, left, bottom and right margins between component | [Margins](android.md#margins-1) |
 
 ### [Data types description](android.md#data-types-description) <a href="#data-types-description" id="data-types-description"></a>
 

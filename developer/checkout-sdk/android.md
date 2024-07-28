@@ -5,7 +5,7 @@ The [Checkout SDK](./) from Ottu is a Kotlin-based library designed to simplify 
 The Checkout SDK must be incorporated into your Android application, and it must be initialized using your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API public key](../authentication.md#public-key). Various settings, such as the accepted payment methods and the [theme](https://docs.ottu.com/developer/checkout-sdk/web#theme-object) styling for the checkout interface, may also be specified.
 
 {% hint style="warning" %}
-The [API private key](../authentication.md#private-key-api-key) should never be utilized on the client side; instead, use the [API public key](../authentication.md#public-key). This is essential for maintaining the security of your application and safeguarding sensitive data.
+The [API private key](../authentication.md#private-key-api-key) should never be utilized on the client side; instead, use the [API public key](../authentication.md#public-key)This is essential for maintaining the security of your application and safeguarding sensitive data.
 {% endhint %}
 
 ## [Installation](android.md#installation) <a href="#installation" id="installation"></a>
@@ -252,129 +252,116 @@ Is a boolean field determining whether “Payment details” section should be d
 
 #### **General**
 
-| Property Name   |                            Description                            |        Data Type        |
-| --------------- | :---------------------------------------------------------------: | :---------------------: |
-| `mainTitleText` |                 Font and color for all “Captions”                 | [Text](android.md#text) |
-| `titleText`     |           Font and color for payment options in the list          | [Text](android.md#text) |
-| `subtitleText`  | Font and color for payment options details (like expiration date) | [Text](android.md#text) |
+|   Property Name  |               Description                                         |        Data Type        |
+| :--------------: | ----------------------------------------------------------------- | :---------------------: |
+|  `mainTitleText` | Font and color for all “Captions”                                 | [Text](android.md#text) |
+|    `titleText`   | Font and color for payment options in the list                    | [Text](android.md#text) |
+|  `subtitleText`  | Font and color for payment options details (like expiration date) | [Text](android.md#text) |
 
 #### **Fees**
 
-| Property Name      |                           Description                          |        Data Type        |
-| ------------------ | :------------------------------------------------------------: | :---------------------: |
-| `feesTitleText`    |    Font and color of fees value in the payment options list    | [Text](android.md#text) |
+|    Property Name   |                           Description                          |        Data Type        |
+| :----------------: | :------------------------------------------------------------: | :---------------------: |
+|   `feesTitleText`  |    Font and color of fees value in the payment options list    | [Text](android.md#text) |
 | `feesSubtitleText` | Font and color of fees description in the payment options list | [Text](android.md#text) |
 
 #### **Data**
 
-| Property Name   |                        Description                       |        Data Type        |
-| --------------- | :------------------------------------------------------: | :---------------------: |
+|  Property Name  |                        Description                       |        Data Type        |
+| :-------------: | :------------------------------------------------------: | :---------------------: |
 | `dataLabelText` | Font and color of payment details fields (like “Amount”) | [Text](android.md#text) |
 | `dataValueText` |         Font and color of payment details values         | [Text](android.md#text) |
 
 #### **Other**
 
-| Property Name      |                   Description                   |        Data Type        |
-| ------------------ | :---------------------------------------------: | :---------------------: |
+|    Property Name   |                   Description                   |        Data Type        |
+| :----------------: | :---------------------------------------------: | :---------------------: |
 | `errorMessageText` | Font and color of error message text in pop-ups | [Text](android.md#text) |
 
 #### [**Text Fields**](android.md#text-fields)
 
-| Property Name    |                              Description                             |             Data Type             |
-| ---------------- | :------------------------------------------------------------------: | :-------------------------------: |
+|   Property Name  |                              Description                             |             Data Type             |
+| :--------------: | :------------------------------------------------------------------: | :-------------------------------: |
 | `inputTextField` | Font and color of text in any input field (including disabled state) | [TextField](android.md#textfield) |
 
 #### [**Colors**](android.md#colors)
 
-| Property Name                |                       Description                      |         Data Type         |
-| ---------------------------- | :----------------------------------------------------: | :-----------------------: |
-| `sdkbackgroundColor`         |      The main background of the SDK view component     | [Color](android.md#color) |
-| `modalBackgroundColor`       |           The background of any modal window           | [Color](android.md#color) |
-| `paymentItemBackgroundColor` |    The background of an item in payment options list   | [Color](android.md#color) |
-| `selectorIconColor`          |          The color of the icon of the payment          | [Color](android.md#color) |
-| `savePhoneNumberIconColor`   | The color of “Diskette” button for saving phone number | [Color](android.md#color) |
+<table><thead><tr><th width="311" align="center">Property Name</th><th align="center">Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>sdkbackgroundColor</code></td><td align="center">The main background of the SDK view component</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>modalBackgroundColor</code></td><td align="center">The background of any modal window</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>paymentItemBackgroundColor</code></td><td align="center">The background of an item in payment options list</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>selectorIconColor</code></td><td align="center">The color of the icon of the payment</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>savePhoneNumberIconColor</code></td><td align="center">The color of “Diskette” button for saving phone number</td><td align="center"><a href="android.md#color">Color</a></td></tr></tbody></table>
 
 #### [**Buttons**](android.md#buttons)
 
-| Property Name    |                            Description                            |               Data Type               |
-| ---------------- | :---------------------------------------------------------------: | :-----------------------------------: |
-| `button`         |           Background, text color and font for any button          |      [Button](android.md#button)      |
-| `backButton`     |               Color of the “Back” navigation button               | [RippleColor](android.md#ripplecolor) |
+|   Property Name  |                            Description                            |               Data Type               |
+| :--------------: | :---------------------------------------------------------------: | :-----------------------------------: |
+|     `button`     |           Background, text color and font for any button          |      [Button](android.md#button)      |
+|   `backButton`   |               Color of the “Back” navigation button               | [RippleColor](android.md#ripplecolor) |
 | `selectorButton` | Background, text color and font for payment item selection button |      [Button](android.md#button)      |
 
 #### [**Switch**](android.md#switch)
 
 | Property Name |                                        Description                                        |           Data Type           |
-| ------------- | :---------------------------------------------------------------------------------------: | :---------------------------: |
-| `switch`      | Colors of the switch background and its toggle in different states (on, off and disabled) | [Switch](android.md#switch-1) |
+| :-----------: | :---------------------------------------------------------------------------------------: | :---------------------------: |
+|    `switch`   | Colors of the switch background and its toggle in different states (on, off and disabled) | [Switch](android.md#switch-1) |
 
 #### [**Margins**](android.md#margins)
 
 | Property Name |                      Description                      |            Data Type            |
-| ------------- | :---------------------------------------------------: | :-----------------------------: |
-| `margins`     | Top, left, bottom and right margins between component | [Margins](android.md#margins-1) |
+| :-----------: | :---------------------------------------------------: | :-----------------------------: |
+|   `margins`   | Top, left, bottom and right margins between component | [Margins](android.md#margins-1) |
 
 ### [Data types description](android.md#data-types-description) <a href="#data-types-description" id="data-types-description"></a>
 
 #### [**Color**](android.md#color)
 
-| Property Name   |             Description             | Data Type |
-| --------------- | :---------------------------------: | :-------: |
-| `color`         |       Main color integer value      |    Int    |
+|  Property Name  |             Description             | Data Type |
+| :-------------: | :---------------------------------: | :-------: |
+|     `color`     |       Main color integer value      |    Int    |
 | `colorDisabled` | Disabled stated color integer value |    Int    |
 
 #### [**RippleColor**](android.md#ripplecolor)
 
-| Property Name  |             Description             | Data Type |
-| -------------- | :---------------------------------: | :-------: |
-| `color`        |       Main color integer value      |    Int    |
-| `rippleColor`  |      Ripple color integer value     |    Int    |
+|  Property Name |             Description             | Data Type |
+| :------------: | :---------------------------------: | :-------: |
+|     `color`    |       Main color integer value      |    Int    |
+|  `rippleColor` |      Ripple color integer value     |    Int    |
 | `colorDisaled` | Disabled stated color integer value |    Int    |
 
 #### [Text](android.md#text)
 
 | Property Name |        Description       |         Data Type         |
-| ------------- | :----------------------: | :-----------------------: |
-| `textColor`   | Main color integer value | [Color](android.md#color) |
-| `fontType`    |     Font resource ID     |            Int            |
+| :-----------: | :----------------------: | :-----------------------: |
+|  `textColor`  | Main color integer value | [Color](android.md#color) |
+|   `fontType`  |     Font resource ID     |            Int            |
 
 #### [**TextField**](android.md#textfield)
 
-|  Property Name | Description                    |         Data Type         |
-| :------------: | ------------------------------ | :-----------------------: |
+|  Property Name |           Description          |         Data Type         |
+| :------------: | :----------------------------: | :-----------------------: |
 |  `background`  | Background color integer value | [Color](android.md#color) |
-| `primaryColor` | Text color                     | [Color](android.md#color) |
-| `focusedColor` | Selected text color            | [Color](android.md#color) |
-|     `text`     | Text value                     |  [Text](android.md#text)  |
-|     `error`    | Text value                     |  [Text](android.md#text)  |
+| `primaryColor` |           Text color           | [Color](android.md#color) |
+| `focusedColor` |       Selected text color      | [Color](android.md#color) |
+|     `text`     |           Text value           |  [Text](android.md#text)  |
+|     `error`    |           Text value           |  [Text](android.md#text)  |
 
 #### [Button](android.md#button)
 
 | Property Name |       Description       |               Data Type               |
-| ------------- | :---------------------: | :-----------------------------------: |
+| :-----------: | :---------------------: | :-----------------------------------: |
 | `rippleColor` | Button background color | [RippleColor](android.md#ripplecolor) |
-| `fontType`    |   Button text font ID   |                  Int                  |
-| `textColor`   |    Button text color    |       [Color](android.md#color)       |
+|   `fontType`  |   Button text font ID   |                  Int                  |
+|  `textColor`  |    Button text color    |       [Color](android.md#color)       |
 
 #### [Switch](android.md#switch-1)
 
-| Property Name                   |             Description             | Data Type |
-| ------------------------------- | :---------------------------------: | :-------: |
-| `checkedThumbTintColor`         |    Toggle color in checked state    |    Int    |
-| `uncheckedThumbTintColor`       |   Toggle color in unchecked state   |    Int    |
-| `checkedTrackTintColor`         |     Track color in checked state    |    Int    |
-| `uncheckedTrackTintColor`       |    Track color in unchecked state   |    Int    |
-| `checkedTrackDecorationColor`   |  Decoration color in checked state  |    Int    |
-| `uncheckedTrackDecorationColor` | Decoration color in unchecked state |    Int    |
+<table><thead><tr><th width="340" align="center">Property Name</th><th align="center">Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>checkedThumbTintColor</code></td><td align="center">Toggle color in checked state</td><td align="center">Int</td></tr><tr><td align="center"><code>uncheckedThumbTintColor</code></td><td align="center">Toggle color in unchecked state</td><td align="center">Int</td></tr><tr><td align="center"><code>checkedTrackTintColor</code></td><td align="center">Track color in checked state</td><td align="center">Int</td></tr><tr><td align="center"><code>uncheckedTrackTintColor</code></td><td align="center">Track color in unchecked state</td><td align="center">Int</td></tr><tr><td align="center"><code>checkedTrackDecorationColor</code></td><td align="center">Decoration color in checked state</td><td align="center">Int</td></tr><tr><td align="center"><code>uncheckedTrackDecorationColor</code></td><td align="center">Decoration color in unchecked state</td><td align="center">Int</td></tr></tbody></table>
 
 #### [**Margins**](android.md#margins-1)
 
 | Property Name | Data Type |
-| ------------- | :-------: |
-| `left`        |    Int    |
-| `top`         |    Int    |
-| `right`       |    Int    |
-| `bottom`      |    Int    |
+| :-----------: | :-------: |
+|     `left`    |    Int    |
+|     `top`     |    Int    |
+|    `right`    |    Int    |
+|    `bottom`   |    Int    |
 
 ## [Example](android.md#example.1) <a href="#example.1" id="example.1"></a>
 

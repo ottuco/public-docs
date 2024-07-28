@@ -252,11 +252,11 @@ Is a boolean field determining whether “Payment details” section should be d
 
 #### **General**
 
-<table><thead><tr><th width="322" align="center">Property Name</th><th width="282">              Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"> <code>mainTitleText</code></td><td>Font and color for all “Captions”</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>titleText</code></td><td>Font and color for payment options in the list</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>subtitleText</code></td><td>Font and color for payment options details (like expiration date)</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
+<table><thead><tr><th width="322" align="center">Property Name</th><th width="282">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"> <code>mainTitleText</code></td><td>Font and color for all “Captions”</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>titleText</code></td><td>Font and color for payment options in the list</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>subtitleText</code></td><td>Font and color for payment options details (like expiration date)</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
 
 #### **Fees**
 
-<table><thead><tr><th width="323" align="center">Property Name</th><th width="283" align="center">Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>feesTitleText</code></td><td align="center">Font and color of fees value in the payment options list</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>feesSubtitleText</code></td><td align="center">Font and color of fees description in the payment options list</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
+<table><thead><tr><th width="323" align="center">Property Name</th><th width="283">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>feesTitleText</code></td><td>Font and color of fees value in the payment options list</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>feesSubtitleText</code></td><td>Font and color of fees description in the payment options list</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
 
 #### **Data**
 

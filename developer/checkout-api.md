@@ -190,7 +190,7 @@ Customer’s country, [ISO 3166-1 Alpha-2 code](https://en.wikipedia.org/wiki/IS
 Will be validated against existing countries.\
 Max length: 2.
 
-#### :digit\_six:[ **postal\_code**](checkout-api.md#postal\_code-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_&#x20;
+#### :digit\_six:[ **postal\_code**](checkout-api.md#postal\_code-string-required) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_&#x20;
 
 Postal code (maybe has different length for different countries).\
 Max length: 12.
@@ -404,7 +404,7 @@ Destination country, [ISO 3166-1 Alpha-2 code](https://en.wikipedia.org/wiki/ISO
 Will be validated against existing countries.\
 Max length: 2.
 
-#### :digit\_six: [**postal\_code**](checkout-api.md#postal\_code-string-required-1) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_&#x20;
+#### :digit\_six: [**postal\_code**](checkout-api.md#postal\_code-string-required-1) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">**`optional`**</mark>_&#x20;
 
 Postal code (maybe has different length for different countries).\
 Max length: 12.

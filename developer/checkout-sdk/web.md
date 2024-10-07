@@ -111,7 +111,7 @@ The `lang` property serves to designate the language for presenting the checkout
 For seamless user experience, it's recommended to maintain consistency by passing the same value for `lang` in [Checkout.init](web.md#checkout.init) used in [Checkout API](../checkout-api.md) while creating transactions.
 {% endhint %}
 
-For more information on how to use lang parameter in the Checkout API, please refer to [language](broken-reference) parameter in `Checkout API` section.
+For more information on how to use lang parameter in the Checkout API, please refer to [language ](../checkout-api.md#language-string-optional)parameter in `Checkout API` section.
 
 #### [**formsOfPayment**](web.md#formsofpayment-array) _<mark style="color:blue;">**`array`**</mark>_
 

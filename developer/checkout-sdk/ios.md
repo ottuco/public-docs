@@ -97,7 +97,7 @@ Ensure that you utilize the public key and refrain from using the private key. T
 
 The `session_id` is the unique identifier for the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [`session_id`](broken-reference).
+This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [`session_id`](../checkout-api.md#session\_id-string-mandatory).
 
 #### [**formsOfPayment**](ios.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 

@@ -7,7 +7,7 @@ This feature streamlines the process of notifying the customer for pre- / post-p
 *   **Customer Phone Number**: The customer's phone number should be provided during the transaction creation phase. To add the customer phone number, please contact [Ottu support team](mailto:support@ottu.com)\
 
 
-    <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 * **WhatsApp Business Account and Template Approval:** The merchant must have a WhatsApp Business account. Additionally, all templates and their content must be approved by Meta/WhatsApp before they can be used.
 * **WhatsApp Integration Authenticator**: It acts as the link between WhatsApp and Ottu. \
   To configure it, please contact [Ottu support team](mailto:support@ottu.com).

@@ -4,7 +4,7 @@ Notification templates across different communication channels are available bas
 
 ## [Messaging Template Availability](notification-templates.md#messaging-template-availability)
 
-This table summarizes the availability of messaging templates for [Payment Reques](../plugins/payment-request.md)t and  [E-Commerce](../plugins/e-commerce.md) across different channels and payment phases.
+This table summarizes the availability of messaging templates for [Payment Request](../plugins/payment-request.md) and  [E-Commerce](../plugins/e-commerce.md) across different channels and payment phases.
 
 |                Payment Phase               |        Channel        |      E-Commerce      |    Payment Request   |
 | :----------------------------------------: | :-------------------: | :------------------: | :------------------: |

@@ -32,7 +32,7 @@ The following states trigger SMS notifications for payment events:
 * `failed`
 * `expired`
 
-For more information about payment states, refer to the[ Parent Payment States](../payment-tracking/payment-transactions-states.md#payment-states) section.
+For more information about payment states, refer to the [Parent Payment States](../payment-tracking/payment-transactions-states.md#parent-states) section.
 
 ### [**Operation States**](sms-notifications.md#operation-states)
 

@@ -426,7 +426,7 @@ This setup ensures a seamless integration and user experience, allowing customer
 
 When the [integration](web.md#stc-pay) between Ottu and STC Pay is completed, the necessary checks to display the STC Pay button are handled seamlessly by the Checkout SDK.
 
-1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](broken-reference) and payment gateway codes ([pg\_codes](broken-reference)), several conditions are automatically verified:
+1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](../checkout-api.md#session\_id-string-mandatory) and payment gateway codes ([pg\_codes](../checkout-api.md#pg\_codes-array-required)), several conditions are automatically verified:
    * It is confirmed that the `session_id` and `pg_codes` provided during SDK initialization are associated with the STC Pay Payment Service. This ensures that the STC Pay option is available for the customer to choose as a payment method.
    * It is ensured that the STC Pay button is displayed by the iOS SDK, regardless of whether the customer has provided a mobile number while creating the transaction.
 

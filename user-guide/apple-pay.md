@@ -66,7 +66,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 4. Download the .text file and make sure it is ready for upload, as you will provide it to Ottu later (i.e., in the next step), which will be used for domain verification.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 5. On the Ottu side, you should also add a new Apple Pay service and upload the .text file that you downloaded in the previous step, i.e., step 4:
 

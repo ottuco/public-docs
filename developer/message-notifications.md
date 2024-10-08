@@ -28,38 +28,9 @@ Before you can integrate with Ottu's `Message Notifications API`, several prereq
    When creating the payment transaction, enable the required message notification channels (e.g., SMS, email, WhatsApp).
    * If the transaction is created via the `Checkout API`, message [notifications](checkout-api.md#notifications-object-optional) parameters should be provided within the API call.
    * Alternatively, if the transaction is created from the **Ottu dashboard**, ensure that the designated checkbox for enabling message notifications is selected.
-4. **Valid Payment States for Sending Message Notifications:**\
-   The `Message Notifications API` can only be used for certain payment transaction states. Message notifications can be sent via the following channels for specific payment states:
-   * **Email**:
-     * `created`
-     * `paid`
-     * `canceled`
-     * `failed`
-     * `expired`
-     * `authorized`
-     * `voided`
-     * `refunded`
-     * `captured`
-   * **SMS**:
-     * `created`
-     * `paid`
-     * `canceled`
-     * `failed`
-     * `expired`
-     * `authorized`
-     * `voided`
-     * `refunded`
-     * `capture`
-   * **WhatsApp**:
-     * `created`
-     * `paid`
-     * `canceled`
-     * `failed`
-     * `expired`
-     * `authorized`
-5. **Optional:** [SMS Notification Channel](../user-guide/notification-communication-channels/sms-notifications.md)\
+4. **Optional:** [SMS Notification Channel](../user-guide/notification-communication-channels/sms-notifications.md)\
    If SMS message notifications are required, an SMS provider should be configured for your account. Contact the [Ottu support team](mailto:support@ottu.com) for assistance with configuring the SMS provider.
-6. **Optional:** [Integrated WhatsApp Channel](../user-guide/notification-communication-channels/whatsapp-notifications/integrated-whatsapp-channel.md)\
+5. **Optional:** [Integrated WhatsApp Channel](../user-guide/notification-communication-channels/whatsapp-notifications/integrated-whatsapp-channel.md)\
    The following requirements must be met:
    * **WhatsApp Business Account**: The merchant must have a registered WhatsApp Business account.
    * **Template Approval**: All WhatsApp templates and their content must be pre-approved by Meta/WhatsApp before being used for message notifications.

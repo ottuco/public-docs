@@ -348,11 +348,11 @@ The `CheckoutTheme` class includes objects that represent various UI components.
 
 #### [**TextFieldComponent**](ios.md#textfieldcomponent)
 
-| Property Name     |                                                                     Data Type                                                                    |
-| ----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------: |
-| `label`           |                                                      [LabelComponent](ios.md#labelcomponent)                                                     |
-| `text`            | [LabelComponent](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/XdPwy0yrnZJ8gfKCUk9E/\~/changes/601/developer/checkout-sdk/ios#labelcomponent) |
-| `backgroundColor` |                                                                      UIColor                                                                     |
+| Property Name     |                Data Type                |
+| ----------------- | :-------------------------------------: |
+| `label`           | [LabelComponent](ios.md#labelcomponent) |
+| `text`            | [LabelComponent](ios.md#labelcomponent) |
+| `backgroundColor` |                 UIColor                 |
 
 #### [**ButtonComponent**](ios.md#buttoncomponent)
 

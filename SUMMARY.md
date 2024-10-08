@@ -49,6 +49,7 @@
 * [Payment Status-Inquiry](developer/payment-status-inquiry.md)
 * [Auto-Debit](developer/auto-debit.md)
 * [Invoice API](developer/invoice-api.md)
+* [Message Notifications](developer/message-notifications.md)
 * [Checkout SDK](developer/checkout-sdk/README.md)
   * [Web](developer/checkout-sdk/web.md)
   * [iOS](developer/checkout-sdk/ios.md)

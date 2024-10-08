@@ -2,7 +2,7 @@
 
 This feature streamlines the process of notifying the customer for pre- / post-payment state via WhatsApp without any manual intervention.
 
-## [Prerequisites](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/Mhsq1xc7685E7egVxfcG/\~/changes/172/payment/7.-notification-communication-channels/whatsapp-notifications/auto-whatsapp-channel#prerequisites)
+## [Prerequisites](integrated-whatsapp-channel.md#prerequisites)
 
 *   **Customer Phone Number**: The customer's phone number should be provided during the transaction creation phase. To add the customer phone number, please contact [Ottu support team](mailto:support@ottu.com)\
     \

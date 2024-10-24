@@ -760,6 +760,14 @@ See [payment transaction state](../user-guide/payment-tracking/#payment-transact
 The type of the payment transaction.\
 See the request parameter [type ](checkout-api.md#type-string-required)for more information.
 
+#### [attachment\_upload\_url](checkout-api.md#attachment\_upload\_url-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
+
+A field in the response that contains the URL of an attachment that has already been uploaded to the server.
+
+**Presence condition:**
+
+* The request parameter [attachment\_upload\_url](checkout-api.md#attachment\_upload\_url-string-optional) should be included in the request payload.
+
 #### [vendor\_name](checkout-api.md#vendor\_name-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 It represents the name of the merchant or vendor associated with a payment transaction.\

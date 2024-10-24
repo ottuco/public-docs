@@ -448,6 +448,10 @@ Default value is false.
 The type of the payment transaction. This field represents the purpose of the payment and can be one of several pre-defined choices. Available choices: [payment\_request](../user-guide/plugins/#payment-request), [e\_commerce](../user-guide/plugins/#e-commerce).\
 Max length: 24.
 
+#### [attachment\_upload\_url](checkout-api.md#attachment\_upload\_url-string-optional)  _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+A writable field used to reference an attachment that has already been uploaded to the server.
+
 #### [**vendor\_name**](checkout-api.md#vendor\_name-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The name of the vendor or merchant associated with this payment. This field may be used for accounting and reporting purposes.\

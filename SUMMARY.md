@@ -50,6 +50,7 @@
 * [Auto-Debit](developer/auto-debit.md)
 * [Invoice API](developer/invoice-api.md)
 * [Message Notifications](developer/message-notifications.md)
+* [Upload Attachment](developer/upload-attachment.md)
 * [Checkout SDK](developer/checkout-sdk/README.md)
   * [Web](developer/checkout-sdk/web.md)
   * [iOS](developer/checkout-sdk/ios.md)

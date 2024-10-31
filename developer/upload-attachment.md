@@ -256,7 +256,7 @@ To ensure a smooth and efficient integration with the `Upload Attachment API`, f
 
 #### **Direct File Upload with the Checkout API**
 
-Merchants can use the [Checkout AP](checkout-api.md)I to create a new transaction and associate a file with it. This can be achieved by including the file through the [attachment](broken-reference) parameter. However, because `multipart/form-data` does not support adding nested values to parameters (e.g., [notifications](checkout-api.md#notifications-object-optional) or [extra](checkout-api.md#extra-object-optional)), it is often more practical to use the `attachment_upload_url`. This allows for a more flexible and reliable way to link files to transactions while preserving parameter structure.
+Merchants can use the [Checkout AP](checkout-api.md)I to create a new transaction and associate a file with it. This can be achieved by including the file through the [attachment](checkout-api.md#attachment-file-optional) parameter. However, because `multipart/form-data` does not support adding nested values to parameters (e.g., [notifications](checkout-api.md#notifications-object-optional) or [extra](checkout-api.md#extra-object-optional)), it is often more practical to use the `attachment_upload_url`. This allows for a more flexible and reliable way to link files to transactions while preserving parameter structure.
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 

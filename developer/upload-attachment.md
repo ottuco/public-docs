@@ -12,7 +12,7 @@ The Upload Attachment API allows merchants to upload a file, generating a `file_
 
 * **Single file upload** per request.
 * **Direct transaction linking** by including `session_id` or `order_no`.
-* **Reusable file URLs** for new transactions using [attachment\_upload\_url](broken-reference) in the [Checkout API](checkout-api.md).
+* **Reusable file URLs** for new transactions using [attachment\_upload\_url ](checkout-api.md#attachment\_upload\_url-string-optional)in the [Checkout API](checkout-api.md).
 * **Supports URL shortening** for easier access with `shortify_attachment_url` (when `session_id` or `order_no` is provided).
 * **Maximum file size**: Upload limit is 2.5 MB.
 * **Support for various file formats** such as PDF, JPEG, PNG, DOC, DOCX, JPG, XLS, XLSX, and TXT.

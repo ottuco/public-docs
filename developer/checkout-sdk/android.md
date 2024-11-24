@@ -2,7 +2,7 @@
 
 The [Checkout SDK](./) from Ottu is a Kotlin-based library designed to simplify the integration of an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your Android app. This SDK enables you to tailor the appearance and functionality of your checkout process, including the selection of accepted payment methods.
 
-The Checkout SDK must be incorporated into your Android application, and it must be initialized using your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API public key](../authentication.md#public-key). Various settings, such as the accepted payment methods and the [theme](https://docs.ottu.com/developer/checkout-sdk/web#theme-object) styling for the checkout interface, may also be specified.
+The Checkout SDK must be incorporated into your Android application, and it must be initialized using your Ottu [merchant\_id](web.md#merchant_id-string), [session\_id](web.md#session_id-string), and [API public key](../authentication.md#public-key). Various settings, such as the accepted payment methods and the [theme](https://docs.ottu.com/developer/checkout-sdk/web#theme-object) styling for the checkout interface, may also be specified.
 
 {% hint style="warning" %}
 The [API private key](../authentication.md#private-key-api-key) should never be utilized on the client side; instead, use the [API public key](../authentication.md#public-key)This is essential for maintaining the security of your application and safeguarding sensitive data.
@@ -84,7 +84,7 @@ Make sure to use the public key and avoid using the private key. The [API privat
 
 The `session_id` serves as the unique identifier for the payment transaction linked to the checkout process.
 
-This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the Checkout API, refer to the [session\_id](../checkout-api.md#session\_id-string-mandatory) section.&#x20;
+This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the Checkout API, refer to the [session\_id](../checkout-api.md#session_id-string-mandatory) section.&#x20;
 
 #### [**formsOfPayment**](android.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -246,7 +246,7 @@ Is a boolean field determining whether “Payment details” section should be d
 
 ### [Properties description](android.md#properties-description) <a href="#properties-description" id="properties-description"></a>
 
-**Important Note:**All properties are optional and customizable by the user. If a property is not specified, the default value, as outlined in the above Figma design, will be used.&#x20;
+**Important Note:**&#x41;ll properties are optional and customizable by the user. If a property is not specified, the default value, as outlined in the above Figma design, will be used.&#x20;
 
 #### [**Texts**](android.md#texts)
 

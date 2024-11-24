@@ -13,7 +13,7 @@ With Ottu, you are choosing an innovative online payment technology that puts yo
 
 ## [Ottu Architecture](./#ottu-architecture)
 
-<figure><img src=".gitbook/assets/Ottu-Kuwait-Sales-Kit.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Ottu-architecture (1).jpg" alt=""><figcaption></figcaption></figure>
 
 ## [Quick start](./#quick-start)
 
@@ -56,7 +56,7 @@ The merchant just needs to navigate to the **Payment Request** section within Ot
 
 By following this process, you can enhance customer satisfaction through a seamless payment experience, thereby reinforcing the reliability and professionalism of your services. Stay tuned for detailed insights that will navigate you through each step of creating a payment request, setting the stage for a successful transaction journey.
 
-![](<.gitbook/assets/Creating PaymentRequest.gif>)
+![](.gitbook/assets/Generated.gif)
 
 ### [Payment Request Form Fields](./#payment-request-form-fields)
 
@@ -66,17 +66,17 @@ By following this process, you can enhance customer satisfaction through a seaml
 
 After completing the required fields as demonstrated in the table above, the merchant can proceed by submitting the form. Following submission, a payment URL will be generated, as illustrated in the figure below.
 
-![](<.gitbook/assets/Generated (2).gif>)
+![](<.gitbook/assets/CreatingPaymentRequest copy.gif>)
 
 The generated URL can be shared with the customer, enabling him to proceed to the checkout page and complete the payment.
 
-![](<.gitbook/assets/Checkout (2).png>)
+![](<.gitbook/assets/Checkout copy.png>)
 
 Once the customer clicks on the **Pay Now** button, he will be redirected to the bank's page, where he can enter his card details and submit his payment.
 
 Congratulations! Your first transaction using Ottu has been completed successfully! It's that easy!
 
-![](<.gitbook/assets/Checkout Done (1).png>)
+![](<.gitbook/assets/Checkout Done copy.png>)
 
 ## [Some Typical Characteristics of Ottu](./#some-typical-characteristics-of-ottu)
 

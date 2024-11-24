@@ -16,16 +16,16 @@ The checker has the authority to proceed directly with the refund or void operat
 
 * To activate the Two-Step Refund & Void Authorization feature, you need to add the Operations Approval Plugin. From the Ottu Dashboard > Access the Administration Panel > Navigate to the Plugins section. > Locate the Installed Plugins.
 
-<figure><img src="../../../.gitbook/assets/installed_plugins.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/installed_plugins.png" alt=""><figcaption></figcaption></figure>
 
 Then, add the Operation Approval to the Plugins window.&#x20;
 
-<figure><img src="../../../.gitbook/assets/activate_request.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/activate_request.png" alt=""><figcaption></figcaption></figure>
 
 * Only one authorized user can assign a checker user. \
   **To assign a checker:** From the Ottu Dashboard > locate the Administration Panel > then navigate to the Operations Approval Plugin > and select Operations Approval Plugin Config.
 
-<figure><img src="../../../.gitbook/assets/Assign_checker (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Assign_checker (1).png" alt=""><figcaption></figcaption></figure>
 
 * A void, or a refund operation request, will remain `Pending` until the checker makes his decision of `approval` or `rejection`. Then the operation request will transit to `Rejected` state or `Done` state. Within the `Approved` state, any user with permission could trigger an attempt by `Retry` button until it is succeeded or turns to `Expired` state once the expiration time gets passed.
 * Any operation request in the `Pending` state can be canceled by all users except the checker from the [operation request table](two-step-refund-and-void-authorization.md#operation-request-table).
@@ -38,7 +38,7 @@ The operation request table is automatically synced and updated.
 
 * Another operation request can't be submitted if there is a `Pending` operation request for the same transaction.\
   The below message should be displayed\
-  **(Requested {Operation} is pending for approval).**
+  &#xNAN;**(Requested {Operation} is pending for approval).**
 * If the checker somehow approves a `Canceled` request, an error message will be returned indicating that the request has been `Canceled`
 * Once the checker approves the request, the operation will be executed automatically, and the state will transition to the `Done` state. If the execution fails, the state will change to `Manual Action Required` state, and the maker will be **notified** that manual action is required.
 * If the state transitioned to `Manual Action Required`, and no changes are made within the specified expiration time, the transaction state will transition to the `Expired` state.
@@ -61,7 +61,7 @@ Seamlessly manage and track this feature, with the option to `approve` or `rejec
 \
 
 
-<figure><img src="../../../.gitbook/assets/Operations_Requests.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Operations_Requests.png" alt=""><figcaption></figcaption></figure>
 
 | Header           | Description                                                                                                   |
 | ---------------- | ------------------------------------------------------------------------------------------------------------- |

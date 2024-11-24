@@ -23,7 +23,7 @@ Before you can integrate with Ottu's `Invoice API`, several prerequisites need t
 
 #### How `round` funtion works?
 
-In order to ensure the precision and consistency of the financial calculations across various international transactions, Ottu relies on a standardized rounding method known as "[ROUND\_HALF\_UP](https://docs.python.org/3.8/library/decimal.html#decimal.ROUND\_HALF\_UP)" from Python. This method adheres to specific standards established by reputable international organizations:
+In order to ensure the precision and consistency of the financial calculations across various international transactions, Ottu relies on a standardized rounding method known as "[ROUND\_HALF\_UP](https://docs.python.org/3.8/library/decimal.html#decimal.ROUND_HALF_UP)" from Python. This method adheres to specific standards established by reputable international organizations:
 
 * [**SIX Financial Information:** ](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=current-historical-lists)Ottu relies on currency decimal specifications provided by the SIX Group through SIX Financial Information.
 * [**ISO 4217 Currency Codes:**](https://www.iso.org/iso-4217-currency-codes.html) ISO 4217 provides currency codes and their corresponding minor units, indicating the decimal precision.
@@ -40,7 +40,7 @@ The "`ROUND_HALF_UP`" method follows a careful procedure to ensure precision:
 Sources of Decimal Standards:
 
 3. **Optional:** `Payment Methods API`\
-   The [Payment Methods API](payment-methods.md) serves as an initial phase aimed at collecting dynamic parameters, particularly the [pg\_codes](checkout-api.md#pg\_codes-array-required), essential for subsequent calls to the [Checkout API](checkout-api.md). Consider it a preparatory API call that furnishes you with the necessary information for the primary transactional API.\
+   The [Payment Methods API](payment-methods.md) serves as an initial phase aimed at collecting dynamic parameters, particularly the [pg\_codes](checkout-api.md#pg_codes-array-required), essential for subsequent calls to the [Checkout API](checkout-api.md). Consider it a preparatory API call that furnishes you with the necessary information for the primary transactional API.\
    **Why is it considered optional?** If you are already familiar with the specific `pg_code` you plan to use consistently, you have the option to skip this step by directly storing that `pg_code` in your system. However, utilizing the `Payment Methods API` guarantees that you stay informed about the most recent payment gateways available or any modifications in the configuration. This dynamic approach ensures a more robust and adaptable integration with Ottu.
 
 Once you've fulfilled these prerequisites, you're ready to integrate the Invoice API. The following sections of this document will guide you through the authentication process and the usage of various API endpoints.
@@ -97,7 +97,7 @@ The Ottu Invoice API serves as a robust mechanism for merchants to seamlessly is
 1. **Initiating the Invoice:**
    * Merchants utilize the `Invoice API`, passing the necessary parameters to initiate the creation of an invoice. Please check [Invoice API Parameters Specifications](invoice-api.md#invoice-api-parameters-specification).
 2. **Integration with Ottu Checkout API:**
-   * `Invoice API` seamlessly integrates with the Ottu [Checkout API](checkout-api.md) to generate a [checkout\_url](checkout-api.md#checkout\_short\_url-string-conditional).
+   * `Invoice API` seamlessly integrates with the Ottu [Checkout API](checkout-api.md) to generate a [checkout\_url](checkout-api.md#checkout_short_url-string-conditional).
 3. **Communication to Customers:**
    * Merchants can choose to send the `checkout_url` to customers via Email or SMS using Ottu's communication channels.
    * Alternatively, merchants have the flexibility to handle the communication from their internal systems.
@@ -105,9 +105,9 @@ The Ottu Invoice API serves as a robust mechanism for merchants to seamlessly is
    * Customers receive the `checkout_url` and, upon clicking, are redirected to Ottu's Checkout Page.
    * Here, customers can conveniently view and download the detailed invoice and proceed to make a direct payment.
 5. **Transaction Completion:**
-   * After completing the transaction, Ottu posts a response to the designated [webhook\_url](checkout-api.md#webhook\_url-string-optional), providing real-time updates on the transaction status. Please refer to [Payment Webhooks](webhooks/payment-notification.md).
+   * After completing the transaction, Ottu posts a response to the designated [webhook\_url](checkout-api.md#webhook_url-string-optional), providing real-time updates on the transaction status. Please refer to [Payment Webhooks](webhooks/payment-notification.md).
 6. **Post-Transaction Customer Experience:**
-   * Following transaction completion, customers are redirected either to Ottu's Response Page or a specified [redirect\_url](checkout-api.md#redirect\_url-string-optional). Please refer to [Redirectional Diagram](webhooks/payment-notification.md#redirectional-diagram).
+   * Following transaction completion, customers are redirected either to Ottu's Response Page or a specified [redirect\_url](checkout-api.md#redirect_url-string-optional). Please refer to [Redirectional Diagram](webhooks/payment-notification.md#redirectional-diagram).
    * Ottu's Response Page offers customers the option to download the invoice along with the payment receipt for their records.
 
 This end-to-end process ensures a seamless and secure transaction experience for both merchants and customers, integrating Ottu's `Invoice API` with Ottu `Checkout API` for efficient invoice generation, and payment processing.
@@ -125,15 +125,15 @@ In this section, we delve into the comprehensive details encompassing the creati
 These values, referred as `VAL CALC`, serve as validators to ensure that the real-time calculations, typically conducted by the client-side system or application, align with the values computed by Ottu's backend system. Validating these fields at both the item and invoice levels helps identify any disparities between the two, thereby ensuring accuracy and reliability throughout the invoicing process.
 
 * #### **Item Level:**
-  * Mandatory_:_ Stock Keeping Unit (SKU), Description, Quantity, Unit Price.
-  * Optional_:_ Tax Rate, Discount Amount, Discount Percentage.
-  * VAL CALC_:_ Total Excluding Tax, Total Including Tax, Tax Amount.
+  * Mandator&#x79;_:_ Stock Keeping Unit (SKU), Description, Quantity, Unit Price.
+  * Optiona&#x6C;_:_ Tax Rate, Discount Amount, Discount Percentage.
+  * VAL CAL&#x43;_:_ Total Excluding Tax, Total Including Tax, Tax Amount.
 * #### **Invoice Level:**
-  * Mandatory_:_ Type, Currency Code, PG Codes, Invoice Number, Due Date.
-  * Optional_:_ Tax Rate, Discount Amount, Discount Percentage, Shipping Excluding Tax, Shipping Method, Shipping Tax Rate.
-  * VAL CALC_:_ Total Excluding Tax, Total Including Tax, Tax Amount, Shipping Including Tax, Subtotal, Amount.
+  * Mandator&#x79;_:_ Type, Currency Code, PG Codes, Invoice Number, Due Date.
+  * Optiona&#x6C;_:_ Tax Rate, Discount Amount, Discount Percentage, Shipping Excluding Tax, Shipping Method, Shipping Tax Rate.
+  * VAL CAL&#x43;_:_ Total Excluding Tax, Total Including Tax, Tax Amount, Shipping Including Tax, Subtotal, Amount.
 
-**Address Information:** Similar to the [Checkout AP](checkout-api.md)I, Ottu's invoicing system supports both [Billing ](checkout-api.md#billing\_address-object-optional)and [Shipping](checkout-api.md#shipping\_address-object-optional) addresses, providing a seamless and unified experience for users.
+**Address Information:** Similar to the [Checkout AP](checkout-api.md)I, Ottu's invoicing system supports both [Billing ](checkout-api.md#billing_address-object-optional)and [Shipping](checkout-api.md#shipping_address-object-optional) addresses, providing a seamless and unified experience for users.
 
 **Buyer Information:** Tailored to accommodate diverse business needs, the Buyer Information section allows for custom fields configured based on the type of the invoice `payment_request`, `e_commerce`. This flexibility ensures that merchants can capture essential buyer details relevant to their specific invoicing context.
 
@@ -168,13 +168,13 @@ For a more detailed technical understanding and the implementation specifics of 
 
 Dive into integrating the `Invoice API` with our concise, step-by-step guide. Designed for seamless adoption into your existing systems, this guide will take you through the essentials of setup and utilization. It's tailored to enhance your invoicing process, ensuring accuracy and efficiency in your financial transactions. Get ready to transform and streamline your billing operations with ease.
 
-The objective of the `POST` request is to facilitate the creation of payment transactions and the subsequent generation of payment links, each of which is associated with a unique [session\_id](checkout-api.md#session\_id-string-mandatory). These links can be effortlessly shared with customers through various communication channels, including email, WhatsApp, and SMS. Additionally, it is possible to incorporate the customer's [billing](checkout-api.md#billing\_address-object-optional) and [shipping](checkout-api.md#shipping\_address-object-optional) information into the transaction. Moreover, users of this API can include diverse forms of data and information within the body request.
+The objective of the `POST` request is to facilitate the creation of payment transactions and the subsequent generation of payment links, each of which is associated with a unique [session\_id](checkout-api.md#session_id-string-mandatory). These links can be effortlessly shared with customers through various communication channels, including email, WhatsApp, and SMS. Additionally, it is possible to incorporate the customer's [billing](checkout-api.md#billing_address-object-optional) and [shipping](checkout-api.md#shipping_address-object-optional) information into the transaction. Moreover, users of this API can include diverse forms of data and information within the body request.
 
 #### Creating the Invoice:
 
-#### 1. [Retrieving pg\_codes (optional)](invoice-api.md#id-1.-retrieving-pg\_codes-optional)
+#### 1. [Retrieving pg\_codes (optional)](invoice-api.md#id-1.-retrieving-pg_codes-optional)
 
-Prior to initiating the initial payment, you can choose to invoke the [Payment Methods API](payment-methods.md) to obtain the required [pg\_codes](checkout-api.md#pg\_codes-array-required).
+Prior to initiating the initial payment, you can choose to invoke the [Payment Methods API](payment-methods.md) to obtain the required [pg\_codes](checkout-api.md#pg_codes-array-required).
 
 #### 2. [Initiating the Payment via Invoice API](invoice-api.md#id-2.-initiating-the-payment-via-invoice-api)
 

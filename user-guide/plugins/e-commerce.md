@@ -6,7 +6,7 @@ Unlock the full potential of your online business with Ottu's powerful e-commerc
 
 * **Comprehensive Transaction Tracking:** Keep a close eye on all your e-commerce business transactions with ease.
 * **Seamless Payment Integration:** Create a seamless payment experience by integrating with popular e-commerce suites.
-* **White-Label Customization:** Add your own branding to the checkout page and [redirect URLs](../../developer/checkout-api.md#redirect\_url-string-optional), enhancing your brand's visibility.
+* **White-Label Customization:** Add your own branding to the checkout page and [redirect URLs](../../developer/checkout-api.md#redirect_url-string-optional), enhancing your brand's visibility.
 * **Secure Transactions:** Enjoy peace of mind with direct settlements of funds to the merchant's bank account, eliminating the need for third-party involvement.
 * **Direct Integration Support:** Our dedicated Ottu operational team will provide full support, assisting you with plugin installation and offering guidelines tailored to your specific e-commerce platform.
 
@@ -18,11 +18,11 @@ Unlock the full potential of your online business with Ottu's powerful e-commerc
 
 * E-commerce Plugin > E-commerce Config.
 
-<figure><img src="https://lh3.googleusercontent.com/QqlZEiL3ABH37xpb3p1lRG40m5xa-ea0t-yUeMOHWKly7c7t4WDWGjb30ZGv4NbqPQvYX6TwLHOss06Qxjms3fyvJjLhlJYzQntqtFr5WRJUk0vNlI0EVLNdfx24XpA3jyQ1K3ImP1LkBr3L3oj5oz4" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/12 copy.png" alt=""><figcaption></figcaption></figure>
 
 * Select the appropriate configurations and click `Save`.
 
-<figure><img src="https://lh3.googleusercontent.com/FKMlUnd9CB8wybJdAJpRinPHj-jAtF48I3HITDbigragspir_wWseT40eIbjFbR5TbfN6EfXpQceU2Sf99UbwXGizXQSgcvuLBGiydo1ag_8V2RJdutrThnSxPiUhNZyrwBmSwnHHT1_u57hy2HL21o" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/13 copy.png" alt=""><figcaption></figcaption></figure>
 
 **Configurations include:**
 
@@ -45,11 +45,11 @@ Merchants can easily track the following information regarding their transaction
 
 <figure><img src="../../.gitbook/assets/Plugins- E-commerce Transaction.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="https://lh3.googleusercontent.com/8B87VlEncgVpFQTlRKy1ijo6U_odJCuktll1CvRRI2vEzBD5HH6vZ4r2B1pvEdFIcsgq1TFkHZ_e1fY0DyI63kCH7sVnG1YSnW8ZYAwHzbNeP7fL8APj7VeYzJqDULbILwfmn80ghiq3UayX-boJErs" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/15 copy.png" alt=""><figcaption></figcaption></figure>
 
 Each transaction is accompanied by detailed information and status updated in real-time, enabling you to stay on top of every aspect of your business. The following figure shows the transaction details and status for each transaction.
 
-<figure><img src="https://lh5.googleusercontent.com/-YKMtg9ok8yzvhJ_e2IHKyRrrKOlDaVi15XyNkcvHXMVLWG6oN0dWKHW-VZtOscTBIqXSFLL6PEh8DDH65dV7loJshfsbWeCWx2ibZXOi_vo4g7TGBtZtxGlE0IatsbW6aB2v0-uNYcMpiW4wh8pZw0" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/16 copy.png" alt=""><figcaption></figcaption></figure>
 
 | State    | Description                                        |
 | -------- | -------------------------------------------------- |

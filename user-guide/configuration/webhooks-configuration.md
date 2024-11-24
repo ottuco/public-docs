@@ -60,7 +60,7 @@ Keep in mind that the merchant’s server will take 30 seconds to respond, and t
 
 In this tab, the merchant can define the desired webhook behavior for specific plugins.
 
-<figure><img src="../../.gitbook/assets/Webhook plugin configs.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Configuration-Webhook Configuration) Webhook plugin configs copy.png" alt=""><figcaption></figcaption></figure>
 
 **Description of Fields:**
 

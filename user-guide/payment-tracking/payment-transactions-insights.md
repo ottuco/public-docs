@@ -21,7 +21,7 @@ Ottu enhances the merchant experience by providing a dedicated transaction table
 3. Access the **Plugin Config** for the desired transaction table.
 4. Enable the **Individual Proxy Fields** option by ticking the checkbox.
 
-<figure><img src="../../.gitbook/assets/activate proxy fields.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Payment Transaction insight )activate proxy fields copy.png" alt=""><figcaption></figcaption></figure>
 
 #### [Header List](payment-transactions-insights.md#header-list)
 
@@ -31,13 +31,13 @@ To manage the headers, follow these steps:
 2. Access the **Settings**.
 3. In the **Table Headers** section, you can add or remove headers by dragging them from the right to the left or vice versa **(right ⇆ left)**. This dynamic empowers the merchants to customize the displayed headers according to their preferences.
 
-<figure><img src="../../.gitbook/assets/Add or remove headers (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Payment Transaction insight )Add or remove headers copy.png" alt=""><figcaption></figcaption></figure>
 
 #### [Child Table Transaction](payment-transactions-insights.md#child-table-transaction)
 
 [Child transactions](payment-transactions-insights.md#child-payment-transaction) refer to transactions generated from capture, refund, or void operations (i.e., [external operations](../../developer/operations.md#external-operations)). These transactions are linked to the main origin payment transaction, known as the [Parent Transaction](payment-transactions-insights.md#parent-payment-transaction), and are displayed under them accordingly. The headers of each child transaction inherit from the parent transaction's headers, ensuring consistency and easy reference.
 
-<figure><img src="../../.gitbook/assets/Child proxy header (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Payment Transaction insight )Child proxy header copy.png" alt=""><figcaption></figcaption></figure>
 
 ### [Amounts Breakdown](payment-transactions-insights.md#amounts-breakdown)
 
@@ -104,16 +104,16 @@ Take advantage of our cutting-edge Dashboard Charts feature and revolutionize th
 
 Shows the total value and overall rate of success across different periods.
 
-![](<../../.gitbook/assets/Tacking-insight- Total Trans.png>)
+<figure><img src="../../.gitbook/assets/(Payment Transaction insight )Tacking-insight- Total Trans copy.png" alt=""><figcaption></figcaption></figure>
 
 ### [Average Transaction](payment-transactions-insights.md#average-transaction)
 
-<figure><img src="../../.gitbook/assets/AverageTransaction (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Payment Transaction insight )AverageTransaction copy.png" alt=""><figcaption></figcaption></figure>
 
 ### [Product Wise Sales](payment-transactions-insights.md#product-wise-sales)
 
-![](<../../.gitbook/assets/3 (4).png>)
+<figure><img src="../../.gitbook/assets/(Payment Transaction insight ) Product wise copy.png" alt=""><figcaption></figcaption></figure>
 
 ### [Recent Orders Report](payment-transactions-insights.md#recent-orders-report)
 
-![](<../../.gitbook/assets/4 (4) (1).png>)
+<figure><img src="../../.gitbook/assets/(Payment Transaction insight )Recent Order copy.png" alt=""><figcaption></figcaption></figure>

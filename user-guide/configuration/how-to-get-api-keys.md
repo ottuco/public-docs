@@ -8,13 +8,13 @@ Obtaining your API keys is a simple and essential step that enables you to acces
 
 ![](../../.gitbook/assets/222.png)
 
-<figure><img src="../../.gitbook/assets/New 2 (8) copy.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Configuration- How to get API keys)Click on add API Key copy.png" alt=""><figcaption></figcaption></figure>
 
 2.  #### Provide the Required Information
 
     Fill the required fields and click `save`.
 
-<figure><img src="../../.gitbook/assets/New3(8) 2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Configuration- How to get API keys)Fill the required fields copy.png" alt=""><figcaption></figcaption></figure>
 
 *   #### Fields Description
 
@@ -26,8 +26,8 @@ Obtaining your API keys is a simple and essential step that enables you to acces
 
     Click on the recently generated API key, which is designated as “Example” in this instance.
 
-![](<../../.gitbook/assets/Click on Created API key (1).png>)
+<figure><img src="../../.gitbook/assets/(Configuration- How to get API keys)Click on Created API key (1) copy.png" alt=""><figcaption></figcaption></figure>
 
 The API keys, both [private](../../developer/authentication.md#private-key-api-key) and [public](../../developer/authentication.md#public-key), will be displayed as illustrated in the following figure.
 
-<figure><img src="../../.gitbook/assets/Private and public Keys.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Configuration- How to get API keys)Private and public Keys copy.png" alt=""><figcaption></figcaption></figure>

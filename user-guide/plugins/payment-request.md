@@ -79,15 +79,19 @@ Adding Custom (new) or Built-in fields can be done effortlessly by the following
 *   #### **Placeholder \[ar]:**&#x20;
 
     It provides guidance or an example of the expected input, helping users understand what information is required or the format it should take. (Should be In Arabic).
-* If the [Type](payment-request.md#type) is marked as **Custom**, the [Field](payment-request.md#field) parameter will disappear, and the following fields will be displayed for filling:
-  *   #### **Name:**
+*   If the [Type](payment-request.md#type) is marked as **Custom**, the [Field](payment-request.md#field) parameter will disappear, and the following fields will be displayed for filling:
 
-      `HTML` field name utilized solely for backend validation. It will not be visible anywhere.
-  *   #### **Label \[en]:**&#x20;
+    *   #### **Name:**
 
-      Custom field's label in English.
-  *   #### **Label \[ar]:**&#x20;
+        `HTML` field name utilized solely for backend validation. It will not be visible anywhere.
+    *   #### **Label \[en]:**&#x20;
 
-      Custom field's label in Arabic.
+        Custom field's label in English.
+    *   #### **Label \[ar]:**&#x20;
 
-<figure><img src="../../.gitbook/assets/plugin fields.gif" alt=""><figcaption></figcaption></figure>
+        Custom field's label in Arabic.
+
+
+
+<figure><img src="../../.gitbook/assets/(Plugins-Payment Request)plugin fields Configuration copy (1).gif" alt=""><figcaption></figcaption></figure>
+

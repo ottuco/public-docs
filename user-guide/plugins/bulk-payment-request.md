@@ -38,12 +38,12 @@ Once you have created a `CSV`file with the list of customers, click the `IMPORT`
 
 To ensure accuracy, click on the imported file and carefully review the generated list to ensure there are no errors. In case any errors are detected, don't worry. Ottu provides an error report and allows you to download the error file for easy rectification. Simply make the necessary corrections and import the file again.
 
-<figure><img src="https://lh3.googleusercontent.com/IOtAnWElxZaryW0NuxK1-7GIoe3VSvQPjji07FyzPRv22uqw6lGTvJOlTbgcneiH4wwdByqeNoeOG5gCkTolFu60RjtXHdjgJ9uwGJUW8DE2ReO-fHAkfno0y1dCM0Ku7GgJgCxdtYRUsoFTrRafJZQ" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(plugins-Bulk payment request) Checking Error copy.png" alt=""><figcaption></figcaption></figure>
 
 **Dispatching Payment Links:**
 
 Once you're satisfied with your file; from the files window, click on the three dots in the top-right corner, and select the Dispatch button. This action will automatically generate payment links and schedule recurring payments, simplifying your workflow.
 
-<figure><img src="https://lh5.googleusercontent.com/qRwDfjeLeU0pGrbE5xCCZeaKhXXORg9-AXNEG6JaOYAgNi6vyG60RdgYLJzXsXOksFWG5V4JX8QLHZ1xlKh8qQbdpqVaXKBEeY35VfglMAWNlJrZ5jLaNlFWotims1BhSm0JwPspx_Wu2qU10BVyVkM" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(plugins-Bulk payment request)Dispatch The Bulk File copy.png" alt=""><figcaption></figcaption></figure>
 
 Experience the ease and efficiency of Ottu's [Bulk Payment Request](bulk-payment-request.md#bulk-payment-request) plugin today. Streamline the payment process, save time, and enhance your customer experience. Start maximizing your business potential now.

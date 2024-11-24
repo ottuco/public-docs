@@ -33,7 +33,7 @@ The accompanying below figure shows the details of a payment transaction featuri
 
 Take a closer look at the figure to gain a comprehensive understanding of how these states interact in the payment transaction process.
 
-![](<../../.gitbook/assets/5 (2).gif>)
+<figure><img src="../../.gitbook/assets/(Payment-State)-Parent-&#x26;-Child-Transaction-State.gif" alt=""><figcaption></figcaption></figure>
 
 ## [**Payment-Attempt**](payment-transactions-states.md#payment-attempt)
 

@@ -34,7 +34,7 @@ As a merchant, from the **Overview** section on the Satellite Dashboard, you are
 
 User-friendly search and filter functionalities that empower merchants to swiftly find particular installations, considering criteria such as **plugin type**, **installation name**, and **creation and modification dates**.
 
-<figure><img src="../.gitbook/assets/Installments Overview.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/(Satellite)Installments Overview copy.png" alt=""><figcaption></figcaption></figure>
 
 #### [**2. Transactions**](satellite.md#2.-transactions)
 
@@ -53,7 +53,7 @@ The **Transactions** section within the Satellite Dashboard provides merchants w
 
 Intuitively designed search and filter features that empower merchants to quickly locate specific transactions, taking into account criteria such as **plugin type**, **installation name**, **Payment Gateway Name and Code**, **status**, as well as **creation and modification dates**.
 
-<figure><img src="../.gitbook/assets/Transactions Overview.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/(Satellite)Transactions Overview copy.png" alt=""><figcaption></figcaption></figure>
 
 ## [**Shopify Billing Automation Process**](satellite.md#shopify-billing-automation-process)
 
@@ -79,12 +79,12 @@ Within the Subscriptions tab, merchants gain an overview of all running or activ
 2. **Invoice Operations:**\
    Merchants can perform multiple operations on their invoices, including downloading and initiating payments. Clicking “**Pay Now**” seamlessly redirects merchants to the Ottu checkout page to complete the payment process.
 
-<figure><img src="../.gitbook/assets/Subscription Invoice Operations.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/(Satellite)Subscription Invoice Operations copy.png" alt=""><figcaption></figcaption></figure>
 
-3. **Subscription History:**\
+1. **Subscription History:**\
    The Subscription Management feature provides a comprehensive view of payment history, showcasing all transactions made through the active subscription board. This enables merchants to track and review past payments easily.
 
-<figure><img src="../.gitbook/assets/Subscription History.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/(Satellite)Subscription History copy.png" alt=""><figcaption></figcaption></figure>
 
 ## FAQ
 

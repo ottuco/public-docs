@@ -20,7 +20,7 @@ There are three types of currency configuration:
 
 Each type serves a distinct purpose and aspect in enabling smooth and efficient transactions. These configurations empower merchants to navigate the complexities of multiple currencies, facilitate currency exchanges, and define specific currency rules for payment gateways.
 
-<figure><img src="https://lh3.googleusercontent.com/HgVaKDsdgw828Tw2IJUEIDfUPVa6WXJHG25iau9W7-N-dcobfpeEuLeM3oDo0LWW6-qYP83Ltq4W9ETpeE03IAPKwZ-WPAI8FyHaS24xf6vM_gR_O8F4vL8yzpZUZEVy0f-5jmD58RQ43_dZqJjOmmg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 copy (2).gif" alt=""><figcaption></figcaption></figure>
 
 ### [Currencies](currencies.md#currencies)
 
@@ -30,13 +30,13 @@ In Ottu dashboard, you can find a wide range of currencies to choose from. If yo
 
 Click on the `Add Currency` button to include a new currency.
 
-<figure><img src="https://lh3.googleusercontent.com/_Mt15bCpg6uYmzeyRRSHYRoRT4Lrc1gME69rJdx17jPOMzuFCyl8Tikl01PVh7nrFsHZGe93gKv4YQhhTo-yAGnmiWg9DVvJOaaym8qk0AJnnLSe46c_K29D1jjabvy0mZNbNDVegsu5n0owFD4B-uA" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/2 (2) copy (2).png" alt=""><figcaption></figcaption></figure>
 
 **Step 2:**
 
 Mark the active option and then click on `Save` to finalize the process.
 
-<figure><img src="https://lh4.googleusercontent.com/ySGV7pR9HR2yaiDlCk5yvh9CLIqBGicE_WXn3hP85db7gPLw4Iy6WRRvjbUPK1Sk5QPf90IHv-NyaGeu9gXaSFZlzHjsuINNoPVru43FABR6r4dJDNOEWEuAh6vC-CqIK39c-DbXsVTUcUur-Qgjfc0" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/3 (2) copy (1).png" alt=""><figcaption></figcaption></figure>
 
 ### [Currency Exchanges](currencies.md#currency-exchanges)
 
@@ -47,7 +47,7 @@ To configure the currency exchange feature, simply follow these **three steps:**
 
 Click on `Add Currency Exchange`.
 
-<figure><img src="https://lh4.googleusercontent.com/_ghefaec0hnRwl2z3wgaqG6ZrukSJTQMdDQ6FjhaU2Rqgu2GXGAsdBWiRXfUr_OQz4r-sqlOXFvGd5SFC7HkJcQUbejzGO0kpGAd9QeyAbcBLbvUnjl5kTTR2L6p1MgeDig1dIanfnPTeIgnaJfIFkU" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/4 (2) copy (1).png" alt=""><figcaption></figcaption></figure>
 
 **Step 2**
 
@@ -59,7 +59,7 @@ Enter the necessary parameters as required.
 
 &#x20; Finally, click on `Save`.
 
-<figure><img src="https://lh4.googleusercontent.com/heCTb0exfobE-zL92RGeHGZ45NNatnkByimdGw-TXwwBgKTMq3V5p9ImqY5rPkWBBCwaX_LfZX-m_uzh1NaTD-Z5moJPaiAPeYoj0At5T08IWi8tv4N-uJ49XOY2DUI87Hc_TdfxkNuhyNxylXEuYuo" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/6 (1) copy (1).png" alt=""><figcaption></figcaption></figure>
 
 ### [Exchange Configuration](currencies.md#exchange-configuration)
 
@@ -70,13 +70,13 @@ Adding an exchange configuration is a straightforward process consisting of just
 
 Click on the `Add Exchange Config` button.
 
-<figure><img src="https://lh3.googleusercontent.com/nkFn-3RpYJJF9FgP4EnDQhzo6HwdlqrgBNYRrJeSt0V8vwBmTcQvxbEQxaa6CSE5dRFCjmVD1gSEqwItxtvaQULJGidrfIZeS-JIBhuvxIFIN99Id1CSFForO31hy_2tlyfLG2f5WcUOia0sAGUmgMg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/7 (1) copy (1).png" alt=""><figcaption></figcaption></figure>
 
 **Step 2**
 
 Provide the necessary information and click on the `Save` button.
 
-<figure><img src="https://lh3.googleusercontent.com/39dzntap3KPTfkspXcLONjGElnLmEFfTtHEpouMTLlt4HqYSIhJ6DxwrtvXuWJMyQIrxlzXOnz_wN-T-nABT9TPYWCZ2mOeodX0o9LScIr8NmEYpqG_Otxh230ct_LEPYgrXpFbrVInvZCnwv0X5fBQ" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/8 (1) copy (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Field Descriptions
 

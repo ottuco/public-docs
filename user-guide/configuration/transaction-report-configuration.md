@@ -16,7 +16,7 @@ To access the Configuration of Transaction Report Generator, navigate to Ottu Da
 
 Click on :heavy\_plus\_sign:`Add Periodic Transaction Report`, Then complete the following fields with the required information.
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Configuration-Transaction Report Configuration)Periodic Transaction Report copy.png" alt=""><figcaption></figcaption></figure>
 
 #### **Description of Fields:**
 
@@ -38,7 +38,7 @@ To access the Configuration of Transaction Report Generator, navigate to Ottu Da
 
 Click on :heavy\_plus\_sign:`Add Flexible Interval Transaction Reports`, Then complete the following fields with the required information.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/(Configuration-Transaction Report Configuration)Periodic Transaction Report copy (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **Description of Fields:**
 

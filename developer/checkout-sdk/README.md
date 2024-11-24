@@ -47,7 +47,7 @@ After rendering the page, SDK will be fetched and embed from CDN (content delive
 
 <figure><img src="../../.gitbook/assets/2 (13) (1) copy.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/4 (9).png>)
+<figure><img src="../../.gitbook/assets/Checkout SDK Payment Methods copy.png" alt=""><figcaption></figcaption></figure>
 
 The customer has the option of choosing from different payment methods.
 
@@ -60,7 +60,7 @@ The customer has the option of choosing from different payment methods.
 
 e.g., After selecting the payment method, the response will be proceeded to one of the three below flow. <mark style="color:red;">**Form error:**</mark> for example when customer enter invalid card expiry dates, error message will be appeared, then the customer can try again. (this is only for multiple trial payment). <mark style="color:red;">**Error:**</mark> The cancel callback will be executed when the payment has an error. e.g., the session has expired. <mark style="color:green;">**Success**</mark>.&#x20;
 
-![](<../../.gitbook/assets/3 (12).png>)
+<figure><img src="../../.gitbook/assets/image (3) copy.png" alt=""><figcaption></figcaption></figure>
 
 Depending on the customer's selected payment method, there are different cases after success flow.&#x20;
 

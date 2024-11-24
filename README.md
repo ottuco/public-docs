@@ -70,13 +70,13 @@ After completing the required fields as demonstrated in the table above, the mer
 
 The generated URL can be shared with the customer, enabling him to proceed to the checkout page and complete the payment.
 
-![](<.gitbook/assets/Checkout copy.png>)
+<figure><img src=".gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 Once the customer clicks on the **Pay Now** button, he will be redirected to the bank's page, where he can enter his card details and submit his payment.
 
 Congratulations! Your first transaction using Ottu has been completed successfully! It's that easy!
 
-![](<.gitbook/assets/Checkout Done copy.png>)
+<figure><img src=".gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 ## [Some Typical Characteristics of Ottu](./#some-typical-characteristics-of-ottu)
 

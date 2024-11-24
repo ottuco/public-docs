@@ -26,45 +26,45 @@ If you are a Shopify merchant, Ottu, our advanced online payment management syst
 
 Visit the [Ottu App Listing Page](https://apps.shopify.com/debit-credit-cards) and log in to your Shopify account.
 
-![](<../.gitbook/assets/1 (14).png>)
+<figure><img src="../.gitbook/assets/1 (14) copy (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Step 2: Select Your Stores
 
 Once logging in, select the stores where you want to install the payment app.
 
-![](<../.gitbook/assets/2 (15).png>)
+<figure><img src="../.gitbook/assets/2 (15) copy.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 3: Install the Payment App
 
 Click on `Add app` and then `Install app`.
 
-![](<../.gitbook/assets/3 (14).png>)
+<figure><img src="../.gitbook/assets/3 (14) copy.png" alt=""><figcaption></figcaption></figure>
 
-![](<../.gitbook/assets/4 (10) (1).png>)
+<figure><img src="../.gitbook/assets/4 (10) copy.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 4: Redirecting to Ottu's Page
 
 Upon clicking `Install app`, you will be directed to the **Ottu’s Page**.
 
-![](../.gitbook/assets/5.png)
+<figure><img src="../.gitbook/assets/5 (8) copy.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 5: Enter Your Ottu Installation URL
 
 Enter your Ottu installation URL, which will be provided by the Ottu Onboarding team after signing the agreement. An example URL would be https://pay.yourdomain.com.
 
-![](<../.gitbook/assets/6 (10).png>)
+<figure><img src="../.gitbook/assets/6 (8) copy.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 6: Select Preferred Payment Methods
 
 From the list provided, select the payment methods that you want to display to your customers. Then, click on `Activate Ottu`.
 
-![](<../.gitbook/assets/7 (1) (2).png>)
+<figure><img src="../.gitbook/assets/7 (5) copy.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 7: Ottu App Integration
 
 Voilà! The Ottu App now appears in your payment settings.
 
-![](../.gitbook/assets/8.png)
+<figure><img src="../.gitbook/assets/8 (4) copy.png" alt=""><figcaption></figcaption></figure>
 
 Experience seamless payments with the Ottu Payment App for Shopify. Install it today and enhance your customers with a convenient and secure payment experience. Get started now!
 
@@ -80,8 +80,8 @@ Gain a comprehensive overview of your business's financial performance with thes
 * **Total Received:** Monitor the total funds successfully received from your transactions.
 * **Net Balance:** Stay on top of your finances by keeping an eye on your net balance.
 
-![](../.gitbook/assets/10.png)
+<figure><img src="../.gitbook/assets/5 (5) copy.png" alt=""><figcaption></figcaption></figure>
 
 Dive deeper into your transaction details using the table located at the bottom of the page. This comprehensive overview not only displays information about each transaction process but also showcases the state of each transaction. The transaction states you may encounter include: `paid`, `failed`, `attempted`, and `created`. See the [payment transaction states](payment-tracking/payment-transactions-states.md#payment-states) for more information.
 
-![](<../.gitbook/assets/11 (3).png>)
+<figure><img src="../.gitbook/assets/6 (5) copy.png" alt=""><figcaption></figcaption></figure>

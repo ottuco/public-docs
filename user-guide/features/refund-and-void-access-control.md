@@ -16,11 +16,11 @@ If you are worried about pending requests cluttering your system, then fear no a
 
 Access the Ottu Dashboard > Navigate to the Administration Panel > Go to the User section and select Users.
 
-<figure><img src="../../../.gitbook/assets/Users (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Users (1).png" alt=""><figcaption></figcaption></figure>
 
 Select the target user. Here is the **Example** user.
 
-<figure><img src="../../../.gitbook/assets/Select_user (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Select_user copy.png" alt=""><figcaption></figcaption></figure>
 
 Within the user's profile, go to the **Permissions** tab. Scroll down to the section titled **User Permissions"** In the **Available User Permissions** window, select the following permissions:
 
@@ -30,7 +30,7 @@ Within the user's profile, go to the **Permissions** tab. Scroll down to the sec
 
 Move them from the **Available User Permissions** window to the **Chosen User Permissions** window. Then click on the `Save` button to save the changes.
 
-<figure><img src="../../../.gitbook/assets/permissions.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/permissions copy.png" alt=""><figcaption></figcaption></figure>
 
 Subsequently, two Permission Requests for Void and Refund are inserted into the [Table of Permission Request](refund-and-void-access-control.md#table-of-permission-requests).
 
@@ -38,5 +38,5 @@ Subsequently, two Permission Requests for Void and Refund are inserted into the 
 
 In the Ottu Dashboard, under the **Tickets Tab**, there is a **Permissions Requests Table** where authorized users are listed. A permission request will be sent to the **authorized user** via this table, and the **authorized user** can then approve or reject the request, as illustrated below.
 
-<figure><img src="../../../.gitbook/assets/permissions_request.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/permissions_request copy.png" alt=""><figcaption></figcaption></figure>
 

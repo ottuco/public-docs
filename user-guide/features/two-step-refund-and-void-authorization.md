@@ -20,12 +20,12 @@ The checker has the authority to proceed directly with the refund or void operat
 
 Then, add the Operation Approval to the Plugins window.&#x20;
 
-<figure><img src="../../.gitbook/assets/activate_request.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/activate_request copy.png" alt=""><figcaption></figcaption></figure>
 
 * Only one authorized user can assign a checker user. \
   **To assign a checker:** From the Ottu Dashboard > locate the Administration Panel > then navigate to the Operations Approval Plugin > and select Operations Approval Plugin Config.
 
-<figure><img src="../../.gitbook/assets/Assign_checker (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Assign_checker copy (1).png" alt=""><figcaption></figcaption></figure>
 
 * A void, or a refund operation request, will remain `Pending` until the checker makes his decision of `approval` or `rejection`. Then the operation request will transit to `Rejected` state or `Done` state. Within the `Approved` state, any user with permission could trigger an attempt by `Retry` button until it is succeeded or turns to `Expired` state once the expiration time gets passed.
 * Any operation request in the `Pending` state can be canceled by all users except the checker from the [operation request table](two-step-refund-and-void-authorization.md#operation-request-table).
@@ -58,10 +58,7 @@ The default time will be 48 hrs, defined from backend.
 
 Seamlessly manage and track this feature, with the option to `approve` or `reject` them for the checker role and `cancel` them for the maker role. Get access to comprehensive transaction histories, all in one central location. Discover our advanced Operations Request Table under the **Tickets** Tab. To make it easier to find specific requests, we have implemented an intelligent filter based on the following criteria: state, operations, date, payment gateway (pg), and currency.
 
-\
-
-
-<figure><img src="../../.gitbook/assets/Operations_Requests.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Operations_Requests copy.png" alt=""><figcaption></figcaption></figure>
 
 | Header           | Description                                                                                                   |
 | ---------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -76,5 +73,3 @@ Seamlessly manage and track this feature, with the option to `approve` or `rejec
 | CURRENCY         | The currency of the payment transaction.                                                                      |
 | PAYMENT GATEWAY  | The payment gateway involved in the transaction.                                                              |
 | ACTION           | <p>For checker:<br>Approve, Reject, or Retry.<br>For maker:<br>Cancel or Retry.</p>                           |
-
-##

@@ -20,21 +20,21 @@ To ensure accuracy, we provide sample files that you can download (i.e., the exa
 * \[Recurrence] required fields.
 * \[Recurrence] all fields.
 
-<figure><img src="https://lh3.googleusercontent.com/fQCZGQ2-IOooGkaC8O8ODa7Ie2K1gJ45-M7cDIydwNQC3-wVfIGKJUP1COoWOffFZRhOaXBpyMKc38O_PcQy6ML6jPzuP2IPOdY0nu1qVjSqsxM_ml7vir7TDXswWR-uWJwQsFbpCsZTCbWRXXCLjrw" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/5 (4) copy.png" alt=""><figcaption></figcaption></figure>
 
 Once you've selected the appropriate format, it's time to enter customer details in the provided list `CSV` file. The figure below serves as a helpful reference for the required information, including the amount, currency code, language, customer email, and SMS notification preferences (enable SMS notification by setting it to TRUE).
 
-<figure><img src="https://lh3.googleusercontent.com/llecx_Z2bPXb1dZNxXucLiJm9BrD7ryhV6tvGsIBfg_buIvBBCz89uK-IcgYIGMBJKZAnVLG7eWw9-Aq-Y68t5ifr4KRb_c3rmKQy2tqpBG2xJ45vgIvmZ4CsTbNBzAaiUXackWd2EH-l-f-gAxlR4k" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/6 (4) copy.png" alt=""><figcaption></figcaption></figure>
 
 If you are using the recurring file format, make sure to specify the start and end dates.
 
-<figure><img src="https://lh3.googleusercontent.com/L7GOFVuFG0qz_jeAM_RWR5PW9wTNdmAPCu03E-fGTIk8UNcmJmjc5d76cOzvIwqFA3_h6qfy3A9CwCpWFcxrAatW_W23M33HijZuqS74XW8lPzl8YyYRzUkvgGbGSUOOMCW7LGD-Bwz4lfjlKcbazAw" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/7 (3) copy.png" alt=""><figcaption></figcaption></figure>
 
 **Importing and Verifying the Customer List:**
 
 Once you have created a `CSV`file with the list of customers, click the `IMPORT` button and choose a predefined list.
 
-<figure><img src="https://lh3.googleusercontent.com/QCDnfe3bu_tChEg81kl1sU6nXSi_jTSQrZk9ruiFGN0g4H8tyAAr37C2w5vRzIIe_kUd2tKqLx6eRu-_sA5lQX-LprLCFyJrOP28KF5QJZH_7-WCy5RHq3atljrEoKyjtbnFWbxnPABgmQUsslLSXpU" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/8 (2) copy.png" alt=""><figcaption></figcaption></figure>
 
 To ensure accuracy, click on the imported file and carefully review the generated list to ensure there are no errors. In case any errors are detected, don't worry. Ottu provides an error report and allows you to download the error file for easy rectification. Simply make the necessary corrections and import the file again.
 

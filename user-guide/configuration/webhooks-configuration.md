@@ -10,14 +10,14 @@ To access the Webhook Configuration, navigate to Ottu Dashboard > Administration
 
 ### [General](webhooks-configuration.md#general)
 
-<figure><img src="../../.gitbook/assets/webhook config.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/webhook config copy.png" alt=""><figcaption></figcaption></figure>
 
 #### **Description of Fields:**
 
 * **HMAC key:** This key is used to [generate signatures](../../developer/webhooks/signing-mechanism.md#signature-generation).
-* **Ignore SSL:** If checked, the SSL certificate will not be verified when calling the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional).
-* **Notify on Error:** If checked, an email will be sent if an error occurs while calling the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional).
-* **Email List:** Specify the list of email addresses where the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional) error notification should be sent.
+* **Ignore SSL:** If checked, the SSL certificate will not be verified when calling the [webhook URL](../../developer/checkout-api.md#webhook_url-string-optional).
+* **Notify on Error:** If checked, an email will be sent if an error occurs while calling the [webhook URL](../../developer/checkout-api.md#webhook_url-string-optional).
+* **Email List:** Specify the list of email addresses where the [webhook URL](../../developer/checkout-api.md#webhook_url-string-optional) error notification should be sent.
 * **Timeout:** The amount of time that the Ottu server will wait for a response from the merchant server.
 * **Retries:** The number of retry attempts the Ottu server will make to resend the request to the merchant server if the first attempt fails. Note that the **Enable retry webhook mechanism** option should be checked to activate this feature.
 * **Backoff factor:** The amount of time the Ottu server will wait before retrying the request (i.e., the time between two attempts).
@@ -44,9 +44,9 @@ Keep in mind that the merchant’s server will take 30 seconds to respond, and t
 * **Enable webhook notifications:** If checked, webhook notifications will be activated.
 
 {% hint style="info" %}
-**Redirect behavior:** The redirect behavior is determined by the [webhook URL](../../developer/checkout-api.md#webhook\_url-string-optional) response to payment events and payment operations.
+**Redirect behavior:** The redirect behavior is determined by the [webhook URL](../../developer/checkout-api.md#webhook_url-string-optional) response to payment events and payment operations.
 
-* If the webhook URL returns a status code of 200, the customer will be redirected to the [redirect\_url](../../developer/checkout-api.md#redirect\_url-string-optional).
+* If the webhook URL returns a status code of 200, the customer will be redirected to the [redirect\_url](../../developer/checkout-api.md#redirect_url-string-optional).
 * If the webhook URL returns a status code of 201, the customer will be redirected to the **Ottu payment summary page**.
 * If the webhook URL returns any other status code, the customer will be redirected to the **Ottu payment summary page**. \
   In this case, Ottu can send an email notification if the **Enable webhook notifications** option is checked.

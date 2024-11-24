@@ -10,7 +10,7 @@ To configure the URL Shortener, go to the Ottu Dashboard > Administration Panel 
 
 Next, click on `Add URL Shortener Configuration`.
 
-<figure><img src="../../.gitbook/assets/URL-Shortener-Configuration-The-smarter-way (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/URL_Confg copy.png" alt=""><figcaption></figcaption></figure>
 
 #### **Description of Fields:**
 

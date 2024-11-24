@@ -9,7 +9,7 @@ Ottu puts the power of configuration in the hands of merchants, ensuring a hassl
 
 <figure><img src="../../.gitbook/assets/Configuration.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Global configuration.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Global configuration copy.png" alt=""><figcaption></figcaption></figure>
 
 **Here is a brief explanation of each field:**
 
@@ -53,8 +53,8 @@ In 2FA, An OTP (One-Time Passcode)—a single-use numerical passcode—will be s
 * **Expire payment transaction:** If activated, an expiration date will be set for the customer to complete the payment through the payment request URL.
 
 {% hint style="info" %}
-* When the expiration date passes, the payment will be transitioned to the Expired state, and the payment request URL will no longer be valid.
-* By default, the expiration date is 24 hours, but it can be modified: From the Ottu Dashboard > Administration Panel > Payment Request > Payment Request Configuration \[Transaction Expiration Time]
+- When the expiration date passes, the payment will be transitioned to the Expired state, and the payment request URL will no longer be valid.
+- By default, the expiration date is 24 hours, but it can be modified: From the Ottu Dashboard > Administration Panel > Payment Request > Payment Request Configuration \[Transaction Expiration Time]
 {% endhint %}
 
 #### [**Customization and Extra Notes**](global-configuration.md#customization-and-extra-notes)

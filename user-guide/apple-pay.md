@@ -6,7 +6,7 @@ Mobile payments are payments that are made using a mobile device, such as a smar
 
 Ottu supports Apple Pay in Kuwait, Saudi Arabia (KSA), and Bahrain. This means that users in these countries can leverage the benefits of Apple Pay to make payments conveniently and securely.
 
-![](<../.gitbook/assets/Apple Pay.png>)
+<figure><img src="../.gitbook/assets/Apple Pay copy.png" alt=""><figcaption></figcaption></figure>
 
 ## [Apple Pay Configuration Guide](apple-pay.md#apple-pay-configuration-guide)
 
@@ -34,11 +34,7 @@ Merchant needs to have a developer account in Apple.
 
 #### 4. From the identifier types, choose the Merchant IDs type and click Continue.
 
-<div data-full-width="true">
-
-<img src="../.gitbook/assets/merchant-ids (1).png" alt="">
-
-</div>
+<div data-full-width="true"><img src="../.gitbook/assets/merchant-ids (1).png" alt=""></div>
 
 #### **5. Enter the Merchant Information**
 
@@ -99,7 +95,7 @@ Ottu will then confirm the completion of the verification.
 <figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-If the merchant using his own domain alongside to Ottu, it's necessary to verify your domain. To complete this process, refer to the guide provided [here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/configuring\_your\_environment#3179109).
+If the merchant using his own domain alongside to Ottu, it's necessary to verify your domain. To complete this process, refer to the guide provided [here](https://developer.apple.com/documentation/apple_pay_on_the_web/configuring_your_environment#3179109).
 {% endhint %}
 
 ### [Creating Apple Pay Certificates](apple-pay.md#creating-apple-pay-certificates)

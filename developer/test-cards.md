@@ -168,7 +168,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 </details>
 
-#### [N-Genius](test-cards.md#n-genius)
+### [N-Genius](test-cards.md#n-genius)
 
 <details>
 
@@ -388,7 +388,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 </details>
 
-#### [PayU India](test-cards.md#payu-india)
+### [PayU India](test-cards.md#payu-india)
 
 <details>
 
@@ -430,7 +430,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 </details>
 
-#### [QPay](test-cards.md#qpay)
+### [QPay](test-cards.md#qpay)
 
 <details>
 
@@ -462,7 +462,7 @@ For success: 1234
 
 </details>
 
-#### [HyperPay](test-cards.md#hyperpay)
+### [HyperPay](test-cards.md#hyperpay)
 
 <details>
 

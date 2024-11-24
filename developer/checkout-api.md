@@ -864,13 +864,13 @@ When we add [notification](checkout-api.md#notifications-object-optional) we sho
             "fee_description": "fix fee",
             "icon": "https://<ottu-url>/static/images/pg_icons/master_visa_mada.png",
             "flow": "redirect",
-            "redirect_url": "https://<ottu-url>/checkout/5ca114666d472a170d3c4ea6cadbf347679b2532?chd-only=True"
+            "redirect_url": "https://<ottu-url>/checkout/5ca114666d472a170d3c4ea6cadbf347?chd-only=True"
         }
     ],
     "pg_codes": [
         "pg_codes"
     ],
-    "session_id": "5ca114666d472a170d3c4ea6cadbf347679b2532",
+    "session_id": "5ca114666d472a170d3c4ea6cadbf347",
     "state": "created",
     "type": "payment_request"
 }

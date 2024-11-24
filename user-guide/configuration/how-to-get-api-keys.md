@@ -8,13 +8,13 @@ Obtaining your API keys is a simple and essential step that enables you to acces
 
 ![](../../.gitbook/assets/222.png)
 
-![](<../../.gitbook/assets/Click on add API Key (1).png>)
+<figure><img src="../../.gitbook/assets/New 2 (8) copy.png" alt=""><figcaption></figcaption></figure>
 
 2.  #### Provide the Required Information
 
     Fill the required fields and click `save`.
 
-![](<../../.gitbook/assets/Fill the required fields.png>)
+<figure><img src="../../.gitbook/assets/New3(8) 2.png" alt=""><figcaption></figcaption></figure>
 
 *   #### Fields Description
 

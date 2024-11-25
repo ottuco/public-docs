@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/Banner.png
+cover: .gitbook/assets/New_Banner_Berge.png
 coverY: 0
 ---
 

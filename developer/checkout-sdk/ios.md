@@ -2,7 +2,7 @@
 
 The [Checkout SDK](./) is a Swift framework (library) provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your iOS application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
 
-To use the Checkout SDK, you'll need to include the library in your iOS application and initialize it with your Ottu [merchant\_id](https://docs.ottu.com/developer/checkout-sdk/web#merchant\_id-string), [session\_id](https://docs.ottu.com/developer/checkout-sdk/web#session\_id-string), and [API public key](../authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [theme](https://docs.ottu.com/developer/checkout-sdk/web#theme-object) styling for the checkout interface, and more.
+To use the Checkout SDK, you'll need to include the library in your iOS application and initialize it with your Ottu [merchant\_id](https://docs.ottu.com/developer/checkout-sdk/web#merchant_id-string), [session\_id](https://docs.ottu.com/developer/checkout-sdk/web#session_id-string), and [API public key](../authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [theme](https://docs.ottu.com/developer/checkout-sdk/web#theme-object) styling for the checkout interface, and more.
 
 {% hint style="warning" %}
 [API private key](../authentication.md#private-key-api-key) should never be used on the client side. Instead, [API public key ](../authentication.md#public-key)should be used. This is essential to ensure the security of your application and the protection of sensitive data.
@@ -18,9 +18,13 @@ The SDK can be used on a device running iOS 13 or higher.
 
 _**Ottu:**_ Ottu is available through [CocoaPods](http://cocoapods.org/). To install it, simply add the following line to your Podfile:
 
-```swift
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.14'
+```ruby
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.20'
 ```
+
+After all the frameworks are obtained via CocoaPods, it is needed to open project `*.xcworkspace` (not `*.xcodeproj`) in Xcode and ensure `Minimum Deployments iOS` is set to 13 for SVGKit as shown in the below figure:
+
+<figure><img src="../../.gitbook/assets/SVGKit.png" alt=""><figcaption></figcaption></figure>
 
 ### [**Installation with Swift Package Manager**](ios.md#installation-with-swift-package-manager)
 
@@ -97,7 +101,7 @@ Ensure that you utilize the public key and refrain from using the private key. T
 
 The `session_id` is the unique identifier for the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [`session_id`](../checkout-api.md#session\_id-string-mandatory).
+This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [`session_id`](../checkout-api.md#session_id-string-mandatory).
 
 #### [**formsOfPayment**](ios.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -413,7 +417,7 @@ self.checkout = Checkout(
 
 When the [integration ](web.md#apple-pay)between Ottu and Apple for Apple Pay is completed, the necessary checks to display the Apple Pay button are handled automatically by the Checkout SDK.
 
-1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id ](../checkout-api.md#session\_id-string-mandatory)and payment gateway codes ([pg\_codes](../checkout-api.md#pg\_codes-array-required)), several conditions are automatically verified:
+1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id ](../checkout-api.md#session_id-string-mandatory)and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
    * It is confirmed that a `session_id` and `pg_codes` associated with the Apple Pay Payment Service have been supplied.
    * It is ensured that the customer is using an Apple device that supports Apple Pay. If the device is not supported, the button will not be shown, and an error message stating `This device doesn't support Apple Pay` will be displayed to inform the user of the compatibility issue.
    * It is verified that the customer has a wallet configured on their Apple Pay device. if the wallet is not configured (i.e., no payment cards are added), the Setup button will  appear. Clicking on this button will prompt the Apple Pay wallet on the user's device to open, allowing them to configure it by adding payment cards.
@@ -426,7 +430,7 @@ This setup ensures a seamless integration and user experience, allowing customer
 
 When the [integration](web.md#stc-pay) between Ottu and STC Pay is completed, the necessary checks to display the STC Pay button are handled seamlessly by the Checkout SDK.
 
-1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](../checkout-api.md#session\_id-string-mandatory) and payment gateway codes ([pg\_codes](../checkout-api.md#pg\_codes-array-required)), several conditions are automatically verified:
+1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](../checkout-api.md#session_id-string-mandatory) and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
    * It is confirmed that the `session_id` and `pg_codes` provided during SDK initialization are associated with the STC Pay Payment Service. This ensures that the STC Pay option is available for the customer to choose as a payment method.
    * It is ensured that the STC Pay button is displayed by the iOS SDK, regardless of whether the customer has provided a mobile number while creating the transaction.
 
@@ -493,4 +497,4 @@ Yes, see the [Customization theme](ios.md#customization-theme) section.
 
 #### :digit\_four: [How do I customize the payment request for Apple Pay?](ios.md#id-4.-how-do-i-customize-the-payment-request-for-apple-pay) <a href="#id-4.-how-do-i-customize-the-payment-request-for-apple-pay" id="id-4.-how-do-i-customize-the-payment-request-for-apple-pay"></a>
 
-You can tailor the payment request for Apple Pay using their respective initialization methods. These methods allow you to set various properties like API version, supported cards, networks, countries, and merchant capabilities etc. You can check the list of properties supported by [ApplePay](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaypaymentrequest)
+You can tailor the payment request for Apple Pay using their respective initialization methods. These methods allow you to set various properties like API version, supported cards, networks, countries, and merchant capabilities etc. You can check the list of properties supported by [ApplePay](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest)

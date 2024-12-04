@@ -19,7 +19,7 @@ The SDK can be used on a device running iOS 13 or higher.
 _**Ottu:**_ Ottu is available through [CocoaPods](http://cocoapods.org/). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.10.20'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.20'
 ```
 
 After all the frameworks are obtained via CocoaPods, it is needed to open project `*.xcworkspace` (not `*.xcodeproj`) in Xcode and ensure `Minimum Deployments iOS` is set to 13 for SVGKit as shown in the below figure:

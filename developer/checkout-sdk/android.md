@@ -160,6 +160,12 @@ To configure the `cancelCallback` function, you can use the `data-cancel` attrib
 * `reference_number` optional
 * `payment_gateway_info` optional
 
+{% hint style="warning" %}
+In both `cancelCallback` and `errorCallback`, the SDK must be reinitialized, either on the same session or on a new session.
+{% endhint %}
+
+
+
 ### [**successCallback**](android.md#successcallback)
 
 The `successCallback` is a function that is triggered when the payment process is successfully completed. This callback receives a `JSONObject` containing a `data.status` value of "success."

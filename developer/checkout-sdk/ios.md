@@ -176,6 +176,12 @@ To define the `cancelCallback` function, you can use the `data-cancel` attribute
 * `reference_number` optional
 * `payment_gateway_info` optional
 
+{% hint style="warning" %}
+In both `cancelCallback` and `errorCallback`, the SDK must be reinitialized, either on the same session or on a new session.
+{% endhint %}
+
+
+
 ### [**successCallback**](ios.md#successcallback)
 
 In the Checkout SDK, the `successCallback` is a function triggered upon successful completion of the payment process. This callback receives `data` `JSONObject`, with a data.status value of `success`

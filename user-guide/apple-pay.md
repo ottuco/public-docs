@@ -28,9 +28,9 @@ Merchant needs to have a developer account in Apple.
 
 ![](../.gitbook/assets/creating-merchant-id.png)
 
-#### 3. From “App IDs” dropdown list ![](<../.gitbook/assets/image (11).png>)choose “Merchant IDs”, then click on ![](<../.gitbook/assets/image (14).png>) &#x20;
+#### 3. From “App IDs” dropdown list ![](<../.gitbook/assets/image (11) (1).png>)choose “Merchant IDs”, then click on ![](<../.gitbook/assets/image (14) (1).png>) &#x20;
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. From the identifier types, choose the Merchant IDs type and click Continue.
 
@@ -40,17 +40,17 @@ Merchant needs to have a developer account in Apple.
 
 Fill out the fields, such as display name, description, and so on. The identifier field should include your Ottu installation URL in reverse order; For example, if the domain is `demo.ottu.net`, enter `net.ottu.demo`. Then click `Continue`.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 6. Review the provided details and click on the Register button.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### [Adding and Verifying a Domain](apple-pay.md#adding-and-verifying-a-domain)
 
 #### 1. From the Identifiers section, select the merchant ID that you created in the previous step (e.g., “Ottu Apple Pay”).
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Click on Add Domain
 
@@ -58,7 +58,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 3. Enter the domain URL you want to register and click Save.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Download the .text file and make sure it is ready for upload, as you will provide it to Ottu later (i.e., in the next step), which will be used for domain verification.
 
@@ -73,11 +73,11 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 &#x20;  5.3. Click on `Add payment service`.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;  5.4. Fill out the fields and click `Save`.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Field Descriptions
 
@@ -85,14 +85,14 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 &#x20; 5.5. The new Apple Pay service for `merchant.net.ottu.demo` & `demo.ottu.net` has been successfully added.
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 6. Once you have added the Apple Pay service and submitted the .text file on the Ottu side, you should verify the domain on the Apple side:
 
 On the Apple side, from the **Certificates, IDs & Profiles** section, scroll down to the **Merchant Domains** portion, and click `Verify`.\
 Ottu will then confirm the completion of the verification.
 
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If the merchant using his own domain alongside to Ottu, it's necessary to verify your domain. To complete this process, refer to the guide provided [here](https://developer.apple.com/documentation/apple_pay_on_the_web/configuring_your_environment#3179109).
@@ -102,13 +102,13 @@ If the merchant using his own domain alongside to Ottu, it's necessary to verify
 
 #### **1.** Once again, from your Apple Developer account, go to the Certificates, IDs & Profiles section
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### &#x20;2. Scroll down to the Apple Pay Merchant Identity Certificate portion.
 
 #### 3. Click Create Certificate.
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Ottu will provide you with a Certificate Signing Request (CSR) file, which you will need in the next step:
 

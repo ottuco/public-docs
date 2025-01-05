@@ -16,7 +16,7 @@ The **Invoice Management Dashboard** offers a clear view of all generated invoic
 * **Generate Reports:** Export detailed invoice reports in PDF format using the **Generate Report** button.
 
 {% hint style="info" %}
-All invoices generated in the [Generate Invoices](broken-reference) section are listed in the **Invoices Table**, organized by property.&#x20;
+All invoices generated in the [Generate Invoices](generate-invoice.md) section are listed in the **Invoices Table**, organized by property.&#x20;
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
@@ -34,7 +34,7 @@ All invoices generated in the [Generate Invoices](broken-reference) section are 
 ## [**Manual Payment**](invoices-management.md#undefined)
 
 * **Purpose:** Record or process a payment manually for a specific invoice.
-* **How:** Use the **Manual Payment** option from the **Action Menu (three dots)**. For more information about Manual Payment, please refer to [Manual Payment](broken-reference) section.
+* **How:** Use the **Manual Payment** option from the **Action Menu (three dots)**. For more information about Manual Payment, please refer to [Manual Payment](tenant-and-contract-management/contract-management/contract-action/manual-payment.md) section.
 
 ## [**Delete Invoice**](invoices-management.md#delete-invoice)
 

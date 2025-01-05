@@ -37,7 +37,7 @@ It allows tenants to easily report maintenance. This streamlined process enhance
 
 a. **Navigate to the Property Section**:
 
-* The merchant locates the [Property](broken-reference) section within the Ottu Dashboard.
+* The merchant locates the [Property](property-management.md) section within the Ottu Dashboard.
 
 b. **Search for the Required Property**:
 

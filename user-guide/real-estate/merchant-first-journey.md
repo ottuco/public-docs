@@ -49,35 +49,35 @@ c. Click on the **ADD** button to define the details of these units, then fill t
 
 4. 💾 Save the property to make it available for actions like tenant assignment or contract creation.
 
-Refer to the [Property Management](broken-reference) section for further details on managing property settings and custom fields.
+Refer to the [Property Management](regular-activities/property-management.md) section for further details on managing property settings and custom fields.
 
 ## [Add a Tenant](merchant-first-journey.md#add-a-tenant)
 
-1. 👤 Navigate to the [Tenant and Contract Dashboard](broken-reference).
+1. 👤 Navigate to the [Tenant and Contract Dashboard](regular-activities/tenant-and-contract-management/tenant-and-contract-dashboard.md).
 2. ➕ Click on **Add Tenant** to register a new tenant.
-3. 📝 Provide essential information to the [New Tenant Form](broken-reference), such as:
+3. 📝 Provide essential information to the [New Tenant Form](regular-activities/tenant-and-contract-management/tenant-management.md#new-tenant-form), such as:
    * **Name**: John Doe
    * **Contact Details**: Email and phone number
    * **Assigned Property**: Link the tenant to a specific unit or property.
 4. 💾 Save the tenant's profile.
 
-For a comprehensive guide, refer to the [Tenant Management](broken-reference) section.
+For a comprehensive guide, refer to the [Tenant Management](regular-activities/tenant-and-contract-management/tenant-management.md) section.
 
 ## [Add a Contract](merchant-first-journey.md#add-a-contract)
 
-1. 📜 Access the [Tenant and Contract Dashboard](broken-reference).
+1. 📜 Access the [Tenant and Contract Dashboard](regular-activities/tenant-and-contract-management/tenant-and-contract-dashboard.md).
 2. ➕ Click on Add **Contract** to create a lease agreement.
-3. 📝 Fill in the [New Contract Form](broken-reference) details:
-   * [Property Name](broken-reference): Greenfield Towers
-   * [Tenant Name](broken-reference): John Doe
-   * Define the Unit by click on **ADD UNIT** button: in This Example, Unit Number 2. Check [here](broken-reference).
+3. 📝 Fill in the [New Contract Form](regular-activities/tenant-and-contract-management/contract-management/add-new-contract.md#new-contract-form) details:
+   * [Property Name](regular-activities/tenant-and-contract-management/contract-management/add-new-contract.md#property-name): Greenfield Towers
+   * [Tenant Name](regular-activities/tenant-and-contract-management/contract-management/add-new-contract.md#tenant-name): John Doe
+   * Define the Unit by click on **ADD UNIT** button: in This Example, Unit Number 2. Check [here](regular-activities/tenant-and-contract-management/contract-management/add-new-contract.md#add-unit).
    * Contract duration and start date: 20-12-2024 till 19-01-2026
-   * [Payment Start Date](broken-reference): 01-01-2025
-   * [Number of invoices for advanced payment](broken-reference): 3
+   * [Payment Start Date](regular-activities/tenant-and-contract-management/contract-management/add-new-contract.md#payment-start-date): 01-01-2025
+   * [Number of invoices for advanced payment](regular-activities/tenant-and-contract-management/contract-management/add-new-contract.md#number-of-invoices-for-advanced-payment): 3
    * Payment Period: Monthly
 4. ✅ Finalize and save the contract.
 
-Refer to the [Contract Management Guide](https://sandboxdoc.gitbook.io/ottu-team-sandbox-doc/real-estate-trial/regular-activities/contract-management) for additional information on editing and managing contracts.
+Refer to the [Contract Management Guide](regular-activities/tenant-and-contract-management/contract-management/) for additional information on editing and managing contracts.
 
 **Invoices While Contracting:**
 
@@ -85,7 +85,7 @@ Refer to the [Contract Management Guide](https://sandboxdoc.gitbook.io/ottu-team
 
 ## [Print Unit Vacancy Report](merchant-first-journey.md#print-unit-vacancy-report)
 
-1. 📄 Access the [Property Management Table](broken-reference) in the dashboard.
+1. 📄 Access the [Property Management Table](regular-activities/property-management.md#property-management-dashboard) in the dashboard.
 2. 📊 Click the **Filter** button to define parameters, such as:&#x20;
    1. Unit Type **Villa**
    2. Property Classification, **Residential Building or Villa.**
@@ -97,7 +97,7 @@ Refer to the [Contract Management Guide](https://sandboxdoc.gitbook.io/ottu-team
 
 ## [Print and Generate Invoices](merchant-first-journey.md#print-and-generate-invoices)
 
-1. 📄 Navigate to the [Generate Invoice](broken-reference) section.
+1. 📄 Navigate to the [Generate Invoice](regular-activities/generate-invoice.md) section.
 2. ➕ Choose the property as **Greenfield Towers.** Specify the desired Period as 2024-12
 3. 🔍 Click **Show** button.
 4.  :receipt: All the relevant invoices will be displayed\
@@ -116,7 +116,7 @@ Refer to the [Contract Management Guide](https://sandboxdoc.gitbook.io/ottu-team
    1. Click the **GENERATE INVOICES AND SEND PAYMENT LINKS** button to generate the displayed invoices.
    2. The associated payment links are automatically sent to the respective recipients.
 
-Refer to the [Generate Invoice Guide](https://sandbox-doc.gitbook.io/ottu-team-sandbox-doc/real-estate-trial/regular-activities/generate-invoice) for detailed instructions.
+Refer to the [Generate Invoice Guide](regular-activities/generate-invoice.md) for detailed instructions.
 
 ## [Pay on the Invoice Link](merchant-first-journey.md#pay-on-the-invoice-link)
 
@@ -129,19 +129,19 @@ Refer to the [Generate Invoice Guide](https://sandbox-doc.gitbook.io/ottu-team-s
 
 ## [Pay on Manual Payment](merchant-first-journey.md#pay-on-manual-payment)
 
-1. :rocket: To trigger a manual payment, access the **Contract Action List**. For detailed instructions on accessing the Contract Action List, please refer to this [guide](broken-reference).
+1. :rocket: To trigger a manual payment, access the **Contract Action List**. For detailed instructions on accessing the Contract Action List, please refer to this [guide](regular-activities/tenant-and-contract-management/contract-management/contract-action/#to-trigger-contract-actions).
 2.  ➕ Select **Manual Payment** for recording an offline payment.\
 
 
     <figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
-3. 🧾 After selecting **Manual Payment**, a [Manual Payment Form](broken-reference) will appear. Fill in the required information to proceed.
+3. 🧾 After selecting **Manual Payment**, a [Manual Payment Form](regular-activities/tenant-and-contract-management/contract-management/contract-action/manual-payment.md#manual-payment-form) will appear. Fill in the required information to proceed.
 4. ✅ Confirm and save the transaction.
 
-Please refer to the [Manual Payment ](broken-reference)for more information.
+Please refer to the [Manual Payment ](regular-activities/tenant-and-contract-management/contract-management/contract-action/manual-payment.md)for more information.
 
 ## [View, and Print Invoices and Payments](merchant-first-journey.md#view-and-print-invoices-and-payments)
 
-1. 📊 Access the [Invoices Dashboard](broken-reference).
+1. 📊 Access the [Invoices Dashboard](regular-activities/invoices-management.md#invoices-management-dashboard).
 2. 🔍 Use filters for specific invoices or payments by property, tenant, or date range.
 3. 🔎 Review the details.
 4. 🖨️ Clicking the **Print** button generates a PDF file containing invoice details, allowing the merchant to easily print it.

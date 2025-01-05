@@ -4,7 +4,7 @@ To add a new contract, there are three methods available, each leading to the [n
 
 ### [**From Property Management** ](add-new-contract.md#from-property-management)
 
-From the [property list](broken-reference), each property is listed with comprehensive details such as the address, number of contracts, units, rented units, and available units. By clicking on the dropdown arrow as illustrated below,\
+From the [property management](../../property-management.md) section, each property is listed with comprehensive details such as the address, number of contracts, units, rented units, and available units. By clicking on the dropdown arrow as illustrated below,\
 
 
 <figure><img src="../../../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
@@ -16,7 +16,7 @@ a dropdown list of units related to the property, along with their full details,
 
 ### [**From Tenant Raw**](add-new-contract.md#from-tenant-raw)&#x20;
 
-Within the [tenants list](add-new-contract.md#from-tenant-and-contract-management), merchants can easily click on the three dots beside the tenant's name and select the **New Contract** option. Subsequently, the merchant will be redirected to the [new contract form](add-new-contract.md#new-contract-form).\
+Within the [tenants raw](../tenant-and-contract-dashboard.md#tenants-row), merchants can easily click on the three dots beside the tenant's name and select the **New Contract** option. Subsequently, the merchant will be redirected to the [new contract form](add-new-contract.md#new-contract-form).\
 
 
 <figure><img src="../../../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
@@ -25,7 +25,7 @@ Within the [tenants list](add-new-contract.md#from-tenant-and-contract-managemen
 
 ### [**From Tenant and Contract Management**](add-new-contract.md#from-tenant-and-contract-management)
 
-Merchants can create a new contract by navigating to the [Tenant and Contract Management](broken-reference)  under [Main Listings](broken-reference). By clicking the **Add Contract** button, they are redirected to the [new contract form.](add-new-contract.md#new-contract-form)&#x20;
+Merchants can create a new contract by navigating to the [Tenant and Contract Management](../). By clicking the **Add Contract** button, they are redirected to the [new contract form.](add-new-contract.md#new-contract-form)&#x20;
 
 <figure><img src="../../../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
@@ -35,7 +35,7 @@ Creating from the [property list](add-new-contract.md#from-property-management) 
 
 #### New Contract Form
 
-After following one of the three aforementioned [methods](add-new-contract.md#create-new-contract) to create a new contract, the merchant is mandated to input the following information.
+After following one of the three aforementioned methods to create a new contract, the merchant is mandated to input the following information.
 
 *   #### **Tenant Name:**&#x20;
 
@@ -69,7 +69,7 @@ The difference between the contract start date and the payment start date is con
     End date of the contract.
 *   #### **Amount:**&#x20;
 
-    Rent amount for the unit, automatically calculated based on the [payment period](add-new-contract.md#payment-period) and the [Price ](broken-reference)defined for the unit(s), Merchant can modify it if necessary.
+    Rent amount for the unit, automatically calculated based on the [payment period](add-new-contract.md#payment-period) and the Price defined for the [unit(s)](../../property-management.md#unit-details), Merchant can modify it if necessary.
 *   #### **Original Contract Amount:**
 
     The maximum amount that the merchant can request the customer to pay within each [phase](add-new-contract.md#payment-period) of payment.
@@ -109,5 +109,5 @@ To exclude the "Payment Link" option from the payment methods, simply uncheck it
 <figure><img src="../../../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Ottu empowers merchants to easily perform various actions on contracts. For more information, please refer to the [Contract Actions](broken-reference) section.
+Ottu empowers merchants to easily perform various actions on contracts. For more information, please refer to the [Contract Actions](../tenant-and-contract-dashboard.md#contract-actions) section.
 {% endhint %}

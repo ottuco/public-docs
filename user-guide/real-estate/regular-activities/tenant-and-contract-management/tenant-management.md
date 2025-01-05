@@ -1,6 +1,6 @@
 # Tenant Management
 
-## [**Add New Tenant**](broken-reference)
+## [**Add New Tenant**](tenant-management.md#add-new-tenant)
 
 By clicking on the **+ADD TENANT** button within the Tenant and Contract Management section, merchants will be prompted to fill out the following information:\
 
@@ -132,7 +132,7 @@ By clicking on the **+ADD TENANT** button within the Tenant and Contract Managem
 
     <figure><img src="../../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
-## [Edit Tenant](broken-reference)
+## [Edit Tenant](tenant-management.md#edit-tenant)
 
 1. **Search for the Tenant:** Locate the desired tenant from the list.
 2. **Open the Dropdown Menu:** Click the three dots (⋮) at the beginning of the tenant's row.

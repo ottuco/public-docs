@@ -44,7 +44,7 @@ Subsequently, the merchant is redirected to the form for adding a new property, 
     The town or city where the property is situated.
 *   #### **Property Classification:**&#x20;
 
-    The classification or category of the property. For further information about Property Classification, please refer [here](broken-reference).
+    The classification or category of the property.
 *   #### **Reporting Profile:**&#x20;
 
     To group multiple properties under one profile for consolidated reporting.
@@ -86,7 +86,7 @@ To add multiple unit types, such as villas and apartments, along with their resp
 
 5.  #### **Unit Details:**
 
-    Subsequently, merchant needs to provide details such as UNIT NUMBER and FLOOR, as illustrated below.
+    Subsequently, the merchant needs to provide details such as UNIT NUMBER and FLOOR, as illustrated below.
 
 <figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 

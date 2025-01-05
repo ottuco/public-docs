@@ -88,4 +88,4 @@ Click the dropdown arrow :arrow\_down\_small: at the end of a contract's row to 
 
 **By clicking the three dots** (**⋮**) **at the end of each row**:
 
-All the information about the available contract actions can be found [here](broken-reference).
+All the information about the available contract actions can be found [here](tenant-and-contract-dashboard.md#contract-actions).

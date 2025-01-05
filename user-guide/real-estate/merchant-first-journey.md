@@ -22,9 +22,9 @@ This section guides merchants through managing property rentals using the Ottu R
 
 ## [Add a Property](merchant-first-journey.md#add-a-property)
 
-1. 🏠 Navigate to the [Property Management](broken-reference) section on the dashboard.
+1. 🏠 Navigate to the [Property Management](regular-activities/property-management.md) section on the dashboard.
 2. ➕ Click **Add Property**.&#x20;
-3. 📝 Fill in the [New Property Form](broken-reference) with the key details, such as:
+3. 📝 Fill in the [New Property Form](regular-activities/property-management.md#new-property-from) with the key details, such as:
    * **Name**: Greenfield Towers
    * **Location**: Downtown City
    * **Classification**:  Residential Building or Villa

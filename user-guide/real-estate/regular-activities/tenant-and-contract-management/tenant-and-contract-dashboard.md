@@ -5,7 +5,7 @@ The dashboard offers several key features, with the most notable ones being:
 * It offers a clear view of tenants and their contracts in both [Expanded](tenant-and-contract-dashboard.md#default-view-expanded) and [Collapsed](tenant-and-contract-dashboard.md#collapsed-view-unexpanded) modes.&#x20;
 * Quickly [access key details](tenant-and-contract-dashboard.md#information-displayed).
 * &#x20;Manage tenant information. Check [here](tenant-and-contract-dashboard.md#tenant-actions).
-* &#x20;Perform contract actions like editing, renewing, or terminating contracts efficiently. More details can be found [here](broken-reference).
+* &#x20;Perform contract actions like editing, renewing, or terminating contracts efficiently. More details can be found [here](tenant-and-contract-dashboard.md#contract-actions).
 
 ## [**Default View (Expanded)**](tenant-and-contract-dashboard.md#default-view-expanded)
 

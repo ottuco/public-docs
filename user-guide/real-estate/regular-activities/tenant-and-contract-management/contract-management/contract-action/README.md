@@ -4,7 +4,7 @@ Merchants can perform contract actions from various sections within the Ottu Rea
 
 #### &#x20;To trigger contract actions:
 
-* Go to the **Tenant and Contract Management** section under the **Main Listings**.
+* Go to the [Tenant and Contract Management](../../tenant-and-contract-dashboard.md) section.
 * Search for the tenant and property associated with the contract you want to manage.
 * At the end of the contract's row, click on the three dots (**⋮**).
 

@@ -91,10 +91,10 @@ The difference between the contract start date and the payment start date is con
 
     *   When checked:
 
-        * All [generated invoices](broken-reference) related to this contract are suspended; no payment links will be created for these invoices.
+        * All [generated invoices](../../generate-invoice.md) related to this contract are suspended; no payment links will be created for these invoices.
         * Tenants will not be able to pay these invoices online; payment must be coordinated through legal proceedings.
 
-        Merchants can suspend or unsuspend any invoice at any time. To do this, navigate to the [Tenant and Contract Management](broken-reference) section, select the appropriate tenant and contract, and use the dropdown arrow at the end of the contract row to toggle the suspend option.
+        Merchants can suspend or unsuspend any invoice at any time. To do this, navigate to the [Tenant and Contract Management section](../tenant-and-contract-dashboard.md), select the appropriate tenant and contract, and use the dropdown arrow at the end of the contract row to toggle the suspend option.
 *   #### **Upload Contract:**&#x20;
 
     Option to upload the contract document.

@@ -1,6 +1,6 @@
 # Generate Invoice
 
-In the Real Estate plugin, invoices are automatically created and prepared for all rental payments associated with each contract. These payments occur based on the [payment frequency](broken-reference) defined within the [contract form](broken-reference). Through the **Generate Invoice** section, merchants have the ability to explore all prepared invoices. They have the option to specify the desired [property](broken-reference), [profile,](broken-reference) or period to view all invoices prepared thus far.
+In the Real Estate plugin, invoices are automatically created and prepared for all rental payments associated with each contract. These payments occur based on the [payment frequency](tenant-and-contract-management/contract-management/add-new-contract.md#payment-period) defined within the [contract form](tenant-and-contract-management/contract-management/add-new-contract.md#new-contract-form). Through the **Generate Invoice** section, merchants have the ability to explore all prepared invoices. They have the option to specify the desired [property](tenant-and-contract-management/contract-management/add-new-contract.md#property-name), [profile,](property-management.md#invoice-profile) or period to view all invoices prepared thus far.
 
 {% hint style="info" %}
 &#x20;Merchants can only choose the period for previewing the invoice within the range of the plugin activation date till the current month.
@@ -32,7 +32,7 @@ When the **SHOW** button is clicked, all relevant invoices from the activation d
 
 ## [Add Discount ](generate-invoice.md#add-discount)
 
-Each invoice will be displayed with information such as [property](broken-reference), [unit information](broken-reference), [contract number](broken-reference), contract [start](broken-reference) and [end](broken-reference) dates, [due](broken-reference) date, [termination details](broken-reference), and [tenant information](broken-reference), along with the following amount information:
+Each invoice will be displayed with information such as [property](tenant-and-contract-management/contract-management/add-new-contract.md#property-name), [unit information](tenant-and-contract-management/contract-management/add-new-contract.md#add-unit), [contract number](tenant-and-contract-management/contract-management/add-new-contract.md#contract-reference), contract [start](tenant-and-contract-management/contract-management/add-new-contract.md#contract-start-date) and [end](tenant-and-contract-management/contract-management/add-new-contract.md#contract-end-date) dates, [due](tenant-and-contract-management/contract-management/add-new-contract.md#payment-start-date) date, [termination details](tenant-and-contract-management/contract-management/contract-action/terminate-contract.md), and [tenant information](tenant-and-contract-management/tenant-management.md), along with the following amount information:
 
 <figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 

@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Real Estate
 
 Welcome to Ottu's Real Estate Plugin, designed to streamline property management and rental transactions for premises owners.&#x20;

@@ -4,6 +4,10 @@ Welcome to Ottu's Real Estate Plugin, designed to streamline property management
 
 The Ottu Real Estate Plugin is tailored to meet the specific needs of premises owners seeking efficient management solutions for their rental properties. With seamless integration into Ottu's online payment management system, merchants gain access to a user-friendly dashboard equipped with a myriad of features to simplify property management tasks and enhance the rental experience for both owners and tenants.
 
+The Arabic version of the Real Estate document is available below :arrow\_double\_down:
+
+{% file src="../../.gitbook/assets/Real Estate (Arabic Version).pdf" %}
+
 ## [Key Features](./#key-features)
 
 * **Dashboard Access:** Each merchant is provided with exclusive dashboard credentials, granting them secure access to a centralized hub for managing their property portfolios and rental transactions.

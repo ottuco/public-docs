@@ -20,7 +20,7 @@ _**Ottu:**_ Ottu is available through [CocoaPods](http://cocoapods.org/). To ins
 
 {% code overflow="wrap" fullWidth="false" %}
 ```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.21'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.22'
 ```
 {% endcode %}
 

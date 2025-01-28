@@ -186,6 +186,14 @@ The `successCallback` function is defined and passed as the value of the `data-s
 
 ## [Example](ios.md#example)
 
+There are both UIKit and SwiftUI samples available at the sample repo:
+
+* UIKit: [<img src="https://github.com/fluidicon.png" alt="" data-size="line">ottu-ios/Example at main · ottuco/ottu-ios](https://github.com/ottuco/ottu-ios/tree/main/Example)
+* SwiftUI: [<img src="https://github.com/fluidicon.png" alt="" data-size="line">ottu-ios/Example\_SwiftUI at main · ottuco/ottu-ios](https://github.com/ottuco/ottu-ios/tree/main/Example_SwiftUI)
+
+However, the SDK initialization part and the callbacks delegate are the same for both of them. Here is the code sample:
+
+{% code overflow="wrap" %}
 ```swift
 self.checkout = Checkout(
     formsOfPayments: formsOfPayment,
@@ -244,6 +252,7 @@ extension OttuPaymentsViewController: OttuDelegate {
     }
 }
 ```
+{% endcode %}
 
 ## [Customization Theme](ios.md#customization-theme) <a href="#customization-theme" id="customization-theme"></a>
 

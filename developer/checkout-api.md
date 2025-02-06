@@ -906,3 +906,90 @@ To get the information of the payment transaction.
 {% hint style="success" %}
 **Authentication:** This endpoint is public
 {% endhint %}
+
+## [**FAQ**](checkout-api.md#faq)
+
+#### :digit\_one: [**What is the Ottu Checkout API used for?**](checkout-api.md#what-is-the-ottu-checkout-api-used-for)
+
+The **Checkout API** is used to create and manage payment transactions. It enables merchants to generate a **payment session (**[session\_id](checkout-api.md#session_id-string-mandatory)**)**, redirect users to a payment gateway, and receive payment updates via [webhooks](webhooks/).
+
+#### :digit\_two:[**How do I create a payment transaction?**](checkout-api.md#how-do-i-create-a-payment-transaction)
+
+To create a payment transaction, send a [POST request](checkout-api.md#create-payment-transaction) to the Checkout API with the required parameters:
+
+* `amount` – Payment amount
+* `currency_code` – Transaction currency
+* `pg_codes` – Payment gateways allowed
+* `type` - `e_commerce` or `payment_request`
+
+After submission, the API returns a [session\_id](checkout-api.md#session_id-string-mandatory), which is required for processing the transaction.
+
+#### :digit\_three: [**How can I ensure that the payer cannot make a payment after a certain amount of time since redirection?**](checkout-api.md#how-can-i-ensure-that-the-payer-cannot-make-a-payment-after-a-certain-amount-of-time-since-redirecti)
+
+To prevent a payer from completing a payment after a specific period, you need to configure the expiration\_time parameter based on the payment gateway (PG) auto inquiry time. This ensures that even if the user remains on the payment page, they won’t be able to proceed once the expiration time has passed.
+
+The expiration time should be set as:
+
+[expiration\_time](checkout-api.md#expiration_time-string-optional) = [auto inquiry time](checkout-api.md#auto-inquiry-time) + max{[PG auto inquiry time](checkout-api.md#pg-auto-inquiry-time)}
+
+*   #### **Auto inquiry time:**&#x20;
+
+    This is the time Ottu waits before automatically checking the transaction status with the payment gateway. for more information, please refer [here](payment-status-inquiry.md#automatic-inquiry).
+*   #### **PG auto inquiry time:**&#x20;
+
+    This is the maximum duration the payment gateway allows before timing out a payment session. More information about PG auto inquiry time is accessible [here](../user-guide/payment-gateway.md#payment-gateway-features-summary).
+
+#### **Example Calculation:**
+
+* For **MPGS (Mastercard Payment Gateway Services)**, the [PG auto inquiry time](checkout-api.md#pg-auto-inquiry-time) is **11 minutes**.
+* For **KNET**, the PG auto inquiry time is **8 minutes**.
+
+If your system sets an [auto inquiry time](checkout-api.md#auto-inquiry-time) **of 5 minutes**, then:
+
+* For MPGS: [expiration\_time](checkout-api.md#expiration_time-string-optional) = 5 + 11 = 16 minutes
+* For KNET: [expiration\_time](checkout-api.md#expiration_time-string-optional) = 5 + 8 = 13 minutes
+
+This means that after 16 minutes (for MPGS) or 13 minutes (for KNET), the payer will not be able to complete the transaction, even if they are still on the payment page.
+
+#### :digit\_four: [**Can I update an existing transaction?**](checkout-api.md#can-i-update-an-existing-transaction)
+
+Yes! You can update a transaction **before** it is completed by sending a [PUT request](checkout-api.md#update-payment) to the Checkout API, referencing the `session_id`. Updates might include modifying the `amount`, `currency_code`, or allowed `pg_codes`.
+
+#### :digit\_five: [**What happens if a customer abandons the payment?**](checkout-api.md#what-happens-if-a-customer-abandons-the-payment)
+
+If a customer does not complete the payment, the transaction remains in a `pending` state until it expires. Ottu's [automatic inquiry](checkout-api.md#auto-inquiry-time) will check the status based on the configured timing and update the state accordingly.
+
+#### :digit\_six: [**How do I get notified when a payment is completed?**](checkout-api.md#how-do-i-get-notified-when-a-payment-is-completed)
+
+Ottu **sends a** [payment notification ](webhooks/payment-notification.md)webhook to the [webhook\_url](checkout-api.md#webhook_url-string-optional) you provided in the API request. The webhook contains details like:
+
+* `status`: `success`, `failed`, `pending`
+* `amount` and `currency_code`
+* `pg_response`: Response from the payment gateway
+
+Ensure your server verifies and processes these webhook notifications.
+
+#### :digit\_seven: [**What is the difference between `webhook_url` and `redirect_url`?**](checkout-api.md#what-is-the-difference-between-webhook_url-and-redirect_url)
+
+* **`webhook_url`** – The API sends real-time payment updates it (for backend processing).
+* **`redirect_url`** – After payment, the customer is sent to it  (for UI redirection).
+
+For more details on redirection behavior related to `webhook_url`, please refer to this [section.](webhooks/payment-notification.md#redirectional-diagram)
+
+Both are optional but recommended for a seamless experience.
+
+#### :digit\_eight: [**Can I retry a failed payment?**](checkout-api.md#can-i-retry-a-failed-payment)
+
+Yes, if a transaction fails, you can **reuse the same** [session\_id](checkout-api.md#session_id-string-mandatory). the payment state will be `attempt`. for more information about , please refer [here](../user-guide/payment-tracking/payment-transactions-states.md#payment-attempt).
+
+#### :digit\_nine: [**Can I set up recurring payments using the Checkout API?**](checkout-api.md#can-i-set-up-recurring-payments-using-the-checkout-api)
+
+Yes! Use [Auto-Debit](auto-debit.md) with a [payment\_type](checkout-api.md#payment_type-string-optional) set to `auto_debit` to create [agreements](broken-reference) for recurring transactions. Learn more in the [Auto-Debit](auto-debit.md).
+
+#### :digit\_one::digit\_zero: [**How do I integrate the Checkout API with the SDK?**](checkout-api.md#how-do-i-integrate-the-checkout-api-with-the-sdk)
+
+The Checkout SDK ([Web](checkout-sdk/web.md), [Android](checkout-sdk/android.md), [iOS](checkout-sdk/ios.md)) requires a [session\_id](checkout-api.md#session_id-string-mandatory) from the Checkout API. Your backend should:
+
+1. Call the [Checkout API](checkout-api.md) to create a transaction.
+2. Pass the `session_id` to the SDK for UI rendering.
+3. Handle [webhooks](webhooks/) for transaction updates.

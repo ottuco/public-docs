@@ -4,7 +4,7 @@ In this documentation, you will find comprehensive resources and guides to help 
 
 The [Checkout SDK](./) is a JavaScript library provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your web application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
 
-To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant\_id-string), [session\_id](web.md#session\_id-string), and [API key](../authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [theme](web.md#theme-object) styling for the checkout interface, and more.
+To use the Checkout SDK, you'll need to include the library in your web application and initialize it with your Ottu [merchant\_id](web.md#merchant_id-string), [session\_id](web.md#session_id-string), and [API key](../authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [theme](web.md#theme-object) styling for the checkout interface, and more.
 
 {% hint style="warning" %}
 Please note that the Checkout SDK requires the implementation of the [Checkout API](../checkout-api.md) in order to function properly.
@@ -81,7 +81,7 @@ Checkout.init({
 });
 ```
 
-#### [**merchant\_id**](web.md#merchant\_id-string)  _<mark style="color:blue;">**`string`**</mark>_
+#### [**merchant\_id**](web.md#merchant_id-string)  _<mark style="color:blue;">**`string`**</mark>_
 
 The `merchant_id` specifies your Ottu merchant domain. This should be the root domain of your Ottu account, without the "https://" or "http://" prefix.
 
@@ -97,11 +97,11 @@ According to the REST [API documentation](../authentication.md), the `apiKey` pr
 Ensure that you utilize the public key and refrain from using the [private key](../authentication.md#private-key-api-key). The private key should remain confidential at all times and must not be shared with any clients.
 {% endhint %}
 
-#### [**session\_id**](web.md#session\_id-string) _<mark style="color:blue;">**`string`**</mark>_
+#### [**session\_id**](web.md#session_id-string) _<mark style="color:blue;">**`string`**</mark>_
 
 The `session_id` is the unique identifier for the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../checkout-api.md#session\_id-string-read-only).
+This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [session\_id](../checkout-api.md#session_id-string-read-only).
 
 #### [**lang**](web.md#lang-string) _<mark style="color:blue;">**`string`**</mark>_
 
@@ -172,8 +172,8 @@ Checkout.init({
 });
 ```
 
-The `setupPreload` functionality relies heavily on the [Checkout API](../checkout-api.md). When calling the create or update operation of a payment transaction (using the [session\_id](../checkout-api.md#session\_id-string-mandatory)), set the [include\_sdk\_setup\_preload](../checkout-api.md#include\_sdk\_setup\_preload-bool-optional) flag to `true`. This action will prompt the API to return the `sdk_setup_preload_payload` key, along with other values. Pass this value into the `Checkout.init()` just as you pass the `session_id`, ensuring no modifications are made to it.\
-For more information on how to use the `setupPreload` parameter, see [sdk\_setup\_preload\_payload](../checkout-api.md#sdk\_setup\_preload\_payload-object-conditional) in the [Checkout API](../checkout-api.md).
+The `setupPreload` functionality relies heavily on the [Checkout API](../checkout-api.md). When calling the create or update operation of a payment transaction (using the [session\_id](../checkout-api.md#session_id-string-mandatory)), set the [include\_sdk\_setup\_preload](../checkout-api.md#include_sdk_setup_preload-bool-optional) flag to `true`. This action will prompt the API to return the `sdk_setup_preload_payload` key, along with other values. Pass this value into the `Checkout.init()` just as you pass the `session_id`, ensuring no modifications are made to it.\
+For more information on how to use the `setupPreload` parameter, see [sdk\_setup\_preload\_payload](../checkout-api.md#sdk_setup_preload_payload-object-conditional) in the [Checkout API](../checkout-api.md).
 
 {% hint style="info" %}
 If the `setupPreload` object passed during `SDK`initialization is not valid or does not adhere to the required structure, the `SDK` will discard it and automatically fall back to its previous functionality. In such cases, the `SDK` will initiate an API call to fetch the necessary transaction details from the backend. It is essential to ensure that the `setupPreload` object follows the specified format to leverage the instant loading feature effectively and avoid fallback scenarios and ensure a seamless integration.
@@ -187,9 +187,9 @@ The `applePayInit` object enables users to modify the Apple Pay configurations u
   Users can change Apple Pay Button Locale by using buttonLocale property. \
   Value of buttonLocale must be a 2 letter language code like `ar`, `en` etc.
 * **version**\
-  Users can change the API version used for creating Apple Pay payment session by using the version property. Values supported by version are written[ here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/apple\_pay\_on\_the\_web\_version\_history).
+  Users can change the API version used for creating Apple Pay payment session by using the version property. Values supported by version are written[ here](https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_on_the_web_version_history).
 
-In addition to above properties, users have the capability to customize the Apple Pay payment request using properties defined [here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaypaymentrequest). However, due to backend constraints, not all properties are modifiable. Below is the list of supported and unsupported values:
+In addition to above properties, users have the capability to customize the Apple Pay payment request using properties defined [here](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest). However, due to backend constraints, not all properties are modifiable. Below is the list of supported and unsupported values:
 
 #### Supported Properties
 
@@ -567,7 +567,7 @@ Checkout.init({
 });
 ```
 
-Values supported by ApplePay buttonType are written [here](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaybuttontype).&#x20;
+Values supported by ApplePay buttonType are written [here](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaybuttontype).&#x20;
 
 Values supported by GooglePay buttonType are written [here](https://developers.google.com/pay/api/web/reference/request-objects#ButtonOptions).
 
@@ -688,7 +688,7 @@ Please note that due to technical constraints associated with off-site redirecti
 
 #### [**window.errorCallback**](web.md#window.errorcallback)
 
-The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new [session\_id](../checkout-api.md#session\_id-string-mandatory) using the [Checkout API](../checkout-api.md).
+The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience. The recommended best practice in case of an error is to restart the checkout process by creating a new [session\_id](../checkout-api.md#session_id-string-mandatory) using the [Checkout API](../checkout-api.md).
 
 To define the `errorCallback` function, you can use the `data-error` attribute on the Checkout script tag to specify a global function that will handle errors. If an error occurs during a payment, the `errorCallback` function will be invoked with a [data object](web.md#data-object) with a data.status value of `error`
 
@@ -803,7 +803,7 @@ To ensure the integrity of your transactions, the Checkout SDK provides a `befor
 
 **Initialize the Hook**
 
-1. When initializing the SDK, you can set up the `beforePayment` hook which will trigger when the payment process starts.. This hook should return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise). If the Promise is **resolved**, the user may **continue** with the payment process. However, if the Promise is **rejected**, the payment process will be **halted**, and an error message will appear in the browser console.&#x20;
+1. When initializing the SDK, you can set up the `beforePayment` hook which will trigger when the payment process starts.. This hook should return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). If the Promise is **resolved**, the user may **continue** with the payment process. However, if the Promise is **rejected**, the payment process will be **halted**, and an error message will appear in the browser console.&#x20;
 2. For wallet payments such as `ApplePay`, `GooglePay`, and `STCPay`, the respective payment sheet will be presented. As soon as the payment process begins, the SDK will invoke the `beforePaymen`t hook.&#x20;
 3. For other payment methods, including redirect, `ottuPG`, and `tokenPay`, the `beforePayment` hook is triggered when the `Pay` button is clicked
 
@@ -845,41 +845,160 @@ window.beforePayment = function(data) {
 * Always freeze cart updates during ongoing payment processes. This ensures users can't manipulate cart contents in parallel with a transaction, preserving transaction integrity.
 * Ensure that the cart is unfrozen in cases of payment cancellations or errors. This improves user experience, allowing them to adjust their cart if needed.
 
+Here’s the **full documentation** for the `validatePayment` hook, formatted for public use and seamlessly integrated into the **Checkout SDK Web** documentation.
+
+#### [**windows.validatePayment Hook**](web.md#windows.validatepayment-hook)
+
+The `validatePayment` hook is a **pre-validation step** in the **Checkout SDK Web**, ensuring that **all required payer information** (e.g., terms acceptance, additional user inputs) is collected and valid **before** proceeding with payment.
+
+{% hint style="info" %}
+This hook **runs before any payment trigger**, making sure that the payment can only proceed if all required conditions are met.
+{% endhint %}
+
+#### **Key Features**
+
+* Hook is called before payment initiation.
+* Runs before every payment method (Apple Pay, Google Pay, Redirects, Tokenization, etc.)
+* **Prevents incomplete payments** by validating payer-provided data.
+* **Returns a** [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) to control the flow:
+  * **Resolves →** Payment proceeds.
+  * **Rejects →** Payment submission is blocked.
+* Works for all payment types, unlike `beforePayment`, which runs only before redirection-based payments.
+* No form of payment can proceed without passing validation.
+
+#### **Implementation**
+
+The `validatePayment` hook must be defined as a **global function** that returns a Promise.
+
+#### **Example: Validating Terms Acceptance**
+
+{% code overflow="wrap" %}
+```javascript
+window.validatePayment = function() {
+    return new Promise((resolve, reject) => {
+        // Custom validations to ensure required fields are valid for payment to proceed.
+        const termsAccepted = document.getElementById("termsCheckbox").checked;
+
+        if (termsAccepted) {
+            resolve(true); // Proceed with payment
+        } else {
+            alert("Please accept the terms and conditions before proceeding.");
+            reject(new Error("Terms not accepted")); // Block payment
+        }
+    });
+};
+```
+{% endcode %}
+
+#### **How to Enable It in Checkout SDK**
+
+To enable `validatePayment`, include it in the SDK script tag:
+
+```html
+<script 
+    src="https://assets.ottu.net/checkout/v3/checkout.min.js"
+    data-validatepayment="validatePayment"
+></script>
+```
+
+#### **How It Works**
+
+1. **User initiates payment** (clicks “Pay”).
+2. **validatePayment** is triggered **before any payment request**.
+3. If **validation fails**, the payment process stops, preventing submission.
+4. If **validation succeeds**, the payment method proceeds normally.
+5. Payment is completed or redirected.
+
+<figure><img src="../../.gitbook/assets/_- visual selection (1).png" alt="" width="375"><figcaption></figcaption></figure>
+
+#### **Use Cases**
+
+* **Ensuring Terms & Conditions Acceptance**\
+  Require users to **accept terms** before making a payment.
+* **Verifying User Input**\
+  Ensure **additional fields** (e.g., phone number, promo code) are correctly filled.
+* **Checking Cart Consistency**\
+  Verify that **items in the cart** haven’t changed before processing payment.
+* **Blocking Suspicious Activity**\
+  Prevent payments from going through if **unusual behavior** is detected.
+
+#### **Comparison with beforePayment Hook**
+
+| Feature                                                | validatePayment | beforePayment              |
+| ------------------------------------------------------ | --------------- | -------------------------- |
+| Runs before **any payment method**                     | Yes             | No (only for redirections) |
+| Blocks incomplete payments                             | Yes             | No                         |
+| Allows verification that the required fields are valid | Yes             | No                         |
+| Runs before Apple Pay, Google Pay, Tokenization        | Yes             | Yes                        |
+| Runs before Redirects                                  | Yes             | Yes                        |
+
+***
+
+#### **Best Practices for Implementation**
+
+* **Use clear error messages** to guide users if validation fails.
+* **Ensure the hook runs quickly** to avoid checkout delays.
+* **Combine with UI updates** (e.g., disable the “Pay” button until valid).
+* **Test across different payment methods** to confirm expected behavior.
+
+### **Full Example: Terms + Phone Number Validation**
+
+```javascript
+window.validatePayment = function() {
+    return new Promise((resolve, reject) => {
+        const termsAccepted = document.getElementById("termsCheckbox").checked;
+        const phoneNumber = document.getElementById("phoneInput").value;
+
+        if (!termsAccepted) {
+            alert("Please accept the terms and conditions.");
+            return reject(new Error("Terms not accepted"));
+        }
+
+        if (!phoneNumber || phoneNumber.length < 10) {
+            alert("Please enter a valid phone number.");
+            return reject(new Error("Invalid phone number"));
+        }
+
+        resolve(true); // Proceed with payment
+    });
+};
+```
+
 #### [**data Object**](web.md#data-object)
 
-The data object received by the [errorCallback](web.md#window.errorcallback), [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](web.md#session\_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
+The data object received by the [errorCallback](web.md#window.errorcallback), [cancelCallback](web.md#window.cancelcallback) and [successCallback](web.md#window.successcallback) contains information related to the payment transaction, such as the status of the payment process, the [session\_id](web.md#session_id-string) generated for the transaction, any error message associated with the payment, and more. This information can be used to handle the payment process and take appropriate actions based on the status of the transaction.
 
 #### Data Object Child Parameters
 
 *   #### [**message**](web.md#messagestring)_<mark style="color:blue;">**`string`**</mark>_
 
     It is a string message that can be displayed to the customer. It provides a customer-friendly message regarding the status of the payment transaction.
-*   #### [session\_id](web.md#session\_id-string-1) _<mark style="color:blue;">`string`</mark>_
+*   #### [session\_id](web.md#session_id-string-1) _<mark style="color:blue;">`string`</mark>_
 
-    It is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../checkout-api.md#session\_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
+    It is a unique identifier generated when a payment transaction is created. It is used to associate a payment transaction with the checkout process. You can find the `session_id` in the response of the Checkout API's [session\_id](../checkout-api.md#session_id-string-read-only) endpoint. This parameter is required to initialize the Checkout SDK.
 *   #### [status](web.md#status-string) _<mark style="color:blue;">`string`</mark>_
 
     It is of the checkout process. Possible values are:
 
     * `success`: The customer was charged successfully, and they can be redirected to a success page or display a success message.
-    * `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session\_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
+    * `canceled`: The payment was either canceled by the customer or rejected by the payment gateway for some reason. When a payment is canceled, it's typically not necessary to create a new payment transaction, and the same [session\_id](web.md#session_id-string-1) can be reused to initiate the Checkout SDK and allow the customer to try again. By reusing the same session\_id, the customer can resume the checkout process without having to re-enter their payment information or start over from the beginning.
     * `error`: An error occurred during the payment process, This can happen for a variety of reasons, such as a network failure or a problem with the payment gateway's system. The recommended action is to create a new payment transaction using the Checkout API and restart the checkout process.
-*   #### [redirect\_url](web.md#redirect\_url-url) _<mark style="color:blue;">`URL`</mark>_
+*   #### [redirect\_url](web.md#redirect_url-url) _<mark style="color:blue;">`URL`</mark>_
 
-    The URL where the customer will be redirected after the payment stage only if the webhook URL returns a success status. [order\_no](../webhooks/payment-notification.md#order\_no-string-conditional), [reference\_number](../webhooks/payment-notification.md#reference\_number-string-mandatory) and [session\_id](../webhooks/payment-notification.md#session\_id-string-mandatory) will be appended to the redirect URL as query parameters. The developer implementing the SDK must ensure that the redirection process is smooth and secure, providing a seamless experience for the customer while maintaining the integrity of the payment process.&#x20;
+    The URL where the customer will be redirected after the payment stage only if the webhook URL returns a success status. [order\_no](../webhooks/payment-notification.md#order_no-string-conditional), [reference\_number](../webhooks/payment-notification.md#reference_number-string-mandatory) and [session\_id](../webhooks/payment-notification.md#session_id-string-mandatory) will be appended to the redirect URL as query parameters. The developer implementing the SDK must ensure that the redirection process is smooth and secure, providing a seamless experience for the customer while maintaining the integrity of the payment process.&#x20;
 
 {% hint style="warning" %}
 It's important to note that while the `redirect_url` option is typically present only in the [successCallback](web.md#window.successcallback), there are specific cases where it may exist in failure scenarios. \
 **For example,** in the event of an MPGS cancel or if the transaction includes a `webhook URL` alongside a `redirect URL`, users may be redirected after cancellation, which is communicated to the webhook. Therefore, the presence of `redirect_url` in such cases is possible.
 {% endhint %}
 
-*   #### [order\_no](web.md#order\_no-string) _<mark style="color:blue;">`string`</mark>_
+*   #### [order\_no](web.md#order_no-string) _<mark style="color:blue;">`string`</mark>_
 
-    The order number provided in the [Checkout API](../checkout-api.md). See [Checkout API](../checkout-api.md) & [order\_no](../checkout-api.md#order\_no-string-optional).
-*   #### [**reference\_number**](web.md#reference\_numberstring)<mark style="color:blue;">**`string`**</mark>
+    The order number provided in the [Checkout API](../checkout-api.md). See [Checkout API](../checkout-api.md) & [order\_no](../checkout-api.md#order_no-string-optional).
+*   #### [**reference\_number**](web.md#reference_numberstring)<mark style="color:blue;">**`string`**</mark>
 
     A unique identifier associated with the payment process. It is sent to the payment gateway as a unique reference and can be used for reconciliation purposes.
-*   #### [form\_of\_payment](web.md#form\_of\_payment-string) <mark style="color:blue;">`string`</mark>
+*   #### [form\_of\_payment](web.md#form_of_payment-string) <mark style="color:blue;">`string`</mark>
 
     Enum: `apple_pay`, `google_pay`, `token_pay`, `stc_pay` , `redirect`
 
@@ -890,19 +1009,19 @@ It's important to note that while the `redirect_url` option is typically present
     * `token_pay` - Token Pay
     * `stc_pay` - stc pay
     * `redirect` - Redirect
-*   #### [payment\_gateway\_info](web.md#payment\_gateway\_info-object) _<mark style="color:blue;">`object`</mark>_
+*   #### [payment\_gateway\_info](web.md#payment_gateway_info-object) _<mark style="color:blue;">`object`</mark>_
 
     Information about the payment gateway, accompanied by the response received from the payment gateway
-*   #### [pg\_code](web.md#pg\_code-string) _<mark style="color:blue;">`string`</mark>_
+*   #### [pg\_code](web.md#pg_code-string) _<mark style="color:blue;">`string`</mark>_
 
     The unique identifier, or `pg_code`, for the payment gateway that was used to process the  payment. This value corresponds to the specific payment method utilized by the customer, such as `credit-card`.
-*   #### [pg\_name](web.md#pg\_name-string) _<mark style="color:blue;">`string`</mark>_
+*   #### [pg\_name](web.md#pg_name-string) _<mark style="color:blue;">`string`</mark>_
 
     The name of the payment gateway, represented in all lowercase letters, that was used to perform the payment. This could be one of several values, such as `kpay` (for KNET), `mpgs`, or `cybersource`. These identifiers provide a human-readable way to understand the payment mechanism that was utilized.
-*   #### [pg\_response](web.md#pg\_response-object) _<mark style="color:blue;">`object`</mark>_
+*   #### [pg\_response](web.md#pg_response-object) _<mark style="color:blue;">`object`</mark>_
 
     The raw response data that was received directly from the payment gateway after the transaction attempt. This typically includes transaction status, transaction identifier, and potentially error messages or additional data provided by the gateway.
-*   #### [challenge\_occurred ](web.md#challenge\_occurred-bool)_<mark style="color:blue;">`bool`</mark>_
+*   #### [challenge\_occurred ](web.md#challenge_occurred-bool)_<mark style="color:blue;">`bool`</mark>_
 
     Default: false\
     This flag indicates if an additional verification, such as 3DS, OTP, PIN, etc., was initiated during the payment process. Use this flag in `cancelCallback` and `errorCallback` to control the presentation of error messages, especially for on-site payments undergoing a challenge flow. For example, after a failed 3DS verification, it's useful to show a custom popup informing the user of the payment failure. However, it's crucial to note that not all on-site failed payments need custom error messaging. In cases like `GooglePay` or `ApplePay`, error messages are inherently handled by the Payment Sheet, which remains open for the user to retry, making this distinction vital.
@@ -1113,9 +1232,9 @@ Checkout.init({
 
 If you have completed the [Apple Pay integration](web.md#apple-pay) between Ottu and Apple, the Checkout SDK will automatically make the necessary checks to display the Apple Pay button.
 
-When you initialize the Checkout SDK with your [session\_id](web.md#session\_id-string) and payment gateway [codes](../checkout-api.md#pg\_codes-list-required), the SDK will automatically verify the following conditions:
+When you initialize the Checkout SDK with your [session\_id](web.md#session_id-string) and payment gateway [codes](../checkout-api.md#pg_codes-list-required), the SDK will automatically verify the following conditions:
 
-* When initializing the Checkout SDK, a [session\_id](web.md#session\_id-string) with a [pg\_codes](../checkout-api.md#pg\_codes-list-required) that was associated with the Apple Pay Payment Service was supplied.
+* When initializing the Checkout SDK, a [session\_id](web.md#session_id-string) with a [pg\_codes](../checkout-api.md#pg_codes-list-required) that was associated with the Apple Pay Payment Service was supplied.
 * The customer has an Apple device that supports Apple Pay payments.
 * The browser being used supports Apple Pay.
 * The customer has a wallet configured on their Apple Pay device.
@@ -1186,7 +1305,7 @@ By default, the width of the Apple Pay button is 100% of the Checkout SDK contai
 
 If you have completed the Google Pay integration between Ottu and Google Pay, the Checkout SDK will handle the necessary checks to display the Google Pay button seamlessly.
 
-When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#session\_id-string-mandatory) and payment gateway codes [pg\_codes](../checkout-api.md#pg\_codes-array-required) , the SDK will automatically verify the following conditions:
+When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#session_id-string-mandatory) and payment gateway codes [pg\_codes](../checkout-api.md#pg_codes-array-required) , the SDK will automatically verify the following conditions:
 
 * The `session_id` and `pg_codes` provided during SDK initialization must be associated with the Google Pay Payment Service. This ensures that the Google Pay option is available for the customer to choose as a payment method.
 * Web SDK checks if the merchant configuration for Google Pay is correct or not and then show Google Pay button based on it.
@@ -1229,7 +1348,7 @@ Checkout.init({
 
 ## [stc pay​](web.md#stc-pay)
 
-If you have completed the stc pay integration between Ottu and stc pay, the Checkout SDK will handle the necessary checks to display the stc pay button seamlessly. When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#session\_id-string-mandatory) and payment gateway codes [pg\_codes](../checkout-api.md#pg\_codes-array-required), the SDK will automatically verify the following conditions:
+If you have completed the stc pay integration between Ottu and stc pay, the Checkout SDK will handle the necessary checks to display the stc pay button seamlessly. When you initialize the Checkout SDK with your [session\_id](../checkout-api.md#session_id-string-mandatory) and payment gateway codes [pg\_codes](../checkout-api.md#pg_codes-array-required), the SDK will automatically verify the following conditions:
 
 1. The `session_id` and `pg_codes` provided during SDK initialization must be associated with the stc pay Payment Service. This ensures that the stc pay option is available for the customer to choose as a payment method.
 2. The Web SDK displays the stc pay button irrespective of whether the customer has provided a mobile number while creating the transaction or not.
@@ -1361,7 +1480,7 @@ Yes, there are some compatibility nuances to be aware of:
 
 #### :digit\_six: [How do I customize the payment request for Apple Pay and Google Pay?](web.md#how-do-i-customize-the-payment-request-for-apple-pay-and-google-pay)
 
-You can tailor the payment request for both Apple Pay and Google Pay using their respective initialization methods. These methods allow you to set various properties like API version, supported cards, networks, countries, and merchant capabilities etc.You can check the list of properties supported by [ApplePay](https://developer.apple.com/documentation/apple\_pay\_on\_the\_web/applepaypaymentrequest) & [GooglePay](https://developers.google.com/pay/api/web/reference/request-objects#PaymentDataRequest).
+You can tailor the payment request for both Apple Pay and Google Pay using their respective initialization methods. These methods allow you to set various properties like API version, supported cards, networks, countries, and merchant capabilities etc.You can check the list of properties supported by [ApplePay](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest) & [GooglePay](https://developers.google.com/pay/api/web/reference/request-objects#PaymentDataRequest).
 
 #### :digit\_seven: [Why am I seeing a tooltip related to Apple Pay’s unavailability on the Apple Pay button?](web.md#why-am-i-seeing-a-tooltip-related-to-apple-pays-unavailability-on-the-apple-pay-button)
 

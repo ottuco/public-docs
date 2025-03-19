@@ -1,46 +1,51 @@
 # Android
 
-The [Checkout SDK](./) from Ottu is a Kotlin-based library designed to simplify the integration of an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your Android app. This SDK enables you to tailor the appearance and functionality of your checkout process, including the selection of accepted payment methods.
+The [Checkout SDK](./) from Ottu is a Kotlin-based library designed to streamline the integration of an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into Android applications. This SDK allows for complete customization of the checkout experience, including both appearance and functionality, as well as the selection of accepted payment methods.
 
-The Checkout SDK must be incorporated into your Android application, and it must be initialized using your Ottu [merchant\_id](web.md#merchant_id-string), [session\_id](web.md#session_id-string), and [API public key](../authentication.md#public-key). Various settings, such as the accepted payment methods and the [theme](https://docs.ottu.com/developer/checkout-sdk/web#theme-object) styling for the checkout interface, may also be specified.
+To integrate the Checkout SDK, it must be incorporated into the Android application and initialized with the following parameters:
+
+* [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
+* [session\_id](../checkout-api.md#session_id-string-mandatory)
+* [API public key](../authentication.md#private-key-api-key)
+
+Additionally, various configuration options, such as accepted [payment methods](android.md#formsofpayment-array-optional) and [theme ](android.md#customization-theme)styling for the checkout interface, can be specified to enhance the user experience.
 
 {% hint style="warning" %}
-The [API private key](../authentication.md#private-key-api-key) should never be utilized on the client side; instead, use the [API public key](../authentication.md#public-key)This is essential for maintaining the security of your application and safeguarding sensitive data.
+The [API private key](../authentication.md#private-key-api-key) should never be utilized on the client side; instead, use the [API public key](../authentication.md#public-key). This is essential for maintaining the security of your application and safeguarding sensitive data.
 {% endhint %}
 
 ## [Installation](android.md#installation) <a href="#installation" id="installation"></a>
 
 ### [Minimum Requirements](android.md#minimum-requirements) <a href="#minimum-requirements" id="minimum-requirements"></a>
 
-The SDK can be used on a device running Android 8 or higher (API version 26 or higher).
+The SDK is compatible with devices running Android 8 or higher (API version 26 or later).
 
 ### [Installation with dependency](android.md#installation-with-dependency) <a href="#installation-with-dependency" id="installation-with-dependency"></a>
 
-```swift
+```groovy
 allprojects {
     repositories {
-        ...
-        maven {
-            url 'https://jitpack.io'
-        }
+        // Other repositories...
+        maven { url "https://jitpack.io" }
     }
 }
 
 dependencies {
-    implementation 'com.github.ottuco:ottu-android-checkout:1.0.6'
+    implementation 'com.github.ottuco:ottu-android-private:2.0.0'
 }
 ```
 
 ## [Native UI](android.md#native-ui) <a href="#native-ui" id="native-ui"></a>
 
-The SDK UI is a `Fragment` embedded in any part of any `Activity` of the merchant's app.\
-Here is the example:
+The SDK UI is embedded as a Fragment within any part of an Activity in the merchant's application.
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+**Example:**
 
-However, if there’s only one payment option available and it it a wallet, the UI is minified:
+<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+If a wallet is the only available payment option, the UI is minimized automatically.
+
+<figure><img src="../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
 
 ## [SDK Configuration](android.md#sdk-configuration) <a href="#sdk-configuration" id="sdk-configuration"></a>
 
@@ -52,11 +57,11 @@ It automatically adopts the language configured in the device settings, requirin
 
 ### [Light and dark theme](android.md#light-and-dark-theme) <a href="#light-and-dark-theme" id="light-and-dark-theme"></a>
 
-The SDK also supports UI customization to match the device theme—light or dark. This adjustment is applied during the SDK initialization, based on the device's settings. Similarly, for language, no adjustments are made within the app.
+The SDK supports UI customization to match the device theme—light or dark. This adjustment is applied during the SDK initialization, based on the device's settings. Similarly, for language, no adjustments are made within the app.
 
 ## [Functions](android.md#functions) <a href="#functions" id="functions"></a>
 
-Currently, the SDK offers a single function that serves as the entry point for the merchant's app. It also includes callbacks that must be managed by the parent app, which are detailed in the following chapter.
+Currently, the SDK offers a single [function ](android.md#checkout.init)that serves as the entry point for the merchant's application. It also includes [callbacks](android.md#callbacks) that must be managed by the parent app, which are detailed in the following [section](android.md#callbacks).
 
 ### [**Checkout.init**](https://docs.ottu.com/developer/checkout-sdk/web#checkout.init)
 
@@ -76,44 +81,47 @@ For instance, if your Ottu URL is https://example.ottu.com, then your `merchant_
 
 #### [**apiKey**](android.md#apikey-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The `apiKey` is your Ottu [API public key](../authentication.md#public-key), which is essential for authenticating communications with Ottu's servers during the checkout process. As outlined in the REST API documentation, the `apiKey` property should be assigned your Ottu API public key.
+The `apiKey` is your Ottu [API public key](../authentication.md#public-key), which is essential for authenticating communications with Ottu's servers during the checkout process.
 
+{% hint style="warning" %}
 Make sure to use the public key and avoid using the private key. The [API private key](../authentication.md#private-key-api-key) must be kept confidential at all times and should never be shared with any clients.
+{% endhint %}
 
 #### [**sessionId**](android.md#sessionid-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
 The `session_id` serves as the unique identifier for the payment transaction linked to the checkout process.
 
-This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the Checkout API, refer to the [session\_id](../checkout-api.md#session_id-string-mandatory) section.&#x20;
+This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../checkout-api.md)I, refer to the [session\_id](../checkout-api.md#session_id-string-mandatory) section.&#x20;
 
 #### [**formsOfPayment**](android.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `formsOfPayment`  allows you to select which payment methods will appear during your checkout process. By default, all available payment options are enabled.
+The `formsOfPayment` parameter allows customization of the payment methods displayed in the [checkout process](./#ottu-checkout-sdk-flow). By default, all forms of payment are enabled.
 
-The options for `formsOfPayment` include:
+**Available Options for** `formsOfPayment`
 
-* `ottuPG`: This method redirects customers to a page where they can enter their credit or debit card details to make a payment.
-* `tokenPay`: This payment method utilizes [tokenization](../tokenization.md) to securely store and process customers' payment details.
-* `redirect`: This method redirects customers to a payment gateway or a third-party payment processor for payment completion.
-* `stcPay`: In this method, customers use their mobile number and confirm the transaction with an OTP sent to their mobile to finalize their payment.
+* **`cardOnsite`**: A direct payment method (onsite checkout) where cardholder data (CHD) is entered directly in the SDK. If 3DS authentication is required, a payment provider is involved.
+* `tokenPay`: Uses [tokenization](../tokenization.md) to securely store and process customers' payment information.
+* `redirect`: Redirects customers to an external [payment gateway](../../user-guide/payment-gateway.md#payment-gateway-features-summary) or a third-party payment processor to complete the transaction.
+* `stcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
+* `flexMethods`: Allows payments to be split into multiple installments. These methods, also known as BNPL (Buy Now, Pay Later), support providers such as Tabby and Tamara.
 
 #### [**setupPreload**](android.md#setuppreload-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `ApiTransactionDetails` class object contains the transaction details. If this object is provided, the SDK will not need to retrieve the transaction details from the backend, thereby saving time.
+The `ApiTransactionDetails` class object stores transaction details.
+
+If this object is provided, the SDK will not need to retrieve transaction details from the backend, thereby reducing processing time and improving efficiency.
 
 #### [**theme**](android.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-`Theme` class object for UI customization. All the fields are optional. Can contain values for background colors, text colors, fonts for various components.. See [Customization Theme](android.md#customization-theme) section for more details.
+The `Theme` class object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components.
 
-Please note that `theme` is optional. If not provided, the default UI settings will be used.
+All fields in the `Theme` class are optional. If a theme is not specified, the default UI settings will be applied. For more details, refer to the [Customization Theme](android.md#customization-theme) section.
 
 #### [**successCallback, errorCallback and successCallback**](android.md#successcallback-errorcallback-and-successcallback-uint-required) _<mark style="color:blue;">`Uint`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The callback functions used for getting payment status. They should be provided directly to the Checkout initialization function. See [Callacks](android.md#callbacks) for more information.
+Callback functions are used to retrieve the payment status and must be provided directly to the Checkout initialization function. For more details, refer to the [Callbacks](android.md#callbacks) section.
 
 ## [Callbacks](android.md#callbacks) <a href="#callbacks" id="callbacks"></a>
-
-In the Checkout SDK, callback functions are essential for delivering real-time updates on the status of payment transactions. These callbacks improve the user experience by facilitating smooth and effective management of different payment scenarios, including errors, successful transactions, and cancellations.&#x20;
 
 In the Checkout SDK, callback functions are essential for delivering real-time updates on the status of payment transactions. These callbacks improve the user experience by facilitating smooth and effective management of different payment scenarios, including errors, successful transactions, and cancellations.&#x20;
 
@@ -122,8 +130,6 @@ The callbacks outlined below are applicable to any type of payment.
 {% endhint %}
 
 ### [**errorCallback**](android.md#errorcallback)
-
-The `errorCallback` is a callback function triggered when issues occur during a payment process. Properly handling these errors is essential for maintaining a smooth user experience.&#x20;
 
 The `errorCallback` is a callback function triggered when issues occur during a payment process. Properly handling these errors is essential for maintaining a smooth user experience.&#x20;
 
@@ -164,13 +170,11 @@ To configure the `cancelCallback` function, you can use the `data-cancel` attrib
 In both `cancelCallback` and `errorCallback`, the SDK must be reinitialized, either on the same session or on a new session.
 {% endhint %}
 
-
-
 ### [**successCallback**](android.md#successcallback)
 
 The `successCallback` is a function that is triggered when the payment process is successfully completed. This callback receives a `JSONObject` containing a `data.status` value of "success."
 
-**Params Available in** `data` **`JSONObject` for** `successCallback`
+**Params Available in** `data` `JSONObject` for `successCallback`
 
 * `message` mandatory
 * `form_of_payment` mandatory
@@ -221,9 +225,9 @@ checkoutFragment = Checkout.init(
 
 ## [Customization Theme](android.md#customization-theme) <a href="#customization-theme" id="customization-theme"></a>
 
-The class describing theme is called `CheckoutTheme`.
+The class responsible for defining the theme is called `CheckoutTheme`.
 
-Here’s how the customization theme class looks like:
+**Customization Theme Class Structure:**
 
 ```swift
 class CheckoutTheme(
@@ -236,97 +240,165 @@ class CheckoutTheme(
 
 #### [uiMode](android.md#uimode)
 
-Determines device theme: light, dark or auto.
+Specifies the device theme mode, which can be set to:
+
+* Light
+* Dark
+* Auto (automatically adjusts based on system settings)
 
 #### [**appearanceLight & appearanceDark**](android.md#appearancelight-and-appearancedark)
 
-These are optional instances of `Appearance` class (see description below). They allow UI customization for device light and dark mode respectively.
+These are optional instances of the `Appearance` class, which enable UI customization for light mode and dark mode, respectively.
 
-`Appearance` class is the main inner class of `CheckoutTheme`. It contains objects describing different UI components. The names of the components mostly correspond to described in this document:
+The `Appearance` class serves as the core inner class of `CheckoutTheme`, containing objects that define various UI components.
+
+The component names within `Appearance` largely correspond to those described [here](android.md#properties-description).
 
 {% embed url="https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG/Ottu-SDK---Components-Documentation?node-id=1-624&t=VdaigMvefTae0naX-1" %}
 
 #### [**showPaymentDetails**](android.md#showpaymentdetails)
 
-Is a boolean field determining whether “Payment details” section should be displayed or hidden.
+A boolean field that determines whether the "Payment Details" section should be displayed or hidden.
 
 ### [Properties description](android.md#properties-description) <a href="#properties-description" id="properties-description"></a>
 
-**Important Note:**&#x41;ll properties are optional and customizable by the user. If a property is not specified, the default value, as outlined in the above Figma design, will be used.&#x20;
+All properties are optional and can be customized by the user.
+
+If a property is not specified, the default value (as defined in the Figma design [here](https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG?content-scaling=fixed\&kind=proto\&node-id=1-624\&scaling=scale-down)) will be automatically applied.
 
 #### [**Texts**](android.md#texts)
 
 #### **General**
 
-<table><thead><tr><th width="322" align="center">Property Name</th><th width="282">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"> <code>mainTitleText</code></td><td>Font and color for all “Captions”</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>titleText</code></td><td>Font and color for payment options in the list</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>subtitleText</code></td><td>Font and color for payment options details (like expiration date)</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
+| Property Name   |                            Description                            |        Data Type        |
+| --------------- | :---------------------------------------------------------------: | :---------------------: |
+| `mainTitleText` |                 Font and color for all “Captions”                 | [Text](android.md#text) |
+| `titleText`     |           Font and color for payment options in the list          | [Text](android.md#text) |
+| `subtitleText`  | Font and color for payment options details (like expiration date) | [Text](android.md#text) |
 
 #### **Fees**
 
-<table><thead><tr><th width="323" align="center">Property Name</th><th width="283">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>feesTitleText</code></td><td>Font and color of fees value in the payment options list</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>feesSubtitleText</code></td><td>Font and color of fees description in the payment options list</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
+| Property Name      |                           Description                          |        Data Type        |
+| ------------------ | :------------------------------------------------------------: | :---------------------: |
+| `feesTitleText`    |    Font and color of fees value in the payment options list    | [Text](android.md#text) |
+| `feesSubtitleText` | Font and color of fees description in the payment options list | [Text](android.md#text) |
 
 #### **Data**
 
-<table><thead><tr><th width="317" align="center">Property Name</th><th width="294">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>dataLabelText</code></td><td>Font and color of payment details fields (like “Amount”)</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>dataValueText</code></td><td>Font and color of payment details values</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
+| Property Name   |                        Description                       |        Data Type        |
+| --------------- | :------------------------------------------------------: | :---------------------: |
+| `dataLabelText` | Font and color of payment details fields (like “Amount”) | [Text](android.md#text) |
+| `dataValueText` |         Font and color of payment details values         | [Text](android.md#text) |
 
-#### **Other**
+**Other**
 
-<table><thead><tr><th width="317" align="center">Property Name</th><th width="298">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>errorMessageText</code></td><td>Font and color of error message text in pop-ups</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
+| Property Name      |                   Description                   |        Data Type        |
+| ------------------ | :---------------------------------------------: | :---------------------: |
+| `errorMessageText` | Font and color of error message text in pop-ups | [Text](android.md#text) |
 
 #### [**Text Fields**](android.md#text-fields)
 
-<table><thead><tr><th width="317" align="center">Property Name</th><th width="295">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>inputTextField</code></td><td>Font and color of text in any input field (including disabled state)</td><td align="center"><a href="android.md#textfield">TextField</a></td></tr></tbody></table>
+| Property Name    |                              Description                             |             Data Type             |
+| ---------------- | :------------------------------------------------------------------: | :-------------------------------: |
+| `inputTextField` | Font and color of text in any input field (including disabled state) | [TextField](android.md#textfield) |
 
 #### [**Colors**](android.md#colors)
 
-<table><thead><tr><th width="314" align="center">Property Name</th><th width="295">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>sdkbackgroundColor</code></td><td>The main background of the SDK view component</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>modalBackgroundColor</code></td><td>The background of any modal window</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>paymentItemBackgroundColor</code></td><td>The background of an item in payment options list</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>selectorIconColor</code></td><td>The color of the icon of the payment</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>savePhoneNumberIconColor</code></td><td>The color of “Diskette” button for saving phone number</td><td align="center"><a href="android.md#color">Color</a></td></tr></tbody></table>
+| Property Name                |                       Description                      |         Data Type         |
+| ---------------------------- | :----------------------------------------------------: | :-----------------------: |
+| `sdkbackgroundColor`         |      The main background of the SDK view component     | [Color](android.md#color) |
+| `modalBackgroundColor`       |           The background of any modal window           | [Color](android.md#color) |
+| `paymentItemBackgroundColor` |    The background of an item in payment options list   | [Color](android.md#color) |
+| `selectorIconColor`          |          The color of the icon of the payment          | [Color](android.md#color) |
+| `savePhoneNumberIconColor`   | The color of “Diskette” button for saving phone number | [Color](android.md#color) |
 
 #### [**Buttons**](android.md#buttons)
 
-<table><thead><tr><th width="316" align="center">Property Name</th><th width="294">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>button</code></td><td>Background, text color and font for any button</td><td align="center"><a href="android.md#button">Button</a></td></tr><tr><td align="center"><code>backButton</code></td><td>Color of the “Back” navigation button</td><td align="center"><a href="android.md#ripplecolor">RippleColor</a></td></tr><tr><td align="center"><code>selectorButton</code></td><td>Background, text color and font for payment item selection button</td><td align="center"><a href="android.md#button">Button</a></td></tr></tbody></table>
+| Property Name    |                            Description                            |               Data Type               |
+| ---------------- | :---------------------------------------------------------------: | :-----------------------------------: |
+| `button`         |           Background, text color and font for any button          |      [Button](android.md#button)      |
+| `backButton`     |               Color of the “Back” navigation button               | [RippleColor](android.md#ripplecolor) |
+| `selectorButton` | Background, text color and font for payment item selection button |      [Button](android.md#button)      |
 
 #### [**Switch**](android.md#switch)
 
-<table><thead><tr><th width="319" align="center">Property Name</th><th width="296">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>switch</code></td><td>Colors of the switch background and its toggle in different states (on, off and disabled)</td><td align="center"><a href="android.md#switch-1">Switch</a></td></tr></tbody></table>
+| Property Name |                                        Description                                        |           Data Type           |
+| ------------- | :---------------------------------------------------------------------------------------: | :---------------------------: |
+| `switch`      | Colors of the switch background and its toggle in different states (on, off and disabled) | [Switch](android.md#switch-1) |
 
 #### [**Margins**](android.md#margins)
 
-<table><thead><tr><th width="319" align="center">Property Name</th><th width="294">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>margins</code></td><td>Top, left, bottom and right margins between component</td><td align="center"><a href="android.md#margins-1">Margins</a></td></tr></tbody></table>
+| Property Name |                      Description                      |            Data Type            |
+| ------------- | :---------------------------------------------------: | :-----------------------------: |
+| margins       | Top, left, bottom and right margins between component | [Margins](android.md#margins-1) |
 
 ### [Data types description](android.md#data-types-description) <a href="#data-types-description" id="data-types-description"></a>
 
 #### [**Color**](android.md#color)
 
-<table><thead><tr><th width="315" align="center">Property Name</th><th width="301">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>color</code></td><td>Main color integer value</td><td align="center">Int</td></tr><tr><td align="center"><code>colorDisabled</code></td><td>Disabled stated color integer value</td><td align="center">Int</td></tr></tbody></table>
+| Property Name   |             Description             | Data Type |
+| --------------- | :---------------------------------: | :-------: |
+| `color`         |       Main color integer value      |    Int    |
+| `colorDisabled` | Disabled stated color integer value |    Int    |
 
 #### [**RippleColor**](android.md#ripplecolor)
 
-<table><thead><tr><th width="324" align="center">Property Name</th><th width="296">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>color</code></td><td>Main color integer value</td><td align="center">Int</td></tr><tr><td align="center"><code>rippleColor</code></td><td>Ripple color integer value</td><td align="center">Int</td></tr><tr><td align="center"><code>colorDisaled</code></td><td>Disabled stated color integer value</td><td align="center">Int</td></tr></tbody></table>
+| Property Name  |             Description             | Data Type |
+| -------------- | :---------------------------------: | :-------: |
+| `color`        |       Main color integer value      |    Int    |
+| `rippleColor`  |      Ripple color integer value     |    Int    |
+| `colorDisaled` | Disabled stated color integer value |    Int    |
 
-#### [Text](android.md#text)
+#### [**Text**](android.md#text)
 
-<table><thead><tr><th width="325" align="center">Property Name</th><th width="297">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>textColor</code></td><td>Main color integer value</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>fontType</code></td><td>Font resource ID</td><td align="center">Int</td></tr></tbody></table>
+| Property Name |        Description       |         Data Type         |
+| ------------- | :----------------------: | :-----------------------: |
+| `textColor`   | Main color integer value | [Color](android.md#color) |
+| `fontType`    |     Font resource ID     |            Int            |
 
 #### [**TextField**](android.md#textfield)
 
-<table><thead><tr><th width="327" align="center">Property Name</th><th width="295">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>background</code></td><td>Background color integer value</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>primaryColor</code></td><td>Text color</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>focusedColor</code></td><td>Selected text color</td><td align="center"><a href="android.md#color">Color</a></td></tr><tr><td align="center"><code>text</code></td><td>Text value</td><td align="center"><a href="android.md#text">Text</a></td></tr><tr><td align="center"><code>error</code></td><td>Text value</td><td align="center"><a href="android.md#text">Text</a></td></tr></tbody></table>
+|  Property Name | Description                    |         Data Type         |
+| :------------: | ------------------------------ | :-----------------------: |
+|  `background`  | Background color integer value | [Color](android.md#color) |
+| `primaryColor` | Text color                     | [Color](android.md#color) |
+| `focusedColor` | Selected text color            | [Color](android.md#color) |
+|     `text`     | Text value                     |  [Text](android.md#text)  |
+|     `error`    | Text value                     |  [Text](android.md#text)  |
 
 #### [Button](android.md#button)
 
-<table><thead><tr><th width="331" align="center">Property Name</th><th width="294">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>rippleColor</code></td><td>Button background color</td><td align="center"><a href="android.md#ripplecolor">RippleColor</a></td></tr><tr><td align="center"><code>fontType</code></td><td>Button text font ID</td><td align="center">Int</td></tr><tr><td align="center"><code>textColor</code></td><td>Button text color</td><td align="center"><a href="android.md#color">Color</a></td></tr></tbody></table>
+| Property Name |       Description       |               Data Type               |
+| ------------- | :---------------------: | :-----------------------------------: |
+| `rippleColor` | Button background color | [RippleColor](android.md#ripplecolor) |
+| `fontType`    |   Button text font ID   |                  Int                  |
+| `textColor`   |    Button text color    |       [Color](android.md#color)       |
 
 #### [Switch](android.md#switch-1)
 
-<table><thead><tr><th width="340" align="center">Property Name</th><th width="285">                       Description</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>checkedThumbTintColor</code></td><td>Toggle color in checked state</td><td align="center">Int</td></tr><tr><td align="center"><code>uncheckedThumbTintColor</code></td><td>Toggle color in unchecked state</td><td align="center">Int</td></tr><tr><td align="center"><code>checkedTrackTintColor</code></td><td>Track color in checked state</td><td align="center">Int</td></tr><tr><td align="center"><code>uncheckedTrackTintColor</code></td><td>Track color in unchecked state</td><td align="center">Int</td></tr><tr><td align="center"><code>checkedTrackDecorationColor</code></td><td>Decoration color in checked state</td><td align="center">Int</td></tr><tr><td align="center"><code>uncheckedTrackDecorationColor</code></td><td>Decoration color in unchecked state</td><td align="center">Int</td></tr></tbody></table>
+| Property Name                   |             Description             | Data Type |
+| ------------------------------- | :---------------------------------: | :-------: |
+| `checkedThumbTintColor`         |    Toggle color in checked state    |    Int    |
+| `uncheckedThumbTintColor`       |   Toggle color in unchecked state   |    Int    |
+| `checkedTrackTintColor`         |     Track color in checked state    |    Int    |
+| `uncheckedTrackTintColor`       |    Track color in unchecked state   |    Int    |
+| `checkedTrackDecorationColor`   |  Decoration color in checked state  |    Int    |
+| `uncheckedTrackDecorationColor` | Decoration color in unchecked state |    Int    |
 
 #### [**Margins**](android.md#margins-1)
 
-<table><thead><tr><th width="339" align="center">Property Name</th><th align="center">Data Type</th></tr></thead><tbody><tr><td align="center"><code>left</code></td><td align="center">Int</td></tr><tr><td align="center"><code>top</code></td><td align="center">Int</td></tr><tr><td align="center"><code>right</code></td><td align="center">Int</td></tr><tr><td align="center"><code>bottom</code></td><td align="center">Int</td></tr></tbody></table>
+| Property Name | Data Type |
+| ------------- | :-------: |
+| `left`        |    Int    |
+| `top`         |    Int    |
+| `right`       |    Int    |
+| `bottom`      |    Int    |
 
 ## [Example](android.md#example.1) <a href="#example.1" id="example.1"></a>
 
-To construct the theme, the user needs to carry out actions similar to those detailed in this test app file.
+To build the `theme`, the user must follow steps similar to those outlined in the **test app file**.
 
-Below is the code snippet:
+**Code Snippet:**
 
 ```swift
 val appearanceLight = CheckoutTheme.Appearance(
@@ -362,23 +434,55 @@ return CheckoutTheme(
 
 ## [STC Pay](android.md#stc-pay) <a href="#stc-pay" id="stc-pay"></a>
 
-Once the STC Pay [integration](web.md#stc-pay) between Ottu and STC Pay has been completed, the Checkout SDK will automatically handle the necessary checks to seamlessly display the STC Pay button. Upon initialization of the Checkout SDK with your `session_id` and payment gateway codes (`pg_codes`), the following conditions are verified automatically:
+Once the STC Pay integration between Ottu and STC Pay has been completed, the necessary checks are automatically handled by the Checkout SDK to ensure the seamless display of the STC Pay button.
 
-The `session_id` and `pg_codes` supplied during SDK initialization must be linked to the STC Pay Payment Service. This verification ensures that the STC Pay option is available for the customer to select as a payment method.
+Upon initialization of the Checkout SDK with the [session\_id ](../checkout-api.md#session_id-string-mandatory)and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), the following condition is automatically verified:
 
-Regardless of whether a mobile number has been provided by the customer during transaction creation, the STC Pay button is displayed by the Android SDK.
+* The `session_id` and pg\_codes provided during SDK initialization must be linked to the STC Pay Payment Service. This verification ensures that the STC Pay option is made available for selection as a payment method.
+
+Regardless of whether a mobile number has been entered by the customer during transaction creation, the STC Pay button is displayed by the Android SDK.
+
+## [Onsite Checkout](android.md#onsite-checkout)
+
+This payment option facilitates direct payments within the mobile SDK. A user-friendly interface allows users to securely input their CHD. If permitted by the backend, the card can be stored as a tokenized payment for future transactions.
+
+**Example:**
+
+<figure><img src="../../.gitbook/assets/image (96).png" alt="" width="371"><figcaption></figcaption></figure>
 
 ## [Error Reporting](android.md#error-reporting) <a href="#error-reporting" id="error-reporting"></a>
 
-The SDK uses `Sentry` for error logging and reporting. It is initialized based on the config coming from SDK Studio. However, since the SDK is a framework been embedded to the merchant app it can cause conflicts in case the app also uses Sentry. So the merchant can disable Sentry in the Checkout SDK by setting `is_enabled` flag to `false` in the config.
+The SDK utilizes Sentry for error logging and reporting, with initialization based on the configuration provided by SDK Studio.
+
+Since the SDK is embedded within the merchant's application, conflicts may arise if Sentry is also integrated into the app. To prevent such conflicts, Sentry can be disabled within the Checkout SDK by setting the `is_enabled` flag to `false` in the configuration.
+
+## [Cyber Security Measures](android.md#cyber-security-measures) <a href="#cyber-security-measures" id="cyber-security-measures"></a>
+
+### [Rooting Detection](android.md#rooting-detection)
+
+The SDK prevents execution on rooted devices.
+
+To enforce this restriction, rooting checks are performed during SDK initialization. If a device is detected as rooted, a modal alert dialog is displayed, providing an explanation. The message shown is as follows:
+
+{% hint style="danger" %}
+This device is not secure for payments. Transactions are blocked for security reasons.
+{% endhint %}
+
+After dismissing the alert, the app crashes unexpectedly
+
+{% hint style="info" %}
+&#x20;`Checkout.init` function needs to be called in a coroutine.
+{% endhint %}
 
 ## [FAQ](android.md#faq) <a href="#faq" id="faq"></a>
 
 #### :digit\_one: [What forms of payments are supported by the SDK?](android.md#id-1.-what-forms-of-payments-are-supported-by-the-sdk) <a href="#id-1.-what-forms-of-payments-are-supported-by-the-sdk" id="id-1.-what-forms-of-payments-are-supported-by-the-sdk"></a>
 
-The SDK accommodates various payment forms including tokenPay, ottuPG, redirect, and stcPay. Merchants have the flexibility to showcase specific methods based on their requirements.&#x20;
+The SDK accommodates various payment forms including`tokenPay`, `redirect`, `stcPay` and `cardOnsite`.&#x20;
 
-**For instance**, if you wish to exclusively display the STC Pay button, you can achieve this by setting `formsOfPayment = [stcPay]`, which will result in only the STC Pay button being displayed. This approach is applicable to other payment methods as well.
+Merchants have the flexibility to showcase specific methods based on their requirements.&#x20;
+
+For instance, if you wish to exclusively display the STC Pay button, you can achieve this by setting `formsOfPayment` = `[stcPay]`, which will result in only the STC Pay button being displayed. This approach is applicable to other payment methods as well.
 
 #### :digit\_two: [What are the minimum system requirements for the SDK integration?](android.md#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration) <a href="#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration" id="id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration"></a>
 

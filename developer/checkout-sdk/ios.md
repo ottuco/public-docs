@@ -1,8 +1,16 @@
 # iOS
 
-The [Checkout SDK](./) is a Swift framework (library) provided by Ottu that allows you to easily integrate an Ottu-powered [checkout process](./#ottu-checkout-sdk-flow) into your iOS application. With the Checkout SDK, you can customize the look and feel of your checkout process, as well as which forms of payment are accepted.
+The [Checkout SDK](./) is a Swift framework (library) provided by Ottu, designed to facilitate the seamless integration of an Ottu-powered checkout process into iOS applications.
 
-To use the Checkout SDK, you'll need to include the library in your iOS application and initialize it with your Ottu [merchant\_id](https://docs.ottu.com/developer/checkout-sdk/web#merchant_id-string), [session\_id](https://docs.ottu.com/developer/checkout-sdk/web#session_id-string), and [API public key](../authentication.md#public-key). You can also specify additional options such as, which forms of payment to accept, the [theme](https://docs.ottu.com/developer/checkout-sdk/web#theme-object) styling for the checkout interface, and more.
+With the Checkout SDK, both the visual appearance and the forms of payment available during the [checkout process](./#ottu-checkout-sdk-flow) can be fully customized.
+
+To integrate the Checkout SDK, the library must be included in the iOS application and initialized with the following parameters:
+
+* [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
+* [session\_id](broken-reference)
+* [API public key](../authentication.md#public-key)
+
+Additionally, optional configurations such as the [forms of payment](ios.md#formsofpayment-array-optional) to accept and the [theme](ios.md#customization-theme) styling for the checkout interface can be specified.
 
 {% hint style="warning" %}
 [API private key](../authentication.md#private-key-api-key) should never be used on the client side. Instead, [API public key ](../authentication.md#public-key)should be used. This is essential to ensure the security of your application and the protection of sensitive data.
@@ -12,126 +20,164 @@ To use the Checkout SDK, you'll need to include the library in your iOS applicat
 
 ### [Minimum Requirements](ios.md#minimum-requirements) <a href="#minimum-requirements" id="minimum-requirements"></a>
 
-The SDK can be used on a device running iOS 13 or higher.
+The SDK is supported on devices running iOS 14 or higher.
 
 ### [**Installation with CocoaPods**](ios.md#installation-with-cocoapods)
 
-_**Ottu:**_ Ottu is available through [CocoaPods](http://cocoapods.org/). To install it, simply add the following line to your Podfile:
+Ottu is available via [CocoaPods](http://cocoapods.org/). To install it, the following line must be added to the Podfile:
 
-{% code overflow="wrap" fullWidth="false" %}
+{% code overflow="wrap" %}
 ```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '1.0.22'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.0.0'
 ```
 {% endcode %}
 
-After all the frameworks are obtained via CocoaPods, it is needed to open project `*.xcworkspace` (not `*.xcodeproj`) in Xcode and ensure `Minimum Deployments iOS` is set to 13 for SVGKit as shown in the below figure:
+**Note:** When **`ottu_checkout_sdk`** is added to the **Podfile**, the **GitHub repository** must also be specified as follows:
 
-<figure><img src="../../.gitbook/assets/SVGKit.png" alt=""><figcaption></figcaption></figure>
+```ruby
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios'
+```
+
+### [**Installation with Swift Package Manager**](ios.md#installation-with-swift-package-manager)
+
+The [Swift Package Manager](https://swift.org/package-manager/) (SPM) is a tool designed for automating the distribution of Swift code and is integrated into the `Swift` compiler.
+
+Once the Swift package has been set up, adding Alamofire as a dependency requires simply including it in the `dependencies` value of the `Package.swift` file.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.0.0")
+]
+```
 
 ## [Native UI](ios.md#native-ui) <a href="#native-ui" id="native-ui"></a>
 
-The SDK UI is a `View` embedded in any part of any `ViewController` of the merchant's app.\
-Here is the example:
+The SDK UI is embedded as a `View` within any part of a `ViewController` in the merchant's application.
 
-<figure><img src="../../.gitbook/assets/Native UI.png" alt=""><figcaption></figcaption></figure>
+**Example:**
 
-However, if there’s only one payment option available and it is a wallet, the UI is minified:
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Native UI 1.png" alt=""><figcaption></figcaption></figure>
+If only one payment option is available and it is a wallet, the UI is automatically minimized.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [SDK Configuration](ios.md#sdk-configuration) <a href="#sdk-configuration" id="sdk-configuration"></a>
 
 ### [Language](ios.md#language) <a href="#language" id="language"></a>
 
-The SDK supports two languages: English and Arabic, the default one is English.
+The SDK supports two languages: English and Arabic, with English set as the default.
 
-The SDK uses the language applied in the device settings. Nothing should be adjusted inside the app. However, if the transaction has been created with another language and setup preload is being used, the texts coming from the backend (like fees descriptions) will be in the transaction language.\
-So please consider the current selected device language or current selected app language when passing a language code to the transaction creation request of [Checkout API](../checkout-api.md).
+The language applied in the device settings is automatically used by the SDK, requiring no manual adjustments within the application.
+
+However, if the transaction is created in a different language and setup preload is enabled, texts retrieved from the backend (such as fee descriptions) will be displayed in the transaction language rather than the device's language.
+
+Therefore, the currently selected device language or the app's selected language should be considered when specifying a language code in the transaction creation request of the [Checkout API](../checkout-api.md).
 
 ### [Light and dark theme](ios.md#light-and-dark-theme) <a href="#light-and-dark-theme" id="light-and-dark-theme"></a>
 
-Also SDK supports UI adjustment according to the device theme - light or dark. It is applied when the SDK is been initialized, based on the device settings. Same as for the language - nothing is adjusted inside the app.
+The SDK also supports UI adjustments based on the device's theme settings (light or dark mode).
+
+The appropriate theme is applied automatically during SDK initialization, aligning with the device's settings. Similar to language settings, no manual adjustments are required within the application.
 
 ## [Functions](ios.md#functions) <a href="#functions" id="functions"></a>
 
-Currently the SDK provides only one function which is the entry point for the merchants app.\
-Also it provides callbacks which should be handled by the parent app. They are described in the next chapter.
+The SDK currently provides a single function, serving as the entry point for the merchant's application.
 
-### [**Checkout.init**](https://docs.ottu.com/developer/checkout-sdk/web#checkout.init)
+Additionally, callbacks are provided and must be handled by the parent application. These callbacks are described [here](ios.md#callbacks).
 
-Is the function that initializes the checkout process and sets up the necessary configuration options for the Checkout SDK. It needs to be called once by the parent app to initialize the checkout process, and it must be called with a set of configuration fields that includes all the necessary options for the checkout process.
+### [**Checkout.init**](ios.md#checkout.init)
 
-When you call Checkout.init, the SDK will take care of setting up the necessary components for the checkout process, such as creating a form for the customer to enter their payment details, and handling communication with Ottu's servers to process the payment.
+The `Checkout.init` function is responsible for initializing the checkout process and configuring the necessary settings for the Checkout SDK.
 
-This function returns a `View`object. It is iOS native UI component which can be placed in any place of any `ViewController`instance (also iOS native).
+It must be called once by the parent application and provided with a set of configuration fields that define all the required options for the checkout process.
+
+When `Checkout.init` is invoked, the SDK automatically sets up the essential components, including:
+
+* Generating a form for the customer to enter their payment details.
+* Handling communication with Ottu's servers to process the payment.
+
+This function returns a `View` object, which is a native iOS UI component. It can be embedded within any `ViewController` instance in the application.
 
 ### [Properties](ios.md#properties) <a href="#properties" id="properties"></a>
 
 #### [**merchantId**](ios.md#merchantid-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The `merchant_id` specifies your Ottu merchant domain. This should be the root domain of your Ottu account, without the "https://" or "http://" prefix.
+The **`merchant_id`** specifies the **Ottu merchant domain** and must be set to the **root domain** of the **Ottu account**, excluding the **"https://"** or **"http://"** prefix.
 
-For example, if your Ottu URL is [https://example.ottu.com,](https://example.ottu.com,/) then your `merchant_id` is [example.ottu.com](http://example.ottu.com/). This property is used to identify which Ottu merchant account the checkout process should be linked to.
+For example, if the **Ottu URL** is **`https://example.ottu.com`**, then the corresponding **`merchant_id`** is **`example.ottu.com`**.
+
+This parameter is used to **link** the **checkout process** to the appropriate **Ottu merchant account**.
 
 #### [**apiKey**](ios.md#apikey-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The `apiKey` is your Ottu API [public key](../authentication.md#public-key). This key is used for authentication purposes when communicating with Ottu's servers during the checkout process.
+The `apiKey` is the Ottu API [public key](../authentication.md#public-key), used for authentication when communicating with Ottu's servers during the checkout process.
 
-{% hint style="info" %}
-According to the REST API documentation, the `apiKey` property should be set to your Ottu API public key.
+{% hint style="warning" %}
+Only the public key should be used. The private key must remain confidential at all times and must not be shared with any clients.
 {% endhint %}
-
-Ensure that you utilize the public key and refrain from using the private key. The private key should remain confidential at all times and must not be shared with any clients.
 
 #### [**sessionId**](ios.md#sessionid-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-The `session_id` is the unique identifier for the payment transaction associated with the checkout process.
+The `session_id` is a unique identifier assigned to the payment transaction associated with the checkout process.
 
-This unique identifier is automatically generated when the payment transaction is created. For more information on how to use the `session_id` parameter in the Checkout API, see [`session_id`](../checkout-api.md#session_id-string-mandatory).
+This identifier is automatically generated when the payment transaction is created.
+
+For more details on how to use the `session_id` parameter in the Checkout API, refer to the [session\_id](broken-reference).
 
 #### [**formsOfPayment**](ios.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-`formsOfPayment` allows you to customize which forms of payment will be displayed in your checkout process. By default, all forms of payment are configured.
+The forms of payment displayed in the [checkout process](./#ottu-checkout-sdk-flow) can be customized using `formsOfPayment`. By default, all forms of payment are enabled.
 
-The available options for `formsOfPayment` are:
+Available options for `formsOfPayment`:
 
-* `applePay`: The Apple Pay payment method that allows customers to make purchases using their Apple Pay-enabled devices.
-* `stcPay`: A method where customers enter their mobile number and provide an OTP send to their mobile number to complete their payment.
-* `ottuPG`: A method that redirects customers to a page where customers enter their credit or debit card details to make a payment.
-* `tokenPay`: A payment method that uses tokenization to securely store and process customers' payment information.
-* `redirect`: A method where customers are redirected to a payment gateway or a third-party payment processor to complete their payment.
+* `applePay`: Supports Apple Pay, allowing purchases to be made using Apple Pay-enabled devices.
+* `stcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
+* `cardOnsite`: Enables direct payments (onsite checkout), where Cardholder Data (CHD) is entered directly in the SDK. If 3DS authentication is required, a payment provider is involved in the process.
+* `tokenPay`: Uses [tokenization](../tokenization.md) to securely store and process customers' payment information.
+* `redirect`: Redirects customers to an external [payment gateway](../../user-guide/payment-gateway.md#payment-gateway-features-summary) or a third-party payment processor to complete the transaction.
 
 #### [**setupPreload**](ios.md#setuppreload-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-`ApiTransactionDetails` struct object containing the transaction details. If provided, the SDK will not require the transaction details from the backend, in order to save time.
+An `ApiTransactionDetails` struct object is used to store transaction details.
+
+If provided, the SDK will not request transaction details from the backend, reducing processing time and improving efficiency.
 
 #### [**theme**](ios.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-`Theme` struct object for UI customization. All the fields are optional. Can contain values for background colors, text colors, fonts for various components. Allows customization for both light and dark device mode. See [Customization Theme](ios.md#customization-theme) section for details.
-
-Please note that `theme` is optional. If not provided, the default UI settings will be used.
+The `Theme` struct object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components. It supports customization for both light and dark device modes. All fields in the `Theme` struct are optional. If a theme is not provided, the default UI settings will be applied. For more details, refer to the [Customization Theme](ios.md#customization-theme) section.
 
 #### [**delegate**](ios.md#delegate-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`required`</mark>_
 
-An object providing the SDK callbacks to the app This is usually the parent app’s class corresponding to `OttuDelegate` aggregating the SDK object. In order the class to correspond to this delegate, it needs to implement 3 callback functions, please refer to [Callbacks ](ios.md#callbacks)section for more information.
+An object is used to provide SDK callbacks to the application. Typically, this is the parent app’s class that conforms to `OttuDelegate`, aggregating the SDK object.
+
+To implement this delegate, the class must define three callback functions. More details are accessible next [secion](ios.md#callbacks).
 
 ## [Callbacks](ios.md#callbacks) <a href="#callbacks" id="callbacks"></a>
 
-In the Checkout SDK, callback functions play a vital role in providing real-time updates on the status of payment transactions. `Callbacks` enhance the user experience by enabling seamless and efficient handling of various payment scenarios, such as errors, successful payments, and cancellations.
+In the Checkout SDK, callback functions are essential for providing real-time updates on the status of payment transactions.
 
-{% hint style="info" %}
-All the callbacks described below can be called for any type of payment.
-{% endhint %}
+These `callbacks` improve the user experience by enabling seamless and efficient handling of different payment scenarios, including:
+
+* Successful payments
+* Transaction cancellations
+* Errors encountered during the payment process
+
+All the callbacks described below can be triggered for any type of payment.
 
 ### [**errorCallback**](ios.md#errorcallback)
 
-The `errorCallback` is a callback function that is invoked when issues arise during a payment. It is important to handle errors appropriately to ensure a smooth user experience.&#x20;
+The `errorCallback` function is triggered when an issue occurs during the payment process. Proper error handling is essential to ensure a smooth user experience.
 
-{% hint style="info" %}
-The recommended best practice in case of an error is to restart the checkout process by creating a new `session_id` using the [Checkout API](https://docs.ottu.com/developer/checkout-api).
-{% endhint %}
+**Best Practice for Handling Errors**
 
-To define the `errorCallback` function, you can use the `data-error` attribute on the Checkout script tag to specify a global function that will handle errors. If an error occurs during a payment, the `errorCallback` function will be invoked with `data` `JSONObject` with a data.status value of `error`
+In the event of an error, the recommended approach is to restart the checkout process by generating a new `session_id` through the [Checkout API](../checkout-api.md).
+
+**Defining the** `errorCallback` **Function**
+
+The `errorCallback` function can be defined using the `data-error` attribute on the Checkout script tag. This attribute allows the specification of a global function to handle errors.
+
+When an **error occurs**, the **`errorCallback`** function is invoked with a **`data` JSON object**, where **`data.status`** is set to **`error`**.
 
 **Params Available in** `data` **`JSONObject` for** `errorCallback`
 
@@ -145,9 +191,15 @@ To define the `errorCallback` function, you can use the `data-error` attribute o
 
 ### [**cancelCallback**](ios.md#cancelcallback)
 
-The `cancelCallback` in the Checkout SDK is a callback function that is invoked when a payment is canceled.&#x20;
+The `cancelCallback` function in the [Checkout SDK](./) is triggered when a payment is canceled.
 
-To define the `cancelCallback` function, you can use the `data-cancel` attribute on the Checkout script tag to specify a global function that will handle cancellations. If a customer cancels a payment, the `cancelCallback` function will be invoked with `data` `JSONObjec`t with a data.status value of `canceled`.
+**Defining the** `cancelCallback` **Function**
+
+The `cancelCallback` function can be defined using the `data-cancel` attribute on the Checkout script tag. This attribute allows the specification of a global function to handle cancellations.
+
+**Invocation of** `cancelCallback`
+
+If a customer cancels a payment, the `cancelCallback` function is invoked with a `data` JSON object, where `data.status` is set to `canceled`.
 
 **Params Available in** `data` **`JSONObject` for** `cancelCallback`
 
@@ -164,11 +216,17 @@ To define the `cancelCallback` function, you can use the `data-cancel` attribute
 In both `cancelCallback` and `errorCallback`, the SDK must be reinitialized, either on the same session or on a new session.
 {% endhint %}
 
-
-
 ### [**successCallback**](ios.md#successcallback)
 
-In the Checkout SDK, the `successCallback` is a function triggered upon successful completion of the payment process. This callback receives `data` `JSONObject`, with a data.status value of `success`
+In the [Checkout SDK](./), the `successCallback` function is triggered upon the successful completion of the [payment process](./#ottu-checkout-sdk-flow).
+
+**Defining the `successCallback` Function**
+
+The `successCallback` function is defined and assigned as the value of the `data-success` attribute within the Checkout script tag.
+
+**Invocation of** `successCallback`
+
+When a payment is successfully processed, the `successCallback` function is invoked with a `data` JSON object, where `data.status` is set to `success`.
 
 **Params Available in** `data` **`JSONObject` for** `successCallback`
 
@@ -182,8 +240,6 @@ In the Checkout SDK, the `successCallback` is a function triggered upon successf
 * `redirect_url` optional
 * `payment_gateway_info` optional
 
-The `successCallback` function is defined and passed as the value of the `data-success` attribute on the Checkout script tag.
-
 ## [Example](ios.md#example)
 
 There are both UIKit and SwiftUI samples available at the sample repo:
@@ -191,7 +247,9 @@ There are both UIKit and SwiftUI samples available at the sample repo:
 * UIKit: [<img src="https://github.com/fluidicon.png" alt="" data-size="line">ottu-ios/Example at main · ottuco/ottu-ios](https://github.com/ottuco/ottu-ios/tree/main/Example)
 * SwiftUI: [<img src="https://github.com/fluidicon.png" alt="" data-size="line">ottu-ios/Example\_SwiftUI at main · ottuco/ottu-ios](https://github.com/ottuco/ottu-ios/tree/main/Example_SwiftUI)
 
-However, the SDK initialization part and the callbacks delegate are the same for both of them. Here is the code sample:
+The SDK initialization process and the callback delegate remain identical for both implementations.
+
+**Code Sample:**
 
 {% code overflow="wrap" %}
 ```swift
@@ -264,13 +322,15 @@ It uses additional component classes like:
 * `LabelComponent`
 * `TextFieldComponent`
 
-The `CheckoutTheme` class includes objects that represent various UI components. These components' names largely align with those outlined below, however they also include additional fields specific to each platform.
+The `CheckoutTheme` class consists of objects that define various UI components. While the names of these components largely correspond to those listed [here](ios.md#properties-description), they also include platform-specific fields for further customization.
 
 {% embed url="https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG/Ottu-SDK---Components-Documentation?node-id=1-624&t=7reOLSB5zVdlOwz0-1" %}
 
 ### [Properties description](ios.md#properties-description) <a href="#properties-description" id="properties-description"></a>
 
-**Important Note:** All the properties are optional. The user can customize any of them. If some property is not set the default value (specified in Figma design) will be used.
+All properties in the `CheckoutTheme` class are optional, allowing users to customize any of them as needed.
+
+If a property is not specified, the default value (as defined in the Figma design [here](https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG?content-scaling=fixed\&kind=proto\&node-id=1-624\&scaling=scale-down)) will be automatically applied.
 
 #### [**Texts**](ios.md#texts)
 
@@ -353,11 +413,11 @@ The `CheckoutTheme` class includes objects that represent various UI components.
 
 #### [**TextFieldComponent**](ios.md#textfieldcomponent)
 
-| Property Name     |                Data Type                |
-| ----------------- | :-------------------------------------: |
-| `label`           | [LabelComponent](ios.md#labelcomponent) |
-| `text`            | [LabelComponent](ios.md#labelcomponent) |
-| `backgroundColor` |                 UIColor                 |
+| Property Name     |                                                                    Data Type                                                                    |
+| ----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------: |
+| `label`           |                                                     [LabelComponent](ios.md#labelcomponent)                                                     |
+| `text`            | [LabelComponent](https://app.gitbook.com/o/RxY0H8C3fNw3knTb5iVs/s/XdPwy0yrnZJ8gfKCUk9E/~/changes/601/developer/checkout-sdk/ios#labelcomponent) |
+| `backgroundColor` |                                                                     UIColor                                                                     |
 
 #### [**ButtonComponent**](ios.md#buttoncomponent)
 
@@ -381,9 +441,9 @@ The `CheckoutTheme` class includes objects that represent various UI components.
 
 ## [Example](ios.md#example.1) <a href="#example.1" id="example.1"></a>
 
-In order to build the `theme` the user needs to perform similar actions described in this file of the test app.
+To configure the `theme`, similar steps must be followed as described in the test app file.
 
-Here is a code snippet:
+**Code Snippet:**
 
 ```swift
 func createTheme() - > CheckoutTheme {
@@ -402,7 +462,9 @@ func createTheme() - > CheckoutTheme {
 }
 ```
 
-And here is how it is been passed to the SDK initiazliation (`theme` object):
+The theme object is passed to the SDK initialization as shown below:
+
+**Code Snippet:**
 
 ```swift
 self.checkout = Checkout(
@@ -418,7 +480,7 @@ self.checkout = Checkout(
 
 When the [integration ](web.md#apple-pay)between Ottu and Apple for Apple Pay is completed, the necessary checks to display the Apple Pay button are handled automatically by the Checkout SDK.
 
-1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id ](../checkout-api.md#session_id-string-mandatory)and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
+1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](broken-reference) and payment gateway codes ([pg\_codes](broken-reference)), several conditions are automatically verified:
    * It is confirmed that a `session_id` and `pg_codes` associated with the Apple Pay Payment Service have been supplied.
    * It is ensured that the customer is using an Apple device that supports Apple Pay. If the device is not supported, the button will not be shown, and an error message stating `This device doesn't support Apple Pay` will be displayed to inform the user of the compatibility issue.
    * It is verified that the customer has a wallet configured on their Apple Pay device. if the wallet is not configured (i.e., no payment cards are added), the Setup button will  appear. Clicking on this button will prompt the Apple Pay wallet on the user's device to open, allowing them to configure it by adding payment cards.
@@ -431,9 +493,10 @@ This setup ensures a seamless integration and user experience, allowing customer
 
 When the [integration](web.md#stc-pay) between Ottu and STC Pay is completed, the necessary checks to display the STC Pay button are handled seamlessly by the Checkout SDK.
 
-1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](../checkout-api.md#session_id-string-mandatory) and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
-   * It is confirmed that the `session_id` and `pg_codes` provided during SDK initialization are associated with the STC Pay Payment Service. This ensures that the STC Pay option is available for the customer to choose as a payment method.
-   * It is ensured that the STC Pay button is displayed by the iOS SDK, regardless of whether the customer has provided a mobile number while creating the transaction.
+**Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](broken-reference) and payment gateway codes ([pg\_codes](broken-reference)), several conditions are automatically verified:
+
+* It is confirmed that the `session_id` and `pg_codes` provided during SDK initialization are associated with the STC Pay Payment Service. This ensures that the STC Pay option is available for the customer to choose as a payment method.
+* It is ensured that the STC Pay button is displayed by the iOS SDK, regardless of whether the customer has provided a mobile number while creating the transaction.
 
 This setup ensures a seamless integration and user experience, allowing customers to easily set up and use STC Pay during the checkout process.
 
@@ -469,16 +532,43 @@ func cancelCallback(_ data: [String: Any] ? ) {
 
 The above code performs the following checks and actions:
 
-1. **Verification**: It first checks if the cancel object contains information about the payment gateway (`payment_gateway_info`).
+1. **Verification**: It first checks if the cancel object contains information about the payment gateway `payment_gateway_info`.
 2. **Payment Gateway Identification**: It then verifies if the `pg_name` property in `payment_gateway_info` is equal to "kpay", confirming that the payment gateway used is KNET.
 3. **Response Handling**: If the conditions are met, it retrieves the payment gateway's response from the `pg_response` property. If not available, it uses a default "Payment was cancelled." error message.
 4. **Popup Notification**: Finally, it displays the error message in a popup using `self.present(alert, animated: true)` to notify the user about the failed payment.
 
 This setup ensures compliance with KNET's requirements and provides a clear user experience for handling failed payments.
 
+## [Onsite Checkout](ios.md#onsite-checkout) <a href="#onsite-checkout" id="onsite-checkout"></a>
+
+This payment option allows direct payments to be performed from the mobile SDK. A UI is provided by the SDK, where the CHD is entered by the user. If permitted by the backend, the card can be saved for future payments as a tokenized payment.
+
+Here’s how the onsite checkout screen looks like:
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption></figcaption></figure>
+
 ## [Error Reporting](ios.md#error-reporting) <a href="#error-reporting" id="error-reporting"></a>
 
 The SDK utilizes Sentry for error logging and reporting, which is initialized based on the configuration from SDK Studio. However, since the SDK is integrated into the merchant's app, conflicts may arise if the app also uses Sentry. To avoid this, merchants can disable Sentry in the Checkout SDK by setting the `is_enabled` flag to `false` in the configuration.
+
+## [Cyber Security Measures](ios.md#cyber-security-measures) <a href="#cyber-security-measures" id="cyber-security-measures"></a>
+
+### [Jailbreak Detection](ios.md#jailbreak-detection) <a href="#jailbreak-detection" id="jailbreak-detection"></a>
+
+To enable the detection of jailbroken devices, the following section must be added to the application's **Info.plist** file:
+
+```html
+<key > LSApplicationQueriesSchemes < /key> 
+    <array >
+        <string > zbra < /string> 
+        <string > cydia < /string> 
+        <string > undecimus < /string> 
+        <string > sileo < /string> 
+        <string > filza < /string> 
+        <string > activator < /string> 
+    </array>
+
+```
 
 ## [FAQ](ios.md#faq) <a href="#faq" id="faq"></a>
 
@@ -486,7 +576,7 @@ The SDK utilizes Sentry for error logging and reporting, which is initialized ba
 
 The SDK supports the following payment forms: `tokenPay`, `ottuPG`, `redirect` `applePay` and `stcPay`. Merchants can display specific methods according to their needs.
 
-**For example,** if you want to only show the STC Pay button, you can do so using formsOfPayment = \[`stcPay`], and only the STC Pay button will be displayed. The same applies for `applePay` and other methods.
+**For example,** if you want to only show the STC Pay button, you can do so using formsOfPayment = `stcPay`, and only the STC Pay button will be displayed. The same applies for `applePay` and other methods.
 
 #### :digit\_two: [What are the minimum system requirements for the SDK integration?](ios.md#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration) <a href="#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration" id="id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration"></a>
 
@@ -498,4 +588,12 @@ Yes, see the [Customization theme](ios.md#customization-theme) section.
 
 #### :digit\_four: [How do I customize the payment request for Apple Pay?](ios.md#id-4.-how-do-i-customize-the-payment-request-for-apple-pay) <a href="#id-4.-how-do-i-customize-the-payment-request-for-apple-pay" id="id-4.-how-do-i-customize-the-payment-request-for-apple-pay"></a>
 
-You can tailor the payment request for Apple Pay using their respective initialization methods. These methods allow you to set various properties like API version, supported cards, networks, countries, and merchant capabilities etc. You can check the list of properties supported by [ApplePay](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest)
+The payment request for Apple Pay can be customized using its initialization methods. These methods allow the configuration of various properties, including:
+
+* API version
+* Supported card types
+* Accepted networks
+* Applicable countries
+* Merchant capabilities
+
+For a complete list of supported properties, refer to the [Apple Pay](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest) documentation.

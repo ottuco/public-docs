@@ -8,7 +8,7 @@ This feature streamlines the process of notifying the customer for pre- / post-p
     \
 
 
-    <figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 * **WhatsApp Business Account and Template Approval:** The merchant must have a WhatsApp Business account. Additionally, all templates and their content must be approved by Meta/WhatsApp before they can be used.
 * **WhatsApp Integration Authenticator**: It acts as the link between WhatsApp and Ottu. \
   To configure it, please contact [Ottu support team](mailto:support@ottu.com).
@@ -16,7 +16,7 @@ This feature streamlines the process of notifying the customer for pre- / post-p
 *   **Enabling WhatsApp Templates**: WhatsApp templates can be enabled during the payment transaction creation process by selecting the checkbox designated for enabling WhatsApp templates. Templates can be enabled either before or after the payment, depending on the requirement.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [Integrated WhatsApp Notification Availability ](integrated-whatsapp-channel.md#integrated-whatsapp-notification-availability)
 

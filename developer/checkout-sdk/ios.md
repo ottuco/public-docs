@@ -123,7 +123,7 @@ The `session_id` is a unique identifier assigned to the payment transaction asso
 
 This identifier is automatically generated when the payment transaction is created.
 
-For more details on how to use the `session_id` parameter in the Checkout API, refer to the [session\_id](broken-reference).
+For more details on how to use the `session_id` parameter in the Checkout API, refer to the [session\_id](../checkout-api.md#session_id-string-mandatory).
 
 #### [**formsOfPayment**](ios.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 

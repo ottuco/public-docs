@@ -7,7 +7,7 @@ With the Checkout SDK, both the visual appearance and the forms of payment avail
 To integrate the Checkout SDK, the library must be included in the iOS application and initialized with the following parameters:
 
 * [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
-* [session\_id](broken-reference)
+* [session\_id](../checkout-api.md#session_id-string-mandatory)
 * [API public key](../authentication.md#public-key)
 
 Additionally, optional configurations such as the [forms of payment](ios.md#formsofpayment-array-optional) to accept and the [theme](ios.md#customization-theme) styling for the checkout interface can be specified.

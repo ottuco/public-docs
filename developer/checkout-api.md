@@ -784,9 +784,9 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
-{% swagger src="../.gitbook/assets/Ottu API - 2024-07-25T163917.230.yaml" path="/b/checkout/v1/pymt-txn/" method="post" %}
+{% openapi src="../.gitbook/assets/Ottu API - 2024-07-25T163917.230.yaml" path="/b/checkout/v1/pymt-txn/" method="post" %}
 [Ottu API - 2024-07-25T163917.230.yaml](<../.gitbook/assets/Ottu API - 2024-07-25T163917.230.yaml>)
-{% endswagger %}
+{% endopenapi %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
 
@@ -984,7 +984,7 @@ Yes, if a transaction fails, you can **reuse the same** [session\_id](checkout-a
 
 #### :digit\_nine: [**Can I set up recurring payments using the Checkout API?**](checkout-api.md#can-i-set-up-recurring-payments-using-the-checkout-api)
 
-Yes! Use [Auto-Debit](auto-debit.md) with a [payment\_type](checkout-api.md#payment_type-string-optional) set to `auto_debit` to create [agreements](broken-reference) for recurring transactions. Learn more in the [Auto-Debit](auto-debit.md).
+Yes! Use [Auto-Debit](auto-debit.md) with a [payment\_type](checkout-api.md#payment_type-string-optional) set to `auto_debit` to create [agreements](checkout-api.md#agreement-object-optional) for recurring transactions. Learn more in the [Auto-Debit](auto-debit.md).
 
 #### :digit\_one::digit\_zero: [**How do I integrate the Checkout API with the SDK?**](checkout-api.md#how-do-i-integrate-the-checkout-api-with-the-sdk)
 

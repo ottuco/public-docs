@@ -113,9 +113,9 @@ If this object is provided, the SDK will not need to retrieve transaction detail
 
 #### [**theme**](android.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `Theme` class object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components.
+The `theme` class object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components.
 
-All fields in the `Theme` class are optional. If a theme is not specified, the default UI settings will be applied. For more details, refer to the [Customization Theme](android.md#customization-theme) section.
+All fields in the `theme` class are optional. If a theme is not specified, the default UI settings will be applied. For more details, refer to the [Customization Theme](android.md#customization-theme) section.
 
 #### [**successCallback, errorCallback and successCallback**](android.md#successcallback-errorcallback-and-successcallback-uint-required) _<mark style="color:blue;">`Uint`</mark>_ _<mark style="color:red;">`required`</mark>_
 
@@ -242,9 +242,9 @@ class CheckoutTheme(
 
 Specifies the device theme mode, which can be set to:
 
-* Light
-* Dark
-* Auto (automatically adjusts based on system settings)
+* `light`
+* `dark`
+* `auto` (automatically adjusts based on system settings)
 
 #### [**appearanceLight & appearanceDark**](android.md#appearancelight-and-appearancedark)
 
@@ -490,4 +490,4 @@ It is required to have a device running Android 8 or higher (Android API level 2
 
 #### :digit\_three: [Can I customize the appearance beyond the provided themes?](android.md#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes) <a href="#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes" id="id-3.-can-i-customize-the-appearance-beyond-the-provided-themes"></a>
 
-Yes, check the [Customization theme](android.md#customization-theme) section.
+Yes, check the [Customization Theme](android.md#customization-theme) section.

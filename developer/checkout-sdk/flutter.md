@@ -130,7 +130,7 @@ An `ApiTransactionDetails` class object is used to store transaction details. If
 
 #### [**theme**](flutter.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
-A Theme class object is used for UI customization. All fields are optional and may include values for background colors, text colors, and fonts for various UI components.
+A `theme` class object is used for UI customization. All fields are optional and may include values for background colors, text colors, and fonts for various UI components.
 
 For more details, refer to [Android Customization Theme](android.md#customization-theme).
 
@@ -347,7 +347,7 @@ The `CheckoutTheme` class consists of objects representing various UI components
 
 {% embed url="https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG?content-scaling=fixed&fuid=819188572429138268&kind=proto&node-id=1-624&scaling=scale-down" %}
 
-Below is the structure of the Customization `Theme` class:
+Below is the structure of the Customization `theme` class:
 
 ```swift
 class CheckoutTheme extends Equatable {
@@ -382,7 +382,7 @@ class CheckoutTheme extends Equatable {
 
 #### [**uiMode**](flutter.md#uimode)
 
-Specifies the device `Theme` mode, which can be set to one of the following:
+Specifies the device `theme` mode, which can be set to one of the following:
 
 * `light` – Forces the UI to use light mode.
 * `dark` – Forces the UI to use dark mode.

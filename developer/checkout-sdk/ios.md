@@ -145,7 +145,7 @@ If provided, the SDK will not request transaction details from the backend, redu
 
 #### [**theme**](ios.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `Theme` struct object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components. It supports customization for both light and dark device modes. All fields in the `Theme` struct are optional. If a theme is not provided, the default UI settings will be applied. For more details, refer to the [Customization Theme](ios.md#customization-theme) section.
+The `theme` struct object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components. It supports customization for both light and dark device modes. All fields in the `theme` struct are optional. If a theme is not provided, the default UI settings will be applied. For more details, refer to the [Customization Theme](ios.md#customization-theme) section.
 
 #### [**delegate**](ios.md#delegate-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`required`</mark>_
 
@@ -584,7 +584,7 @@ It is required to have a device running iOS 13 or higher.
 
 #### :digit\_three: [Can I customize the appearance beyond the provided themes?](ios.md#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes) <a href="#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes" id="id-3.-can-i-customize-the-appearance-beyond-the-provided-themes"></a>
 
-Yes, see the [Customization theme](ios.md#customization-theme) section.
+Yes, see the [Customization Theme](ios.md#customization-theme) section.
 
 #### :digit\_four: [How do I customize the payment request for Apple Pay?](ios.md#id-4.-how-do-i-customize-the-payment-request-for-apple-pay) <a href="#id-4.-how-do-i-customize-the-payment-request-for-apple-pay" id="id-4.-how-do-i-customize-the-payment-request-for-apple-pay"></a>
 

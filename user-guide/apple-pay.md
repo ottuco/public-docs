@@ -44,7 +44,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 6. Review the provided details and click on the Register button.
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### [Adding and Verifying a Domain](apple-pay.md#adding-and-verifying-a-domain)
 

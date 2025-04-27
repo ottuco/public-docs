@@ -221,6 +221,12 @@ The currency in which the transaction is denominated. However, it does not guara
 See [currencies](../user-guide/currencies.md).\
 3 letters code.
 
+#### [customer\_birthdate ](checkout-api.md#customer_birthdate)
+
+_<mark style="color:blue;">`string datetime`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+Specifies the customer's date of birth. This field can be used for various purposes such as identity verification, eligibility checks, or customer profiling. The value must be provided in the `YYYY-MM-DD` format.
+
 #### [**customer\_email**](checkout-api.md#customer_email-string-conditional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:orange;">`conditional`</mark>_
 
 This field specifies the customer's email address and is used to send payment notifications and receipts. Additionally, it is used for fraud prevention and is transmitted to the payment gateway. The email address may also be included on invoices, receipts, and displayed on the payment page. It must be a valid email address.\
@@ -533,6 +539,16 @@ URL that directs the customer to the Ottu Checkout Page where they can see the p
 
 The code of the currency used in the transaction.\
 See the request parameter [currency\_code](checkout-api.md#currency_code-string-required) for more information.
+
+#### [customer\_birthdate ](checkout-api.md#customer_birthdate-1)
+
+_<mark style="color:blue;">`string datetime`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+Customer's date of birth. For more information, please refer to [customer\_birthdate](checkout-api.md#customer_birthdate).
+
+**Presence condition:**
+
+* [customer\_birthdate](checkout-api.md#customer_birthdate) request parameter should be provided.
 
 #### [customer\_email](checkout-api.md#customer_email-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 

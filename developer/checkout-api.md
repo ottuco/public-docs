@@ -124,13 +124,7 @@ It details about the retailer, if the agreement is for installment payments.\
 
 #### [extra\_params](checkout-api.md#extra_params-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-Additional parameters related to the agreement.\
-&#xNAN;**`extra_params` child object:**
-
-* <mark style="color:blue;">**payment\_processing\_day**</mark><mark style="color:blue;">**&#x20;**</mark>_<mark style="color:blue;">**`int`**</mark>_\
-  Day of the month on which the payment must be processed. \
-  Not required for `unscheduled` payment agreements.\
-  The retailer's trading name.
+Additional parameters related to the agreement.
 
 </details>
 
@@ -341,6 +335,10 @@ An object that contains the notification settings for this payment transaction, 
 
 The unique identifier assigned to this payment transaction. It is used for tracking purposes and is set by the merchant or the system.\
 Max length: 128.
+
+{% hint style="info" %}
+For MPGS transactions, the `order_no` value must not exceed 37 characters.
+{% endhint %}
 
 #### [**pg\_codes**](checkout-api.md#pg_codes-array-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:red;">`required`</mark>_
 

@@ -6,7 +6,7 @@ With the Checkout SDK, both the visual appearance and the forms of payment avail
 
 To integrate the Checkout SDK, the library must be added to the Flutter application and initialized with the following parameters:
 
-* [merchant\_id](../checkout-api.md#session_id-string-mandatory)
+* [merchant\_id](web.md#merchant_id-string)
 * [session\_id](../checkout-api.md#session_id-string-mandatory)
 * [API key](../authentication.md#public-key)
 
@@ -14,7 +14,7 @@ Additionally, optional configurations such as the [forms of payment](flutter.md#
 
 ## [Installation](flutter.md#installation)
 
-To install the Flutter SDK plugin, the following section must be added to the **`pubspec.yaml`** file:
+To install the **Flutter SDK plugin**, the following section must be added to the **`pubspec.yaml`** file:
 
 ```yaml
 dependencies:
@@ -56,11 +56,11 @@ The SDK UI is embedded as a `fragment` within any part of an `activity` in the m
 
 **Example:**
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 If only one payment option is available and it is a wallet, the UI is automatically minimized.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## [SDK Configuration](flutter.md#sdk-configuration)
 
@@ -110,7 +110,7 @@ Ensure that only the **public key** is used. The [private key](../authentication
 
 It is a unique identifier for the payment transaction associated with the checkout process.
 
-This identifier is automatically generated when a payment transaction is created. For further details on how to use the `session_id` parameter in the [Checkout API](../checkout-api.md), refer to the [session\_id](flutter.md#sessionid-string-required) documentation.
+This identifier is automatically generated when a payment transaction is created. For further details on how to use the `session_id` parameter in the [Checkout API](../checkout-api.md), refer to the [session\_id](../checkout-api.md#session_id-string-mandatory) documentation.
 
 #### [**formsOfPayment**](flutter.md#formsofpayment-array-optional) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
@@ -130,9 +130,13 @@ An `ApiTransactionDetails` class object is used to store transaction details. If
 
 #### [**theme**](flutter.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
-A `theme` class object is used for UI customization. All fields are optional and may include values for background colors, text colors, and fonts for various UI components.
+A Theme class object is used for UI customization. All fields are optional and may include values for background colors, text colors, and fonts for various UI components.
 
 For more details, refer to [Android Customization Theme](android.md#customization-theme).
+
+#### [**displaySettings**](flutter.md#displaysettings-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
+
+The `displaySettings` object accepts a `PaymentOptionsDisplaySettings` configuration, which defines how payment options are presented to the user during checkout. For more details, refer to the   [Payment Options Display Mode](flutter.md#payment-options-display-mode) section.
 
 #### [**successCallback, errorCallback, and successCallback**](flutter.md#successcallback-errorcallback-and-successcallback-unit-required) _<mark style="color:blue;">`unit`</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
@@ -278,10 +282,13 @@ final checkoutArguments = CheckoutArguments(
   sessionId: state.sessionId ?? "",
   amount: amount,
   showPaymentDetails: state.showPaymentDetails,
+  paymentOptionsListMode: state.paymentOptionsDisplayMode ?? PaymentOptionsListMode.BOTTOM_SHEET,
   apiTransactionDetails: state.preloadPayload == true ? _apiTransactionDetails : null,
   formsOfPayment: formOfPayments?.isNotEmpty == true ? formOfPayments : null,
   theme: _theme,
 );
+
+//
 
 Scaffold(
   appBar: AppBar(
@@ -302,22 +309,20 @@ Scaffold(
         const Padding(
           padding: EdgeInsets.all(12.0),
           child: Text(
-            "Some users UI elements, Some users UI elements, "
-            "Some users UI elements, Some users UI elements, "
-            "Some users UI elements",
+            "Some users UI elements, Some users UI elements, Some users UI elements, Some users UI elements, Some users UI elements",
           ),
         ),
         // End of Merchant content
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: ValueListenableBuilder<int>(
-            valueListenable: _checkoutHeight,
             builder: (BuildContext context, int height, Widget? child) {
               return SizedBox(
                 height: height.toDouble(),
                 child: OttuCheckoutWidget(arguments: widget.checkoutArguments),
               );
             },
+            valueListenable: _checkoutHeight,
           ),
         ),
         const SizedBox(height: 20),
@@ -347,7 +352,7 @@ The `CheckoutTheme` class consists of objects representing various UI components
 
 {% embed url="https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG?content-scaling=fixed&fuid=819188572429138268&kind=proto&node-id=1-624&scaling=scale-down" %}
 
-Below is the structure of the Customization `theme` class:
+Below is the structure of the Customization `Theme` class:
 
 ```swift
 class CheckoutTheme extends Equatable {
@@ -382,7 +387,7 @@ class CheckoutTheme extends Equatable {
 
 #### [**uiMode**](flutter.md#uimode)
 
-Specifies the device `theme` mode, which can be set to one of the following:
+Specifies the device `Theme` mode, which can be set to one of the following:
 
 * `light` – Forces the UI to use light mode.
 * `dark` – Forces the UI to use dark mode.
@@ -537,6 +542,105 @@ final checkoutTheme = ch.CheckoutTheme(
   modalBackgroundColor: ch.ColorState(color: Colors.amber));
 ```
 
+## [Payment Options Display Mode](flutter.md#payment-options-display-mode) <a href="#payment-options-display-mode" id="payment-options-display-mode"></a>
+
+The SDK provides flexible customization for how payment options are displayed. It supports the following optional parameters:
+
+* **`mode`**: Determines the layout style—either `BottomSheet` (default) or `List`.
+  * **BottomSheet**: This is the default layout used in previous SDK versions.
+  * **List**: A new layout that shows payment options in a vertical list placed above the **Payment Details** section and the **Pay** button.
+* **`visibleItemsCount`**: Sets how many payment options are shown at once (default is `5`). Applicable only in `List` mode.
+  * This unsigned integer controls how many payment options are visible simultaneously in **List** mode.
+  * If the number of available options is less than `visibleItemsCount`, the list automatically resizes to fit the actual number of options.
+
+{% hint style="warning" %}
+Passing `0` will cause the SDK to throw an exception. This exception must be caught and handled by the parent application.
+{% endhint %}
+
+* **`defaultSelectedPgCode`**: Specifies a payment gateway [(PG) code](../checkout-api.md#pg_codes-array-required) to be pre-selected by default.
+  * This field accepts a PG code to auto-select a specific payment option.
+  * If the SDK finds a payment method matching the provided PG code, it will be selected by default.
+  * If no match is found, no option is selected.
+
+All of these parameters are optional and are demonstrated in the following figures.
+
+#### Android <a href="#android.3" id="android.3"></a>
+
+The `List` The List mode is displayed as illustrated in the figure below
+
+<figure><img src="../../.gitbook/assets/image.png" alt="" width="383"><figcaption></figcaption></figure>
+
+A view with a selected payment option
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="383"><figcaption></figcaption></figure>
+
+A view with an expanded listExpanded list view
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="383"><figcaption></figcaption></figure>
+
+Here is a code sample:
+
+{% code overflow="wrap" %}
+```swift
+val paymentOptionsDisplayMode =
+  if (showPaymentOptionsList) Checkout.PaymentOptionsDisplaySettings.PaymentOptionsDisplayMode.List(
+    visiblePaymentItemsCount = paymentOptionsListCount
+  ) else Checkout.PaymentOptionsDisplaySettings.PaymentOptionsDisplayMode.BottomSheet
+val paymentOptionsDisplaySettings = Checkout.PaymentOptionsDisplaySettings(
+  mode = paymentOptionsDisplayMode,
+  defaultSelectedPgCode = defaultSelectedPgCode
+)
+```
+{% endcode %}
+
+and passed to `Checkout.init` builder class via the following object:
+
+```swift
+.paymentOptionsDisplaySettings(paymentOptionsDisplaySettings)
+```
+
+#### iOS <a href="#ios.2" id="ios.2"></a>
+
+The `List` mode looks like the following
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="375"><figcaption></figcaption></figure>
+
+Selected item view
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure>
+
+Expanded list view
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt="" width="375"><figcaption></figcaption></figure>
+
+Here is a code sample:
+
+{% code overflow="wrap" %}
+```swift
+let paymentOptionsDisplaySettings: PaymentOptionsDisplaySettings =
+  if arguments.showPaymentOptionsList {
+    PaymentOptionsDisplaySettings(
+      mode: .list,
+      visibleItemsCount: UInt(arguments.paymentOptionsListCount),
+      defaultSelectedPgCode: arguments.defaultSelectedPgCode
+    )
+  } else {
+    PaymentOptionsDisplaySettings(
+      mode: .bottomSheet,
+      defaultSelectedPgCode: arguments.defaultSelectedPgCode
+    )
+  }
+```
+{% endcode %}
+
+and passed to `Checkout.init` via the following object:
+
+```swift
+displaySettings:paymentOptionsDisplaySettings
+```
+
+To see the full function call, please refer the code snippet in the [Ottu SDK - Flutter | Example](flutter.md#example) section.
+
 ## [STC Pay](flutter.md#stc-pay)
 
 If the STC Pay integration between Ottu and STC Pay has been completed, the Checkout SDK will automatically handle the necessary checks to display the STC Pay button seamlessly.
@@ -556,7 +660,7 @@ As a result, the user cannot retry the payment without manually clicking on Appl
 The popup notification mentioned above is specific to the KNET payment gateway.Other payment gateways may have different requirements or notification mechanisms, so it is essential to follow the respective documentation for each integration.
 {% endhint %}
 
-To properly handle the KNET popup notification, the following `Swift` code snippet must be implemented into the payment processing flow:
+To properly **handle** the **KNET popup notification**, the following **Swift** code snippet must be implemented into the **payment processing flow**:
 
 {% hint style="info" %}
 This is only iOS-related stuff, so the callbacks are native and so they are in Swift language.
@@ -606,19 +710,31 @@ The above code performs the following checks and actions:
 
 ## [**Onsite Checkout**](flutter.md#onsite-checkout)
 
-The Onsite Checkout payment option enables direct payments to be performed within the mobile SDK.
+This payment option enables direct payments through the mobile SDK. The SDK presents a user interface where the customer can enter their cardholder details (CHD). If supported by the backend, the user can also save the card for future payments—stored as a tokenized payment method.
 
-The SDK provides a UI where the user can enter their Cardholder Data (CHD). Additionally, if allowed by the backend, the user has the option to save the card for future payments, storing it as a tokenized payment.
+The onsite checkout screen appears identical to the native platform version.
 
-The onsite checkout screen appears identical to its counterpart on native platforms.
+#### Android
 
-#### Android Example
-
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="247"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="247"><figcaption></figcaption></figure>
 
 #### iOS&#x20;
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+
+The SDK supports multiple instances of onsite checkout payments. Therefore, for each payment method with a PG code equal to `ottu_pg`, the card form (as shown above) will be displayed.
+
+**Android**
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+**iOS**
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+No fees are displayed for onsite checkout instances. This is due to the support for multiple multi-card (omni PG) configurations. The presence of multiple payment icons is used to indicate this multi-card feature.
+{% endhint %}
 
 ## [**Error Reporting**](flutter.md#error-reporting)
 
@@ -630,15 +746,25 @@ To prevent conflicts, the merchant can disable Sentry within the Checkout SDK by
 
 ## [**Cyber Security Measures**](flutter.md#cyber-security-measures)
 
-### [**Rooting and Jailbreak Detection**](https://app.gitbook.com/o/QvpaILbKwb9WBfHGe5bZ/s/iUKrMb9zLt5ZzGPUYDsK/~/changes/796/developer/checkout-sdk/flutter#rooting-and-jailbreak-detection)
+### **Rooting and Jailbreak Detection**
 
-The Flutter SDK does not perform rooting or jailbreak detection independently. Instead, these security checks are entirely handled by the native SDKs.
+The **Flutter SDK** does **not** perform **rooting** or **jailbreak detection** independently. Instead, these security checks are entirely handled by the **native SDKs**.
 
 For more details, refer to the following links:
 
 [Android  ](android.md#rooting-detection)
 
 [iOS](ios.md#jailbreak-detection)
+
+### Screen Capture Prevention
+
+The SDK includes mechanisms to prevent screen capturing (such as screenshots and video recordings) on screens that display sensitive information. The Flutter SDK does not handle this independently; instead, it relies on the logic implemented in the native SDKs for Android and iOS.
+
+Since the implementation differs between the two platforms, please refer to the respective native documentation for more details.
+
+[Android](android.md#screen-capture-prevention)&#x20;
+
+[iOS](ios.md#screen-capture-prevention)
 
 ## [**FAQ**](flutter.md#faq)
 

@@ -44,13 +44,13 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 6. Review the provided details and click on the Register button.
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### [Adding and Verifying a Domain](apple-pay.md#adding-and-verifying-a-domain)
 
 #### 1. From the Identifiers section, select the merchant ID that you created in the previous step (e.g., “Ottu Apple Pay”).
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Click on Add Domain
 
@@ -58,7 +58,7 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 #### 3. Enter the domain URL you want to register and click Save.
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Download the .text file and make sure it is ready for upload, as you will provide it to Ottu later (i.e., in the next step), which will be used for domain verification.
 
@@ -73,11 +73,11 @@ Fill out the fields, such as display name, description, and so on. The identifie
 
 &#x20;  5.3. Click on `Add payment service`.
 
-<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;  5.4. Fill out the fields and click `Save`.
 
-<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Field Descriptions
 

@@ -21,7 +21,7 @@ The dashboard simplifies property management, saving time and improving workflow
 
 To add a new property, the merchant navigates to the **Property Management** section and clicks on the **+ADD PROPERTY** button.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Subsequently, the merchant is redirected to the form for adding a new property, where the following information would be filled out.
 
@@ -60,7 +60,7 @@ Subsequently, the merchant is redirected to the form for adding a new property, 
     \
 
 
-    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 To add multiple unit types, such as villas and apartments, along with their respective units, follow these steps:
 
@@ -69,31 +69,31 @@ To add multiple unit types, such as villas and apartments, along with their resp
     Merchants can choose from existing unit types, dropdown list,  or add a new one by clicking **ADD UNIT TYPE** and filling in the required details.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 3.  #### Add units:
 
     The merchant is required to click on the **ADD OR EDIT UNITS** button, \
 
 
-    <figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 4.  #### Define the New Unit
 
     After specifying the number of units to be added and their respective prices, the merchants should proceed by clicking the **ADD** button. \
 
 
-    <figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 5.  #### **Unit Details:**
 
     Subsequently, the merchant needs to provide details such as UNIT NUMBER and FLOOR, as illustrated below.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Repeat the above steps until all property unit types are added. Then, click the **Save** button in the [New Property Form](property-management.md#new-property-from) to save all changes.\
 
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [Edit Property](property-management.md#edit-property)
 
@@ -116,9 +116,9 @@ Merchants can effortlessly generate a PDF report detailing property vacancy and 
 2. **Define Filter Parameters (Optional)**: If you wish to apply specific filters, click on the **Filter** button and set your desired criteria.
 3. **Click the Print Button**: From the Property Management table, click on the **Print** button.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 4. **Automatic PDF Generation**: The PDF generation will start automatically after clicking the **Print** button.
 5. **Download the PDF File**: Once the PDF is generated, you can download it to your device.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>

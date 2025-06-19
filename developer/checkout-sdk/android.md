@@ -6,7 +6,7 @@ To integrate the Checkout SDK, it must be incorporated into the Android applicat
 
 * [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
 * [session\_id](android.md#sessionid-string-required)
-* [API public key](../authentication.md#private-key-api-key)
+* [API public key](../authentication.md#public-key)
 
 Additionally, various configuration options, such as accepted [payment methods](android.md#formsofpayment-array-optional) and [theme ](android.md#customization-theme)styling for the checkout interface, can be specified to enhance the user experience.
 

@@ -7,7 +7,7 @@ With the Checkout SDK, both the visual appearance and the forms of payment avail
 To integrate the Checkout SDK, the library must be included in the iOS application and initialized with the following parameters:
 
 * [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
-* [session\_id](../checkout-api.md#session_id-string-mandatory)
+* [session\_id](broken-reference)
 * [API public key](../authentication.md#public-key)
 
 Additionally, optional configurations such as the [forms of payment](ios.md#formsofpayment-array-optional) to accept and the [theme](ios.md#customization-theme) styling for the checkout interface can be specified.
@@ -28,7 +28,7 @@ Ottu is available via [CocoaPods](http://cocoapods.org/). To install it, the fol
 
 {% code overflow="wrap" %}
 ```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.0.3'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.2'
 ```
 {% endcode %}
 
@@ -49,7 +49,7 @@ Once the Swift package has been set up, adding Alamofire as a dependency require
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.0.3")
+    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.2")
 ]
 ```
 
@@ -59,11 +59,11 @@ The SDK UI is embedded as a `View` within any part of a `ViewController` in the 
 
 **Example:**
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (97).png" alt="" width="375"><figcaption></figcaption></figure>
 
 If only one payment option is available and it is a wallet, the UI is automatically minimized.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (98).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## [SDK Configuration](ios.md#sdk-configuration) <a href="#sdk-configuration" id="sdk-configuration"></a>
 
@@ -126,7 +126,7 @@ The `session_id` is a unique identifier assigned to the payment transaction asso
 
 This identifier is automatically generated when the payment transaction is created.
 
-For more details on how to use the `session_id` parameter in the Checkout API, refer to the [session\_id](../checkout-api.md#session_id-string-mandatory).
+For more details on how to use the `session_id` parameter in the Checkout API, refer to the [session\_id](broken-reference).
 
 #### [**formsOfPayment**](ios.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -148,7 +148,11 @@ If provided, the SDK will not request transaction details from the backend, redu
 
 #### [**theme**](ios.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `theme` struct object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components. It supports customization for both light and dark device modes. All fields in the `theme` struct are optional. If a theme is not provided, the default UI settings will be applied. For more details, refer to the [Customization Theme](ios.md#customization-theme) section.
+The `Theme` struct object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components. It supports customization for both light and dark device modes. All fields in the `Theme` struct are optional. If a theme is not provided, the default UI settings will be applied. For more details, refer to the [Customization Theme](ios.md#customization-theme) section.
+
+#### [displaySettings](ios.md#displaysettings-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+The display of payment options is configured using the `PaymentOptionsDisplaySettings` struct. Additional information is provided in the [Payment Options Display Mode](ios.md#payment-options-display-mode) section.
 
 #### [**delegate**](ios.md#delegate-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:red;">`required`</mark>_
 
@@ -256,18 +260,36 @@ The SDK initialization process and the callback delegate remain identical for bo
 
 {% code overflow="wrap" %}
 ```swift
-self.checkout = Checkout(
-    formsOfPayments: formsOfPayment,
-    sessionId: sessionId,
-    merchantId: merchantId,
-    apiKey: apiKey,
-    delegate: self
-)
-if let paymentView = self.checkout?.paymentView() {
-    paymentView.translatesAutoresizingMaskIntoConstraints = false
-    self.paymentContainerView.addSubview(paymentView)
+do {
+  self.checkout =
+    try Checkout(
+      formsOfPayments: formsOfPayment,
+      theme: theme,
+      displaySettings: PaymentOptionsDisplaySettings(
+        mode: paymentOptionsDisplayMode,
+        visibleItemsCount: visibleItemsCount,
+        defaultSelectedPgCode: defaultSelectedPgCode
+      ),
+      sessionId: sessionId,
+      merchantId: merchantId,
+      apiKey: apiKey,
+      setupPreload: transactionDetailsPreload,
+      delegate: self
+    )
+} catch
+let error as LocalizedError {
+  showFailAlert(error)
+  return
+} catch {
+  print("Unexpected error: \(error)")
+  return
+}
 
-    NSLayoutConstraint.activate([
+if let paymentView = self.checkout?.paymentView() {
+  paymentView.translatesAutoresizingMaskIntoConstraints = false
+  self.paymentContainerView.addSubview(paymentView)
+
+  NSLayoutConstraint.activate([
         paymentView.leadingAnchor.constraint(equalTo: self.paymentContainerView.leadingAnchor),
         self.paymentContainerView.trailingAnchor.constraint(equalTo: paymentView.trailingAnchor),
         paymentView.topAnchor.constraint(equalTo: self.paymentContainerView.topAnchor),
@@ -275,43 +297,44 @@ if let paymentView = self.checkout?.paymentView() {
       ])
 }
 extension OttuPaymentsViewController: OttuDelegate {
-    func errorCallback(_ data: [String: Any] ? ) {
-        paymentContainerView.isHidden = true
+  func errorCallback(_ data: [String: Any] ? ) {
+    paymentContainerView.isHidden = true
 
-        let alert = UIAlertController(title: "Error", message: data?.debugDescription ?? "", preferredStyle:
-            .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        self.present(alert, animated: true)
-    }
+    let alert = UIAlertController(title: "Error", message: data?.debugDescription ?? "", preferredStyle:
+      .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+    self.present(alert, animated: true)
+  }
 
-    func cancelCallback(_ data: [String: Any] ? ) {
-        var message = ""
+  func cancelCallback(_ data: [String: Any] ? ) {
+    var message = ""
 
-        if let paymentGatewayInfo = data ? ["payment_gateway_info"] as ? [String: Any],
-            let pgName = paymentGatewayInfo["pg_name"] as ? String,
-                pgName == "kpay" {
-                    message = paymentGatewayInfo["pg_response"].debugDescription
-                } else {
-                    message = data?.debugDescription ?? ""
-                }
+    if let paymentGatewayInfo = data ? ["payment_gateway_info"] as ? [String: Any],
+      let pgName = paymentGatewayInfo["pg_name"] as ? String,
+        pgName == "kpay" {
+          message = paymentGatewayInfo["pg_response"].debugDescription
+        } else {
+          message = data?.debugDescription ?? ""
+        }
 
-        paymentContainerView.isHidden = true
+    paymentContainerView.isHidden = true
 
-        let alert = UIAlertController(title: "Canсel", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        self.present(alert, animated: true)
-    }
+    let alert = UIAlertController(title: "Canсel", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+    self.present(alert, animated: true)
+  }
 
-    func successCallback(_ data: [String: Any] ? ) {
-        paymentContainerView.isHidden = true
-        paymentSuccessfullLabel.isHidden = false
+  func successCallback(_ data: [String: Any] ? ) {
+    paymentContainerView.isHidden = true
+    paymentSuccessfullLabel.isHidden = false
 
-        let alert = UIAlertController(title: "Success", message: data?.debugDescription ?? "", preferredStyle:
-            .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        present(alert, animated: true)
-    }
+    let alert = UIAlertController(title: "Success", message: data?.debugDescription ?? "", preferredStyle:
+      .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+    present(alert, animated: true)
+  }
 }
+
 ```
 {% endcode %}
 
@@ -479,11 +502,55 @@ self.checkout = Checkout(
 )
 ```
 
+## [Payment Options Display Mode](ios.md#payment-options-display-mode)
+
+The payment options display can be adjusted using the SDK with the following settings:
+
+* `mode` (`BottomSheet` or `List`)
+* `visibleItemsCount` (default is 5)
+* `defaultSelectedPgCode` (default is empty)
+
+By default, **BottomSheet mode** is used, as set in previous releases. **List mode** is a new option, where a list of payment methods is displayed above the **Payment Details** section and the **Pay** button.
+
+<figure><img src="../../.gitbook/assets/image (99).png" alt="" width="375"><figcaption></figcaption></figure>
+
+**A view with a selected item**
+
+<figure><img src="../../.gitbook/assets/image (100).png" alt="" width="375"><figcaption></figcaption></figure>
+
+**A view with an expanded list:**
+
+<figure><img src="../../.gitbook/assets/image (101).png" alt="" width="375"><figcaption></figcaption></figure>
+
+* **`visibleItemsCount`** is an unsigned integer that sets how many payment options are shown at once. It only works in **List mode**. If there are fewer options than the number set, the list height will adjust to show only the available options.
+
+{% hint style="info" %}
+&#x20;If 0 is set, the SDK will throw an exception that the parent app must handle.
+{% endhint %}
+
+* **`defaultSelectedPgCode`** is a payment gateway (PG) code that will be automatically selected. The SDK will look for the matching payment option and select it if found. If not found, no payment option will be selected.
+
+{% hint style="info" %}
+If there are many payment options, the total height of the payment list, the **Payment Details** section, and the **Pay** button may exceed the screen size. The SDK doesn't support vertical scrolling, so the parent app must handle it. You can refer to the demo app's source code for guidance.
+{% endhint %}
+
+All these parameters are optional and can be passed to `Checkout.init` through the following object:
+
+```swift
+displaySettings: PaymentOptionsDisplaySettings(
+  mode: paymentOptionsDisplayMode,
+  visibleItemsCount: visibleItemsCount,
+  defaultSelectedPgCode: defaultSelectedPgCode
+)
+```
+
+To view the full function call, please refer to the [Ottu SDK - iOS | Example](ios.md#example) chapter in the documentation. This section provides the complete example, including how the function is used in the context of the Ottu SDK.
+
 ## [Apple Pay](ios.md#apple-pay) <a href="#apple-pay" id="apple-pay"></a>
 
 When the [integration ](web.md#apple-pay)between Ottu and Apple for Apple Pay is completed, the necessary checks to display the Apple Pay button are handled automatically by the Checkout SDK.
 
-1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](../checkout-api.md#session_id-string-mandatory) and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
+1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](broken-reference) and payment gateway codes ([pg\_codes](broken-reference)), several conditions are automatically verified:
    * It is confirmed that a `session_id` and `pg_codes` associated with the Apple Pay Payment Service have been supplied.
    * It is ensured that the customer is using an Apple device that supports Apple Pay. If the device is not supported, the button will not be shown, and an error message stating `This device doesn't support Apple Pay` will be displayed to inform the user of the compatibility issue.
    * It is verified that the customer has a wallet configured on their Apple Pay device. if the wallet is not configured (i.e., no payment cards are added), the Setup button will  appear. Clicking on this button will prompt the Apple Pay wallet on the user's device to open, allowing them to configure it by adding payment cards.
@@ -496,7 +563,7 @@ This setup ensures a seamless integration and user experience, allowing customer
 
 When the [integration](web.md#stc-pay) between Ottu and STC Pay is completed, the necessary checks to display the STC Pay button are handled seamlessly by the Checkout SDK.
 
-**Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](../checkout-api.md#session_id-string-mandatory) and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
+**Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](broken-reference) and payment gateway codes ([pg\_codes](broken-reference)), several conditions are automatically verified:
 
 * It is confirmed that the `session_id` and `pg_codes` provided during SDK initialization are associated with the STC Pay Payment Service. This ensures that the STC Pay option is available for the customer to choose as a payment method.
 * It is ensured that the STC Pay button is displayed by the iOS SDK, regardless of whether the customer has provided a mobile number while creating the transaction.
@@ -542,13 +609,21 @@ The above code performs the following checks and actions:
 
 This setup ensures compliance with KNET's requirements and provides a clear user experience for handling failed payments.
 
-## [Onsite Checkout](ios.md#onsite-checkout) <a href="#onsite-checkout" id="onsite-checkout"></a>
+## [Onsite Checkout](ios.md#onsite-checkout)
 
-This payment option allows direct payments to be performed from the mobile SDK. A UI is provided by the SDK, where the CHD is entered by the user. If permitted by the backend, the card can be saved for future payments as a tokenized payment.
+This payment option enables direct payments through the mobile SDK. The SDK provides a user interface where the Cardholder Data (CHD) is entered by the user. If permitted by the backend, the card can be tokenized and saved for future payments.
 
-Here’s how the onsite checkout screen looks like:
+Below is an example of how the onsite checkout screen appears:
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+
+The SDK supports multiple instances of onsite checkout payments. Therefore, for each payment method with a PG code of `ottu_pg`, the card form (as described above) will be displayed.
+
+<figure><img src="../../.gitbook/assets/image (102).png" alt="" width="375"><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+Fees are not shown for onsite checkout instances because the system supports payments through multiple cards (omni PG). The multiple payment icons indicate the availability of different card options.
+{% endhint %}
 
 ## [Error Reporting](ios.md#error-reporting) <a href="#error-reporting" id="error-reporting"></a>
 
@@ -573,13 +648,22 @@ To enable the detection of jailbroken devices, the following section must be add
 
 ```
 
+### [Screen Capture Prevention](ios.md#screen-capture-prevention)
+
+The SDK implements screen capture restrictions to prevent the collection of sensitive data. This applies to fields containing Cardholder Data (CHD), such as the onsite checkout form for entering card details and the CVV field for tokenized payments.
+
+This technique works in two ways:
+
+1. When attempting to take a screenshot of a protected screen, the fields appear empty, even if they contain input.
+2. When attempting to record a video of the screen, the video is completely blurred, making the content unreadable.
+
 ## [FAQ](ios.md#faq) <a href="#faq" id="faq"></a>
 
 #### :digit\_one: [What forms of payments are supported by the SDK?](ios.md#id-1.-what-forms-of-payments-are-supported-by-the-sdk) <a href="#id-1.-what-forms-of-payments-are-supported-by-the-sdk" id="id-1.-what-forms-of-payments-are-supported-by-the-sdk"></a>
 
 The SDK supports the following payment forms: `tokenPay`, `ottuPG`, `redirect` `applePay` and `stcPay`. Merchants can display specific methods according to their needs.
 
-**For example,** if you want to only show the STC Pay button, you can do so using formsOfPayment = `stcPay`, and only the STC Pay button will be displayed. The same applies for `applePay` and other methods.
+**For example,** if you want to only show the STC Pay button, you can do so using formsOfPayment = \[`stcPay`], and only the STC Pay button will be displayed. The same applies for `applePay` and other methods.
 
 #### :digit\_two: [What are the minimum system requirements for the SDK integration?](ios.md#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration) <a href="#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration" id="id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration"></a>
 
@@ -587,7 +671,7 @@ It is required to have a device running iOS 13 or higher.
 
 #### :digit\_three: [Can I customize the appearance beyond the provided themes?](ios.md#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes) <a href="#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes" id="id-3.-can-i-customize-the-appearance-beyond-the-provided-themes"></a>
 
-Yes, see the [Customization Theme](ios.md#customization-theme) section.
+Yes, see the [Customization theme](ios.md#customization-theme) section.
 
 #### :digit\_four: [How do I customize the payment request for Apple Pay?](ios.md#id-4.-how-do-i-customize-the-payment-request-for-apple-pay) <a href="#id-4.-how-do-i-customize-the-payment-request-for-apple-pay" id="id-4.-how-do-i-customize-the-payment-request-for-apple-pay"></a>
 

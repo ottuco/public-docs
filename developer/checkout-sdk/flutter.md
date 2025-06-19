@@ -56,11 +56,11 @@ The SDK UI is embedded as a `fragment` within any part of an `activity` in the m
 
 **Example:**
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure>
 
 If only one payment option is available and it is a wallet, the UI is automatically minimized.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## [SDK Configuration](flutter.md#sdk-configuration)
 
@@ -614,11 +614,11 @@ The onsite checkout screen appears identical to its counterpart on native platfo
 
 #### Android Example
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="247"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="247"><figcaption></figcaption></figure>
 
 #### iOS&#x20;
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## [**Error Reporting**](flutter.md#error-reporting)
 

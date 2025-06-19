@@ -5,7 +5,7 @@ The [Checkout SDK](./) from Ottu is a Kotlin-based library designed to streamlin
 To integrate the Checkout SDK, it must be incorporated into the Android application and initialized with the following parameters:
 
 * [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
-* [session\_id](../checkout-api.md#session_id-string-mandatory)
+* [session\_id](broken-reference)
 * [API public key](../authentication.md#private-key-api-key)
 
 Additionally, various configuration options, such as accepted [payment methods](android.md#formsofpayment-array-optional) and [theme ](android.md#customization-theme)styling for the checkout interface, can be specified to enhance the user experience.
@@ -31,7 +31,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.ottuco:ottu-android-private:2.0.0'
+    implementation 'com.github.ottuco:ottu-android-private:2.1.0'
 }
 ```
 
@@ -91,7 +91,7 @@ Make sure to use the public key and avoid using the private key. The [API privat
 
 The `session_id` serves as the unique identifier for the payment transaction linked to the checkout process.
 
-This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../checkout-api.md)I, refer to the [session\_id](../checkout-api.md#session_id-string-mandatory) section.&#x20;
+This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../checkout-api.md)I, refer to the [session\_id](broken-reference) section.&#x20;
 
 #### [**formsOfPayment**](android.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -113,9 +113,13 @@ If this object is provided, the SDK will not need to retrieve transaction detail
 
 #### [**theme**](android.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `theme` class object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components.
+The `Theme` class object is used for UI customization, allowing modifications to background colors, text colors, and fonts for various components.
 
-All fields in the `theme` class are optional. If a theme is not specified, the default UI settings will be applied. For more details, refer to the [Customization Theme](android.md#customization-theme) section.
+All fields in the `Theme` class are optional. If a theme is not specified, the default UI settings will be applied. For more details, refer to the [Customization Theme](android.md#customization-theme) section.
+
+#### [**displaySettings**](android.md#displaysettings-object-optional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+The `PaymentOptionsDisplaySettings` struct is used to configure how payment options are displayed. More details can be found in the [Payment Options Display Mode](android.md#payment-options-display-mode) section.
 
 #### [**successCallback, errorCallback and successCallback**](android.md#successcallback-errorcallback-and-successcallback-uint-required) _<mark style="color:blue;">`Uint`</mark>_ _<mark style="color:red;">`required`</mark>_
 
@@ -195,31 +199,23 @@ val theme = getCheckoutTheme()
 
 // Builder class is used to construct an object passed to the SDK initializing function
 val builder = Checkout
-    .Builder(merchantId!!, sessionId, apiKey!!, amount!!)
+  .Builder(merchantId!!, sessionId, apiKey!!, amount!!)
+    .paymentOptionsDisplaySettings(paymentOptionsDisplaySettings)
     .formsOfPayments(formsOfPayment)
     .theme(theme)
     .logger(Checkout.Logger.INFO)
     .build()
 
+
 // Actual `init` function calling, returning a `Fragment` object  
 checkoutFragment = Checkout.init(
-    context = this @CheckoutSampleActivity,
+    context = this@CheckoutSampleActivity,
     builder = builder,
-    setupPreload = setupPreload,
-    successCallback = {
-        Log.e("TAG", "successCallback: $it")
-        showResultDialog(it)
-    },
-    cancelCallback = {
-        Log.e("TAG", "cancelCallback: $it")
-        showResultDialog(it)
-    },
-    errorCallback = {
-        errorData,
-        throwable - >
-        Log.e("TAG", "errorCallback: $errorData")
-        showResultDialog(errorData, throwable)
-    },
+    transactionResultCallback = object : Checkout.TransactionResultCallback {
+        override fun onTransactionResult(result: TransactionResult) {
+            showResultDialog(result)
+        }
+    }
 )
 ```
 
@@ -242,9 +238,9 @@ class CheckoutTheme(
 
 Specifies the device theme mode, which can be set to:
 
-* `light`
-* `dark`
-* `auto` (automatically adjusts based on system settings)
+* Light
+* Dark
+* Auto (automatically adjusts based on system settings)
 
 #### [**appearanceLight & appearanceDark**](android.md#appearancelight-and-appearancedark)
 
@@ -432,11 +428,60 @@ return CheckoutTheme(
 )
 ```
 
+## [Payment Options Display Mode](android.md#payment-options-display-mode) <a href="#payment-options-display-mode" id="payment-options-display-mode"></a>
+
+The display of payment options can be adjusted using the SDK with the following settings:
+
+* `mode` (`BottomSheet` or List)
+* `visibleItemsCount` (default is 5)
+* `defaultSelectedPgCode` (default is none)
+
+By default, **BottomSheet mode** is used, as was implemented in previous releases. **List mode** is a new option that allows the list of payment methods to be displayed above the **Payment Details** section and the **Pay** button.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+**A view with a selected item:**
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+**A view with an expanded list:**
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+* `visibleItemsCount` is an unsigned integer that sets the number of items to be displayed at once. It works only in List mode. If the number of available payment options is fewer than this value, the list height is automatically adjusted to the minimum required.
+
+{% hint style="info" %}
+If 0 is passed, an exception is thrown by the SDK, which must be handled by the parent app.
+{% endhint %}
+
+* `defaultSelectedPgCode` is a PG code that will be automatically selected. The SDK searches for the payment option with the matching PG code and selects it if found. If no match is found, no selection is made.
+
+All these parameters are optional and are constructed using the following function:
+
+{% code overflow="wrap" %}
+```swift
+private fun getPaymentOptionSettings(): Checkout.PaymentOptionsDisplaySettings {
+    val visibleItemsCount = 5 // set needed value here
+    val selectedPgCode = "knet" // set needed value here
+    val mode = Checkout.PaymentOptionsDisplaySettings.PaymentOptionsDisplayMode.List(visibleItemsCount)
+    return Checkout.PaymentOptionsDisplaySettings(mode, selectedPgCode)
+}
+```
+{% endcode %}
+
+These parameters are passed to the `Checkout.init` builder class via the following object:
+
+```swift
+.paymentOptionsDisplaySettings(paymentOptionsDisplaySettings)
+```
+
+To view the full function call, please refer to the [Ottu SDK - Android | Example](android.md#example) chapter in the documentation.
+
 ## [STC Pay](android.md#stc-pay) <a href="#stc-pay" id="stc-pay"></a>
 
 Once the STC Pay integration between Ottu and STC Pay has been completed, the necessary checks are automatically handled by the Checkout SDK to ensure the seamless display of the STC Pay button.
 
-Upon initialization of the Checkout SDK with the [session\_id ](../checkout-api.md#session_id-string-mandatory)and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), the following condition is automatically verified:
+Upon initialization of the Checkout SDK with the [session\_id ](broken-reference)and payment gateway codes ([pg\_codes](broken-reference)), the following condition is automatically verified:
 
 * The `session_id` and pg\_codes provided during SDK initialization must be linked to the STC Pay Payment Service. This verification ensures that the STC Pay option is made available for selection as a payment method.
 
@@ -449,6 +494,14 @@ This payment option facilitates direct payments within the mobile SDK. A user-fr
 **Example:**
 
 <figure><img src="../../.gitbook/assets/image (96).png" alt="" width="371"><figcaption></figcaption></figure>
+
+The SDK supports multiple instances of onsite checkout payments. Therefore, for each payment method with a PG code of `ottu_pg`, the card form (as shown above) will be displayed.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+Fees are not displayed for onsite checkout instances due to the support of multiple card types through omni PG (multi-card) configurations. The presence of multiple payment icons also indicates this multi-card functionality.
+{% endhint %}
 
 ## [Error Reporting](android.md#error-reporting) <a href="#error-reporting" id="error-reporting"></a>
 
@@ -474,6 +527,19 @@ After dismissing the alert, the app crashes unexpectedly
 &#x20;`Checkout.init` function needs to be called in a coroutine.
 {% endhint %}
 
+### [Screen Capture Prevention](android.md#screen-capture-prevention)
+
+The SDK is designed to protect sensitive data by restricting screen capture functionalities. These restrictions apply to the entire Activity that contains the SDK and operate as follows:
+
+* **Screenshot Attempts:**\
+  If a user attempts to take a screenshot, a toast message will appear stating:\
+  &#xNAN;_"This app doesn’t allow screenshots."_
+* **Screen Recording After SDK Initialization:**\
+  If screen recording is initiated **after** the SDK has been initialized, the following toast message is displayed:\
+  &#xNAN;_"Can't record screen due to security policy."_
+* **Screen Recording Before SDK Initialization:**\
+  If screen recording begins **before** the SDK is initialized, the entire Activity containing the SDK will appear as a black screen in the recorded video.
+
 ## [FAQ](android.md#faq) <a href="#faq" id="faq"></a>
 
 #### :digit\_one: [What forms of payments are supported by the SDK?](android.md#id-1.-what-forms-of-payments-are-supported-by-the-sdk) <a href="#id-1.-what-forms-of-payments-are-supported-by-the-sdk" id="id-1.-what-forms-of-payments-are-supported-by-the-sdk"></a>
@@ -490,4 +556,4 @@ It is required to have a device running Android 8 or higher (Android API level 2
 
 #### :digit\_three: [Can I customize the appearance beyond the provided themes?](android.md#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes) <a href="#id-3.-can-i-customize-the-appearance-beyond-the-provided-themes" id="id-3.-can-i-customize-the-appearance-beyond-the-provided-themes"></a>
 
-Yes, check the [Customization Theme](android.md#customization-theme) section.
+Yes, check the [Customization theme](android.md#customization-theme) section.

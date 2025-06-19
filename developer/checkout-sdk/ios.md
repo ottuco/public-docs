@@ -59,11 +59,11 @@ The SDK UI is embedded as a `View` within any part of a `ViewController` in the 
 
 **Example:**
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 If only one payment option is available and it is a wallet, the UI is automatically minimized.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [SDK Configuration](ios.md#sdk-configuration) <a href="#sdk-configuration" id="sdk-configuration"></a>
 
@@ -548,7 +548,7 @@ This payment option allows direct payments to be performed from the mobile SDK. 
 
 Here’s how the onsite checkout screen looks like:
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## [Error Reporting](ios.md#error-reporting) <a href="#error-reporting" id="error-reporting"></a>
 

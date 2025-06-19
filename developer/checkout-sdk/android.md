@@ -5,7 +5,7 @@ The [Checkout SDK](./) from Ottu is a Kotlin-based library designed to streamlin
 To integrate the Checkout SDK, it must be incorporated into the Android application and initialized with the following parameters:
 
 * [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
-* [session\_id](broken-reference)
+* [session\_id](android.md#sessionid-string-required)
 * [API public key](../authentication.md#private-key-api-key)
 
 Additionally, various configuration options, such as accepted [payment methods](android.md#formsofpayment-array-optional) and [theme ](android.md#customization-theme)styling for the checkout interface, can be specified to enhance the user experience.
@@ -91,7 +91,7 @@ Make sure to use the public key and avoid using the private key. The [API privat
 
 The `session_id` serves as the unique identifier for the payment transaction linked to the checkout process.
 
-This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../checkout-api.md)I, refer to the [session\_id](broken-reference) section.&#x20;
+This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../checkout-api.md)I, refer to the [session\_id](android.md#sessionid-string-required) section.&#x20;
 
 #### [**formsOfPayment**](android.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -481,7 +481,7 @@ To view the full function call, please refer to the [Ottu SDK - Android | Exampl
 
 Once the STC Pay integration between Ottu and STC Pay has been completed, the necessary checks are automatically handled by the Checkout SDK to ensure the seamless display of the STC Pay button.
 
-Upon initialization of the Checkout SDK with the [session\_id ](broken-reference)and payment gateway codes ([pg\_codes](broken-reference)), the following condition is automatically verified:
+Upon initialization of the Checkout SDK with the [session\_id](android.md#sessionid-string-required) and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), the following condition is automatically verified:
 
 * The `session_id` and pg\_codes provided during SDK initialization must be linked to the STC Pay Payment Service. This verification ensures that the STC Pay option is made available for selection as a payment method.
 

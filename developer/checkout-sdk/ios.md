@@ -7,7 +7,7 @@ With the Checkout SDK, both the visual appearance and the forms of payment avail
 To integrate the Checkout SDK, the library must be included in the iOS application and initialized with the following parameters:
 
 * [merchant\_id](https://app.gitbook.com/s/su3y9UFjvaXZBxug1JWQ/#merchant_id-string)
-* [session\_id](broken-reference)
+* [session\_id](../checkout-api.md#session_id-string-mandatory)
 * [API public key](../authentication.md#public-key)
 
 Additionally, optional configurations such as the [forms of payment](ios.md#formsofpayment-array-optional) to accept and the [theme](ios.md#customization-theme) styling for the checkout interface can be specified.
@@ -126,7 +126,7 @@ The `session_id` is a unique identifier assigned to the payment transaction asso
 
 This identifier is automatically generated when the payment transaction is created.
 
-For more details on how to use the `session_id` parameter in the Checkout API, refer to the [session\_id](broken-reference).
+For more details on how to use the `session_id` parameter in the Checkout API, refer to the [session\_id](ios.md#sessionid-string-required).
 
 #### [**formsOfPayment**](ios.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -550,7 +550,7 @@ To view the full function call, please refer to the [Ottu SDK - iOS | Example](i
 
 When the [integration ](web.md#apple-pay)between Ottu and Apple for Apple Pay is completed, the necessary checks to display the Apple Pay button are handled automatically by the Checkout SDK.
 
-1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](broken-reference) and payment gateway codes ([pg\_codes](broken-reference)), several conditions are automatically verified:
+1. **Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](ios.md#sessionid-string-required) and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
    * It is confirmed that a `session_id` and `pg_codes` associated with the Apple Pay Payment Service have been supplied.
    * It is ensured that the customer is using an Apple device that supports Apple Pay. If the device is not supported, the button will not be shown, and an error message stating `This device doesn't support Apple Pay` will be displayed to inform the user of the compatibility issue.
    * It is verified that the customer has a wallet configured on their Apple Pay device. if the wallet is not configured (i.e., no payment cards are added), the Setup button will  appear. Clicking on this button will prompt the Apple Pay wallet on the user's device to open, allowing them to configure it by adding payment cards.
@@ -563,7 +563,7 @@ This setup ensures a seamless integration and user experience, allowing customer
 
 When the [integration](web.md#stc-pay) between Ottu and STC Pay is completed, the necessary checks to display the STC Pay button are handled seamlessly by the Checkout SDK.
 
-**Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](broken-reference) and payment gateway codes ([pg\_codes](broken-reference)), several conditions are automatically verified:
+**Initialization**: Upon initialization of the Checkout SDK with the provided [session\_id](ios.md#sessionid-string-required) and payment gateway codes ([pg\_codes](../checkout-api.md#pg_codes-array-required)), several conditions are automatically verified:
 
 * It is confirmed that the `session_id` and `pg_codes` provided during SDK initialization are associated with the STC Pay Payment Service. This ensures that the STC Pay option is available for the customer to choose as a payment method.
 * It is ensured that the STC Pay button is displayed by the iOS SDK, regardless of whether the customer has provided a mobile number while creating the transaction.

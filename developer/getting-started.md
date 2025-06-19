@@ -8,7 +8,7 @@ Welcome to Ottu’s API documentation! We have designed our platform to offer a 
 
 #### [1. Payment Gateway](getting-started.md#1.-payment-gateway)
 
-In the context of Ottu, the payment gateway holds the MID (Merchant ID) credentials provided by your bank. For more details on this, check the [Payment Gateway section](../user-guide/payment-gateway.md). Currently, our staff handle this configuration and will provide you with the [pg\_codes](checkout-api.md#pg\_codes-array-required) needed for the API. Alternatively, you can fetch these codes using our Payment Methods API.
+In the context of Ottu, the payment gateway holds the MID (Merchant ID) credentials provided by your bank. For more details on this, check the [Payment Gateway section](../user-guide/payment-gateway.md). Currently, our staff handle this configuration and will provide you with the [pg\_codes](checkout-api.md#pg_codes-array-required) needed for the API. Alternatively, you can fetch these codes using our Payment Methods API.
 
 #### [2. Currency Configuration](getting-started.md#2.-currency-configuration)
 
@@ -20,7 +20,21 @@ Every payment or API operation starts with or involves a payment transaction. Es
 
 #### [4. REST API](getting-started.md#4.-rest-api)
 
-To get started with Ottu’s REST API, first understand our authentication methods in the [Authentication section](authentication.md). Then proceed to the [Checkout API section](checkout-api.md) to learn how to create payments and charge customers. Following this, you might want to explore the [Payment Notification Webhook](webhooks/payment-notification.md). This feature is crucial if you want to integrate Ottu with a system and get notified about payment status updates. After creating a payment transaction, you can specify a [webhook URL](checkout-api.md#webhook\_url-string-optional) where Ottu will send updates about the payment status. This will keep your systems up to date in real-time with payment events. See [Webhook](webhooks/).
+To get started with Ottu’s REST API, first understand our authentication methods in the [Authentication section](authentication.md). Then proceed to the [Checkout API section](checkout-api.md) to learn how to create payments and charge customers. Following this, you might want to explore the [Payment Notification Webhook](webhooks/payment-notification.md). This feature is crucial if you want to integrate Ottu with a system and get notified about payment status updates. After creating a payment transaction, you can specify a [webhook URL](checkout-api.md#webhook_url-string-optional) where Ottu will send updates about the payment status. This will keep your systems up to date in real-time with payment events. See [Webhook](webhooks/).
+
+is it fine for you:
+
+#### **5. Checkout SDK**
+
+If you're building an ecommerce website or mobile app, Ottu offers a flexible and easy-to-integrate [Checkout SDK](checkout-sdk/) that wraps the full checkout experience into a simple drop-in solution. The SDK is available for both web and mobile platforms and is designed to work seamlessly with the [Checkout API](checkout-api.md), ensuring you don’t need to handle payment logic manually.
+
+Key features include:
+
+* **Built-in support for Apple Pay, Google Pay, and other digital wallets**, automatically enabled when the SDK is used on compatible devices.
+* **Simplified integration**: Load the SDK, initialize it with your transaction session, and let it handle rendering, payment options, and status transitions.
+* **Optimized user experience**: The SDK ensures a consistent and smooth flow across devices, helping you reduce development time and increase conversion.
+
+For details on installation and usage, check out the [Checkout SDK ](checkout-sdk/)documentation.
 
 ## [API Selection Guide](getting-started.md#api-selection-guide)
 

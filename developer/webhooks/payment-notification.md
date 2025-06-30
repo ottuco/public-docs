@@ -627,9 +627,7 @@ Min value: 0.01
 
 #### [result](payment-notification.md#result-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
-Could be "`success`", "`pending`", "`failed`", "`canceled`", "`error`", and "`cod`". See [payment transaction states](../../user-guide/payment-tracking/payment-transactions-states.md).\
-Max length 50\
-
+The result of the [payment transaction attempt](../../user-guide/payment-tracking/payment-transactions-states.md#payment-attempt). Possible values: `pending`, `success`, `failed`, `canceled`, `error`, `cod`. Check the [Attempt States](../../user-guide/payment-tracking/payment-transactions-states.md#attempt-states) section for more details.
 
 #### [session\_id](payment-notification.md#session_id-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
@@ -846,7 +844,7 @@ There are several types of payment events you might encounter:
 The [result](payment-notification.md#result-string-mandatory) field is your primary indicator of the payment’s outcome:
 
 * If the `result` is `success`, it means the payment was successful.
-* If the `result` is `failure`, it indicates an unsuccessful payment attempt.
+* If the `result` is `failed`, it indicates an unsuccessful payment attempt.
 * For cash payments, the `result` field will be `cod`, indicating Cash on Delivery.
 
 #### **3. Understanding the operation Field**

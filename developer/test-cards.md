@@ -298,8 +298,6 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **Expiry:** 09/25
 
-**CVV:** 123
-
 **Note:** Pin: Any 4 digits. For not captured use expiry as 08/21
 
 </details>

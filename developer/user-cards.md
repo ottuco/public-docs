@@ -12,7 +12,7 @@ When integrating the User Saved Cards endpoints into your system, here are the k
 
 1. You will not receive the full card number (PAN) of the user. Instead, you’ll be provided with the last 4 digits of the card number and a token. This token is what you’ll use for executing payments or authorizations
 2. If you’re using the Ottu [Checkout SDK](checkout-sdk/), customers can delete their saved cards at any point in time. This flexibility gives users more control over their payment information and helps foster trust in your services.
-3. When a customer chooses to save their card for payment, the corresponding token will be included in the payload sent to your designated [webhook\_url](checkout-api.md#webhook\_url-string-optional). This allows you to retrieve and handle the saved card token as required for your application.
+3. When a customer chooses to save their card for payment, the corresponding token will be included in the payload sent to your designated [webhook\_url](checkout-api.md#webhook_url-string-optional). This allows you to retrieve and handle the saved card token as required for your application.
 
 {% hint style="info" %}
 **Successful Payment is a Prerequisite:** A saved card, represented by a unique token, can only be created after the customer completes a successful payment transaction. This process ensures the validity of the card and enables tokenization. For a detailed guide on how to implement the card-saving feature, please refer to the [Implementation Process documentation](tokenization.md#implementation).
@@ -41,15 +41,15 @@ For a more detailed technical understanding and the implementation specifics of 
 
 #### Fetch Cards
 
-{% swagger src="../.gitbook/assets/Ottu API (31).yaml" path="/b/pbl/v2/card/" method="post" %}
-[Ottu API (31).yaml](<../.gitbook/assets/Ottu API (31).yaml>)
-{% endswagger %}
+{% openapi-operation spec="ottu-api" path="/b/pbl/v2/card/" method="post" %}
+[OpenAPI ottu-api](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/388b1be1533dc34f1bbab253943a4688575f58f4fedd70e71971280736d76101.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250721%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250721T141806Z&X-Amz-Expires=172800&X-Amz-Signature=7f26f8c8f3346d86ea8c6872140c928973034e5ad62c11443417d5a2a7a103ed&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 #### Delete Card
 
-{% swagger src="../.gitbook/assets/Ottu API last (1).yaml" path="https://<ottu-url>/b/pbl/v2/card/{{token}}" method="delete" %}
-[Ottu API last (1).yaml](<../.gitbook/assets/Ottu API last (1).yaml>)
-{% endswagger %}
+{% openapi-operation spec="ottu-api" path="/b/pbl/v2/card/{token}/" method="delete" %}
+[OpenAPI ottu-api](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/388b1be1533dc34f1bbab253943a4688575f58f4fedd70e71971280736d76101.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250721%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250721T141806Z&X-Amz-Expires=172800&X-Amz-Signature=7f26f8c8f3346d86ea8c6872140c928973034e5ad62c11443417d5a2a7a103ed&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 ## [FAQ](user-cards.md#faq)
 

@@ -1,7 +1,7 @@
 # Payment Methods
 
 In the intricate realm of online transactions, a versatile payment experience is essential. \
-The `Payment Methods API` streamlines this process, allowing for effortless automation. by simply integrating with specified operation, [customer\_id](checkout-api.md#customer\_id-string-optional), [currencies](checkout-api.md#currency\_code-string-required), [payment gateway names](../user-guide/payment-gateway.md) and desired [payment plugins](../user-guide/plugins/), merchant can harness the full power of Ottu's payment automation, all while keeping his existing environment intact. no extra effort, just seamless integration.
+The `Payment Methods API` streamlines this process, allowing for effortless automation. by simply integrating with specified operation, [customer\_id](checkout-api.md#customer_id-string-optional), [currencies](checkout-api.md#currency_code-string-required), [payment gateway names](../user-guide/payment-gateway.md) and desired [payment plugins](../user-guide/plugins/), merchant can harness the full power of Ottu's payment automation, all while keeping his existing environment intact. no extra effort, just seamless integration.
 
 ## [Setup](payment-methods.md#setup)
 
@@ -11,7 +11,7 @@ Ensure the relevant plugin ([E-Commerce](../user-guide/plugins/#e-commerce) or [
 
 #### [Activating Payment Gateway Codes](payment-methods.md#activating-payment-gateway-codes)
 
-Activate the [payment gateway](../user-guide/payment-gateway.md) ([pg\_codes](checkout-api.md#pg\_codes-array-required)) you intend to use. Ensure all desired `pg_codes` are set to ‘`active`’ status in your configuration.
+Activate the [payment gateway](../user-guide/payment-gateway.md) ([pg\_codes](checkout-api.md#pg_codes-array-required)) you intend to use. Ensure all desired `pg_codes` are set to ‘`active`’ status in your configuration.
 
 #### [Understanding the `type` Filter](payment-methods.md#understanding-the-type-filter)
 
@@ -56,7 +56,7 @@ Ensuring the right level of access is crucial for maintaining the security and i
 #### BasicAuth
 
 * **Privileges:** `BasicAuth` is user-centric, meaning it’s tied to a specific user profile. Access to payment methods can be restricted based on the user’s assigned permissions.
-* **Setting Permissions:** To grant a user access to a specific payment method, assign the permission: "**Can use pg\_code**". Here, the [pg\_code](checkout-api.md#pg\_codes-array-required) represents the unique code of the [payment gateway](../user-guide/payment-gateway.md) or merchant ID (`MID`).\
+* **Setting Permissions:** To grant a user access to a specific payment method, assign the permission: "**Can use pg\_code**". Here, the [pg\_code](checkout-api.md#pg_codes-array-required) represents the unique code of the [payment gateway](../user-guide/payment-gateway.md) or merchant ID (`MID`).\
   For instance, if you want to grant a user access to a payment gateway with the code ‘`credit-card`’, you would assign them the permission “**Can use Credit Card**”.
 * **Usage:** Since `BasicAuth` is user-specific, it’s suitable for scenarios where you want to provide selective access to different payment methods based on user roles or responsibilities.
 
@@ -96,9 +96,9 @@ This request will return the `"pg_codes": ["kpay"]`, which can then be used in s
 
 **For a detailed breakdown of the API response, refer to the Open API block below.**
 
-{% swagger src="../.gitbook/assets/Ottu API (34).yaml" path="/b/pbl/v2/payment-methods/" method="post" %}
-[Ottu API (34).yaml](<../.gitbook/assets/Ottu API (34).yaml>)
-{% endswagger %}
+{% openapi-operation spec="ottu-api" path="/b/checkout/api/sdk/v1/urpay/submit/" method="post" %}
+[OpenAPI ottu-api](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/388b1be1533dc34f1bbab253943a4688575f58f4fedd70e71971280736d76101.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T095436Z&X-Amz-Expires=172800&X-Amz-Signature=670935d254bef5e6ba0f5a843eccc18088f4863de9b583f411b72eb2309e41d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 ## [Guide](payment-methods.md#guide)
 
@@ -155,7 +155,7 @@ A merchant aims to provide a diverse array of payment options to accommodate an 
     Call `Payment Methods API` to retrieve all available payment methods.
 2.  #### Using the API's Filters
 
-    Utilize filters such as [customer\_id](checkout-api.md#customer\_id-string-optional), [currency](checkout-api.md#currency\_code-string-required), and [plugin](../user-guide/plugins/), the merchant selects and integrates desired payment methods into their platform in our case merchant should use plugin filter to get only e\_commerce payment methods.
+    Utilize filters such as [customer\_id](checkout-api.md#customer_id-string-optional), [currency](checkout-api.md#currency_code-string-required), and [plugin](../user-guide/plugins/), the merchant selects and integrates desired payment methods into their platform in our case merchant should use plugin filter to get only e\_commerce payment methods.
 3.  #### Expanding Payment Choices
 
     As customers check out, they see a broader range of payment  options, increasing the likelihood of successful transactions.
@@ -257,7 +257,7 @@ The `Payment Methods API` is designed to streamline the process of online transa
 
 #### :digit\_two: [Do I need to make changes to my existing environment when integrating with the Payment Methods API?](payment-methods.md#do-i-need-to-make-changes-to-my-existing-environment-when-integrating-with-the-payment-methods-api)
 
-No, the `Payment Methods API` allows for a seamless integration without requiring changes to your current environment. You only need to integrate with specific operation, [customer\_id](checkout-api.md#customer\_id-string-optional), [currencies](checkout-api.md#currency\_code-string-required), and desired payment [plugins](../user-guide/plugins/).
+No, the `Payment Methods API` allows for a seamless integration without requiring changes to your current environment. You only need to integrate with specific operation, [customer\_id](checkout-api.md#customer_id-string-optional), [currencies](checkout-api.md#currency_code-string-required), and desired payment [plugins](../user-guide/plugins/).
 
 **Conclusion**
 

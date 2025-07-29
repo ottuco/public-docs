@@ -10,7 +10,7 @@ In the evolving landscape of businesses, the necessity to perform subsequent ope
 Ottu’s Operations API provides a seamless and unified interface for performing subsequent operations on a payment, including refunds, cancellations, and expiration. It ensures consistent communication with different payment gateways, lifting the burden of direct interaction.
 {% endhint %}
 
-Importantly, if a PG accepts an operation, a [child payment transaction](../user-guide/payment-tracking/#states-of-child-payment-transaction) is created within Ottu’s system. This child transaction, [linked](../user-guide/payment-tracking/#child-table-transaction) to the original payment transaction against which the operation was triggered, will record the new state along with the PG’s response, the operational [amount](../user-guide/payment-tracking/#amount-definitions-and-calculation-mechanism), and the [currency code](checkout-api.md#currency\_code-string-required). For example, if a payment transaction of 100 KWD has been processed and the merchant now wishes to issue a `refund` of 20 KWD, triggering the operation will not change the state or amount of the original payment transaction. Instead, a child transaction will be created within Ottu’s system, reflecting the refunded amount of 20 KWD, the currency, and the new state as `refund`. Please note that **not** all payment gateways support all external operations. Ottu is consistently working to broaden its payment gateway integrations. However, if a particular payment gateway does not offer support for certain operations, Ottu is unable to facilitate those specific operations. In such cases, API calls for unsupported external operations will be rejected by Ottu, with an appropriate error message indicating the lack of support. For a comprehensive list of payment gateways and the operations they support see [Operation Definitions & Conditions](../user-guide/payment-gateway.md#operation-definitions-and-conditions).
+Importantly, if a PG accepts an operation, a [child payment transaction](../user-guide/payment-tracking/#states-of-child-payment-transaction) is created within Ottu’s system. This child transaction, [linked](../user-guide/payment-tracking/#child-table-transaction) to the original payment transaction against which the operation was triggered, will record the new state along with the PG’s response, the operational [amount](../user-guide/payment-tracking/#amount-definitions-and-calculation-mechanism), and the [currency code](checkout-api.md#currency_code-string-required). For example, if a payment transaction of 100 KWD has been processed and the merchant now wishes to issue a `refund` of 20 KWD, triggering the operation will not change the state or amount of the original payment transaction. Instead, a child transaction will be created within Ottu’s system, reflecting the refunded amount of 20 KWD, the currency, and the new state as `refund`. Please note that **not** all payment gateways support all external operations. Ottu is consistently working to broaden its payment gateway integrations. However, if a particular payment gateway does not offer support for certain operations, Ottu is unable to facilitate those specific operations. In such cases, API calls for unsupported external operations will be rejected by Ottu, with an appropriate error message indicating the lack of support. For a comprehensive list of payment gateways and the operations they support see [Operation Definitions & Conditions](../user-guide/payment-gateway.md#operation-definitions-and-conditions).
 
 {% hint style="warning" %}
 Please be aware that operations via the Operations API do not function with **foreign currencies**. If your customer has completed a payment using a [currency exchange](../user-guide/currencies.md#currency-exchanges) (for instance, if the Merchant ID or MID is set to KWD but the customer has paid the amount in USD using Ottu's currency exchange to calculate and display the amount), external operations will not be successful. External operations only work when the payment currency is identical to the MID currency.
@@ -26,10 +26,10 @@ Ottu’s Operations API supports both system-side operations `cancel`, `delete`,
 
 Before proceeding with any operation, it is essential to have an existing payment transaction. This transaction can be created in one of two ways:
 
-1. **Via the Checkout API:** You can initiate a payment transaction through Ottu’s [Checkout API](checkout-api.md). This will create a new transaction and return a unique [session\_id](checkout-api.md#session\_id-string-mandatory) which you can use for subsequent operations.
+1. **Via the Checkout API:** You can initiate a payment transaction through Ottu’s [Checkout API](checkout-api.md). This will create a new transaction and return a unique [session\_id](checkout-api.md#session_id-string-mandatory) which you can use for subsequent operations.
 2. **Via the Ottu Dashboard:** Alternatively, you can manually create a payment transaction directly from the Ottu Dashboard. Check [Creating Payment Request](../#creating-payment-request). From the dashboard, you can track and manage all your transactions. See [Payment Tracking](../user-guide/payment-tracking/).
 
-Once a payment transaction has been initiated, you will receive either a [session\_id](checkout-api.md#session\_id-string-mandatory) or an [order\_no](checkout-api.md#order\_no-string-optional). It is recommended to use the session\_id for operations, as it is always present in the response, whereas order\_no is a property defined by the merchant and may not always be available. Remember to securely store these identifiers, as they are essential for performing operations on the payment transaction.
+Once a payment transaction has been initiated, you will receive either a [session\_id](checkout-api.md#session_id-string-mandatory) or an [order\_no](checkout-api.md#order_no-string-optional). It is recommended to use the session\_id for operations, as it is always present in the response, whereas order\_no is a property defined by the merchant and may not always be available. Remember to securely store these identifiers, as they are essential for performing operations on the payment transaction.
 
 ### [Boost Your Integration](operations.md#boost-your-integration)
 
@@ -147,7 +147,7 @@ To prevent the occurrence of multiple operations, the `Tracking-Key`, once added
 
 #### **Example:**&#x20;
 
-The merchant initiates a POST [Refund](operations.md#refund) request by submitting the [session\_id](checkout-api.md#session\_id-string-mandatory) of the previous paid transaction and specifying the refund `amount`.  Additionally, a new header parameter, `Tracking-Key`, is included, with "`trackingtest`" used as an example value for demonstration purposes.
+The merchant initiates a POST [Refund](operations.md#refund) request by submitting the [session\_id](checkout-api.md#session_id-string-mandatory) of the previous paid transaction and specifying the refund `amount`.  Additionally, a new header parameter, `Tracking-Key`, is included, with "`trackingtest`" used as an example value for demonstration purposes.
 
 #### **Header Parameter:**
 
@@ -170,7 +170,7 @@ Tracking-Key: "trackingtest"
 When the merchant seeks to inquire about the status of a previously conducted operation, he should initiate another operation request using the same `Tracking-Key` value as the one utilized in the initial targeted operation transaction.
 
 * The merchant should include a new header parameter, `Tracking-Key`, with the same value as in the previous operation transaction.
-* Alongside the `Tracking-Key`, the [session\_id](checkout-api.md#session\_id-string-mandatory) / [order\_no](checkout-api.md#order\_no-string-optional) of the specified operation transaction should be provided in the operation request.
+* Alongside the `Tracking-Key`, the [session\_id](checkout-api.md#session_id-string-mandatory) / [order\_no](checkout-api.md#order_no-string-optional) of the specified operation transaction should be provided in the operation request.
 * Regardless of the `session_id`/`order_no`, `amount` (no need to provide), and `operation` parameter values provided within the external operation request, the response will consistently provide the latest status of the original operation request from the initial provision of the `Tracking-key`  value.
 
 #### Example:
@@ -231,9 +231,9 @@ For a more detailed technical understanding and the implementation specifics of 
 
 ## [Operation API Schema Reference](operations.md#operation-api-schema-reference)
 
-{% swagger src="../.gitbook/assets/Ottu API (47).yaml" path="/b/pbl/v2/operation/" method="post" %}
-[Ottu API (47).yaml](<../.gitbook/assets/Ottu API (47).yaml>)
-{% endswagger %}
+{% openapi-operation spec="july" path="/b/pbl/v2/operation/" method="post" %}
+[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144125Z&X-Amz-Expires=172800&X-Amz-Signature=d9fabc2d55ac74d91d5271348445322ab932c44125028ad024a51756987c6651&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 {% hint style="warning" %}
 [Operations](operations.md) are not working for foreign [currenies](../user-guide/currencies.md).&#x20;

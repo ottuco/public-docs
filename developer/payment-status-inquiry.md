@@ -80,11 +80,13 @@ These rules are per transaction. Additionally, the endpoint allows a maximum of 
 {% endhint %}
 
 To request a status inquiry, you must provide at least one of the following identifiers: \
-[session\_id](checkout-api.md#session\_id-string-mandatory) or [order\_no](checkout-api.md#order\_no-string-optional). For a more detailed technical understanding and the implementation specifics of these operations, please refer to the Open API schema in the [API Schema Reference](payment-status-inquiry.md#api-schema-reference).
+[session\_id](checkout-api.md#session_id-string-mandatory) or [order\_no](checkout-api.md#order_no-string-optional). For a more detailed technical understanding and the implementation specifics of these operations, please refer to the Open API schema in the [API Schema Reference](payment-status-inquiry.md#api-schema-reference).
 
-{% swagger src="../.gitbook/assets/Ottu API (23).yaml" path="/b/pbl/v2/inquiry/" method="post" %}
-[Ottu API (23).yaml](<../.gitbook/assets/Ottu API (23).yaml>)
-{% endswagger %}
+## [API Schema References](payment-status-inquiry.md#api-schema-references)
+
+{% openapi-operation spec="july" path="/b/pbl/v2/inquiry/" method="post" %}
+[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144122Z&X-Amz-Expires=172800&X-Amz-Signature=c84460f61628c6c59d8cf47f0ab6feb292ab479a8b842a614d9635a7e35ebf97&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 ## [Guide](payment-status-inquiry.md#guide)
 
@@ -104,7 +106,7 @@ In essence, the Automatic Inquiry feature is Ottu’s commitment to providing co
 
 * **Stay within the Request Limits:** Be mindful of our API’s built-in throttling mechanisms to ensure smooth operation.
 * **Understand the Webhook Response:** Knowing how to interpret the Payment Webhook response is crucial for accurate results. Check [Payment Notification](webhooks/payment-notification.md).
-* **Use the Correct Identifier:** Provide either the [session\_id](checkout-api.md#session\_id-string-mandatory) or [order\_no](checkout-api.md#order\_no-string-optional) when requesting a status inquiry.
+* **Use the Correct Identifier:** Provide either the [session\_id](checkout-api.md#session_id-string-mandatory) or [order\_no](checkout-api.md#order_no-string-optional) when requesting a status inquiry.
 * **Consider the Transaction State:** The states `paid` and `authorized` will return the status immediately, while others will trigger a status check with the [Payment Gateway](../user-guide/payment-gateway.md). Please refer to the [Operation Available](../user-guide/payment-gateway.md#available-operations) table to explore the processes supported by each Payment Gateway.
 
 ## [FAQ](payment-status-inquiry.md#faq)
@@ -135,6 +137,6 @@ Yes, the `Payment Status Inquiry API` has a throttling mechanism. It includes an
 
 #### :digit\_seven: [**What information do I need to provide to request a status inquiry?**](payment-status-inquiry.md#what-information-do-i-need-to-provide-to-request-a-status-inquiry)
 
-To request a status inquiry, you need to provide either the [session\_id](checkout-api.md#session\_id-string-mandatory) or [order\_no](checkout-api.md#order\_no-string-optional) for the transaction.
+To request a status inquiry, you need to provide either the [session\_id](checkout-api.md#session_id-string-mandatory) or [order\_no](checkout-api.md#order_no-string-optional) for the transaction.
 
 From [authentication](payment-status-inquiry.md#authentication) to [best practices](payment-status-inquiry.md#best-practices), this document has equipped users with the knowledge needed to maximize the potential of the `Status Inquiry API` in their online payment systems. Whether users are new to the platform or experienced, this tool can streamline payment processes and keep them informed about transaction statuses. If there are any questions or a need for further guidance, the [FAQ section](payment-status-inquiry.md#faq) is available. The team appreciates the trust placed in their payment management solutions and looks forward to supporting seamless and efficient transactions.

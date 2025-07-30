@@ -798,8 +798,8 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
-{% openapi-operation spec="july" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144125Z&X-Amz-Expires=172800&X-Amz-Signature=d9fabc2d55ac74d91d5271348445322ab932c44125028ad024a51756987c6651&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% openapi-operation spec="ottu-july" path="/b/checkout/v1/pymt-txn/" method="post" %}
+[OpenAPI ottu-july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/dd13d3360690246daeb6267e9ca119ec953037560d96776a32fefe02cc0fb3ec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T121912Z&X-Amz-Expires=172800&X-Amz-Signature=0cb1b44036bec355487535ff289236e5d7cdccc62853e74330ccf068d060474e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)

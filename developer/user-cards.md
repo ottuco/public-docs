@@ -41,14 +41,14 @@ For a more detailed technical understanding and the implementation specifics of 
 
 #### Fetch Cards
 
-{% openapi-operation spec="ottu-api" path="/b/pbl/v2/card/" method="post" %}
-[OpenAPI ottu-api](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/388b1be1533dc34f1bbab253943a4688575f58f4fedd70e71971280736d76101.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250721%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250721T141806Z&X-Amz-Expires=172800&X-Amz-Signature=7f26f8c8f3346d86ea8c6872140c928973034e5ad62c11443417d5a2a7a103ed&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% openapi-operation spec="ottu-july" path="/b/pbl/v2/card/" method="post" %}
+[OpenAPI ottu-july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/dd13d3360690246daeb6267e9ca119ec953037560d96776a32fefe02cc0fb3ec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T124145Z&X-Amz-Expires=172800&X-Amz-Signature=df86b16df7388738bff9330f082ae9cd51f3ebb82b9ec3c210c88bb9ca34e9cb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 #### Delete Card
 
 {% openapi-operation spec="ottu-api" path="/b/pbl/v2/card/{token}/" method="delete" %}
-[OpenAPI ottu-api](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/388b1be1533dc34f1bbab253943a4688575f58f4fedd70e71971280736d76101.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250721%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250721T141806Z&X-Amz-Expires=172800&X-Amz-Signature=7f26f8c8f3346d86ea8c6872140c928973034e5ad62c11443417d5a2a7a103ed&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI ottu-api](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/388b1be1533dc34f1bbab253943a4688575f58f4fedd70e71971280736d76101.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T124146Z&X-Amz-Expires=172800&X-Amz-Signature=30fc1efb7f096486d600e1fde05fa221e550a514ace6602d826fe4a95f75416a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [FAQ](user-cards.md#faq)

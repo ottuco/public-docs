@@ -94,10 +94,10 @@ POST: https://beta.ottu.net/b/pbl/v2/payment-methods/
 
 This request will return the `"pg_codes": ["kpay"]`, which can then be used in subsequent API calls.
 
-**For a detailed breakdown of the API response, refer to the Open API block below.**
+## [API Schema Reference](payment-methods.md#api-schema-reference)
 
-{% openapi-operation spec="july" path="/b/pbl/v2/payment-methods/" method="post" %}
-[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144122Z&X-Amz-Expires=172800&X-Amz-Signature=c84460f61628c6c59d8cf47f0ab6feb292ab479a8b842a614d9635a7e35ebf97&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% openapi-operation spec="ottu-july" path="/b/pbl/v2/payment-methods/" method="post" %}
+[OpenAPI ottu-july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/dd13d3360690246daeb6267e9ca119ec953037560d96776a32fefe02cc0fb3ec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T124145Z&X-Amz-Expires=172800&X-Amz-Signature=df86b16df7388738bff9330f082ae9cd51f3ebb82b9ec3c210c88bb9ca34e9cb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Guide](payment-methods.md#guide)

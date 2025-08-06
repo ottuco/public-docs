@@ -34,7 +34,13 @@ dependencies:
 
 And then run `flutter pub get` command in the terminal.
 
-After adding the dependency, run the following command in the **terminal** to fetch the required packages: flutter pub get
+{% hint style="info" %}
+If the development is being done on Windows or Linux, and iOS support is not required, you need to adjust the following line, [Access it here](https://github.com/ottuco/ottu-flutter/blob/main/Sample/pubspec.yaml#L40), in the `pubspec.yaml` file, by replacing the `ref` value `2.1.6` with `release-no-ios`.
+
+Then, run the following two commands:\
+`flutter clean`\
+`flutter pub get`
+{% endhint %}
 
 ### [Android](flutter.md#android)
 
@@ -61,6 +67,10 @@ The SDK UI is embedded as a `fragment` within any part of an `activity` in the m
 If only one payment option is available and it is a wallet, the UI is automatically minimized.
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+The parent application must use a theme based on `Theme.AppCompat` (or a subclass) to prevent crashes and styling problems. This requirement is defined in the `themes.xml` file within the `values` directory of the project.
+{% endhint %}
 
 ## [SDK Configuration](flutter.md#sdk-configuration)
 

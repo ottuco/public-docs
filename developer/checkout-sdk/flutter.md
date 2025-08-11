@@ -161,7 +161,54 @@ The callbacks are handled by the native frameworks. Please see the links here:
 
 It is not necessary to modify anything for the callbacks, as they are managed by the native SDK.
 
-However, the following examples demonstrate how they function on both platforms:
+However, the following examples demonstrate how they function on both platforms.
+
+It is needed to add a section like below in a `*.dart` file of the app:
+
+```swift
+@override
+void didChangeDependencies() {
+  super.didChangeDependencies();
+  _methodChannel.setMethodCallHandler((call) async {
+    switch (call.method) {
+      case _methodPaymentSuccessResult:
+      {
+        String message = call.arguments as String;
+        logger.d("didChangeDependencies, success: $message");
+        _checkoutMessage.value = ("Success", message);
+      }
+
+      case _methodPaymentCancelResult:
+      {
+        String message = call.arguments as String;
+        logger.d("didChangeDependencies, cancel: $message");
+        _checkoutMessage.value = ("Cancel", message);
+      }
+
+      case _methodPaymentErrorResult:
+      {
+        String message = call.arguments as String;
+        logger.d("didChangeDependencies, error: $message");
+        _checkoutMessage.value = ("Error", message);
+      }
+    }
+  });
+}
+```
+
+where `_methodPaymentSuccessResult`, `_methodPaymentCancelResult` and `_methodPaymentErrorResult` are defined as constants:
+
+```swift
+const _methodPaymentSuccessResult = "METHOD_PAYMENT_SUCCESS_RESULT";
+const _methodPaymentErrorResult = "METHOD_PAYMENT_ERROR_RESULT";
+const _methodPaymentCancelResult = "METHOD_PAYMENT_CANCEL_RESULT";
+```
+
+Also, on the Flutter side, you need to define a `MethodChannel` to listen for events from the native platforms.
+
+```swift
+const _methodChannel = MethodChannel('com.ottu.sample/checkout');
+```
 
 ### [Android](flutter.md#android-2)
 

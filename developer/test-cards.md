@@ -448,15 +448,19 @@ For failed: `4151801200003960`
 
 **Expiry:**&#x20;
 
-For success: 6/22
+For success: 6/26
 
 For failed: Greater than current date
+
+**OTP:**
+
+1234
 
 **CVV:**&#x20;
 
 For success: 1234
 
-&#x20;For failed: Any 4 digits
+For failed: Any 4 digits
 
 </details>
 

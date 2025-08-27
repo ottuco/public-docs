@@ -552,7 +552,7 @@ The SDK accommodates various payment forms including`tokenPay`, `redirect`, `stc
 
 Merchants have the flexibility to showcase specific methods based on their requirements.&#x20;
 
-For instance, if you wish to exclusively display the STC Pay button, you can achieve this by setting `formsOfPayment` = `[stcPay]`, which will result in only the STC Pay button being displayed. This approach is applicable to other payment methods as well.
+For instance, if you wish to exclusively display the STC Pay button, you can achieve this by setting `formsOfPayment` = `[StcPay]`, which will result in only the STC Pay button being displayed. This approach is applicable to other payment methods as well.
 
 #### :digit\_two: [What are the minimum system requirements for the SDK integration?](android.md#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration) <a href="#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration" id="id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration"></a>
 

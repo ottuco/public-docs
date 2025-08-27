@@ -831,8 +831,7 @@ The SDK supports the following [forms of payment](flutter.md#formsofpayment-arra
 
 * `tokenPay`
 * `redirect`
-* `StcPay`  For Android&#x20;
-* `.stcPay` For iOS
+* `StcPay` &#x20;
 * `cardOnsite`
 * `applePay` _(iOS only)_
 
@@ -840,9 +839,13 @@ Merchants can configure the forms of payment displayed according to their needs.
 
 For example, to **display only the STC Pay button**, use:
 
-```dart
-formsOfPayment = [stcPay]
-```
+Android
+
+`formsOfPayment = [stcPay]`
+
+iOS
+
+`formsOfPayment = [.stcPay]`
 
 This ensures that only the **STC Pay** button is shown. The same approach applies to other payment methods.
 

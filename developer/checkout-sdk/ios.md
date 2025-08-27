@@ -135,7 +135,7 @@ The forms of payment displayed in the [checkout process](./#ottu-checkout-sdk-fl
 Available options for `formsOfPayment`:
 
 * `applePay`: Supports Apple Pay, allowing purchases to be made using Apple Pay-enabled devices.
-* `.stcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
+* `stcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
 * `cardOnsite`: Enables direct payments (onsite checkout), where Cardholder Data (CHD) is entered directly in the SDK. If 3DS authentication is required, a payment provider is involved in the process.
 * `tokenPay`: Uses [tokenization](../tokenization.md) to securely store and process customers' payment information.
 * `redirect`: Redirects customers to an external [payment gateway](../../user-guide/payment-gateway.md#payment-gateway-features-summary) or a third-party payment processor to complete the transaction.
@@ -661,9 +661,9 @@ This technique works in two ways:
 
 #### :digit\_one: [What forms of payments are supported by the SDK?](ios.md#id-1.-what-forms-of-payments-are-supported-by-the-sdk) <a href="#id-1.-what-forms-of-payments-are-supported-by-the-sdk" id="id-1.-what-forms-of-payments-are-supported-by-the-sdk"></a>
 
-The SDK supports the following payment forms: `tokenPay`, `ottuPG`, `redirect` `applePay` and `.stcPay`. Merchants can display specific methods according to their needs.
+The SDK supports the following payment forms: `tokenPay`, `ottuPG`, `redirect` `applePay` and `stcPay`. Merchants can display specific methods according to their needs.
 
-**For example,** if you want to only show the STC Pay button, you can do so using formsOfPayment = `.stcPay`, and only the STC Pay button will be displayed. The same applies for `applePay` and other methods.
+**For example,** if you want to only show the STC Pay button, you can do so using formsOfPayment = `stcPay`, and only the STC Pay button will be displayed. The same applies for `applePay` and other methods.
 
 #### :digit\_two: [What are the minimum system requirements for the SDK integration?](ios.md#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration) <a href="#id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration" id="id-2.-what-are-the-minimum-system-requirements-for-the-sdk-integration"></a>
 

@@ -106,7 +106,7 @@ The `formsOfPayment` parameter allows customization of the payment methods displ
 * **`cardOnsite`**: A direct payment method (onsite checkout) where cardholder data (CHD) is entered directly in the SDK. If 3DS authentication is required, a payment provider is involved.
 * `tokenPay`: Uses [tokenization](../tokenization.md) to securely store and process customers' payment information.
 * `redirect`: Redirects customers to an external [payment gateway](../../user-guide/payment-gateway.md#payment-gateway-features-summary) or a third-party payment processor to complete the transaction.
-* `stcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
+* `StcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
 * `flexMethods`: Allows payments to be split into multiple installments. These methods, also known as BNPL (Buy Now, Pay Later), support providers such as Tabby and Tamara.
 
 #### [**setupPreload**](android.md#setuppreload-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
@@ -548,7 +548,7 @@ The SDK is designed to protect sensitive data by restricting screen capture func
 
 #### :digit\_one: [What forms of payments are supported by the SDK?](android.md#id-1.-what-forms-of-payments-are-supported-by-the-sdk) <a href="#id-1.-what-forms-of-payments-are-supported-by-the-sdk" id="id-1.-what-forms-of-payments-are-supported-by-the-sdk"></a>
 
-The SDK accommodates various payment forms including`tokenPay`, `redirect`, `stcPay` and `cardOnsite`.&#x20;
+The SDK accommodates various payment forms including`tokenPay`, `redirect`, `StcPay` and `cardOnsite`.&#x20;
 
 Merchants have the flexibility to showcase specific methods based on their requirements.&#x20;
 

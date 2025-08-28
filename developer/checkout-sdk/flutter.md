@@ -839,13 +839,7 @@ Merchants can configure the forms of payment displayed according to their needs.
 
 For example, to **display only the STC Pay button**, use:
 
-Android
-
 `formsOfPayment = [stcPay]`
-
-iOS
-
-`formsOfPayment = [.stcPay]`
 
 This ensures that only the **STC Pay** button is shown. The same approach applies to other payment methods.
 

@@ -134,6 +134,10 @@ The `formsOfPayment` parameter is used to customize the forms of payment display
 * `redirect`: A payment method where customers are redirected to an external payment gateway or a third-party processor to complete the transaction.
 * `stcPay`: A method where customers enter their mobile number and authenticate using an OTP sent to their mobile device.
 
+{% hint style="info" %}
+If `formsOfPayment` are passed manually in an array, wrap each item in quotes—for example, `"stcPay"`.
+{% endhint %}
+
 #### [**setupPreload**](flutter.md#setuppreload-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 An `ApiTransactionDetails` class object is used to store transaction details. If provided, transaction details will not be requested from the backend, thereby reducing processing time.
@@ -839,7 +843,9 @@ Merchants can configure the forms of payment displayed according to their needs.
 
 For example, to **display only the STC Pay button**, use:
 
-`formsOfPayment = [stcPay]`
+```
+formsOfPayment = ["stcPay"]
+```
 
 This ensures that only the **STC Pay** button is shown. The same approach applies to other payment methods.
 

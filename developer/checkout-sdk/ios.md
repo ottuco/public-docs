@@ -49,7 +49,7 @@ Once the Swift package has been set up, adding Alamofire as a dependency require
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.3")
+    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.4")
 ]
 ```
 

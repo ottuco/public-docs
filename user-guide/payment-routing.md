@@ -20,7 +20,7 @@ Ottu Router runs each payment through four clear stages
   * Blocks or allows transactions by card BIN range ([BIN](payment-routing.md#bin-access-control)).
   * Controls transactions by issuing country ([country](payment-routing.md#country-based-routing)).&#x20;
   * Filters by card network (e.g., Visa, Mastercard) ([scheme guardrails](payment-routing.md#card-scheme-restriction)).
-* [Routing Rules](payment-routing.md#routing-rules)**:** Decide which payment connections to rout the payment through.
+* [Routing Rules](payment-routing.md#routing-rules)**:** Decide which payment connections to route the payment through.
   * Routes by BIN match ([BIN-Based Routing](payment-routing.md#bin-based-routing)).
   * Routes by issuing country ([Country-Based Routing](payment-routing.md#country-based-routing)).
   * Routes by card type (Visa, Mastercard) ([Supported Schemes](payment-routing.md#supported-schemes))**.**&#x20;

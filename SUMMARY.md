@@ -5,6 +5,7 @@
 ## USER GUIDE
 
 * [Payment Gateway](user-guide/payment-gateway.md)
+* [Payment Routing](user-guide/payment-routing.md)
 * [Currencies](user-guide/currencies.md)
 * [Apple Pay](user-guide/apple-pay.md)
   * [Setup MPGS](user-guide/apple-pay/setup-mpgs.md)

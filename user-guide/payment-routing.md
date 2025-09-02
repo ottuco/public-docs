@@ -18,7 +18,7 @@ Ottu Router runs each payment through four clear stages
 
 * [Blockers](payment-routing.md#blocker-rules)**:** Guardrails that can stop a payment outright&#x20;
   * Blocks or allows transactions by card BIN range ([BIN](payment-routing.md#bin-access-control)).
-  * Controls transactions by issuing country ([country](payment-routing.md#geographic-restriction)).&#x20;
+  * Controls transactions by issuing country ([country](payment-routing.md#country-based-routing)).&#x20;
   * Filters by card network (e.g., Visa, Mastercard) ([scheme guardrails](payment-routing.md#card-scheme-restriction)).
 * [Routing Rules](payment-routing.md#routing-rules)**:** Decide which payment connections to rout the payment through.
   * Routes by BIN match ([BIN-Based Routing](payment-routing.md#bin-based-routing)).

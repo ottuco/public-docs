@@ -807,7 +807,7 @@ The SDK utilizes Sentry for error logging and reporting. It is initialized based
 
 However, since the SDK is a framework embedded within the merchant's app, conflicts may arise if the app also integrates Sentry.
 
-To prevent conflicts, the merchant can disable Sentry within the Checkout SDK by setting the `is_enabled` flag to `false` in the configuration.
+To prevent conflicts, the merchant can disable Sentry within the Checkout SDK by setting the `is_enabled` flag to `false` in the configuration inside the SDK studio.
 
 ## [**Cyber Security Measures**](flutter.md#cyber-security-measures)
 

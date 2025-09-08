@@ -455,7 +455,7 @@ Specifies the device `Theme` mode, which can be set to one of the following:
 * `auto` – Adapts the UI based on the device's system settings.
 
 {% hint style="info" %}
-The `uiMode` parameter only affects **Flutter Android**. On **Flutter iOS**, the behavior follows the native implementation and this parameter has no effect.
+The `uiMode` parameter only affects Flutter Android and not Flutter iOS, as the flutter follows the behavior of the native implementation
 {% endhint %}
 
 ### [Properties Description](flutter.md#properties-description) <a href="#properties-description" id="properties-description"></a>

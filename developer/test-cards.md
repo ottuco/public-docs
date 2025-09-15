@@ -296,7 +296,7 @@ It is important to keep in mind that these cards are only able to be added on Ap
 
 **Card number:** 888888-0000000001
 
-**Expiry:** 09/25
+**Expiry:** 09/2030 (For Approved)
 
 **Note:** Pin: Any 4 digits. For not captured use expiry as 08/21
 

@@ -1,6 +1,6 @@
 # Message Notifications
 
-This API  provides a reliable interface to manually initiate message notifications for a specific transaction, based on either a provided [session\_id](checkout-api.md#session_id-string-mandatory) or [order\_no](checkout-api.md#order_no-string-optional). It is particularly useful in scenarios where message notifications—such as [SMS](../user-guide/notification-communication-channels/sms-notifications.md), [email](../user-guide/notification-communication-channels/email-notifications.md), or [WhatsApp](../user-guide/notification-communication-channels/whatsapp-notifications/)—have not been delivered as expected, often due to issues with third-party services. Additionally, the API is helpful when customer contact information ([email](checkout-api.md#customer_email-string-conditional) or [phone number](checkout-api.md#customer_phone-string-conditional)) has been updated, and you want to ensure the customer receives the relevant transaction message notifications again. By using this API, you can ensure that once the issue is resolved or contact details are updated, message notifications can be promptly sent to the customer without requiring a new transaction.
+This API  provides a reliable interface to manually initiate message notifications for a specific transaction, based on either a provided [session\_id](checkout-api.md#session_id-string-mandatory) or [order\_no](checkout-api.md#order_no-string-optional). It is particularly useful in scenarios where message notifications—such as [SMS](../user-guide/communication-channels/sms-notifications.md), [email](../user-guide/communication-channels/email-notifications.md), or [WhatsApp](../user-guide/communication-channels/whatsapp-notifications/)—have not been delivered as expected, often due to issues with third-party services. Additionally, the API is helpful when customer contact information ([email](checkout-api.md#customer_email-string-conditional) or [phone number](checkout-api.md#customer_phone-string-conditional)) has been updated, and you want to ensure the customer receives the relevant transaction message notifications again. By using this API, you can ensure that once the issue is resolved or contact details are updated, message notifications can be promptly sent to the customer without requiring a new transaction.
 
 **Benefits:**
 
@@ -9,7 +9,7 @@ This API  provides a reliable interface to manually initiate message notificatio
 * **Manual Control:** Offers manual flexibility for cases where automatic message notifications have failed or been delayed.
 * **Contact Information Updates:** Enables re-notifying customers when their email or phone details have been changed.
 
-For further information about the message notification channels that Ottu empowers merchants with, please refer to the [Notification Communication Channels](../user-guide/notification-communication-channels/) section.
+For further information about the message notification channels that Ottu empowers merchants with, please refer to the [Notification Communication Channels](../user-guide/communication-channels/) section.
 
 ## [Setup ](message-notifications.md#setup)
 
@@ -18,7 +18,7 @@ Before you can integrate with Ottu's `Message Notifications API`, several prereq
 1.  **Checkout API Integration:**\
     Prior to using the `Message Notifications API`, you must create a payment transaction via the [Checkout API](checkout-api.md). This step captures vital transaction details, such as:
 
-    * **Customer Data**: Information like [customer\_phone](checkout-api.md#customer_phone-string-conditional) for [SMS](../user-guide/notification-communication-channels/sms-notifications.md) and [WhatsApp](../user-guide/notification-communication-channels/whatsapp-notifications/), and [customer\_email](checkout-api.md#customer_email-string-conditional) for [email](../user-guide/notification-communication-channels/email-notifications.md) message notifications is collected.
+    * **Customer Data**: Information like [customer\_phone](checkout-api.md#customer_phone-string-conditional) for [SMS](../user-guide/communication-channels/sms-notifications.md) and [WhatsApp](../user-guide/communication-channels/whatsapp-notifications/), and [customer\_email](checkout-api.md#customer_email-string-conditional) for [email](../user-guide/communication-channels/email-notifications.md) message notifications is collected.
     * **Optional Order Number**: The o[rder\_no](checkout-api.md#order_no-string-optional) may also be provided as an alternative reference for the required transaction.
 
     Upon successful creation of the payment transaction, a [session\_id](checkout-api.md#session_id-string-mandatory) is generated. This `session_id` or the `order_no` (if provided) becomes a key parameter for sending the message notifications using the `Message Notifications API`.
@@ -28,9 +28,9 @@ Before you can integrate with Ottu's `Message Notifications API`, several prereq
    When creating the payment transaction, enable the required message notification channels (e.g., SMS, email, WhatsApp).
    * If the transaction is created via the `Checkout API`, message [notifications](checkout-api.md#notifications-object-optional) parameters should be provided within the API call.
    * Alternatively, if the transaction is created from the **Ottu dashboard**, ensure that the designated checkbox for enabling message notifications is selected.
-4. **Optional:** [SMS Notification Channel](../user-guide/notification-communication-channels/sms-notifications.md)\
+4. **Optional:** [SMS Notification Channel](../user-guide/communication-channels/sms-notifications.md)\
    If SMS message notifications are required, an SMS provider should be configured for your account. Contact the [Ottu support team](mailto:support@ottu.com) for assistance with configuring the SMS provider.
-5. **Optional:** [Integrated WhatsApp Channel](../user-guide/notification-communication-channels/whatsapp-notifications/integrated-whatsapp-channel.md)\
+5. **Optional:** [Integrated WhatsApp Channel](../user-guide/communication-channels/whatsapp-notifications/integrated-whatsapp-channel.md)\
    The following requirements must be met:
    * **WhatsApp Business Account**: The merchant must have a registered WhatsApp Business account.
    * **Template Approval**: All WhatsApp templates and their content must be pre-approved by Meta/WhatsApp before being used for message notifications.
@@ -57,7 +57,7 @@ The `Message Notifications API` allows merchants to manually resend message noti
    * **Notification Channels**: The merchant specifies the required channels (e.g., SMS, email, WhatsApp) through which the message notifications should be sent.
 
 {% openapi-operation spec="july" path="/b/pbl/v2/message-notification/" method="post" %}
-[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144125Z&X-Amz-Expires=172800&X-Amz-Signature=d9fabc2d55ac74d91d5271348445322ab932c44125028ad024a51756987c6651&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI july](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250925%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250925T075824Z&X-Amz-Expires=172800&X-Amz-Signature=d57d77e14c9e42cfd8a3ce7facfb5aa430724e61eb633eae96b88a8466b03dcf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Guide ](message-notifications.md#guide)

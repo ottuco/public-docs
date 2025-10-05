@@ -35,7 +35,7 @@ dependencies:
 And then run `flutter pub get` command in the terminal.
 
 {% hint style="info" %}
-If the development is being done on Windows or Linux, and iOS support is not required, you need to adjust the following line, [Access it here](https://github.com/ottuco/ottu-flutter/blob/main/Sample/pubspec.yaml#L40), in the `pubspec.yaml` file, by replacing the `ref` value `2.1.6` with `release-no-ios`.
+If the development is being done on Windows or Linux, and iOS support is not required, you need to adjust the following line, [Access it here](https://github.com/ottuco/ottu-flutter/blob/main/Sample/pubspec.yaml#L40), in the `pubspec.yaml` file, by replacing the `ref` value `2.1.9` with `release-no-ios`.
 
 Then, run the following two commands:\
 `flutter clean`\
@@ -490,9 +490,10 @@ If a property is not set, the default value (as specified in the Figma design [h
 
 **Other**
 
-| Property Name      |                   Description                   |        Data Type        |
-| ------------------ | :---------------------------------------------: | :---------------------: |
-| `errorMessageText` | Font and color of error message text in pop-ups | [Text](flutter.md#text) |
+| Property Name                   |                           Description                          |        Data Type        |
+| ------------------------------- | :------------------------------------------------------------: | :---------------------: |
+| `errorMessageText`              |         Font and color of error message text in pop-ups        | [Text](flutter.md#text) |
+| `selectPaymentMethodHeaderText` | The text of "Select Payment Method" in the bottom sheet header | [Text](flutter.md#text) |
 
 #### [**Text Fields**](flutter.md#text-fields)
 
@@ -502,13 +503,14 @@ If a property is not set, the default value (as specified in the Figma design [h
 
 #### [**Colors**](flutter.md#colors)
 
-| Property Name                |                       Description                      |         Data Type         |
-| ---------------------------- | :----------------------------------------------------: | :-----------------------: |
-| `sdkbackgroundColor`         |      The main background of the SDK view component     | [Color](flutter.md#color) |
-| `modalBackgroundColor`       |           The background of any modal window           | [Color](flutter.md#color) |
-| `paymentItemBackgroundColor` |    The background of an item in payment options list   | [Color](flutter.md#color) |
-| `selectorIconColor`          |          The color of the icon of the payment          | [Color](flutter.md#color) |
-| `savePhoneNumberIconColor`   | The color of “Diskette” button for saving phone number | [Color](flutter.md#color) |
+| Property Name                              |                       Description                      |         Data Type         |
+| ------------------------------------------ | :----------------------------------------------------: | :-----------------------: |
+| `sdkbackgroundColor`                       |      The main background of the SDK view component     | [Color](flutter.md#color) |
+| `modalBackgroundColor`                     |           The background of any modal window           | [Color](flutter.md#color) |
+| `paymentItemBackgroundColor`               |    The background of an item in payment options list   | [Color](flutter.md#color) |
+| `selectorIconColor`                        |          The color of the icon of the payment          | [Color](flutter.md#color) |
+| `savePhoneNumberIconColor`                 | The color of “Diskette” button for saving phone number | [Color](flutter.md#color) |
+| `selectPaymentMethodHeaderBackgroundColor` |    The background of an item in payment options list   | [Color](flutter.md#color) |
 
 #### [**Buttons**](flutter.md#buttons)
 

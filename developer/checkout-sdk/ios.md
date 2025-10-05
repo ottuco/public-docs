@@ -384,9 +384,10 @@ If a property is not specified, the default value (as defined in the Figma desig
 
 **Other**
 
-| Property Name      |                   Description                   |                Data Type                |
-| ------------------ | :---------------------------------------------: | :-------------------------------------: |
-| `errorMessageText` | Font and color of error message text in pop-ups | [LabelComponent](ios.md#labelcomponent) |
+| Property Name                   |                           Description                          |                Data Type                |
+| ------------------------------- | :------------------------------------------------------------: | :-------------------------------------: |
+| `errorMessageText`              |         Font and color of error message text in pop-ups        | [LabelComponent](ios.md#labelcomponent) |
+| `selectPaymentMethodTitleLabel` | The text of "Select Payment Method" in the bottom sheet header | [LabelComponent](ios.md#labelcomponent) |
 
 #### [**Text Fields**](ios.md#text-fields)
 
@@ -396,11 +397,13 @@ If a property is not specified, the default value (as defined in the Figma desig
 
 #### [**Colors**](ios.md#colors)
 
-| Property Name          |                  Description                  | Data Type |
-| ---------------------- | :-------------------------------------------: | :-------: |
-| `backgroundColor`      | The main background of the SDK view component |  UIColor  |
-| `backgroundColorModal` |       The background of any modal window      |  UIColor  |
-| `iconColor`            |      The color of the icon of the payment     |  UIColor  |
+| Property Name                             |                            Description                            | Data Type |
+| ----------------------------------------- | :---------------------------------------------------------------: | :-------: |
+| `backgroundColor`                         |           The main background of the SDK view component           |  UIColor  |
+| `backgroundColorModal`                    |                 The background of any modal window                |  UIColor  |
+| `iconColor`                               |                The color of the icon of the payment               |  UIColor  |
+| `paymentItemBackgroundColor`              |         The background of an item in payment options list         |  UIColor  |
+| `selectPaymentMethodTitleBackgroundColor` | The background of the "Select Payment Method" bottom sheet header |  UIColor  |
 
 #### [**Buttons**](ios.md#buttons)
 

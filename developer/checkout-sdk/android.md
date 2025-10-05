@@ -31,7 +31,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.ottuco:ottu-android-checkout:2.1.7'
+    implementation 'com.github.ottuco:ottu-android-checkout:2.1.4'
 }
 ```
 

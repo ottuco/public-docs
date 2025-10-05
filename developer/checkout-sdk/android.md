@@ -292,9 +292,10 @@ If a property is not specified, the default value (as defined in the Figma desig
 
 **Other**
 
-| Property Name      |                   Description                   |        Data Type        |
-| ------------------ | :---------------------------------------------: | :---------------------: |
-| `errorMessageText` | Font and color of error message text in pop-ups | [Text](android.md#text) |
+| Property Name                   |                           Description                          |        Data Type        |
+| ------------------------------- | :------------------------------------------------------------: | :---------------------: |
+| `errorMessageText`              |         Font and color of error message text in pop-ups        | [Text](android.md#text) |
+| `selectPaymentMethodHeaderText` | The text of "Select Payment Method" in the bottom sheet header | [Text](android.md#text) |
 
 #### [**Text Fields**](android.md#text-fields)
 
@@ -304,13 +305,14 @@ If a property is not specified, the default value (as defined in the Figma desig
 
 #### [**Colors**](android.md#colors)
 
-| Property Name                |                       Description                      |         Data Type         |
-| ---------------------------- | :----------------------------------------------------: | :-----------------------: |
-| `sdkbackgroundColor`         |      The main background of the SDK view component     | [Color](android.md#color) |
-| `modalBackgroundColor`       |           The background of any modal window           | [Color](android.md#color) |
-| `paymentItemBackgroundColor` |    The background of an item in payment options list   | [Color](android.md#color) |
-| `selectorIconColor`          |          The color of the icon of the payment          | [Color](android.md#color) |
-| `savePhoneNumberIconColor`   | The color of “Diskette” button for saving phone number | [Color](android.md#color) |
+| Property Name                              |                       Description                      |         Data Type         |
+| ------------------------------------------ | :----------------------------------------------------: | :-----------------------: |
+| `sdkbackgroundColor`                       |      The main background of the SDK view component     | [Color](android.md#color) |
+| `modalBackgroundColor`                     |           The background of any modal window           | [Color](android.md#color) |
+| `paymentItemBackgroundColor`               |    The background of an item in payment options list   | [Color](android.md#color) |
+| `selectorIconColor`                        |          The color of the icon of the payment          | [Color](android.md#color) |
+| `savePhoneNumberIconColor`                 | The color of “Diskette” button for saving phone number | [Color](android.md#color) |
+| `selectPaymentMethodHeaderBackgroundColor` |    The background of an item in payment options list   | [Color](android.md#color) |
 
 #### [**Buttons**](android.md#buttons)
 

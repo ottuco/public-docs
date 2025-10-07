@@ -28,7 +28,7 @@ Ottu is available via [CocoaPods](http://cocoapods.org/). To install it, the fol
 
 {% code overflow="wrap" %}
 ```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.5'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.6'
 ```
 {% endcode %}
 

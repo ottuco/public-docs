@@ -48,6 +48,12 @@ Then, run the following two commands:\
 
 The SDK can be used on devices running **Android 8 (Android SDK 26)** or higher.
 
+{% hint style="warning" %}
+To prevent application crashes, it must be ensured that the correct parent theme is applied to the Android application. The theme configuration is defined in the `themes.xml` and/or `styles.xml` files located within the `res/values` directory. The `parent` attribute of the `style` tag should be set to `Theme.Material3.DayNight.NoActionBar`.
+
+For reference, the configuration file can be reviewed at the following link: [themes.xml on GitHub](https://github.com/ottuco/ottu-flutter/blob/main/Sample/android/app/src/main/res/values/themes.xml#L3C58-L3C94)
+{% endhint %}
+
 ### [iOS](flutter.md#ios)
 
 #### **Minimum Requirements**

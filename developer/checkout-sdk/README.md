@@ -12,8 +12,8 @@ By following this process, you can ensure that your application is able to prope
 [web.md](web.md)
 {% endcontent-ref %}
 
-{% content-ref url="ios.md" %}
-[ios.md](ios.md)
+{% content-ref url="ios/" %}
+[ios](ios/)
 {% endcontent-ref %}
 
 {% content-ref url="android.md" %}

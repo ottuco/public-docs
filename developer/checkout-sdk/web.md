@@ -1492,4 +1492,4 @@ Merchants can utilize the [beforePayment](web.md#windows.beforepayment-hook) hoo
 
 **In conclusion**, this documentation serves as your comprehensive guide to our Web SDK. Here's a quick recap of the key points covered: Information about the fundamental **Checkout SDK**, the backbone of seamless web-based transactions. Practical [demonstrations ](web.md#demo)have provided valuable insights into effective SDK integration. Detailed descriptions of [functions ](web.md#functions)and methods have equipped you to harness the SDK's full potential. Explaining the essential role of [callbacks](web.md#callbacks) in event handling. A rich array of **examples** has guided you through real-world SDK feature implementations. Exploring [Apple Pay](web.md#apple-pay)**,** [Google Pay](web.md#google-pay)**,** and even [KNET-Apple Pay](web.md#knet-apple-pay) for efficient, secure payments.
 
-As you conclude your journey through this documentation, consider exploring the next section: [**Checkout SDK - iOS**](ios.md).&#x20;
+As you conclude your journey through this documentation, consider exploring the next section: [**Checkout SDK - iOS**](ios/).&#x20;

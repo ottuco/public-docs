@@ -799,7 +799,7 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
 {% openapi-operation spec="ottu-july" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI ottu-july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/dd13d3360690246daeb6267e9ca119ec953037560d96776a32fefe02cc0fb3ec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T121912Z&X-Amz-Expires=172800&X-Amz-Signature=0cb1b44036bec355487535ff289236e5d7cdccc62853e74330ccf068d060474e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI ottu-july](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/dd13d3360690246daeb6267e9ca119ec953037560d96776a32fefe02cc0fb3ec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251013%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251013T122219Z&X-Amz-Expires=172800&X-Amz-Signature=b1d20ba9fce86f0813b0224485ff5f2244c3193dae31bbba744789d7cda29cb9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
@@ -1002,7 +1002,7 @@ Yes! Use [Auto-Debit](auto-debit.md) with a [payment\_type](checkout-api.md#paym
 
 #### :digit\_one::digit\_zero: [**How do I integrate the Checkout API with the SDK?**](checkout-api.md#how-do-i-integrate-the-checkout-api-with-the-sdk)
 
-The Checkout SDK ([Web](checkout-sdk/web.md), [Android](checkout-sdk/android.md), [iOS](checkout-sdk/ios.md)) requires a [session\_id](checkout-api.md#session_id-string-mandatory) from the Checkout API. Your backend should:
+The Checkout SDK ([Web](checkout-sdk/web.md), [Android](checkout-sdk/android.md), [iOS](checkout-sdk/ios/)) requires a [session\_id](checkout-api.md#session_id-string-mandatory) from the Checkout API. Your backend should:
 
 1. Call the [Checkout API](checkout-api.md) to create a transaction.
 2. Pass the `session_id` to the SDK for UI rendering.

@@ -167,7 +167,7 @@ Callback functions are used to retrieve the payment status. These must be provid
 The callbacks are handled by the native frameworks. Please see the links here:
 
 * [Android Callbacks](android.md#callbacks)
-* [iOS Callbacks](ios.md#callbacks)
+* [iOS Callbacks](ios/#callbacks)
 
 It is not necessary to modify anything for the callbacks, as they are managed by the native SDK.
 
@@ -827,7 +827,7 @@ For more details, refer to the following links:
 
 [Android  ](android.md#rooting-detection)
 
-[iOS](ios.md#jailbreak-detection)
+[iOS](ios/#jailbreak-detection)
 
 ### Screen Capture Prevention
 
@@ -837,7 +837,7 @@ Since the implementation differs between the two platforms, please refer to the 
 
 [Android](android.md#screen-capture-prevention)&#x20;
 
-[iOS](ios.md#screen-capture-prevention)
+[iOS](ios/#screen-capture-prevention)
 
 ## [**FAQ**](flutter.md#faq)
 

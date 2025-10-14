@@ -76,7 +76,7 @@
 * [Checkout SDK](developer/checkout-sdk/README.md)
   * [Web](developer/checkout-sdk/web.md)
   * [iOS](developer/checkout-sdk/ios/README.md)
-    * [iOS SDK Integration](developer/checkout-sdk/ios/ios-sdk-integration.md)
+    * [First Developer Journey](developer/checkout-sdk/ios/first-developer-journey.md)
   * [Android](developer/checkout-sdk/android.md)
   * [Flutter](developer/checkout-sdk/flutter.md)
 * [Webhooks](developer/webhooks/README.md)

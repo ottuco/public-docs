@@ -1,19 +1,19 @@
-# iOS SDK Integration
+# First Developer Journey
 
 This guide walks you through installing and integrating the Ottu Checkout iOS SDK into your iOS project.\
 Choose your installation **path** and follow the journey step by step.
 
-## [Video Tutorial: iOS SDK Integration](ios-sdk-integration.md#video-tutorial-ios-sdk-integration)
+## [Video Tutorial: iOS SDK Integration](first-developer-journey.md#video-tutorial-ios-sdk-integration)
 
 This video walks you step-by-step through the iOS SDK integration process. Watch it to quickly understand setup, configuration, and key features in action.
 
 {% embed url="https://drive.google.com/file/d/1XBbI_vF_ArBbVqYEsIyXERkaQtPi702k/view?usp=sharing" %}
 
-## [Prerequisites](ios-sdk-integration.md#prerequisites)
+## [Prerequisites](first-developer-journey.md#prerequisites)
 
 Before integrating the Checkout SDK, please review the following requirements:
 
-### [Apple Pay Project Settings](ios-sdk-integration.md#apple-pay-project-settings)
+### [Apple Pay Project Settings](first-developer-journey.md#apple-pay-project-settings)
 
 If your app should support **Apple Pay**:
 
@@ -21,21 +21,21 @@ If your app should support **Apple Pay**:
    `Xcode > Targets > Signing & Capabilities`
 2. Add **Apple Pay Merchant IDs (MID)** in project settings
 
-### [iOS Supported Versions](ios-sdk-integration.md#ios-supported-versions)
+### [iOS Supported Versions](first-developer-journey.md#ios-supported-versions)
 
 * Since the **minimum supported iOS version** is **14**, the **primary demo application** is implemented using **UIKit framework** (SwiftUI is recommended starting from iOS 15).\
   &#x20;[ottu-ios/Example at main · ottuco/ottu-ios](https://github.com/ottuco/ottu-ios/tree/main/Example?utm_source=chatgpt.com)
 * However, there’s also a **minimalistic SwiftUI-based demo app**:\
   [ottu-ios/Example\_SwiftUI at main · ottuco/ottu-ios](https://github.com/ottuco/ottu-ios/tree/main/Example_SwiftUI?utm_source=chatgpt.com)
 
-## [Installation](ios-sdk-integration.md#installation)
+## [Installation](first-developer-journey.md#installation)
 
 You can install the SDK via two paths:
 
 * **Path One:** Swift Package Manager (Recommended)
 * **Path Two:** CocoaPods (Deprecated)
 
-### [Path One – Install via Swift Package Manager (Recommended)](ios-sdk-integration.md#path-one-install-via-swift-package-manager-recommended)
+### [Path One – Install via Swift Package Manager (Recommended)](first-developer-journey.md#path-one-install-via-swift-package-manager-recommended)
 
 Add Ottu SDK as a dependency in `Package.swift`:
 
@@ -51,7 +51,7 @@ Or in Xcode:
 2. Go to **Project > Targets > Package Dependencies**
 3. Add `ottu-ios` as a dependency
 
-### [Path Two – Install via CocoaPods (Deprecated)](ios-sdk-integration.md#path-two-install-via-cocoapods-deprecated)
+### [Path Two – Install via CocoaPods (Deprecated)](first-developer-journey.md#path-two-install-via-cocoapods-deprecated)
 
 Add the following line to your **Podfile**:
 
@@ -85,9 +85,9 @@ pod repo update
 ```
 {% endhint %}
 
-## [Integrate Checkout SDK to the Source Code](ios-sdk-integration.md#integrate-checkout-sdk-to-the-source-code)
+## [Integrate Checkout SDK to the Source Code](first-developer-journey.md#integrate-checkout-sdk-to-the-source-code)
 
-Once the SDK is installed (via [Path One](ios-sdk-integration.md#path-one-install-via-swift-package-manager-recommended) or [Path Two](ios-sdk-integration.md#path-two-install-via-cocoapods-deprecated)), follow these steps to integrate it into your app.
+Once the SDK is installed (via [Path One](first-developer-journey.md#path-one-install-via-swift-package-manager-recommended) or [Path Two](first-developer-journey.md#path-two-install-via-cocoapods-deprecated)), follow these steps to integrate it into your app.
 
 {% stepper %}
 {% step %}
@@ -206,7 +206,7 @@ if let paymentVC = self.checkout?.paymentViewController(),
 > This is a **basic example** that adds the Checkout view without handling dimensions.\
 > For proper layout with constraints, refer to the demo app: [OttuPaymentsViewController.swift](https://github.com/ottuco/ottu-ios/blob/main/Example/OttuApp/OttuPaymentsViewController.swift#L91)
 
-## [Callbacks](ios-sdk-integration.md#callbacks)
+## [Callbacks](first-developer-journey.md#callbacks)
 
 In order `ViewController` to be compliant to `OttuDelegate`, add the following functions to `ViewController` class:
 

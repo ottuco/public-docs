@@ -135,7 +135,7 @@ This guide outlines the steps for initiating payment sessions and securely savin
     \
     **Key Notes:**
 
-    * **Choosing Between Checkout SDK and API:** The `Checkout SDK` is preferred for its user-friendly UI implementation and essential support for specific payment methods like [Apple Pay](checkout-sdk/ios/) and [Google Pay](checkout-sdk/android.md). Your choice should align with your specific operational needs.
+    * **Choosing Between Checkout SDK and API:** The `Checkout SDK` is preferred for its user-friendly UI implementation and essential support for specific payment methods like [Apple Pay](checkout-sdk/ios/) and [Google Pay](checkout-sdk/android/). Your choice should align with your specific operational needs.
     * **CVV Requirements:** The necessity for Card Verification Value (CVV) may differ based on the Payment Gateway configuration. Adjustments can be made by reaching out to technical support.
 3. **Save the Card:**\
    When customer elects to save his card details, the information is tokenized and securely stored upon payment completed successfuly, enabling easier transactions in the future.

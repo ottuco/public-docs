@@ -16,8 +16,8 @@ By following this process, you can ensure that your application is able to prope
 [ios](ios/)
 {% endcontent-ref %}
 
-{% content-ref url="android.md" %}
-[android.md](android.md)
+{% content-ref url="android/" %}
+[android](android/)
 {% endcontent-ref %}
 
 ## [Ottu-Checkout definition](./#ottu-checkout-definition)

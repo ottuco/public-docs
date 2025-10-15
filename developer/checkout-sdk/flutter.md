@@ -152,7 +152,7 @@ An `ApiTransactionDetails` class object is used to store transaction details. If
 
 A Theme class object is used for UI customization. All fields are optional and may include values for background colors, text colors, and fonts for various UI components.
 
-For more details, refer to [Android Customization Theme](android.md#customization-theme).
+For more details, refer to [Android Customization Theme](android/#customization-theme).
 
 #### [**displaySettings**](flutter.md#displaysettings-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
@@ -166,7 +166,7 @@ Callback functions are used to retrieve the payment status. These must be provid
 
 The callbacks are handled by the native frameworks. Please see the links here:
 
-* [Android Callbacks](android.md#callbacks)
+* [Android Callbacks](android/#callbacks)
 * [iOS Callbacks](ios/#callbacks)
 
 It is not necessary to modify anything for the callbacks, as they are managed by the native SDK.
@@ -825,7 +825,7 @@ The **Flutter SDK** does **not** perform **rooting** or **jailbreak detection** 
 
 For more details, refer to the following links:
 
-[Android  ](android.md#rooting-detection)
+[Android  ](android/#rooting-detection)
 
 [iOS](ios/#jailbreak-detection)
 
@@ -835,7 +835,7 @@ The SDK includes mechanisms to prevent screen capturing (such as screenshots and
 
 Since the implementation differs between the two platforms, please refer to the respective native documentation for more details.
 
-[Android](android.md#screen-capture-prevention)&#x20;
+[Android](android/#screen-capture-prevention)&#x20;
 
 [iOS](ios/#screen-capture-prevention)
 

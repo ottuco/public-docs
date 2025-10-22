@@ -41,7 +41,7 @@ Add Ottu SDK as a dependency in `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.4")
+    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.6")
 ]
 ```
 
@@ -57,7 +57,7 @@ Add the following line to your **Podfile**:
 
 {% code overflow="wrap" %}
 ```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.4'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.6'
 ```
 {% endcode %}
 

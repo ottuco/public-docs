@@ -63,3 +63,52 @@ The `PaymentOptionsDisplaySettings` struct is used to configure how payment opti
 #### [**successCallback, errorCallback and successCallback**](functions.md#successcallback-errorcallback-and-successcallback-uint-required) _<mark style="color:blue;">`Uint`</mark>_ _<mark style="color:red;">`required`</mark>_
 
 Callback functions are used to retrieve the payment status and must be provided directly to the Checkout initialization function. For more details, refer to the [Callbacks](functions.md#callbacks) section.
+
+## [Payment Options Display Mode](functions.md#payment-options-display-mode) <a href="#payment-options-display-mode" id="payment-options-display-mode"></a>
+
+The display of payment options can be adjusted using the SDK with the following settings:
+
+* `mode` (`BottomSheet` or List)
+* `visibleItemsCount` (default is 5)
+* `defaultSelectedPgCode` (default is none)
+
+By default, **BottomSheet mode** is used, as was implemented in previous releases. **List mode** is a new option that allows the list of payment methods to be displayed above the **Payment Details** section and the **Pay** button.
+
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+**A view with a selected item:**
+
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+**A view with an expanded list:**
+
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+
+* `visibleItemsCount` is an unsigned integer that sets the number of items to be displayed at once. It works only in List mode. If the number of available payment options is fewer than this value, the list height is automatically adjusted to the minimum required.
+
+{% hint style="info" %}
+If 0 is passed, an exception is thrown by the SDK, which must be handled by the parent app.
+{% endhint %}
+
+* `defaultSelectedPgCode` is a PG code that will be automatically selected. The SDK searches for the payment option with the matching PG code and selects it if found. If no match is found, no selection is made.
+
+All these parameters are optional and are constructed using the following function:
+
+{% code overflow="wrap" %}
+```swift
+private fun getPaymentOptionSettings(): Checkout.PaymentOptionsDisplaySettings {
+    val visibleItemsCount = 5 // set needed value here
+    val selectedPgCode = "knet" // set needed value here
+    val mode = Checkout.PaymentOptionsDisplaySettings.PaymentOptionsDisplayMode.List(visibleItemsCount)
+    return Checkout.PaymentOptionsDisplaySettings(mode, selectedPgCode)
+}
+```
+{% endcode %}
+
+These parameters are passed to the `Checkout.init` builder class via the following object:
+
+```swift
+.paymentOptionsDisplaySettings(paymentOptionsDisplaySettings)
+```
+
+To view the full function call, please refer to the [Ottu SDK - Android | Example](functions.md#example) chapter in the documentation.

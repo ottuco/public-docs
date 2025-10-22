@@ -16,43 +16,6 @@ Additionally, optional configurations such as the [forms of payment](./#formsofp
 [API private key](../../authentication.md#private-key-api-key) should never be used on the client side. Instead, [API public key ](../../authentication.md#public-key)should be used. This is essential to ensure the security of your application and the protection of sensitive data.
 {% endhint %}
 
-## [Installation](./#installation) <a href="#installation" id="installation"></a>
-
-### [Minimum Requirements](./#minimum-requirements) <a href="#minimum-requirements" id="minimum-requirements"></a>
-
-The SDK is supported on devices running iOS 14 or higher.
-
-### [**Installation with CocoaPods**](./#installation-with-cocoapods)
-
-Ottu is available via [CocoaPods](http://cocoapods.org/). To install it, the following line must be added to the Podfile:
-
-{% code overflow="wrap" %}
-```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.6'
-```
-{% endcode %}
-
-{% hint style="info" %}
-* When `ottu_checkout_sdk` is added to the **Podfile**, the **GitHub repository** must also be specified as follows:
-* If CocoaPods returns an error like _"could not find compatible versions for pod"_, try running the `pod repo update` command to resolve it.
-{% endhint %}
-
-```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios'
-```
-
-### [**Installation with Swift Package Manager**](./#installation-with-swift-package-manager)
-
-The [Swift Package Manager](https://swift.org/package-manager/) (SPM) is a tool designed for automating the distribution of Swift code and is integrated into the `Swift` compiler.
-
-Once the Swift package has been set up, adding Alamofire as a dependency requires simply including it in the `dependencies` value of the `Package.swift` file.
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.4")
-]
-```
-
 ## [Native UI](./#native-ui) <a href="#native-ui" id="native-ui"></a>
 
 The SDK UI is embedded as a `View` within any part of a `ViewController` in the merchant's application.

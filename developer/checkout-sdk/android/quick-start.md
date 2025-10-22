@@ -1,14 +1,14 @@
-# First Developer Journey
+# Quick Start
 
 This guide outlines the essential steps for integrating **Ottu Android Checkout SDK** into your mobile application. It provides a concise flow from setup to callback handling, helping developers achieve a seamless checkout experience.
 
-## [Video Tutorial: Android SDK Integration](first-developer-journey.md#video-tutorial-android-sdk-integration)
+## [Video Tutorial: Android SDK Integration](quick-start.md#video-tutorial-android-sdk-integration)
 
 This video guides you step-by-step through the **Android SDK integration process**. Watch it to quickly learn how to set up, configure, and see the key features in action.
 
 {% embed url="https://drive.google.com/file/d/1gJuyrZlp5sQmRDFRpq27F0bHWZ9aqjOz/view?usp=sharing" %}
 
-## [SDK Installation](first-developer-journey.md#sdk-installation)
+## [SDK Installation](quick-start.md#sdk-installation)
 
 {% stepper %}
 {% step %}
@@ -32,7 +32,7 @@ implementation("com.github.ottuco:ottu-android-checkout:2.1.4")
 {% endstep %}
 {% endstepper %}
 
-## [Integrate the Checkout SDK](first-developer-journey.md#integrate-the-checkout-sdk)
+## [Integrate the Checkout SDK](quick-start.md#integrate-the-checkout-sdk)
 
 {% stepper %}
 {% step %}
@@ -227,7 +227,7 @@ The **required** parameters are:
 `setupPreload` is an object taken from the transaction creation response. When passed to the SDK, it prevents it from requesting the transaction details on its own and therefore speed-ups the initialization process by several seconds. This `setupPreload` is a decoded JSON object to a `TransactionDetails` \
 For reference, check  the example: [here](https://github.com/ottuco/ottu-android/blob/main/Example/app/src/main/java/com/ottu/CheckoutSampleActivity.kt)&#x20;
 
-## [Callbacks](first-developer-journey.md#callbacks)
+## [Callbacks](quick-start.md#callbacks)
 
 The SDK triggers three main callbacks:
 
@@ -237,7 +237,7 @@ The SDK triggers three main callbacks:
 
 Developers should customize the logic within these callbacks to handle transaction results appropriately.
 
-## [Useful Resources](first-developer-journey.md#useful-resources)
+## [Useful Resources](quick-start.md#useful-resources)
 
 * [Forms of Payment](./#formsofpayment-array-optional)&#x20;
 * [Customization Theme](./#customization-theme)&#x20;

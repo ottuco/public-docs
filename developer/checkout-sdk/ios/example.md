@@ -36,22 +36,68 @@ let error as LocalizedError {
   return
 }
 
-if let paymentView = self.checkout?.paymentView() {
-  paymentView.translatesAutoresizingMaskIntoConstraints = false
-  self.paymentContainerView.addSubview(paymentView)
+if let paymentVC = self.checkout?.paymentViewController(),
+  let paymentView = paymentVC.view {
 
-  NSLayoutConstraint.activate([
-        paymentView.leadingAnchor.constraint(equalTo: self.paymentContainerView.leadingAnchor),
-        self.paymentContainerView.trailingAnchor.constraint(equalTo: paymentView.trailingAnchor),
-        paymentView.topAnchor.constraint(equalTo: self.paymentContainerView.topAnchor),
-        self.paymentContainerView.bottomAnchor.constraint(equalTo: paymentView.bottomAnchor)
-      ])
-}
+    self.addChild(paymentVC)
+
+    let resizableContainer = ResizableContainerView()
+    resizableContainer.translatesAutoresizingMaskIntoConstraints = false
+    resizableContainer.addSubview(paymentView)
+    paymentVC.didMove(toParent: self)
+
+    paymentView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+    paymentView.topAnchor.constraint(equalTo: resizableContainer.topAnchor),
+    paymentView.bottomAnchor.constraint(equalTo: resizableContainer.bottomAnchor),
+    paymentView.leadingAnchor.constraint(equalTo: resizableContainer
+        .leadingAnchor, constant: 16),
+    paymentView.trailingAnchor.constraint(equalTo: resizableContainer
+        .trailingAnchor, constant: -16)
+  ])
+
+    contentView.addSubview(resizableContainer)
+    NSLayoutConstraint.activate([
+    resizableContainer.topAnchor.constraint(equalTo: topLabel.bottomAnchor,
+        constant: 16),
+    resizableContainer.leadingAnchor.constraint(equalTo: contentView
+        .leadingAnchor),
+    resizableContainer.trailingAnchor.constraint(equalTo: contentView
+        .trailingAnchor)
+  ])
+
+    resizableContainer.sizeChangedCallback = {
+      [weak self] _ in
+      guard
+      let self
+      else {
+        return
+      }
+      updateScrollEnabled(
+        for: scrollView)
+    }
+
+    let bottomLabel = UILabel()
+    bottomLabel.text = "Some user UI elements"
+    bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+
+    contentView.addSubview(bottomLabel)
+    NSLayoutConstraint.activate([
+    bottomLabel.topAnchor.constraint(equalTo: resizableContainer.bottomAnchor,
+        constant: 16),
+    bottomLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+    bottomLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+        constant: -16)
+  ])
+  }
+
+// outside `viewDidLoad`
 extension OttuPaymentsViewController: OttuDelegate {
   func errorCallback(_ data: [String: Any] ? ) {
     paymentContainerView.isHidden = true
 
-    let alert = UIAlertController(title: "Error", message: data?.debugDescription ?? "", preferredStyle:
+    let alert = UIAlertController(title: "Error", message: data
+      ?.debugDescription ?? "", preferredStyle:
       .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .cancel))
     self.present(alert, animated: true)
@@ -60,7 +106,8 @@ extension OttuPaymentsViewController: OttuDelegate {
   func cancelCallback(_ data: [String: Any] ? ) {
     var message = ""
 
-    if let paymentGatewayInfo = data ? ["payment_gateway_info"] as ? [String: Any],
+    if let paymentGatewayInfo = data ? ["payment_gateway_info"] as ? [
+        String: Any],
       let pgName = paymentGatewayInfo["pg_name"] as ? String,
         pgName == "kpay" {
           message = paymentGatewayInfo["pg_response"].debugDescription
@@ -70,7 +117,8 @@ extension OttuPaymentsViewController: OttuDelegate {
 
     paymentContainerView.isHidden = true
 
-    let alert = UIAlertController(title: "Canсel", message: message, preferredStyle: .alert)
+    let alert = UIAlertController(title: "Canсel", message: message,
+      preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .cancel))
     self.present(alert, animated: true)
   }
@@ -79,7 +127,8 @@ extension OttuPaymentsViewController: OttuDelegate {
     paymentContainerView.isHidden = true
     paymentSuccessfullLabel.isHidden = false
 
-    let alert = UIAlertController(title: "Success", message: data?.debugDescription ?? "", preferredStyle:
+    let alert = UIAlertController(title: "Success", message: data
+      ?.debugDescription ?? "", preferredStyle:
       .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .cancel))
     present(alert, animated: true)

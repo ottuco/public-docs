@@ -70,10 +70,10 @@ Callback functions are used to retrieve the payment status. These must be provid
 
 The SDK provides flexible customization for how payment options are displayed. It supports the following optional parameters:
 
-* **`mode`**: Determines the layout style—either `BottomSheet` (default) or `List`.
+* **`paymentOptionsListMode`**: Determines the layout style—either `BottomSheet` (default) or `List`.
   * **BottomSheet**: This is the default layout used in previous SDK versions.
   * **List**: A new layout that shows payment options in a vertical list placed above the **Payment Details** section and the **Pay** button.
-* **`visibleItemsCount`**: Sets how many payment options are shown at once (default is `5`). Applicable only in `List` mode.
+* **`paymentOptionsListCount`**: Sets how many payment options are shown at once (default is `5`). Applicable only in `List` mode.
   * This unsigned integer controls how many payment options are visible simultaneously in **List** mode.
   * If the number of available options is less than `visibleItemsCount`, the list automatically resizes to fit the actual number of options.
 

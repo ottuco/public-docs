@@ -6,6 +6,8 @@ This guide outlines the essential steps for integrating **Ottu Android Checkout 
 
 This video guides you step-by-step through the **Android SDK integration process**. Watch it to quickly learn how to set up, configure, and see the key features in action.
 
+{% embed url="https://drive.google.com/file/d/1UkZQSrF8rPJDguU85akAdsfkQ1sPY-rF/view?usp=sharing" %}
+
 ## [SDK Installation](quick-start.md#sdk-installation)
 
 {% stepper %}

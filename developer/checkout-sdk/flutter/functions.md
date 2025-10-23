@@ -58,7 +58,7 @@ A Theme class object is used for UI customization. All fields are optional and m
 
 For more details, refer to [Android Customization Theme](../android/#customization-theme).
 
-#### [**d**paymentOptionsDisplaySettings](functions.md#dpaymentoptionsdisplaysettings-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
+#### **d**[isplaySettings](functions.md#displaysettings-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
 The `displaySettings` object accepts a `PaymentOptionsDisplaySettings` configuration, which defines how payment options are presented to the user during checkout. For more details, refer to the   [Payment Options Display Mode](functions.md#payment-options-display-mode) section.
 

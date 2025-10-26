@@ -3,6 +3,12 @@
 This guide explains how to integrate the **Ottu Checkout SDK** into a Flutter application from scratch.\
 It walks you through[ project setup](quick-start.md#project-setup), SDK installation, and configuration steps for both [Android](quick-start.md#android-integration) and [iOS](quick-start.md#ios-integration), ensuring a smooth and efficient checkout experience within your Flutter app.
 
+## [**Video Tutorial: Flutter SDK Integration**](quick-start.md#video-tutorial-flutter-sdk-integration)
+
+This video walks you through the complete Flutter SDK integration process. Follow along to easily set up, configure, and explore the core features in action.
+
+{% embed url="https://drive.google.com/file/d/14nl7dEoxlsozLY6fQOLpMCzciYvj3-Oo/view?usp=sharing" %}
+
 ## [Installation](quick-start.md#pre-requisites) <a href="#pre-requisites" id="pre-requisites"></a>
 
 {% stepper %}

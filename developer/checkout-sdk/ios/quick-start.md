@@ -7,7 +7,7 @@ Choose your installation **path** and follow the journey step by step.
 
 This video walks you step-by-step through the iOS SDK integration process. Watch it to quickly understand setup, configuration, and key features in action.
 
-{% embed url="https://drive.google.com/file/d/1XBbI_vF_ArBbVqYEsIyXERkaQtPi702k/view?usp=sharing" %}
+{% embed url="https://drive.google.com/file/d/10qN4Iuy-6dU6-rLNRZNodgjdB_AEHZCk/view?usp=sharing" %}
 
 ## [Prerequisites](quick-start.md#prerequisites)
 

@@ -110,6 +110,7 @@
     * [Customization Theme](developer/checkout-sdk/flutter/customization-theme.md)
     * [Payment Gateway Compliance & Information](developer/checkout-sdk/flutter/payment-gateway-compliance-and-information.md)
     * [Error Reporting & Cybersecurity Measures](developer/checkout-sdk/flutter/error-reporting-and-cybersecurity-measures.md)
+    * [Releasing Your App](developer/checkout-sdk/flutter/releasing-your-app.md)
     * [FAQ](developer/checkout-sdk/flutter/faq.md)
 * [Webhooks](developer/webhooks/README.md)
   * [Payment Notification](developer/webhooks/payment-notification.md)

@@ -359,7 +359,7 @@ If `auto_debit` is selected:
 1. [agreement](checkout-api.md#agreement-object-conditional) and [customer\_id](checkout-api.md#customer_id-string-conditional) parameters will also be mandatory.
 2. Only `PG codes` supporting [tokenization](tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments.
 
-### [**payment\_instrument**](checkout-api.md#payment_instrument)&#x20;
+#### [**payment\_instrument**](checkout-api.md#payment_instrument)&#x20;
 
 _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -891,7 +891,7 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
 {% openapi-operation spec="october" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251028%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251028T135249Z&X-Amz-Expires=172800&X-Amz-Signature=9385155d87f7900e6beabc3342fbc2511ea6396c7e03189ce59ddc1200212d4a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251028%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251028T135751Z&X-Amz-Expires=172800&X-Amz-Signature=44b2711d0bf1d3fc7d0a55b47d5d5c592a62bdaba7594015b3d7de82186dc752&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)

@@ -359,6 +359,98 @@ If `auto_debit` is selected:
 1. [agreement](checkout-api.md#agreement-object-conditional) and [customer\_id](checkout-api.md#customer_id-string-conditional) parameters will also be mandatory.
 2. Only `PG codes` supporting [tokenization](tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments.
 
+### [**payment\_instrument**](checkout-api.md#payment_instrument)&#x20;
+
+_<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+It provides the essential values required for direct payment processing, including details about the selected payment instrument, the credentials used to authorize the transaction, and the rules that define the payment processing flow.
+
+{% hint style="danger" %}
+Do **not** call this API from the browser. When using the `payment_instrument` parameter in the Checkout API, this endpoint must be called **server-to-server** to prevent exposure of sensitive payment data and credentials.
+{% endhint %}
+
+{% hint style="warning" %}
+In `payment_instrument`, only one `pg_code` is allowed. The selected gateway must support the chosen payment method (Apple Pay, Google Pay, or Auto Debit).
+{% endhint %}
+
+<details>
+
+<summary><em>payment_instrument object details</em></summary>
+
+#### :digit\_one:**instrument\_type &#x20;**_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
+
+It specifies the payment method being used. This determines how the `payload` is interpreted and how the payment flow proceeds.
+
+> **Enum:**
+>
+> * `apple_pay` → Apple Pay (digital wallet)
+> * `google_pay` → Google Pay (digital wallet)
+> * `token` → Token-based recurring or stored payment
+
+:digit\_two:**payload&#x20;**_<mark style="color:blue;">**`object`**</mark>_ _<mark style="color:red;">**`required`**</mark>_
+
+It contains the payment credentials or token received from the provider. Must be passed **exactly as received**, with no modifications.
+
+**Example:**
+
+*   **`"instrument_type": "apple_pay"`**\
+    The `payload` must be a dictionary object containing the complete Apple Pay token from Apple’s Payment Sheet. Always pass it exactly as received, without any modification.
+
+    {% code overflow="wrap" %}
+    ```json
+    {
+      "payment_instrument": {
+        "instrument_type": "apple_pay",
+        "payload": {
+          "version": "EC_v1",
+          "data": "encrypted_payment_data_base64",
+          "signature": "signature_base64",
+          "header": {
+            "ephemeralPublicKey": "key_base64",
+            "publicKeyHash": "hash_base64",
+            "transactionId": "transaction_id"
+          }
+        }
+      }
+    }
+    ```
+    {% endcode %}
+*   **`"instrument_type": "google_pay"`** \
+    The `payload` must be a dictionary object containing the complete Google Pay payment data, including encrypted payment information and signatures.
+
+    ```json
+    {
+      "payment_instrument": {
+        "instrument_type": "google_pay",
+        "payload": {
+          "signature": "MEUCIQCbtFh7UIe1Bpi7...",
+          "intermediateSigningKey": {
+            "signedKey": "{\"keyValue\":\"MFkwEw...\"}",
+            "signatures": ["MEQCIH0G6CYKU..."]
+          },
+          "protocolVersion": "ECv2",
+          "signedMessage": "{\"encryptedMessage\":\"...\"}"
+        }
+      }
+    }
+    ```
+*   **`"instrument_type": "token"`** \
+    The `payload` must be a dictionary. It contains the saved card toke.
+
+    ```json
+    {
+        "payment_instrument": {
+            "instrument_type": "token"
+            "payload": {
+                "token": "*********"
+            },
+
+        }
+    }
+    ```
+
+</details>
+
 #### [**product\_type**](checkout-api.md#product_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The type of product or service being purchased. This field may be used for tracking and reporting purposes\
@@ -798,8 +890,8 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
-{% openapi-operation spec="ottu-july" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI ottu-july](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/dd13d3360690246daeb6267e9ca119ec953037560d96776a32fefe02cc0fb3ec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251015%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251015T100832Z&X-Amz-Expires=172800&X-Amz-Signature=6501e3e43253f8e660f2a668438872f3fdf0f0d1453adad3baa66e74c3fbfb6f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% openapi-operation spec="october" path="/b/checkout/v1/pymt-txn/" method="post" %}
+[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251028%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251028T135249Z&X-Amz-Expires=172800&X-Amz-Signature=9385155d87f7900e6beabc3342fbc2511ea6396c7e03189ce59ddc1200212d4a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)

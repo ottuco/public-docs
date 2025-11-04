@@ -9,6 +9,14 @@ This video walks you through the complete Flutter SDK integration process. Follo
 
 {% embed url="https://drive.google.com/file/d/14nl7dEoxlsozLY6fQOLpMCzciYvj3-Oo/view?usp=sharing" %}
 
+## [Video Tutorial: Releasing Your Android Application](quick-start.md#video-tutorial-releasing-your-android-application)
+
+In this video, we'll walk you through the complete process of preparing and releasing your Android application. You'll learn how to verify your **build.gradle.kts** configuration, set up and update **ProGuard rules**, and resolve missing rule issues to ensure a smooth release build. Follow along step by step as we guide you through the commands and configuration updates needed to successfully generate your release APK. For further information, please refer to[ Releasing Your APP](quick-start.md#releasing-your-app) section.
+
+{% embed url="https://drive.google.com/file/d/1fKtphZ_S5MT45UuJAoaHVxgIXt4hJ0aV/view?usp=sharing" %}
+
+
+
 ## [Installation](quick-start.md#pre-requisites) <a href="#pre-requisites" id="pre-requisites"></a>
 
 {% stepper %}

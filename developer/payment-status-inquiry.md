@@ -84,8 +84,8 @@ To request a status inquiry, you must provide at least one of the following iden
 
 ## [API Schema References](payment-status-inquiry.md#api-schema-references)
 
-{% openapi-operation spec="july" path="/b/pbl/v2/inquiry/" method="post" %}
-[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144122Z&X-Amz-Expires=172800&X-Amz-Signature=c84460f61628c6c59d8cf47f0ab6feb292ab479a8b842a614d9635a7e35ebf97&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% openapi-operation spec="inquiry-sandbox" path="/b/pbl/v2/inquiry/" method="post" %}
+[OpenAPI inquiry-sandbox](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/92e1cf2f9254df51c2ae6282f7deb4c1d44e8a76cf8e4f016c83e93b01ed6edc.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251109%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251109T101513Z&X-Amz-Expires=172800&X-Amz-Signature=a56b61aae0043381115de3ac8f085a29382e5742fe5a6e04129bd8453aa6838d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Guide](payment-status-inquiry.md#guide)

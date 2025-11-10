@@ -56,7 +56,7 @@ The `Theme` class object is used for UI customization, allowing modifications to
 
 All fields in the `Theme` class are optional. If a theme is not specified, the default UI settings will be applied. For more details, refer to the [Customization Theme](functions.md#customization-theme) section.
 
-#### [paymentOptionsDisplaySettings](functions.md#paymentoptionsdisplaysettings-object-optional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**displaySettings**](functions.md#displaysettings-object-optional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The `PaymentOptionsDisplaySettings` struct is used to configure how payment options are displayed. More details can be found in the [Payment Options Display Mode](functions.md#payment-options-display-mode) section.
 

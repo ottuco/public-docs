@@ -46,7 +46,7 @@ The `formsOfPayment` parameter allows customization of the payment methods displ
 
 #### [**setupPreload**](functions.md#setuppreload-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `ApiTransactionDetails` class object stores transaction details.
+The `TransactionDetails`  class object stores transaction details.
 
 If this object is provided, the SDK will not need to retrieve transaction details from the backend, thereby reducing processing time and improving efficiency.
 

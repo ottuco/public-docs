@@ -1,6 +1,6 @@
 # Functions
 
-## [**SDK Initialization**](functions.md#sdk-initialization)
+## [SDK Initialization](functions.md#sdk-initialization)
 
 The Checkout SDK is initialized using the `CheckoutArguments` class, which includes the [properties](functions.md#properties) listed below.
 
@@ -8,7 +8,7 @@ To initialize the SDK, an instance of `CheckoutArguments` must be passed as an a
 
 For a detailed implementation example, refer to the [Example](functions.md#example) section.
 
-## [**Properties**](functions.md#properties)
+### [**Properties**](functions.md#properties)
 
 #### [**merchantId**](functions.md#merchantid-string-required) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
@@ -30,7 +30,7 @@ Ensure that only the **public key** is used. The [private key](../../authenticat
 
 It is a unique identifier for the payment transaction associated with the checkout process.
 
-This identifier is automatically generated when a payment transaction is created. For further details on how to use the `session_id` parameter in the [Checkout API](../../checkout-api.md), refer to the [session\_id](../../checkout-api.md#session_id-string-mandatory) documentation.
+This identifier is automatically generated when a payment transaction is created. For further details on how to use the `session_id` parameter in the [Checkout API](../../checkout-api.md), refer to the [session\_id](broken-reference) documentation.
 
 #### [**formsOfPayment**](functions.md#formsofpayment-array-optional) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
@@ -44,13 +44,9 @@ The `formsOfPayment` parameter is used to customize the forms of payment display
 * `redirect`: A payment method where customers are redirected to an external payment gateway or a third-party processor to complete the transaction.
 * `stcPay`: A method where customers enter their mobile number and authenticate using an OTP sent to their mobile device.
 
-{% hint style="info" %}
-If `formsOfPayment` are passed manually in an array, wrap each item in quotes—for example, `"stcPay"`.
-{% endhint %}
+#### [**setupPreload**](functions.md#setuppreload-object-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
-#### [**setupPreload**](functions.md#setuppreload-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
-
-An `ApiTransactionDetails` class object is used to store transaction details. If provided, transaction details will not be requested from the backend, thereby reducing processing time.
+It is used to store transaction details. If provided, transaction details will not be requested from the backend, thereby reducing processing time.
 
 #### [**theme**](functions.md#theme-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
@@ -58,22 +54,22 @@ A Theme class object is used for UI customization. All fields are optional and m
 
 For more details, refer to [Android Customization Theme](../android/#customization-theme).
 
-#### **d**[isplaySettings](functions.md#displaysettings-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
+#### [**paymentOptionsDisplaySettings**](functions.md#paymentoptionsdisplaysettings-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
-The `displaySettings` object accepts a `PaymentOptionsDisplaySettings` configuration, which defines how payment options are presented to the user during checkout. For more details, refer to the   [Payment Options Display Mode](functions.md#payment-options-display-mode) section.
+The `PaymentOptionsDisplaySettings` object accepts a `PaymentOptionsDisplaySettings` configuration, which defines how payment options are presented to the user during checkout. For more details, refer to the   [Payment Options Display Mode](functions.md#payment-options-display-mode) section.
 
 #### [**successCallback, errorCallback, and successCallback**](functions.md#successcallback-errorcallback-and-successcallback-unit-required) _<mark style="color:blue;">`unit`</mark>_ _<mark style="color:red;">**`required`**</mark>_
 
 Callback functions are used to retrieve the payment status. These must be provided directly to the Checkout initialization function. For more information, please check [here](functions.md#callbacks).
 
-## [Payment Options Display Mode](functions.md#payment-options-display-mode) <a href="#payment-options-display-mode" id="payment-options-display-mode"></a>
+## [Payment Options Display Mode](functions.md#payment-options-display-mode)
 
 The SDK provides flexible customization for how payment options are displayed. It supports the following optional parameters:
 
-* **`paymentOptionsListMode`**: Determines the layout style—either `BottomSheet` (default) or `List`.
-  * **BottomSheet**: This is the default layout used in previous SDK versions.
-  * **List**: A new layout that shows payment options in a vertical list placed above the **Payment Details** section and the **Pay** button.
-* **`paymentOptionsListCount`**: Sets how many payment options are shown at once (default is `5`). Applicable only in `List` mode.
+* **`paymentOptionsListMode`**: Determines the layout style—either `PaymentOptionsDisplayMode.BOTTOM_SHEET` (default) or `PaymentOptionsDisplayMode.LIST`.
+  * **BOTTOM\_SHEET**: This is the default layout used in previous SDK versions.
+  * **LIST**: A new layout that shows payment options in a vertical list placed above the **Payment Details** section and the **Pay** button.
+* `visibleItemsCount:` Sets how many payment options are shown at once (default is `5`). Applicable only in `List` mode.
   * This unsigned integer controls how many payment options are visible simultaneously in **List** mode.
   * If the number of available options is less than `visibleItemsCount`, the list automatically resizes to fit the actual number of options.
 
@@ -81,7 +77,7 @@ The SDK provides flexible customization for how payment options are displayed. I
 Passing `0` will cause the SDK to throw an exception. This exception must be caught and handled by the parent application.
 {% endhint %}
 
-* **`defaultSelectedPgCode`**: Specifies a payment gateway [(PG) code](../../checkout-api.md#pg_codes-array-required) to be pre-selected by default.
+* **`defaultSelectedPgCode`**: Specifies a payment gateway [(PG) code](broken-reference) to be pre-selected by default.
   * This field accepts a PG code to auto-select a specific payment option.
   * If the SDK finds a payment method matching the provided PG code, it will be selected by default.
   * If no match is found, no option is selected.
@@ -108,9 +104,10 @@ Here is a code sample:
 ```swift
 val paymentOptionsDisplayMode =
   if (showPaymentOptionsList) Checkout.PaymentOptionsDisplaySettings.PaymentOptionsDisplayMode.List(
-    visiblePaymentItemsCount = paymentOptionsListCount
-  ) else Checkout.PaymentOptionsDisplaySettings.PaymentOptionsDisplayMode.BottomSheet
-val paymentOptionsDisplaySettings = Checkout.PaymentOptionsDisplaySettings(
+    visibleItemsCount = paymentOptionsListCount
+  )
+else Checkout.PaymentOptionsDisplaySettings.PaymentOptionsDisplayMode.BottomSheet
+val displaySettings = Checkout.PaymentOptionsDisplaySettings(
   mode = paymentOptionsDisplayMode,
   defaultSelectedPgCode = defaultSelectedPgCode
 )
@@ -120,7 +117,7 @@ val paymentOptionsDisplaySettings = Checkout.PaymentOptionsDisplaySettings(
 and passed to `Checkout.init` builder class via the following object:
 
 ```swift
-.paymentOptionsDisplaySettings(paymentOptionsDisplaySettings)
+.displaySettings(displaySettings)
 ```
 
 #### iOS <a href="#ios.2" id="ios.2"></a>

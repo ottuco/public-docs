@@ -199,15 +199,17 @@ ValueListenableBuilder(
     return SizedBox(
       height: height.toDouble(),
       child: OttuCheckoutWidget(
-          arguments: CheckoutArguments(
+        arguments: CheckoutArguments(
           merchantId: "alpha.ottu.net",
           apiKey: 'your Api key',
           sessionId: 'your session id',
           amount: 20.0,
           showPaymentDetails: true,
-          paymentOptionsListMode: PaymentOptionsListMode.LIST,
-          paymentOptionsListCount: 5,
-          defaultSelectedPgCode: '',
+          paymentOptionsDisplaySettings: PaymentOptionsDisplaySettings(
+            mode: PaymentOptionsDisplayMode.BOTTOM_SHEET,
+            visibleItemsCount: 5,
+            defaultSelectedPgCode: "",
+          ),
         ),
       ),
     );
@@ -240,7 +242,7 @@ Register a handler for this `MethodChannel`.\
 It is recommended to do this inside the `didChangeDependencies()` widget state callback method:
 
 ```dart
-  @override
+   @override
   void didChangeDependencies() {
     _methodChannel.setMethodCallHandler((call) async {
       switch (call.method) {

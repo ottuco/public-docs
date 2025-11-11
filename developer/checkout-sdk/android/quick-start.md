@@ -27,7 +27,7 @@ maven { url = uri("https://jitpack.io") }
 Include the Ottu Checkout SDK in your **app-level** `build.gradle.kts` file:
 
 ```swift
-implementation("com.github.ottuco:ottu-android-checkout:2.1.4")
+implementation("com.github.ottuco:ottu-android-checkout:2.1.5")
 ```
 {% endstep %}
 {% endstepper %}

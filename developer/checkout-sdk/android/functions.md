@@ -30,7 +30,7 @@ Make sure to use the public key and avoid using the private key. The [API privat
 
 The `session_id` serves as the unique identifier for the payment transaction linked to the checkout process.
 
-This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../../checkout-api.md)I, refer to the [session\_id](functions.md#sessionid-string-required) section.&#x20;
+This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../../checkout-api.md)I, refer to the [session\_id](broken-reference) section.&#x20;
 
 #### [**formsOfPayment**](functions.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
@@ -41,12 +41,12 @@ The `formsOfPayment` parameter allows customization of the payment methods displ
 * **`cardOnsite`**: A direct payment method (onsite checkout) where cardholder data (CHD) is entered directly in the SDK. If 3DS authentication is required, a payment provider is involved.
 * `tokenPay`: Uses [tokenization](../../tokenization.md) to securely store and process customers' payment information.
 * `redirect`: Redirects customers to an external [payment gateway](../../../user-guide/payment-gateway.md#payment-gateway-features-summary) or a third-party payment processor to complete the transaction.
-* `StcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
+* `stcPay`: Requires customers to enter their mobile number and authenticate with an OTP sent to their device to complete the payment.
 * `flexMethods`: Allows payments to be split into multiple installments. These methods, also known as BNPL (Buy Now, Pay Later), support providers such as Tabby and Tamara.
 
 #### [**setupPreload**](functions.md#setuppreload-object-optional) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `ApiTransactionDetails` class object stores transaction details.
+The `TransactionDetails` class object stores transaction details.
 
 If this object is provided, the SDK will not need to retrieve transaction details from the backend, thereby reducing processing time and improving efficiency.
 
@@ -56,9 +56,11 @@ The `Theme` class object is used for UI customization, allowing modifications to
 
 All fields in the `Theme` class are optional. If a theme is not specified, the default UI settings will be applied. For more details, refer to the [Customization Theme](functions.md#customization-theme) section.
 
-#### [paymentoptionsdisplaysettings](functions.md#paymentoptionsdisplaysettings-object-optional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**displaySettings**](functions.md#displaysettings-object-optional)  _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
-The `PaymentOptionsDisplaySettings` struct is used to configure how payment options are displayed. More details can be found in the [Payment Options Display Mode](functions.md#payment-options-display-mode) section.
+The `PaymentOptionsDisplaySettings`  struct is used to configure how payment options are displayed.&#x20;
+
+More details can be found in the [Payment Options Display Mode](functions.md#payment-options-display-mode) section.
 
 #### [**successCallback, errorCallback and successCallback**](functions.md#successcallback-errorcallback-and-successcallback-uint-required) _<mark style="color:blue;">`Uint`</mark>_ _<mark style="color:red;">`required`</mark>_
 
@@ -108,7 +110,7 @@ private fun getPaymentOptionSettings(): Checkout.PaymentOptionsDisplaySettings {
 These parameters are passed to the `Checkout.init` builder class via the following object:
 
 ```swift
-.paymentOptionsDisplaySettings(paymentOptionsDisplaySettings)
+.displaySettings(displaySettings)
 ```
 
 To view the full function call, please refer to the [Ottu SDK - Android | Example](functions.md#example) chapter in the documentation.

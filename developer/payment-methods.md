@@ -96,8 +96,8 @@ This request will return the `"pg_codes": ["kpay"]`, which can then be used in s
 
 ## [API Schema Reference](payment-methods.md#api-schema-reference)
 
-{% openapi-operation spec="ottu-july" path="/b/pbl/v2/payment-methods/" method="post" %}
-[OpenAPI ottu-july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/dd13d3360690246daeb6267e9ca119ec953037560d96776a32fefe02cc0fb3ec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T124145Z&X-Amz-Expires=172800&X-Amz-Signature=df86b16df7388738bff9330f082ae9cd51f3ebb82b9ec3c210c88bb9ca34e9cb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% openapi-operation spec="inquiry-sandbox" path="/b/pbl/v2/payment-methods/" method="post" %}
+[OpenAPI inquiry-sandbox](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/92e1cf2f9254df51c2ae6282f7deb4c1d44e8a76cf8e4f016c83e93b01ed6edc.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251111%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251111T095141Z&X-Amz-Expires=172800&X-Amz-Signature=3b19871b02101310752869da91d635016a0984873d65b9ba80d93eeb8c27c7fa&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Guide](payment-methods.md#guide)

@@ -10,7 +10,7 @@ Ottu is available via [CocoaPods](http://cocoapods.org/). To install it, the fol
 
 {% code overflow="wrap" %}
 ```ruby
-pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.7'
+pod 'ottu_checkout_sdk', :git => 'https://github.com/ottuco/ottu-ios.git', :tag => '2.1.8'
 ```
 {% endcode %}
 
@@ -31,6 +31,6 @@ Once the Swift package has been set up, adding Alamofire as a dependency require
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.7")
+    .package(url: "https://github.com/ottuco/ottu-ios.git", from: "2.1.8")
 ]
 ```

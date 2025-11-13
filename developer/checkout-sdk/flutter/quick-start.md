@@ -40,7 +40,7 @@ Open the `pubspec.yaml` file, navigate to the **dependencies** section, and add 
 ottu_flutter_checkout:
   git:
     url: https://github.com/ottuco/ottu-flutter.git
-    ref: 2.1.11
+    ref: 2.1.12
 ```
 
 Then, run the following command to download the dependencies:

@@ -4,7 +4,8 @@ In the fast-paced world of online payments, one thing remains constant: the need
 
 **Payment Link Search and Filter Guide:** This guide offers a step-by-step walkthrough and video tutorial on how to view and filter payment links in the Ottu Dashboard by user or payment gateway.
 
-* &#x20;[step-by-step instructions ](payment-link-search-and-filter-guide.md#step-by-step-instructions)and a [video tutorial](payment-link-search-and-filter-guide.md#video-demonstration) on viewing and filtering payment links in the Ottu Dashboard by user or payment gateway
+* &#x20;[Step-by-step instructions:](payment-link-search-and-filter-guide.md#step-by-step-instructions) Your detailed roadmap for finding and refining payment links by user or payment gateway.
+* [**Video Tutorial:**](payment-link-search-and-filter-guide.md#video-demonstration) A visual walkthrough that shows each action on screen, so you can follow along in real time.
 
 **Payment Insight:** Your Financial Radar. In this section, we shine a spotlight on two essential features:
 

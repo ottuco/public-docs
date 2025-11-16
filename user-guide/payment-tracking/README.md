@@ -2,6 +2,10 @@
 
 In the fast-paced world of online payments, one thing remains constant: the need for financial control. Enter Ottu, your trusted companion in this financial journey! Welcome to our comprehensive Payment Tracking guide, where we'll not only guide you but empower you with the formidable tools Ottu brings to the table.
 
+**Payment Link Search and Filter Guide:** This guide offers a step-by-step walkthrough and video tutorial on how to view and filter payment links in the Ottu Dashboard by user or payment gateway.
+
+* &#x20;[step-by-step instructions ](payment-link-search-and-filter-guide.md#step-by-step-instructions)and a [video tutorial](payment-link-search-and-filter-guide.md#video-demonstration) on viewing and filtering payment links in the Ottu Dashboard by user or payment gateway
+
 **Payment Insight:** Your Financial Radar. In this section, we shine a spotlight on two essential features:
 
 * [**Transaction Table**:](payment-transactions-insights.md#transaction-table) Your digital ledger, where every transaction finds a home. No more financial mysteries; it's all here in black and white.

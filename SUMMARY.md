@@ -11,6 +11,7 @@
   * [Setup MPGS](user-guide/apple-pay/setup-mpgs.md)
   * [Setup Cybersource](user-guide/apple-pay/setup-cybersource.md)
 * [Payment Tracking](user-guide/payment-tracking/README.md)
+  * [Payment Link Search and Filter Guide](user-guide/payment-tracking/payment-link-search-and-filter-guide.md)
   * [Payment Transactions Insights](user-guide/payment-tracking/payment-transactions-insights.md)
   * [Payment Transactions States](user-guide/payment-tracking/payment-transactions-states.md)
   * [Notifications, URLs & Timing](user-guide/payment-tracking/notifications-urls-and-timing.md)

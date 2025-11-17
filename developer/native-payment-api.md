@@ -132,8 +132,8 @@ The prerequisites and [checklist](native-payment-api.md#checklist) mentioned in 
 
 #### [API Schema Reference](native-payment-api.md#api-schema-reference)
 
-{% openapi-operation spec="native1" path="/b/pbl/v2/payment/apple-pay/" method="post" %}
-[Broken link](broken-reference)
+{% openapi-operation spec="native" path="/b/pbl/v2/payment/apple-pay/" method="post" %}
+[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251117%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251117T120206Z&X-Amz-Expires=172800&X-Amz-Signature=832d614c2109ce622fba345be8a9ceaa548df19adea025eb319aff532a84a1ba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Google Pay](native-payment-api.md#google-pay)
@@ -157,8 +157,8 @@ The prerequisites and [checklist](native-payment-api.md#checklist) mentioned in 
 
 #### [API Schema Reference](native-payment-api.md#api-schema-reference-1)
 
-{% openapi-operation spec="native1" path="/b/pbl/v2/payment/google-pay/" method="post" %}
-[Broken link](broken-reference)
+{% openapi-operation spec="native" path="/b/pbl/v2/payment/google-pay/" method="post" %}
+[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251117%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251117T120206Z&X-Amz-Expires=172800&X-Amz-Signature=832d614c2109ce622fba345be8a9ceaa548df19adea025eb319aff532a84a1ba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Auto-Debit (Tokenized Payments)](native-payment-api.md#auto-debit-tokenized-payments)
@@ -178,8 +178,8 @@ Supports CIT ([Cardholder Initiated](auto-debit.md#id-1.-customer-initiated-card
 
 #### [API Schema Reference](native-payment-api.md#api-schema-reference-2)
 
-{% openapi-operation spec="native1" path="/b/pbl/v2/payment/auto-debit/" method="post" %}
-[Broken link](broken-reference)
+{% openapi-operation spec="native" path="/b/pbl/v2/auto-debit/" method="post" %}
+[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251117%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251117T120206Z&X-Amz-Expires=172800&X-Amz-Signature=832d614c2109ce622fba345be8a9ceaa548df19adea025eb319aff532a84a1ba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [FAQ](native-payment-api.md#faq)

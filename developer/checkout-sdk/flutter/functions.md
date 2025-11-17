@@ -88,15 +88,15 @@ All of these parameters are optional and are demonstrated in the following figur
 
 The `List` The List mode is displayed as illustrated in the figure below
 
-<figure><img src="../../../.gitbook/assets/image.png" alt="" width="383"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt="" width="383"><figcaption></figcaption></figure>
 
 A view with a selected payment option
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt="" width="383"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="" width="383"><figcaption></figcaption></figure>
 
 A view with an expanded listExpanded list view
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt="" width="383"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt="" width="383"><figcaption></figcaption></figure>
 
 Here is a code sample:
 

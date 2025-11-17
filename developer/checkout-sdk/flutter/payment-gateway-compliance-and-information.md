@@ -75,7 +75,7 @@ The onsite checkout screen appears identical to the native platform version.
 
 #### Android
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt="" width="247"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt="" width="247"><figcaption></figcaption></figure>
 
 #### iOS&#x20;
 

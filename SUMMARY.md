@@ -67,6 +67,7 @@
 * [Authentication](developer/authentication.md)
 * [Payment Methods](developer/payment-methods.md)
 * [Checkout API](developer/checkout-api.md)
+* [Native Payment API](developer/native-payment-api.md)
 * [Operations](developer/operations.md)
 * [User Cards](developer/user-cards.md)
 * [Payment Status-Inquiry](developer/payment-status-inquiry.md)

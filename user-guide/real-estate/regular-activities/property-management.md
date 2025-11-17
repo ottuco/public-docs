@@ -60,7 +60,7 @@ Subsequently, the merchant is redirected to the form for adding a new property, 
     \
 
 
-    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 To add multiple unit types, such as villas and apartments, along with their respective units, follow these steps:
 
@@ -69,7 +69,7 @@ To add multiple unit types, such as villas and apartments, along with their resp
     Merchants can choose from existing unit types, dropdown list,  or add a new one by clicking **ADD UNIT TYPE** and filling in the required details.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 3.  #### Add units:
 
     The merchant is required to click on the **ADD OR EDIT UNITS** button, \

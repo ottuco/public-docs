@@ -115,10 +115,8 @@ It details about the retailer, if the agreement is for installment payments.\
 
 * <mark style="color:blue;">**category\_code**</mark> _<mark style="color:blue;">**`string`**</mark>_\
   A 4-digit code classifying the retailer's business by the type of goods or services it offers.
-
-- <mark style="color:blue;">**short\_name**</mark> _<mark style="color:blue;">**`string`**</mark>_\
+* <mark style="color:blue;">**short\_name**</mark> _<mark style="color:blue;">**`string`**</mark>_\
   Abbreviation of the retailer's trading name, suitable for payer's statement display.
-
 * <mark style="color:blue;">**names**</mark><mark style="color:blue;">**&#x20;**</mark>_<mark style="color:blue;">**`string`**</mark>_\
   The retailer's trading name.
 
@@ -396,9 +394,7 @@ It contains the payment credentials or token received from the provider. Must be
 *   **`"instrument_type": "apple_pay"`**\
     The `payload` must be a dictionary object containing the complete Apple Pay token from Apple’s Payment Sheet. Always pass it exactly as received, without any modification.
 
-    {% code overflow="wrap" %}
-    ```json
-    {
+    <pre class="language-json" data-overflow="wrap"><code class="lang-json">{
       "payment_instrument": {
         "instrument_type": "apple_pay",
         "payload": {
@@ -413,8 +409,7 @@ It contains the payment credentials or token received from the provider. Must be
         }
       }
     }
-    ```
-    {% endcode %}
+    </code></pre>
 *   **`"instrument_type": "google_pay"`** \
     The `payload` must be a dictionary object containing the complete Google Pay payment data, including encrypted payment information and signatures.
 
@@ -891,7 +886,7 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
 {% openapi-operation spec="october" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251028%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251028T135751Z&X-Amz-Expires=172800&X-Amz-Signature=44b2711d0bf1d3fc7d0a55b47d5d5c592a62bdaba7594015b3d7de82186dc752&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251119%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251119T100729Z&X-Amz-Expires=172800&X-Amz-Signature=cc5978367e3e2a65b58cf2f8b0e28fa94cd636410f60381ba4001d10ff4f5b15&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
@@ -1013,11 +1008,114 @@ To get the information of the payment transaction.
 **Authentication:** This endpoint is public
 {% endhint %}
 
+## [One-Step Checkout](checkout-api.md#one-step-checkout)
+
+One-Step Checkout combines the [Checkout API](checkout-api.md) and the [Native Payment API ](native-payment-api.md)into a single backend request.\
+Instead of creating a session first and then calling a separate payment endpoint, you can perform both actions in one step by including the [payment\_instrument](checkout-api.md#payment_instrument) parameter.
+
+This flow is ideal when you want to immediately process a payment as it’s created, for example:
+
+* A “Buy Now” button on a product page that charges the customer right away.
+* A subsequent [auto-debit](auto-debit.md) payment using a stored token.
+* A wallet-based purchase (Apple Pay / Google Pay) where you already have the payment payload on the server and don’t use [Checkout SDK.](checkout-sdk/)
+* Instant, server-triggered payments that must both create and execute the payment in real time.
+
+By using `payment_instrument,` Ottu automatically creates the session, validates the configuration, and processes the payment through the selected gateway — returning a unified response that includes both the session and transaction details.
+
+### [When to Use](checkout-api.md#when-to-use)
+
+Use One-Step Checkout when you:
+
+* Want to create and process a payment in a single backend call.
+* Need to handle instant payment actions (like “Buy Now”) directly from your backend.
+* Are performing a recurring or auto-debit payment using a stored token.
+* Already have the payment credentials (wallet payload or token) and don’t need the SDK-based collection flow.
+
+### [Supported Instruments](checkout-api.md#supported-instruments)
+
+| instrument\_type |                         Description     |                     Typical Use Case                         |
+| :--------------: | --------------------------------------- | ------------------------------------------------------------ |
+|    `apple_pay`   | Apple Pay digital wallet                | Apple Pay supported devices                                  |
+|   `google_pay`   | Google Pay digital wallet               | Google Pay from Android or Chrome                            |
+|      `token`     | Token-based stored or recurring payment | [Auto-debit](auto-debit.md) or saved card tokenized payments |
+
+### [Rules & Restrictions](checkout-api.md#rules-and-restrictions)
+
+* Only one [pg\_codes](checkout-api.md#pg_codes-array-required) is allowed per request.
+* The selected gateway must support the chosen instrument\_type.
+* The payload must match exactly the format received from the provider — no alterations should be made.
+* The API must be called server-to-server, never from the client.
+
+### [How to Use it](checkout-api.md#how-to-use-it)
+
+When your backend is ready to initiate a direct payment using a wallet or card token (e.g., Apple Pay), it should call the [Checkout API](checkout-api.md)  and include the `payment_instrument` [parameter](checkout-api.md#payment_instrument-object-details). This parameter tells Ottu to both [**create**](checkout-api.md#create) and **attempt to pay** the transaction in a single call, using the payment data you provide. The example [below ](checkout-api.md#request-example-apple-pay)shows how this works for **Apple Pay**, but the same structure applies to other instruments (e.g., Google Pay) with their own payload formats.
+
+{% hint style="warning" %}
+**Server-to-server only**
+
+The `payment_instrument` parameter **must only be used in server-to-server integrations**. Never call this API directly from the client side, as it may expose sensitive credentials or payment data.
+{% endhint %}
+
+### [Request Example: Apple Pay](checkout-api.md#request-example-apple-pay)
+
+```json
+curl--location 'https://sandbox.ottu.net/b/checkout/v1/pymt-txn/'\
+  --header 'Authorization: Api-Key GYj5Na8H.29g9hqNjm11nORQMa2WiZwIBQQ49MdAL'\
+  --header 'Content-Type: application/json'\
+  --data - raw '{
+"type": "e_commerce",
+"pg_codes": [
+  "knet-apple"
+],
+"amount": "1",
+"currency_code": "KWD",
+"payment_instrument": {
+  "instrument_type": "apple_pay",
+  "payload": {
+    "paymentData": {
+      "data": "b1lwXgprLF8Ca/HeVwjVq3qHovPdwJ8M8IAYxG...",
+      "signature": "MIAGCSqGSIb3DQEHA...",
+      "header": {
+        "publicKeyHash": "aqFxqE8fnxrAP7...",
+        "ephemeralPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0D..."
+      },
+      "version": "EC_v1"
+    },
+    "paymentMethod": {
+      "displayName": "Visa 5766",
+      "network": "Visa",
+      "type": "debit"
+    },
+    "transactionIdentifier": "7134E7D22988391FA183A61A191AE14CD0..."
+  }
+}
+}
+'
+```
+
+In this example, Ottu receives an Apple Pay token in `payment_instrument.payload` and uses it to authorize and capture the payment with the selected gateway.
+
+### [Response Behavior When `payment_instrument` Is Used](checkout-api.md#response-behavior-when-payment_instrument-is-used)
+
+When a valid [payment\_instrument](checkout-api.md#payment_instrument) is provided, Ottu creates the transaction and attempts to complete the payment immediately in the same [Checkout API](checkout-api.md) call. Instead of returning the standard Checkout API [response](checkout-api.md#response) (used for redirect/hosted flows), the API returns a transaction result payload that follows the same structure as the [payment notification (webhook)](webhooks/payment-notification.md) data. Your backend can process this response directly as the final payment result (e.g., mark the order as paid when `state = "paid"`).
+
+#### [**Response Example**](checkout-api.md#response-example)
+
+```json
+{
+  "result": "success",
+  "session_id": "dc762e8e9dc937c84de01a79fdb74439b6081546",
+  "state": "paid",
+  "signature": "7134E7D22988391FA183A61A191AE14CD0",
+  ...
+}
+```
+
 ## [**FAQ**](checkout-api.md#faq)
 
 #### :digit\_one: [**What is the Ottu Checkout API used for?**](checkout-api.md#what-is-the-ottu-checkout-api-used-for)
 
-The **Checkout API** is used to create and manage payment transactions. It enables merchants to generate a **payment session (**[session\_id](checkout-api.md#session_id-string-mandatory)**)**, redirect users to a payment gateway, and receive payment updates via [webhooks](webhooks/).
+The **Checkout API** is used to create and manage payment transactions. It enables merchants to generate a **payment session** [session\_id](checkout-api.md#session_id-string-mandatory), redirect users to a payment gateway, and receive payment updates via [webhooks](webhooks/).
 
 #### :digit\_two:[**How do I create a payment transaction?**](checkout-api.md#how-do-i-create-a-payment-transaction)
 
@@ -1099,3 +1197,37 @@ The Checkout SDK ([Web](checkout-sdk/web.md), [Android](checkout-sdk/android/), 
 1. Call the [Checkout API](checkout-api.md) to create a transaction.
 2. Pass the `session_id` to the SDK for UI rendering.
 3. Handle [webhooks](webhooks/) for transaction updates.
+
+#### :digit\_one::digit\_one:**When should One-Step Checkout be used?**
+
+Use One-Step Checkout when you want to create and execute a payment immediately, such as:
+
+* “Buy Now” actions that must charge instantly.
+* [Auto-debit ](auto-debit.md)or recurring payments using a stored token.
+* Wallet-based payments (Apple Pay / Google Pay) when the payment payload is already available on the server.
+* Server-triggered payments requiring real-time authorization and capture.
+
+#### :digit\_one::digit\_two:W**hat rules or restrictions apply?**
+
+* Only **one** `pg_codes` value is allowed per request.
+* The selected gateway must support the chosen `instrument_type`.
+* The payload must match the provider’s format **exactly**—no modifications.
+* Must be executed **server-to-server** using [Private API keys](authentication.md#private-key-api-key).
+
+#### :digit\_one::digit\_three:W**hat are the benefits of One-Step Checkout?**
+
+* Single backend call → lower latency and simpler logic.
+* Consistent structure with the [Native Payment API](native-payment-api.md).
+* Unified handling of session creation + payment execution.
+* Ideal for wallets and tokenized recurring payments.
+
+#### :digit\_one::digit\_four:**What does the response look like?**
+
+The API returns a unified response that includes:
+
+* Payment result
+* Session details
+* Transaction status
+
+Additionally, the webhook payload follows the same structure as Ottu’s [Payment Webhook Notification](webhooks/payment-notification.md) parameters.\
+Expected fields can be reviewed  [here](webhooks/payment-notification.md#parameters).

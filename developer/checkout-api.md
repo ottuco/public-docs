@@ -886,7 +886,7 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
 {% openapi-operation spec="october" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251119%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251119T100729Z&X-Amz-Expires=172800&X-Amz-Signature=cc5978367e3e2a65b58cf2f8b0e28fa94cd636410f60381ba4001d10ff4f5b15&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251119%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251119T105738Z&X-Amz-Expires=172800&X-Amz-Signature=7415d9f9f1f2c73a2cfd4414576ffe48cdf9a2abdca4e4d68cdf79bfc856ec78&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)
@@ -1113,11 +1113,11 @@ When a valid [payment\_instrument](checkout-api.md#payment_instrument) is provid
 
 ## [**FAQ**](checkout-api.md#faq)
 
-#### :digit\_one: [**What is the Ottu Checkout API used for?**](checkout-api.md#what-is-the-ottu-checkout-api-used-for)
+#### 1 [**What is the Ottu Checkout API used for?**](checkout-api.md#what-is-the-ottu-checkout-api-used-for)
 
 The **Checkout API** is used to create and manage payment transactions. It enables merchants to generate a **payment session** [session\_id](checkout-api.md#session_id-string-mandatory), redirect users to a payment gateway, and receive payment updates via [webhooks](webhooks/).
 
-#### :digit\_two:[**How do I create a payment transaction?**](checkout-api.md#how-do-i-create-a-payment-transaction)
+#### 2 [**How do I create a payment transaction?**](checkout-api.md#how-do-i-create-a-payment-transaction)
 
 To create a payment transaction, send a [POST request](checkout-api.md#create-payment-transaction) to the Checkout API with the required parameters:
 
@@ -1128,7 +1128,7 @@ To create a payment transaction, send a [POST request](checkout-api.md#create-pa
 
 After submission, the API returns a [session\_id](checkout-api.md#session_id-string-mandatory), which is required for processing the transaction.
 
-#### :digit\_three: [**How can I ensure that the payer cannot make a payment after a certain amount of time since redirection?**](checkout-api.md#how-can-i-ensure-that-the-payer-cannot-make-a-payment-after-a-certain-amount-of-time-since-redirecti)
+#### 3  [**How can I ensure that the payer cannot make a payment after a certain amount of time since redirection?**](checkout-api.md#how-can-i-ensure-that-the-payer-cannot-make-a-payment-after-a-certain-amount-of-time-since-redirecti)
 
 To prevent a payer from completing a payment after a specific period, you need to configure the expiration\_time parameter based on the payment gateway (PG) auto inquiry time. This ensures that even if the user remains on the payment page, they won’t be able to proceed once the expiration time has passed.
 
@@ -1155,15 +1155,15 @@ If your system sets an [auto inquiry time](checkout-api.md#auto-inquiry-time) **
 
 This means that after 16 minutes (for MPGS) or 13 minutes (for KNET), the payer will not be able to complete the transaction, even if they are still on the payment page.
 
-#### :digit\_four: [**Can I update an existing transaction?**](checkout-api.md#can-i-update-an-existing-transaction)
+#### 4 [**Can I update an existing transaction?**](checkout-api.md#can-i-update-an-existing-transaction)
 
 Yes! You can update a transaction **before** it is completed by sending a [PUT request](checkout-api.md#update-payment) to the Checkout API, referencing the `session_id`. Updates might include modifying the `amount`, `currency_code`, or allowed `pg_codes`.
 
-#### :digit\_five: [**What happens if a customer abandons the payment?**](checkout-api.md#what-happens-if-a-customer-abandons-the-payment)
+#### 5 [**What happens if a customer abandons the payment?**](checkout-api.md#what-happens-if-a-customer-abandons-the-payment)
 
 If a customer does not complete the payment, the transaction remains in a `pending` state until it expires. Ottu's [automatic inquiry](checkout-api.md#auto-inquiry-time) will check the status based on the configured timing and update the state accordingly.
 
-#### :digit\_six: [**How do I get notified when a payment is completed?**](checkout-api.md#how-do-i-get-notified-when-a-payment-is-completed)
+#### 6 [**How do I get notified when a payment is completed?**](checkout-api.md#how-do-i-get-notified-when-a-payment-is-completed)
 
 Ottu **sends a** [payment notification ](webhooks/payment-notification.md)webhook to the [webhook\_url](checkout-api.md#webhook_url-string-optional) you provided in the API request. The webhook contains details like:
 
@@ -1173,7 +1173,7 @@ Ottu **sends a** [payment notification ](webhooks/payment-notification.md)webhoo
 
 Ensure your server verifies and processes these webhook notifications.
 
-#### :digit\_seven: [**What is the difference between `webhook_url` and `redirect_url`?**](checkout-api.md#what-is-the-difference-between-webhook_url-and-redirect_url)
+#### 7 [**What is the difference between `webhook_url` and `redirect_url`?**](checkout-api.md#what-is-the-difference-between-webhook_url-and-redirect_url)
 
 * **`webhook_url`** – The API sends real-time payment updates it (for backend processing).
 * **`redirect_url`** – After payment, the customer is sent to it  (for UI redirection).
@@ -1182,15 +1182,15 @@ For more details on redirection behavior related to `webhook_url`, please refer 
 
 Both are optional but recommended for a seamless experience.
 
-#### :digit\_eight: [**Can I retry a failed payment?**](checkout-api.md#can-i-retry-a-failed-payment)
+#### 8 [**Can I retry a failed payment?**](checkout-api.md#can-i-retry-a-failed-payment)
 
 Yes, if a transaction fails, you can **reuse the same** [session\_id](checkout-api.md#session_id-string-mandatory). the payment state will be `attempt`. for more information about , please refer [here](../user-guide/payment-tracking/payment-transactions-states.md#payment-attempt).
 
-#### :digit\_nine: [**Can I set up recurring payments using the Checkout API?**](checkout-api.md#can-i-set-up-recurring-payments-using-the-checkout-api)
+#### 9 [**Can I set up recurring payments using the Checkout API?**](checkout-api.md#can-i-set-up-recurring-payments-using-the-checkout-api)
 
 Yes! Use [Auto-Debit](auto-debit.md) with a [payment\_type](checkout-api.md#payment_type-string-optional) set to `auto_debit` to create [agreements](checkout-api.md#agreement-object-optional) for recurring transactions. Learn more in the [Auto-Debit](auto-debit.md).
 
-#### :digit\_one::digit\_zero: [**How do I integrate the Checkout API with the SDK?**](checkout-api.md#how-do-i-integrate-the-checkout-api-with-the-sdk)
+#### 10  [**How do I integrate the Checkout API with the SDK?**](checkout-api.md#how-do-i-integrate-the-checkout-api-with-the-sdk)
 
 The Checkout SDK ([Web](checkout-sdk/web.md), [Android](checkout-sdk/android/), [iOS](checkout-sdk/ios/)) requires a [session\_id](checkout-api.md#session_id-string-mandatory) from the Checkout API. Your backend should:
 
@@ -1198,7 +1198,7 @@ The Checkout SDK ([Web](checkout-sdk/web.md), [Android](checkout-sdk/android/), 
 2. Pass the `session_id` to the SDK for UI rendering.
 3. Handle [webhooks](webhooks/) for transaction updates.
 
-#### :digit\_one::digit\_one:**When should One-Step Checkout be used?**
+#### **11** [**When should One-Step Checkout be used?**](checkout-api.md#id-11-when-should-one-step-checkout-be-used)
 
 Use One-Step Checkout when you want to create and execute a payment immediately, such as:
 
@@ -1207,21 +1207,21 @@ Use One-Step Checkout when you want to create and execute a payment immediately,
 * Wallet-based payments (Apple Pay / Google Pay) when the payment payload is already available on the server.
 * Server-triggered payments requiring real-time authorization and capture.
 
-#### :digit\_one::digit\_two:W**hat rules or restrictions apply?**
+#### 12[ W**hat rules or restrictions apply?**](checkout-api.md#id-12-what-rules-or-restrictions-apply)
 
 * Only **one** `pg_codes` value is allowed per request.
 * The selected gateway must support the chosen `instrument_type`.
 * The payload must match the provider’s format **exactly**—no modifications.
 * Must be executed **server-to-server** using [Private API keys](authentication.md#private-key-api-key).
 
-#### :digit\_one::digit\_three:W**hat are the benefits of One-Step Checkout?**
+#### 13 [W**hat are the benefits of One-Step Checkout?**](checkout-api.md#id-13-what-are-the-benefits-of-one-step-checkout)
 
 * Single backend call → lower latency and simpler logic.
 * Consistent structure with the [Native Payment API](native-payment-api.md).
 * Unified handling of session creation + payment execution.
 * Ideal for wallets and tokenized recurring payments.
 
-#### :digit\_one::digit\_four:**What does the response look like?**
+#### **14** [**What does the response look like?**](checkout-api.md#id-14-what-does-the-response-look-like)
 
 The API returns a unified response that includes:
 

@@ -340,8 +340,7 @@ Max length 255.
 It is a specific code that is assigned to a transaction by the merchant.\
 By assigning a unique identifier to each transaction, the merchant can easily retrieve and review transaction details in the future, as well as identify any issues or discrepancies that may arise.\
 such like : ABC123\_1, ABC123\_2\
-Max length 128\
-
+Max length 128<br>
 
 **Presence Condition:**
 
@@ -360,8 +359,7 @@ Min value: 0.01
 #### [payment\_type ](payment-notification.md#payment_type-string-mandatory)_<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;background-color:blue;">`mandatory`</mark>_
 
 **Enum:** "`one_off`" , "`auto_debit`"\
-Type of payment. Choose `one_off` for payments that occur only once without future commitments. Choose `auto_debit` for payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](../auto-debit.md).\
-
+Type of payment. Choose `one_off` for payments that occur only once without future commitments. Choose `auto_debit` for payments that are automatically deducted, such as recurring subscriptions, installments, or unscheduled auto-debits. for more information about auto-debit API, please refer to [Auto-Debit API documentation](../auto-debit.md).<br>
 
 If `auto_debit` is selected:
 

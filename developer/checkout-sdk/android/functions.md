@@ -30,7 +30,7 @@ Make sure to use the public key and avoid using the private key. The [API privat
 
 The `session_id` serves as the unique identifier for the payment transaction linked to the checkout process.
 
-This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../../checkout-api.md)I, refer to the [session\_id](broken-reference) section.&#x20;
+This identifier is automatically generated at the creation of the payment transaction. For additional details on how to utilize the `session_id` parameter in the [Checkout AP](../../checkout-api.md)I, refer to the [session\_id](/broken/pages/3x6ec6ghiDMkqAeOlBDy#session_id) section.&#x20;
 
 #### [**formsOfPayment**](functions.md#formsofpayment-string-required) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 

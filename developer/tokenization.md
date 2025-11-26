@@ -56,8 +56,7 @@ Tokenization involves a series of steps designed to securely capture and convert
     On the **Save Card** page, the customer enters his card information and completes the process by clicking the **Save** button.
 4.  **Tokenization**:
 
-    Upon the successful completion of the card information submission, Ottu proceeds to tokenize the card details.\
-
+    Upon the successful completion of the card information submission, Ottu proceeds to tokenize the card details.<br>
 
     The tokenized card details are then securely transmitted back to the merchant's system as part of the [webhook payload](webhooks/payment-notification.md) sent by Ottu. Merchants can locate the tokenized card information in the [token](webhooks/payment-notification.md#token-object-conditional) field of the webhook payload.
 

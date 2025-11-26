@@ -108,8 +108,7 @@ Refer to the [Contract Management Guide](regular-activities/tenant-and-contract-
 
 5. Print Invoices:
    1. Clicking the **Print** button generates a PDF report containing all displayed invoice details, as shown below.
-   2.  Once generated, the merchant can download it for record-keeping or printing.\
-
+   2.  Once generated, the merchant can download it for record-keeping or printing.<br>
 
        <figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 6. Generate Invoices:&#x20;
@@ -121,8 +120,7 @@ Refer to the [Generate Invoice Guide](regular-activities/generate-invoice.md) fo
 ## [Pay on the Invoice Link](merchant-first-journey.md#pay-on-the-invoice-link)
 
 1. 🔗The invoice link will be shared automatically with the tenant via email or SMS.
-2.  🖱️ The tenant accesses the payment page by clicking the link.\
-
+2.  🖱️ The tenant accesses the payment page by clicking the link.<br>
 
     <figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 3. 💳 Complete the payment using available methods like cards or wallets.
@@ -130,8 +128,7 @@ Refer to the [Generate Invoice Guide](regular-activities/generate-invoice.md) fo
 ## [Pay on Manual Payment](merchant-first-journey.md#pay-on-manual-payment)
 
 1. :rocket: To trigger a manual payment, access the **Contract Action List**. For detailed instructions on accessing the Contract Action List, please refer to this [guide](regular-activities/tenant-and-contract-management/contract-management/contract-action/#to-trigger-contract-actions).
-2.  ➕ Select **Manual Payment** for recording an offline payment.\
-
+2.  ➕ Select **Manual Payment** for recording an offline payment.<br>
 
     <figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
 3. 🧾 After selecting **Manual Payment**, a [Manual Payment Form](regular-activities/tenant-and-contract-management/contract-management/contract-action/manual-payment.md#manual-payment-form) will appear. Fill in the required information to proceed.

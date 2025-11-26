@@ -30,7 +30,7 @@ Ensure that only the **public key** is used. The [private key](../../authenticat
 
 It is a unique identifier for the payment transaction associated with the checkout process.
 
-This identifier is automatically generated when a payment transaction is created. For further details on how to use the `session_id` parameter in the [Checkout API](../../checkout-api.md), refer to the [session\_id](broken-reference) documentation.
+This identifier is automatically generated when a payment transaction is created. For further details on how to use the `session_id` parameter in the [Checkout API](../../checkout-api.md), refer to the [session\_id](/broken/pages/3x6ec6ghiDMkqAeOlBDy#session_id) documentation.
 
 #### [**formsOfPayment**](functions.md#formsofpayment-array-optional) _<mark style="color:blue;">`array`</mark>_ _<mark style="color:blue;">**`optional`**</mark>_
 
@@ -77,7 +77,7 @@ The SDK provides flexible customization for how payment options are displayed. I
 Passing `0` will cause the SDK to throw an exception. This exception must be caught and handled by the parent application.
 {% endhint %}
 
-* **`defaultSelectedPgCode`**: Specifies a payment gateway [(PG) code](broken-reference) to be pre-selected by default.
+* **`defaultSelectedPgCode`**: Specifies a payment gateway [(PG) code](/broken/pages/OCLTqphKqkbEMATf9pam#pg_codes) to be pre-selected by default.
   * This field accepts a PG code to auto-select a specific payment option.
   * If the SDK finds a payment method matching the provided PG code, it will be selected by default.
   * If no match is found, no option is selected.

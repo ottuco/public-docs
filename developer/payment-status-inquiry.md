@@ -57,8 +57,7 @@ This API endpoint uses both [API-Key](authentication.md#private-key-api-key) and
 ## [How it Works](payment-status-inquiry.md#how-it-works-1)
 
 1.  Payment Status Inquiry for `pending`, `attempted`, `failed`, or `expired` states\
-    See [Payment Transaction State](../user-guide/payment-tracking/payment-transactions-states.md).\
-
+    See [Payment Transaction State](../user-guide/payment-tracking/payment-transactions-states.md).<br>
 
     <figure><img src="../.gitbook/assets/ideas - Inquiry API (&#x60;pending&#x60;, &#x60;attempted&#x60;, &#x60;failed&#x60;, or &#x60;expired&#x60;) (5).png" alt="" width="375"><figcaption></figcaption></figure>
 2. Payment Status Inquiry for `paid` or `authorized` states
@@ -85,7 +84,7 @@ To request a status inquiry, you must provide at least one of the following iden
 ## [API Schema References](payment-status-inquiry.md#api-schema-references)
 
 {% openapi-operation spec="inquiry-sandbox" path="/b/pbl/v2/inquiry/" method="post" %}
-[OpenAPI inquiry-sandbox](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/92e1cf2f9254df51c2ae6282f7deb4c1d44e8a76cf8e4f016c83e93b01ed6edc.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251109%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251109T101513Z&X-Amz-Expires=172800&X-Amz-Signature=a56b61aae0043381115de3ac8f085a29382e5742fe5a6e04129bd8453aa6838d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI inquiry-sandbox](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/92e1cf2f9254df51c2ae6282f7deb4c1d44e8a76cf8e4f016c83e93b01ed6edc.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251126%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251126T074649Z&X-Amz-Expires=172800&X-Amz-Signature=54be6f554ea942b4f35092bc44c2fa985876095d8e20eb1fead5ee5dc22c4e28&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Guide](payment-status-inquiry.md#guide)

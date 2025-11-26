@@ -16,8 +16,7 @@ Before you can integrate with Ottu's `Invoice API`, several prerequisites need t
 
 1. **Payment Gateway:**\
    The `Invoice API` operates seamlessly with a [Payment Gateway](../user-guide/payment-gateway.md). Think of this gateway as the essential bridge that authorizes and facilitates transactions between your establishment and your customers. However, it's crucial to know that the `Invoice API` is explicitly tailored for a **Purchase** Payment Gateway and does not support the Authorize type.\
-   For a comprehensive understanding of Payment Gateways and their inner workings, do give our [Payment Gateway](../user-guide/payment-gateway.md) User Guide a read. It provides valuable insights and clarifications.\
-
+   For a comprehensive understanding of Payment Gateways and their inner workings, do give our [Payment Gateway](../user-guide/payment-gateway.md) User Guide a read. It provides valuable insights and clarifications.<br>
 2. **Optional:** `round` function\
    When offering customer-facing invoice generation, it's essential to display precise figures supported by clear formulas. The `round` function is pivotal in achieving this accuracy.&#x20;
 
@@ -149,8 +148,7 @@ Details at the item level are encapsulated within the `invoice_items` object. Th
 
 <table data-full-width="true"><thead><tr><th width="120">Level</th><th width="211">   Mandatory Fields</th><th width="244">            VAL CALC</th><th width="330">                              Optional </th></tr></thead><tbody><tr><td>Invoice</td><td><ul><li><code>type</code></li><li><code>currency_code</code></li><li><code>pg_codes</code></li><li><code>invoice_number</code></li><li><code>due_date</code></li></ul></td><td><ul><li><code>tax_amount</code></li><li><code>shipping_inc_tax</code></li><li><code>total_excl_tax</code></li><li><code>total_incl_tax</code></li><li><code>subtotal</code></li><li><code>amount</code></li></ul></td><td><ul><li><code>company_name</code></li><li><code>tax_rate</code></li><li><code>discount_amount</code></li><li><code>discount_percentage</code></li><li><code>shipping_excl_tax</code></li><li><code>shipping_tax_rate</code></li><li><code>shipping_method</code></li></ul></td></tr><tr><td>Item</td><td><ul><li><code>sku</code></li><li><code>description</code></li><li><code>quantity</code></li><li><code>unit_price</code></li></ul></td><td><ul><li><code>tax_amount</code></li><li><code>total_excl_tax</code></li><li><code>total_incl_tax</code></li></ul></td><td><ul><li><code>tax_rate</code></li><li><code>discount_amount</code></li><li><code>discount_percentage</code></li></ul></td></tr></tbody></table>
 
-\
-
+<br>
 
 **It's important to note that:**
 
@@ -161,7 +159,7 @@ Details at the item level are encapsulated within the `invoice_items` object. Th
 For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the API Schema Reference section below.
 
 {% openapi-operation spec="july" path="/b/invoice/v1/invoice/" method="post" %}
-[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144122Z&X-Amz-Expires=172800&X-Amz-Signature=c84460f61628c6c59d8cf47f0ab6feb292ab479a8b842a614d9635a7e35ebf97&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI july](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251126%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251126T074650Z&X-Amz-Expires=172800&X-Amz-Signature=bc5f396c906bfacbb73962726741bcccd70981f7d737cf9f5aa0053d09256b3f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Guide: Step by Step](invoice-api.md#guide-step-by-step)

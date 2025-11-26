@@ -59,8 +59,7 @@ c. **Click on Show QR Button**:
 
 ### **3. Filling Out the Ticket Form**
 
-* The tenant fills in the following fields:\
-
+* The tenant fills in the following fields:<br>
 
 <figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 

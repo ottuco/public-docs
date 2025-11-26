@@ -11,8 +11,7 @@ Through this communication channel, Ottu empowers merchants to keep their custom
     <figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 * **WhatsApp Template Configuration:** Ensure that the WhatsApp-related templates are fully configured. To configure the required templates, merchants need to contact [Ottu support team](mailto:support@ottu.com).
 *   **Enabling WhatsApp Notification:** Merchants can enable WhatsApp notification channels by selecting the corresponding checkboxes during the payment transaction creation process.\
-    \
-
+    <br>
 
     <figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 

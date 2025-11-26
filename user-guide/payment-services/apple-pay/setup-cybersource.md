@@ -59,7 +59,7 @@ Merchants can offer their customers a convenient and secure payment method when 
 #### [**Uploading the Certificate Signing Request to Apple Pay**](setup-cybersource.md#uploading-the-certificate-signing-request-to-apple-pay)
 
 1. Log in to your **Apple Pay developer account**.
-2. Go to the [Merchant ID](../apple-pay.md#creating-merchant-id) that you created and **Create Certificate** under **Apple Pay Payment Processing Certificate**.
+2. Go to the [Merchant ID](./#creating-merchant-id) that you created and **Create Certificate** under **Apple Pay Payment Processing Certificate**.
 
 <figure><img src="https://lh4.googleusercontent.com/t4XvGJEL1USsMOctPDMRFwgdUgonEOXtNg14FBTVWJ3ywOJlBgdC3cp1716FB4DFNtnPCO70s4S4ehV1JDNYPjdNYELZvVnoNFxcNxS6B6asBNOTu86UkV4nar1N9x0-VmPb8nxLwd4XcqVQfdGc6Ng" alt=""><figcaption></figcaption></figure>
 
@@ -75,4 +75,4 @@ Merchants can offer their customers a convenient and secure payment method when 
 
 <figure><img src="https://lh4.googleusercontent.com/RgOCKmbNH_StKhHKUepR82xeSaQnjUpnxY8tRj7cbmK4kug_4Oa7FpxfSypdy8lDDutzPkI-8vmJe0B5Mf-gQz8fTTBVebqXZQVKQDylo1eNLeT4slK0o4JhRRtySk4BcyLBK5uCh0YLA5ui0T7xoBw" alt=""><figcaption></figcaption></figure>
 
-\
+<br>

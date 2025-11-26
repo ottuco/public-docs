@@ -2,8 +2,7 @@
 
 ## [**Add New Tenant**](tenant-management.md#add-new-tenant)
 
-By clicking on the **+ADD TENANT** button within the Tenant and Contract Management section, merchants will be prompted to fill out the following information:\
-
+By clicking on the **+ADD TENANT** button within the Tenant and Contract Management section, merchants will be prompted to fill out the following information:<br>
 
 <figure><img src="../../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
@@ -43,8 +42,7 @@ By clicking on the **+ADD TENANT** button within the Tenant and Contract Managem
     Enter the email address of the tenant.
 *   #### **Select Notification Language:**&#x20;
 
-    Choose the preferred language for notifications.\
-
+    Choose the preferred language for notifications.<br>
 
     <figure><img src="../../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 *   #### **Is Married:**&#x20;
@@ -78,8 +76,7 @@ By clicking on the **+ADD TENANT** button within the Tenant and Contract Managem
           Enter the email address of the spouse.
       *   #### **Upload Marriage Certificate:**&#x20;
 
-          Upload a scanned copy of the marriage certificate.\
-
+          Upload a scanned copy of the marriage certificate.<br>
 
           <figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
@@ -127,8 +124,7 @@ By clicking on the **+ADD TENANT** button within the Tenant and Contract Managem
 *   #### **Upload Attachment 3:**&#x20;
 
     Upload any additional attachment (if applicable).\
-    \
-
+    <br>
 
     <figure><img src="../../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 

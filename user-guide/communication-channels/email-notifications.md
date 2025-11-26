@@ -6,13 +6,11 @@ Email is a widely used and reliable channel for sending payment-related notifica
 
 To ensure Email notifications function smoothly, certain prerequisites must be met:
 
-*   **Customer Email**: The customer’s email field must be mandatory and provided during the creation of the payment transaction. To add the customer email and set it as a mandatory field, please contact [Ottu support team](mailto:support@ottu.com). \
-
+*   **Customer Email**: The customer’s email field must be mandatory and provided during the creation of the payment transaction. To add the customer email and set it as a mandatory field, please contact [Ottu support team](mailto:support@ottu.com). <br>
 
     <figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 * **Template Configured**: Ensure the email template is fully configured and reviewed for accuracy and completeness before enabling email notifications. To configure Email template, please contact [Ottu support team](mailto:support@ottu.com).
-*   **Enabling Email Templates:** Merchants can enable these templates by selecting the appropriate checkboxes during the payment transaction creation process, either before or after the payment, based on the specific requirement.\
-
+*   **Enabling Email Templates:** Merchants can enable these templates by selecting the appropriate checkboxes during the payment transaction creation process, either before or after the payment, based on the specific requirement.<br>
 
     <figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 

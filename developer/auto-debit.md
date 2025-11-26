@@ -144,8 +144,7 @@ After the [initial payment](auto-debit.md#first-payment), subsequent payments ca
 
     &#x20;When initiating subsequent payments, call the [Checkout API](checkout-api.md) using the [pg\_code](checkout-api.md#pg_codes-array-required) associated with the saved card. It’s crucial to maintain consistency by using the exact same [agreement](auto-debit.md#what-is-an-agreement) and [customer\_id](checkout-api.md#customer_id-string-optional) as in the [First Payment](auto-debit.md#first-payment). Ottu will handle the task of sending the required parameters to the bank, ensuring a seamless transaction process.\
     \
-    **For Parameter Updates:** Avoid sending updated parameters for subsequent payments, as they will have no effect. The method to update the agreement will be discussed in a later section.\
-
+    **For Parameter Updates:** Avoid sending updated parameters for subsequent payments, as they will have no effect. The method to update the agreement will be discussed in a later section.<br>
 2.  #### [Call `Auto Debit API`](auto-debit.md#call-auto-debit-api)
 
     Now, call the `Auto Debit API` using the [session\_id](checkout-api.md#session_id-string-mandatory) from the [Checkout API](checkout-api.md) and the card/token you wish to use to charge the customer.
@@ -159,7 +158,7 @@ This diagram visually represents the steps needed to set up subsequent payments.
 For a more detailed technical understanding and the implementation specifics of these operations, please refer to the OpenAPI schema in the API Schema Reference section below.
 
 {% openapi-operation spec="july" path="/b/pbl/v2/auto-debit/" method="post" %}
-[OpenAPI july](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250729%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250729T144122Z&X-Amz-Expires=172800&X-Amz-Signature=c84460f61628c6c59d8cf47f0ab6feb292ab479a8b842a614d9635a7e35ebf97&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI july](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2c797c8a017d6378230381558926cadbdf6af082f709c84989e1306f34f8bec9.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251126%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251126T074650Z&X-Amz-Expires=172800&X-Amz-Signature=bc5f396c906bfacbb73962726741bcccd70981f7d737cf9f5aa0053d09256b3f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Guide: Step By Step](auto-debit.md#guide-step-by-step)
@@ -170,8 +169,7 @@ Navigating the world of digital payments can be intricate. Whether you’re proc
 
 #### 1. [Retrieving `pg_codes` (Option](auto-debit.md#id-1.-retrieving-pg_codes-optional)
 
-Before initiating the first payment, you have the option to call the [Payment Methods API](payment-methods.md) to retrieve the necessary [pg\_codes](checkout-api.md#pg_codes-array-required). This can be done using the following payload:\
-
+Before initiating the first payment, you have the option to call the [Payment Methods API](payment-methods.md) to retrieve the necessary [pg\_codes](checkout-api.md#pg_codes-array-required). This can be done using the following payload:<br>
 
 ```json
 {
@@ -567,7 +565,7 @@ Currently, the only way to save a new card is by having the customer successfull
 
 #### :digit\_six: [**Do I need to use the Checkout SDK to display payment options to the customer?**](auto-debit.md#do-i-need-to-use-the-checkout-sdk-to-display-payment-options-to-the-customer)
 
-No, it's not mandatory to use the [Checkout SDK](checkout-sdk/). You can control the payment process using the responses from the [Checkout API](checkout-api.md). However, it's worth noting that the Checkout SDK simplifies the UI implementation and is necessary for certain payment methods such as [Apple Pay](../user-guide/apple-pay.md), Google Pay, STC Pay, and others. While it's recommended to use the Checkout SDK for its simplicity and comprehensive features, the choice ultimately lies in your hands based on your specific needs.
+No, it's not mandatory to use the [Checkout SDK](checkout-sdk/). You can control the payment process using the responses from the [Checkout API](checkout-api.md). However, it's worth noting that the Checkout SDK simplifies the UI implementation and is necessary for certain payment methods such as [Apple Pay](../user-guide/payment-services/apple-pay/), Google Pay, STC Pay, and others. While it's recommended to use the Checkout SDK for its simplicity and comprehensive features, the choice ultimately lies in your hands based on your specific needs.
 
 #### :digit\_seven: [I missed saving the card which the customer agreed to be charged. Can I get it back?](auto-debit.md#i-missed-saving-the-card-which-the-customer-agreed-to-be-charged.-can-i-get-it-back)
 

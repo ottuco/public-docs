@@ -6,13 +6,11 @@ SMS is a fast and convenient channel for sending payment-related notifications t
 
 To ensure SMS notifications work seamlessly, certain prerequisites must be met:
 
-*   **Customer Phone Number:** The customer’s phone number must be required and provided when creating a payment transaction. To set the phone number as a mandatory field, please contact [Ottu support team](mailto:support@ottu.com).\
-
+*   **Customer Phone Number:** The customer’s phone number must be required and provided when creating a payment transaction. To set the phone number as a mandatory field, please contact [Ottu support team](mailto:support@ottu.com).<br>
 
     <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 * **SMS Template Configuration:** Ensure that the SMS related templates are fully configured and reviewed for accuracy and completeness before enabling SMS notifications. To configure SMS templates, please contact [Ottu support team](mailto:support@ottu.com).
-*   **Enabling SMS Templates:** Merchant can enable these templates by selecting the corresponding checkboxes during the payment transaction creation process, either before or after the payment, depending on the specific requirement.\
-
+*   **Enabling SMS Templates:** Merchant can enable these templates by selecting the corresponding checkboxes during the payment transaction creation process, either before or after the payment, depending on the specific requirement.<br>
 
     <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 * **SMS Provider:** A dedicated SMS provider should be added and configured through [Ottu support team](mailto:support@ottu.com).&#x20;

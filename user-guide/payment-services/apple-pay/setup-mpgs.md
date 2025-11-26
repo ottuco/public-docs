@@ -22,7 +22,7 @@ Merchants can provide customers with a secure and user-friendly payment option f
 
 ### [Obtaining Apple Pay Payment Processing Certificate](setup-mpgs.md#obtaining-apple-pay-payment-processing-certificate)
 
-1. Log in to your Apple Pay Developer account and go to the [Merchant ID](../apple-pay.md#creating-merchant-id) that you created. Under Apple Pay Payment Processing Certificate, click **Create Certificate**.
+1. Log in to your Apple Pay Developer account and go to the [Merchant ID](./#creating-merchant-id) that you created. Under Apple Pay Payment Processing Certificate, click **Create Certificate**.
 
 <figure><img src="https://lh5.googleusercontent.com/pNntwm5qNaMIzBNLFAPgoLorHMH8n88zErJXYOL0b8TWi0g97iwVhZocMSm5thmZqOJeZ1GF9NCTmxwrKj7uKUQuZNYVpAKA10KfbBYUGUdHCAZeaCBwaGyAzypC0OT27Yf7LaTLk1hsKtJPElKpYGY" alt=""><figcaption></figcaption></figure>
 

@@ -20,8 +20,7 @@ For streamlined development and optimal reliability, we highly recommend using o
 * **Python (ottu-py):** This is our primary `SDK`, providing comprehensive functionality for Ottu integration. Access it on [GitHub](https://github.com/ottuco/ottu-py), where you can find detailed instructions in the README file.
 
 {% hint style="warning" %}
-Remember to implement proper signature verification mechanisms in your webhook receivers to ensure the authenticity of notifications from Ottu.\
-
+Remember to implement proper signature verification mechanisms in your webhook receivers to ensure the authenticity of notifications from Ottu.<br>
 {% endhint %}
 
 **We're Here to Help!**

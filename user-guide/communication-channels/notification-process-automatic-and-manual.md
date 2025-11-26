@@ -11,7 +11,6 @@ These channels send notifications to customers in two ways:
 
 ## [Manual WhatsApp Channel](notification-process-automatic-and-manual.md#manual-whatsapp-channel)
 
-This channel does not send notifications automatically. Merchants must manually trigger WhatsApp notifications through [Transaction Table](../payment-tracking/payment-transactions-insights.md#transaction-table) as mentioned in the above section.\
-
+This channel does not send notifications automatically. Merchants must manually trigger WhatsApp notifications through [Transaction Table](../payment-tracking/payment-transactions-insights.md#transaction-table) as mentioned in the above section.<br>
 
 <figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>

@@ -4,20 +4,17 @@ To add a new contract, there are three methods available, each leading to the [n
 
 ### [**From Property Management** ](add-new-contract.md#from-property-management)
 
-From the [property management](../../property-management.md) section, each property is listed with comprehensive details such as the address, number of contracts, units, rented units, and available units. By clicking on the dropdown arrow as illustrated below,\
-
+From the [property management](../../property-management.md) section, each property is listed with comprehensive details such as the address, number of contracts, units, rented units, and available units. By clicking on the dropdown arrow as illustrated below,<br>
 
 <figure><img src="../../../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
-a dropdown list of units related to the property, along with their full details, is displayed. After selecting the available units for renting and clicking on **CREATE CONTRACT** button at the bottom of the unit dropdown list, the merchant will be redirected to the [new contract form](add-new-contract.md#new-contract-form).\
-
+a dropdown list of units related to the property, along with their full details, is displayed. After selecting the available units for renting and clicking on **CREATE CONTRACT** button at the bottom of the unit dropdown list, the merchant will be redirected to the [new contract form](add-new-contract.md#new-contract-form).<br>
 
 <figure><img src="../../../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 ### [**From Tenant Raw**](add-new-contract.md#from-tenant-raw)&#x20;
 
-Within the [tenants raw](../tenant-and-contract-dashboard.md#tenants-row), merchants can easily click on the three dots beside the tenant's name and select the **New Contract** option. Subsequently, the merchant will be redirected to the [new contract form](add-new-contract.md#new-contract-form).\
-
+Within the [tenants raw](../tenant-and-contract-dashboard.md#tenants-row), merchants can easily click on the three dots beside the tenant's name and select the **New Contract** option. Subsequently, the merchant will be redirected to the [new contract form](add-new-contract.md#new-contract-form).<br>
 
 <figure><img src="../../../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
@@ -75,8 +72,7 @@ The difference between the contract start date and the payment start date is con
     The maximum amount that the merchant can request the customer to pay within each [phase](add-new-contract.md#payment-period) of payment.
 *   #### **Number of invoices for advanced payment:**&#x20;
 
-    The total number of invoices issued for advance rent payments, marked as paid during the contracting process. By clicking on the second tab, the advance payment invoices can be accessed.\
-
+    The total number of invoices issued for advance rent payments, marked as paid during the contracting process. By clicking on the second tab, the advance payment invoices can be accessed.<br>
 
     <figure><img src="../../../../../.gitbook/assets/Advance Inovices while Contracting.png" alt=""><figcaption></figcaption></figure>
 *   #### **Insurance Amount:**&#x20;

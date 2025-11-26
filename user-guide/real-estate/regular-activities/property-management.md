@@ -57,8 +57,7 @@ Subsequently, the merchant is redirected to the form for adding a new property, 
 *   #### **Allow Cash Payment:**&#x20;
 
     Option to enable or disable cash payments (Check or Uncheck).\
-    \
-
+    <br>
 
     <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -66,20 +65,17 @@ To add multiple unit types, such as villas and apartments, along with their resp
 
 1. Click on **ADD UNIT TYPE WITH UNIT** will prompt merchant add unit type and new units.
 2.  **Unit Type:**\
-    Merchants can choose from existing unit types, dropdown list,  or add a new one by clicking **ADD UNIT TYPE** and filling in the required details.\
-
+    Merchants can choose from existing unit types, dropdown list,  or add a new one by clicking **ADD UNIT TYPE** and filling in the required details.<br>
 
     <figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 3.  #### Add units:
 
-    The merchant is required to click on the **ADD OR EDIT UNITS** button, \
-
+    The merchant is required to click on the **ADD OR EDIT UNITS** button, <br>
 
     <figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 4.  #### Define the New Unit
 
-    After specifying the number of units to be added and their respective prices, the merchants should proceed by clicking the **ADD** button. \
-
+    After specifying the number of units to be added and their respective prices, the merchants should proceed by clicking the **ADD** button. <br>
 
     <figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -90,8 +86,7 @@ To add multiple unit types, such as villas and apartments, along with their resp
 
 <figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
-Repeat the above steps until all property unit types are added. Then, click the **Save** button in the [New Property Form](property-management.md#new-property-from) to save all changes.\
-
+Repeat the above steps until all property unit types are added. Then, click the **Save** button in the [New Property Form](property-management.md#new-property-from) to save all changes.<br>
 
 <figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 

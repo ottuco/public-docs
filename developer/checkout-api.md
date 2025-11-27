@@ -357,9 +357,7 @@ If `auto_debit` is selected:
 1. [agreement](checkout-api.md#agreement-object-conditional) and [customer\_id](checkout-api.md#customer_id-string-conditional) parameters will also be mandatory.
 2. Only `PG codes` supporting [tokenization](tokenization.md) can be selected. As a side effect, the card used for the payment will be associated with the supplied `agreement.id`. This card will be locked, preventing the customer from deleting it from the system until an alternate card is chosen for `auto-debit` payments.
 
-#### [**payment\_instrument**](checkout-api.md#payment_instrument)&#x20;
-
-_<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [**payment\_instrument**](checkout-api.md#payment_instrument) _<mark style="color:blue;">`object`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 It provides the essential values required for direct payment processing, including details about the selected payment instrument, the credentials used to authorize the transaction, and the rules that define the payment processing flow.
 
@@ -446,9 +444,7 @@ It contains the payment credentials or token received from the provider. Must be
 
 </details>
 
-### [preload\_checkout\_page](checkout-api.md#preload_checkout_page)
-
-&#x20;_<mark style="color:blue;">`boolean`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+#### [preload\_checkout\_page](checkout-api.md#preload_checkout_page) _<mark style="color:blue;">`boolean`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 When set to `true` during **transaction creation (POST only)**, Ottu preloads and caches the checkout page to make it load faster when the customer is redirected or when your system polls the checkout URL right after creation.
 
@@ -619,9 +615,7 @@ See the request parameter [card\_acceptance\_criteria](checkout-api.md#card_acce
 
 * Any child parameter provided with the [card\_acceptance\_criteria](checkout-api.md#card_acceptance_criteria-object-optional) object in the request payload will be populated in the response as [card\_acceptance\_criteria](checkout-api.md#card_acceptance_criteria-object-optional) child parameter.
 
-#### [**checkout\_page\_url** ](checkout-api.md#checkout_page_url)
-
-_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+#### [**checkout\_page\_url** ](checkout-api.md#checkout_page_url) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
 The hosted Ottu checkout page URL for this transaction. Use this link to redirect the customer to the frontend checkout experience.
 
@@ -905,7 +899,7 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
 {% openapi-operation spec="october" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251127%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251127T113053Z&X-Amz-Expires=172800&X-Amz-Signature=5231dcdff687154f07012597f35c2d1b085363da0b023ad8c262375f1d3bc3d6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251127%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251127T113433Z&X-Amz-Expires=172800&X-Amz-Signature=0d790717a443d846debf6caef7b4705d50fa5bd4b7e27e8395e075b2c67be062&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)

@@ -25,8 +25,8 @@ The signature is not derived from every field in the webhook payload. See payloa
 * customer\_address\_state
 * customer\_address\_country
 * customer\_address\_postal\_code
-* gateway\_name
 * gateway\_account
+* gateway\_name
 * order\_no
 * reference\_number
 * result

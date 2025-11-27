@@ -446,6 +446,17 @@ It contains the payment credentials or token received from the provider. Must be
 
 </details>
 
+### [preload\_checkout\_page](checkout-api.md#preload_checkout_page)
+
+&#x20;_<mark style="color:blue;">`boolean`</mark>_ _<mark style="color:blue;">`optional`</mark>_
+
+When set to `true` during **transaction creation (POST only)**, Ottu preloads and caches the checkout page to make it load faster when the customer is redirected or when your system polls the checkout URL right after creation.
+
+* This caching is **ignored on updates (PATCH/PUT)** because any update automatically clears the cache.
+* The cache stays valid until the transaction expires, with a maximum TTL of **1 hour** (whichever is shorter).
+* If the transaction state changes, the cache is invalidated immediately.
+* If the cache is missed, Ottu falls back to normal [checkout\_url](checkout-api.md#checkout_url-string-mandatory) logic (e.g., webhook checks, redirect decisions, and other validations).
+
 #### [**product\_type**](checkout-api.md#product_type-string-optional) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:blue;">`optional`</mark>_
 
 The type of product or service being purchased. This field may be used for tracking and reporting purposes\
@@ -608,6 +619,12 @@ See the request parameter [card\_acceptance\_criteria](checkout-api.md#card_acce
 
 * Any child parameter provided with the [card\_acceptance\_criteria](checkout-api.md#card_acceptance_criteria-object-optional) object in the request payload will be populated in the response as [card\_acceptance\_criteria](checkout-api.md#card_acceptance_criteria-object-optional) child parameter.
 
+#### [**checkout\_page\_url** ](checkout-api.md#checkout_page_url)
+
+_<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:red;">`mandatory`</mark>_
+
+The hosted Ottu checkout page URL for this transaction. Use this link to redirect the customer to the frontend checkout experience.
+
 #### [**checkout\_short\_url**](checkout-api.md#checkout_short_url-string-conditional) _<mark style="color:blue;">**`string`**</mark>_ _<mark style="color:blue;">`conditional`</mark>_
 
 Short [checkout url.](checkout-api.md#checkout_url-string-mandatory)
@@ -615,6 +632,8 @@ Short [checkout url.](checkout-api.md#checkout_url-string-mandatory)
 **Presence condition:**
 
 * [shortify\_checkout\_url](checkout-api.md#shortify_checkout_url-bool-optional) request parameter should be set to "true" in order to generate it.
+
+
 
 #### [checkout\_url](checkout-api.md#checkout_url-string-mandatory) _<mark style="color:blue;">`string`</mark>_ _<mark style="color:red;">`mandatory`</mark>_
 
@@ -886,7 +905,7 @@ See Webhook [Payment Notification](webhooks/payment-notification.md).
 ### [API Schema Reference ](checkout-api.md#api-schema-reference)
 
 {% openapi-operation spec="october" path="/b/checkout/v1/pymt-txn/" method="post" %}
-[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251119%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251119T105738Z&X-Amz-Expires=172800&X-Amz-Signature=7415d9f9f1f2c73a2cfd4414576ffe48cdf9a2abdca4e4d68cdf79bfc856ec78&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI october](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/14a4390b9a9c41b51d6db420a030f14c46ab50c37cf102cd4741fe12d0384f86.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251127%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251127T113053Z&X-Amz-Expires=172800&X-Amz-Signature=5231dcdff687154f07012597f35c2d1b085363da0b023ad8c262375f1d3bc3d6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### [Example: Checkout API - create payment transaction (request-response)](checkout-api.md#example-checkout-api-create-payment-transaction-request-response)

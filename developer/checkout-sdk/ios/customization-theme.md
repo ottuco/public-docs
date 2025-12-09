@@ -10,7 +10,7 @@ It uses additional component classes like:
 
 The `CheckoutTheme` class consists of objects that define various UI components. While the names of these components largely correspond to those listed [here](customization-theme.md#properties-description), they also include platform-specific fields for further customization.
 
-{% embed url="https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG/Ottu-SDK---Components-Documentation?node-id=1-624&t=7reOLSB5zVdlOwz0-1" %}
+{% embed url="https://www.figma.com/design/J6WsECtu4F6ynCetrvTLcp/Ottu-SDK---Components-Documentation--Copy-?node-id=0-1&p=f" %}
 
 ## [Properties Description](customization-theme.md#properties-description) <a href="#properties-description" id="properties-description"></a>
 

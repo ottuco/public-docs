@@ -29,7 +29,7 @@ The `Appearance` class serves as the core inner class of `CheckoutTheme`, contai
 
 The component names within `Appearance` largely correspond to those described [here](customization-theme.md#properties-description).
 
-{% embed url="https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG/Ottu-SDK---Components-Documentation?node-id=1-624&t=VdaigMvefTae0naX-1" %}
+{% embed url="https://www.figma.com/design/J6WsECtu4F6ynCetrvTLcp/Ottu-SDK---Components-Documentation--Copy-?node-id=0-1&p=f" %}
 
 #### [**showPaymentDetails**](customization-theme.md#showpaymentdetails)
 

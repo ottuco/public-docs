@@ -8,7 +8,7 @@ The class responsible for defining the theme is called `CheckoutTheme`. It utili
 
 The `CheckoutTheme` class consists of objects representing various UI components. While the component names generally align with those listed above, they also contain platform-specific fields for further customization.
 
-{% embed url="https://www.figma.com/proto/BmLOTN8QCvMaaIteZflzgG?content-scaling=fixed&fuid=819188572429138268&kind=proto&node-id=1-624&scaling=scale-down" %}
+{% embed url="https://www.figma.com/design/J6WsECtu4F6ynCetrvTLcp/Ottu-SDK---Components-Documentation--Copy-?node-id=0-1&p=f" %}
 
 Below is the structure of the Customization `Theme` class:
 

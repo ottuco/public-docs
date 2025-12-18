@@ -69,7 +69,7 @@ This payment option enables direct payments through the mobile SDK. The SDK prov
 
 Below is an example of how the onsite checkout screen appears:
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 The SDK supports multiple instances of onsite checkout payments. Therefore, for each payment method with a PG code of `ottu_pg`, the card form (as described above) will be displayed.
 

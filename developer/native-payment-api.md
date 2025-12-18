@@ -77,7 +77,7 @@ If the call is made from the client side, the backend must be synchronized with 
 * The API response is forwarded to the backend, **or**
 * The [Payment Status (Inquiry) API](payment-status-inquiry.md) is called by the backend after the client confirms that the payment has been completed.
 
-<figure><img src="../.gitbook/assets/image.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt="" width="563"><figcaption></figcaption></figure>
 
 2. **Client → Backend → Ottu (**[Private API Key](authentication.md#private-key-api-key)**– Recommended)**
    1. The client sends the payment payload to Backend
@@ -85,7 +85,7 @@ If the call is made from the client side, the backend must be synchronized with 
    3. Backend receive payment response callback
    4. Backend process callback response and notify client side with payment status
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ## [Setup](native-payment-api.md#setup)
 
@@ -133,7 +133,7 @@ The prerequisites and [checklist](native-payment-api.md#checklist) mentioned in 
 #### [API Schema Reference](native-payment-api.md#api-schema-reference)
 
 {% openapi-operation spec="native" path="/b/pbl/v2/payment/apple-pay/" method="post" %}
-[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251126%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251126T074648Z&X-Amz-Expires=172800&X-Amz-Signature=80e91699251b7008164bd42e9ad572c5043a0489b8602c75ac2b6880bcc339f6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251218%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251218T084907Z&X-Amz-Expires=172800&X-Amz-Signature=e0ebe986434803a6fae7809799000e344eae3e2ba3de4f4c03e70339b14feedf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Google Pay](native-payment-api.md#google-pay)
@@ -158,7 +158,7 @@ The prerequisites and [checklist](native-payment-api.md#checklist) mentioned in 
 #### [API Schema Reference](native-payment-api.md#api-schema-reference-1)
 
 {% openapi-operation spec="native" path="/b/pbl/v2/payment/google-pay/" method="post" %}
-[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251126%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251126T074648Z&X-Amz-Expires=172800&X-Amz-Signature=80e91699251b7008164bd42e9ad572c5043a0489b8602c75ac2b6880bcc339f6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251218%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251218T084907Z&X-Amz-Expires=172800&X-Amz-Signature=e0ebe986434803a6fae7809799000e344eae3e2ba3de4f4c03e70339b14feedf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [Auto-Debit (Tokenized Payments)](native-payment-api.md#auto-debit-tokenized-payments)
@@ -179,7 +179,7 @@ Supports CIT ([Cardholder Initiated](auto-debit.md#id-1.-customer-initiated-card
 #### [API Schema Reference](native-payment-api.md#api-schema-reference-2)
 
 {% openapi-operation spec="native" path="/b/pbl/v2/auto-debit/" method="post" %}
-[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251126%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251126T074648Z&X-Amz-Expires=172800&X-Amz-Signature=80e91699251b7008164bd42e9ad572c5043a0489b8602c75ac2b6880bcc339f6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI native](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2a046c326cc6936c62d7bb7e3bfc294aa5597e7a46e44f4375c4ce8f3b3eaca5.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251218%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251218T084907Z&X-Amz-Expires=172800&X-Amz-Signature=e0ebe986434803a6fae7809799000e344eae3e2ba3de4f4c03e70339b14feedf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## [FAQ](native-payment-api.md#faq)

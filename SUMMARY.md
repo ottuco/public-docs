@@ -75,6 +75,7 @@
 * [Payment Status-Inquiry](developer/payment-status-inquiry.md)
 * [Auto-Debit](developer/auto-debit.md)
 * [Invoice API](developer/invoice-api.md)
+* [Reports API](developer/reports-api.md)
 * [Message Notifications](developer/message-notifications.md)
 * [Upload Attachment](developer/upload-attachment.md)
 * [Checkout SDK](developer/checkout-sdk/README.md)

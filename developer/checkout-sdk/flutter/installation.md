@@ -21,7 +21,7 @@ dependencies:
 And then run `flutter pub get` command in the terminal.
 
 {% hint style="info" %}
-If the development is being done on Windows or Linux, and iOS support is not required, you need to adjust the following line, [Access it here](https://github.com/ottuco/ottu-flutter/blob/main/Sample/pubspec.yaml#L40), in the `pubspec.yaml` file, by replacing the `ref` value `2.1.13` with `release-no-ios`.
+If the development is being done on Windows or Linux, and iOS support is not required, you need to adjust the following line, [Access it here](https://github.com/ottuco/ottu-flutter/blob/main/Sample/pubspec.yaml#L40), in the `pubspec.yaml` file, by replacing the `ref` value `2.1.14` with `release-no-ios`.
 
 Then, run the following two commands:\
 `flutter clean`\
